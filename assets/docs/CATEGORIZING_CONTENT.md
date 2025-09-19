@@ -1,12 +1,60 @@
 # SEANIVORE 360º DESIGN PORTFOLIO 
 
-## Purpose 
+## Overview 
 
-  * **Gathering and categorizing all creative projects across portfolios to categorize them, showcasing '360º Design Experience' from across all various portfolios**
+  * **Gathering and categorizing all creative projects across portfolios to categorize them, showcasing '360º Design Experience' from across all various portfolios**  
+
+  I have too many websites and too much content. 
+
+### Design Top-Level Categories 
+
+  1. Print 
+  2. Digital 
+  3. Motion Graphics 
+  4. Video 
+  5. OOH (Out-of-home)
+  6. Web
+  7. Product
+  8. Interactive 
+  9. Generative AI 
+
+#### Tagged Sub-Categories 
+
+  1. Generative AI 
+  2. Product 
+
+### Messaging 
+
+  - Be more visually up front 
+  - Make my role clear 
+  - Place a clear line between what is AI and what is not 
+  - I'd also like to be able to apply to copywriting jobs 
+
+### POA 
+
+  - Gather and organize all assets from various websites 
+    1. https://visual-producer.august.style -- 
+    2. https://developer-technologist.august.style/ 
+    3. https://print-shop-fashion.august.style/ --
+  - Write copy for each portfolio page 
+    1. What was my role 
+    2. The goal of the piece 
+    3. The strategy applied 
+    4. The results 
+    5. What would I do differently 
+
 
 ---
 
-## Design Categories  
+## Gathering Content While Preparing Web Placement 
+
+### **Top-Level Category** 
+
+#### 1. Name of Portfolio Entry 
+
+---
+
+## Grouping Content 
 
 ### **Print** 
 
@@ -44,6 +92,20 @@
 
   4. Video build assets 
      `https://visual-producer.august.style/horvath-work-experience/innovative-digital-composite-design-intricate-patterns-floors-walls-video-production.html` 
+
+  7. AI Generated, Archetype-Storytelling, Art History Inspired Fashion Lookbooks 
+     - Fashion-magazine experience that consists of legitimate, on-trend styling. 
+     - The image concepts were created first. By using a matrix of Art History Movements and Archetypes that defined consumer needs, styles that solved real-world wants and desires of consumers were created with some degree of automation to move along the process. 
+     - Images were then generated using clips the the copy AI produced from the Matrix. Those clips were placed into tools like Adobe Firefly. Of tens of pictures produced for each look concept, one was selected to be edited further using Adobe Photoshop in-painting, or as Adobe refers to it, generative fill. 
+
+     - Summer 2025, PT 1: https://design.august.style/projects/summer-lookbook-part-1 
+     - Summer 2025, PT 2: https://design.august.style/projects/summer-lookbook-part-2 
+     - Summer 2025, PT 3: https://design.august.style/projects/summer-lookbook-part-3 
+     - Summer 2025, PT 4: https://design.august.style/projects/summer-lookbook-part-4 
+
+     - Autumn 2025, pt. 1: https://design.august.style/projects/autumn-lookbook-part-1 
+     - Autumn 2025, pt. 2: https://design.august.style/projects/autumn-lookbook-part-2 
+     - Autumn 2025, pt. 3: https://design.august.style/projects/autumn-lookbook-part-3 
 
 ### **Motion Graphics** 
 
@@ -110,14 +172,39 @@
   3. T-Shirt designs for Web3 event 
      `https://visual-producer.august.style/horvath-work-experience/meme-iconic-band-shirt-graphic-design-artist.html`
 
-### **Web Design** 
+### **Web** 
 
-  1. Webflow e-commerce store of 800+ educational art history prints from 20+ movements 
+  1. Locally Rebuilt Webflow E-commerce Print Store & Fashion Lookbook 
+     - 800+ educational art history prints from 20+ movements 
      - Created to capitalize on first ever opportunity to learn the famous aesthetic from full visual immersion 
      - Researched and executed text-book accurate detailing of illustrated characteristics across hundreds of prints 
      - Celebrated artists who made the looks iconic by helping viewers connect the look to the name faster than ever 
      - Thanks to AI image generation, every print was sold as a "single edition" print across Meta, Etsy, and this store 
      `https://print-shop-fashion.august.style/` 
+
+  2. Sales Website 
+     - Modern, clean glass aesthetic
+     - Micro-interactions for engaging UX 
+     - Modular development approach 
+     - LANDING PAGE: https://design.august.style/projects/css-anim-saas-landing 
+     - CONTACT: https://design.august.style/projects/css-saas-profile-setup 
+     - SIGN UP: https://design.august.style/projects/saas-css-anim-signup 
+
+  3. Mock-Up Website for E-Commerce Print Shop 
+     - Modern recreation of actual shop website 
+     - HTML/CSS/JS website made to illustrate Webflow Store site 
+     - PRODUCT SERIES: https://design.august.style/projects/webflow-print-series 
+     - SINGLE PRODUCT: https://design.august.style/projects/webflow-product-page 
+
+  4. Mock-Up for Meditation Journal AI-Led UX App 
+     - AI-managed UX and UI 
+     - Journal without typing 
+     - INTERACTIVE MOCK-UP: https://design.august.style/projects/mindflow-app 
+
+  5. Mock-Up of AI-App Analytics Dashboard 
+     - Visualizing insights from massive data sets 
+     - Animated charts and micro-interactions 
+     - MOCK-UP: https://design.august.style/projects/ai-admin-dashboard 
 
 ### **Product** 
 
@@ -127,7 +214,10 @@
   2. Printed Product 
      `https://visual-producer.august.style/horvath-work-experience/illustration-digital-product-design-marketing-e-commerce-sales.html` 
 
-### Interactive 
+
+
+### **Interactive** 
 
   1. Immersive 3D Fine Art Nude Male NFT Gallery 
      `https://visual-producer.august.style/horvath-work-experience/animation-designer-digital-content-production-3d-vr-nft-gallery.html` 
+
