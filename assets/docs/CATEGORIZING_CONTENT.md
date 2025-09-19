@@ -1,12 +1,16 @@
 # SEANIVORE 360º DESIGN PORTFOLIO 
 
 ## Overview 
+  
+  * **Streamlining my online work portfolio presence into a '360º Design Experience' background** 
+  
+    1. Become better applicable to job-types like copywriting 
+    2. Serve only ONE website URL with easily navigable job categories 
+    3. Curate entries as not to overwhelm, both cutting out and finding new additions from my past work history 
+    4. Be more visually direct, like my later portfolios 
+    5. Intentionally composed copy helping viewers see what they need to see faster
 
-  * **Gathering and categorizing all creative projects across portfolios to categorize them, showcasing '360º Design Experience' from across all various portfolios**  
-
-  I have too many websites and too much content. 
-
-### Design Top-Level Categories 
+### Top-Level Categories 
 
   1. Print 
   2. Digital 
@@ -14,9 +18,7 @@
   4. Video 
   5. OOH (Out-of-home)
   6. Web
-  7. Product
-  8. Interactive 
-  9. Generative AI 
+  7. Interactive 
 
 #### Tagged Sub-Categories 
 
@@ -29,19 +31,44 @@
   - Make my role clear 
   - Place a clear line between what is AI and what is not 
   - I'd also like to be able to apply to copywriting jobs 
-
-### POA 
-
-  - Gather and organize all assets from various websites 
-    1. https://visual-producer.august.style -- 
-    2. https://developer-technologist.august.style/ 
-    3. https://print-shop-fashion.august.style/ --
-  - Write copy for each portfolio page 
-    1. What was my role 
+      1. What was my role 
     2. The goal of the piece 
     3. The strategy applied 
     4. The results 
     5. What would I do differently 
+
+### Current Portfolio URLs 
+
+* **ORIGINAL HTML/CSS/JS** 
+  - developer-technologist.august.style
+
+* **MARKDOWN JEKYLL HTML** 
+  - ai-philosophy.august.style 
+
+* **FRAMER HOSTED** 
+  - ai-generated-content.august.style/lookbook
+  - ai-generated-content.august.style/briefings
+  - ai-generated-content.august.style/shop
+
+* **WEBFLOW TURNED LOCAL** 
+  - generative-horoscopes.august.style 
+  - online-pt-trainer.august.style
+  - visual-producer.august.style
+  - print-shop-fashion.august.style 
+
+* **YOUTUBE PLAYLIST** 
+  - automated-podcasts.august.style 
+  - astrofluenced-podcasts.august.style 
+
+* **NEW HTML/CSS/JS** 
+  - design.august.style
+  - presenting.august.style & sfagent.august.style
+  - projects.august.style
+
+
+
+  - Write copy for each portfolio page 
+
 
 
 ---
