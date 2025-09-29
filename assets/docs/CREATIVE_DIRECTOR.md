@@ -1,73 +1,87 @@
-# SEANIVORE 360º DESIGN PORTFOLIO 
-
-## Overview 
-  
-  * **Streamlining my online work portfolio presence into a '360º Design Experience' background** 
-  
-    1. Become better applicable to job-types like copywriting 
-    2. Serve only ONE website URL with easily navigable job categories 
-    3. Curate entries as not to overwhelm, both cutting out and finding new additions from my past work history 
-    4. Be more visually direct, like my later portfolios 
-    5. Intentionally composed copy helping viewers see what they need to see faster
-
-### Top-Level Categories 
-
-  1. Print 
-  2. Digital 
-  3. Motion Graphics 
-  4. Video 
-  5. OOH (Out-of-home)
-  6. Web
-  7. Interactive 
-
-#### Tagged Sub-Categories 
-
-  1. Generative AI 
-  2. Product 
-
-### Messaging 
-
-  - Be more visually up front 
-  - Make my role clear 
-  - Place a clear line between what is AI and what is not 
-  - I'd also like to be able to apply to copywriting jobs 
-      1. What was my role 
-    2. The goal of the piece 
-    3. The strategy applied 
-    4. The results 
-    5. What would I do differently 
+# Creative Director Portfolio 
 
 ### Current Portfolio URLs 
 
+For the (n+) portfolio entries to be determined, be aware that there are already 14 entries that will have website video overview. Then there will be 2 entries for the Podcasts. Off the top of my head I can think of at least 15 entries from the hand drawn media. 
+
+The division of entries into types of media will help. But we should still figure out a way to have the user scroll and get a really good, informative overview of each entry almost like they DID click through, because the UX of clicking through 40-some project entries is just crazy. 
+
+Need and entry for when we made like 20+ webpages from having Claude Code subagents all interpret directions for creating innovative UI components differently; this one be one post. 
+
 * **ORIGINAL HTML/CSS/JS** 
-  - developer-technologist.august.style
+  1. developer-technologist.august.style `custom-modular-portfolio.mp4` 
+     + Got a long screenshot video to upload to YouTube 
+     + Edit for a **MODULAR PORTFOLIO SITE** entry (1) 
+     + Don't forget the repo for building it and "Consider a “How to Use This Portfolio” intro or a visual map at the top—showing how the sections connect, and how a user can navigate by interest, medium, or outcome." said Dia. 
+     + Will need to create entries for select entires in this portfolio; only the best (n+)
 
 * **MARKDOWN JEKYLL HTML** 
-  - ai-philosophy.august.style 
+  0. ai-philosophy.august.style 
+     + Didn't take video; if included, it will be small and just the hyperlink (0)
 
 * **FRAMER HOSTED** 
-  - ai-generated-content.august.style/lookbook
-  - ai-generated-content.august.style/briefings
-  - ai-generated-content.august.style/shop
+  2. ai-generated-content.august.style/lookbook or /shop
+     + Got a long screenshot video to upload to YouTube 
+     + Edit the video for the **LOOKBOOK** `framer-ai-in-painted-fashion.mp4`
+     + Edit the video for **SHOP** `framer-ai-art-history-print-shop.mp4`
+     + Two videos go on one portfolio web project entry (2)
 
 * **WEBFLOW TURNED LOCAL** 
-  - generative-horoscopes.august.style 
-  - online-pt-trainer.august.style
-  - visual-producer.august.style
-  - print-shop-fashion.august.style 
-
-* **YOUTUBE PLAYLIST** 
-  - automated-podcasts.august.style 
-  - astrofluenced-podcasts.august.style 
+  3. generative-horoscopes.august.style `webflow-drawn-anim-ai-blogs.mp4`
+     + Got a long screenshot video to upload to YouTube 
+     + Edit to show off **ART ON SITE** particularly for entry (3)
+  4. online-pt-trainer.august.style `webflow-art-training-yoga-sales.mp4`
+     + Got a long screenshot video to upload to YouTube 
+     + Edit for **ART ON SITE** particularly for entry (4)
+  5. visual-producer.august.style `webflow-hand-illustration-mediums.mp4`
+     + Got a long screenshot video to upload to YouTube 
+     + Edit to show **ALL PROJECTS SPED UP** 
+     + Create one web design entry (5)
+     + Pulled entire large variety of imagery 
+     + Need to organize more; create collection that is comic book 
+     + Create large number of entries for various entires assets were gathered for (n+)
+  6.  print-shop-fashion.august.style `webflow-ecommerce-ai-fashion.mp4`
+     + Got a long screenshot video to upload to YouTube 
+     + Edit section showing **PRINT SHOP** 
+     + Edit section showing **LOOKBOOK** 
+     + Edit section showing off **NAV BAR UI** 
+     + Three videos but just one project entry because its all the same website (6)
 
 * **NEW HTML/CSS/JS** 
-  - design.august.style
-  - presenting.august.style & sfagent.august.style
-  - projects.august.style
+  7.  design.august.style `custom-web-assets-showcase.mp4` 
+     + Got a long screenshot video to upload to YouTube 
+     + Edit for **SAAS PRODUCT SALES, SIGN UP, CONTACT** (7)
+     + Edit for **PRINT SHOP SIMPLE** (8)
+     + Edit clip for **SUMMER LOOKBOOK ALT. VERSION** (9)
+     + Edit clip for **MINDFUL APP** (10)
+     + Edit clip for **MINDFLOW ANALYTICS DASHBOARD** (11)
+     + Each clip is a separate digital entity so each needs an entry 
+  8.  presenting.august.style & sfagent.august.style `custom-saas-landing-page.mp4`
+     + Got a long screenshot video to upload to YouTube 
+     + Edit for **SAAS LANDING PAGE** 
+     + Edit for **AI VOICE MARKETING AGENTIC RESEARCH CASE STUDY** 
+     + Edit for **MARKETING PLAN AGENTIC PRODUCTION CASE STUDY** 
+     + One entry for the landing page (12)
+     + One entry for the two case studies, but with separate videos (13)
+  9.  projects.august.style `custom-experience-portfolio.mp4`
+     + Got a long screenshot video to upload to YouTube 
+     + Edit for one simple **SPED UP OVERVIEW OF WEBSITE** (14)
+     + Ideate with AI to figure out what to call this kind of website 
+     + Select the BEST entries to create entries in the new portfolio (n+)
+
+* **YOUTUBE PLAYLIST** 
+  10. automated-podcasts.august.style 
+  11. astrofluenced-podcasts.august.style 
+      + Create one entry for the podcast detailing the complexity of that process (15)
+      + Create another entry for the very different complexity of ASD podcast (16)
 
 
+---
 
-  - Write copy for each portfolio page 
+## Projects 
+
+### Categories 
+
 
 
 
