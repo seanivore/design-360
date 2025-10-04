@@ -276,29 +276,121 @@
 
 ### Framer Designed Websites 
 
+* **ENTRY ID** uid-tev-176
+  + SEO title, description 
+    1.   
+    2. 
+  + ASSETS 
+    - VIDEO FILE `ai-gen-blog-fashion-lookbook-print-shop.mp4`
+    - VIDEO EMBED 
+    - THUMBNAIL 
+    - ON-PAGE IMAGES 
+  + URLS 
+    - OLD `ai-generated-content.august.style`
+    - GITHUB `github.com/seanivore/framer-cms-lookbook`
+    - SECTION `august.style/web/framer/`
+    - PAGE `blog-lookbook-print-gallery.html`
+  + TAGS 
+  + NOTES: Primarily local 
+  + Page title, copy, etc.
+    1.  
+    2. 
 
+### Webflow Designed Websites 
+
+* **ENTRY ID** uid-fth-565
+  + SEO title, description 
+    1.   
+    2. 
+  + ASSETS 
+    - VIDEO FILE `hand-drawn-anim-ai-blogs.mp4`
+    - VIDEO EMBED 
+    - THUMBNAIL 
+    - ON-PAGE IMAGES 
+  + URLS 
+    - OLD `generative-horoscopes.august.style`
+    - GITHUB `github.com/seanivore/astrofluenced`
+    - SECTION `august.style/web/webflow/`
+    - PAGE `animated-cms-weekly-blogs.html`
+  + TAGS 
+  + NOTES 
+  + Page title, copy, etc.
+    1.  
+    2. 
+
+* **ENTRY ID** uid-unw-889
+  + SEO title, description 
+    1.   
+    2. 
+  + ASSETS 
+    - VIDEO FILE `personal-design-branding-art.mp4`
+    - VIDEO EMBED 
+    - THUMBNAIL 
+    - ON-PAGE IMAGES 
+  + URLS 
+    - OLD `online-pt-trainer.august.style`
+    - GITHUB `github.com/seanivore/ckheals`
+    - SECTION `august.style/web/webflow/`
+    - PAGE `training-yoga-sales.html`
+  + TAGS 
+  + NOTES 
+  + Page title, copy, etc.
+    1.  
+    2. 
+
+* **ENTRY ID** uid-wty-542
+  + SEO title, description 
+    1.   
+    2. 
+  + ASSETS 
+    - VIDEO FILE `custom-designed-illustrator-site.mp4`
+    - VIDEO EMBED 
+    - THUMBNAIL 
+    - ON-PAGE IMAGES 
+  + URLS 
+    - OLD `visual-producer.august.style`
+    - GITHUB `github.com/seanivore/webflow-2023`
+    - SECTION `august.style/web/webflow/`
+    - PAGE `visual-artist-process-portfolio.html`
+  + TAGS 
+  + NOTES 
+  + Page title, copy, etc.
+    1.  
+    2. 
+
+* **ENTRY ID** uid-dff-987
+  + SEO title, description 
+    1.   
+    2. 
+  + ASSETS 
+    - VIDEO FILE `custom-nav-cms-store-magazine.mp4`
+    - VIDEO EMBED 
+    - THUMBNAIL 
+    - ON-PAGE IMAGES 
+  + URLS 
+    - OLD `print-shop-fashion.august.style`
+    - GITHUB `github.com/seanivore/webflow-store`
+    - SECTION `august.style/web/webflow/`
+    - PAGE `automated-e-commerce-shop-lookbook.html`
+  + TAGS 
+  + NOTES 
+  + Page title, copy, etc.
+    1.  
+    2. 
+
+---
 
 ### Framer AI In-Painted Archetypal Fashion Lookbook 
-  + UPLOAD: `framer-ai-in-painted-fashion.mp4`
   + *Web Designer + Framer + AI Writing + AI Image Creation + AI Photo Editing + Fashion Design + System Design + Product*
 
 ### Framer Education Art History Immersion Print Shop 
-  + UPLOAD: `framer-ai-art-history-print-shop.mp4` 
   + *Web Designer + Framer + AI Image Creation + AI Creative Planning + AI Photo Editing + Art History + E-Commerce + Back-end Store Automation* 
 
 ### Webflow 200+ Weekly AI Generated Blog 
-  + UPLOAD: `webflow-drawn-anim-ai-blogs.mp4`
   + *Web Designer + Webflow + Local Rebuild + GitHub Pages + AI Writing + API Publishing API + Database Management + Workflow Automation + AI Image Creation + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Custom Animation + Lottie Files*
 
 ### Webflow Hand-Drawn Illustrated Service Sales Website 
-  + UPLOAD: `webflow-art-training-yoga-sales.mp4` 
   + *Account Management + Web Designer + Business Development Consultant + Webflow + Local Rebuild + GitHub Pages + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting*
-
-### Hand-Drawn Vector Branding & Sales Art Portfolio 
-  + UPLOAD: `webflow-hand-illustration-mediums.mp4`
-
-### Webflow Print Store & Custom Designed Navigation Components 
-  + UPLOAD: `webflow-ecommerce-ai-fashion.mp4`
 
 
 

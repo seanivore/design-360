@@ -13,34 +13,6 @@ Need and entry for when we made like 20+ webpages from having Claude Code subage
   0. ai-philosophy.august.style 
      + Didn't take video; if included, it will be small and just the hyperlink (0)
 
-* **FRAMER HOSTED** 
-  2. ai-generated-content.august.style/lookbook or /shop
-     + Got a long screenshot video to upload to YouTube 
-     + Edit the video for the **LOOKBOOK** `framer-ai-in-painted-fashion.mp4`
-     + Edit the video for **SHOP** `framer-ai-art-history-print-shop.mp4`
-     + Two videos go on one portfolio web project entry (2)
-
-* **WEBFLOW TURNED LOCAL** 
-  3. generative-horoscopes.august.style `webflow-drawn-anim-ai-blogs.mp4`
-     + Got a long screenshot video to upload to YouTube 
-     + Edit to show off **ART ON SITE** particularly for entry (3)
-  4. online-pt-trainer.august.style `webflow-art-training-yoga-sales.mp4`
-     + Got a long screenshot video to upload to YouTube 
-     + Edit for **ART ON SITE** particularly for entry (4)
-  5. visual-producer.august.style `webflow-hand-illustration-mediums.mp4`
-     + Got a long screenshot video to upload to YouTube 
-     + Edit to show **ALL PROJECTS SPED UP** 
-     + Create one web design entry (5)
-     + Pulled entire large variety of imagery 
-     + Need to organize more; create collection that is comic book 
-     + Create large number of entries for various entires assets were gathered for (n+)
-  6.  print-shop-fashion.august.style `webflow-ecommerce-ai-fashion.mp4`
-     + Got a long screenshot video to upload to YouTube 
-     + Edit section showing **PRINT SHOP** 
-     + Edit section showing **LOOKBOOK** 
-     + Edit section showing off **NAV BAR UI** 
-     + Three videos but just one project entry because its all the same website (6)
-
 * **YOUTUBE PLAYLIST** 
   10. automated-podcasts.august.style 
   11. astrofluenced-podcasts.august.style 
