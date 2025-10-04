@@ -8,12 +8,6 @@ The division of entries into types of media will help. But we should still figur
 
 Need and entry for when we made like 20+ webpages from having Claude Code subagents all interpret directions for creating innovative UI components differently; this one be one post. 
 
-* **ORIGINAL HTML/CSS/JS** 
-  1. developer-technologist.august.style `custom-modular-portfolio.mp4` 
-     + Got a long screenshot video to upload to YouTube 
-     + Edit for a **MODULAR PORTFOLIO SITE** entry (1) 
-     + Don't forget the repo for building it and "Consider a “How to Use This Portfolio” intro or a visual map at the top—showing how the sections connect, and how a user can navigate by interest, medium, or outcome." said Dia. 
-     + Will need to create entries for select entires in this portfolio; only the best (n+)
 
 * **MARKDOWN JEKYLL HTML** 
   0. ai-philosophy.august.style 
@@ -46,28 +40,6 @@ Need and entry for when we made like 20+ webpages from having Claude Code subage
      + Edit section showing **LOOKBOOK** 
      + Edit section showing off **NAV BAR UI** 
      + Three videos but just one project entry because its all the same website (6)
-
-* **NEW HTML/CSS/JS** 
-  7.  design.august.style `custom-web-assets-showcase.mp4` 
-     + Got a long screenshot video to upload to YouTube 
-     + Edit for **SAAS PRODUCT SALES, SIGN UP, CONTACT** (7)
-     + Edit for **PRINT SHOP SIMPLE** (8)
-     + Edit clip for **SUMMER LOOKBOOK ALT. VERSION** (9)
-     + Edit clip for **MINDFUL APP** (10)
-     + Edit clip for **MINDFLOW ANALYTICS DASHBOARD** (11)
-     + Each clip is a separate digital entity so each needs an entry 
-  8.  presenting.august.style & sfagent.august.style `custom-saas-landing-page.mp4`
-     + Got a long screenshot video to upload to YouTube 
-     + Edit for **SAAS LANDING PAGE** 
-     + Edit for **AI VOICE MARKETING AGENTIC RESEARCH CASE STUDY** 
-     + Edit for **MARKETING PLAN AGENTIC PRODUCTION CASE STUDY** 
-     + One entry for the landing page (12)
-     + One entry for the two case studies, but with separate videos (13)
-  9.  projects.august.style `custom-experience-portfolio.mp4`
-     + Got a long screenshot video to upload to YouTube 
-     + Edit for one simple **SPED UP OVERVIEW OF WEBSITE** (14)
-     + Ideate with AI to figure out what to call this kind of website 
-     + Select the BEST entries to create entries in the new portfolio (n+)
 
 * **YOUTUBE PLAYLIST** 
   10. automated-podcasts.august.style 
