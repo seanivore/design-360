@@ -1,0 +1,42 @@
+{
+  "_metadata": {
+    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "required_fields": true,
+    "schema_version": "1.0",
+    "template_type": "portfolio_entry"
+  },
+  "categorization": {
+    "entry_id": "uid-tev-176", 
+    "placement": {
+        "section": "Web",
+        "sub_section": "Framer", 
+        "slug": "august.style/web/framer/",
+        "file_name": "blog-lookbook-print-gallery.html"
+    },
+    "tagging":{
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "ai-gen-blog-fashion-lookbook-print-shop.mp4",
+        "video_embed": "", 
+        "thumbnail_image": "", 
+        "page_imagery": []
+        },
+    "assets": {
+        "project_url": "https://ai-generated-content.august.style",
+        "github_repository": "https://github.com/seanivore/framer-cms-lookbook"
+    },
+    "copy":{
+        "seo_title": "",
+        "seo_description": "", 
+        "page_title": "", 
+        "page_copy": ""
+    }, 
+    "notes": ""
+}
+}

@@ -15,14 +15,11 @@
     + Organizations are downsizing, but your work can't 
     + Hire someone with 360º portfolio experience 
     + Not downsizing yet? Optimize your labor and make an impression
-
-### Intention 
+    + Here's why I'm the easy choice 
 
   * **Framing better fits actual background and meets employers where they are**
-
-  - Present full background to highlight generalist expertise 
-  - Make this era of figuring out AI's role
-  - Be an easy choice, regardless of how the company is being effected 
+  
+  - Present full background to highlight generalist expertise
 
 ### Experience Coverage Groups 
 
@@ -89,294 +86,35 @@
 
 ## Web 
 
-### Custom Built HTML/CSS/JS Websites
+1. uid-eme-689 
+   - VIDEO FILE `template-tag-nav-visual-website.mp4`
+2. uid-srs-009
+  - VIDEO FILE `ai-app-analysis-panel.mp4`
+3. uid-lul-419
+  - VIDEO FILE `ai-ui-meditation-journal-app.mp4`
+4. uid-rfr-187
+  - VIDEO FILE `saas-trial-contact-sign-up.mp4`
+5. uid-wnw-867
+  - VIDEO FILE `framed-staged-art-history-print-shop.mp4`
+6. uid-wgw-370
+  - VIDEO FILE `fashion-generative-in-painted-looks.mp4`
+7. uid-hwi-844
+  - VIDEO FILE `archetype-ai-print-style-guide.mp4`
+8. uid-qor-090
+  - VIDEO FILE `landing-page-research-presentations-data.mp4`
+9. uid-sgt-851
+  - VIDEO FILE `single-page-projects-overview-website.mp4`
+10. uid-tev-176
+  - VIDEO FILE `ai-gen-blog-fashion-lookbook-print-shop.mp4`
+11. uid-fth-565
+  - VIDEO FILE `hand-drawn-anim-ai-blogs.mp4`
+12. uid-unw-889
+  - VIDEO FILE `personal-design-branding-art.mp4`
+13. uid-wty-542
+  - VIDEO FILE `custom-designed-illustrator-site.mp4`
+14. uid-dff-987
+  - VIDEO FILE `custom-nav-cms-store-magazine.mp4`
 
-* **ENTRY ID** uid-eme-689
-  + SEO title, SEO description 
-    1. Modular Masthead Nav Comprehensive Portfolio 
-    2. 
-  + ASSETS 
-    - VIDEO FILE `template-tag-nav-visual-website.mp4` 
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `developer-technologist.august.style` 
-    - GITHUB `github.com/seanivore/portfolio`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `modular-portfolio-build.html`
-  + TAGS *Website Developer + HTML/CSS/JS + Full Stack + Product*
-  + NOTES 
-    1. Create actual entries to other sections from select entries in this portfolio 
-    2. Better format repository for a "How to Use This Portfolio" that could use a visual intro and map show how the sections connect (or otherwise build in modular way). Show how it is reusable and great for first time HTML/CSS/JS website builders. Perhaps even a "Work with AI to build" angle 
-  + Page title, copy, etc.
-    1. 
-    2. 
-
-* **ENTRY ID** uid-srs-009
-  + SEO title, description 
-    1. AI App Data Visualization Dashboard
-    2. 
-  + ASSETS 
-    - VIDEO FILE `ai-app-analysis-panel.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `design.august.style/projects/ai-admin-dashboard`
-    - GITHUB `github.com/seanivore/design-site`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `data-visualization-dashboard.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1. 
-    2. 
-
-* **ENTRY ID** uid-lul-419
-  + SEO title, description 
-    1. AI Led UI Meditation Journal Mobile App
-    2. 
-  + ASSETS 
-    - VIDEO FILE `ai-ui-meditation-journal-app.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `design.august.style/projects/mindflow-app`
-    - GITHUB `github.com/seanivore/design-site`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `ai-meditation-mobile-app.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1. 
-    2. 
-
-* **ENTRY ID** uid-rfr-187
-  + SEO title, description 
-    1. SAAS Product Sales, Sign-up, Contact 
-    2. 
-  + ASSETS 
-    - VIDEO FILE `saas-trial-contact-sign-up.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `design.august.style/projects/css-anim-saas-landing`
-    - GITHUB `github.com/seanivore/design-site`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `saas-product-sale-features.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1. 
-    2. 
-
-* **ENTRY ID** uid-wnw-867
-  + SEO title, description 
-    1. Minimalist Web Store Product Sale  
-    2. 
-  + ASSETS 
-    - VIDEO FILE `framed-staged-art-history-print-shop.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `design.august.style/projects/webflow-print-series`
-    - GITHUB `github.com/seanivore/design-site`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `minimalist-web-store-product.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1. 
-    2. 
-
-* **ENTRY ID** uid-wgw-370
-  + SEO title, description 
-    1. AI Generative In-Painted Fashion Lookbook 
-    2. 
-  + ASSETS 
-    - VIDEO FILE `fashion-generative-in-painted-looks.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `design.august.style/projects/summer-lookbook-part-1`
-    - GITHUB `github.com/seanivore/design-site`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `ai-design-fashion-lookbook.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1. 
-    2. 
-
-* **ENTRY ID** uid-hwi-844
-  + SEO title, description 
-    1. Art History AI Designed Personalized Fashion Magazine  
-    2. 
-  + ASSETS 
-    - VIDEO FILE `archetype-ai-print-style-guide.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `design.august.style/projects/autumn-lookbook-part-1`
-    - GITHUB `github.com/seanivore/design-site`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `personalized-fashion-magazine.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1. Design Fashion That Matters with Archetypal Storytelling 
-    2. 
-
-* **ENTRY ID** uid-qor-090
-  + SEO title, description 
-    1.   
-    2. 
-  + ASSETS 
-    - VIDEO FILE `landing-page-research-presentations-data.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `presenting.august.style`
-    - GITHUB `github.com/seanivore/presentation-decks`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `css-animated-micro-interactions.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1.  
-    2. 
-
-* **ENTRY ID** uid-sgt-851
-  + SEO title, description 
-    1.   
-    2. 
-  + ASSETS 
-    - VIDEO FILE `single-page-projects-overview-website.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `projects.august.style`
-    - GITHUB `github.com/seanivore/seanivore-contact`
-    - SECTION `august.style/web/html-css-js/`
-    - PAGE `amorphous-gradient-css-animation.html`
-  + TAGS 
-  + NOTES 
-    - Some entries might make good actual portfolio entries outside of web development section 
-  + Page title, copy, etc.
-    1.  
-    2. 
-
-### Framer Designed Websites 
-
-* **ENTRY ID** uid-tev-176
-  + SEO title, description 
-    1.   
-    2. 
-  + ASSETS 
-    - VIDEO FILE `ai-gen-blog-fashion-lookbook-print-shop.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `ai-generated-content.august.style`
-    - GITHUB `github.com/seanivore/framer-cms-lookbook`
-    - SECTION `august.style/web/framer/`
-    - PAGE `blog-lookbook-print-gallery.html`
-  + TAGS 
-  + NOTES: Primarily local 
-  + Page title, copy, etc.
-    1.  
-    2. 
-
-### Webflow Designed Websites 
-
-* **ENTRY ID** uid-fth-565
-  + SEO title, description 
-    1.   
-    2. 
-  + ASSETS 
-    - VIDEO FILE `hand-drawn-anim-ai-blogs.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `generative-horoscopes.august.style`
-    - GITHUB `github.com/seanivore/astrofluenced`
-    - SECTION `august.style/web/webflow/`
-    - PAGE `animated-cms-weekly-blogs.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1.  
-    2. 
-
-* **ENTRY ID** uid-unw-889
-  + SEO title, description 
-    1.   
-    2. 
-  + ASSETS 
-    - VIDEO FILE `personal-design-branding-art.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `online-pt-trainer.august.style`
-    - GITHUB `github.com/seanivore/ckheals`
-    - SECTION `august.style/web/webflow/`
-    - PAGE `training-yoga-sales.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1.  
-    2. 
-
-* **ENTRY ID** uid-wty-542
-  + SEO title, description 
-    1.   
-    2. 
-  + ASSETS 
-    - VIDEO FILE `custom-designed-illustrator-site.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `visual-producer.august.style`
-    - GITHUB `github.com/seanivore/webflow-2023`
-    - SECTION `august.style/web/webflow/`
-    - PAGE `visual-artist-process-portfolio.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1.  
-    2. 
-
-* **ENTRY ID** uid-dff-987
-  + SEO title, description 
-    1.   
-    2. 
-  + ASSETS 
-    - VIDEO FILE `custom-nav-cms-store-magazine.mp4`
-    - VIDEO EMBED 
-    - THUMBNAIL 
-    - ON-PAGE IMAGES 
-  + URLS 
-    - OLD `print-shop-fashion.august.style`
-    - GITHUB `github.com/seanivore/webflow-store`
-    - SECTION `august.style/web/webflow/`
-    - PAGE `automated-e-commerce-shop-lookbook.html`
-  + TAGS 
-  + NOTES 
-  + Page title, copy, etc.
-    1.  
-    2. 
 
 ---
 

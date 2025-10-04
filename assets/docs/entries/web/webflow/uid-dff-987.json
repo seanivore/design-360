@@ -1,0 +1,42 @@
+{
+  "_metadata": {
+    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "required_fields": true,
+    "schema_version": "1.0",
+    "template_type": "portfolio_entry"
+  },
+  "categorization": {
+    "entry_id": "uid-dff-987", 
+    "placement": {
+        "section": "",
+        "sub_section": "", 
+        "slug": "august.style/web/webflow/",
+        "file_name": "automated-e-commerce-shop-lookbook.html"
+    },
+    "tagging":{
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "custom-nav-cms-store-magazine.mp4",
+        "video_embed": "", 
+        "thumbnail_image": "", 
+        "page_imagery": []
+        },
+    "assets": {
+        "project_url": "https://print-shop-fashion.august.style",
+        "github_repository": "https://github.com/seanivore/webflow-store"
+    },
+    "copy":{
+        "seo_title": "",
+        "seo_description": "", 
+        "page_title": "", 
+        "page_copy": ""
+    }, 
+    "notes": ""
+}
+}

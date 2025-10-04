@@ -1,0 +1,48 @@
+{
+  "_metadata": {
+    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "required_fields": true,
+    "schema_version": "1.0",
+    "template_type": "portfolio_entry"
+  },
+  "categorization": {
+    "entry_id": "uid-lul-419", 
+    "placement": {
+        "section": "Web",
+        "sub_section": "Custom", 
+        "slug": "august.style/web/html-css-js/",
+        "file_name": "ai-meditation-mobile-app.html"
+    },
+    "tagging":{
+        "technology": [
+            "Web", "Digital", "HTML/CSS/JS", "Generative AI", "Full Stack"
+        ],
+        "media": [],
+        "role": [
+            "Website Developer"
+        ], 
+        "skill": [
+            "Agentic Development", "Copywriting", "Graphic Design"
+        ]
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "ai-ui-meditation-journal-app.mp4",
+        "video_embed": "", 
+        "thumbnail_image": "", 
+        "page_imagery": []
+        },
+    "assets": {
+        "project_url": "https://www.design.august.style/projects/mindflow-app",
+        "github_repository": "https://www.github.com/seanivore/design-site"
+    },
+    "copy":{
+        "seo_title": "",
+        "seo_description": "", 
+        "page_title": "", 
+        "page_copy": ""
+    }, 
+    "notes": []
+}
+}

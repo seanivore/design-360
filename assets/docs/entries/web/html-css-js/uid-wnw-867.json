@@ -1,0 +1,42 @@
+{
+  "_metadata": {
+    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "required_fields": true,
+    "schema_version": "1.0",
+    "template_type": "portfolio_entry"
+  },
+  "categorization": {
+    "entry_id": "uid-wnw-867", 
+    "placement": {
+        "section": "Web",
+        "sub_section": "Custom", 
+        "slug": "august.style/web/html-css-js/",
+        "file_name": "minimalist-web-store-product.html"
+    },
+    "tagging":{
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "framed-staged-art-history-print-shop.mp4",
+        "video_embed": "", 
+        "thumbnail_image": "", 
+        "page_imagery": []
+        },
+    "assets": {
+        "project_url": "https://design.august.style/projects/webflow-print-series",
+        "github_repository": "https://github.com/seanivore/design-site"
+    },
+    "copy":{
+        "seo_title": "Minimalist Web Store Product Sale",
+        "seo_description": "", 
+        "page_title": "", 
+        "page_copy": ""
+    }, 
+    "notes": ""
+}
+}

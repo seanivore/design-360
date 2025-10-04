@@ -1,0 +1,42 @@
+{
+  "_metadata": {
+    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "required_fields": true,
+    "schema_version": "1.0",
+    "template_type": "portfolio_entry"
+  },
+  "categorization": {
+    "entry_id": "", 
+    "placement": {
+        "section": "",
+        "sub_section": "", 
+        "slug": "",
+        "file_name": ""
+    },
+    "tagging":{
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "",
+        "video_embed": "", 
+        "thumbnail_image": "", 
+        "page_imagery": []
+        },
+    "assets": {
+        "project_url": "",
+        "github_repository": ""
+    },
+    "copy":{
+        "seo_title": "",
+        "seo_description": "", 
+        "page_title": "", 
+        "page_copy": ""
+    }, 
+    "notes": ""
+}
+}
