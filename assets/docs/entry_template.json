@@ -25,7 +25,7 @@
         "video_filename": "",
         "video_url": "",
         "video_embed": "", 
-        "thumbnail_image": "", 
+        "thumbnail_image": [], 
         "page_imagery": []
         },
     "assets": {

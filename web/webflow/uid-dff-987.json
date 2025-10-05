@@ -25,7 +25,14 @@
         "video_filename": "custom-nav-cms-store-magazine.mp4",
         "video_url": "https://youtu.be/lnoKsXWa584",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/lnoKsXWa584?si=1bdNy9s8d65d5Kme&amp;controls=0' title='Automated Webflow CMS Shop & Fashion Gallery' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "thumbnail_image": "", 
+        "thumbnail_image": [
+            "assets/web/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp",
+            "assets/web/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-2.webp",
+            "assets/web/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-3.webp",
+            "assets/web/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-4.webp",
+            "assets/web/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-5.webp",
+            "assets/web/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-6.webp"
+        ], 
         "page_imagery": []
         },
     "assets": {

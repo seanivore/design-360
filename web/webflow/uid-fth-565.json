@@ -28,7 +28,14 @@
         "videp_2_title": "Custom Line-Animations Direct Users Around This Massive Blog",
         "video_url_2": "https://youtu.be/jZokrZGpWP8",
         "video_embed_2": "<iframe width='560' height='315' src='https://www.youtube.com/embed/jZokrZGpWP8?si=9WG6E7gvb_1zV_WS&amp;controls=0' title='Custom Line-Animations Direct Users Around This Massive Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-        "thumbnail_image": "", 
+        "thumbnail_image": [
+            "assets/web/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp",
+            "assets/web/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-2.webp",
+            "assets/web/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-3.webp",
+            "assets/web/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-4.webp",
+            "assets/web/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-5.webp",
+            "assets/web/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-6.webp"
+        ], 
         "page_imagery": []
         },
     "assets": {
