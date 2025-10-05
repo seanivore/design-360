@@ -23,7 +23,8 @@
 "content": {
     "media": {
         "video_filename": "single-page-projects-overview-website.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/w14lqrILIyY",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/w14lqrILIyY?si=EzfBG0p1YDnMug_e&amp;controls=0' title='Gradient Morphing CSS Animation Web Design' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -32,8 +33,8 @@
         "github_repository": "https://github.com/seanivore/seanivore-contact"
     },
     "copy":{
-        "seo_title": "",
-        "seo_description": "", 
+        "seo_title": "Gradient Morphing CSS Animation Web Design",
+        "seo_description": "Created using just HTML and CSS this light-weight animated background is engaging behind any content, or carefully chosen typography", 
         "page_title": "", 
         "page_copy": ""
     }, 

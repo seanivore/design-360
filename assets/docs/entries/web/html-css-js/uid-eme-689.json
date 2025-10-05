@@ -31,7 +31,8 @@
 "content": {
     "media": {
         "video_filename": "template-tag-nav-visual-website.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/OLZHwv2o-zQ",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OLZHwv2o-zQ?si=1px7OtROcUfpq8il&amp;controls=0' title='Build a Visual, Tag-Navigated, Portfolio with AI's Help' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -40,8 +41,8 @@
         "github_repository": "https://www.github.com/seanivore/portfolio"
     },
     "copy":{
-        "seo_title": "Modular Tag-Navigation Visual Portfolio & Template",
-        "seo_description": "", 
+        "seo_title": "Build a Visual, Tag-Navigated, Portfolio with AI's Help",
+        "seo_description": "Modular website conventions template for first time HTML/CSS/JS development with AI", 
         "page_title": "", 
         "page_copy": ""
     }, 

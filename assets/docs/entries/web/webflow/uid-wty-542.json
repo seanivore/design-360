@@ -23,7 +23,8 @@
 "content": {
     "media": {
         "video_filename": "custom-designed-illustrator-site.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/m0sUd-oWFqQ",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/m0sUd-oWFqQ?si=VuUDHTQceqpCHKWL&amp;controls=0' title='Digital Illustrated, Bold, Iconic Webflow Designed Portfolio' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -32,8 +33,8 @@
         "github_repository": "https://github.com/seanivore/webflow-2023"
     },
     "copy":{
-        "seo_title": "",
-        "seo_description": "", 
+        "seo_title": "Digital Illustrated, Bold, Iconic Webflow Designed Portfolio",
+        "seo_description": "Bold gold frames and impactful typography pull together this Webflow portfolio showing digital process", 
         "page_title": "", 
         "page_copy": ""
     }, 

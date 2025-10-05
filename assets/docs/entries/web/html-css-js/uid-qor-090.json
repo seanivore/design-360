@@ -23,7 +23,8 @@
 "content": {
     "media": {
         "video_filename": "landing-page-research-presentations-data.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/hNdy_KW1w8U",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections & Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -32,8 +33,8 @@
         "github_repository": "https://github.com/seanivore/presentation-decks"
     },
     "copy":{
-        "seo_title": "",
-        "seo_description": "", 
+        "seo_title": "Two Presentation Deck Sections & Markdown-Based Index",
+        "seo_description": "Versatile website features two presentation sections, a CSS-animated homepage with glassmorphic tiles, and a markdown-based index section",
         "page_title": "", 
         "page_copy": ""
     }, 

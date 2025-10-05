@@ -23,7 +23,8 @@
 "content": {
     "media": {
         "video_filename": "hand-drawn-anim-ai-blogs.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/LakcBI95rfU",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/LakcBI95rfU?si=Ml8H49Xs5LXGL5iv&amp;controls=0' title='Custom Lottie Animated Webflow CMS Daily Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -32,8 +33,8 @@
         "github_repository": "https://github.com/seanivore/astrofluenced"
     },
     "copy":{
-        "seo_title": "",
-        "seo_description": "", 
+        "seo_title": "Custom Lottie Animated Webflow CMS Daily Blog",
+        "seo_description": "Hand-drawn custom backgrounds and animated illustrations cover this massive 10+ daily Webflow CMS blog", 
         "page_title": "", 
         "page_copy": ""
     }, 

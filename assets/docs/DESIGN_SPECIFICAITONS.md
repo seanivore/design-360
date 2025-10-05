@@ -56,17 +56,17 @@
 | Team Manager          | Toggle Nav |
 | Consulting            | Toggle Nav |
 
-### Written Content Flow 
+### Written Content Must Include  
 
-  * **Simple, concise; section points** 
+  - **Context:** Role and relationship to project 
+  - **Pattern spotted:** Content and strategy logic 
+  - **Move made:** Execution, procedure, resources committed 
+  - **Metrics moved:** Results, thoughts on doing things differently 
 
-    1. Drill-down: Design, strategy, copywriting, etc. 
-    2. Influence: What was my role 
-    3. Project written content: 
-       - **Context:** Role and relationship to project 
-       - **Pattern spotted:** Content and strategy logic 
-       - **Move made:** Execution, procedure, resources committed 
-       - **Metrics moved:** Results, thoughts on doing things differently 
+### iFrame YouTube Embed Docs 
+
+  - `https://developers.google.com/youtube/iframe_api_reference`
+
 ---
 
 ## Home `august.style`

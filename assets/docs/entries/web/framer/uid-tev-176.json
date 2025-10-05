@@ -23,7 +23,8 @@
 "content": {
     "media": {
         "video_filename": "ai-gen-blog-fashion-lookbook-print-shop.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/DvdaYVqqOY0",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/DvdaYVqqOY0?si=So5Q2i2Gf5l-w59S&amp;controls=0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -32,8 +33,8 @@
         "github_repository": "https://github.com/seanivore/framer-cms-lookbook"
     },
     "copy":{
-        "seo_title": "",
-        "seo_description": "", 
+        "seo_title": "Framer CMS Web Design Shop, Gallery, AI Blog",
+        "seo_description": "Bauhaus inspired custom Framer website design with engaging interactive component shapes.", 
         "page_title": "", 
         "page_copy": ""
     }, 

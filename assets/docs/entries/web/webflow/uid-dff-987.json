@@ -23,7 +23,8 @@
 "content": {
     "media": {
         "video_filename": "custom-nav-cms-store-magazine.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/lnoKsXWa584",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/lnoKsXWa584?si=1bdNy9s8d65d5Kme&amp;controls=0' title='Automated Webflow CMS Shop & Fashion Gallery' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -32,8 +33,8 @@
         "github_repository": "https://github.com/seanivore/webflow-store"
     },
     "copy":{
-        "seo_title": "",
-        "seo_description": "", 
+        "seo_title": "Automated Webflow CMS Shop & Fashion Gallery",
+        "seo_description": "Custom developed and designed, engaging, interactive from the navigation to the 800+ product web store & fashion lookbook", 
         "page_title": "", 
         "page_copy": ""
     }, 

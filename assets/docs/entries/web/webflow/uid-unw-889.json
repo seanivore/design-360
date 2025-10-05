@@ -23,7 +23,8 @@
 "content": {
     "media": {
         "video_filename": "personal-design-branding-art.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/LmwTrPKaUtg",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/LmwTrPKaUtg?si=wfQU81GdbJ7psu8o&amp;controls=0' title='Client Branded Webflow Online Training Platform' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -32,8 +33,8 @@
         "github_repository": "https://github.com/seanivore/ckheals"
     },
     "copy":{
-        "seo_title": "",
-        "seo_description": "", 
+        "seo_title": "Client Branded Webflow Online Training Platform",
+        "seo_description": "Carefully hand-drawn background, logo, and other details pull together the branding of this client's Webflow site", 
         "page_title": "", 
         "page_copy": ""
     }, 

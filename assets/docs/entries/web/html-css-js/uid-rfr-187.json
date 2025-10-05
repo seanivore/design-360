@@ -29,7 +29,8 @@
 "content": {
     "media": {
         "video_filename": "saas-trial-contact-sign-up.mp4",
-        "video_embed": "", 
+        "video_url": "https://youtu.be/JHghuUyw7xA",
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JHghuUyw7xA?si=MjBm5BsP1mdXweTq&amp;controls=0' title='SAAS Product Sales, Sign-up, Contact Page Essentials' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_image": "", 
         "page_imagery": []
         },
@@ -38,8 +39,8 @@
         "github_repository": "https://www.github.com/seanivore/design-site"
     },
     "copy":{
-        "seo_title": "SAAS Product Sales, Sign-up, Contact",
-        "seo_description": "", 
+        "seo_title": "SAAS Product Sales, Sign-up, Contact Page Essentials",
+        "seo_description": "Sell software with this modern, CSS-animated, optimized layout, tiered, feature and sign-up website", 
         "page_title": "", 
         "page_copy": ""
     }, 
