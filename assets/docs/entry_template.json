@@ -23,6 +23,7 @@
 "content": {
     "media": {
         "video_filename": "",
+        "video_url": "",
         "video_embed": "", 
         "thumbnail_image": "", 
         "page_imagery": []
