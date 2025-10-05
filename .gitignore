@@ -4,6 +4,7 @@
 *.mp4
 *.jpg
 *.jpeg
+*.webm
 
 # Environment variables
 .env

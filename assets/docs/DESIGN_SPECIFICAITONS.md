@@ -76,6 +76,10 @@
     + Keep them all the same shrink-responsive aspect ratio 
     + Tiles on homepage and on section pages look the same 
 
+* **Uniform interactivity**
+
+  - See visual inspo images 
+
   - Micro-interactions 
     + Only on click and on page change 
     + No hover effects because we are designing 100% mobile first 
@@ -177,25 +181,29 @@
   - Three sections of the page are section navigation, about, and contact 
   - Create URL that jumps to each of the three and forward that to actual URL 
 
-### Main Section Navigation `august.style/projects`
-### About -- forward jump to this part of homepage to `august.style/about`
+### Projects `august.style/projects`
 
-     **Sean August Horvath, Creative Generalist**
+  + Section Tile Navigation
 
-     > 14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft. 
+### About `august.style/about`
 
-  3. Contact -- forward jump to this part of homepage to `august.style/contact` 
+   **Sean August Horvath, Creative Generalist**
 
-     - [github.com/seanivore](https://github.com/seanivore)
-     - [linkedin.com/in/seanivore/](https://www.linkedin.com/in/seanivore/)
-     - [instagram.com/seanivore/](https://www.instagram.com/seanivore/)
-     - [horvathaugust@gmail.com](mailto:horvathaugust@gmail.com)
+   > 14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft. 
 
-## Web `august.style/web/`
+### Contact `august.style/contact` 
+
+   - [github.com/seanivore](https://github.com/seanivore)
+   - [linkedin.com/in/seanivore/](https://www.linkedin.com/in/seanivore/)
+   - [instagram.com/seanivore/](https://www.instagram.com/seanivore/)
+   - [horvathaugust@gmail.com](mailto:horvathaugust@gmail.com)
+
+## Web `august.style/web/` **all JSON files placed**
 
 * **On-section page** 
 
    + Toggle on/off each of the three sub-section categories 
+   + Only other tags that show are "toggle tags" if they exist on any of the JSON project entry files 
    + Entry list is randomized every reload or toggle change 
 
 * **Regarding web project pages** 
@@ -203,9 +211,9 @@
    + Each has one (or two) YouTube iFrame HTML embeds 
    + Resource if needed: `https://developers.google.com/youtube/iframe_api_reference`
 
-### `august.style/web/framer/` **JSON files placed**
-### `august.style/web/html-css-js/` **JSON files placed**
-### `august.style/web/webflow/` **JSON files placed**
+### `august.style/web/framer/` **NOT to be made into HTML section page**
+### `august.style/web/html-css-js/` **NOT to be made into HTML section page**
+### `august.style/web/webflow/` **NOT to be made into HTML section page**
 
 ## Print `august.style/print/`
 ## Digital `august.style/digital/`
