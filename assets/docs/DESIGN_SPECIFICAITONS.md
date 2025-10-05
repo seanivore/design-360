@@ -2,26 +2,17 @@
 
 ## Overview 
 
-  1. One website to rule them all 
-  2. Stronger copywriting; less is more, use job title SEO 
-  3. With > 50 entries, be UI smart 
-  4. Design 100% visual and mobile first 
+  1. One website to rule them all, with stronger image-first design, copywriting focused on using job title SEO, and completely mobile first. As a generalist "360º design" or "Creative Director" web portfolio, the UI must be perfect to navigate the 50+ project entries spread across a large handful of website sections. 
+  2. The message is to solve the **PROBLEM** of downsizing, economic uncertainty, and AI operational integration by presenting myself as the **SOLUTION** for being down-sizing-friendly and showing hiring managers why I'm the easy choice to optimize their workforce for the new landscape. 
 
-### Message 
+### Written Content Structure 
 
-  + **Problem:** downsizing, economic uncertainty, AI operational integration 
-  + **Solution:** I am downsizing-friendly, see my broad experience background 
+  - **Context:** Role and relationship to project 
+  - **Pattern spotted:** Content and strategy logic 
+  - **Move made:** Execution, procedure, resources committed 
+  - **Metrics moved:** Results, thoughts on doing things differently 
 
-    + Organizations are downsizing, but your work can't 
-    + Hire someone with 360º portfolio experience 
-    + Not downsizing yet? Optimize your labor and make an impression
-    + Here's why I'm the easy choice 
-
-  * **Framing better fits actual background and meets employers where they are**
-  
-  - Present full background to highlight generalist expertise
-
-### Experience Coverage Groups 
+### Relevant Skills & Job Titles  
 
   + Creative, Art Director 
   + Social, Video, Email, SMS, Viral, Content Producer 
@@ -32,36 +23,23 @@
   + Remote/Team, Client/Account, Project Manager 
   + Digital, Business, Branding Consultant 
 
-### UI UX 
+### Sectioning & Tagging 
 
-  1. Major sections via tags with minimal overlap 
-  2. Minor tags, navigable in two ways 
-     - Click through to all posts with those tags 
-     - Toggle next to link on each page to hide or show those posts 
+| Tag                   | Type                          |
+| --------------------- | ----------------------------- |
+| **Print**             | Major website section         |
+| **Digital**           | Major website section         |
+| **Motion Graphics**   | Major website section         |
+| **Video**             | Major website section         |
+| **OOH (Out-of-Home)** | Major website section         |
+| **Web**               | Major website section         |
+| Generative AI         | Toggle Nav, view all related  |
+| Product               | Toggle Nav, view all related  |
+| Copywriting           | Toggle Nav, view all related  |
+| Interactive           | Toggle Nav, view all related  |
+| Team Manager          | Toggle Nav, view all related  |
+| Consulting            | Toggle Nav, view all related  |
 
-  * **Not final, start to tag list** 
-
-| Tag                   | Type       |
-| --------------------- | ---------- |
-| **Print**             | Section    |
-| **Digital**           | Section    |
-| **Motion Graphics**   | Section    |
-| **Video**             | Section    |
-| **OOH (Out-of-Home)** | Section    |
-| **Web**               | Section    |
-| Generative AI         | Toggle Nav |
-| Product               | Toggle Nav |
-| Copywriting           | Toggle Nav |
-| Interactive           | Toggle Nav |
-| Team Manager          | Toggle Nav |
-| Consulting            | Toggle Nav |
-
-### Written Content Must Include  
-
-  - **Context:** Role and relationship to project 
-  - **Pattern spotted:** Content and strategy logic 
-  - **Move made:** Execution, procedure, resources committed 
-  - **Metrics moved:** Results, thoughts on doing things differently 
 
 ### iFrame YouTube Embed Docs 
 
@@ -72,8 +50,8 @@
 ## Home `august.style`
 
  1. Main Section Navigation 
- 2. About 
- 3. Contact 
+ 2. About -- forward jump to this part of homepage to `august.style/about`
+ 3. Contact -- forward jump to this part of homepage to `august.style/contact` 
 
 **Sean August Horvath, Creative Generalist**
 
@@ -84,36 +62,24 @@
   - [instagram.com/seanivore/](https://www.instagram.com/seanivore/)
   - [horvathaugust@gmail.com](mailto:horvathaugust@gmail.com)
 
-## Web 
-
-1. uid-eme-689 
-   - VIDEO FILE `template-tag-nav-visual-website.mp4`
-2. uid-srs-009
-  - VIDEO FILE `ai-app-analysis-panel.mp4`
-3. uid-lul-419
-  - VIDEO FILE `ai-ui-meditation-journal-app.mp4`
-4. uid-rfr-187
-  - VIDEO FILE `saas-trial-contact-sign-up.mp4`
-5. uid-wnw-867
-  - VIDEO FILE `framed-staged-art-history-print-shop.mp4`
-6. uid-wgw-370
-  - VIDEO FILE `fashion-generative-in-painted-looks.mp4`
-7. uid-hwi-844
-  - VIDEO FILE `archetype-ai-print-style-guide.mp4`
-8. uid-qor-090
-  - VIDEO FILE `landing-page-research-presentations-data.mp4`
-9. uid-sgt-851
-  - VIDEO FILE `single-page-projects-overview-website.mp4`
-10. uid-tev-176
-  - VIDEO FILE `ai-gen-blog-fashion-lookbook-print-shop.mp4`
-11. uid-fth-565
-  - VIDEO FILE `hand-drawn-anim-ai-blogs.mp4`
-12. uid-unw-889
-  - VIDEO FILE `personal-design-branding-art.mp4`
-13. uid-wty-542
-  - VIDEO FILE `custom-designed-illustrator-site.mp4`
-14. uid-dff-987
-  - VIDEO FILE `custom-nav-cms-store-magazine.mp4`
+## **SECTION:** Web 
+### web/framer/
+- `assets/docs/entries/web/framer/uid-tev-176.json`
+### web/html-css-js/
+- `assets/docs/entries/web/html-css-js/uid-eme-689.json`
+- `assets/docs/entries/web/html-css-js/uid-hwi-844.json`
+- `assets/docs/entries/web/html-css-js/uid-lul-419.json`
+- `assets/docs/entries/web/html-css-js/uid-qor-090.json`
+- `assets/docs/entries/web/html-css-js/uid-rfr-187.json`
+- `assets/docs/entries/web/html-css-js/uid-sgt-851.json`
+- `assets/docs/entries/web/html-css-js/uid-srs-009.json`
+- `assets/docs/entries/web/html-css-js/uid-wgw-370.json`
+- `assets/docs/entries/web/html-css-js/uid-wnw-867.json`
+### web/webflow/
+- `assets/docs/entries/web/webflow/uid-dff-987.json`
+- `assets/docs/entries/web/webflow/uid-fth-565.json`
+- `assets/docs/entries/web/webflow/uid-unw-889.json`
+- `assets/docs/entries/web/webflow/uid-wty-542.json`
 
 
 ---
@@ -130,15 +96,6 @@
 ### Webflow Hand-Drawn Illustrated Service Sales Website 
   + *Account Management + Web Designer + Business Development Consultant + Webflow + Local Rebuild + GitHub Pages + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting*
 
-
-
----
-
-## About and Contact 
- > `august.style/about` `august.style/contact` 
-
-  - Both URLs should jump down to that section of the main page `august.style/`
-  - If we need to use those #tags then let's redirect so that we have the main two important URLs 
 
 
 ---
