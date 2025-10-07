@@ -9,7 +9,11 @@
   5. UI for easy UX to preview 50+ project entries 
 
     + The message is to solve the **PROBLEM** of downsizing, economic uncertainty, and AI operational integration 
-    + Present as being a downsizing-friendly **SOLUTION** for managers to optimize their workforce for modern landscape  
+    + Present as being a downsizing-friendly **SOLUTION** for managers to optimize their workforce for modern landscape 
+
+### Modular Dynamic Updating Design Functionality 
+
+
 
 ### Steps to Completion 
 
@@ -24,96 +28,178 @@
 
 ---
 
-## Content UI and UX 
+## Content Management, UI, UX 
 
-### Project Entry JSON `assets/docs/entry_template.json` 
+### Project Entry JSON 
 
-  - For every project 
-  - Make no schema changes without approval; 
-    need POA to list outdated files 
+* **Use for every project** 
+
+  + Template: `assets/docs/entry_template.json` 
+  + Template changes require approval 
+    - Changes would need POA 
+    - Listing outdated files 
+    - Identifying update needs 
+  + Page's HTML filename is in the project's JSON file 
+
+* **JSON filename created using _uid command** 
+
+```bash 
+> _uid 
+Generated _uid: _uid-enl-043
+```
+
+### Page Guidelines 
+
+  + Highly visual 
+    - Use thumbnail slide images if needed 
+    - No bullet points, just very short sentences 
+    - Only few sentences max per section 
+  + Page structure easy to scan 
+
+### Project Copy 
+
+* **Write quality SEO title, then divide it into**
+    - H1 "page_title" 
+    - H2 "page_subtitle"
+
+* **The page copy should get four clear sections with H3**
+    - H3 "Role", "Pattern", "Action", "Measured" 
+
+  1. **Role:** Context of involvement, relationship to project 
+  2. **Pattern:** Opportunity identified, content and strategy logic 
+  3. **Action:** Resulting moves, execution, procedure, resources committed 
+  4. **Measured:** Metrics, the results, thoughts for next time 
+
+* **Similarly sized, and out of the way, at top and bottom of page**
+    - H4 "media", "technology", "skill" 
+    - H5 breadcrumbs 
+
+### Project Tile Guidelines 
+
+* **Design strategy logic for tiles** 
+
+    - Visuals and tile text should tell whole story 
+    - Essentially create overview so no click is needed 
+    - User should only click if highly interested 
+    - This is to balance out the fact that the portfolio is huge 
+
+* **Define standard component** 
+
+  + For homepage and section tiles 
+  + All tiles have fixed aspect ratio 
+  + Create for desktop, tablet, and media (mobile)
+  + Make width shrink/grow-responsive between main aspect ratios 
+  + Good example: `https://developer-technologist.august.style/` 
+    - Homepage tiles don't stretch/squeeze at all 
+    - Images on page do 
+
+* **Image and "tile_text" UI/UX** 
+
+  + Thumbnail UI coaxes user to know what to do 
+    - Show 1/8 of next thumbnail image so user swipes right 
+    - Define number and length of tile text needed 
+    - Consider tile text sharing image slide change 
+
+  + Thumbnail Slideshow 
+    - 1920 px by 1080 px images 
+    - At least 3 images, no more than 6 
+    - All have proper-seo-and-formatted-filenames 
+    - Images in compressed webp format already 
+    - Write alt. text on the fly from project + image filename 
+
+* **Uniform interactivity and navigation**
+
+  + Micro-interactions 
+    - Only on click and on page change 
+    - No hover effects because we are designing 100% mobile first 
+
+  + Toggle tag navigation 
+    - Only needed on section pages 
+    - Horizontal off-page swipe to scroll  
+    - Ensure part of tag is bleed out of view to prompt UI swipe 
+    - Tap turn on, moves to front (left), change color; tap again off
+
+### Tile Visual Specifics 
+
+* **Project tile location**
+
+  + Homepage tiles are created to show the section 
+    - Larger and squarer; more visual 
+    - Two columns when on desktop only 
+    - Swipe through collection of images pulled from project thumbnail JSON 
+  - Section tiles created to showcase project 
+    - Short and wide 
+    - Only one column ever, just bigger scale of image, bigger relative to tile text 
+
+* **See visual inspo images** 
+
+  1. 1_homepage_tile.png 
+     - For UI functionality example 
+     - Large because there are small number of main sections 
+  2. 2_section_tile.png 
+     - For UI functionality example 
+     - Short and wide because large number on section 
+  3. 3_tag_filters.png
+     - For UI functionality example; horizontal scrolling of tag filters 
+     - Simpler, word must bleed off to prompt user to swipe 
+     - When tapped, tag stays 'ON', moves to left, turns different color, tap again off 
+  4. 4_background_texture.png 
+     - For design visual example 
+     - But way more subtle, almost same color 
+     - Use repeating SVG for small file 
+     - Note the gradient down page; create like button boarders 
+  5. 5_mid_page_faq.png 
+     - For functionality UI and content example 
+     - Seems like a great idea but haven't thought further than that 
+
+* **Tile specifics** 
+
+  + Light mode VS dark mode background 
+    - Simple off-white VS black/charcoal 
+    - Ornate SVG repeating pattern in SLIGHTLY different shade for texture 
+    - Solid behind SVG pattern has gradient looks like glare down vertical of page 
+  + Light mode VS dark mode tile color 
+    - Colored similarly to background 
+    - Realistic, subtle shading 
+    - Sharp look and corners 
+  + Mobile and Tablet 
+    - One tile column 
+    - Short and wide for section, squarish for homepage 
+  + Desktop 
+    - Still one column for section pages; tile just bigger, more visual 
+    - UI of section page tile type would be strange if it was in 2 columns 
+    - Two columns should be okay for homepage tiles 
+  + Section color coding 
+    - Only on the homepage tiles 
+    - 2-3 px thick horizontal bar 
 
 ### Macro Website Structure 
 
 ```
-`august.style/` 
-├── web/
-│   ├── framer/
-│   │   └── uid-tev-176.json (HTML filename in JSON)
-│   ├── html-css-js/
-│   │   ├── uid-eme-689.json
-│   │   ├── uid-hwi-844.json
-│   │   ├── uid-lul-419.json
-│   │   ├── uid-qor-090.json
-│   │   ├── uid-rfr-187.json
-│   │   ├── uid-sgt-851.json
-│   │   ├── uid-srs-009.json
-│   │   ├── uid-wgw-370.json
-│   │   └── uid-wnw-867.json
-│   └── webflow/
-│       ├── uid-dff-987.json
-│       ├── uid-fth-565.json
-│       ├── uid-unw-889.json
-│       └── uid-wty-542.json
-├── print/
-├── digital/
-├── motion-graphic/
-└── video/
+`august.style/`                   `.index.html`
+├── web/                          `web.html`
+│   ├── framer/                   *Redirect to 'framer' filtered web section*
+│   │   └── _uid-tev-176.json  
+│   ├── html-css-js/              *Redirect to 'HTML/CSS/JS' filtered web section*
+│   │   ├── _uid-eme-689.json
+│   │   ├── _uid-hwi-844.json
+│   │   ├── _uid-lul-419.json
+│   │   ├── _uid-qor-090.json
+│   │   ├── _uid-rfr-187.json
+│   │   ├── _uid-sgt-851.json
+│   │   ├── _uid-srs-009.json
+│   │   ├── _uid-wgw-370.json
+│   │   └── _uid-wnw-867.json
+│   └── webflow/                  *Redirect to 'webflow' filtered web section*
+│       ├── _uid-dff-987.json
+│       ├── _uid-fth-565.json
+│       ├── _uid-unw-889.json
+│       └── _uid-wty-542.json
+├── print/                        `print.html`
+├── digital/                      `digital.html`
+├── motion-graphic/               `motion-graphic.html`
+└── video/                        `video.html`
 ```
-
-### Project Copy Structure 
-
-  - Highly visual on page content without using bullet points 
-  - ~ > 3 sentences max for each of the four sections 
-  - Call-out each 'Role', 'Pattern', 'Action', 'Measured' on every project page 
-  - Design so that the pages are recognizable based on the structure 
-
-  1. **Role:** Context of involvement or relationship to project 
-  2. **Pattern:** What opportunity was identified, by what content and strategy logic 
-  3. **Action:** The moves that resulted, the execution, procedure, and resources committed 
-  4. **Measured:** Metrics i/a, the results, maybe thoughts on doing things differently next time 
-
-### Visual Details 
-
-  - Visual-centric grid tiles 
-    + 2-columns and nearly square 
-    + Simple off-white or black/charcoal background
-    + Similarly colored tiles with realistic, sharp, subtle shading, angles 
-
-  - Define and standardize 
-    + Keep them all the same shrink-responsive aspect ratio 
-    + Tiles on homepage and on section pages look the same 
-
-* **Uniform interactivity**
-
-  - See visual inspo images 
-
-  - Micro-interactions 
-    + Only on click and on page change 
-    + No hover effects because we are designing 100% mobile first 
-
-  - Toggle tag navigation 
-    + On section pages only 
-    + No need on homepage because there are only five major sections 
-    + On mobile, one horizontal row that scrolls L/R much 
-    + Scroll L/R is like Google page search results sort options for Images, Shopping, etc. 
-    + Filtering toggle tags written strategically ensuring half of one word is part out of viewport so UI knows to swipe L then R 
-
-* **Tile strategy** 
-
-  - Combat large amount of content by providing a 'get it without clicking' experience 
-    + Strong GIF/WebM thumbnails 
-    + Overview highlights from 1-4 project page structure copy 
-    + Consider text that changes on the tiles, slowly changing to display a different highlight 
-
-* **Project tile location**
-
-  - Homepage tiles are created for the section  
-  - Tiles in sections are created specifically for each project 
-
-* **On-tile image and text** 
-
-   + Video or GIF projects use GIF/WebM thumbnails 
-   + Other projects, create image slideshow for GIF/WebM thumbnails 
 
 ---
 
