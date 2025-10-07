@@ -1,18 +1,18 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "last_updated": "2025-10-07T18:33:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "2.0",
+    "schema_version": "2.1",
     "schema_update": "breakdown of copy type and sections added"
   },
   "categorization": {
-    "entry_id": "", 
+    "entry_id": "_uid-abd-123", 
     "placement": {
         "section": "",
         "sub_section": "", 
-        "slug": "august.style/",
-        "file_name": ""
+        "slug": "august.style/section/subsection/",
+        "file_name": "rest-of-url.html"
     },
     "tagging":{
         "technology": [],

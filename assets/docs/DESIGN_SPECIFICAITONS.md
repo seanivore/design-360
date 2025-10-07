@@ -13,7 +13,23 @@
 
 ### Modular Dynamic Updating Design Functionality 
 
+* **Project entry JSON to use for every project**
 
+  + Template: `assets/docs/entry_template.json` 
+  + Template changes require approval, POA to list all outdated files to plan and update 
+  + Page's HTML filename is in the project's JSON file 
+
+  1. Homepage and section pages have tiles to the content 
+  2. Each tile type component is populated from the collections of JSON entries 
+  3. Similarly, the filter tags in the sections are populated from the JSON entries 
+  4. On-page information doesn't necessarily need to be dynamic, but might be helpful for parts, like tags 
+
+* **JSON filename created using _uid command** 
+
+```bash 
+> _uid 
+Generated _uid: _uid-enl-043
+```
 
 ### Steps to Completion 
 
@@ -29,24 +45,6 @@
 ---
 
 ## Content Management, UI, UX 
-
-### Project Entry JSON 
-
-* **Use for every project** 
-
-  + Template: `assets/docs/entry_template.json` 
-  + Template changes require approval 
-    - Changes would need POA 
-    - Listing outdated files 
-    - Identifying update needs 
-  + Page's HTML filename is in the project's JSON file 
-
-* **JSON filename created using _uid command** 
-
-```bash 
-> _uid 
-Generated _uid: _uid-enl-043
-```
 
 ### Page Guidelines 
 
@@ -174,9 +172,17 @@ Generated _uid: _uid-enl-043
     - 2-3 px thick horizontal bar 
 
 ### Macro Website Structure 
+*Example only; not all entries are listed*
+
+  - Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
+  - In the case of the homepage's sections, the #tagged URL should be redirected
+  - The section directories, like "web/" and "print/" should have section pages that they direct to 
 
 ```
 `august.style/`                   `.index.html`
+├── about/                        `.index.html`
+├── projects/                     `.index.html`
+├── contact/                      `.index.html`
 ├── web/                          `web.html`
 │   ├── framer/                   *Redirect to 'framer' filtered web section*
 │   │   └── _uid-tev-176.json  
@@ -201,11 +207,9 @@ Generated _uid: _uid-enl-043
 └── video/                        `video.html`
 ```
 
----
+### Sectioning & Tagging 
 
-## Sectioning & Tagging 
-
-### Three Tag Types 
+#### Three Tag Types 
 
   1. Section tag 
      - These define the actual sections of the website 
@@ -220,7 +224,7 @@ Generated _uid: _uid-enl-043
        (1) Role has **JUST ONE** and will be designed onto pages in prominent spot
        (2) Technology, (3) Media, (4) Skill are **COMPREHENSIVE** to be designed on page in word cloud 
 
-### Section & Toggle Tags 
+#### Section & Toggle Tags 
 
 | Tag                   | Type         |
 | --------------------- | ------------ |
@@ -237,7 +241,7 @@ Generated _uid: _uid-enl-043
 | Team Manager          | Toggle tag   |
 | Consulting            | Toggle tag   |
 
-### Relevant Skill-Based Job Titles **WORK INTO COPY & CONTEXTUAL TAGS**
+#### Relevant Skill-Based Job Titles **WORK INTO COPY & CONTEXTUAL TAGS**
 - First section are to be paired with *...one of second section* 
 - E.g. Creative Director, Art Director, etc. 
 - These are to be used by working them into the copy naturally, and in contextual tags 
@@ -253,18 +257,18 @@ Generated _uid: _uid-enl-043
   + Remote/Team, Client/Account, Project *...Manager*
   + Digital, Business, Branding *...Consultant*
 
-### Example Contextual Tags 
+#### Example Contextual Tags 
 
-#### Framer AI In-Painted Archetypal Fashion Lookbook 
+* **Framer AI In-Painted Archetypal Fashion Lookbook**
   + *Web Designer + Framer + AI Writing + AI Image Creation + AI Photo Editing + Fashion Design + System Design + Product*
 
-#### Framer Education Art History Immersion Print Shop 
+* **Framer Education Art History Immersion Print Shop**
   + *Web Designer + Framer + AI Image Creation + AI Creative Planning + AI Photo Editing + Art History + E-Commerce + Back-end Store Automation* 
 
-#### Webflow 200+ Weekly AI Generated Blog 
+* **Webflow 200+ Weekly AI Generated Blog**
   + *Web Designer + Webflow + Local Rebuild + GitHub Pages + AI Writing + API Publishing API + Database Management + Workflow Automation + AI Image Creation + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Custom Animation + Lottie Files*
 
-#### Webflow Hand-Drawn Illustrated Service Sales Website 
+* **Webflow Hand-Drawn Illustrated Service Sales Website**
   + *Account Management + Web Designer + Business Development Consultant + Webflow + Local Rebuild + GitHub Pages + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting*
 
 ---
