@@ -2,8 +2,14 @@
 
 ## Overview 
 
-  1. One website to rule them all, with stronger image-first design, copywriting focused on using job title SEO, and completely mobile first. As a generalist "360º design" or "Creative Director" web portfolio, the UI must be perfect to navigate the 50+ project entries spread across a large handful of website sections. 
-  2. The message is to solve the **PROBLEM** of downsizing, economic uncertainty, and AI operational integration by presenting myself as the **SOLUTION** for being down-sizing-friendly and showing hiring managers why I'm the easy choice to optimize their workforce for the new landscape. 
+  1. One website to rule them all 
+  2. Stronger, image-first design 
+  3. Job title/description SEO 
+  4. Mobile first i.e. hover isn't creative enough 
+  5. UI for easy UX to preview 50+ project entries 
+
+    + The message is to solve the **PROBLEM** of downsizing, economic uncertainty, and AI operational integration 
+    + Present as being a downsizing-friendly **SOLUTION** for managers to optimize their workforce for modern landscape  
 
 ### Steps to Completion 
 
@@ -20,10 +26,11 @@
 
 ## Content UI and UX 
 
-### Project JSON Entry Files  
+### Project Entry JSON `assets/docs/entry_template.json` 
 
-  - Each entry uses the same JSON object: `assets/docs/entry_template.json` 
-  - JSON objects below are located where their HTML file will be placed 
+  - For every project 
+  - Make no schema changes without approval; 
+    need POA to list outdated files 
 
 ### Macro Website Structure 
 
@@ -31,7 +38,7 @@
 `august.style/` 
 ├── web/
 │   ├── framer/
-│   │   └── uid-tev-176.json (HTML file listed in JSON)
+│   │   └── uid-tev-176.json (HTML filename in JSON)
 │   ├── html-css-js/
 │   │   ├── uid-eme-689.json
 │   │   ├── uid-hwi-844.json
