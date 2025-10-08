@@ -46,7 +46,7 @@
   7. Macro-website structure has a simple, user-expected organization 
      + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
      + In the case of the homepage's sections, the #tagged URL should be redirected `august.style/about` and `august.style/contact` 
-     + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc.  
+     + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc. 
 
 ### To Do Next 
 
