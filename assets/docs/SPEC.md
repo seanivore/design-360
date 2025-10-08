@@ -1,53 +1,60 @@
 # Creative Generalist Portfolio 
 
-## Overview 
+## Message 
 
-  1. One website to rule them all: `august.style`
-  2. Stronger, image-first design 
-  3. Job title/description SEO 
-  4. UI for easy UX to preview 50+ project entries 
+  + **PROBLEM:** downsizing because of economic uncertainty and AI operational integration 
+  + **SOLUTION:** I am downsizing-friendly to help managers optimize their workforce for the modern landscape 
 
-    + The message is to solve the **PROBLEM** of downsizing, economic uncertainty, and AI operational integration 
-    + Present as being a downsizing-friendly **SOLUTION** for managers to optimize their workforce for modern landscape 
+    - Generalist roles become more in-demand as organizations flatten
+
+### Website Overview 
+
+  1. One, generalist, portfolio website to rule them all: `august.style`
+  2. Design mobile and image first, using stronger job title/job opening description SEO  
+  3. Create a UI that makes previewing 50+ projects across field easy, without many clicks 
+  4. Build for longevity, ease of maintenance and updating 
 
 ### Design Summary 
 
   1. Technically simple HTML/CSS/JS build, published to Github Pages
-     + `./_config.yml` -- written and ready to go 
-     + `./CNAME` -- all set 
-  2. Homepage and section pages with tiles 
-     + Homepage has small number of larger tiles that go to sections, color coded by section with 2-3 px thick horizontal line 
-     + Sections have higher number of short, wide tiles that go to entries 
-     + Entry tiles should tell full story to ease any need to click through 50+ projects 
-     + All tiles have stop point fixed aspect ratio for desktop, tablet, and media 
-     + Shrink/grow responsiveness done minimally, snapping to next fixed point; image won't get covered
-  3. Page UI/UX is MOBILE FIRST FOR REAL 
-     + Means using hover = not thinking creative enough 
-     + Micro-interactions only on click and on page change
-     + Highly visual but not bullet points, just few (max) short sentences per page section
-     + Four predefined on-page sections, one of which is for 1 word 
+     + Completed `./_config.yml` 
+     + Added `./CNAME` file 
+     + Create separate CSS here `./assets/css/...` and JS here `./assets/js/...`
+  2. Content tile grids on homepage and section pages 
+     + Large homepage tiles go to sections; short and wide section tiles go to project entries 
+     + Text and swipe-thumbnail images on tile tells the story to minimize click-through's 
+     + Tile responsiveness snaps to desktop, tablet, media/mobile fixed aspect ratio stop points 
+     + Shrink/grow responsiveness is there, but very minimally, preserving visual content on tile 
+  3. Page UI/UX is REAL mobile first 
+     + Micro-interactions on click, NO USING HOVER; be more creative than that 
+     + Extra-apparent, smooth page transitions where elements drop or fade in sequentially 
+     + Highly visual layout with page sections containing 2-4 short sentences; no use of bullet points 
+     + Clear ROLE heading, with sections for PATTERN, ACTION, MEASUREMENT, and nothing more 
+        1. **Role:** Context of involvement, relationship to project 
+        2. **Pattern:** Opportunity identified, content and strategy logic 
+        3. **Action:** Resulting moves, execution, procedure, resources committed 
+        4. **Measured:** Metrics, the results, thoughts for next time 
   4. Project entries are all on JSON files 
-     + `./assets/docs/entry_template.json` (updating template requires permission)
-     + Dynamic tile/tag population on homepage and section; optional on entry pages
-     + Avoids index.html file with 50+ project entry tiles 
-     + HTML filename is in JSON; JSON filename created using `uid` bash command result 
-  5. Thumbnails on tiles are mini-slideshow without clicking through 
-     + 3 min, 6 max images that are compressed webp at 1920 px by 1080 px 
-     + Write alt. text on the fly from project + image filename
-     + Show 1/8 of next thumbnail so user knows to swipe right 
-     + Text is also potentially on the slide; must define length and lines 
-  6. Filter tags use similar horizontal scroll UI as the images on content tiles 
-     + Tap turn on, moves to front (left), change color; tap again off
-     + Toggle tag navigation only needed on section pages 
-     + Use same 'part of word bleed out of frame' UI tactic to prompt user 
-  7. Simple, expected macro website structure 
+     + `./assets/docs/entry_template.json` -- no template changes without asking permission 
+     + Tiles and tags can dynamically population on homepage and section; TBD on project pages 
+     + Should help avoid putting 50-some project entries on index.html and ideally make updates simple 
+     + Find the proposed HTML filename on the JSON file, whose filename was created using `uid` bash command 
+  5. Swipe UI on tile thumbnail images helps prevent click-through needs 
+     + 3 to 6 compressed webp image files; all 1920 px by 1080 px 
+     + Write simple alt. text on the fly from context of project text and image's filename 
+     + Encourage user to understand and swipe by showing 1/8th of the next thumbnail 
+     + TBD amount and lines of text on tile; could potentially cross-fade text changes triggered by thumbnail swipe 
+  6. Filter tags use horizontal scroll UI going off page, visually mirroring the UI of the tile images  
+     + Tapping a filter to turn it ON moves it to the front (far left) and changes it to more prominent color; tap again to turn off 
+     + Tiles load in random order on every reload; order maintained on filtering with tiles visually present and sliding into new placement 
+     + Tag navigation slide bar only needed on section pages; on project page place somewhere like top right out of way 
+  7. Macro-website structure has a simple, user-expected organization 
      + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
-     + In the case of the homepage's sections, the #tagged URL should be redirected
-     + The section directories, like "web/" and "print/" should have section pages that they direct to 
+     + In the case of the homepage's sections, the #tagged URL should be redirected `august.style/about` and `august.style/contact` 
+     + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc.  
 
 ### Steps to Completion 
 
-  1. Gathering content and creating JSON project entry objects 
   2. Plan how homepage and section pages will randomly populate entries 
      - Unlike previous portfolio where we listed 40+ entries on one HTML file 
      - Imagining there must be a better way thanks to the JSON objects, what is that better way 
@@ -60,23 +67,65 @@
 
 ## Content Management, UI, UX 
 
-### Project Copy 
+### Project JSON Entry Variables 
 
-* **Write quality SEO title, then divide it into**
-    - H1 "page_title" 
-    - H2 "page_subtitle"
+* **Process flow builds on itself to fill out all copywriting in JSON**
 
-* **The page copy should get four clear sections with H3**
-    - H3 "Role", "Pattern", "Action", "Measured" 
+  1. Get an `entry_id` 
+     - Run bash command `uid` 
+     - Add an underscore before the provided unique ID 
+  2. Add `section` and `sub_section` then fill in `slug` with domain 
+     - Section: Print, Digital, Web, or Video 
+     - Sub-sections: Created as tags based on need while building project collection 
+     - Slug example: 'august.style/web/framer/' 
+  3. Add all `media` and `assets`
+     - The 'video_filename' is for future reference 
+     - 'video_url' will be linked in the post a few times 
+     - 'video_embed' has all double quotes changed to single 
+     - Replace 'YouTube Video Player' with the SEO title 
+     - Gather ~6 images, crop, resize to 1920x1080px, convert, compress .webp file 
+     - Add any 'page_imagery' using the same conversion and compression files 
+     - Add 'project_url' if original project has associated URL, i.e. in web design 
+     - Add link for 'github_repository' as this will be featured prominently 
 
-  1. **Role:** Context of involvement, relationship to project 
-  2. **Pattern:** Opportunity identified, content and strategy logic 
-  3. **Action:** Resulting moves, execution, procedure, resources committed 
-  4. **Measured:** Metrics, the results, thoughts for next time 
+* **After adding above basics, begin copywriting with SEO** 
 
-* **Similarly sized, and out of the way, at top and bottom of page**
-    - H4 "media", "technology", "skill" 
-    - H5 "breadcrumb" 
+  4. Write `seo_title` 
+     - Find two 'hooks' that fit the generalist appeal 
+     - 'Sell the click' in a way that fits our [Message](#message) 
+     - Example: "Framer CMS Shop Gallery, Lookbook, & AI Podcast Blog" 
+  5. Compose `seo_description` 
+     - Give context to the hooks in the title 
+     - Compliment or expand on the title, conceptually 
+     - Example: "Bauhaus inspired custom Framer website design with engaging interactive component shapes." 
+  6. Create `file_name` 
+     - Remove stop words, prepositions, determiners 
+     - Replace spaces with hyphens 
+     - 'blog-lookbook-print-gallery.html' 
+  7. Create `page_title` and `page_subtitle` 
+     - Simplify the 'seo_title' for simple, concise, direct, 'page_title' 
+     - Fit the rest of the messaging from the 'seo_title' into the 'page_subtitle' 
+     - Example: "Framer CMS Site Built Using AI & Notion" 
+     - Example: "With micro-interactive bauhaus-inspired design" 
+  8. Choose a `breadcrumb` 
+     - Choose a few words within the theme of the titles, filename, etc. 
+     - For example 'seo_titled' 'Framer CMS Web Design Shop, Gallery, AI Blog'
+     - Example: "Automated Design & Blog CMS" 
+  9. Compose handful of `tile_text` lines 
+     - Use all the concepts and drafted text for ideation 
+     - Capitalize on what best fits website message and intention 
+     - Examples: 
+       + "AI generated blogs examine Podcast concepts"
+       + "Automated build using Notion to CMS integration" 
+       + "1 component + Notion database = 81 image fashion magazine" 
+       + "Build an entire web store in minutes with CMS and Notion" 
+
+* **After all the bits of copy are complete, compose `page_copy` sections** 
+
+  10. Write `pattern` based on how/what opportunity was identified with logic 
+  11. Write `action` based on how opportunity was capitalized on 
+  12. Write `measured` based on how to tell project was a success 
+  13. Include any necessary notes for when the entry page is created 
 
 ### Tile Visual Specifics 
 
@@ -89,6 +138,19 @@
   - Section tiles created to showcase project 
     - Short and wide 
     - Only one column ever, just bigger scale of image, bigger relative to tile text 
+
+
+
+* **Write quality SEO title, then divide it into**
+    - H1 "page_title" is large, heavy 
+    - H2 "page_subtitle" potentially smaller than the H3 
+
+* **The page copy should get four clear sections with H3**
+    - H3 prominent for "Role", "Pattern", "Action", "Measured", the only sections on page 
+
+* **Similarly sized, and out of the way, at top and bottom of page**
+    - H4 "media", "technology", "skill" 
+    - H5 "breadcrumb" 
 
 * **See visual inspo images** 
 
@@ -138,9 +200,9 @@
 
 ```
 `august.style/`                   `.index.html`
-├── about/                        `.index.html`
-├── projects/                     `.index.html`
-├── contact/                      `.index.html`
+├── projects/                     `.index.html#projects`
+├── about/                        `.index.html#about`
+├── contact/                      `.index.html#contact`
 ├── web/                          `web.html`
 │   ├── framer/                   *Redirect to 'framer' filtered web section*
 │   │   └── _uid-tev-176.json     *HTML filename found in JSON file* 

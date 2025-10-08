@@ -39,12 +39,24 @@
         "project_url": "https://ai-generated-content.august.style",
         "github_repository": "https://github.com/seanivore/framer-cms-lookbook"
     },
-    "copy":{
-        "seo_title": "Framer CMS Web Design Shop, Gallery, AI Blog",
+    "teaser_copy":{
+        "seo_title": "Framer CMS Shop Gallery, Lookbook, & AI Podcast Blog",
         "seo_description": "Bauhaus inspired custom Framer website design with engaging interactive component shapes.", 
-        "page_title": "", 
-        "page_copy": ""
-    }, 
+        "page_title": "Framer CMS Site Built Using AI & Notion", 
+        "page_subtitle": "With micro-interactive bauhaus-inspired design", 
+        "breadcrumb": "Automated Design & Blog CMS",
+        "tile_text": [
+            "AI generated blogs examine Podcast concepts", 
+            "Automated build using Notion to CMS integration", 
+            "1 component + Notion database = 81 image fashion magazine", 
+            "Build an entire web store in minutes with CMS and Notion"
+        ]
+    },
+    "page_copy":{
+        "pattern": "",
+        "action": "", 
+        "measured": "" 
+    }
+}, 
     "notes": ""
-}
 }
