@@ -1,18 +1,17 @@
 # Creative Generalist Portfolio 
+*Generalist roles become more in-demand as organizations flatten*
 
 ## Message 
 
   + **PROBLEM:** downsizing because of economic uncertainty and AI operational integration 
   + **SOLUTION:** I am downsizing-friendly to help managers optimize their workforce for the modern landscape 
 
-    - Generalist roles become more in-demand as organizations flatten
-
-### Website Overview 
+### Overview 
 
   1. One, generalist, portfolio website to rule them all: `august.style`
-  2. Design mobile and image first, using stronger job title/job opening description SEO  
-  3. Create a UI that makes previewing 50+ projects across field easy, without many clicks 
-  4. Build for longevity, ease of maintenance and updating 
+  2. Design mobile and image first, using stronger job title/job opening description SEO 
+  3. Create a UI that makes previewing 50+ projects across fields easy, without many clicks 
+  4. Build for longevity and creating more of an ease of maintenance and updating 
 
 ### Design Summary 
 
@@ -22,46 +21,33 @@
      + Create separate CSS here `./assets/css/...` and JS here `./assets/js/...`
   2. Content tile grids on homepage and section pages 
      + Large homepage tiles go to sections; short and wide section tiles go to project entries 
-     + Text and swipe-thumbnail images on tile tells the story to minimize click-through's 
-     + Tile responsiveness snaps to desktop, tablet, media/mobile fixed aspect ratio stop points 
+     + Text and swipe-thumbnail images on tile tells full story to minimize necessary click-through's 
+     + Tile responsiveness snaps to fixed desktop, tablet, media/mobile aspect ratio stop points 
      + Shrink/grow responsiveness is there, but very minimally, preserving visual content on tile 
   3. Page UI/UX is REAL mobile first 
      + Micro-interactions on click, NO USING HOVER; be more creative than that 
      + Extra-apparent, smooth page transitions where elements drop or fade in sequentially 
      + Highly visual layout with page sections containing 2-4 short sentences; no use of bullet points 
-     + Clear ROLE heading, with sections for PATTERN, ACTION, MEASUREMENT, and nothing more 
-        1. **Role:** Context of involvement, relationship to project 
-        2. **Pattern:** Opportunity identified, content and strategy logic 
-        3. **Action:** Resulting moves, execution, procedure, resources committed 
-        4. **Measured:** Metrics, the results, thoughts for next time 
+     + Clear ROLE heading, and sections with headings PATTERN, ACTION, and MEASUREMENT; nothing more 
+       1. **Role:** Context of involvement, relationship to project 
+       2. **Pattern:** Opportunity identified, content and strategy logic 
+       3. **Action:** Resulting moves, execution, procedure, resources committed 
+       4. **Measured:** Metrics, the results, thoughts for next time 
   4. Project entries are all on JSON files 
      + `./assets/docs/entry_template.json` -- no template changes without asking permission 
-     + Tiles and tags can dynamically population on homepage and section; TBD on project pages 
-     + Should help avoid putting 50-some project entries on index.html and ideally make updates simple 
-     + Find the proposed HTML filename on the JSON file, whose filename was created using `uid` bash command 
+     + Used to dynamically populate tiles and tags on homepage and section pages, maybe on project entries  
+     + Find the proposed HTML filename on the JSON file; JSON filename created using `uid` bash command 
   5. Swipe UI on tile thumbnail images helps prevent click-through needs 
-     + 3 to 6 compressed webp image files; all 1920 px by 1080 px 
+     + 3 to 6 compressed webp image files; all 1920 px by 1080 px; UI encouraged by showing 1/8th of the next thumbnail
      + Write simple alt. text on the fly from context of project text and image's filename 
-     + Encourage user to understand and swipe by showing 1/8th of the next thumbnail 
      + TBD amount and lines of text on tile; could potentially cross-fade text changes triggered by thumbnail swipe 
-  6. Filter tags use horizontal scroll UI going off page, visually mirroring the UI of the tile images  
+  6. Filter tags on section pages use horizontal scroll UI going off page, visually mirroring the UI of the tile image UX 
      + Tapping a filter to turn it ON moves it to the front (far left) and changes it to more prominent color; tap again to turn off 
-     + Tiles load in random order on every reload; order maintained on filtering with tiles visually present and sliding into new placement 
-     + Tag navigation slide bar only needed on section pages; on project page place somewhere like top right out of way 
+     + Tiles load in random order on every reload; order maintained on filtering with tiles visually present sliding smoothly into new placement 
   7. Macro-website structure has a simple, user-expected organization 
      + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
      + In the case of the homepage's sections, the #tagged URL should be redirected `august.style/about` and `august.style/contact` 
      + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc.  
-
-### Steps to Completion 
-
-  2. Plan how homepage and section pages will randomly populate entries 
-     - Unlike previous portfolio where we listed 40+ entries on one HTML file 
-     - Imagining there must be a better way thanks to the JSON objects, what is that better way 
-  3. Each section should be a simple version of the home page, populating appropriate section project entries 
-     - The folders in the structure are there to create slugs and proper URL structure 
-     - However we still want to have the sections that land on those URLs be working URLs for the section 
-     - E.g. `august.style/web/framer` or `august.style/print` etc. 
 
 ---
 
@@ -71,15 +57,13 @@
 
 * **Process flow builds on itself to fill out all copywriting in JSON**
 
-  1. Get an `entry_id` 
-     - Run bash command `uid` 
-     - Add an underscore before the provided unique ID 
+  1. Get an `entry_id` by running bash command `uid` then adding an underscore to front of ID 
   2. Add `section` and `sub_section` then fill in `slug` with domain 
-     - Section: Print, Digital, Web, or Video 
-     - Sub-sections: Created as tags based on need while building project collection 
+     - Section = Print, Digital, Web, or Video 
+     - Sub-sections = Created as tags based on need while building project collection 
      - Slug example: 'august.style/web/framer/' 
   3. Add all `media` and `assets`
-     - The 'video_filename' is for future reference 
+     - 'video_filename' for future reference 
      - 'video_url' will be linked in the post a few times 
      - 'video_embed' has all double quotes changed to single 
      - Replace 'YouTube Video Player' with the SEO title 
@@ -91,29 +75,25 @@
 * **After adding above basics, begin copywriting with SEO** 
 
   4. Write `seo_title` 
-     - Find two 'hooks' that fit the generalist appeal 
-     - 'Sell the click' in a way that fits our [Message](#message) 
+     - Find two 'hooks' that fit the generalist appeal, then 'Sell the click' in a way that fits our [Message](#message)
      - Example: "Framer CMS Shop Gallery, Lookbook, & AI Podcast Blog" 
   5. Compose `seo_description` 
-     - Give context to the hooks in the title 
-     - Compliment or expand on the title, conceptually 
+     - Give context to the hooks in the title, complimenting or expanding on the title conceptually 
      - Example: "Bauhaus inspired custom Framer website design with engaging interactive component shapes." 
   6. Create `file_name` 
-     - Remove stop words, prepositions, determiners 
-     - Replace spaces with hyphens 
-     - 'blog-lookbook-print-gallery.html' 
+     - Remove stop words, prepositions, determiners; replace spaces with hyphens, make all lowercase 
+     - Example: 'blog-lookbook-print-gallery.html' 
   7. Create `page_title` and `page_subtitle` 
-     - Simplify the 'seo_title' for simple, concise, direct, 'page_title' 
+     - Simplify the 'seo_title' into concise and direct 'page_title' 
      - Fit the rest of the messaging from the 'seo_title' into the 'page_subtitle' 
-     - Example: "Framer CMS Site Built Using AI & Notion" 
-     - Example: "With micro-interactive bauhaus-inspired design" 
+     - Example page_title: "Framer CMS Site Built Using AI & Notion" 
+     - Example page_subtitle: "With micro-interactive bauhaus-inspired design" 
   8. Choose a `breadcrumb` 
      - Choose a few words within the theme of the titles, filename, etc. 
      - For example 'seo_titled' 'Framer CMS Web Design Shop, Gallery, AI Blog'
-     - Example: "Automated Design & Blog CMS" 
+     - Example: "Automated Design Blog CMS" 
   9. Compose handful of `tile_text` lines 
-     - Use all the concepts and drafted text for ideation 
-     - Capitalize on what best fits website message and intention 
+     - Use all the concepts and drafted text for ideation, capitalizing on what best fits website message and intention 
      - Examples: 
        + "AI generated blogs examine Podcast concepts"
        + "Automated build using Notion to CMS integration" 
@@ -127,7 +107,7 @@
   12. Write `measured` about how to tell project was a success 
   13. Include any necessary `notes` for when the entry page is created 
 
-### Page Layout 
+### Page Headings 
 
 | Class | JSON Variable                  | Styling Guide     | 
 | ----- | ------------------------------ | ----------------- | 
@@ -137,43 +117,32 @@
 | H4    | `media`, `technology`, `skill` | Page content tags | 
 | H5    | `breadcrumb`                   | Similar to H4     | 
 
-### Project Tagging 
+### Project Tagging Types 
 
-#### Three Tag Types 
+  1. Section tag = define actual website sections, only tiles on homepage; informs which section page tiles to populate 
+  2. Toggle tag = top of section page; only the top "see only" type tags; 
+  3. Contextual tag = **comprehensive**, see examples started below to be completed by AI right on JSON files; four types 
+     - (1) `ROLE` has **JUST ONE** and is designed onto page as one of the sections 
+     - (2) `TECHNOLOGY`, (3) `MEDIA`, (4) SKILL 
+     - Tags on page in group at top right; click-through to see-only content tiles with same tag  
 
-  1. Section tag 
-     - These define the actual sections of the website 
-     - These are the only visible groups from the homepage 
-  2. Toggle tag 
-     - This list and functionality is TBD, in need of discussion 
-     - Imaging they're the most "see only" type tags 
-     - These would be located on the section pages with a toggle on/off OR click-through to view only  
-  3. Contextual tag 
-     - This list is currently just examples below, to be completed with AI help right on the entry JSON files 
-     - There are four contextual tag types 
-       (1) Role has **JUST ONE** and will be designed onto pages in prominent spot
-       (2) Technology, (3) Media, (4) Skill are **COMPREHENSIVE** to be designed on page in word cloud 
-
-#### Section & Toggle Tags 
-
-| Tag                   | Type         |
-| --------------------- | ------------ |
-| **Web**               | Section tag  |
-| **Print**             | Section tag  |
-| **Digital**           | Section tag  |
-| **Video**             | Section tag  |
-| Generative AI         | Toggle tag   |
-| Product               | Toggle tag   |
-| Copywriting           | Toggle tag   |
-| Interactive           | Toggle tag   |
-| Team Manager          | Toggle tag   |
-| Consulting            | Toggle tag   |
+| Tag             | Type         |
+| --------------- | ------------ |
+| **Web**         | Section tag  |
+| **Print**       | Section tag  |
+| **Digital**     | Section tag  |
+| **Video**       | Section tag  |
+| Generative AI   | Toggle tag   |
+| Product         | Toggle tag   |
+| Copywriting     | Toggle tag   |
+| Interactive     | Toggle tag   |
+| Team Manager    | Toggle tag   |
+| Consulting      | Toggle tag   |
 
 #### Relevant Skill-Based Job Titles **WORK INTO COPY & CONTEXTUAL TAGS**
+
 - First section are to be paired with *...one of second section* 
 - E.g. Creative Director, Art Director, etc. 
-- These are to be used by working them into the copy naturally, and in contextual tags 
-- Include, but not limited to the below 
 
   + Creative, Art *...Director*
   + Social, Video, Email, SMS, Viral, Content *...Producer*
@@ -201,40 +170,22 @@
 
 ---
 
-* **Project tile location**
+## Tile UI/UX 
 
-  + Homepage tiles are created to show the section 
-    - Larger and squarer; more visual 
-    - Two columns when on desktop only 
-    - Swipe through collection of images pulled from project thumbnail JSON 
-  - Section tiles created to showcase project 
-    - Short and wide 
-    - Only one column ever, just bigger scale of image, bigger relative to tile text 
+### Inspo Examples 
 
-
-
-* **See visual inspo images** 
-
-  1. 1_homepage_tile.png 
-     - For UI functionality example 
+  1. `./assets/docs/tile_visual_inspo/1_homepage_tile.jpg`
+     - For UI functionality example of tiles on homepage 
      - Large because there are small number of main sections 
-  2. 2_section_tile.png 
-     - For UI functionality example 
-     - Short and wide because large number on section 
-  3. 3_tag_filters.png
+  2. `./assets/docs/tile_visual_inspo/2_section_tile.jpg` 
+     - For UI functionality example of tiles on section pages 
+     - Short and wide because large number of entries in sections 
+  3. `./assets/docs/tile_visual_inspo/3_tag_filters.jpg`
      - For UI functionality example; horizontal scrolling of tag filters 
      - Simpler, word must bleed off to prompt user to swipe 
      - When tapped, tag stays 'ON', moves to left, turns different color, tap again off 
-  4. 4_background_texture.png 
-     - For design visual example 
-     - But way more subtle, almost same color 
-     - Use repeating SVG for small file 
-     - Note the gradient down page; create like button boarders 
-  5. 5_mid_page_faq.png 
-     - For functionality UI and content example 
-     - Seems like a great idea but haven't thought further than that 
 
-* **Tile specifics** 
+### Visual Design Specifics 
 
   + Light mode VS dark mode background 
     - Simple off-white VS black/charcoal 
