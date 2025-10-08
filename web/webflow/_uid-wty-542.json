@@ -44,6 +44,9 @@
         "page_title": "", 
         "page_copy": ""
     }, 
-    "notes": ""
+    "notes": [
+        "This summary is about the content created for this website. While this post should focus primarily on the web development, it might offer some valuable information, particularly how long it took to create all the art. - The repository: [https://github.com/seanivore/webflow-2023](https://github.com/seanivore/webflow-2023) - The website: [https://visual-producer.august.style/](https://visual-producer.august.style/) - Webflow build  - Hundreds of illustrations  - Hand drawn  - iPad Pro and Apple Pencil  - No AI generated content  - Many took 10+ hours to complete  - Many minted as NFTs no various platforms  - Many created as Brand Assets for a WEB3 DAO - Several scripts were created to fix path issues in the Webflow export", 
+        "Scripts written on the fly when pulling down this webflow site and rebuilding it locally. - `verify_image_paths.py` - Identifies broken image links throughout the site - `fix_gif_paths.py` - Fixes paths to GIF files that are in assets/gifs instead of assets/images - `fix_remaining_gif_paths.py` - Targets specific files with broken GIF links - `fix_css_references.py` - Ensures correct relative paths to CSS from various subdirectories - `fix_portfolio_paths_advanced.py` - Fixes paths in the sean-august-horvath-portfolio section"
+    ]
 }
 }

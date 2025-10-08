@@ -53,6 +53,9 @@
         "page_title": "", 
         "page_copy": ""
     }, 
-    "notes": []
+    "notes": [
+        "Details about this project from a portfolio entry ca be found here: https://developer-technologist.august.style/portfolio-system-design", 
+        "Summary details about building this website: - The repository: [https://github.com/seanivore/portfolio](https://github.com/seanivore/portfolio) - The website: [https://developer-technologist.august.style/](https://developer-technologist.august.style/) - HTML, CSS, JS  - Modular, versatile system  - Encourages rapid agentic production  - All patterns well documented in `./CONVENTIONS.md`  - Designed to prevent AI from creating a mess when coding  - Repeatable across context windows  - Create identical pages across many sessions > This was my comprehensive portfolio. I wanted to build something that could be shared as a template for others, so everything was carefully documented and simplified. > > This was the first website I built after many years of no-code development on Webflow."
+    ]
 }
 }

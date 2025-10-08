@@ -48,6 +48,11 @@
         "page_title": "", 
         "page_copy": ""
     }, 
-    "notes": ""
+    "notes": [
+        "The following is about the animations produced for this website. Use the resource to inform copywriting, remembering that this entry is about web design. https://developer-technologist.august.style/advanced-animation-system", 
+        "This entry is very broad, but does touch on some elements that might be helpful for this web-design entry. The post is about the content and promotions related to the website, but the important part that seems relevant is the automation and number of blogs created and posted to this webflow site weekly. https://developer-technologist.august.style/scaling-ai-brand", 
+        "This post is specifically about the 'enterprise CMS e-commerce website so it should be very helpful for copywriting about this project. https://developer-technologist.august.style/enterprise-cms-development", 
+        "Summary about the content of this website that might help create compelling information for this entry on web design. - The repository: [https://github.com/seanivore/astrofluenced](https://github.com/seanivore/astrofluenced) - The website: [https://generative-horoscopes.august.style/](https://generative-horoscopes.august.style/) - Webflow Build  - Another website of AI generated content  - 200+ AI generated weekly self-help blogs  - Full automation through Make (Integromat) - Mixed use of LLM models  - Only user input was the weekly astrological placement of the planets - Rebuilt locally using GitHub Pages  - Required many python scripts written on the fly to rebuild the site #### Python Scripts To Fix Common Issues - `fix_conditional_content.py` - Makes conditionally hidden content visible - `fix_external_links.py` - Converts external links to local ones - `fix_zodiac_images.py` - Ensures zodiac images display correctly - `fix_horoscope_collections.py` - Creates content for horoscope collection pages - `fix_art_deco_images.py` - Fixes art deco images - `fix_artist_interpretations.py` - Adds artist interpretation images - `fix_timeline_interpretations.py` - Adds visual timeline images"
+    ]
 }
 }

@@ -45,6 +45,9 @@
         "page_title": "", 
         "page_copy": ""
     }, 
-    "notes": ""
+    "notes": [
+        "This entry is about this website build and should be helpful to write copy for this entry specifically for web development and design. https://developer-technologist.august.style/health-digital-integrated", 
+        "This summary discusses the content of the website but might offer some valuable information for this post about web development. - The repository: [https://github.com/seanivore/webflow-client-ckheals](https://github.com/seanivore/webflow-client-ckheals) - The website: [https://online-pt-trainer.august.style/](https://online-pt-trainer.august.style/) - Webflow site  - All custom art  - No AI generated content  - No automation - Design to express the client"
+    ]
 }
 }

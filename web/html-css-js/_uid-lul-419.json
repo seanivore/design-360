@@ -49,8 +49,11 @@
         "seo_title": "Yoga Journal Mobile App with AI-Led User-Interface",
         "seo_description": "What happens when AI can just about replace most of the UI buttons and menus apps used to need? Lots of chat interaction!", 
         "page_title": "", 
-        "page_copy": ""
+        "page_copy": []
     }, 
-    "notes": []
+    "notes": [
+        "An entry about the website that showcases this website project along with others. This website showcases web development, design, and user experience capabilities through a collection of high-demand digital assets by pulling from actual past projects making them highly polished, then creating a walled garden UX/UI. This is effective without waisting the viewer's time. ### Goals - Show common website UX flows & modern design patterns - Expand current portfolio, while targeting B2B/B2C  - Micro-interactions and loading states - Responsive layouts & accessibility considerations ### Value - Shows understanding of multi-step user journeys - High quality in different styles demonstrate versatility  - Practical value shows just what they need - Code structure allows for quick brand color swaps", 
+        "An entry about the content that might lead to insightful copy for this entry about the website design and development. AI-Managed User Interface to Journal Without Typing - Mobile app UI/UX design with focus on mindfulness experience - Voice-to-text journalism with AI sentiment analysis - Intuitive gesture-based interactions and progressive user experience - Accessible interface design with focus on emotional well-being"
+    ]
 }
 }

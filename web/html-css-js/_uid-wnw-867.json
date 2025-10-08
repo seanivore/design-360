@@ -44,6 +44,9 @@
         "page_title": "", 
         "page_copy": ""
     }, 
-    "notes": ""
+    "notes": [
+        "An entry about the website that showcases this website project along with others. This website showcases web development, design, and user experience capabilities through a collection of high-demand digital assets by pulling from actual past projects making them highly polished, then creating a walled garden UX/UI. This is effective without waisting the viewer's time. ### Goals - Show common website UX flows & modern design patterns - Expand current portfolio, while targeting B2B/B2C  - Micro-interactions and loading states - Responsive layouts & accessibility considerations ### Value - Shows understanding of multi-step user journeys - High quality in different styles demonstrate versatility  - Practical value shows just what they need - Code structure allows for quick brand color swaps", 
+        "An entry about the content that might lead to insightful copy for this entry about the website design and development. AI-Staged Photography of Historically Accurate Single-Edition Prints - Complete Webflow e-commerce architecture with custom CMS integration - Product catalog management for 500+ unique items with custom taxonomies - AI-optimized product photography and historically accurate descriptions - Conversion-optimized product pages with intuitive navigation"
+    ]
 }
 }

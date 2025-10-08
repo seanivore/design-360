@@ -53,7 +53,9 @@
         "Check formatting of repository to make it a 'How to Use This to Build a Portfolio'",
         "Could use a visual intro and map showing how the sections connect or otherwise build in modular way",
         "Show how it is reusable and great for first time HTML/CSS/JS website builders. Perhaps even a 'work with AI to build' angle.",
-        "Create actual entries to other sections from select entries in this portfolio"
+        "Create actual entries to other sections from select entries in this portfolio", 
+        "An entry about the website that showcases this website project along with others. This website showcases web development, design, and user experience capabilities through a collection of high-demand digital assets by pulling from actual past projects making them highly polished, then creating a walled garden UX/UI. This is effective without waisting the viewer's time. ### Goals - Show common website UX flows & modern design patterns - Expand current portfolio, while targeting B2B/B2C  - Micro-interactions and loading states - Responsive layouts & accessibility considerations ### Value - Shows understanding of multi-step user journeys - High quality in different styles demonstrate versatility  - Practical value shows just what they need - Code structure allows for quick brand color swaps",
+        "An entry about the content that might lead to insightful copy for this entry about the website design and development. Visualizing Insights From Massive Data Sets With Animated Charts - Data visualization dashboard with real-time analytics integration - Interactive chart animations responding to user engagement - AI-driven insights presentation with information hierarchy - Enterprise-level UI with complex system organization and information design"
     ]
 }
 }
