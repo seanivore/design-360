@@ -2,34 +2,48 @@
 
 ## Overview 
 
-  1. One website to rule them all 
+  1. One website to rule them all: `august.style`
   2. Stronger, image-first design 
   3. Job title/description SEO 
-  4. Mobile first i.e. hover isn't creative enough 
-  5. UI for easy UX to preview 50+ project entries 
+  4. UI for easy UX to preview 50+ project entries 
 
     + The message is to solve the **PROBLEM** of downsizing, economic uncertainty, and AI operational integration 
     + Present as being a downsizing-friendly **SOLUTION** for managers to optimize their workforce for modern landscape 
 
-### Modular Dynamic Updating Design Functionality 
+### Design Summary 
 
-* **Project entry JSON to use for every project**
-
-  + Template: `assets/docs/entry_template.json` 
-  + Template changes require approval, POA to list all outdated files to plan and update 
-  + Page's HTML filename is in the project's JSON file 
-
-  1. Homepage and section pages have tiles to the content 
-  2. Each tile type component is populated from the collections of JSON entries 
-  3. Similarly, the filter tags in the sections are populated from the JSON entries 
-  4. On-page information doesn't necessarily need to be dynamic, but might be helpful for parts, like tags 
-
-* **JSON filename created using _uid command** 
-
-```bash 
-> _uid 
-Generated _uid: _uid-enl-043
-```
+  1. Technically simple HTML/CSS/JS build, published to Github Pages
+     + `./_config.yml` -- written and ready to go 
+     + `./CNAME` -- all set 
+  2. Homepage and section pages with tiles 
+     + Homepage has small number of larger tiles that go to sections, color coded by section with 2-3 px thick horizontal line 
+     + Sections have higher number of short, wide tiles that go to entries 
+     + Entry tiles should tell full story to ease any need to click through 50+ projects 
+     + All tiles have stop point fixed aspect ratio for desktop, tablet, and media 
+     + Shrink/grow responsiveness done minimally, snapping to next fixed point; image won't get covered
+  3. Page UI/UX is MOBILE FIRST FOR REAL 
+     + Means using hover = not thinking creative enough 
+     + Micro-interactions only on click and on page change
+     + Highly visual but not bullet points, just few (max) short sentences per page section
+     + Four predefined on-page sections, one of which is for 1 word 
+  4. Project entries are all on JSON files 
+     + `./assets/docs/entry_template.json` (updating template requires permission)
+     + Dynamic tile/tag population on homepage and section; optional on entry pages
+     + Avoids index.html file with 50+ project entry tiles 
+     + HTML filename is in JSON; JSON filename created using `uid` bash command result 
+  5. Thumbnails on tiles are mini-slideshow without clicking through 
+     + 3 min, 6 max images that are compressed webp at 1920 px by 1080 px 
+     + Write alt. text on the fly from project + image filename
+     + Show 1/8 of next thumbnail so user knows to swipe right 
+     + Text is also potentially on the slide; must define length and lines 
+  6. Filter tags use similar horizontal scroll UI as the images on content tiles 
+     + Tap turn on, moves to front (left), change color; tap again off
+     + Toggle tag navigation only needed on section pages 
+     + Use same 'part of word bleed out of frame' UI tactic to prompt user 
+  7. Simple, expected macro website structure 
+     + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
+     + In the case of the homepage's sections, the #tagged URL should be redirected
+     + The section directories, like "web/" and "print/" should have section pages that they direct to 
 
 ### Steps to Completion 
 
@@ -45,14 +59,6 @@ Generated _uid: _uid-enl-043
 ---
 
 ## Content Management, UI, UX 
-
-### Page Guidelines 
-
-  + Highly visual 
-    - Use thumbnail slide images if needed 
-    - No bullet points, just very short sentences 
-    - Only few sentences max per section 
-  + Page structure easy to scan 
 
 ### Project Copy 
 
@@ -70,52 +76,7 @@ Generated _uid: _uid-enl-043
 
 * **Similarly sized, and out of the way, at top and bottom of page**
     - H4 "media", "technology", "skill" 
-    - H5 breadcrumbs 
-
-### Project Tile Guidelines 
-
-* **Design strategy logic for tiles** 
-
-    - Visuals and tile text should tell whole story 
-    - Essentially create overview so no click is needed 
-    - User should only click if highly interested 
-    - This is to balance out the fact that the portfolio is huge 
-
-* **Define standard component** 
-
-  + For homepage and section tiles 
-  + All tiles have fixed aspect ratio 
-  + Create for desktop, tablet, and media (mobile)
-  + Make width shrink/grow-responsive between main aspect ratios 
-  + Good example: `https://developer-technologist.august.style/` 
-    - Homepage tiles don't stretch/squeeze at all 
-    - Images on page do 
-
-* **Image and "tile_text" UI/UX** 
-
-  + Thumbnail UI coaxes user to know what to do 
-    - Show 1/8 of next thumbnail image so user swipes right 
-    - Define number and length of tile text needed 
-    - Consider tile text sharing image slide change 
-
-  + Thumbnail Slideshow 
-    - 1920 px by 1080 px images 
-    - At least 3 images, no more than 6 
-    - All have proper-seo-and-formatted-filenames 
-    - Images in compressed webp format already 
-    - Write alt. text on the fly from project + image filename 
-
-* **Uniform interactivity and navigation**
-
-  + Micro-interactions 
-    - Only on click and on page change 
-    - No hover effects because we are designing 100% mobile first 
-
-  + Toggle tag navigation 
-    - Only needed on section pages 
-    - Horizontal off-page swipe to scroll  
-    - Ensure part of tag is bleed out of view to prompt UI swipe 
-    - Tap turn on, moves to front (left), change color; tap again off
+    - H5 "breadcrumb" 
 
 ### Tile Visual Specifics 
 
@@ -170,13 +131,10 @@ Generated _uid: _uid-enl-043
   + Section color coding 
     - Only on the homepage tiles 
     - 2-3 px thick horizontal bar 
+  + Entry list is randomized every reload or toggle change
 
 ### Macro Website Structure 
 *Example only; not all entries are listed*
-
-  - Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
-  - In the case of the homepage's sections, the #tagged URL should be redirected
-  - The section directories, like "web/" and "print/" should have section pages that they direct to 
 
 ```
 `august.style/`                   `.index.html`
@@ -185,7 +143,7 @@ Generated _uid: _uid-enl-043
 ├── contact/                      `.index.html`
 ├── web/                          `web.html`
 │   ├── framer/                   *Redirect to 'framer' filtered web section*
-│   │   └── _uid-tev-176.json  
+│   │   └── _uid-tev-176.json     *HTML filename found in JSON file* 
 │   ├── html-css-js/              *Redirect to 'HTML/CSS/JS' filtered web section*
 │   │   ├── _uid-eme-689.json
 │   │   ├── _uid-hwi-844.json
@@ -301,16 +259,12 @@ Generated _uid: _uid-enl-043
 
    + Toggle on/off each of the three sub-section categories 
    + Only other tags that show are "toggle tags" if they exist on any of the JSON project entry files 
-   + Entry list is randomized every reload or toggle change 
+   +  
 
 * **Regarding web project pages** 
 
    + Each has one (or two) YouTube iFrame HTML embeds 
    + Resource if needed: `https://developers.google.com/youtube/iframe_api_reference`
-
-### `august.style/web/framer/` **NOT to be made into HTML section page**
-### `august.style/web/html-css-js/` **NOT to be made into HTML section page**
-### `august.style/web/webflow/` **NOT to be made into HTML section page**
 
 ## Print `august.style/print/`
 ## Digital `august.style/digital/`
