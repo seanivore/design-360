@@ -50,6 +50,17 @@
 
 ### To Do Next 
 
+* **Context priming** 
+
+  - Use the actual `read_file` tool for the template so that it stays in your context: `./assets/docs/_entry_template.json` 
+  - This document will stay in context thanks to being attached to the message 
+  - Then for each entry, you probably can get away with 
+    - Using the Project Knowledge retrieval 
+    - Telling me what to paste in each missing variable 
+  - **However** the schema do need to be updated 
+    - So it might instead make more sense to use the `read_file` tool on each JSON 
+    - Then create them clean and fresh in an artifact. LMK what you think! 
+
 * **Meet with AI for web JSON entries** 
 
     + AI to look over each JSON entry for the web section 
@@ -62,7 +73,7 @@
       - Complete missing info from the updated `teaser_copy`
       - Then draft each entry for the `page_copy` sections 
 
-* **Entries for Web to complete** 
+* **Entries for Web to complete** (Total tokens = 9,534)
 
   1. `./web/framer/_uid-tev-176.json` 
   2. `./web/html-css-js/_uid-eme-689.json`
@@ -78,7 +89,6 @@
   12. `./web/webflow/_uid-fth-565.json` 
   13. `./web/webflow/_uid-unw-889.json`
   14. `./web/webflow/_uid-wty-542.json` 
-
 
 ---
 
@@ -297,21 +307,3 @@
    - [linkedin.com/in/seanivore/](https://www.linkedin.com/in/seanivore/)
    - [instagram.com/seanivore/](https://www.instagram.com/seanivore/)
    - [horvathaugust@gmail.com](mailto:horvathaugust@gmail.com)
-
-## Web `august.style/web/` **all JSON files placed**
-
-* **On-section page** 
-
-   + Toggle on/off each of the three sub-section categories 
-   + Only other tags that show are "toggle tags" if they exist on any of the JSON project entry files 
-   +  
-
-* **Regarding web project pages** 
-
-   + Each has one (or two) YouTube iFrame HTML embeds 
-   + Resource if needed: `https://developers.google.com/youtube/iframe_api_reference`
-
-## Print `august.style/print/`
-## Digital `august.style/digital/`
-## Motion Graphic `august.style/motion-graphic/`
-## Video `august.style/video/`
