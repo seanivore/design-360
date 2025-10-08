@@ -21,19 +21,18 @@
      + Create separate CSS here `./assets/css/...` and JS here `./assets/js/...`
   2. Content tile grids on homepage and section pages 
      + Large homepage tiles go to sections; short and wide section tiles go to project entries 
-     + Text and swipe-thumbnail images on tile tells full story to minimize necessary click-through's 
      + Tile responsiveness snaps to fixed desktop, tablet, media/mobile aspect ratio stop points 
      + Shrink/grow responsiveness is there, but very minimally, preserving visual content on tile 
-  3. Page UI/UX is REAL mobile first 
-     + Micro-interactions on click, NO USING HOVER; be more creative than that 
-     + Extra-apparent, smooth page transitions where elements drop or fade in sequentially 
+  3. Page Content, UI/UX is REAL mobile first 
+     + Micro-interactions on click; NO HOVER, be more creative than that 
+     + Extra-apparent, smooth page transitions; elements drop or fade in sequentially 
      + Highly visual layout with page sections containing 2-4 short sentences; no use of bullet points 
      + Clear ROLE heading, and sections with headings PATTERN, ACTION, and MEASUREMENT; nothing more 
        1. **Role:** Context of involvement, relationship to project 
        2. **Pattern:** Opportunity identified, content and strategy logic 
        3. **Action:** Resulting moves, execution, procedure, resources committed 
        4. **Measured:** Metrics, the results, thoughts for next time 
-  4. Project entries are all on JSON files 
+  4. Project entries are all JSON files 
      + `./assets/docs/entry_template.json` -- no template changes without asking permission 
      + Used to dynamically populate tiles and tags on homepage and section pages, maybe on project entries  
      + Find the proposed HTML filename on the JSON file; JSON filename created using `uid` bash command 
@@ -48,6 +47,38 @@
      + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
      + In the case of the homepage's sections, the #tagged URL should be redirected `august.style/about` and `august.style/contact` 
      + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc.  
+
+### To Do Next 
+
+* **Meet with AI for web JSON entries** 
+
+    + AI to look over each JSON entry for the web section 
+      - Update schema to reflect the 2.1 template: `./assets/docs/_entry_template.json` 
+      - Sean explain project as needed 
+      - AI to review assets and website itself 
+    + AI to write, draft, complete JSON variables 
+      - Write comprehensive lists for `tagging` variables 
+      - See "Example Contextual Tags" and "Project Tagging Types" below 
+      - Complete missing info from the updated `teaser_copy`
+      - Then draft each entry for the `page_copy` sections 
+
+* **Entries for Web to complete** 
+
+  1. `./web/framer/_uid-tev-176.json` 
+  2. `./web/html-css-js/_uid-eme-689.json`
+  3. `./web/html-css-js/_uid-hwi-844.json`
+  4. `./web/html-css-js/_uid-lul-419.json`
+  5. `./web/html-css-js/_uid-qor-090.json` 
+  6. `./web/html-css-js/_uid-rfr-187.json` 
+  7. `./web/html-css-js/_uid-sgt-851.json` 
+  8. `./web/html-css-js/_uid-srs-009.json` 
+  9. `./web/html-css-js/_uid-wgw-370.json` 
+  10. `./web/html-css-js/_uid-wnw-867.json` 
+  11. `./web/webflow/_uid-dff-987.json`
+  12. `./web/webflow/_uid-fth-565.json` 
+  13. `./web/webflow/_uid-unw-889.json`
+  14. `./web/webflow/_uid-wty-542.json` 
+
 
 ---
 
@@ -123,7 +154,7 @@
   2. Toggle tag = top of section page; only the top "see only" type tags; 
   3. Contextual tag = **comprehensive**, see examples started below to be completed by AI right on JSON files; four types 
      - (1) `ROLE` has **JUST ONE** and is designed onto page as one of the sections 
-     - (2) `TECHNOLOGY`, (3) `MEDIA`, (4) SKILL 
+     - (2) `TECHNOLOGY`, (3) `MEDIA`, (4) `SKILL` 
      - Tags on page in group at top right; click-through to see-only content tiles with same tag  
 
 | Tag             | Type         |
@@ -141,18 +172,15 @@
 
 #### Relevant Skill-Based Job Titles **WORK INTO COPY & CONTEXTUAL TAGS**
 
-- First section are to be paired with *...one of second section* 
-- E.g. Creative Director, Art Director, etc. 
-
-  + Creative, Art *...Director*
-  + Social, Video, Email, SMS, Viral, Content *...Producer*
-  + Digital, Print, Illustration, System, Generative AI, UI/UX *...Designer*
-  + Innovations, Marketing, Digital *...Manager, Strategist*
-  + Copy, UI/UX *...Writer*
-  + Web, Front-End, App *...Developer*
-  + Advertising, Process Optimization, Automation, AI Integration *...Specialist*
-  + Remote/Team, Client/Account, Project *...Manager*
-  + Digital, Business, Branding *...Consultant*
+  + (Creative, Art) Director 
+  + (Social, Video, Email, SMS, Viral, Content) Producer
+  + (Digital, Print, Illustration, System, Generative AI, UI/UX) Designer 
+  + (Innovations, Marketing, Digital) Manager, Strategist 
+  + (Copy, UI/UX) Writer 
+  + (Web, Front-End, App) Developer 
+  + (Advertising, Process Optimization, Automation, AI Integration) Specialist 
+  + (Remote/Team, Client/Account, Project) Manager 
+  + (Digital, Business, Branding) Consultant 
 
 #### Example Contextual Tags 
 
@@ -170,42 +198,49 @@
 
 ---
 
-## Tile UI/UX 
+## Tile UI/UX Design Details 
 
-### Inspo Examples 
+### Must See Visual Inspo 
 
-  1. `./assets/docs/tile_visual_inspo/1_homepage_tile.jpg`
-     - For UI functionality example of tiles on homepage 
-     - Large because there are small number of main sections 
-  2. `./assets/docs/tile_visual_inspo/2_section_tile.jpg` 
-     - For UI functionality example of tiles on section pages 
-     - Short and wide because large number of entries in sections 
-  3. `./assets/docs/tile_visual_inspo/3_tag_filters.jpg`
-     - For UI functionality example; horizontal scrolling of tag filters 
-     - Simpler, word must bleed off to prompt user to swipe 
-     - When tapped, tag stays 'ON', moves to left, turns different color, tap again off 
+  1. **Homepage Tile Image Swipe UI Functionality** `./assets/docs/tile_visual_inspo/1_homepage_tile.jpg`
+     - Larger, squarer for the ~4 website sections 
+     - No text above image, and text below doesn't scroll or expand for more downwards 
+     - We could possibly have the text change when images are swiped to the next 
+  2. **Section Tile Swipe UI Functionality** `./assets/docs/tile_visual_inspo/2_section_tile.jpg` 
+     - These fill section pages in larger quantity, and include sub-sections, along with other tag filtering options  
+     - The short/narrow but wide rectangle with smaller images to the side allows for fitting more of them on the screen 
+     - Again, of course the images swipe, but the text might as well if we like  
+  3. **Tag Filter's Scroll Horizontally**`./assets/docs/tile_visual_inspo/3_tag_filters.jpg`
+     - Google uses this UI frequently, shown via plain-text Search Options, and Ovals with small image for Sorting Search Results 
+     - Just like images, text must be sized so a tag bleeds off out of the viewport, prompting users to scroll 
+     - When tapped, tag stays 'ON', moves to left, turns more prominent color; tap again for off 
+  4. **Background Texture and Gradient**`./assets/docs/tile_visual_inspo/4_background_texture.jpg` 
+     - For background design
+     - First see the gradient vertical highlight making a 'glare' down the page; technically produced much like creating realist button edges 
+     - Then see the ornate, faded background pattern; we would use almost the same color as background to be way more subtle and just create texture 
+     - Use infinitely repeating SVG pattern for small filesize 
+  5. **Mid-Page FAQ** `./assets/docs/tile_visual_inspo/5_mid_page_faq.jpg` 
+     - For mid-page FAQ functionality UI  
+     - Seems like a great idea but haven't thought further than that 
 
-### Visual Design Specifics 
+### Tile Design Specifics 
 
-  + Light mode VS dark mode background 
-    - Simple off-white VS black/charcoal 
-    - Ornate SVG repeating pattern in SLIGHTLY different shade for texture 
-    - Solid behind SVG pattern has gradient looks like glare down vertical of page 
-  + Light mode VS dark mode tile color 
+* **Include light mode and dark mode options with dark mode defaulted** 
+
+  + Background 
+    - Use simple off-wite versus black/charcoal 
+    - Ornate SVG could bring in very faded color 
+    - Gradient effect as in example above to give depth 
+  + Tile component 
     - Colored similarly to background 
-    - Realistic, subtle shading 
-    - Sharp look and corners 
-  + Mobile and Tablet 
-    - One tile column 
-    - Short and wide for section, squarish for homepage 
-  + Desktop 
-    - Still one column for section pages; tile just bigger, more visual 
-    - UI of section page tile type would be strange if it was in 2 columns 
-    - Two columns should be okay for homepage tiles 
-  + Section color coding 
-    - Only on the homepage tiles 
-    - 2-3 px thick horizontal bar 
-  + Entry list is randomized every reload or toggle change
+    - Realistic and subtle shading 
+    - Sharp look, sharp corners; Apple killed the radial corner trend hard 
+  + Device responsiveness 
+    - Mobile and Tablet have one tile column sized as described in inspo above 
+    - Desktop still has one column for section pages, but tile is bigger, more visual; two columns for homepage tiles 
+  + Randomized tile order 
+    - Every time the page is reloaded the tiles should be in a new random order 
+    - When a filter is selected, that random order is maintained, non-tagged tiles fade away, then tagged content slide into place 
 
 ### Macro Website Structure 
 *Example only; not all entries are listed*
@@ -238,7 +273,6 @@
 ├── motion-graphic/               `motion-graphic.html`
 └── video/                        `video.html`
 ```
-
 
 ---
 
