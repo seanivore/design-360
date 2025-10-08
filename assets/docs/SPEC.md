@@ -122,9 +122,9 @@
 
 * **After all the bits of copy are complete, compose `page_copy` sections** 
 
-  10. Write `pattern` based on how/what opportunity was identified with logic 
-  11. Write `action` based on how opportunity was capitalized on 
-  12. Write `measured` based on how to tell project was a success 
+  10. Write `pattern` on logic of opportunity 
+  11. Write `action` on how opportunity was capitalized on 
+  12. Write `measured` about how to tell project was a success 
   13. Include any necessary `notes` for when the entry page is created 
 
 ### Page Layout 
@@ -137,7 +137,69 @@
 | H4    | `media`, `technology`, `skill` | Page content tags | 
 | H5    | `breadcrumb`                   | Similar to H4     | 
 
+### Project Tagging 
 
+#### Three Tag Types 
+
+  1. Section tag 
+     - These define the actual sections of the website 
+     - These are the only visible groups from the homepage 
+  2. Toggle tag 
+     - This list and functionality is TBD, in need of discussion 
+     - Imaging they're the most "see only" type tags 
+     - These would be located on the section pages with a toggle on/off OR click-through to view only  
+  3. Contextual tag 
+     - This list is currently just examples below, to be completed with AI help right on the entry JSON files 
+     - There are four contextual tag types 
+       (1) Role has **JUST ONE** and will be designed onto pages in prominent spot
+       (2) Technology, (3) Media, (4) Skill are **COMPREHENSIVE** to be designed on page in word cloud 
+
+#### Section & Toggle Tags 
+
+| Tag                   | Type         |
+| --------------------- | ------------ |
+| **Web**               | Section tag  |
+| **Print**             | Section tag  |
+| **Digital**           | Section tag  |
+| **Video**             | Section tag  |
+| Generative AI         | Toggle tag   |
+| Product               | Toggle tag   |
+| Copywriting           | Toggle tag   |
+| Interactive           | Toggle tag   |
+| Team Manager          | Toggle tag   |
+| Consulting            | Toggle tag   |
+
+#### Relevant Skill-Based Job Titles **WORK INTO COPY & CONTEXTUAL TAGS**
+- First section are to be paired with *...one of second section* 
+- E.g. Creative Director, Art Director, etc. 
+- These are to be used by working them into the copy naturally, and in contextual tags 
+- Include, but not limited to the below 
+
+  + Creative, Art *...Director*
+  + Social, Video, Email, SMS, Viral, Content *...Producer*
+  + Digital, Print, Illustration, System, Generative AI, UI/UX *...Designer*
+  + Innovations, Marketing, Digital *...Manager, Strategist*
+  + Copy, UI/UX *...Writer*
+  + Web, Front-End, App *...Developer*
+  + Advertising, Process Optimization, Automation, AI Integration *...Specialist*
+  + Remote/Team, Client/Account, Project *...Manager*
+  + Digital, Business, Branding *...Consultant*
+
+#### Example Contextual Tags 
+
+* **Framer AI In-Painted Archetypal Fashion Lookbook**
+  + *Web Designer + Framer + AI Writing + AI Image Creation + AI Photo Editing + Fashion Design + System Design + Product*
+
+* **Framer Education Art History Immersion Print Shop**
+  + *Web Designer + Framer + AI Image Creation + AI Creative Planning + AI Photo Editing + Art History + E-Commerce + Back-end Store Automation* 
+
+* **Webflow 200+ Weekly AI Generated Blog**
+  + *Web Designer + Webflow + Local Rebuild + GitHub Pages + AI Writing + API Publishing API + Database Management + Workflow Automation + AI Image Creation + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Custom Animation + Lottie Files*
+
+* **Webflow Hand-Drawn Illustrated Service Sales Website**
+  + *Account Management + Web Designer + Business Development Consultant + Webflow + Local Rebuild + GitHub Pages + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting*
+
+---
 
 * **Project tile location**
 
@@ -226,69 +288,6 @@
 └── video/                        `video.html`
 ```
 
-### Sectioning & Tagging 
-
-#### Three Tag Types 
-
-  1. Section tag 
-     - These define the actual sections of the website 
-     - These are the only visible groups from the homepage 
-  2. Toggle tag 
-     - This list and functionality is TBD, in need of discussion 
-     - Imaging they're the most "see only" type tags 
-     - These would be located on the section pages with a toggle on/off OR click-through to view only  
-  3. Contextual tag 
-     - This list is currently just examples below, to be completed with AI help right on the entry JSON files 
-     - There are four contextual tag types 
-       (1) Role has **JUST ONE** and will be designed onto pages in prominent spot
-       (2) Technology, (3) Media, (4) Skill are **COMPREHENSIVE** to be designed on page in word cloud 
-
-#### Section & Toggle Tags 
-
-| Tag                   | Type         |
-| --------------------- | ------------ |
-| **Web**               | Section tag  |
-| **Print**             | Section tag  |
-| **Digital**           | Section tag  |
-| **Motion Graphics**   | Section tag  |
-| **Video**             | Section tag  |
-| **Out-of-Home (OOH)** | Section tag  |
-| Generative AI         | Toggle tag   |
-| Product               | Toggle tag   |
-| Copywriting           | Toggle tag   |
-| Interactive           | Toggle tag   |
-| Team Manager          | Toggle tag   |
-| Consulting            | Toggle tag   |
-
-#### Relevant Skill-Based Job Titles **WORK INTO COPY & CONTEXTUAL TAGS**
-- First section are to be paired with *...one of second section* 
-- E.g. Creative Director, Art Director, etc. 
-- These are to be used by working them into the copy naturally, and in contextual tags 
-- Include, but not limited to the below 
-
-  + Creative, Art *...Director*
-  + Social, Video, Email, SMS, Viral, Content *...Producer*
-  + Digital, Print, Illustration, System, Generative AI, UI/UX *...Designer*
-  + Innovations, Marketing, Digital *...Manager, Strategist*
-  + Copy, UI/UX *...Writer*
-  + Web, Front-End, App *...Developer*
-  + Advertising, Process Optimization, Automation, AI Integration *...Specialist*
-  + Remote/Team, Client/Account, Project *...Manager*
-  + Digital, Business, Branding *...Consultant*
-
-#### Example Contextual Tags 
-
-* **Framer AI In-Painted Archetypal Fashion Lookbook**
-  + *Web Designer + Framer + AI Writing + AI Image Creation + AI Photo Editing + Fashion Design + System Design + Product*
-
-* **Framer Education Art History Immersion Print Shop**
-  + *Web Designer + Framer + AI Image Creation + AI Creative Planning + AI Photo Editing + Art History + E-Commerce + Back-end Store Automation* 
-
-* **Webflow 200+ Weekly AI Generated Blog**
-  + *Web Designer + Webflow + Local Rebuild + GitHub Pages + AI Writing + API Publishing API + Database Management + Workflow Automation + AI Image Creation + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Custom Animation + Lottie Files*
-
-* **Webflow Hand-Drawn Illustrated Service Sales Website**
-  + *Account Management + Web Designer + Business Development Consultant + Webflow + Local Rebuild + GitHub Pages + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting*
 
 ---
 
