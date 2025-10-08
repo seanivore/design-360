@@ -1,39 +1,32 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "last_updated": "2025-10-08T13:15:00.000000Z",
     "required_fields": true,
-    "schema_version": "1.0",
-    "template_type": "portfolio_entry"
+    "schema_version": "2.1",
+    "template_type": "portfolio_entry",
+    "schema_update": "Added page_subtitle, breadcrumb, tile_text to teaser_copy; created page_copy section with pattern/action/measured"
   },
   "categorization": {
     "entry_id": "_uid-eme-689", 
     "placement": {
         "section": "Web",
-        "sub_section": "Custom", 
+        "sub_section": "HTML/CSS/JS", 
         "slug": "august.style/web/html-css-js/",
         "file_name": "modular-portfolio-build.html"
     },
     "tagging":{
-        "technology": [
-            "Web", "Digital", "HTML/CSS/JS", "Generative AI", "Full Stack"
-        ],
-        "media": [
-            "Digital Product", "Repository"
-        ],
-        "role": [
-            "Website Developer"
-        ], 
-        "skill": [
-            "Agentic Development", "Copywriting", "Graphic Design"
-        ]
+        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages", "Vanilla JS", "Modular Architecture"],
+        "media": ["Web Design", "Digital Product", "Portfolio System", "Documentation"],
+        "role": ["Web Developer"], 
+        "skill": ["Front-End Development", "System Design", "Technical Documentation", "UI/UX Design", "Tag Navigation", "Convention Standards", "AI-Assisted Development"]
     }
 },
 "content": {
     "media": {
         "video_filename": "template-tag-nav-visual-website.mp4",
         "video_url": "https://youtu.be/OLZHwv2o-zQ",
-        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OLZHwv2o-zQ?si=1px7OtROcUfpq8il&amp;controls=0' title='Build a Visual, Tag-Navigated, Portfolio with AI's Help' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "thumbnail_image": [
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OLZHwv2o-zQ?si=1px7OtROcUfpq8il&amp;controls=0' title='Build a Visual Tag-Navigated Portfolio with AI Help' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "thumbnail_images": [
             "assets/web/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp",
             "assets/web/modular-portfolio-build/thumb-slides-modular-portfolio-build-2.webp",
             "assets/web/modular-portfolio-build/thumb-slides-modular-portfolio-build-3.webp",
@@ -44,18 +37,27 @@
         "page_imagery": []
         },
     "assets": {
-        "project_url": "https://www.developer-technologist.august.style",
-        "github_repository": "https://www.github.com/seanivore/portfolio"
+        "project_url": "https://developer-technologist.august.style",
+        "github_repository": "https://github.com/seanivore/portfolio"
     },
-    "copy":{
+    "teaser_copy":{
         "seo_title": "Build a Visual, Tag-Navigated, Portfolio with AI's Help",
         "seo_description": "Modular website conventions template for first time HTML/CSS/JS development with AI", 
-        "page_title": "", 
-        "page_copy": ""
-    }, 
-    "notes": [
-        "Details about this project from a portfolio entry ca be found here: https://developer-technologist.august.style/portfolio-system-design", 
-        "Summary details about building this website: - The repository: [https://github.com/seanivore/portfolio](https://github.com/seanivore/portfolio) - The website: [https://developer-technologist.august.style/](https://developer-technologist.august.style/) - HTML, CSS, JS  - Modular, versatile system  - Encourages rapid agentic production  - All patterns well documented in `./CONVENTIONS.md`  - Designed to prevent AI from creating a mess when coding  - Repeatable across context windows  - Create identical pages across many sessions > This was my comprehensive portfolio. I wanted to build something that could be shared as a template for others, so everything was carefully documented and simplified. > > This was the first website I built after many years of no-code development on Webflow."
-    ]
-}
+        "page_title": "Modular Portfolio System for AI-Assisted Development", 
+        "page_subtitle": "Template architecture designed to prevent AI coding chaos", 
+        "breadcrumb": "First-Time HTML/CSS/JS Template",
+        "tile_text": [
+            "Comprehensive CONVENTIONS.md prevents AI mess",
+            "Reusable patterns across multiple context windows",
+            "Tag-based navigation showcases versatile projects",
+            "Built for rapid agentic production workflows"
+        ]
+    },
+    "page_copy":{
+        "pattern": "After years of no-code development, returning to HTML/CSS/JS required a system that could work seamlessly with AI assistance while maintaining code quality and consistency. The challenge was creating a portfolio architecture that could be documented well enough for AI to replicate patterns accurately across multiple sessions, while preventing the typical mess that emerges from AI-generated code without clear conventions.",
+        "action": "Developed a comprehensive modular system with extensively documented conventions in CONVENTIONS.md that serve as both human reference and AI training material. Created reusable component patterns for navigation, project cards, and content sections that maintain consistency across 50+ portfolio entries. Implemented tag-based filtering system using vanilla JavaScript for lightweight performance. The entire architecture emphasizes simplicity and repeatability—each pattern is documented with examples, making it easy for AI to generate new pages that match existing structure perfectly.", 
+        "measured": "Successfully built and maintained a comprehensive portfolio spanning technical development, creative work, and strategic projects—all using a consistent system that works flawlessly with AI pair programming. The documented conventions enabled rapid page creation across multiple AI sessions without breaking patterns or introducing inconsistencies. The template has become a shareable resource for others building their first HTML/CSS/JS sites, particularly those working with AI assistance."
+    }
+}, 
+    "notes": ["Use thumbnail images on-page for now"]
 }

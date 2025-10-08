@@ -1,31 +1,32 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "last_updated": "2025-10-08T13:25:00.000000Z",
     "required_fields": true,
-    "schema_version": "1.0",
-    "template_type": "portfolio_entry"
+    "schema_version": "2.1",
+    "template_type": "portfolio_entry",
+    "schema_update": "Added page_subtitle, breadcrumb, tile_text to teaser_copy; created page_copy section with pattern/action/measured"
   },
   "categorization": {
     "entry_id": "_uid-qor-090", 
     "placement": {
         "section": "Web",
-        "sub_section": "Custom", 
+        "sub_section": "HTML/CSS/JS", 
         "slug": "august.style/web/html-css-js/",
         "file_name": "css-animated-micro-interactions.html"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": [], 
-        "skill": []
+        "technology": ["HTML", "CSS", "JavaScript", "CSS Animation", "Glassmorphism", "Jekyll", "Markdown"],
+        "media": ["Web Design", "Presentation Platform", "Digital Product", "Documentation"],
+        "role": ["Web Designer"], 
+        "skill": ["CSS Animation", "Front-End Development", "Presentation Design", "Markdown Integration", "Visual Effects", "UI/UX Design"]
     }
 },
 "content": {
     "media": {
         "video_filename": "landing-page-research-presentations-data.mp4",
         "video_url": "https://youtu.be/hNdy_KW1w8U",
-        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections & Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "thumbnail_image": [
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections and Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "thumbnail_images": [
             "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
             "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
             "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-3.webp",
@@ -39,14 +40,24 @@
         "project_url": "https://presenting.august.style",
         "github_repository": "https://github.com/seanivore/presentation-decks"
     },
-    "copy":{
+    "teaser_copy":{
         "seo_title": "Two Presentation Deck Sections & Markdown-Based Index",
         "seo_description": "Versatile website features two presentation sections, a CSS-animated homepage with glassmorphic tiles, and a markdown-based index section",
-        "page_title": "", 
-        "page_copy": ""
-    }, 
-    "notes": [
-        "This summary from the projects portfolio is about the content of this website but it may lend some valuable insights when writing copy for this entry about website development and design. 'Building Effective Agents' - The repository: [https://github.com/seanivore/presentation-decks](https://github.com/seanivore/presentation-decks) - The website: [https://presenting.august.style/](https://presenting.august.style/) - Single python file  - Prompt input via JSON object  - Setup script creates workflow  - Automated README generated  - LLM orchestrates workflow  - Agents make live workflow changes  - Communicate new information mid-workflow  - Delegates tasks to other agents  - Agents decisions from multi-LLM feedback ### 1. AI Voice Marketing Research and Creative Implementation ID: 1.1  Agents gathered research, decided what was valuable, built out those concepts, contemplate making data actionable, and provided actionable resources via reference sheets and an index. Includes two separate presentations. > The initial amount of research collected was intimidating and would have overwhelmed me to the point of getting lost in it for days. The decisions the agents made as to what to pull out and build on from that research consistently maintained a focus of 'Actionable' and was always crafted for the client's platform choice, 'BLAND AI'. The human-assisted creation of a Jekyll theme for markdown to HTML conversion is a disservice to the content.  ### 2. An Agentic Marketing Department ID: 1.2  Humans pasted 'Brand Identity' overview found in the first result of a single Google search. Using those two paragraphs, agents drafted, review and provided feedback, and then finalized a collection of documents. They first created a comprehensive marketing plan detailing campaigns, voice, visuals, and genuinely insightful and helpful information. From that marketing plan agents then produced email blasts, Instagram posts with visual briefing, caption, and hashtag strategy, and other campaign assets. > Having worked in viral social media marketing for a decade, and as a self proclaimed branding snob, the results were more than I'd have expected from any actual employee. Content producers and strategists would be extremely well prepared even if this was only used as a draft or blue print. It was incredibly comprehensive and consistently surprised. Definitely worth checking it out. ### ACTUALLY AGENTIC & NOT HYPE The documentation in the website includes technical details. Message with any questions."
-    ]
-}
+        "page_title": "AI Agent Research Presentation Platform", 
+        "page_subtitle": "CSS-animated interface showcasing agentic workflow case studies", 
+        "breadcrumb": "Presentation Deck System",
+        "tile_text": [
+            "Glassmorphic tiles with smooth CSS animations",
+            "Two distinct presentation formats in one site",
+            "Markdown-to-HTML automation for documentation",
+            "Showcasing practical agentic AI implementations"
+        ]
+    },
+    "page_copy":{
+        "pattern": "Complex AI research and case studies need presentation formats that adapt to different content types—some material works best as traditional slide decks, while other content requires indexed documentation. The challenge was creating a unified platform that could house both presentation styles with an engaging entry point that makes technical content approachable. The CSS-animated homepage needed to feel modern and interactive without JavaScript dependencies that could bloat load times.",
+        "action": "Built a versatile platform with three distinct sections: a CSS-animated homepage featuring glassmorphic tiles with micro-interactions, two full presentation deck areas for AI voice marketing research and agentic workflow implementations, and a markdown-based index system that auto-converts documentation to clean HTML. The homepage animations use pure CSS for buttery-smooth performance, with hover and focus states that guide users naturally to different content areas. Integrated Jekyll for markdown processing, allowing rapid updates to documentation sections without touching HTML.", 
+        "measured": "Successfully delivered comprehensive AI research across multiple formats while maintaining visual cohesion and fast load times. The CSS-only animation approach keeps the homepage performant even with complex visual effects. The dual presentation system accommodates both slide-deck-style research summaries and detailed indexed documentation, making technical concepts accessible to different learning styles. The markdown integration enables quick content updates—new research findings can be added and published in minutes rather than hours of HTML work."
+    }
+}, 
+    "notes": ["Use thumbnail images on-page for now"]
 }

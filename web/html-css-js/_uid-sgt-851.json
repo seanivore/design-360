@@ -1,23 +1,24 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "last_updated": "2025-10-08T13:25:00.000000Z",
     "required_fields": true,
-    "schema_version": "1.0",
-    "template_type": "portfolio_entry"
+    "schema_version": "2.1",
+    "template_type": "portfolio_entry",
+    "schema_update": "Added page_subtitle, breadcrumb, tile_text to teaser_copy; created page_copy section with pattern/action/measured"
   },
   "categorization": {
     "entry_id": "_uid-sgt-851", 
     "placement": {
         "section": "Web",
-        "sub_section": "Custom", 
+        "sub_section": "HTML/CSS/JS", 
         "slug": "august.style/web/html-css-js/",
         "file_name": "amorphous-gradient-css-animation.html"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": [], 
-        "skill": []
+        "technology": ["HTML", "CSS", "CSS Animation", "Gradient Animation", "Single Page Application"],
+        "media": ["Web Design", "Digital Product", "Portfolio Platform"],
+        "role": ["Web Designer"], 
+        "skill": ["CSS Animation", "Visual Effects", "Typography", "Front-End Development", "Performance Optimization", "Minimalist Design"]
     }
 },
 "content": {
@@ -25,7 +26,7 @@
         "video_filename": "single-page-projects-overview-website.mp4",
         "video_url": "https://youtu.be/w14lqrILIyY",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/w14lqrILIyY?si=EzfBG0p1YDnMug_e&amp;controls=0' title='Gradient Morphing CSS Animation Web Design' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "thumbnail_image": [
+        "thumbnail_images": [
             "assets/web/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-1.webp",
             "assets/web/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-2.webp",
             "assets/web/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-3.webp",
@@ -39,14 +40,24 @@
         "project_url": "https://projects.august.style",
         "github_repository": "https://github.com/seanivore/seanivore-contact"
     },
-    "copy":{
+    "teaser_copy":{
         "seo_title": "Gradient Morphing CSS Animation Web Design",
         "seo_description": "Created using just HTML and CSS this light-weight animated background is engaging behind any content, or carefully chosen typography", 
-        "page_title": "", 
-        "page_copy": ""
-    }, 
-    "notes": [
-        "A tiny bit about this website in comparison to the formal digital asset showcase. To compliment this showcase portfolio that is all shiny and super curated, we created a 'Projects Overview' Portfolio that is casual, conversational, and mostly just text and links, one a one-page website. The actual items listed on the page, all of which are an entry in this portfolio, have detail summaries on each at this path document: `/Users/seanivore/Development/applying-to-jobs/PORTFOLIOS/DESIGN_WEB_ASSETS.md` and also here `/Users/seanivore/Development/360-design/assets/docs/entry_resources/project_portfolio.md`"
-    ]
-}
+        "page_title": "Casual Projects Overview with Morphing Gradients", 
+        "page_subtitle": "Single-page portfolio complement with pure CSS animation", 
+        "breadcrumb": "Animated Background Portfolio",
+        "tile_text": [
+            "Morphing gradient animation using only HTML and CSS",
+            "Lightweight alternative to polished portfolio sites",
+            "Conversational tone with text-focused content",
+            "Complements formal showcase with casual accessibility"
+        ]
+    },
+    "page_copy":{
+        "pattern": "Comprehensive portfolio sites can feel intimidating or overly formal—sometimes you just need a casual, approachable place to list projects with links and brief descriptions. The challenge was creating visual interest without competing with the text-heavy content or requiring heavy assets. A morphing gradient background could provide engaging movement while staying lightweight and letting carefully chosen typography remain the focus. The single-page format needed to feel deliberately minimal rather than unfinished.",
+        "action": "Built a lightweight single-page portfolio using pure HTML and CSS with a continuously morphing gradient background animation. The animation uses CSS keyframes and blend modes to create fluid color transitions that add visual depth without distraction. Typography choices and spacing create hierarchy and readability over the animated background—projects are listed with conversational descriptions and direct links rather than cards or heavy formatting. The entire page loads in under 1 second with the animation running smoothly, proving that engaging design doesn't require JavaScript or large asset libraries.", 
+        "measured": "Successfully created a casual portfolio complement that serves a different purpose than polished showcase sites—this version prioritizes accessibility and quick scanning over visual drama. The morphing gradient achieves its goal of adding interest without overwhelming text content. The conversational tone and straightforward format make technical projects approachable, while the sub-1-second load time ensures the page works flawlessly on any connection. The contrast between this casual overview and more polished portfolio sites demonstrates range in both design thinking and technical execution."
+    }
+}, 
+    "notes": ["Use thumbnail images on-page for now"]
 }

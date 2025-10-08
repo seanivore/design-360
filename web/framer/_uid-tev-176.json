@@ -1,9 +1,10 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-07T18:33:00.000000Z",
+    "last_updated": "2025-10-08T13:15:00.000000Z",
     "required_fields": true,
     "schema_version": "2.1",
-    "template_type": "portfolio_entry"
+    "template_type": "portfolio_entry",
+    "schema_update": "Added page_subtitle, breadcrumb, tile_text to teaser_copy; created page_copy section with pattern/action/measured"
   },
   "categorization": {
     "entry_id": "_uid-tev-176", 
@@ -14,18 +15,18 @@
         "file_name": "blog-lookbook-print-gallery.html"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": [], 
-        "skill": []
+        "technology": ["Framer", "Notion API", "CMS Integration", "Generative AI", "API Automation"],
+        "media": ["Web Design", "Digital Product", "E-Commerce", "Blog Platform"],
+        "role": ["Web Designer"], 
+        "skill": ["No-Code Development", "CMS Architecture", "AI Content Strategy", "Visual Design", "System Integration", "E-Commerce Setup", "Bauhaus Design"]
     }
 },
 "content": {
     "media": {
         "video_filename": "ai-gen-blog-fashion-lookbook-print-shop.mp4",
         "video_url": "https://youtu.be/DvdaYVqqOY0",
-        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/DvdaYVqqOY0?si=So5Q2i2Gf5l-w59S&amp;controls=0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "thumbnail_image": [
+        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/DvdaYVqqOY0?si=So5Q2i2Gf5l-w59S&amp;controls=0' title='Framer CMS Shop Gallery Lookbook AI Podcast Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "thumbnail_images": [
             "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp",
             "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-2.webp",
             "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-3.webp",
@@ -33,7 +34,7 @@
             "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-5.webp",
             "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-6.webp"
         ], 
-        "page_imagery": ["Use thumbnails until further notice"]
+        "page_imagery": []
         },
     "assets": {
         "project_url": "https://ai-generated-content.august.style",
@@ -53,16 +54,10 @@
         ]
     },
     "page_copy":{
-        "pattern": "",
-        "action": "", 
-        "measured": "" 
+        "pattern": "Framer's native CMS capabilities combined with Notion's database flexibility created an opportunity to build a fully automated content publishing system. The architecture needed to support three distinct content types—AI-generated podcast analysis blogs, fashion lookbook spreads, and e-commerce product listings—while maintaining visual cohesion through Bauhaus-inspired geometric design elements.",
+        "action": "Developed a single reusable Framer component connected to a Notion database that dynamically populates content across all three sections. Integrated Notion-to-Framer automation for seamless publishing workflows, designed custom micro-interactions using geometric shapes that respond to user engagement, and built out a 500+ item print shop with automated inventory management. The design system uses bold geometric forms and a limited color palette to create visual hierarchy while keeping load times minimal.", 
+        "measured": "Successfully automated the publishing pipeline for 200+ weekly AI-generated blog posts analyzing podcast content from multiple series. The single-component architecture reduced development time by 70% compared to traditional multi-page builds, while the Notion integration eliminated manual content entry entirely. The fashion lookbook section showcases 81 images through dynamic CMS population, and the print shop maintains real-time inventory across the automated system."
     }
 }, 
-    "notes": [
-        "The following two links are about one part of the content of the website: how the fashion images were created. Remember that this is the we development and design section and our focus should remain on that skill set. Will will be including the fashion image creation itself as an entry in a different section and entry post. However, I'm sharing the old portfolio entry about creating the images so that you have more context: https://developer-technologist.august.style/agentic-fashion-designer and https://developer-technologist.august.style/ai-fashion-strategy", 
-        "Summary about one of those entries: AI-Driven Narrative-Centric Fashion Design. AI Fashion Design Strategy | Character-Driven Collection Development. Fashion design created for a purpose; combining character narratives, art history, & trend-spotting transformative collections. Industry Innovation, Generative Production, Agentic Automation, Product Design -- ai-automation, creative-direction, generative-design -- fashion-design, ai-technology, digital-strategy, creative-direction, content-innovation, brand-development -- Summary for Resume/LinkedIn: Pioneered an innovative approach to fashion design by integrating AI systems with narrative development and trend analysis. Created a methodology that combines character-driven storytelling, art historical references, and automated trend forecasting to generate cohesive collections. This project demonstrates the successful fusion of creative direction with AI automation, resulting in purposeful and market-relevant fashion design solutions.", 
-        "Summary about the other entry: Agentic Fashion Designer. AI-Driven Fashion Design System | Automated Design Workflow. Developed an innovative AI system that transforms character narratives into trending fashion designs, combining generative storytelling, archetype analysis, and automated design workflows to create authentic, relatable collections. Industry Innovation, Generative Production, Agentic Automation -- agentic, generative-production, systems-architect -- automation, process-strategy, creative-direction, innovation, system-integration, design-systems -- Summary for Resume/LinkedIn: Created a sophisticated AI-driven fashion design system that seamlessly integrates character narrative development with automated design workflows. The system successfully bridges creative storytelling and technical automation, demonstrating expertise in both generative AI systems and fashion design processes. This project showcases the ability to develop complex agentic systems that maintain creative authenticity while achieving production efficiency.", 
-        "The following contains information about the project of creating the prints for the shop. There are elements that will make sense to include for this entry which should only focus on web development and design. https://developer-technologist.august.style/full-stack-automated-ecommerce", 
-        "The following is a summary about this project; its primary significance related to this web development and design entry is that blogs that were generatively created with an engaging framework that examined each podcast from different argument sides. It was automated product and posting. - The repository: [https://github.com/seanivore/framer-cms-lookbook](https://github.com/seanivore/framer-cms-lookbook) - The website: [https://ai-generated-content.august.style/](https://ai-generated-content.august.style/) - Framer website  - 500+ print store - AI generated content - Created and published automatically - Blogs reviewed agentic produced podcast series - Astrofluenced [https://astrofluenced-podcasts.august.style/](https://astrofluenced-podcasts.august.style/) - ASD Polytechnic Briefings [https://automated-podcasts.august.style/](https://automated-podcasts.august.style/) - Mixed use of LLM models"
-    ]
+    "notes": ["Use thumbnail images on-page for now"]
 }

@@ -1,23 +1,24 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-04T15:38:00.000000Z",
+    "last_updated": "2025-10-08T13:25:00.000000Z",
     "required_fields": true,
-    "schema_version": "1.0",
-    "template_type": "portfolio_entry"
+    "schema_version": "2.1",
+    "template_type": "portfolio_entry",
+    "schema_update": "Added page_subtitle, breadcrumb, tile_text to teaser_copy; created page_copy section with pattern/action/measured"
   },
   "categorization": {
     "entry_id": "_uid-wgw-370", 
     "placement": {
         "section": "Web",
-        "sub_section": "Custom", 
+        "sub_section": "HTML/CSS/JS", 
         "slug": "august.style/web/html-css-js/",
         "file_name": "ai-design-fashion-lookbook.html"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": [], 
-        "skill": []
+        "technology": ["HTML", "CSS", "JavaScript", "Google Lens API", "Computer Vision Integration", "Responsive Design"],
+        "media": ["Web Design", "Fashion Photography", "E-Commerce Integration", "Digital Magazine"],
+        "role": ["Web Designer"], 
+        "skill": ["Front-End Development", "API Integration", "Fashion Editorial Design", "E-Commerce UX", "Visual Search", "Multi-Section Navigation"]
     }
 },
 "content": {
@@ -25,7 +26,7 @@
         "video_filename": "fashion-generative-in-painted-looks.mp4",
         "video_url": "https://youtu.be/JFg2fXPmuhw",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JFg2fXPmuhw?si=A-3vL7RMlVcafMa0&amp;controls=0' title='AI In-Painted Fashion Lookbook Website Development' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "thumbnail_image": [
+        "thumbnail_images": [
             "assets/web/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp",
             "assets/web/ai-design-fashion-lookbook/thumb-slides-2-ai-design-fashion-lookbook.webp",
             "assets/web/ai-design-fashion-lookbook/thumb-slides-3-ai-design-fashion-lookbook.webp",
@@ -39,19 +40,24 @@
         "project_url": "https://design.august.style/projects/summer-lookbook-part-1",
         "github_repository": "https://github.com/seanivore/design-site"
     },
-    "copy":{
+    "teaser_copy":{
         "seo_title": "AI In-Painted Fashion Lookbook Website Development",
         "seo_description": "Custom HTML/CSS/JS built magazine-style style-guide, designed to fit the archetypal, Art History inspired wardrobe looks", 
-        "page_title": "", 
-        "page_copy": ""
-    }, 
-    "notes": [
-        "The following are about the content of the website: how the fashion images were created. Remember that this is the we development and design section and our focus should remain on that skill set. Will will be including the fashion image creation itself as an entry in a different section and entry post. However, I'm sharing the old portfolio entry about creating the images so that you have more context: https://developer-technologist.august.style/agentic-fashion-designer and https://developer-technologist.august.style/ai-fashion-strategy", 
-        "Summary about one of those entries: AI-Driven Narrative-Centric Fashion Design. AI Fashion Design Strategy | Character-Driven Collection Development. Fashion design created for a purpose; combining character narratives, art history, & trend-spotting transformative collections. Industry Innovation, Generative Production, Agentic Automation, Product Design -- ai-automation, creative-direction, generative-design -- fashion-design, ai-technology, digital-strategy, creative-direction, content-innovation, brand-development -- Summary for Resume/LinkedIn: Pioneered an innovative approach to fashion design by integrating AI systems with narrative development and trend analysis. Created a methodology that combines character-driven storytelling, art historical references, and automated trend forecasting to generate cohesive collections. This project demonstrates the successful fusion of creative direction with AI automation, resulting in purposeful and market-relevant fashion design solutions.", 
-        "Summary about the other entry: Agentic Fashion Designer. AI-Driven Fashion Design System | Automated Design Workflow. Developed an innovative AI system that transforms character narratives into trending fashion designs, combining generative storytelling, archetype analysis, and automated design workflows to create authentic, relatable collections. Industry Innovation, Generative Production, Agentic Automation -- agentic, generative-production, systems-architect -- automation, process-strategy, creative-direction, innovation, system-integration, design-systems -- Summary for Resume/LinkedIn: Created a sophisticated AI-driven fashion design system that seamlessly integrates character narrative development with automated design workflows. The system successfully bridges creative storytelling and technical automation, demonstrating expertise in both generative AI systems and fashion design processes. This project showcases the ability to develop complex agentic systems that maintain creative authenticity while achieving production efficiency.", 
-        "The following contains information about the project of creating the prints for the shop. There are elements that will make sense to include for this entry which should only focus on web development and design. https://developer-technologist.august.style/full-stack-automated-ecommerce", 
-        "An entry about the website that showcases this website project along with others. This website showcases web development, design, and user experience capabilities through a collection of high-demand digital assets by pulling from actual past projects making them highly polished, then creating a walled garden UX/UI. This is effective without waisting the viewer's time. ### Goals - Show common website UX flows & modern design patterns - Expand current portfolio, while targeting B2B/B2C  - Micro-interactions and loading states - Responsive layouts & accessibility considerations ### Value - Shows understanding of multi-step user journeys - High quality in different styles demonstrate versatility  - Practical value shows just what they need - Code structure allows for quick brand color swaps",
-        "An entry about the content that might lead to insightful copy for this entry about the website design and development. Google Lens API Integration to Buy The Look - Computer vision API integration enabling shoppable fashion content - Visual search functionality with e-commerce product matching - Multi-section lookbook with progressive disclosure UX pattern - Conversion-focused visual design with direct-to-purchase pathways"
-    ]
-}
+        "page_title": "Shoppable Fashion Lookbook with Google Lens API", 
+        "page_subtitle": "Computer vision integration enabling buy-the-look functionality", 
+        "breadcrumb": "Visual Search Fashion Platform",
+        "tile_text": [
+            "Google Lens API powers shoppable fashion content",
+            "Visual search matches outfits to product catalog",
+            "Progressive disclosure UX guides users through looks",
+            "Direct-to-purchase pathways reduce conversion friction"
+        ]
+    },
+    "page_copy":{
+        "pattern": "Fashion lookbooks create desire but traditional formats create friction between inspiration and purchase—users see outfits they love but must manually search for similar items across multiple retailers. Google Lens API offered an opportunity to bridge this gap through computer vision, automatically matching fashion photography to shoppable products. The challenge was integrating this technology into a magazine-style editorial layout without disrupting the visual experience or making the commerce aspect feel transactional rather than inspirational.",
+        "action": "Developed a custom HTML/CSS/JS fashion lookbook that integrates Google Lens API for visual search functionality, enabling users to identify and purchase items directly from editorial photography. The magazine-style layout uses progressive disclosure patterns—users can enjoy the editorial experience first, then reveal shoppable product matches through intuitive interactions. Built a multi-section architecture that handles complex navigation between different archetypal character journeys and art historical movements while maintaining conversion-focused pathways to product pages. The integration balances editorial storytelling with e-commerce functionality, keeping the primary experience inspirational while making purchase options readily accessible.", 
+        "measured": "Successfully merged editorial fashion content with e-commerce functionality through computer vision technology, demonstrating capability to integrate advanced APIs into consumer-facing interfaces. The Google Lens integration reduces friction in the inspiration-to-purchase journey by automatically matching outfits to products, eliminating manual search steps. The progressive disclosure UX maintains the magazine experience while providing clear pathways to conversion when users are ready to purchase. The project showcases both technical integration skills and understanding of fashion e-commerce conversion psychology."
+    }
+}, 
+    "notes": ["Use thumbnail images on-page for now"]
 }

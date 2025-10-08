@@ -1,6 +1,8 @@
 # Creative Generalist Portfolio 
 *Generalist roles become more in-demand as organizations flatten*
 
++ Project state is saved to memory MCP; search exact entity term `generalist-portfolio` 
+
 ## Message 
 
   + **PROBLEM:** downsizing because of economic uncertainty and AI operational integration 
