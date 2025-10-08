@@ -65,9 +65,9 @@
 
 ---
 
-## Content Management, UI, UX 
+## Project Entry 
 
-### Project JSON Entry Variables 
+### Writing JSON Variables 
 
 * **Process flow builds on itself to fill out all copywriting in JSON**
 
@@ -125,9 +125,19 @@
   10. Write `pattern` based on how/what opportunity was identified with logic 
   11. Write `action` based on how opportunity was capitalized on 
   12. Write `measured` based on how to tell project was a success 
-  13. Include any necessary notes for when the entry page is created 
+  13. Include any necessary `notes` for when the entry page is created 
 
-### Tile Visual Specifics 
+### Page Layout 
+
+| Class | JSON Variable                  | Styling Guide     | 
+| ----- | ------------------------------ | ----------------- | 
+| H1    | `page_title`                   | Large, heavy      | 
+| H2    | `page_subtitle`                | Smaller than H3   | 
+| H3    | `role` & `page_copy` headings  | Main sections     |
+| H4    | `media`, `technology`, `skill` | Page content tags | 
+| H5    | `breadcrumb`                   | Similar to H4     | 
+
+
 
 * **Project tile location**
 
@@ -140,17 +150,6 @@
     - Only one column ever, just bigger scale of image, bigger relative to tile text 
 
 
-
-* **Write quality SEO title, then divide it into**
-    - H1 "page_title" is large, heavy 
-    - H2 "page_subtitle" potentially smaller than the H3 
-
-* **The page copy should get four clear sections with H3**
-    - H3 prominent for "Role", "Pattern", "Action", "Measured", the only sections on page 
-
-* **Similarly sized, and out of the way, at top and bottom of page**
-    - H4 "media", "technology", "skill" 
-    - H5 "breadcrumb" 
 
 * **See visual inspo images** 
 
