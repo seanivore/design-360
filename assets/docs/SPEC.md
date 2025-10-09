@@ -16,16 +16,15 @@
 ### Design Summary 
 
   1. Technically simple HTML/CSS/JS build, published to GitHub Pages 
-     + No HTML, CSS, or JS pages have been created yet in directories `./assets/css/...`, `./assets/js/...`
-     + Necessary `./_config.yml` and `./CNAME` are ready 
+     + No HTML, CSS, or JS created yet; directories exist: `./assets/css/...`, `./assets/js/...`
+     + The `./_config.yml` and `./CNAME` files are complete  
   2. Content tile grid navigation with tag toggle filtering on the section pages 
-     + ~4 homepage tiles link out to sections; tiles are larger, almost square 
-     + Section tiles link out to entries; are wide and short/narrow 
+     + Larger, almost square homepage tiles link out to the four website sections 
+     + Wide, shorter/narrow section page tiles link out to entries 
   3. Thumbnail images on tiles swipe like slide show 
      + This is to help prevent the need to click through many projects  
-     + Thumbnails are already compressed and 1920 px X 1080 px, with 3 to 6 for each tile 
      + One image must bleed, extend beyond viewport to encourage user to swipe 
-  4. Text on images couple with images to tell the full story 
+  4. Text on images couple with images to tell the full story, metrics, results 
      + There are ~4 teaser lines of text for front of the tile 
      + These change with cross-fade that triggers when an image is swiped to the next 
   5. Responsive design is strictly mobile FIRST  
@@ -45,12 +44,9 @@
      + Necessary for tags and filtering on section pages, as well pas populating the actual tiles, their text, their images 
      + On entry page, just some elements are made dynamic, like the list of tags for each page at top right 
      + If it is easier we can/should dynamically fill in as much of the entry details on page as possible 
-  8. Project entry page is highly visual with 4 clear section headings 
+  8. Project entry pages are highly visual with 4 clear section headings 
+     + Sections include **ROLE**, **PATTERN**, **ACTION**, and **MEASURED** 
      + Each section has 2-4 short sentences; except "ROLE" as that is populated like the tags are 
-       1. **Role:** Context of involvement, relationship to project 
-       2. **Pattern:** Opportunity identified, content and strategy logic 
-       3. **Action:** Resulting moves, execution, procedure, resources committed 
-       4. **Measured:** Metrics, the results, thoughts for next time 
      + Find proposed HTML filename on JSON file; JSON filename created using `uid` bash command 
      + Any images have their alt. text written on the fly pulling from context of project text and image's filename 
 
@@ -82,80 +78,111 @@
 
 ---
 
-## Project Entry 
+## Project Entries 
 
-### Writing JSON Variables 
+### JSON Entry Writing Process 
 
 * **Process flow builds on itself to fill out all copywriting in JSON**
 
   1. Get an `entry_id` by running bash command `uid` then adding an underscore to front of ID 
   2. Add `section` and `sub_section` then fill in `slug` with domain 
-     - Section = Print, Digital, Web, or Video 
-     - Sub-sections = Created as tags based on need while building project collection 
-     - Slug example: 'august.style/web/framer/' 
-  3. Add all `media` and `assets`
-     - 'video_filename' for future reference 
-     - 'video_url' will be linked in the post a few times 
-     - 'video_embed' has all double quotes changed to single 
-     - Replace 'YouTube Video Player' with the SEO title 
-     - Gather ~6 images, crop, resize to 1920x1080px, convert, compress .webp file 
-     - Add any 'page_imagery' using the same conversion and compression files 
-     - Add 'project_url' if original project has associated URL, i.e. in web design 
-     - Add link for 'github_repository' as this will be featured prominently 
+     - `section` options = Print, Digital, Web, or Video 
+     - `sub_section` is created as context tags based on need while build the collection of project entries 
+     - `slug` field entry example = 'august.style/web/framer/' 
 
-* **After adding above basics, begin copywriting with SEO** 
+* **After preparing above basics, human completes the following or works with AI to do so** 
 
-  4. Write `seo_title` 
-     - Find two 'hooks' that fit the generalist appeal, then 'Sell the click' in a way that fits our [Message](#message)
-     - Example: "Framer CMS Shop Gallery, Lookbook, & AI Podcast Blog" 
-  5. Compose `seo_description` 
-     - Give context to the hooks in the title, complimenting or expanding on the title conceptually 
-     - Example: "Bauhaus inspired custom Framer website design with engaging interactive component shapes." 
-  6. Create `file_name` 
-     - Remove stop words, prepositions, determiners; replace spaces with hyphens, make all lowercase 
+  3. Complete two from the `content` > `media` section 
+     - Write an `seo_title` 
+       + Find two 'hooks' fitting generalist appeal; 'Sell the click' by fitting our Message of creating this site 
+       + Example: "Framer CMS Shop Gallery, Lookbook, & AI Podcast Blog" 
+     - Compose `seo_description` 
+       + Give context to hooks by complimenting, expanding on the title conceptually 
+       + Example: "Bauhaus inspired custom Framer website design with engaging interactive component shapes." 
+  4. Now you can create the `categorization` > `placement` > `file_name` by simplifying the `seo_title` 
+     - This is the rest of the project entry URL so remove stop words, prepositions, determiners from `seo_title` 
+     - Replace spaces with hyphens and make everything lowercase 
      - Example: 'blog-lookbook-print-gallery.html' 
+  5. Finally, add all `media` > `assets`
+     - The `video_filename` which is collected for possible future needs  
+     - If available, add any `video_url` so it can be linked throughout the post a few times 
+     - If there was a video, grab and slightly edit the `video_embed` to place it on the page 
+       + Have the double quotes changed to single 
+       + Replace 'YouTube Video Player' with the project entry's `seo_title`
+     - Gather `thumbnail_images` and prepare them accordingly  
+       + Select ~ 6 images to become gesture-swiped collection of content tile thumbnails 
+       + Crop and resize thumbnail images to 1920 px by 1080 px 
+     - Then add `page_imagery` to the array if available 
+       + Use video stills, images from old portfolio posts, or at least the actual thumbnails from the tile placement 
+       + They must be converted and compressed in the same way the `thumbnail_images` were
+     - Most projects will hav a `project_url` to link to; i.e. websites designed or developed, social media posts, etc. 
+     - Then add the `github_repository` if possible, to be placed on the project entry page 
+  6. Add `notes` to aid AI in filling out rest of JSON 
+     - Look through the old portfolio entries, most can be found in applying-to-jobs directory 
+     - Include summaries from those documents and also add any URL to previous portfolio entry posts 
+
+* **AI should now use all resources available to complete JSON for Sean to review afterwards** 
+
   7. Create `page_title` and `page_subtitle` 
-     - Simplify the 'seo_title' into concise and direct 'page_title' 
-     - Fit the rest of the messaging from the 'seo_title' into the 'page_subtitle' 
-     - Example page_title: "Framer CMS Site Built Using AI & Notion" 
-     - Example page_subtitle: "With micro-interactive bauhaus-inspired design" 
+     - Simplify the `seo_title` into concise and direct `page_title` 
+     - Fit the rest of the messaging from the `seo_title` into the `page_subtitle` 
+     - Example `page_title`: "Framer CMS Site Built Using AI & Notion" 
+     - Example `page_subtitle`: "With micro-interactive bauhaus-inspired design" 
   8. Choose a `breadcrumb` 
      - Choose a few words within the theme of the titles, filename, etc. 
-     - For example 'seo_titled' 'Framer CMS Web Design Shop, Gallery, AI Blog'
+     - For example using the `seo_title` 'Framer CMS Web Design Shop, Gallery, AI Blog'
      - Example: "Automated Design Blog CMS" 
   9. Compose handful of `tile_text` lines 
      - Use all the concepts and drafted text for ideation, capitalizing on what best fits website message and intention 
+     - These should tell the story, the highlights about the project, even impressive KPI metrics 
+     - Combined with thumbnails, we're creating a UI that has a UX where hiring managers don't have to click into many projects 
      - Examples: 
        + "AI generated blogs examine Podcast concepts"
        + "Automated build using Notion to CMS integration" 
        + "1 component + Notion database = 81 image fashion magazine" 
        + "Build an entire web store in minutes with CMS and Notion" 
 
-* **After all the bits of copy are complete, compose `page_copy` sections** 
+* **Copy above as a resource, AI can write 2-4 sentences for the `page_copy` items and a single `tagging` item** 
 
-  10. Write `pattern` on logic of opportunity 
-  11. Write `action` on how opportunity was capitalized on 
-  12. Write `measured` about how to tell project was a success 
-  13. Include any necessary `notes` for when the entry page is created 
+  10. These 4 will be headers and page sections mirrored on every project entry page 
+      - (1) In the `tagging` section add a `role` for the project 
+        + This is placed prominently unlike other tags  
+        + This is ideally one role, possibly a job title; for complex cases Sean will need to help or update after 
+        + In other-words this is the context of involvement, relationship to project 
+      - (2) Write `pattern` section  
+        + This should humbly, indirectly highlight my innate pattern spotting ability
+        + Frame this as the logic behind why the project was an opportunity to take on 
+        + This likely shows the content of and strategy logic behind taking on the opportunity as a project 
+      - (3) Write `action` section 
+        + This would be the resulting moves, execution, procedure, and resources committed
+        + Frame this as how the opportunity was capitalized on
+      - (4) Write `measured` section 
+        + This should show or define how to tell project was a success 
+        + Frame this as metrics like KPIs, generally speaking, the results, or at least some thoughts for next time 
 
-### Page Headings 
+* **Lastly, AI fills in section `tagging` which are used for content tile filtering and contextual information** 
 
-| Class | JSON Variable                  | Styling Guide     | 
-| ----- | ------------------------------ | ----------------- | 
-| H1    | `page_title`                   | Large, heavy      | 
-| H2    | `page_subtitle`                | Smaller than H3   | 
-| H3    | `role` & `page_copy` headings  | Main sections     |
-| H4    | `media`, `technology`, `skill` | Page content tags | 
-| H5    | `breadcrumb`                   | Similar to H4     | 
+  11. Populate JSON tag lists for context tag types using the guidance on tagging creation section below 
+      - `technology` tags 
+      - `media` tags 
+      - `skill` tags 
 
-### Project Tagging Types 
+### Tag Creation Protocol Guidance  
 
-  1. Section tag = define actual website sections, only tiles on homepage; informs which section page tiles to populate 
-  2. Toggle tag = top of section page; only the top "see only" type tags; 
-  3. Contextual tag = **comprehensive**, see examples started below to be completed by AI right on JSON files; four types 
-     - (1) `ROLE` has **JUST ONE** and is designed onto page as one of the sections 
-     - (2) `TECHNOLOGY`, (3) `MEDIA`, (4) `SKILL` 
-     - Tags on page in group at top right; click-through to see-only content tiles with same tag  
+* **Our three types of tags** 
+
+  1. Section tags 
+     + These define placement of project entries into actual website sections 
+       - They are the names of our homepage tiles 
+       - They informs which section page the tiles should populate on 
+  2. Toggle tags 
+     + Select tags listed at top of section pages to navigate by filtering down project tiles 
+     + Each project page will include tags in out-of-way top-right region; click through goes to section page sorted to see only that content 
+  3. Contextual tag  
+     + These are meant to be very comprehensive, capitalizing on words used on job openings and on resumes 
+     + The will also be placed on the project entry page top-right as toggle tag point describes above 
+
+* **Must include section tags for content filtering** 
 
 | Tag             | Type         |
 | --------------- | ------------ |
@@ -163,14 +190,14 @@
 | **Print**       | Section tag  |
 | **Digital**     | Section tag  |
 | **Video**       | Section tag  |
-| Generative AI   | Toggle tag   |
-| Product         | Toggle tag   |
-| Copywriting     | Toggle tag   |
-| Interactive     | Toggle tag   |
+| Generative AI   | Toggle tag   |    # The toggle tags are open to be changed,
+| Product         | Toggle tag   |      as the goal is to show off exactly what 
+| Copywriting     | Toggle tag   |      the hiring managers are likely looking to 
+| Interactive     | Toggle tag   |      isolate or filter down to just that content 
 | Team Manager    | Toggle tag   |
 | Consulting      | Toggle tag   |
 
-#### Relevant Skill-Based Job Titles **WORK INTO COPY & CONTEXTUAL TAGS**
+* **Skill-based job titles to work into copy and contextual tags** 
 
   + (Creative, Art) Director 
   + (Social, Video, Email, SMS, Viral, Content) Producer
@@ -182,21 +209,31 @@
   + (Remote/Team, Client/Account, Project) Manager 
   + (Digital, Business, Branding) Consultant 
 
-#### Example Contextual Tags 
+* **Tag examples illustrating depth and comprehensiveness** 
 
-* **Framer AI In-Painted Archetypal Fashion Lookbook**
-  + *Web Designer + Framer + AI Writing + AI Image Creation + AI Photo Editing + Fashion Design + System Design + Product*
+*Web Designer + Account Management + Business Development Consultant + Framer + Webflow + Local Rebuild + GitHub Pages + AI Writing + API Publishing API + Database Management + Workflow Automation + AI Writing + AI Image Creation + AI Creative Planning + AI Photo Editing + Art History + E-Commerce + Back-end Store Automation + Fashion Design + System Design + Product + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Custom Animation + Lottie Files + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting*
 
-* **Framer Education Art History Immersion Print Shop**
-  + *Web Designer + Framer + AI Image Creation + AI Creative Planning + AI Photo Editing + Art History + E-Commerce + Back-end Store Automation* 
 
-* **Webflow 200+ Weekly AI Generated Blog**
-  + *Web Designer + Webflow + Local Rebuild + GitHub Pages + AI Writing + API Publishing API + Database Management + Workflow Automation + AI Image Creation + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Custom Animation + Lottie Files*
+### Page Headings 
 
-* **Webflow Hand-Drawn Illustrated Service Sales Website**
-  + *Account Management + Web Designer + Business Development Consultant + Webflow + Local Rebuild + GitHub Pages + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting*
+
+
 
 ---
+
+## UI/UX Website Specifics 
+
+### Project Entry Pages 
+
+* **Page headings** 
+
+| Class | JSON Variable                  | Styling Guide     | 
+| ----- | ------------------------------ | ----------------- | 
+| H1    | `page_title`                   | Large, heavy      | 
+| H2    | `page_subtitle`                | Smaller than H3   | 
+| H3    | `role` & `page_copy` headings  | Main sections     |
+| H4    | `media`, `technology`, `skill` | Page content tags | 
+| H5    | `breadcrumb`                   | Similar to H4     | 
 
 ## Tile UI/UX Design Details 
 
