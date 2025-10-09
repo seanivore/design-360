@@ -26,22 +26,25 @@
 * **Website macro-structure** 
 *Incomplete example only*
 
+  - Should sub-section tags redirect to clean page with tiles from all content with that tag no matter the main website section? 
+  - If yes, then we'd need those pages to have the four section types at the top as tag navigation to filter or hide certain groups 
+  - If no then the'd just go back to the section that the content you clicked through from is located in filtered as such, like below 
+
 ```
 `august.style/`        `.index.html`
-├── projects/          `.index.html#projects`
-├── about/             `.index.html#about`
-├── contact/           `.index.html#contact`
+├── projects/          `.index.html#projects` -> `august.style/projects`
+├── about/             `.index.html#about` -> `august.style/about` 
+├── contact/           `.index.html#contact` -> `august.style/contact` 
 ├── web/               `web.html`
-│   ├── framer/        *Redirect to 'framer' filtered web section*
-│   ├── html-css-js/   *Redirect to 'HTML/CSS/JS' filtered web section*
-│   └── webflow/       *Redirect to 'webflow' filtered web section*
+│   ├── framer/        *Redirect to 'framer' filtered web section* 
+│   ├── html-css-js/
+│   └── webflow/
 ├── print/             `print.html`
 ├── digital/           `digital.html`
-├── motion-graphic/    `motion-graphic.html`
 └── video/             `video.html`
-    ├── social/        *Redirect to 'framer' filtered web section*
-    ├── gif/           *Redirect to 'HTML/CSS/JS' filtered web section*
-    └── standard/      *Redirect to 'webflow' filtered web section*
+    ├── social/        *Redirect to 'social' tag-related video section*
+    ├── gif/
+    └── brand/
 ```
 
 ### Design Summary 
@@ -83,9 +86,9 @@
 
 ---
 
-## Work Flow for Next Tasks 
+## Next Task Work Flow 
 
-### Project State & Context Priming 
+### Project State Context Priming 
 
   * **Minimize LLM limitations** 
 
@@ -107,14 +110,32 @@
   - Add updates throughout completing the tasks, particularly anything notable or necessary for next steps
   - Update after completion of those tasks; add what is next or reference having mentioned it if nothing has changed
 
+### Dynamic UI Implementation 
+
+* **Technical Approach**
+
+  1. Fetch JSON files 
+  2. Parse categories for routing, use tagging arrays for real-time filtering 
+  3. Use `thumbnail_images` array for tile swipe UI 
+  4. The `tile_text` array use with cross-fading text triggered on image swipes 
+
+* **Must have functionality** 
+
+  1. Get section pages fully dynamic with tile grids 
+  2. Tiles should use tag filtering 
+
+* **Dynamic features to implement** 
+
+  1. Homepage tiles from section categorization 
+  2. Section page tiles with filtering by tagging arrays 
+  3. Random tile ordering on load with smooth transitions during filtering 
+  4. Optional: dynamic entry page content population 
 
 ---
 
-## UI/UX Website Specifics 
+## Website UI/UX Design Specifics 
 
-### Project Entry Pages 
-
-* **Page headings** 
+* **Project Page headings** 
 
 | Class | JSON Variable                  | Styling Guide     | 
 | ----- | ------------------------------ | ----------------- | 
@@ -124,9 +145,7 @@
 | H4    | `media`, `technology`, `skill` | Page content tags | 
 | H5    | `breadcrumb`                   | Similar to H4     | 
 
-## Tile UI/UX Design Details 
-
-### Must See Visual Inspo 
+* **Must see visual inspo** 
 
   1. **Homepage Tile Image Swipe UI Functionality** `./assets/docs/tile_visual_inspo/1_homepage_tile.jpg`
      - Larger, squarer for the ~4 website sections 
@@ -149,8 +168,6 @@
      - For mid-page FAQ functionality UI  
      - Seems like a great idea but haven't thought further than that 
 
-### Tile Design Specifics 
-
 * **Include light mode and dark mode options with dark mode defaulted** 
 
   + Background 
@@ -168,57 +185,43 @@
     - Every time the page is reloaded the tiles should be in a new random order 
     - When a filter is selected, that random order is maintained, non-tagged tiles fade away, then tagged content slide into place 
 
-### Macro Website Structure 
+### Homepage `august.style` 
 
+* **Three sections of the page with URL that jumps to each which is also forwarded to actual URL** 
 
----
+  1. **PROJECTS** section navigation 
+  2. **ABOUT** brief bio 
+  3. **CONTACT** with simple, minimal options 
 
-## Home `august.style`
+#### Projects `august.style#projects` -> `august.style/projects` 
 
-  - Three sections of the page are section navigation, about, and contact 
-  - Create URL that jumps to each of the three and forward that to actual URL 
+* **Section tile design and navigation details should be added here** 
 
-### Projects `august.style/projects`
+#### About `august.style#about` -> `august.style/about` 
 
-  + Section Tile Navigation
+  > Sean August Horvath, Creative Generalist 
 
-### About `august.style/about`
+  > 14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft. 
 
-   **Sean August Horvath, Creative Generalist**
-
-   > 14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft. 
-
-### Contact `august.style/contact` 
+#### Contact `august.style#contact` -> `august.style/contact`
 
    - [github.com/seanivore](https://github.com/seanivore)
    - [linkedin.com/in/seanivore/](https://www.linkedin.com/in/seanivore/)
    - [instagram.com/seanivore/](https://www.instagram.com/seanivore/)
    - [horvathaugust@gmail.com](mailto:horvathaugust@gmail.com)
 
+### Section Pages 
 
---- 
+* **Project entry tile design and navigation details should be added here** 
+* **Four website content sections** 
 
- ## Implementation of Dynamic UI 
+  1. `august.style/web` and `./web.html`
+  2. `august.style/print` and `./print.html`
+  3. `august.style/digital` and `./digital.html` 
+  4. `august.style/video` and `./web.html` 
 
-* **Current status and general plan** 
+### Project Page `august.style/<SECTION>/<SUBSECTION>/<HTML-FILE-NAME-IN-JSON>`
 
-   - 
-
-* **Must have functionality** 
-
-  1. Get section pages fully dynamic with tile grids 
-  2. Tiles should use tag filtering 
-
-* **Dynamic features to implement** 
-
-  1. Homepage tiles from section categorization 
-  2. Section page tiles with filtering by tagging arrays 
-  3. Random tile ordering on load with smooth transitions during filtering 
-  4. Optional: dynamic entry page content population 
-
-* **Technical approach** 
-
-  1. Fetch JSON files 
-  2. Parse categories for routing, use tagging arrays for real-time filtering 
-  3. Use `thumbnail_images` array for tile swipe UI 
-  4. The `tile_text` array use with cross-fading text triggered on image swipes 
+* **The actual project URL pulled from the HTML filename should have the main subsection added?** 
+  - Will they all have such clear subsections? 
+  - We'd need to have the URL for the subsection redirect to the section with the tag filtered for just those posts 
