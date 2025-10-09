@@ -1,8 +1,6 @@
 # Creative Generalist Portfolio 
 *Generalist roles become more in-demand as organizations flatten*
 
-+ Project state is saved to memory MCP; search exact entity term `generalist-portfolio` 
-
 ## Message 
 
   + **PROBLEM:** downsizing because of economic uncertainty and AI operational integration 
@@ -17,80 +15,70 @@
 
 ### Design Summary 
 
-  1. Technically simple HTML/CSS/JS build, published to Github Pages
-     + Completed `./_config.yml` 
-     + Added `./CNAME` file 
-     + Create separate CSS here `./assets/css/...` and JS here `./assets/js/...`
-  2. Content tile grids on homepage and section pages 
-     + Large homepage tiles go to sections; short and wide section tiles go to project entries 
-     + Tile responsiveness snaps to fixed desktop, tablet, media/mobile aspect ratio stop points 
-     + Shrink/grow responsiveness is there, but very minimally, preserving visual content on tile 
-  3. Page Content, UI/UX is REAL mobile first 
-     + Micro-interactions on click; NO HOVER, be more creative than that 
+  1. Technically simple HTML/CSS/JS build, published to GitHub Pages 
+     + No HTML, CSS, or JS pages have been created yet in directories `./assets/css/...`, `./assets/js/...`
+     + Necessary `./_config.yml` and `./CNAME` are ready 
+  2. Content tile grid navigation with tag toggle filtering on the section pages 
+     + ~4 homepage tiles link out to sections; tiles are larger, almost square 
+     + Section tiles link out to entries; are wide and short/narrow 
+  3. Thumbnail images on tiles swipe like slide show 
+     + This is to help prevent the need to click through many projects  
+     + Thumbnails are already compressed and 1920 px X 1080 px, with 3 to 6 for each tile 
+     + One image must bleed, extend beyond viewport to encourage user to swipe 
+  4. Text on images couple with images to tell the full story 
+     + There are ~4 teaser lines of text for front of the tile 
+     + These change with cross-fade that triggers when an image is swiped to the next 
+  5. Responsive design is strictly mobile FIRST  
+     + Tile responsiveness snaps to fixed desktop, tablet, media/mobile aspect ratio stop points
+     + Shrink/grow responsiveness is there, but very minimally, preserving visual content on tile
+     + Micro-interactions on click; NO HOVER, be more creative than that
      + Extra-apparent, smooth page transitions; elements drop or fade in sequentially 
-     + Highly visual layout with page sections containing 2-4 short sentences; no use of bullet points 
-     + Clear ROLE heading, and sections with headings PATTERN, ACTION, and MEASUREMENT; nothing more 
+  6. Filter tags on section pages use horizontal scroll UI, bleed out of viewport, mirroring UI of thumbnails 
+     + Tapping a filter to turn it ON moves it to the front (far left) and changes it to more prominent color; tap again to turn off
+     + Tiles load in random order on every reload; order maintained on filtering with tiles visually present sliding smoothly into new placement
+     + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
+     + In the case of the homepage's sections, the #tagged URL should be redirected `august.style/about` and `august.style/contact` 
+     + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc. 
+  7. Project tiles, tag filters, and other info is populated dynamically, pulling from JSON file for every project 
+     + All entries use the same template JSON object schema: `./assets/docs/entry_template.json` 
+     + JSON files are perfectly structured for vanilla JS consumption; no build process needed 
+     + Necessary for tags and filtering on section pages, as well pas populating the actual tiles, their text, their images 
+     + On entry page, just some elements are made dynamic, like the list of tags for each page at top right 
+     + If it is easier we can/should dynamically fill in as much of the entry details on page as possible 
+  8. Project entry page is highly visual with 4 clear section headings 
+     + Each section has 2-4 short sentences; except "ROLE" as that is populated like the tags are 
        1. **Role:** Context of involvement, relationship to project 
        2. **Pattern:** Opportunity identified, content and strategy logic 
        3. **Action:** Resulting moves, execution, procedure, resources committed 
        4. **Measured:** Metrics, the results, thoughts for next time 
-  4. Project entries are all JSON files 
-     + `./assets/docs/entry_template.json` -- no template changes without asking permission 
-     + Used to dynamically populate tiles and tags on homepage and section pages, maybe on project entries  
-     + Find the proposed HTML filename on the JSON file; JSON filename created using `uid` bash command 
-  5. Swipe UI on tile thumbnail images helps prevent click-through needs 
-     + 3 to 6 compressed webp image files; all 1920 px by 1080 px; UI encouraged by showing 1/8th of the next thumbnail
-     + Write simple alt. text on the fly from context of project text and image's filename 
-     + TBD amount and lines of text on tile; could potentially cross-fade text changes triggered by thumbnail swipe 
-  6. Filter tags on section pages use horizontal scroll UI going off page, visually mirroring the UI of the tile image UX 
-     + Tapping a filter to turn it ON moves it to the front (far left) and changes it to more prominent color; tap again to turn off 
-     + Tiles load in random order on every reload; order maintained on filtering with tiles visually present sliding smoothly into new placement 
-  7. Macro-website structure has a simple, user-expected organization 
-     + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
-     + In the case of the homepage's sections, the #tagged URL should be redirected `august.style/about` and `august.style/contact` 
-     + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc. 
+     + Find proposed HTML filename on JSON file; JSON filename created using `uid` bash command 
+     + Any images have their alt. text written on the fly pulling from context of project text and image's filename 
 
-### To Do Next 
+---
 
-* **Context priming** 
+## Work Flow for Next Tasks 
 
-  - Use the actual `read_file` tool for the template so that it stays in your context: `./assets/docs/_entry_template.json` 
-  - This document will stay in context thanks to being attached to the message 
-  - Then for each entry, you probably can get away with 
-    - Using the Project Knowledge retrieval 
-    - Telling me what to paste in each missing variable 
-  - **However** the schema do need to be updated 
-    - So it might instead make more sense to use the `read_file` tool on each JSON 
-    - Then create them clean and fresh in an artifact. LMK what you think! 
+### Project State & Context Priming 
 
-* **Meet with AI for web JSON entries** 
+  * **Minimize LLM limitations** 
 
-    + AI to look over each JSON entry for the web section 
-      - Update schema to reflect the 2.1 template: `./assets/docs/_entry_template.json` 
-      - Sean explain project as needed 
-      - AI to review assets and website itself 
-    + AI to write, draft, complete JSON variables 
-      - Write comprehensive lists for `tagging` variables 
-      - See "Example Contextual Tags" and "Project Tagging Types" below 
-      - Complete missing info from the updated `teaser_copy`
-      - Then draft each entry for the `page_copy` sections 
+  - Use native `think` tool if you are able to multi task between thoughts with tools 
+  - Otherwise use the `sequential_thinking` Model Context Protocol server to think while hou review the following 
+  - Maintain project state via updates for across AI instance flow
+  
+  * **Check project state** 
 
-* **Entries for Web to complete** (Total tokens = 9,534)
+  - Start the `memory` MCP tool 
+  - Search exact entity term `generalist-portfolio` 
+  - The `read_file` for whatever entry file you are going to be creating a page for 
 
-  1. `./web/framer/_uid-tev-176.json` 
-  2. `./web/html-css-js/_uid-eme-689.json`
-  3. `./web/html-css-js/_uid-hwi-844.json`
-  4. `./web/html-css-js/_uid-lul-419.json`
-  5. `./web/html-css-js/_uid-qor-090.json` 
-  6. `./web/html-css-js/_uid-rfr-187.json` 
-  7. `./web/html-css-js/_uid-sgt-851.json` 
-  8. `./web/html-css-js/_uid-srs-009.json` 
-  9. `./web/html-css-js/_uid-wgw-370.json` 
-  10. `./web/html-css-js/_uid-wnw-867.json` 
-  11. `./web/webflow/_uid-dff-987.json`
-  12. `./web/webflow/_uid-fth-565.json` 
-  13. `./web/webflow/_uid-unw-889.json`
-  14. `./web/webflow/_uid-wty-542.json` 
+  * **Add project state updates** 
+
+  - Add entry milestones that maintain context even if suddenly disconnected
+  - About to start a series of tasks, record what you're about to do
+  - Also record the next steps in case connection is interrupted during first tasks
+  - Add updates throughout completing the tasks, particularly anything notable or necessary for next steps
+  - Update after completion of those tasks; add what is next or reference having mentioned it if nothing has changed
 
 ---
 
@@ -264,26 +252,15 @@
 ├── contact/                      `.index.html#contact`
 ├── web/                          `web.html`
 │   ├── framer/                   *Redirect to 'framer' filtered web section*
-│   │   └── _uid-tev-176.json     *HTML filename found in JSON file* 
 │   ├── html-css-js/              *Redirect to 'HTML/CSS/JS' filtered web section*
-│   │   ├── _uid-eme-689.json
-│   │   ├── _uid-hwi-844.json
-│   │   ├── _uid-lul-419.json
-│   │   ├── _uid-qor-090.json
-│   │   ├── _uid-rfr-187.json
-│   │   ├── _uid-sgt-851.json
-│   │   ├── _uid-srs-009.json
-│   │   ├── _uid-wgw-370.json
-│   │   └── _uid-wnw-867.json
 │   └── webflow/                  *Redirect to 'webflow' filtered web section*
-│       ├── _uid-dff-987.json
-│       ├── _uid-fth-565.json
-│       ├── _uid-unw-889.json
-│       └── _uid-wty-542.json
 ├── print/                        `print.html`
 ├── digital/                      `digital.html`
 ├── motion-graphic/               `motion-graphic.html`
 └── video/                        `video.html`
+    ├── social-optimizaed/                   *Redirect to 'framer' filtered web section*
+    ├── gif-motion-graphic/              *Redirect to 'HTML/CSS/JS' filtered web section*
+    └── standard/                  *Redirect to 'webflow' filtered web section*
 ```
 
 ---
@@ -309,3 +286,31 @@
    - [linkedin.com/in/seanivore/](https://www.linkedin.com/in/seanivore/)
    - [instagram.com/seanivore/](https://www.instagram.com/seanivore/)
    - [horvathaugust@gmail.com](mailto:horvathaugust@gmail.com)
+
+
+--- 
+
+ ## Implementation of Dynamic UI 
+
+* **Current status and general plan** 
+
+   - 
+
+* **Must have functionality** 
+
+  1. Get section pages fully dynamic with tile grids 
+  2. Tiles should use tag filtering 
+
+* **Dynamic features to implement** 
+
+  1. Homepage tiles from section categorization 
+  2. Section page tiles with filtering by tagging arrays 
+  3. Random tile ordering on load with smooth transitions during filtering 
+  4. Optional: dynamic entry page content population 
+
+* **Technical approach** 
+
+  1. Fetch JSON files 
+  2. Parse categories for routing, use tagging arrays for real-time filtering 
+  3. Use `thumbnail_images` array for tile swipe UI 
+  4. The `tile_text` array use with cross-fading text triggered on image swipes 
