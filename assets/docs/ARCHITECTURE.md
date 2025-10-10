@@ -38,7 +38,7 @@ We're using **THREE different routing strategies** simultaneously:
 ### 1. Jekyll (GitHub Pages) - For Clean URLs
 ```
 Traditional: august.style/entry.html
-Our result: august.style/web/html-css-js/project-name
+Our result: august.style/web/html-css-js/slug-project-name
 ```
 
 **What Jekyll does:** Removes `.html` extensions automatically  
@@ -47,7 +47,7 @@ Our result: august.style/web/html-css-js/project-name
 
 ### 2. SPA Routing (404 Trick) - For Dynamic Templates
 ```
-User visits: august.style/web/html-css-js/project-name
+User visits: august.style/web/html-css-js/slug-project-name
 No file exists at that path
 GitHub Pages serves: 404.html
 404.html redirects to: entry.html (preserving URL)
@@ -92,9 +92,10 @@ Plus dynamic index:
 - `/web/html-css-js` → Filter to section="Web" AND subsection="HTML/CSS/JS"
 - `/projects` → Show everything
 - Plus hash filtering: `#tags=copywriting`
+- Tiles shuffled every reload, but any active filters must remain applied
 
 **entry.html** dynamically handles:
-- `/web/html-css-js/project-name` → Load `_uid-xxx-###.json`, render page
+- `/web/html-css-js/slug-project-name` → Load `uid-xxx-###.json`, render page
 
 **How does entry.html know which JSON to load?**
 
@@ -102,7 +103,7 @@ The `manifest.json` file maps URLs to JSON files:
 ```json
 {
   "entries": {
-    "web/html-css-js/project-name": "assets/data/web/html-css-js/_uid-abc-123.json"
+    "web/html-css-js/slug-project-name": "assets/data/web/html-css-js/uid-abc-123.json"
   }
 }
 ```
@@ -192,7 +193,7 @@ const fullPath = `${section}/${sub_section}/${slug}`
   .replace(/\s+/g, '-')
   .replace(/\//g, '-');
 
-// "Web" + "HTML/CSS/JS" + "project-name" → "web/html-css-js/project-name"
+// "Web" + "HTML/CSS/JS" + "slug-project-name" → "web/html-css-js/slug-project-name"
 ```
 
 ### Q: "Should I 'fix' the capitalization and spaces in the JSON?"
@@ -210,7 +211,7 @@ We made these updates to all 14 web section JSONs:
   "section": "Web",
   "sub_section": "HTML/CSS/JS",
   "slug": "august.style/web/html-css-js/",  // ← Redundant!
-  "file_name": "project-name.html"          // ← Confusing name, unnecessary extension
+  "file_name": "slug-project-name.html"          // ← Confusing name, unnecessary extension
 }
 ```
 
@@ -219,7 +220,7 @@ We made these updates to all 14 web section JSONs:
 "placement": {
   "section": "Web",
   "sub_section": "HTML/CSS/JS",
-  "slug": "project-name"  // ← Clean, clear, no extension
+  "slug": "slug-project-name"  // ← Clean, clear, no extension
 }
 ```
 
@@ -269,10 +270,12 @@ document.querySelector('h1').textContent = data.content.teaser_copy.page_title;
 
 **Step 4:** Page renders  
 - URL stays: `august.style/web/html-css-js/saas-product` ✅
-- Content loads from: `_uid-abc-123.json` ✅
+- Content loads from: `uid-abc-123.json` ✅
 - User sees: Beautiful project page ✅
 
 ---
+
+* **NOTE: We have nixed the need to use Claude Code since there are now so few pages to actually build! However I'll leave the details that we were conveying to them to convey to you instead, below**
 
 ## For Claude Code: Implementation Notes
 
@@ -321,7 +324,7 @@ npx http-server
 ### Test Cases
 1. Visit section page: `/web` → Should show all web projects
 2. Visit subsection: `/web/html-css-js` → Should show filtered projects
-3. Visit entry: `/web/html-css-js/project-name` → Should load project page
+3. Visit entry: `/web/html-css-js/slug-project-name` → Should load project page
 4. Click tag filter: Should add to hash and filter tiles
 5. Reload page: Should maintain random order for tiles
 6. Click tag on entry: Should go to section page with that tag filtered

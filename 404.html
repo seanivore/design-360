@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        /**
+         * 404 ROUTING HANDLER
+         * Analyzes URL and redirects to appropriate template
+         * - 3+ segments = entry page → entry.html
+         * - 1-2 segments = section page → section.html
+         */
+        (function () {
+            const path = window.location.pathname;
+            const segments = path.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
+
+            // Determine if this is an entry page or section page
+            if (segments.length >= 3) {
+                // Entry page: /web/html-css-js/project-name
+                sessionStorage.setItem('entryPath', path);
+                window.location.replace('/entry.html');
+            } else {
+                // Section page: /web, /web/html-css-js, or /projects
+                sessionStorage.setItem('sectionPath', path);
+                window.location.replace('/section.html');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <p style="text-align: center; margin-top: 50px; font-family: sans-serif; color: #666;">
+        Redirecting...
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,591 @@
+/* ============================================
+   CREATIVE GENERALIST PORTFOLIO
+   Single-JSON Architecture
+   Mobile-First, Touch-Optimized
+   ============================================ */
+
+/* ============================================
+   CSS VARIABLES - Design System
+   ============================================ */
+
+:root {
+    /* Colors - Dark Theme Default */
+    --color-bg-primary: #0a0a0a;
+    --color-bg-secondary: #1a1a1a;
+    --color-bg-tile: #212121;
+    --color-text-primary: #f5f5f5;
+    --color-text-secondary: #b0b0b0;
+    --color-accent: #4a9eff;
+    --color-accent-active: #2d7fd4;
+    --color-border: #333333;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+
+    /* Spacing System */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-xxl: 64px;
+
+    /* Typography */
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-base: 1rem;
+    /* 16px */
+    --font-size-md: 1.125rem;
+    /* 18px */
+    --font-size-lg: 1.5rem;
+    /* 24px */
+    --font-size-xl: 2rem;
+    /* 32px */
+    --font-size-xxl: 2.5rem;
+    /* 40px */
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* Timing & Animation */
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 400ms;
+    --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+    --easing-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+
+    /* Breakpoints (for reference in media queries) */
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1024px;
+    --max-content-width: 1200px;
+
+    /* Tile Sizing */
+    --tile-border-radius: 0px;
+    /* Sharp corners - timeless */
+    --tile-shadow: 0 2px 8px var(--color-shadow);
+    --tile-shadow-hover: 0 4px 16px var(--color-shadow);
+
+    /* Tag Filter Pills */
+    --pill-height: 40px;
+    --pill-padding: 0 var(--space-md);
+    --pill-border-radius: 20px;
+}
+
+/* Light Theme Override (Optional - Dark is default) */
+[data-theme="light"] {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f5f5f5;
+    --color-bg-tile: #ffffff;
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #666666;
+    --color-border: #e0e0e0;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    overflow-x: hidden;
+}
+
+/* Background Pattern (Subtle ornate texture) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/ornate-pattern.svg');
+    /* Create this SVG */
+    background-repeat: repeat;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Vertical gradient glare effect */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(255, 255, 255, 0.02) 50%,
+            transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+}
+
+h1 {
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--space-md);
+}
+
+h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-md);
+}
+
+h4,
+h5 {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--easing-standard);
+}
+
+a:active {
+    color: var(--color-accent-active);
+}
+
+/* ============================================
+   LAYOUT - Mobile First
+   ============================================ */
+
+.container {
+    width: 100%;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--space-lg);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 var(--space-xl);
+    }
+}
+
+/* ============================================
+   HEADER - Simple, Fixed (Optional)
+   ============================================ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+.site-nav {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.site-nav a {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    transition: color var(--duration-fast) var(--easing-standard);
+}
+
+.site-nav a:active,
+.site-nav a.active {
+    color: var(--color-text-primary);
+}
+
+/* ============================================
+   TILE COMPONENTS
+   ============================================ */
+
+/* Homepage Tiles (Large, Almost Square) */
+.tile-homepage {
+    background-color: var(--color-bg-tile);
+    border-radius: var(--tile-border-radius);
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    transition: box-shadow var(--duration-normal) var(--easing-standard);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.tile-homepage:active {
+    box-shadow: var(--tile-shadow-hover);
+}
+
+.tile-homepage__image-carousel {
+    position: relative;
+    width: 100%;
+    padding-bottom: 85%;
+    /* Aspect ratio ~1:1.2 (almost square) */
+    overflow: hidden;
+    background-color: var(--color-bg-secondary);
+}
+
+.tile-homepage__images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform var(--duration-normal) var(--easing-standard);
+}
+
+.tile-homepage__image {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tile-homepage__dots {
+    position: absolute;
+    bottom: var(--space-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.tile-homepage__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: background-color var(--duration-fast) var(--easing-standard);
+}
+
+.tile-homepage__dot.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tile-homepage__content {
+    padding: var(--space-md);
+}
+
+.tile-homepage__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-xs);
+}
+
+.tile-homepage__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.tile-homepage__text {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+}
+
+/* Section Tiles (Wide/Short, Images to Side) */
+.tile-section {
+    background-color: var(--color-bg-tile);
+    border-radius: var(--tile-border-radius);
+    box-shadow: var(--tile-shadow);
+    overflow: hidden;
+    transition: box-shadow var(--duration-normal) var(--easing-standard);
+    cursor: pointer;
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    min-height: 120px;
+}
+
+.tile-section:active {
+    box-shadow: var(--tile-shadow-hover);
+}
+
+.tile-section__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tile-section__title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-xs);
+}
+
+.tile-section__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.tile-section__text {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-secondary);
+}
+
+.tile-section__images {
+    flex-shrink: 0;
+    width: 140px;
+    display: flex;
+    gap: var(--space-xs);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.tile-section__images::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.tile-section__image {
+    flex-shrink: 0;
+    width: 140px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    scroll-snap-align: start;
+}
+
+/* ============================================
+   TAG FILTERS - Horizontal Scroll (Plain Text)
+   ============================================ */
+
+.tag-filters {
+    display: flex;
+    gap: var(--space-lg);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-lg);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.tag-filters::-webkit-scrollbar {
+    display: none;
+}
+
+/* Force last tag to bleed off screen */
+.tag-filters::after {
+    content: '';
+    flex-shrink: 0;
+    width: 1px;
+}
+
+.tag-filter {
+    flex-shrink: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: color var(--duration-fast) var(--easing-standard);
+    scroll-snap-align: start;
+    white-space: nowrap;
+}
+
+.tag-filter:active {
+    transform: scale(0.98);
+}
+
+.tag-filter.active {
+    color: var(--color-accent);
+    order: -1;
+    /* Move to front */
+}
+
+/* ============================================
+   TILE GRIDS
+   ============================================ */
+
+.tile-grid-homepage {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg) 0;
+}
+
+/* Tablet - 2 columns */
+@media (min-width: 768px) {
+    .tile-grid-homepage {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.tile-grid-section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg) 0;
+}
+
+/* ============================================
+   ANIMATIONS - Sequential Fade In
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-item {
+    opacity: 0;
+    animation: fadeInUp var(--duration-slow) var(--easing-decelerate) forwards;
+}
+
+/* Stagger animation delays */
+.fade-in-item:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.fade-in-item:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.fade-in-item:nth-child(3) {
+    animation-delay: 200ms;
+}
+
+.fade-in-item:nth-child(4) {
+    animation-delay: 300ms;
+}
+
+.fade-in-item:nth-child(5) {
+    animation-delay: 400ms;
+}
+
+.fade-in-item:nth-child(6) {
+    animation-delay: 500ms;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-lg {
+    margin-top: var(--space-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--space-lg);
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+}

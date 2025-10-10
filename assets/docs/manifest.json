@@ -1,0 +1,36 @@
+{
+  "entries": {
+    "web/framer/developer-technologist": "/assets/data/web/framer/_uid-tev-176.json",
+    "web/html-css-js/ai-developer-portfolio": "/assets/data/web/html-css-js/_uid-eme-689.json",
+    "web/html-css-js/javascript-developer-site": "/assets/data/web/html-css-js/_uid-hwi-844.json",
+    "web/html-css-js/portfolio-personal-brand": "/assets/data/web/html-css-js/_uid-lul-419.json",
+    "web/html-css-js/fashion-editorial-ui": "/assets/data/web/html-css-js/_uid-qor-090.json",
+    "web/html-css-js/saas-product-sale-features": "/assets/data/web/html-css-js/_uid-rfr-187.json",
+    "web/html-css-js/amorphous-gradient-css-animation": "/assets/data/web/html-css-js/_uid-sgt-851.json",
+    "web/html-css-js/css-depth-shadow-ui": "/assets/data/web/html-css-js/_uid-srs-009.json",
+    "web/html-css-js/brand-site-pure-css": "/assets/data/web/html-css-js/_uid-wgw-370.json",
+    "web/html-css-js/vegan-lifestyle-css-animation": "/assets/data/web/html-css-js/_uid-wnw-867.json",
+    "web/webflow/luxury-vinyl-plank": "/assets/data/web/webflow/_uid-dff-987.json",
+    "web/webflow/crypto-nft-platform": "/assets/data/web/webflow/_uid-fth-565.json",
+    "web/webflow/product-site-webflow": "/assets/data/web/webflow/_uid-unw-889.json",
+    "web/webflow/brand-webflow-site": "/assets/data/web/webflow/_uid-wty-542.json"
+  },
+  "sections": {
+    "web": {
+      "section": "Web",
+      "subsections": ["HTML/CSS/JS", "Webflow", "Framer"]
+    },
+    "print": {
+      "section": "Print",
+      "subsections": []
+    },
+    "digital": {
+      "section": "Digital",
+      "subsections": []
+    },
+    "video": {
+      "section": "Video",
+      "subsections": []
+    }
+  }
+}

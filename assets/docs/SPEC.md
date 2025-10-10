@@ -28,20 +28,43 @@
 *Incomplete; example to illustrate structure only*
 
 ```
-`august.style/`        `.index.html`
-├── projects/          `.index.html#projects` -> `august.style/projects`
-├── about/             `.index.html#about` -> `august.style/about` 
-├── contact/           `.index.html#contact` -> `august.style/contact` 
-├── web/               `web.html`
-│   ├── framer/        *Redirect to 'framer' filtered web section* 
-│   ├── html-css-js/
-│   └── webflow/
-├── print/             `print.html`
-├── digital/           `digital.html`
-└── video/             `video.html`
-    ├── social/        *Redirect to 'social' tag-related video section*
-    ├── gif/
-    └── brand/
+`august.style/`         `.index.html`
+│   ├── about           `.index.html#about` -> `august.style/about` 
+│   └── contact         `.index.html#contact` -> `august.style/contact` 
+├── assets/
+│   ├── js/
+│   │   ├── data-loader.js
+│   │   ├── filter-controller.js
+│   │   ├── section-controller.js
+│   │   └── tile-renderer.js
+│   ├── media/
+│   ├── docs/
+│   │   ├── _entry_template.json
+│   │   ├── ADD_NEW_PROJECT.md
+│   │   ├── ARCHITECTURE.md
+│   │   ├── manifest.json
+│   │   └── SPEC.md
+│   └── entries/
+│       ├── uid-dff-987.json
+│       ├── uid-eme-689.json
+│       ├── uid-fth-565.json
+│       ├── uid-hwi-844.json
+│       ├── uid-lul-419.json
+│       ├── uid-qor-090.json
+│       ├── uid-rfr-187.json
+│       ├── uid-sgt-851.json
+│       ├── uid-srs-009.json
+│       ├── uid-tev-176.json
+│       ├── uid-unw-889.json
+│       ├── uid-wgw-370.json
+│       ├── uid-wnw-867.json
+│       └── uid-wty-542.json
+├── _config.yml
+├── CNAME
+├── 404.html
+├── index.html
+├── section.html
+└── styles.css
 ```
 
 ### Design Summary 
@@ -97,7 +120,15 @@
 
   - Start the `memory` MCP tool 
   - Search exact entity term `generalist-portfolio` 
-  - The `read_file` for whatever entry file you are going to be creating a page for 
+
+  * **Read important files using the `read_file` tool if you want to keep the information in your context the whole time** 
+
+  - Read this architecture document written by AI for AI to continue the work: `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
+  - Understand the JSON entry file by viewing: 
+    + The template `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
+    + One of the entries `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json` 
+  - Last, read the `last_message.md` document where I compiled what our exchange was right before abruptly getting cut off from each other. 
+    `/Users/seanivore/Development/360-design/assets/docs/last_message.md`
 
   * **Add project state updates** 
 
