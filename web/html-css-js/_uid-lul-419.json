@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "HTML/CSS/JS", 
-        "slug": "august.style/web/html-css-js/",
-        "file_name": "ai-meditation-mobile-app.html"
+        "slug": "ai-meditation-mobile-app"
     },
     "tagging":{
         "technology": ["HTML", "CSS", "JavaScript", "Mobile-First Design", "Progressive Web App", "AI Interface Design"],

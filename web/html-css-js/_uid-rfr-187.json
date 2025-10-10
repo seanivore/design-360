@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "HTML/CSS/JS", 
-        "slug": "august.style/web/html-css-js/",
-        "file_name": "saas-product-sale-features.html"
+        "slug": "saas-product-sale-features"
     },
     "tagging":{
         "technology": ["HTML", "CSS", "JavaScript", "CSS Animation", "Responsive Design", "Landing Page Optimization"],

@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "Webflow", 
-        "slug": "august.style/web/webflow/",
-        "file_name": "automated-e-commerce-shop-lookbook.html"
+        "slug": "automated-e-commerce-shop-lookbook"
     },
     "tagging":{
         "technology": ["Webflow", "Make.com", "Notion API", "CMS Automation", "GitHub Pages", "Python Scripts", "E-Commerce Integration"],

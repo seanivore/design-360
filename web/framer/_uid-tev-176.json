@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "Framer", 
-        "slug": "august.style/web/framer/",
-        "file_name": "blog-lookbook-print-gallery.html"
+        "slug": "blog-lookbook-print-gallery"
     },
     "tagging":{
         "technology": ["Framer", "Notion API", "CMS Integration", "Generative AI", "API Automation"],

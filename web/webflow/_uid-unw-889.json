@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "Webflow", 
-        "slug": "august.style/web/webflow/",
-        "file_name": "training-yoga-sales.html"
+        "slug": "training-yoga-sales"
     },
     "tagging":{
         "technology": ["Webflow", "Hand-Drawn Design", "iPad Pro", "Apple Pencil", "GitHub Pages"],

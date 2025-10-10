@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "HTML/CSS/JS", 
-        "slug": "august.style/web/html-css-js/",
-        "file_name": "personalized-fashion-magazine.html"
+        "slug": "personalized-fashion-magazine"
     },
     "tagging":{
         "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages", "Responsive Design"],

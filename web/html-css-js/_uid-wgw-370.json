@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "HTML/CSS/JS", 
-        "slug": "august.style/web/html-css-js/",
-        "file_name": "ai-design-fashion-lookbook.html"
+        "slug": "ai-design-fashion-lookbook"
     },
     "tagging":{
         "technology": ["HTML", "CSS", "JavaScript", "Google Lens API", "Computer Vision Integration", "Responsive Design"],

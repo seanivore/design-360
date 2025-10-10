@@ -11,8 +11,7 @@
     "placement": {
         "section": "Web",
         "sub_section": "Webflow", 
-        "slug": "august.style/web/webflow/",
-        "file_name": "visual-artist-process-portfolio.html"
+        "slug": "visual-artist-process-portfolio"
     },
     "tagging":{
         "technology": ["Webflow", "iPad Pro", "Apple Pencil", "Adobe Illustrator", "Adobe Fresco", "Vector Art", "GitHub Pages", "Python Scripts"],
