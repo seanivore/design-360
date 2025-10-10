@@ -17,18 +17,15 @@
 
 * **Project content entry management** 
 
-  - Entries of this website are managed using JSON object files 
-    + `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json`
-  - These populate various parts of the site and allow for functionality 
-  - Comprehensive steps for preparing a project entry JSON file are prepared here 
-    + `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
+  - Website content is populated and managed using JSON files for each entry 
+    + Functionality like tag navigation filtering and image slideshows is dynamic 
+    + Creating new entries or making updates is easier than ever 
+
+  1. JSON entry template schema: `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json`
+  2. Comprehensive steps for preparing JSON: `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
 
 * **Website macro-structure** 
-*Incomplete example only*
-
-  - Should sub-section tags redirect to clean page with tiles from all content with that tag no matter the main website section? 
-  - If yes, then we'd need those pages to have the four section types at the top as tag navigation to filter or hide certain groups 
-  - If no then the'd just go back to the section that the content you clicked through from is located in filtered as such, like below 
+*Incomplete; example to illustrate structure only*
 
 ```
 `august.style/`        `.index.html`
@@ -88,7 +85,7 @@
 
 ## Next Task Work Flow 
 
-### Project State Context Priming 
+### 1. Project State Context Priming 
 
   * **Minimize LLM limitations** 
 
@@ -110,9 +107,46 @@
   - Add updates throughout completing the tasks, particularly anything notable or necessary for next steps
   - Update after completion of those tasks; add what is next or reference having mentioned it if nothing has changed
 
-### Dynamic UI Implementation 
+### 2. Confirm Content Population Specifics 
 
-* **Technical Approach**
+  - Re: Sub-section on-page tags 
+    + Redirect to clean page with tiles from all content with that tag no matter the main website section 
+    + Or redirect to the section page with that tag filter specifically turned on already 
+
+  - To consider 
+    + Not all of the tag hyperlinks on entry pages exist as tag nav filters on the main section pages 
+    + But a 'clean page' would essentially mean new page 
+
+  - Ideal solution depending on technical demand 
+    + Create a "section page" template used two ways 
+      1. The primary filter is defined for section tag on the backend 
+      2. No filter defined on backend; instead dynamically populates on-the-fly based on tag click-through 
+    + Both cases would use the same predefined tile component 
+    + The top tag nav filter buttons would populate dynamically based on JSON files included according to higher level filter tag 
+
+  - Benefit of ideal solution 
+    + The same method could be used for all four of the website sections 
+    + Method would bring down ... technical debt (if I'm using that word conceptually accurately)
+
+### 3. Action Steps  
+
+* **Where to start** 
+
+  1. Start file creation 
+     + We have no HTML, CSS, or JS files created yet 
+     + We DO have all web section **JSON** entry files completed 
+  2. Create tiles based on described design below 
+     + See differences between homepage and section page tiles 
+     + Confirm if we will be creating actual files for every entry that just pull info from JSON 
+     + Or if we will have one that replicates as needed based on entries that fit page filter parameters 
+     + Let's ideally choose the less technically complex solution with the goal of having the web section sharable quickly 
+     + This should include identifying style guide and starting class definitions in CSS file 
+  3. Based on below action steps  
+     + Build out the planned next steps 
+     + Ensure clear specificity 
+     + Consider preparation of SPEC document that would allow Claude Code to build the website 
+
+* **Dynamic UI Implementation Technical Approach**
 
   1. Fetch JSON files 
   2. Parse categories for routing, use tagging arrays for real-time filtering 
@@ -178,12 +212,14 @@
     - Colored similarly to background 
     - Realistic and subtle shading 
     - Sharp look, sharp corners; Apple killed the radial corner trend hard 
-  + Device responsiveness 
-    - Mobile and Tablet have one tile column sized as described in inspo above 
-    - Desktop still has one column for section pages, but tile is bigger, more visual; two columns for homepage tiles 
-  + Randomized tile order 
-    - Every time the page is reloaded the tiles should be in a new random order 
-    - When a filter is selected, that random order is maintained, non-tagged tiles fade away, then tagged content slide into place 
+
+* **Mobile-first micro-interactions means no interactions that don't work on mobile** 
+
+  + Focus more heavily on how the pages transition between each other 
+    - Smooth changes between pages 
+    - Elements on the page should fall or fade into place sequentially for engaging experience 
+  + Focus as well on how the tiles relocate when filtered and unfiltered 
+  + Ensure the same high production value (simple is more) smooth motion of tag filters whe selected and unselected 
 
 ### Homepage `august.style` 
 
@@ -195,15 +231,28 @@
 
 #### Projects `august.style#projects` -> `august.style/projects` 
 
-* **Section tile design and navigation details should be added here** 
+  + The four section tiles sit here 
+    - Please them as one column on mobile 
+    - Use two columns on desktop and tablet 
+    -  Every reload these four should be randomized in order they're displayed 
+
+  + Create a JSON schema for populating the homepage's section tiles 
+    - Use randomly selected collection of thumbnail images in slides pulling from from each entry 
+    - Match up the text on the tile with the appropriate slides 
+    - The JSON will also need variables for static on-tile heading text 
+    - Perhaps include a dynamic counter of number of entries within that section category; number placed neatly out of way on tile 
 
 #### About `august.style#about` -> `august.style/about` 
 
-  > Sean August Horvath, Creative Generalist 
+  + Use a social media circle style profile picture to the left of a right column with the two blocks of text below 
 
-  > 14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft. 
+   > Sean August Horvath, Creative Generalist 
+
+   > 14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft. 
 
 #### Contact `august.style#contact` -> `august.style/contact`
+
+  + Use very simple, classic looking icons for each laid in horizontal, centered line of single column below the about information 
 
    - [github.com/seanivore](https://github.com/seanivore)
    - [linkedin.com/in/seanivore/](https://www.linkedin.com/in/seanivore/)
@@ -212,7 +261,6 @@
 
 ### Section Pages 
 
-* **Project entry tile design and navigation details should be added here** 
 * **Four website content sections** 
 
   1. `august.style/web` and `./web.html`
@@ -220,8 +268,24 @@
   3. `august.style/digital` and `./digital.html` 
   4. `august.style/video` and `./web.html` 
 
-### Project Page `august.style/<SECTION>/<SUBSECTION>/<HTML-FILE-NAME-IN-JSON>`
+  + Entry tiles sit in a single column 
+    - Use large padding on desktop, keeping it in just one column 
+    - Use less padding, still keeping them in one column for mobile and tablet 
 
-* **The actual project URL pulled from the HTML filename should have the main subsection added?** 
-  - Will they all have such clear subsections? 
-  - We'd need to have the URL for the subsection redirect to the section with the tag filtered for just those posts 
+  + Every reload these tiles should display in a fully reshuffled order 
+    - When a filter is clicked, the tiles stay in the same order as they were 
+    - The unrelated tiles fade away 
+    - The related tiles smoothly slide up to be in place 
+
+### Project Page `august.style/<SECTION>/<SUBSECTION>/<HTML-FILE-NAME-IN-JSON>` 
+
+  + Page elements listed from top to bottom 
+    - Extremely simple header, very short/narrow, much like one used as header nav on homepage here: `https://developer-technologist.august.style/` 
+    - Breadcrumbs at top left of page 
+    - Right aligned column of top right justified tag list for project 
+    - Single column for page title and subtitle 
+    - Four page sections start as two columns with slideshow using thumbnail images in right column with text extending below wrapping across full width instead of staying one column 
+    - Video embed(s) if applicable and/or any other page images 
+    - Horizontal line page break with breadcrumbs again, below and left justified; same with right alighted and justified tag list 
+    - Populate ~3 related posts based on random selecting entries that share tags; these randomize making them different on every page reload 
+    - Extremely simple footer, very short/narrow, with only copyright and then icons for each contact method; this presumes the heading nav is fixed and follows scroll down 
