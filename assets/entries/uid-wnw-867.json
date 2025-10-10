@@ -7,7 +7,7 @@
     "schema_update": "removed slug to rename the file name as slug and removed html from that file name"
   },
   "categorization": {
-    "entry_id": "_uid-wnw-867", 
+    "entry_id": "uid-wnw-867", 
     "placement": {
         "section": "Web",
         "sub_section": "HTML/CSS/JS", 
