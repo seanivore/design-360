@@ -1,10 +1,10 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-08T13:15:00.000000Z",
+    "last_updated": "2025-10-10T15:20:00.000000Z",
     "required_fields": true,
-    "schema_version": "2.1",
     "template_type": "portfolio_entry",
-    "schema_update": "Added page_subtitle, breadcrumb, tile_text to teaser_copy; created page_copy section with pattern/action/measured"
+    "schema_version": "3.0",
+    "schema_update": "removed slug to rename the file name as slug and removed html from that file name"
   },
   "categorization": {
     "entry_id": "_uid-eme-689", 
