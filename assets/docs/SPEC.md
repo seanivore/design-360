@@ -289,3 +289,26 @@
     - Horizontal line page break with breadcrumbs again, below and left justified; same with right alighted and justified tag list 
     - Populate ~3 related posts based on random selecting entries that share tags; these randomize making them different on every page reload 
     - Extremely simple footer, very short/narrow, with only copyright and then icons for each contact method; this presumes the heading nav is fixed and follows scroll down 
+
+## Prepared JSON Project Entry Files 
+
+```
+august.style/web/
+├── framer/
+│   └── _uid-tev-176.json
+├── html-css-js/
+│   ├── _uid-eme-689.json
+│   ├── _uid-hwi-844.json
+│   ├── _uid-lul-419.json
+│   ├── _uid-qor-090.json
+│   ├── _uid-rfr-187.json
+│   ├── _uid-sgt-851.json
+│   ├── _uid-srs-009.json
+│   ├── _uid-wgw-370.json
+│   └── _uid-wnw-867.json
+└── webflow/
+    ├── _uid-dff-987.json
+    ├── _uid-fth-565.json
+    ├── _uid-unw-889.json
+    └── _uid-wty-542.json
+```
