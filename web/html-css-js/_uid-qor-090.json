@@ -26,12 +26,12 @@
         "video_url": "https://youtu.be/hNdy_KW1w8U",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections and Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_images": [
-            "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
-            "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
-            "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-3.webp",
-            "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-4.webp",
-            "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-5.webp",
-            "assets/web/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-6.webp"
+            "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
+            "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
+            "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-3.webp",
+            "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-4.webp",
+            "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-5.webp",
+            "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-6.webp"
         ], 
         "page_imagery": []
         },

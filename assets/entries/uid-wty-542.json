@@ -26,11 +26,11 @@
         "video_url": "https://youtu.be/m0sUd-oWFqQ",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/m0sUd-oWFqQ?si=VuUDHTQceqpCHKWL&amp;controls=0' title='Digital Illustrated Bold Iconic Webflow Designed Portfolio' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_images": [
-            "assets/web/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp",
-            "assets/web/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-2.webp",
-            "assets/web/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-3.webp",
-            "assets/web/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-4.webp",
-            "assets/web/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-5.webp"
+            "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp",
+            "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-2.webp",
+            "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-3.webp",
+            "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-4.webp",
+            "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-5.webp"
         ], 
         "page_imagery": []
         },

@@ -26,10 +26,10 @@
         "video_url": "https://youtu.be/HY7RDDFLeKI",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/HY7RDDFLeKI?si=OKY7WvnjYGIoOa6a&amp;controls=0' title='Animated Analytics Dashboard for Robust AI-Centric Apps' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_images": [
-            "assets/web/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp",
-            "assets/web/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-2.webp",
-            "assets/web/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-3.webp",
-            "assets/web/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-4.webp"
+            "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp",
+            "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-2.webp",
+            "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-3.webp",
+            "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-4.webp"
         ], 
         "page_imagery": []
         },

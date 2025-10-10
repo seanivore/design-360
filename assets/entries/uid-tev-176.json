@@ -26,12 +26,12 @@
         "video_url": "https://youtu.be/DvdaYVqqOY0",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/DvdaYVqqOY0?si=So5Q2i2Gf5l-w59S&amp;controls=0' title='Framer CMS Shop Gallery Lookbook AI Podcast Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_images": [
-            "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp",
-            "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-2.webp",
-            "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-3.webp",
-            "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-4.webp",
-            "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-5.webp",
-            "assets/web/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-6.webp"
+            "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp",
+            "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-2.webp",
+            "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-3.webp",
+            "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-4.webp",
+            "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-5.webp",
+            "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-6.webp"
         ], 
         "page_imagery": []
         },

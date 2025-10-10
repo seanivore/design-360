@@ -26,12 +26,12 @@
         "video_url": "https://youtu.be/JHghuUyw7xA",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JHghuUyw7xA?si=MjBm5BsP1mdXweTq&amp;controls=0' title='SAAS Product Sales Sign-up Contact Page Essentials' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
         "thumbnail_images": [
-            "assets/web/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp",
-            "assets/web/saas-product-sale-features/thumb-slides-saas-product-sale-features-2.webp",
-            "assets/web/saas-product-sale-features/thumb-slides-saas-product-sale-features-3.webp",
-            "assets/web/saas-product-sale-features/thumb-slides-saas-product-sale-features-4.webp",
-            "assets/web/saas-product-sale-features/thumb-slides-saas-product-sale-features-5.webp",
-            "assets/web/saas-product-sale-features/thumb-slides-saas-product-sale-features-6.webp"
+            "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp",
+            "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-2.webp",
+            "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-3.webp",
+            "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-4.webp",
+            "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-5.webp",
+            "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-6.webp"
         ], 
         "page_imagery": []
         },
