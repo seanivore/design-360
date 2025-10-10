@@ -228,7 +228,7 @@ Let me make this memory update comprehensive so we can recover easily if context
 
 **IMMEDIATE MEMORY UPDATE!** 🚨
 
-[You added and entry]
+You added and entry
 
 Thought processGood! Memory updated. Now let me fix the code based on the feedback. Key changes:
 

@@ -1,33 +1,11 @@
-# Architecture Explained: The Unconventionally Smart Approach
+# Single-JSON Portfolio Architecture
+*Add entries, scale sections, update navigation—all by dropping in one file.*
+
 **Project:** Creative Generalist Portfolio (august.style)  
 **Purpose:** Document our clever architecture for future AI collaborators  
 **Date:** 2025-10-10
 
 ---
-
-Noteworthy, Novel 
-Atypical
-Unconventionally Optimized HTML/CSS/JS Portfolio Architecture 
-Unconventionally Innovative Optimization
-Unexpectedly Simple Dynamic Portfolio Architecture 
-Rapid Scaling 
-The Unexpected Simple Dynamic Portfolio Architecture 
-Rapidly Scaling, Fully Dynamic, Unexpectedly Simple 
-
-Scale portfolio entries, sections, and navigation 
-Shockingly Simple Portfolio Architecture 
-Unexpectedly Simple, Dynamic, Rapidly Scaling Architecture
-
-A shockingly simple portfolio architecture
-Rapidly scaling portfolio website
-Rapidly increase website sections
-
-, contextual SEO tags, & dynamically populated navigation by dropping in a single new project entry file. 
-Surprisingly Simple, Dynamic & Rapidly Scaling Portfolio Architecture 
-
-Single-File
-
-Shockingly-Simple Personal CMS Build
 
 ## Why This Document Exists
 
