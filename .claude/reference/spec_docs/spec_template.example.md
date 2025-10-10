@@ -1,51 +1,71 @@
-# Specification Template
-> Ingest the information from this file, implement the Low-Level Tasks, and generate the code that will satisfy the High and Mid-Level Objectives.
+# SPEC for Claude Code Agentic Workflow Production 
 
-## High-Level Objective
+  > Ingest the information from this file 
+  > Implement the Low-Level Tasks 
+  > Generate code that will satisfy High and Mid Level Objective 
 
-- [High level goal goes here - what do you want to build?]
+---
 
-## Mid-Level Objective
+## Objectives 
 
-- [List of mid-level objectives - what are the steps to achieve the high-level objective?]
-- [Each objective should be concrete and measurable]
-- [But not too detailed - save details for implementation notes]
+### High-Level 
 
-## Implementation Notes
-- [Important technical details - what are the important technical details?]
-- [Dependencies and requirements - what are the dependencies and requirements?]
-- [Coding standards to follow - what are the coding standards to follow?]
-- [Other technical guidance - what are other technical guidance?]
+  + This should define the High Level goal 
+  + What specifically are we going to build? 
+
+### Mid-Level 
+
+  + This starts a list of Mid-Level objectives 
+  + What are the steps to achieve our High Level objective? 
+  + Make sure each objective is concrete and measurable 
+  + Avoid getting overly detailed by saving that information for implementation notes 
+
+### Implementation Notes 
+
+  + This is where we should answer what the important technical details are 
+  + What are the dependencies and requirements? 
+  + Please define the coding standards that must be followed 
+  + Are there any other technical guidance that we should provide? 
+
+--- 
 
 ## Context
 
-### Beginning context
-- [List of files that exist at start - what files exist at start?]
+### Starting Context 
 
-### Ending context  
-- [List of files that will exist at end - what files will exist at end?]
+  - What files exist at the start? 
+  - Please list those files for reference 
 
-## Low-Level Tasks
-> Ordered from start to finish
+### Context at Completion 
 
-1. [First task - what is the first task?]
-```
-What prompt would you run to complete this task?
-What file do you want to CREATE or UPDATE?
-What function do you want to CREATE or UPDATE?
-What are details you want to add to drive the code changes?
-```
-2. [Second task - what is the second task?]
-```
-What prompt would you run to complete this task?
-What file do you want to CREATE or UPDATE?
-What function do you want to CREATE or UPDATE?
-What are details you want to add to drive the code changes?
-```
-3. [Third task - what is the third task?]
-```
-What prompt would you run to complete this task?
-What file do you want to CREATE or UPDATE?
-What function do you want to CREATE or UPDATE?
-What are details you want to add to drive the code changes?
-```
+  - What files will exist at the end? 
+  - Please list those deliverables for complete clarity 
+
+---
+
+## Low Level Tasks
+
+  > Ordered from start to finish 
+  > These are the steps to follow to walk through 
+  > Complete these to complete the entire project, start to finish 
+
+  1. Succinct heading for the first task 
+
+     - What prompt should be run to complete this task? 
+     - 'CREATE' what file? Or 'UPDATE' what file? 
+     - What function is to be CREATED or UPDATED? 
+     - Provide whatever details you want to add to drive the code changes 
+
+  2. Concise name defining the second task 
+
+     - What prompt would we want to run to complete this task? 
+     - What file do we want to CREATE or UPDATE? 
+     - What function do we want to CREATE or UPDATE? 
+     - What are details we want to add to drive the code changes? 
+
+  3. Third task is what, exactly? 
+
+     - Prompt recommended be run for task completion 
+     - CREATE or UPDATE file(s)... 
+     - CREATE or UPDATE what function(s)... 
+     - Details for driving forward the code changes 
