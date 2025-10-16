@@ -25,6 +25,7 @@
         "video_filename": "ai-gen-blog-fashion-lookbook-print-shop.mp4",
         "video_url": "https://youtu.be/DvdaYVqqOY0",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/DvdaYVqqOY0?si=So5Q2i2Gf5l-w59S&amp;controls=0' title='Framer CMS Shop Gallery Lookbook AI Podcast Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp",
             "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-2.webp",
@@ -33,7 +34,9 @@
             "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-5.webp",
             "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-6.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://ai-generated-content.august.style",

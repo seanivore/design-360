@@ -25,6 +25,7 @@
         "video_filename": "custom-designed-illustrator-site.mp4",
         "video_url": "https://youtu.be/m0sUd-oWFqQ",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/m0sUd-oWFqQ?si=VuUDHTQceqpCHKWL&amp;controls=0' title='Digital Illustrated Bold Iconic Webflow Designed Portfolio' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp",
             "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-2.webp",
@@ -32,7 +33,9 @@
             "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-4.webp",
             "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-5.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://visual-producer.august.style",

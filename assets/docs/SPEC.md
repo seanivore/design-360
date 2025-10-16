@@ -71,36 +71,13 @@
 
   1. Technically simple HTML/CSS/JS build, published to GitHub Pages 
   2. Content tile grid navigation with tag toggle filtering
-     + Larger, almost square homepage tiles link out to the four website sections 
-     + Wide, shorter/narrow section page tiles link out to entries 
-  3. Thumbnail images on tiles swipe like slide show 
-     + This is to help prevent the need to click through many projects  
-     + One image must bleed, extend beyond viewport to encourage user to swipe 
-  4. Text on images couple with images to tell the full story, metrics, results 
-     + There are ~4 teaser lines of text for front of the tile 
-     + These change with cross-fade that triggers when an image is swiped to the next 
-  5. Responsive design is strictly mobile FIRST 
-     + Tile responsiveness snaps to fixed desktop, tablet, media/mobile aspect ratio stop points
-     + Shrink/grow responsiveness is there, but very minimally, preserving visual content on tile
-     + Micro-interactions on click; NO HOVER, be more creative than that
-     + Extra-apparent, smooth page transitions; elements drop or fade in sequentially 
-  6. Filter tags on section pages use horizontal scroll UI, bleed out of viewport, mirroring UI of thumbnails 
-     + Tapping a filter to turn it ON moves it to the front (far left) and changes it to more prominent color; tap again to turn off
-     + Tiles load in random order on every reload; order maintained on filtering with tiles visually present sliding smoothly into new placement
-     + Clicking filter tags or jumping to a section of a page should add #tag-name to the URL
-     + In the case of the homepage's sections, the #tagged URL should be redirected `august.style/about` and `august.style/contact` 
-     + The section directories, like `/web/` and `/print/` direct to URL `august.style/web/...` etc. 
-  7. Project tiles, tag filters, and other info is populated dynamically, pulling from JSON file for every project 
-     + All entries use the same template JSON object schema: `./assets/docs/entry_template.json` 
-     + JSON files are perfectly structured for vanilla JS consumption; no build process needed 
-     + Necessary for tags and filtering on section pages, as well pas populating the actual tiles, their text, their images 
-     + On entry page, just some elements are made dynamic, like the list of tags for each page at top right 
-     + If it is easier we can/should dynamically fill in as much of the entry details on page as possible 
-  8. Project entry pages are highly visual with 4 clear section headings 
-     + Sections include **ROLE**, **PATTERN**, **ACTION**, and **MEASURED** 
-     + Each section has 2-4 short sentences; except "ROLE" as that is populated like the tags are 
-     + Find proposed HTML filename on JSON file; JSON filename created using `uid` bash command 
-     + Any images have their alt. text written on the fly pulling from context of project text and image's filename 
+  3. Tile thumbnail images slide show swipe; UX goal to click less projects
+  4. Tile text cross-fade changes when image is swiped to tell full story, metrics results 
+  5. Responsive shrink/grow minimal, preserve visuals, snap to fixed desktop, tablet, media/mobile ratio stops
+  6. True mobile-first; no hover, apparent smooth page transitions, elements drop/fade in, micro-interactions on click 
+  7. Horizontal slide tag filter tiles; slide smoothly into new positions; random order every reload 
+  8. All site (imgs, urls, copy, tag nav) content dynamically populated from project entry JSON; vanilla JS, no build 
+  9. Highly visual, four 2-4 short sentence section project entry pages; headings **ROLE**, **PATTERN**, **ACTION**, and **MEASURED** 
 
 ---
 

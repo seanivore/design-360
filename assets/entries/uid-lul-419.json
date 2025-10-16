@@ -25,6 +25,7 @@
         "video_filename": "ai-ui-meditation-journal-app.mp4",
         "video_url": "https://youtu.be/OHJgYA2I2pQ",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OHJgYA2I2pQ?si=hNMnYEAoL2zM2f0u&amp;controls=0' title='Yoga Journal Mobile App with AI-Led User-Interface' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-1.webp",
             "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-2.webp",
@@ -33,7 +34,9 @@
             "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-5.webp",
             "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-6.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://design.august.style/projects/mindflow-app",

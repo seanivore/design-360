@@ -25,6 +25,7 @@
         "video_filename": "template-tag-nav-visual-website.mp4",
         "video_url": "https://youtu.be/OLZHwv2o-zQ",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OLZHwv2o-zQ?si=1px7OtROcUfpq8il&amp;controls=0' title='Build a Visual Tag-Navigated Portfolio with AI Help' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp",
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-2.webp",
@@ -33,7 +34,9 @@
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-5.webp",
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-6.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://developer-technologist.august.style",

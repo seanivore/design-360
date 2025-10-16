@@ -25,6 +25,7 @@
         "video_filename": "fashion-generative-in-painted-looks.mp4",
         "video_url": "https://youtu.be/JFg2fXPmuhw",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JFg2fXPmuhw?si=A-3vL7RMlVcafMa0&amp;controls=0' title='AI In-Painted Fashion Lookbook Website Development' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp",
             "assets/media/ai-design-fashion-lookbook/thumb-slides-2-ai-design-fashion-lookbook.webp",
@@ -33,7 +34,9 @@
             "assets/media/ai-design-fashion-lookbook/thumb-slides-5-ai-design-fashion-lookbook.webp",
             "assets/media/ai-design-fashion-lookbook/thumb-slides-6-ai-design-fashion-lookbook.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [], 
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://design.august.style/projects/summer-lookbook-part-1",

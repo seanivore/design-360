@@ -25,6 +25,7 @@
         "video_filename": "framed-staged-art-history-print-shop.mp4",
         "video_url": "https://youtu.be/9qVi5_zoNaM",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/9qVi5_zoNaM?si=D-oRb-tYkO1dEq3m&amp;controls=0' title='Minimalist Web Store Product Gallery and Pages' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp",
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-2.webp",
@@ -32,7 +33,9 @@
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-4.webp",
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-5.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://design.august.style/projects/webflow-print-series",

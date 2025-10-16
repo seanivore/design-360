@@ -25,6 +25,7 @@
         "video_filename": "saas-trial-contact-sign-up.mp4",
         "video_url": "https://youtu.be/JHghuUyw7xA",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JHghuUyw7xA?si=MjBm5BsP1mdXweTq&amp;controls=0' title='SAAS Product Sales Sign-up Contact Page Essentials' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp",
             "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-2.webp",
@@ -33,7 +34,9 @@
             "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-5.webp",
             "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-6.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://design.august.style/projects/css-anim-saas-landing",

@@ -25,6 +25,7 @@
         "video_filename": "hand-drawn-anim-ai-blogs.mp4",
         "video_url": "https://youtu.be/LakcBI95rfU",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/LakcBI95rfU?si=Ml8H49Xs5LXGL5iv&amp;controls=0' title='Custom Lottie Animated Webflow CMS Daily Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "",
         "thumbnail_images": [
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp",
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-2.webp",
@@ -33,7 +34,9 @@
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-5.webp",
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-6.webp"
         ], 
-        "page_imagery": []
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
         },
     "assets": {
         "project_url": "https://generative-horoscopes.august.style",
