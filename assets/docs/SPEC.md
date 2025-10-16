@@ -57,7 +57,7 @@
     - ✅ 1/8th image bleed hints at swipe
     - ✅ Smooth 300ms transitions everywhere
 
-* **Website macro-structure** 
+* **Website structure** 
 *Incomplete; example to illustrate structure only*
 
 ```
@@ -69,13 +69,16 @@ index.html              `august.style/`
 ├── assets/
 │   ├── js/
 │   │   ├── data-loader.js 
+│   │   ├── featured.json
+│   │   ├── filter-controller.js 
 │   │   ├── manifest.json
-│   │   ├── filter-controller.js
 │   │   ├── section-controller.js
 │   │   └── tile-renderer.js 
 │   ├── media/
+│   ├── favicon/
 │   ├── docs/
-│   │   ├── _entry_template.json
+│   │   ├── _entry_template.json 
+│   │   ├── home_entry_pages_spec.md 
 │   │   ├── ADD_NEW_PROJECT.md
 │   │   ├── ARCHITECTURE.md
 │   │   └── SPEC.md
@@ -99,7 +102,7 @@ index.html              `august.style/`
 ├── README.md 
 ├── 404.html 
 ├── generate_manifest.py
-├── featured.json
+├── index.html
 ├── section.html
 └── styles.css 
 ```
@@ -139,60 +142,8 @@ index.html              `august.style/`
 
 ---
 
-# The **last session we were cut off** right after finishing the updates. You did a memory update and then said "Perfect! Memory locked in tight. Now let me do a deep systematic review!" and we were going to test things. I moved over the files and tried testing things and the local host doesn't work however I remember that specific local host not working in the past so we might just need to try another one before getting in too deep. Either way, we've outlined next step below. 
-
----
-
-### *Phase 1:* Review Feedback & Testing 
-
-  * **These two were not mentioned in any of the update results, just wanted to give an FYI** 
-
-    1. data-loader.js
-    2. section.html
-
-  * **The final web view server doesn't work** 
-
-    1. `python3 generate_manifest.py` -- when is this used and is it timed or manual 
-    2. `python3 -m http.server 8000` and Visit: http://localhost:8000/web **doesn't work** 
-        + I feel like I remember the 8000 one not working in the past because all of the browser block it heavily 
-        + Currently getting 404 errors 
-        + Error response; Error code: 404; Message: File not found.; Error code explanation: 404 - Nothing matches the given URI.
-        + ::1 - - 16/Oct/2025 09:02:13 code 404, message File not found ::1 - - 16/Oct/2025 09:02:13 "GET /favicon.ico HTTP/1.1" 404 -
-        + That's when this architecture **clicks**. Every new JSON you add from here on out = instant new page. No HTML to write. Ever. 🔥
-
-- Debug and test all currently create pages; we made fixes but the pages weren't tested before the fixes 
-
-
-  **NEW TEST LOCAL SERVER** 
-
-python3 -m http.server 8080 --bind 127.0.0.1
-http://127.0.0.1:8080/section.html
-
-python3 -m http.server 3000 --bind 127.0.0.1
-http://localhost:3000/section.html
-
-python3 -m http.server 5500 --bind 127.0.0.1
-http://localhost:5500/section.html
-
-august.style/web                              → Normalized to section=Web
-august.style/web/html-css-js                  → Normalized to section=Web, subsection=HTML/CSS/JS
-august.style/web/html-css-js/fashion-magazine → Entry page
-```
-
-The 404.html catches these, normalizes them (lowercase → capitalized, hyphens → spaces), and passes to the correct template.
-
-**On Localhost (our testing hack):**
-```
-localhost:3000/section.html?section=Web
-localhost:3000/section.html?section=Web&subsection=HTML/CSS/JS
-```
-
-We have to manually match the JSON capitalization because we're bypassing the 404 normalization.
-
-**For tag filtering:**
-```
-Production: august.style/web#tags=copywriting+illustration
-Localhost:  localhost:3000/section.html?section=Web#tags=copywriting+illustration
+ - python3 -m http.server 5500 --bind 127.0.0.1
+ - http://localhost:5500/section.html
 
 ### *Phase 2:* Homepage 
   + Create homepage tiles, and section page tiles 
