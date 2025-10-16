@@ -24,25 +24,37 @@
   1. JSON entry template schema: `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json`
   2. Comprehensive steps for preparing JSON: `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
 
+### Design Summary 
+
+  1. Technically simple HTML/CSS/JS build, published to GitHub Pages 
+  2. Content tile grid navigation with tag toggle filtering
+  3. Tile thumbnail images slide show swipe; UX goal to click less projects
+  4. Tile text cross-fade changes when image is swiped to tell full story, metrics results 
+  5. Responsive shrink/grow minimal, preserve visuals, snap to fixed desktop, tablet, media/mobile ratio stops
+  6. True mobile-first; no hover, apparent smooth page transitions, elements drop/fade in, micro-interactions on click 
+  7. Horizontal slide tag filter tiles; slide smoothly into new positions; random order every reload 
+  8. All site (imgs, urls, copy, tag nav) content dynamically populated from project entry JSON; vanilla JS, no build 
+  9. Highly visual, four 2-4 short sentence section project entry pages; headings **ROLE**, **PATTERN**, **ACTION**, and **MEASURED** 
+
 * **Website macro-structure** 
 *Incomplete; example to illustrate structure only*
 
 ```
-`august.style/`         `.index.html`
-│   ├── about           `.index.html#about` -> `august.style/about` 
-│   └── contact         `.index.html#contact` -> `august.style/contact` 
+index.html               `august.style/`
+│   ├── #about           `.index.html#about` -> `august.style/about` 
+│   └── #contact         `.index.html#contact` -> `august.style/contact` 
 ├── assets/
 │   ├── js/
-│   │   ├── data-loader.js
-│   │   ├── filter-controller.js
-│   │   ├── section-controller.js
-│   │   └── tile-renderer.js
+│   │   ├── data-loader.js             Created before context window, might need updates
+│   │   ├── filter-controller.js       Created before context window, might need updates
+│   │   ├── section-controller.js      Created before context window, might need updates
+│   │   └── tile-renderer.js           Created before context window, might need updates
 │   ├── media/
 │   ├── docs/
 │   │   ├── _entry_template.json
 │   │   ├── ADD_NEW_PROJECT.md
 │   │   ├── ARCHITECTURE.md
-│   │   ├── manifest.json
+│   │   ├── manifest.json              Created before context window, might need updates
 │   │   └── SPEC.md
 │   └── entries/
 │       ├── uid-dff-987.json
@@ -61,23 +73,10 @@
 │       └── uid-wty-542.json
 ├── _config.yml
 ├── CNAME
-├── 404.html
-├── index.html
-├── section.html
-└── styles.css
+├── 404.html                         Created before context window, might need updates
+├── section.html                     Created before context window, might need updates
+└── styles.css                       Created before context window, might need updates
 ```
-
-### Design Summary 
-
-  1. Technically simple HTML/CSS/JS build, published to GitHub Pages 
-  2. Content tile grid navigation with tag toggle filtering
-  3. Tile thumbnail images slide show swipe; UX goal to click less projects
-  4. Tile text cross-fade changes when image is swiped to tell full story, metrics results 
-  5. Responsive shrink/grow minimal, preserve visuals, snap to fixed desktop, tablet, media/mobile ratio stops
-  6. True mobile-first; no hover, apparent smooth page transitions, elements drop/fade in, micro-interactions on click 
-  7. Horizontal slide tag filter tiles; slide smoothly into new positions; random order every reload 
-  8. All site (imgs, urls, copy, tag nav) content dynamically populated from project entry JSON; vanilla JS, no build 
-  9. Highly visual, four 2-4 short sentence section project entry pages; headings **ROLE**, **PATTERN**, **ACTION**, and **MEASURED** 
 
 ---
 
