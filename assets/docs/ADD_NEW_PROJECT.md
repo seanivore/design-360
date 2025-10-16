@@ -11,19 +11,17 @@
      + Use the template making no changes without permission 
        `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json`
      + Follow instructions described below 
-  3. Save the completed JSON object 
-     + Organize it in the website directory structure 
-     + Place it where the project page's HTML will be created 
+  2. Save the completed JSON object in the `.assets/entries/...` directory 
 
 ### JSON Entry Writing  
 
 * **Process flow builds on itself to fill out all copywriting in JSON**
 
   1. Get an `entry_id` by running bash command `uid` then adding an underscore to front of ID 
-  2. Add `section` and `sub_section` then fill in `slug` with domain 
+  2. Add `section`, applicable `sub_section`, then `slug` is the would-be HTML file name (but we don't have HTML files for each page)
      - `section` options = Print, Digital, Web, or Video 
      - `sub_section` is created as context tags based on need while build the collection of project entries 
-     - `slug` field entry example = 'august.style/web/framer/' 
+     - `slug` field entry example = 'automated-e-commerce-shop-lookbook' 
 
 * **After preparing above basics, human completes the following or works with AI to do so** 
 
@@ -55,19 +53,20 @@
   6. Add `notes` to aid AI in filling out rest of JSON 
      - Look through the old portfolio entries, most can be found in applying-to-jobs directory 
      - Include summaries from those documents and also add any URL to previous portfolio entry posts 
+  7. Be sure to fill out any alt. text as you go 
 
 * **AI should now use all resources available to complete JSON for Sean to review afterwards** 
 
-  7. Create `page_title` and `page_subtitle` 
+  8. Create `page_title` and `page_subtitle` 
      - Simplify the `seo_title` into concise and direct `page_title` 
      - Fit the rest of the messaging from the `seo_title` into the `page_subtitle` 
      - Example `page_title`: "Framer CMS Site Built Using AI & Notion" 
      - Example `page_subtitle`: "With micro-interactive bauhaus-inspired design" 
-  8. Choose a `breadcrumb` 
+  9. Choose a `breadcrumb` 
      - Choose a few words within the theme of the titles, filename, etc. 
      - For example using the `seo_title` 'Framer CMS Web Design Shop, Gallery, AI Blog'
      - Example: "Automated Design Blog CMS" 
-  9. Compose handful of `tile_text` lines 
+  10. Compose handful of `tile_text` lines 
      - Use all the concepts and drafted text for ideation, capitalizing on what best fits website message and intention 
      - These should tell the story, the highlights about the project, even impressive KPI metrics 
      - Combined with thumbnails, we're creating a UI that has a UX where hiring managers don't have to click into many projects 
@@ -79,7 +78,7 @@
 
 * **Copy above as a resource, AI can write 2-4 sentences for the `page_copy` items and a single `tagging` item** 
 
-  10. These 4 will be headers and page sections mirrored on every project entry page 
+  11. These 4 will be headers and page sections mirrored on every project entry page 
       - (1) In the `tagging` section add a `role` for the project 
         + This is placed prominently unlike other tags  
         + This is ideally one role, possibly a job title; for complex cases Sean will need to help or update after 
@@ -97,7 +96,7 @@
 
 * **Lastly, AI fills in section `tagging` which are used for content tile filtering and contextual information** 
 
-  11. Populate JSON tag lists for context tag types using the guidance on tagging creation section below 
+  12. Populate JSON tag lists for context tag types using the guidance on tagging creation section below 
       - `technology` tags 
       - `media` tags 
       - `skill` tags 
@@ -109,8 +108,8 @@
   1. Section tags 
      + These define placement of project entries into actual website sections 
        - They are the names of our homepage tiles 
-       - They informs which section page the tiles should populate on 
-  2. Toggle tags 
+       - They informs which tiles should populate based on section-type tag selected 
+  2. Toggle tags *THESE ARE ON FEATURED DOCUMENT TO BE CREATED AND MUST PULL FROM USED CONTEXTUAL TAGS* 
      + Select tags listed at top of section pages to navigate by filtering down project tiles 
      + Each project page will include tags in out-of-way top-right region; click through goes to section page sorted to see only that content 
   3. Contextual tag  
@@ -129,8 +128,8 @@
 | Product         | Toggle tag   |      as the goal is to show off exactly what 
 | Copywriting     | Toggle tag   |      the hiring managers are likely looking to 
 | Interactive     | Toggle tag   |      isolate or filter down to just that content 
-| Team Manager    | Toggle tag   |
-| Consulting      | Toggle tag   |
+| Team Manager    | Toggle tag   |      we just have to make sure the tag exists as a 
+| Consulting      | Toggle tag   |      contextual tag already 
 
 * **Skill-based job titles to work into copy and contextual tags** 
 
