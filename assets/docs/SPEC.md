@@ -138,14 +138,14 @@ index.html              `august.style/`
 
 ### *Phase 1:* Review Feedback & Testing 
 
-  * **These two were not mentioned in any of the update results** 
+  * **These two were not mentioned in any of the update results, just wanted to give an FYI** 
 
     1. data-loader.js
     2. section.html
 
   * **The final web view server doesn't work** 
 
-    1. `python3 generate_manifest.py` -- when is this used 
+    1. `python3 generate_manifest.py` -- when is this used and is it timed or manual 
     2. `python3 -m http.server 8000` and Visit: http://localhost:8000/web **doesn't work** 
         + I feel like I remember the 8000 one not working in the past because all of the browser block it heavily 
         + Currently getting 404 errors 
