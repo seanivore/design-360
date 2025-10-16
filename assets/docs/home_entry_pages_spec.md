@@ -1,8 +1,8 @@
-# SPEC for Homepage & Entry Pages - Claude Code Agentic Workflow
+# Claude Code Agentic Workflow SPEC for Homepage & Entry Pages 
 
-> Ingest the information from this file
-> Implement the Low-Level Tasks
-> Generate code that will satisfy High and Mid Level Objective
+  > 1.Ingest the information from this file
+  > 2.Implement the Low-Level Tasks
+  > 3.Generate code that will satisfy High and Mid Level Objective
 
 ---
 
@@ -10,84 +10,122 @@
 
 ### High-Level
 
-+ Build the remaining two core pages of the portfolio: Homepage (index.html) and Entry Page Template (entry.html)
-+ Homepage showcases 4 section tiles with random project selection on each load
-+ Entry pages display individual projects with related posts based on tag matching
-+ Complete the "Single-JSON Portfolio Architecture" with full dynamic content population
+  + Build two core remaining portfolio pages: Homepage (`index.html`), Entry Page Template (`entry.html`)
+    - Homepage showcases 4 section tiles with random project selection on each load
+    - Entry pages display individual projects with related posts based on tag matching
+  + Complete the "Single-JSON Portfolio Architecture" with full dynamic content population
 
 ### Mid-Level
 
-+ Create index.html with three sections: Projects, About, Contact
-+ Implement homepage tiles that randomly select images and text from entries in each section
-+ Build entry.html template that dynamically populates from JSON based on URL
-+ Create entry-controller.js to handle URL parsing, JSON loading, and related posts logic
-+ Implement time-seeded related posts algorithm for consistent-but-changing recommendations
-+ Ensure all pages work with both localhost testing (URL params) and production (404 routing)
-+ Match existing design system from section.html (dark mode, sharp corners, gradient background)
+  + Create `index.html` with three sections: Projects, About, Contact
+  + Implement homepage tiles that randomly select images with paired entry text from project JSON files in each section
+  + Build `entry.html` template that dynamically populates from JSON based on URL
+  + Create `entry-controller.js` to handle URL parsing, JSON loading, and related posts logic
+  + Implement time-seeded related posts algorithm for consistent-but-changing recommendations
+  + Ensure all pages work with both localhost testing (URL params) and production (404 routing)
+  + Match existing design system from `section.html` (dark mode, sharp corners, gradient background)
 
 ### Implementation Notes
 
-**Dependencies:**
-- All Phase 1 files are complete and working (section.html, all controllers, data-loader.js, etc.)
-- 15 JSON entries exist in /assets/entries/
-- manifest.json is current and complete
-- featured.json defines toggle tags
+  * **Dependencies:**
 
-**Architecture Context:**
-- Read `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` for full system understanding
-- This is a "mini-SPA" using 404 routing trick for clean URLs on GitHub Pages
-- Localhost testing uses URL parameters (?section=Web) as workaround
-- All content dynamically populated from JSON - no hardcoding!
+    + All Phase 1 files are complete and working (`section.html`, all controllers, `data-loader.js`, etc.)
+    + 15 JSON entries exist in `./assets/entries/...`
+    + `manifest.json` is current and complete
+    + `featured.json` defines toggle tags
 
-**Design Standards:**
-- Mobile-first, no hover interactions
-- Dark mode default (charcoal background, white text)
-- Sharp corners on tiles (no border-radius)
-- Vertical gradient "glare" effect on body
-- Smooth transitions (300ms cubic-bezier)
-- Magazine aesthetic (visual-first, minimal text on tiles)
+  * **Architecture Context:**
 
-**JSON Structure Reference:**
+    + Read for full system understanding
+      - `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
+      - `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
+    + See and understand JSON contents for dynamic population 
+      - `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
+      - (example) `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json` 
+    + This is a "mini-SPA" using a 404 routing trick for clean URLs on GitHub Pages
+      - Localhost testing uses URL parameters (?section=Web) as workaround
+      - All content dynamically populated from JSON; **ABSOLUTELY NO HARDCODING**
+
+  * **Design Standards:**
+
+    + Mobile-first for real 
+      - Meaning no hover interactions
+      - Smooth transitions @ ~300ms cubic-bezier 
+    + Dark mode default 
+      - Charcoal background 
+      - Vertical gradient "glare" effect on body background
+      - White text 
+    + Tiles generally 
+      - Sharp corners 
+      - No border-radius 
+    + Magazine aesthetic 
+      - Visual-first 
+      - Minimal text on tiles
+
+  * **JSON Structure Reference:**
+
+    + `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
+    + example: `/Users/seanivore/Development/360-design/assets/entries/uid-rfr-187.json`
+
 ```json
 {
   "categorization": {
+    "entry_id": "uid-iqi-479", 
     "placement": {
-      "section": "Web",
-      "sub_section": "HTML/CSS/JS",
-      "slug": "project-name"
+        "section": "Web",
+        "sub_section": "Application", 
+        "slug": "dynamic-modular-portfolio-architecture"
     },
-    "tagging": {
-      "technology": ["CSS", "JavaScript"],
-      "media": ["Web Design"],
-      "role": ["Web Developer"],
-      "skill": ["Front-End Development"]
+    "tagging":{
+        "technology": ["JavaScript", "JSON", "GitHub Pages", "CSS", "Python", "HTML", "Dynamic Updates", "Agentic AI Systems"],
+        "media": ["Scalable System Design", "Portfolio Website", "Single-Page Application"],
+        "role": ["Systems Designer", "Developer"], 
+        "skill": ["Information Architecture", "Modular Design", "DRY Principles", "Agentic Coding", "Creative Direction", "User Design"]
     }
-  },
-  "content": {
+},
+"content": {
     "media": {
-      "thumbnail_images": ["path/to/img1.webp", "path/to/img2.webp"],
-      "video_embed": "<iframe>...</iframe>"
+        "video_filename": "",
+        "video_url": "",
+        "video_embed": "", 
+        "video_alt_text": "",
+        "thumbnail_images": [], 
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
+        },
+    "assets": {
+        "project_url": "https://august.style",
+        "github_repository": "https://github.com/seanivore/design-360"
     },
-    "teaser_copy": {
-      "page_title": "Project Title",
-      "page_subtitle": "Brief subtitle",
-      "tile_text": ["Teaser 1", "Teaser 2", "Teaser 3"]
+    "teaser_copy":{
+        "seo_title": "Rapid Scaling Portfolio Pages Update Without Refresh",
+        "seo_description": "This technically simple build used some innovative concepts to turn creating 50+ or more unique website pages by creating just two HTML files.", 
+        "page_title": "Single-JSON Portfolio Architecture", 
+        "page_subtitle": "50+ pages from 2 templates", 
+        "breadcrumb": "Website Dynamic App",
+        "tile_text": [
+            "Real-time page updates without refreshing pages", 
+            "Modular design means drop in one file to create entries, sections, more", 
+            "Find a faster portfolio to scale up than this one, we'll wait"
+        ]
     },
-    "page_copy": {
-      "pattern": "Problem/context paragraph",
-      "action": "Solution/approach paragraph",
-      "measured": "Results/impact paragraph"
+    "page_copy":{
+        "pattern": "Traditional portfolios require maintaining 50+ HTML files. Updates mean editing each file individually. Adding entries means copying templates and linking manually.",
+        "action": "Designed hybrid SPA architecture using 404 routing trick + JSON content system. Two HTML templates dynamically populate from entry files. Manifest generation automates URL mapping.", 
+        "measured": "Result: Add new entries by creating one JSON file. Update design once, all pages update. Infinite scalability with zero code duplication." 
     }
   }
 }
 ```
 
-**Coding Standards:**
-- Use ES6+ features (async/await, arrow functions, template literals)
-- All JavaScript in IIFE modules to avoid global scope pollution
-- Extensive console logging for debugging (with emoji prefixes for visual scanning)
-- Follow existing naming conventions from Phase 1 controllers
-- Comments should explain WHY not WHAT (code should be self-documenting)
+  * **Coding Standards:**
+  
+    + Use ES6+ features (async/await, arrow functions, template literals)
+    + All JavaScript in IIFE modules to avoid global scope pollution
+    + Extensive console logging for debugging (with emoji prefixes for visual scanning)
+    + Follow existing naming conventions from Phase 1 controllers
+    + Comments should explain WHY not WHAT (code should be self-documenting)
 
 ---
 
@@ -95,40 +133,47 @@
 
 ### Starting Context - Files Already Complete
 
-**Core Pages:**
-- section.html (section page template - WORKING ✅)
-- 404.html (routing helper - WORKING ✅)
-- styles.css (complete design system - WORKING ✅)
+  * **Core Pages:**
 
-**JavaScript Modules:**
-- /assets/js/data-loader.js (JSON fetching, filtering, caching - WORKING ✅)
-- /assets/js/tile-renderer.js (section tile rendering - WORKING ✅)
-- /assets/js/filter-controller.js (tag filtering, sticky filters - WORKING ✅)
-- /assets/js/section-controller.js (section page orchestration - WORKING ✅)
+    - `section.html` (section page template - WORKING ✅)
+    - `404.html` (routing helper - WORKING ✅)
+    - `styles.css` (complete design system - WORKING ✅)
 
-**Data Files:**
-- /assets/js/manifest.json (URL→JSON mapping - WORKING ✅)
-- /assets/js/featured.json (toggle tags config - WORKING ✅)
-- /assets/entries/*.json (15 complete project entries - WORKING ✅)
+  * **JavaScript Modules:**
 
-**Documentation:**
-- /assets/docs/ARCHITECTURE.md (system design doc)
-- /assets/docs/SPEC.md (project overview)
-- /assets/docs/_entry_template.json (JSON schema)
+    - `/assets/js/data-loader.js` (JSON fetching, filtering, caching - WORKING ✅)
+    - `/assets/js/tile-renderer.js` (section tile rendering - WORKING ✅)
+    - `/assets/js/filter-controller.js` (tag filtering, sticky filters - WORKING ✅)
+    - `/assets/js/section-controller.js` (section page orchestration - WORKING ✅)
 
-### Context at Completion - New Files to Create
+  * **Data Files:**
 
-**New Pages:**
-- index.html (homepage with Projects/About/Contact sections)
-- entry.html (entry page template for individual projects)
+    - `/assets/js/manifest.json` (URL→JSON mapping - WORKING ✅)
+    - `/assets/js/featured.json` (toggle tags config - WORKING ✅)
+    - `/assets/entries/*.json` (15 complete project entries - WORKING ✅)
 
-**New JavaScript:**
-- /assets/js/entry-controller.js (entry page orchestration)
-- /assets/js/homepage-controller.js (homepage tile logic)
+  * **Documentation:**
+    
+    - `/assets/docs/ARCHITECTURE.md` (system design doc)
+    - `/assets/docs/SPEC.md` (project overview)
+    - `/assets/docs/_entry_template.json` (JSON schema)
 
-**Assets Needed:**
-- Profile picture at /assets/media/profile.jpg (or similar)
-- Social icons (can use simple SVG or icon font)
+### Context at Completion & New Files to Create
+
+  * **New Pages:**
+
+    - `index.html` (homepage with Projects/About/Contact sections)
+    - `entry.html` (entry page template for individual projects)
+
+  * **New JavaScript:**
+
+    - `/assets/js/entry-controller.js` (entry page orchestration)
+    - `/assets/js/homepage-controller.js` (homepage tile logic)
+
+  * **Assets Needed:**
+
+    - Profile picture at `/assets/media/profile.jpg` (or similar)
+    - Social icons (use simple SVG or icon font)
 
 ---
 

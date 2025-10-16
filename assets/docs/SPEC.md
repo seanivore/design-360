@@ -83,26 +83,12 @@ index.html              `august.style/`
 │   │   ├── ARCHITECTURE.md
 │   │   └── SPEC.md
 │   └── entries/
-│       ├── uid-dff-987.json
-│       ├── uid-eme-689.json
-│       ├── uid-fth-565.json
-│       ├── uid-hwi-844.json
-│       ├── uid-lul-419.json
-│       ├── uid-qor-090.json
-│       ├── uid-rfr-187.json
-│       ├── uid-sgt-851.json
-│       ├── uid-srs-009.json
-│       ├── uid-tev-176.json
-│       ├── uid-unw-889.json
-│       ├── uid-wgw-370.json
-│       ├── uid-wnw-867.json
-│       └── uid-wty-542.json
+│       └── uid-wty-542.json   # and many more 
 ├── _config.yml
 ├── CNAME
 ├── README.md 
 ├── 404.html 
 ├── generate_manifest.py
-├── index.html
 ├── section.html
 └── styles.css 
 ```
@@ -142,8 +128,10 @@ index.html              `august.style/`
 
 ---
 
- - python3 -m http.server 5500 --bind 127.0.0.1
- - http://localhost:5500/section.html
+```bash
+python3 -m http.server 5500 --bind 127.0.0.1
+> http://localhost:5500/section.html
+ ```
 
 ### *Phase 2:* Homepage 
   + Create homepage tiles, and section page tiles 
