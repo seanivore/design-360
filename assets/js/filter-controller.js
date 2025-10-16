@@ -46,7 +46,7 @@ const FilterController = (() => {
     function setStickyFilter(filter) {
         if (filter) {
             stickyFilter = DataLoader.normalizeForURL(filter);
-            
+
             // Add to active tags if not already present
             if (!activeTags.includes(stickyFilter)) {
                 activeTags.push(stickyFilter);
@@ -60,7 +60,7 @@ const FilterController = (() => {
      */
     function toggleTag(tag) {
         const normalized = DataLoader.normalizeForURL(tag);
-        
+
         // Prevent removing sticky filter
         if (normalized === stickyFilter) {
             console.log('Cannot remove sticky filter:', tag);
@@ -97,9 +97,9 @@ const FilterController = (() => {
             const tag = pill.getAttribute('data-tag');
             const isActive = activeTags.includes(tag);
             const isSticky = tag === stickyFilter;
-            
+
             pill.classList.toggle('active', isActive);
-            
+
             // Add sticky indicator (optional - can style differently)
             if (isSticky) {
                 pill.setAttribute('data-sticky', 'true');
@@ -116,11 +116,11 @@ const FilterController = (() => {
         if (!container) return;
 
         const pills = Array.from(container.querySelectorAll('.tag-filter'));
-        
+
         // Separate active and inactive pills
         const activePills = [];
         const inactivePills = [];
-        
+
         pills.forEach(pill => {
             const tag = pill.getAttribute('data-tag');
             if (activeTags.includes(tag)) {
@@ -155,12 +155,12 @@ const FilterController = (() => {
      */
     function attachPillListeners() {
         const pills = document.querySelectorAll('.tag-filter');
-        
+
         pills.forEach(pill => {
             // Remove old listeners by cloning node
             const newPill = pill.cloneNode(true);
             pill.parentNode.replaceChild(newPill, pill);
-            
+
             // Add new listener
             newPill.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -205,10 +205,10 @@ const FilterController = (() => {
 
         // Attach event listeners
         attachPillListeners();
-        
+
         // Update active states
         updateFilterPills();
-        
+
         // Reorder if any tags are active
         if (activeTags.length > 0) {
             reorderActiveTags();
@@ -220,15 +220,15 @@ const FilterController = (() => {
      */
     function sortTagsByType(tagsWithTypes) {
         const order = { subsection: 1, role: 2, contextual: 3 };
-        
+
         return tagsWithTypes.sort((a, b) => {
             const orderA = order[a.type] || 999;
             const orderB = order[b.type] || 999;
-            
+
             if (orderA !== orderB) {
                 return orderA - orderB;
             }
-            
+
             // Same type - sort alphabetically
             return a.tag.localeCompare(b.tag);
         });
@@ -248,27 +248,27 @@ const FilterController = (() => {
 
         // Parse initial tags from hash
         const hashTags = parseHashTags();
-        
+
         // Merge sticky filter with hash tags
         if (stickyFilter && !hashTags.includes(stickyFilter)) {
             hashTags.unshift(stickyFilter);
         }
-        
+
         activeTags = hashTags;
 
         // Listen for hash changes (back/forward navigation)
         window.addEventListener('hashchange', () => {
             const newHashTags = parseHashTags();
-            
+
             // Always include sticky filter
             if (stickyFilter && !newHashTags.includes(stickyFilter)) {
                 newHashTags.unshift(stickyFilter);
             }
-            
+
             activeTags = newHashTags;
             updateFilterPills();
             reorderActiveTags();
-            
+
             if (onFilterChange) {
                 onFilterChange(activeTags);
             }
@@ -293,11 +293,11 @@ const FilterController = (() => {
         } else {
             activeTags = [];
         }
-        
+
         updateHash();
         updateFilterPills();
         reorderActiveTags();
-        
+
         if (onFilterChange) {
             onFilterChange(activeTags);
         }
@@ -308,16 +308,16 @@ const FilterController = (() => {
      */
     function setTags(tags) {
         activeTags = tags.map(t => DataLoader.normalizeForURL(t));
-        
+
         // Always include sticky filter
         if (stickyFilter && !activeTags.includes(stickyFilter)) {
             activeTags.unshift(stickyFilter);
         }
-        
+
         updateHash();
         updateFilterPills();
         reorderActiveTags();
-        
+
         if (onFilterChange) {
             onFilterChange(activeTags);
         }

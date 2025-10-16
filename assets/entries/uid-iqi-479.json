@@ -1,0 +1,57 @@
+{
+  "_metadata": {
+    "last_updated": "2025-10-10T15:20:00.000000Z",
+    "required_fields": true,
+    "template_type": "portfolio_entry",
+    "schema_version": "3.0",
+    "schema_update": "removed slug to rename the file name as slug and removed html from that file name"
+  },
+  "categorization": {
+    "entry_id": "uid-iqi-479", 
+    "placement": {
+        "section": "Web",
+        "sub_section": "Application", 
+        "slug": "dynamic-modular-portfolio-architecture"
+    },
+    "tagging":{
+        "technology": ["JavaScript", "JSON", "GitHub Pages", "CSS", "Python", "HTML", "Dynamic Updates", "Agentic AI Systems"],
+        "media": ["Scalable System Design", "Portfolio Website", "Single-Page Application"],
+        "role": ["Systems Designer", "Developer"], 
+        "skill": ["Information Architecture", "Modular Design", "DRY Principles", "Agentic Coding", "Creative Direction", "User Design"]
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "",
+        "video_url": "",
+        "video_embed": "", 
+        "video_alt_text": "",
+        "thumbnail_images": [], 
+        "thumbnail_alt_text": [],
+        "page_imagery": [],
+        "page_imagery_alt_text": []
+        },
+    "assets": {
+        "project_url": "https://august.style",
+        "github_repository": "https://github.com/seanivore/design-360"
+    },
+    "teaser_copy":{
+        "seo_title": "Rapid Scaling Portfolio Pages Update Without Refresh",
+        "seo_description": "This technically simple build used some innovative concepts to turn creating 50+ or more unique website pages by creating just two HTML files.", 
+        "page_title": "Single-JSON Portfolio Architecture", 
+        "page_subtitle": "50+ pages from 2 templates", 
+        "breadcrumb": "Website Dynamic App",
+        "tile_text": [
+            "Real-time page updates without refreshing pages", 
+            "Modular design means drop in one file to create entries, sections, more", 
+            "Find a faster portfolio to scale up than this one, we'll wait"
+        ]
+    },
+    "page_copy":{
+        "pattern": "Traditional portfolios require maintaining 50+ HTML files. Updates mean editing each file individually. Adding entries means copying templates and linking manually.",
+        "action": "Designed hybrid SPA architecture using 404 routing trick + JSON content system. Two HTML templates dynamically populate from entry files. Manifest generation automates URL mapping.", 
+        "measured": "Result: Add new entries by creating one JSON file. Update design once, all pages update. Infinite scalability with zero code duplication." 
+    }
+}, 
+    "notes": ["Images, thumbnails coming soon"]
+}

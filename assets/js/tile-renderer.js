@@ -24,10 +24,10 @@ const TileRenderer = (() => {
 
         // Get thumbnail images (all available)
         const thumbnails = media.thumbnail_images || [];
-        
+
         // Get tile text (all available)
         const tileTexts = teaser_copy.tile_text || [];
-        
+
         // Fallback if no tile_text provided
         const defaultText = teaser_copy.page_subtitle || teaser_copy.page_title || '';
         if (tileTexts.length === 0 && defaultText) {
@@ -42,7 +42,7 @@ const TileRenderer = (() => {
         tile.setAttribute('data-current-index', '0');
 
         // Build images HTML (all images, first one active)
-        const imagesHTML = thumbnails.length > 0 ? 
+        const imagesHTML = thumbnails.length > 0 ?
             thumbnails.map((img, index) => `
                 <img 
                     src="/${img}" 
@@ -220,12 +220,12 @@ const TileRenderer = (() => {
         function updateHomepageTile() {
             // Move carousel (each image is 87.5% width with 12.5% margin)
             carousel.style.transform = `translateX(-${currentIndex * 87.5}%)`;
-            
+
             // Update text if available
             if (textElement && texts && texts.length > 0) {
                 const textIndex = currentIndex % texts.length;
                 textElement.style.opacity = '0';
-                
+
                 setTimeout(() => {
                     textElement.textContent = texts[textIndex];
                     textElement.style.opacity = '1';

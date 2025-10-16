@@ -6,10 +6,11 @@
     "usage": "These tags appear on /web, /print, /digital, /video pages if they exist in that section's entries"
   },
   "toggle_tags": [
-    "Generative AI",
+    "Agentic AI Systems",
+    "Creative Direction",
+    "System Design",
     "Product",
     "Copywriting",
-    "Interactive",
     "Team Manager",
     "Consulting"
   ],

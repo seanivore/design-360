@@ -91,10 +91,10 @@
             case 'section':
                 // Capitalize section name
                 const sectionName = viewType.section.charAt(0).toUpperCase() + viewType.section.slice(1);
-                
+
                 // Show section as main filter heading (small, above title)
                 mainFilterHeading = sectionName;
-                
+
                 pageTitle.textContent = 'Projects';
                 pageSubtitle.textContent = `${shuffledProjects.length} ${sectionName.toLowerCase()} projects`;
                 break;
@@ -105,10 +105,10 @@
                     const firstProject = shuffledProjects[0];
                     const sectionName = firstProject.categorization.placement.section;
                     const subsectionName = firstProject.categorization.placement.sub_section;
-                    
+
                     // Show subsection as main heading
                     mainFilterHeading = `${sectionName} › ${subsectionName}`;
-                    
+
                     pageTitle.textContent = subsectionName;
                     pageSubtitle.textContent = `${shuffledProjects.length} projects`;
                 }
@@ -193,11 +193,11 @@
 
         // Apply tag filtering if any tags are active (beyond sticky filter)
         let projectsToRender = shuffledProjects;
-        
+
         // Filter out sticky filter for tag filtering logic
         const stickyFilter = FilterController.getStickyFilter();
         const filterTags = activeTags.filter(tag => tag !== stickyFilter);
-        
+
         if (filterTags.length > 0) {
             projectsToRender = DataLoader.filterByTags(shuffledProjects, filterTags);
         }
@@ -229,7 +229,7 @@
 
         if (viewType.type === 'section' || viewType.type === 'subsection') {
             // SECTION-TYPE PAGE: Show subsection, role, and featured tags
-            
+
             // 1. Add subsections from current projects
             const subsections = new Set();
             shuffledProjects.forEach(project => {
@@ -268,7 +268,7 @@
 
         } else {
             // CLICK-THROUGH PAGE (from entry page tag): Show all tags
-            
+
             // 1. Add sections
             const sections = new Set();
             shuffledProjects.forEach(project => {
@@ -315,7 +315,7 @@
     function setupFilters() {
         // Determine sticky filter based on view type
         let stickyFilter = null;
-        
+
         if (viewType.type === 'section') {
             // Sticky filter is the section
             stickyFilter = viewType.section;
