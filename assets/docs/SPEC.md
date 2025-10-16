@@ -61,6 +61,8 @@
 *Incomplete; example to illustrate structure only*
 
 ```
+/Users/seanivore/Development/360-design...
+
 index.html              `august.style/`
 │   ├── #about          `.index.html#about` -> `august.style/about` 
 │   └── #contact        `.index.html#contact` -> `august.style/contact` 
