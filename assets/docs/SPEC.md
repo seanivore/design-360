@@ -162,6 +162,38 @@ index.html              `august.style/`
 
 - Debug and test all currently create pages; we made fixes but the pages weren't tested before the fixes 
 
+
+  **NEW TEST LOCAL SERVER** 
+
+python3 -m http.server 8080 --bind 127.0.0.1
+http://127.0.0.1:8080/section.html
+
+python3 -m http.server 3000 --bind 127.0.0.1
+http://localhost:3000/section.html
+
+python3 -m http.server 5500 --bind 127.0.0.1
+http://localhost:5500/section.html
+
+august.style/web                              → Normalized to section=Web
+august.style/web/html-css-js                  → Normalized to section=Web, subsection=HTML/CSS/JS
+august.style/web/html-css-js/fashion-magazine → Entry page
+```
+
+The 404.html catches these, normalizes them (lowercase → capitalized, hyphens → spaces), and passes to the correct template.
+
+**On Localhost (our testing hack):**
+```
+localhost:3000/section.html?section=Web
+localhost:3000/section.html?section=Web&subsection=HTML/CSS/JS
+```
+
+We have to manually match the JSON capitalization because we're bypassing the 404 normalization.
+
+**For tag filtering:**
+```
+Production: august.style/web#tags=copywriting+illustration
+Localhost:  localhost:3000/section.html?section=Web#tags=copywriting+illustration
+
 ### *Phase 2:* Homepage 
   + Create homepage tiles, and section page tiles 
   + Create `index.html` with Projects, About, Contact 

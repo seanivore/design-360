@@ -4,6 +4,7 @@
     "web/html-css-js/modular-portfolio-build": "assets/entries/uid-eme-689.json",
     "web/webflow/animated-cms-weekly-blogs": "assets/entries/uid-fth-565.json",
     "web/html-css-js/personalized-fashion-magazine": "assets/entries/uid-hwi-844.json",
+    "web/application/dynamic-modular-portfolio-architecture": "assets/entries/uid-iqi-479.json",
     "web/html-css-js/ai-meditation-mobile-app": "assets/entries/uid-lul-419.json",
     "web/html-css-js/css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
     "web/html-css-js/saas-product-sale-features": "assets/entries/uid-rfr-187.json",
@@ -21,6 +22,7 @@
       "uid-eme-689",
       "uid-fth-565",
       "uid-hwi-844",
+      "uid-iqi-479",
       "uid-lul-419",
       "uid-qor-090",
       "uid-rfr-187",
@@ -36,6 +38,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps URLs to JSON file paths for dynamic loading",
-    "entry_count": 14
+    "entry_count": 15
   }
 }

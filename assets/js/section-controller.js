@@ -24,6 +24,30 @@
      * Returns: { type: 'all'|'section'|'subsection', section, subsection }
      */
     function parseURL() {
+        // LOCALHOST TESTING: Check for URL parameters first
+        const urlParams = new URLSearchParams(window.location.search);
+        const sectionParam = urlParams.get('section');
+        const subsectionParam = urlParams.get('subsection');
+        
+        if (sectionParam) {
+            if (subsectionParam) {
+                // ?section=web&subsection=html-css-js
+                console.log(`🔍 URL params: section=${sectionParam}, subsection=${subsectionParam}`);
+                return {
+                    type: 'subsection',
+                    section: sectionParam,
+                    subsection: subsectionParam
+                };
+            } else {
+                // ?section=web
+                console.log(`🔍 URL params: section=${sectionParam}`);
+                return {
+                    type: 'section',
+                    section: sectionParam
+                };
+            }
+        }
+
         // Check for redirected path from 404.html
         const redirectPath = sessionStorage.getItem('sectionPath');
         const path = redirectPath || window.location.pathname;
@@ -36,8 +60,8 @@
         // Remove leading/trailing slashes and split
         const segments = path.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
 
-        if (segments.length === 0 || segments[0] === 'projects') {
-            // /projects or / -> Show all projects
+        if (segments.length === 0 || segments[0] === 'projects' || segments[0] === 'section.html') {
+            // /projects or / or /section.html -> Show all projects
             return { type: 'all' };
         } else if (segments.length === 1) {
             // /web -> Section view

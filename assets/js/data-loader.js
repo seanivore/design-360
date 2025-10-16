@@ -54,57 +54,66 @@ const DataLoader = (() => {
         }
 
         try {
-            const response = await fetch(jsonPath);
+            const fullPath = '/' + jsonPath;
+            console.log(`🔍 Fetching: ${fullPath}`);
+            const response = await fetch(fullPath);
             if (!response.ok) {
+                console.error(`❌ Failed to fetch ${fullPath}: ${response.status}`);
                 throw new Error(`Failed to load project: ${response.status}`);
             }
             const project = await response.json();
+            console.log(`✅ Loaded: ${jsonPath}`);
             cache.projects.set(jsonPath, project);
             return project;
         } catch (error) {
-            console.error(`Error loading project from ${jsonPath}:`, error);
+            console.error(`❌ Error loading project from ${jsonPath}:`, error);
             return null;
         }
     }
 
     /**
-     * Load all projects from a directory
-     * Now using flat structure in /assets/entries/
+     * Load all projects dynamically from manifest
+     * Supports optional section filtering
      */
     async function loadAllProjects(section = null) {
         const projects = [];
-
-        // All project files in flat structure
-        const allProjectPaths = [
-            '/assets/entries/uid-tev-176.json',
-            '/assets/entries/uid-eme-689.json',
-            '/assets/entries/uid-hwi-844.json',
-            '/assets/entries/uid-lul-419.json',
-            '/assets/entries/uid-qor-090.json',
-            '/assets/entries/uid-rfr-187.json',
-            '/assets/entries/uid-sgt-851.json',
-            '/assets/entries/uid-srs-009.json',
-            '/assets/entries/uid-wgw-370.json',
-            '/assets/entries/uid-wnw-867.json',
-            '/assets/entries/uid-dff-987.json',
-            '/assets/entries/uid-fth-565.json',
-            '/assets/entries/uid-unw-889.json',
-            '/assets/entries/uid-wty-542.json'
-        ];
-
-        // Load all projects in parallel
-        const loadPromises = allProjectPaths.map(path => loadProject(path));
-        const results = await Promise.all(loadPromises);
-
-        // Filter out any failed loads and apply section filter if provided
-        results.forEach(project => {
-            if (project) {
-                // Apply section filter if specified
-                if (!section || normalizeForURL(project.categorization.placement.section) === section) {
-                    projects.push(project);
-                }
+        
+        try {
+            // Load manifest to get all project paths
+            const manifest = await loadManifest();
+            
+            if (!manifest.entries || Object.keys(manifest.entries).length === 0) {
+                console.warn('No entries found in manifest');
+                return projects;
             }
-        });
+            
+            // Get unique JSON file paths from manifest
+            const allProjectPaths = [...new Set(Object.values(manifest.entries))];
+            
+            console.log(`📂 Loading ${allProjectPaths.length} projects from manifest`);
+            
+            // Load all projects in parallel
+            const loadPromises = allProjectPaths.map(path => loadProject(path));
+            const results = await Promise.all(loadPromises);
+            
+            // Filter out any failed loads and apply section filter if provided
+            let successCount = 0;
+            results.forEach(project => {
+                if (project) {
+                    successCount++;
+                    // Apply section filter if specified
+                    if (!section || normalizeForURL(project.categorization.placement.section) === section) {
+                        projects.push(project);
+                    }
+                }
+            });
+            
+            console.log(`✅ Successfully loaded ${successCount}/${allProjectPaths.length} projects`);
+            console.log(`📊 After filtering: ${projects.length} projects${section ? ` (section: ${section})` : ''}`);
+            
+        } catch (error) {
+            console.error('Error in loadAllProjects:', error);
+        }
 
         return projects;
     }
