@@ -170,7 +170,7 @@
      - `role` 
      - contextual tags (as populated from the relevant JSON files based on the tag that was clicked through)
 
-### 3. Action Steps  
+### 3. Action Steps 
 
 * **Where to start** 
 
@@ -277,8 +277,6 @@
     - Please them as one column on mobile 
     - Use two columns on desktop and tablet 
     -  Every reload these four should be randomized in order they're displayed 
-
-  + Create a JSON schema for populating the homepage's section tiles 
     - Use randomly selected collection of thumbnail images in slides pulling from from each entry 
     - Match up the text on the tile with the appropriate slides 
     - The JSON will also need variables for static on-tile heading text 
@@ -301,14 +299,16 @@
    - [instagram.com/seanivore/](https://www.instagram.com/seanivore/)
    - [horvathaugust@gmail.com](mailto:horvathaugust@gmail.com)
 
-### Section Pages 
+### Section Page Template 
 
-* **Four website content sections** 
+* **These pages "exist" but are not created unless being loaded, then they are populated dynamically; read more in `ARCHITECTURE.md`**
 
-  1. `august.style/web` and `./web.html`
-  2. `august.style/print` and `./print.html`
-  3. `august.style/digital` and `./digital.html` 
-  4. `august.style/video` and `./web.html` 
+  + Four are "section"-type tag filtered, serving as website sections 
+    1. `august.style/web` 
+    2. `august.style/print` 
+    3. `august.style/digital` 
+    4. `august.style/video` 
+  + All other tag filtered section pages created come from clicking through any tag via a project entry page 
 
   + Entry tiles sit in a single column 
     - Use large padding on desktop, keeping it in just one column 
@@ -319,7 +319,7 @@
     - The unrelated tiles fade away 
     - The related tiles smoothly slide up to be in place 
 
-### Project Page `august.style/<SECTION>/<SUBSECTION>/<HTML-FILE-NAME-IN-JSON>` 
+### Project Entry Page Template `august.style/<SECTION>/<SUBSECTION>/<SLUG>` 
 
   + Page elements listed from top to bottom 
     - Extremely simple header, very short/narrow, much like one used as header nav on homepage here: `https://developer-technologist.august.style/` 
@@ -332,25 +332,4 @@
     - Populate ~3 related posts based on random selecting entries that share tags; these randomize making them different on every page reload 
     - Extremely simple footer, very short/narrow, with only copyright and then icons for each contact method; this presumes the heading nav is fixed and follows scroll down 
 
-## Prepared JSON Project Entry Files 
-
-```
-august.style/web/
-├── framer/
-│   └── _uid-tev-176.json
-├── html-css-js/
-│   ├── _uid-eme-689.json
-│   ├── _uid-hwi-844.json
-│   ├── _uid-lul-419.json
-│   ├── _uid-qor-090.json
-│   ├── _uid-rfr-187.json
-│   ├── _uid-sgt-851.json
-│   ├── _uid-srs-009.json
-│   ├── _uid-wgw-370.json
-│   └── _uid-wnw-867.json
-└── webflow/
-    ├── _uid-dff-987.json
-    ├── _uid-fth-565.json
-    ├── _uid-unw-889.json
-    └── _uid-wty-542.json
-```
+*For more details, please see `ARCHITECTURE.md`* 
