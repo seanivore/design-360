@@ -179,40 +179,43 @@
 
 ## Low Level Tasks
 
-> Ordered from start to finish
-> Complete these to finish Phases 2 & 3
+  > Ordered from start to finish
+  > Complete these to finish Phases 2 & 3
 
 ### PHASE 2: HOMEPAGE
 
-#### 1. Create homepage-controller.js
+#### 1. Create `homepage-controller.js`
 
-**Prompt:** Create the homepage controller that handles random section tile selection
+  * **Prompt:** Create the homepage controller that handles random section tile selection
 
-**Action:** CREATE /assets/js/homepage-controller.js
+  * **Action:** CREATE `/assets/js/homepage-controller.js`
 
-**Functions to CREATE:**
-- `selectRandomProjectFromSection(section)` - Picks one random project from a section
-- `loadHomepageTiles()` - Loads 4 section tiles (Web, Print, Digital, Video)
-- `renderHomepageTile(project, section)` - Renders a single homepage tile
-- `shuffleSectionOrder()` - Randomizes the order of the 4 section tiles
-- `init()` - Initializes the homepage
+  * **Functions to CREATE:**
 
-**Details:**
-- Use DataLoader.loadAllProjects() to get all entries
-- Filter by section: Web, Print, Digital, Video
-- Randomly select ONE project from each section's entries
-- Use that project's thumbnail_images and tile_text arrays
-- On page reload, different projects should be selected
-- Section tiles should be in random order (not always Web→Print→Digital→Video)
-- Include project count badge on each tile (e.g., "15 projects")
+     - `selectRandomProjectFromSection(section)` - Picks one random project from a section
+     - `loadHomepageTiles()` - Loads 4 section tiles (Web, Print, Digital, Video)
+     - `renderHomepageTile(project, section)` - Renders a single homepage tile
+     - `shuffleSectionOrder()` - Randomizes the order of the 4 section tiles
+     - `init()` - Initializes the homepage
 
-#### 2. Create index.html structure
+  * **Details:**
+     
+     - Use DataLoader.loadAllProjects() to get all entries
+     - Filter by section: Web, Print, Digital, Video
+     - Randomly select ONE project from each section's entries
+     - Use that project's thumbnail_images and tile_text arrays
+     - On page reload, different projects should be selected
+     - Section tiles should be in random order (not always Web→Print→Digital→Video)
+     - Include project count badge located out of the way but visible, changing with filter use (e.g. "15 projects")
 
-**Prompt:** Create the homepage HTML with Projects, About, and Contact sections
+#### 2. Create `index.html` Structure
 
-**Action:** CREATE index.html
+  * **Prompt:** Create the homepage HTML with Projects, About, and Contact sections
 
-**Structure to CREATE:**
+  * **Action:** CREATE `index.html`
+
+  * **Structure to CREATE:**
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -261,20 +264,22 @@
 </html>
 ```
 
-**Details:**
-- Use #projects, #about, #contact IDs for anchor linking
-- Profile picture should be circle-cropped via CSS
-- Social links should be simple text links (icons optional)
-- Match header/footer from section.html exactly
-- Smooth scroll behavior for anchor links
+  * **Details:**
 
-#### 3. Add homepage-specific styles to styles.css
+      - Use #projects, #about, #contact IDs for anchor linking
+      - Profile picture should be circle-cropped via CSS
+      - Social links should be simple icons 
+      - Match header/footer from `section.html` exactly
+      - Smooth scroll behavior for anchor links
 
-**Prompt:** Add CSS for homepage tiles and About/Contact sections
+#### 3. Add Homepage Specific Styles to `styles.css`
 
-**Action:** UPDATE /Users/seanivore/Development/360-design/styles.css
+  * **Prompt:** Add CSS for homepage tiles and About/Contact sections
 
-**Styles to ADD:**
+  * **Action:** UPDATE `/Users/seanivore/Development/360-design/styles.css`
+
+  * **Styles to ADD:**
+
 ```css
 /* Homepage Tiles */
 .homepage-tile-grid {
@@ -327,94 +332,104 @@ html {
 }
 ```
 
-**Details:**
-- Homepage tiles should be larger and squarer than section tiles
-- Use existing CSS variables and design tokens
-- Ensure responsive behavior (1 column mobile, 2 column desktop)
-- Profile picture should be circle-cropped
-- Maintain consistent spacing using existing variables
+  * **Details:**
 
-#### 4. Update tile-renderer.js for homepage tiles
+      - Homepage tiles should be larger and squarer than section tiles
+      - Use existing CSS variables and design tokens
+      - Ensure responsive behavior (1 column mobile, 2 column desktop)
+      - Profile picture should be circle-cropped
+      - Maintain consistent spacing using existing variables
 
-**Prompt:** Add homepage tile rendering function to tile-renderer.js
+#### 4. Update `tile-renderer.js` for homepage tiles
 
-**Action:** UPDATE /assets/js/tile-renderer.js
+  * **Prompt:** Add homepage tile rendering function to `tile-renderer.js`
 
-**Function to ADD:**
-- `renderHomepageTile(project, section, container)` - Renders homepage tile with image swipe
+  * **Action:** UPDATE `/assets/js/tile-renderer.js`
 
-**Details:**
-- Similar to renderSectionTile() but:
-  - Larger aspect ratio (1:1 square)
-  - Shows section name as overlay (e.g., "WEB")
-  - Shows project count badge
-  - Links to /web (or /print, /digital, /video)
-  - Includes swipe functionality for thumbnail_images
-  - Text from tile_text array cycles with images
-- Should return the created tile element
-- Use existing swipe logic from section tiles
+  * **Function to ADD:**
+
+      - `renderHomepageTile(project, section, container)` - Renders homepage tile with image swipe
+
+  * **Details:**
+
+      + Similar to `renderSectionTile()` but:
+        - Larger aspect ratio (1:1 square)
+        - Shows section name as overlay (e.g., "WEB")
+      + Links to /web (or /print, /digital, /video)
+        - Includes swipe functionality for thumbnail_images
+      + Text from tile_text array cycles with images
+        - Should return the created tile element
+        - Use existing swipe logic from section tiles
 
 #### 5. Test homepage on localhost
 
-**Prompt:** Manual testing step - load homepage and verify functionality
+  * **Prompt:** Manual testing step - load homepage and verify functionality
 
-**Action:** MANUAL TEST
+  * **Action:** MANUAL TEST
 
-**Tests to PERFORM:**
-- Visit http://localhost:3000/ or http://localhost:3000/index.html
-- Verify 4 section tiles appear in random order
-- Verify each tile shows images from a random project in that section
-- Reload page - tiles should show different projects and different order
-- Test swipe functionality on tiles
-- Test smooth scroll to #about and #contact
-- Verify profile picture displays
-- Verify social links work
-- Check responsive behavior (resize window)
+  * **Tests to PERFORM:**
+
+      - Visit `http://localhost:3000/` or `http://localhost:3000/index.html`
+      - Verify 4 section tiles appear in random order
+      - Verify each tile shows images from a random project in that section
+      - Reload page - tiles should show different projects and different order
+      - Test swipe functionality on tiles
+      - Test smooth scroll to #about and #contact
+      - Verify profile picture displays
+      - Verify social links work
+      - Check responsive behavior (resize window)
 
 ### PHASE 3: ENTRY PAGES
 
-#### 6. Create entry-controller.js
+#### 6. Create `entry-controller.js`
 
-**Prompt:** Create the entry page controller with related posts logic
+  * **Prompt:** Create the entry page controller with related posts logic
 
-**Action:** CREATE /assets/js/entry-controller.js
+  * **Action:** CREATE `/assets/js/entry-controller.js`
 
-**Functions to CREATE:**
-- `parseEntryURL()` - Extracts section/subsection/slug from URL
-- `loadEntry(urlPath)` - Loads project JSON based on URL
-- `calculateTagMatches(project, allProjects)` - Scores projects by tag overlap
-- `selectRelatedPosts(project, allProjects, count=3)` - Picks related projects
-- `getTimeSeed()` - Generates daily-changing seed for consistent randomization
-- `seededRandom(seed)` - Deterministic random based on seed
-- `renderEntryContent(project)` - Populates page with project data
-- `renderRelatedPosts(relatedProjects)` - Renders related post tiles
-- `init()` - Initializes entry page
+  * **Functions to CREATE:**
 
-**Details:**
-- Use manifest.json to map URL path to JSON file
-- Related posts logic:
-  1. Calculate tag overlap for all other projects (count matching tags)
-  2. Filter to top scorers (ties allowed)
-  3. Use time-based seed (changes daily) for consistent-but-rotating selection
-  4. Select 3 projects randomly from top scorers using seeded random
-  5. Every project gets recommended, but order rotates daily
-- Time seed should use: `Math.floor(Date.now() / (1000 * 60 * 60 * 24))` for daily rotation
-- Seeded random implementation:
+      - `parseEntryURL()` - Extracts section/subsection/slug from URL
+      - `loadEntry(urlPath)` - Loads project JSON based on URL
+      - `calculateTagMatches(project, allProjects)` - Scores projects by tag overlap
+      - `selectRelatedPosts(project, allProjects, count=3)` - Picks related projects
+      - `getTimeSeed()` - Generates daily-changing seed for consistent randomization
+      - `seededRandom(seed)` - Deterministic random based on seed
+      - `renderEntryContent(project)` - Populates page with project data
+      - `renderRelatedPosts(relatedProjects)` - Renders related post tiles
+      - `init()` - Initializes entry page
+
+  * **Details:**
+
+   - Use `manifest.json` to map URL path to JSON file
+   - Related posts logic:
+
+      1. Calculate tag overlap for all other projects (count matching tags)
+      2. Filter to top scorers (ties allowed)
+      3. Use time-based seed (changes daily) for consistent-but-rotating selection
+      4. Select 3 projects randomly from top scorers using seeded random
+      5. Every project gets recommended, but order rotates daily
+
+   - Time seed should use: `Math.floor(Date.now() / (1000 * 60 * 60 * 24))` for daily rotation
+
+   - Seeded random implementation:
+
 ```javascript
 function seededRandom(seed) {
   const x = Math.sin(seed++) * 10000;
   return x - Math.floor(x);
 }
 ```
-- Log related posts selection for debugging
+   - Log related posts selection for debugging
 
-#### 7. Create entry.html template
+#### 7. Create `entry.html` template
 
-**Prompt:** Create the entry page HTML template
+  * **Prompt:** Create the entry page HTML template
 
-**Action:** CREATE entry.html
+  * **Action:** CREATE `entry.html`
 
-**Structure to CREATE:**
+  * **Structure to CREATE:**
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
