@@ -1,0 +1,41 @@
+{
+  "entries": {
+    "web/webflow/automated-e-commerce-shop-lookbook": "assets/entries/uid-dff-987.json",
+    "web/html-css-js/modular-portfolio-build": "assets/entries/uid-eme-689.json",
+    "web/webflow/animated-cms-weekly-blogs": "assets/entries/uid-fth-565.json",
+    "web/html-css-js/personalized-fashion-magazine": "assets/entries/uid-hwi-844.json",
+    "web/html-css-js/ai-meditation-mobile-app": "assets/entries/uid-lul-419.json",
+    "web/html-css-js/css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
+    "web/html-css-js/saas-product-sale-features": "assets/entries/uid-rfr-187.json",
+    "web/html-css-js/amorphous-gradient-css-animation": "assets/entries/uid-sgt-851.json",
+    "web/html-css-js/data-visualization-dashboard": "assets/entries/uid-srs-009.json",
+    "web/framer/blog-lookbook-print-gallery": "assets/entries/uid-tev-176.json",
+    "web/webflow/training-yoga-sales": "assets/entries/uid-unw-889.json",
+    "web/html-css-js/ai-design-fashion-lookbook": "assets/entries/uid-wgw-370.json",
+    "web/html-css-js/minimalist-web-store-product": "assets/entries/uid-wnw-867.json",
+    "web/webflow/visual-artist-process-portfolio": "assets/entries/uid-wty-542.json"
+  },
+  "sections": {
+    "web": [
+      "uid-dff-987",
+      "uid-eme-689",
+      "uid-fth-565",
+      "uid-hwi-844",
+      "uid-lul-419",
+      "uid-qor-090",
+      "uid-rfr-187",
+      "uid-sgt-851",
+      "uid-srs-009",
+      "uid-tev-176",
+      "uid-unw-889",
+      "uid-wgw-370",
+      "uid-wnw-867",
+      "uid-wty-542"
+    ]
+  },
+  "_metadata": {
+    "generated": "auto",
+    "description": "Maps URLs to JSON file paths for dynamic loading",
+    "entry_count": 14
+  }
+}

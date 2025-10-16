@@ -3,6 +3,7 @@
 MANIFEST GENERATOR
 Scans portfolio entry JSON files and builds URL → file path mapping
 Run this script after adding/updating/removing any JSON entries
+Won't break if URL structure changes
 
 Usage:
     python generate_manifest.py

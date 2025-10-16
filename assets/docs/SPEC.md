@@ -26,7 +26,7 @@
 
 ### Design Summary 
 
-  1. Technically simple HTML/CSS/JS build, published to GitHub Pages 
+  1. Technically simple HTML/CSS/JS build, published to GitHub Pages; *Mini-SPA* loading content dynamically without page refresh
   2. Content tile grid navigation with tag toggle filtering
   3. Tile thumbnail images slide show swipe; UX goal to click less projects
   4. Tile text cross-fade changes when image is swiped to tell full story, metrics results 
@@ -35,6 +35,27 @@
   7. Horizontal slide tag filter tiles; slide smoothly into new positions; random order every reload 
   8. All site (imgs, urls, copy, tag nav) content dynamically populated from project entry JSON; vanilla JS, no build 
   9. Highly visual, four 2-4 short sentence section project entry pages; headings **ROLE**, **PATTERN**, **ACTION**, and **MEASURED** 
+  10. Homepage tile visual and text is completely random from every entry in that respective section for each tile 
+  11. Section pages have "toggle" tags which streamline the navigation to direct users towards specific content 
+
+  **Architecture**
+    - ✅ Manifest-based routing (works with any URL depth)
+    - ✅ Sticky filters (main filter can't be removed)
+    - ✅ Main filter shown as heading (not in tag list)
+    - ✅ Tag ordering adapts to page type
+
+  **Design**
+    - ✅ Tags are plain text (no pills - timeless!)
+    - ✅ Vertical gradient glare (subtle depth)
+    - ✅ Magazine aesthetic (just visuals + teaser)
+    - ✅ Text cycles with images (cross-fade magic)
+    - ✅ Soft layered shadows (CSS realism)
+
+  **UX**
+    - ✅ Active tags move to front (DOM reordering)
+    - ✅ Random ordering maintained during filtering
+    - ✅ 1/8th image bleed hints at swipe
+    - ✅ Smooth 300ms transitions everywhere
 
 * **Website macro-structure** 
 *Incomplete; example to illustrate structure only*
@@ -45,16 +66,16 @@ index.html               `august.style/`
 │   └── #contact         `.index.html#contact` -> `august.style/contact` 
 ├── assets/
 │   ├── js/
-│   │   ├── data-loader.js             Created before context window, might need updates
-│   │   ├── filter-controller.js       Created before context window, might need updates
-│   │   ├── section-controller.js      Created before context window, might need updates
-│   │   └── tile-renderer.js           Created before context window, might need updates
+│   │   ├── data-loader.js 
+│   │   ├── manifest.json
+│   │   ├── filter-controller.js
+│   │   ├── section-controller.js
+│   │   └── tile-renderer.js 
 │   ├── media/
 │   ├── docs/
 │   │   ├── _entry_template.json
 │   │   ├── ADD_NEW_PROJECT.md
 │   │   ├── ARCHITECTURE.md
-│   │   ├── manifest.json              Created before context window, might need updates
 │   │   └── SPEC.md
 │   └── entries/
 │       ├── uid-dff-987.json
@@ -73,10 +94,104 @@ index.html               `august.style/`
 │       └── uid-wty-542.json
 ├── _config.yml
 ├── CNAME
-├── 404.html                         Created before context window, might need updates
-├── section.html                     Created before context window, might need updates
-└── styles.css                       Created before context window, might need updates
+├── 404.html 
+├── generate_manifest.py
+├── featured.json
+├── section.html
+└── styles.css 
 ```
+
+---
+
+## Testing 
+
+### Feedback 
+
+  * **These two were not mentioned in any of the update results** 
+
+    1. data-loader.js
+    2. section.html
+
+  * **The final web view server doesn't work** 
+
+    1. `python3 generate_manifest.py` -- when is this used 
+    2. `python3 -m http.server 8000` and Visit: http://localhost:8000/web **doesn't work** 
+        + I feel like I remember the 8000 one not working in the past because all of the browser block it heavily 
+        + Currently getting 404 errors 
+        + Error response; Error code: 404; Message: File not found.; Error code explanation: 404 - Nothing matches the given URI.
+        + ::1 - - [16/Oct/2025 09:02:13] code 404, message File not found ::1 - - [16/Oct/2025 09:02:13] "GET /favicon.ico HTTP/1.1" 404 -
+        + That's when this architecture **clicks**. Every new JSON you add from here on out = instant new page. No HTML to write. Ever. 🔥
+
+
+---
+
+## Meta-Portfolio Entry 💡
+
+**YES!** This website itself becomes a portfolio piece:
+
+```json
+{
+  "entry_id": "uid-aug-360",
+  "section": "Web",
+  "sub_section": "Architecture",
+  "slug": "modular-portfolio-system",
+  "page_title": "Single-JSON Portfolio Architecture",
+  "page_subtitle": "50+ pages from 2 templates",
+  "role": ["Systems Designer", "Developer"],
+  "technology": ["JavaScript", "JSON", "GitHub Pages"],
+  "skill": ["Information Architecture", "Modular Design", "DRY Principles"],
+  "page_copy": {
+    "pattern": "Traditional portfolios require maintaining 50+ HTML files. Updates mean editing each file individually. Adding entries means copying templates and linking manually.",
+    "action": "Designed hybrid SPA architecture using 404 routing trick + JSON content system. Two HTML templates dynamically populate from entry files. Manifest generation automates URL mapping.",
+    "measured": "Result: Add new entries by creating one JSON file. Update design once, all pages update. Infinite scalability with zero code duplication."
+  }
+}
+```
+
+
+### 🚀 WHAT'S NEXT
+
+**Phase 2** - Homepage:
+- Create `index.html` with Projects/About/Contact
+- Random section tile selection logic
+- Social icons, profile pic
+
+**Phase 3** - Entry Pages:
+- Create `entry.html` template
+- Create `entry-controller.js`
+- Related posts logic
+
+**Phase 4** - Polish:
+- Test all functionality
+- Tweak animations
+- Deploy to GitHub Pages
+
+---
+
+### 💎 THE MAGIC MOMENT
+
+When you run that Python script and see:
+```
+✨ Manifest written to: assets/js/manifest.json
+📊 Total entries: 14
+📁 Sections: web
+```
+
+
+
+---
+
+### 🤔 QUESTIONS?
+
+Want to:
+- **Test these fixes?** (I can help debug)
+- **Move to Phase 2?** (Build homepage)
+- **Review anything?** (Deep dive on any file)
+- **Different approach?** (I'm flexible!)
+
+Your call, friend! What feels right? 💃
+
+
 
 ---
 
@@ -332,3 +447,255 @@ index.html               `august.style/`
     - Extremely simple footer, very short/narrow, with only copyright and then icons for each contact method; this presumes the heading nav is fixed and follows scroll down 
 
 *For more details, please see `ARCHITECTURE.md`* 
+
+
+
+---
+
+
+Let me do a comprehensive review before testing:Hide stepsSSequentialthinkingRequest{
+  `thought`: `Starting comprehensive review of the entire Creative Generalist Portfolio architecture and implementation. I need to check for:
+
+1. **Logic gaps** - Does the routing flow make sense end-to-end?
+2. **Edge cases** - What breaks if data is missing or malformed?
+3. **UX consistency** - Do all the interactions feel polished?
+4. **Technical debt** - Any quick hacks that will bite us later?
+5. **Missing pieces** - What haven't we built yet?
+
+Let me trace through the complete user journey first...`,
+  `thoughtNumber`: 1,
+  `totalThoughts`: 12,
+  `nextThoughtNeeded`: true
+}Response{
+  "thoughtNumber": 1,
+  "totalThoughts": 12,
+  "nextThoughtNeeded": true,
+  "branches": [],
+  "thoughtHistoryLength": 9
+}Reviewed context and prepared next steps outline.Good, sequential thinking is running. Let me continue the review.SSequentialthinkingRequest{
+  `thought`: `**USER JOURNEY 1: Visiting /web**
+
+1. User types `august.style/web`
+2. GitHub Pages: No file exists → serves 404.html
+3. 404.html loads manifest.json, checks if \"web\" exists in entries
+4. \"web\" not in entries → redirects to section.html with sessionStorage
+5. section-controller.js: Reads sessionStorage, parses URL
+6. Determines: type=\"section\", section=\"web\"
+7. Loads all projects, filters to section=\"Web\"
+8. Shuffles projects randomly
+9. Sets sticky filter to \"web\"
+10. Loads featured tags from featured.json
+11. Builds tag list: subsections, roles, featured tags
+12. Renders tiles, shows main filter heading \"Web\"
+
+**POTENTIAL ISSUE**: What if manifest.json doesn't exist yet? 
+→ GOOD: 404.html has try-catch, defaults to section page ✅
+
+**POTENTIAL ISSUE**: What if no projects match section?
+→ GOOD: Empty state handled by tile-renderer.js ✅
+
+**POTENTIAL ISSUE**: What if featured.json missing?
+→ GOOD: section-controller.js has try-catch, returns empty array ✅
+
+This flow looks solid!`,
+  `thoughtNumber`: 2,
+  `totalThoughts`: 12,
+  `nextThoughtNeeded`: true
+}Response{
+  "thoughtNumber": 2,
+  "totalThoughts": 12,
+  "nextThoughtNeeded": true,
+  "branches": [],
+  "thoughtHistoryLength": 10
+}Pondered next steps and project progression strategy.Good, continuing with journey 2...SSequentialthinkingRequest{
+  `thought`: `**USER JOURNEY 2: Visiting entry page /web/html-css-js/project-name**
+
+1. User clicks tile or types URL
+2. GitHub Pages: No file exists → serves 404.html
+3. 404.html loads manifest, checks \"web/html-css-js/project-name\" in entries
+4. Found! → redirects to entry.html with sessionStorage
+5. entry-controller.js: Reads sessionStorage path
+6. Looks up path in manifest → gets JSON file path
+7. Loads JSON file
+8. Populates page with content
+
+**WAIT - PROBLEM**: We haven't created entry.html or entry-controller.js yet!
+→ This is Phase 3, so okay for now, but we need these before testing entry pages
+
+**POTENTIAL ISSUE**: What if URL has extra segments like /web/html-css-js/another/project-name?
+→ GOOD: Manifest-based routing handles any depth! The manifest will have the full path as a key ✅
+
+**POTENTIAL ISSUE**: What if JSON file path in manifest is wrong?
+→ entry-controller.js needs error handling for fetch failures (add to Phase 3 notes)
+
+Flow is solid conceptually, but needs entry page implementation!`,
+  `thoughtNumber`: 3,
+  `totalThoughts`: 12,
+  `nextThoughtNeeded`: true
+}Response{
+  "thoughtNumber": 3,
+  "totalThoughts": 12,
+  "nextThoughtNeeded": true,
+  "branches": [],
+  "thoughtHistoryLength": 11
+}Pondered filtering logic and made incremental progress.Good progress. Let me check the filtering logic now.SSequentialthinkingRequest{
+  `thought`: `**FILTERING LOGIC REVIEW**
+
+**Scenario 1**: User on /web clicks \"Responsive Design\" tag
+
+1. filter-controller.js: toggleTag(\"Responsive Design\")
+2. Normalized: \"responsive-design\"
+3. Check if sticky: \"responsive-design\" !== \"web\" → can toggle ✅
+4. Add to activeTags: [\"web\", \"responsive-design\"]
+5. Update hash: #tags=web+responsive-design
+6. Reorder DOM: Move \"Responsive Design\" pill to front
+7. Callback triggers section-controller renderView()
+8. Filter tags without sticky: [\"responsive-design\"]
+9. DataLoader.filterByTags(shuffledProjects, [\"responsive-design\"])
+10. Render filtered tiles
+
+**POTENTIAL ISSUE**: What if user tries to remove sticky filter by clicking it?
+→ GOOD: toggleTag() checks `if (normalized === stickyFilter)` and returns early ✅
+
+**Scenario 2**: User tries to manually edit hash to remove sticky filter
+
+Example: User changes #tags=web+copywriting to #tags=copywriting
+
+1. hashchange event fires
+2. parseHashTags() returns [\"copywriting\"]
+3. init() or hashchange handler checks if sticky filter present
+4. If not present, adds it: [\"web\", \"copywriting\"]
+
+**PROBLEM**: Looking at filter-controller.js hashchange handler...
+```javascript
+window.addEventListener('hashchange', () => {
+    activeTags = parseHashTags();  // Just uses parsed tags!
+```
+
+This DOESN'T re-add sticky filter! User could manually remove it!
+
+**FIX NEEDED**: In hashchange handler, ensure sticky filter is always included:
+```javascript
+window.addEventListener('hashchange', () => {
+    const newHashTags = parseHashTags();
+    if (stickyFilter && !newHashTags.includes(stickyFilter)) {
+        newHashTags.unshift(stickyFilter);
+    }
+    activeTags = newHashTags;
+    // ...
+```
+
+Actually... looking again at the code, I DID include this! Line ~200:
+```javascript
+// Always include sticky filter
+if (stickyFilter && !newHashTags.includes(stickyFilter)) {
+    newHashTags.unshift(stickyFilter);
+}
+```
+
+Never mind, it's handled! ✅`,
+  `thoughtNumber`: 4,
+  `totalThoughts`: 12,
+  `nextThoughtNeeded`: true
+}Response{
+  "thoughtNumber": 4,
+  "totalThoughts": 12,
+  "nextThoughtNeeded": true,
+  "branches": [],
+  "thoughtHistoryLength": 12
+}Verified filter logic and checked tag ordering strategy.Good, the sticky filter logic is actually correct. Let me check the tag ordering now.SSequentialthinkingRequest{
+  `thought`: `**TAG ORDERING REVIEW**
+
+Section-controller.js has `getTagsForDisplay()` which returns tags with types.
+
+**On section page (/web)**:
+- Subsections first (type: 'subsection')
+- Roles next (type: 'role')
+- Featured tags last (type: 'contextual')
+
+**On click-through page (from entry tag)**:
+- Sections (type: 'subsection' - reused color)
+- Subsections (type: 'subsection')
+- Roles (type: 'role')
+- All contextual tags (type: 'contextual')
+
+**Then in filter-controller.js `sortTagsByType()`**:
+```javascript
+const order = { subsection: 1, role: 2, contextual: 3 };
+```
+
+This sorts correctly! ✅
+
+**CSS applies colors via data-tag-type**:
+```css
+.tag-filter[data-tag-type=\"subsection\"] { color: #6b7280; }
+.tag-filter[data-tag-type=\"role\"] { color: #8b92a0; }
+.tag-filter[data-tag-type=\"contextual\"] { color: #9ca3af; }
+```
+
+Everything checks out! ✅
+
+**POTENTIAL ENHANCEMENT**: We could add visual distinction for sticky filters (maybe bolder or different color), but not critical for MVP.`,
+  `thoughtNumber`: 5,
+  `totalThoughts`: 12,
+  `nextThoughtNeeded`: true
+}Response{
+  "thoughtNumber": 5,
+  "totalThoughts": 12,
+  "nextThoughtNeeded": true,
+  "branches": [],
+  "thoughtHistoryLength": 13
+}Pondered tile rendering and animation logic briefly.Good. Now let me check the tile rendering and animation logic.SSequentialthinkingRequest{
+  `thought`: `**TILE RENDERING & ANIMATION REVIEW**
+
+**Section tiles (magazine aesthetic)**:
+- Only teaser text shown, no title/subtitle ✅
+- Text cycles through tile_text array ✅
+- Synced to image swipes ✅
+- Images fade (opacity transition in CSS) ✅
+
+**Homepage tiles**:
+- Show title + subtitle + text ✅
+- 1/8th bleed (CSS: width calc(100% - 12.5%) + margin) ✅
+- Text can cycle if multiple texts provided ✅
+- Swipe moves by 87.5% (accounts for bleed) ✅
+
+**Random ordering**:
+```javascript
+shuffledProjects = DataLoader.shuffleArray(currentProjects);
+```
+
+Then filtering happens on `shuffledProjects`, so order is maintained! ✅
+
+**Sequential fade-in**:
+CSS has staggered animation-delay (100ms increments) ✅
+
+**POTENTIAL ISSUE**: What if a tile has no tile_text?
+Looking at tile-renderer.js:
+```javascript
+const tileTexts = teaser_copy.tile_text || [];
+if (tileTexts.length === 0 && defaultText) {
+    tileTexts.push(defaultText);
+}
+```
+
+Falls back to page_subtitle or page_title. Good! ✅
+
+**POTENTIAL ISSUE**: What if a tile has 5 images but only 2 tile_texts?
+```javascript
+const textIndex = currentIndex % textCount;
+```
+
+Uses modulo to cycle! So image 3 shows text 1, image 4 shows text 2, etc. Smart! ✅
+
+Tile rendering looks solid!`,
+  `thoughtNumber`: 6,
+  `totalThoughts`: 12,
+  `nextThoughtNeeded`: true
+}Response{
+  "thoughtNumber": 6,
+  "totalThoughts": 12,
+  "nextThoughtNeeded": true,
+  "branches": [],
+  "thoughtHistoryLength": 14
+}Pondered manifest generation script and next steps briefly.
