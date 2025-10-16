@@ -104,10 +104,9 @@
     + The template `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
     + One of the entries `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json` 
   
-  - **SIGNIFICANTLY**, please read `last_message.md`; we were abruptly cut off from each other from a context window and it was *right* after AI created some files (as of now the only COMPLETE and accurate files are the Web section project entry JSON files). I didn't realize they were creating files already as I was typing a response that blocked my view of the chat thread, and my feedback resulted in needing to change some of the files AI just created. *RIGHT* when it started to make the updates necessary, we lost connection, meaning this context is pivotal to helping pick up where we left off. I managed to updated my message to AI right before the cutoff, allowing them to start again from that point, and critically, start off with a Memory Project State Update. But, due to the crunch we want to review all the materials to ensure nothing is lost or misunderstood. This seems someone pertinent because it took me about 3 or four push-backs to show AI how the modular architecture could extend a lot further than they were initially thinking, to include things like the URL structure, all of the generation of entry pages on the fly, the images and text on all of the content entry tiles in sections, and even the different section pages and the toggle filters that are populated. Basically making everything wildly simpler and avoiding creating new pages for any new entries, ever. An ever lasting portfolio! New groupings just would entail adding a new term to one of the tags on a JSON and dropping that JSON into the main entry folder. After sorting out that this was possible, AI detailed specifics on how this could work. 
-    `/Users/seanivore/Development/360-design/assets/docs/last_message.md`
+  - **IMPORTANT:** Please read `last_message.md`; we were abruptly context window cut off *right* after AI created some files. As of now the only COMPLETE and accurate files are the Web section project entry JSON files. I was writing a response, unaware that AI made the first files. When I was done they needed to update the files according to the feedback, but when starting they got cut off. I managed to simplify an earlier message so that they could try to get in a memory project state update. Due to the crunch, we want to review all materials to ensure nothing is lost or misunderstood. Confirming understanding is particularly important because it took me about three push-backs to show AI how the modular architecture could extend much further than they thought, getting us to a point where all that is needed is a template "section" page and a template "project entry" page; even the URL is pulled from the JSON files. An ever lasting portfolio! `/Users/seanivore/Development/360-design/assets/docs/last_message.md`
 
-  * **Add project state updates** 
+  * **Adding project state updates** 
 
   - Add entry milestones that maintain context even if suddenly disconnected
   - About to start a series of tasks, record what you're about to do
@@ -115,82 +114,61 @@
   - Add updates throughout completing the tasks, particularly anything notable or necessary for next steps
   - Update after completion of those tasks; add what is next or reference having mentioned it if nothing has changed
 
-### 2. Confirm Content Population Specifics 
+### 2. Confirm Content Population Specifics, Integrate Details & Logic  
 
-  * **AFTER we have full understanding of the websites planned functionality, I have some additional notes to consider.**
+  * **After we have full understanding of the websites planned functionality, I have some additional notes to consider**
 
-  - Re: On-project-entry-page tags and "sub sections" like types of web design (webflow, framer, etc.)
-    + When any content tag is clicked through, from any section or type of media, it should go to a section page filtered for that tag globally
-    + This is important particularly for skill tags that would be applied to digital projects, web projects, and more 
-    + When, for example, "copywriting" is clicked through, the *section page* that loads should show ALL ENTRIES that have the copywriting tag, not just 
+  1. Be aware that *section page* is now a relative term for any content tile populating page with filtering tag navigation 
 
-    *Section page has become a relative term for any website page that populates based on tag filters, NOT NECESSARILY specifically a section, like web design, of content only as was originally planned. Yes, there will  be four main section pages that serve as four main website sections, but they are filtered just like any other tag-filtered collection of content on a section page.* 
+  * **Section page's "main" filter is always a must and cannot be removed** 
 
-  * **To create the logic for this, we can use the labeling of the different groupings on the JSON files**
+  2. Click-through filter must be "sticky" or "stuck" and cannot be turned off like other tags 
+     - Click-through from homepage onto section page with "section"-type tag, that section-type tag will ALWAYS be applied 
+     - Similarly, clicking through any contextual tag on a project page, the clicked-through tag cannot be turned off 
+     + Ensures section page with section-type tag "Web" filtered, nothing, no other filtering, can remove "web" and no non-web content will be shown 
+  3. This "main filter" of any loaded section page shouldn't have that tag listed in the nav, and instead place it as a smaller heading for context 
 
-  - The main tags on the JSON are in four groups. These groups are merely for ease of filling out the JSON objects to ensure that all tag types are covered. There will be no UI on the website that differentiates them **EXCEPT** in the case of **ROLE** because that is one of the main page content sections. 
-    + technology
-    + media 
-    + role (only gets one answer)
-    + skill 
+  * **Behavior holds to that simple logic regarding what tiles *DO* show**
 
-  - However we will treat the "section" and "sub_section" fields on the JSON entries as tags just the same. 
-    + section example: "Web" 
-    + sub_section example "Webflow" 
+  4. User clicks through on-page contextual tag, all tile results on section page must be from every section 
+     - This is regardless of what section the project page entry User clicks a contextual tag hyperlink on  
+     + If you're on entry in Web section and click through "copywriting" 
+       - The section page will show different section tagged content (print, digital, etc.) 
+       - Only the tags that are on any JSON files with the tag "copywriting" AT THAT MOMENT will show up in the listed tags in the nav
 
-  - LOGIC PROPOSED 
+  * **The full extent of different tag groups** 
+  
+  5. There are tags on the JSON under "tagging" 
+     + The main tags on the JSON are in four groups merely for ease of JSON completion; no site UI differentiates them **EXCEPT** for **ROLE** 
+       - role (only gets one answer; one supplied tag)
+       - technology 
+       - media 
+       - skill 
+     + These tags, except "Role", we will call **CONTEXTUAL** tags 
 
-    1. When a section page loads with the tag "section" selected to filter contents (as when clicking through one of the four main tiles from the homepage)
-       + It should make the "sub_section" tags available first in the tag nav with a different color text 
-       + "role" will be the second listed tags available in the horizontally scrolling nav 
-       + The rest of the tags should come from a specific **FEATURED** JSON object, TO BE CREATED 
-    2. If on a section pages filtered by "section", the "section" tag will ALWAYS be applied 
-       + As far as it seems right now, the only place where users can land on these pages is when clicking through from the homepage 
-       + This ensures that when they're on the section page with "web" filtered, any additional filtering WILL NOT pull in any content without a "web" section tag 
-    3. The only other way to get to a section page filtered with any tag is by clicking through a tag from a project entry page 
-       + The "section" like web or print, will not be an available tag to click 
-       + In these cases, when you click through a tag, it will either be a sub_section, role, or a contextual tag 
-       + In this case, if any contextual tags are listed on the FEATURED file as toggle tags, it does not matter 
-       + On these section page displays, the clicked-through tag must retain its filtering, even as any other tags are turned on and off 
-       + In the horizontally scrolling tag nav there will be 
-         - section 
-         - sub_section 
-         - role 
-         - contextual tags (as populated from the relevant JSON files based on the tag that was clicked through)
-       + This means if I clicked through "Copywriting" I would 
-         - See all different sectioned tagged content (print, digital, etc.) 
-         - Only the tags that are on any JSON files with the tag "copywriting" AT THAT MOMENT will show up in the listed tags in the nav 
+  6. Then "section" and "sub_section" fields on the JSON entries as tags just the same
+     + section example: "Web" 
+     + sub_section example "Webflow" 
 
-  * **FEATURED JSON file** 
+  7. "Toggle" tags are listed on a specific **FEATURED** JSON object, to be created 
+     + These are contextual tags, on actual JSON objects, that we want to give prominence or guide the user towards 
+     + "Featured" file to create allows us to set up predefined tags to specifically show on section-type tag filtered section pages 
+     + Toggle tags *ONLY* show on section-type tag filtered section pages for clarity 
+     + Clicking through an entry's contextual tag will list all contextual tags populated from all JSON object with that tag clicked through 
+       (no toggle group)
 
-  1. This is one master file we need to create that allows the user to set some predefined tags to specifically highlight content or direct users 
-  2. On a section page's horizontal scrolling tag nav, these are the third and final tags listed on section pages defined in the above logic 
-  3. These have been called "toggle tags" on our `ADD_NEW_PROJECT.md` document `assets/docs/ADD_NEW_PROJECT.md` 
-  4. Toggle tags must exist on a Project somewhere, in one of the "contextual" tag groupings on the project entry JSON 
-     - That is to say that, other than section, sub_section, and role, ALL OTHER TAGS ARE CONTEXTUAL TAGS 
-     - A contextual tag only becomes a toggle tag if manually added to the FEATURED file list of toggle tags 
-  5. According to the logic above, a section page loads with the tag "section" selected to filter content; its tags include, in this order: 
-     - sub_section 
-     - role
-     - (any tag present on the FEATURED toggle tag list)
-  * *Using these toggle tags not only give the designer a bit more control over user flow, but also will minimize the number of tags loading into the horizontally scrolling tag nav bar on section pages*
+  * **Inclusion and ordering of tags in the horizontal scrolling filter based on section page situation** 
 
-* **In summary, notably, this means** 
+  8. If the section page has a section-type tag, from left to right the horizontal scrolling tag nav should include 
+     - `sub_section` first with different color 
+     - `role`(s) next in another color 
+     - The rest are just toggle tags only tags 
 
-  - Not all tag hyperlinks on entry pages exist as tag nav filters on the main "section" filtered section pages 
-    + This is sort of irrelevant because toggle tags only show up on the main "section" filtered section pages 
-    + In every other instance, primarily clicking through a tag from an entry, featured toggle tags are ignored and all contextual tags are shown 
-    + If this "all contextual tags" makes for any performance lag from too many entries, we could limit contextual tags that show in the navigation to only those tags that are on 3 or more JSON files (or any other count)
-
-  - Ideal UX is a "section page" template that has memory as to which tag click through its main filter is  
-      1. Click through to a "website section" from the home page and it would be one of the four "section" tags  
-      2. Click through from a random tag on any entry and it is that random tag only that is retained throughout all use of that page 
-    + Otherwise there is no real difference between section pages 
-    + Except that on section pages filtered by "section", toggle tags are shown from the FEATURED file, but no other contextual tags 
-    + And on section pages filtered by any tag from a entry page click through, no toggle tags are present, and only all contextual tags relevant are shown 
-
-    + Both cases would use the same predefined tile component 
-    + The top tag nav filter buttons would populate dynamically based on JSON files included according to higher level filter tag 
+  9. Clicking through a tag from a project entry page, left to right the horizontal scrolling tag nav should include 
+     - `section` 
+     - `sub_section` 
+     - `role` 
+     - contextual tags (as populated from the relevant JSON files based on the tag that was clicked through)
 
 ### 3. Action Steps  
 
