@@ -94,6 +94,7 @@ index.html              `august.style/`
 │       └── uid-wty-542.json
 ├── _config.yml
 ├── CNAME
+├── README.md 
 ├── 404.html 
 ├── generate_manifest.py
 ├── featured.json
