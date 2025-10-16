@@ -136,6 +136,10 @@ index.html              `august.style/`
 
 ---
 
+# The **last session we were cut off** right after finishing the updates. You did a memory update and then said "Perfect! Memory locked in tight. Now let me do a deep systematic review!" and we were going to test things. I moved over the files and tried testing things and the local host doesn't work however I remember that specific local host not working in the past so we might just need to try another one before getting in too deep. Either way, we've outlined next step below. 
+
+---
+
 ### *Phase 1:* Review Feedback & Testing 
 
   * **These two were not mentioned in any of the update results, just wanted to give an FYI** 
