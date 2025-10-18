@@ -28,7 +28,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const sectionParam = urlParams.get('section');
         const subsectionParam = urlParams.get('subsection');
-        
+
         if (sectionParam) {
             if (subsectionParam) {
                 // ?section=web&subsection=html-css-js
@@ -93,7 +93,7 @@
                 return [];
             }
             const data = await response.json();
-            return data.toggle_tags || [];
+            return data.active_tags?.toggle_tags || [];
         } catch (error) {
             console.warn('Error loading featured tags:', error);
             return [];

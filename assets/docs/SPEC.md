@@ -135,119 +135,75 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
 ### Preparations for Next Phase 
 
-#### 1. Simplification by Consolidation of `featured.json` to `placement.json` 
+#### 1. **COMPLETE** Created `placement.json` to Replace `featured.json` and Updated Files 
+   + All code and documents have been updated 
+   + On `section-controller.js` specifically we changed 
+     - OLD: `return data.toggle_tags || [];`
+     - NEW: `return data.active_tags?.toggle_tags || [];`
 
- * **Lists all tags** 
+#### 2. **COMPLETE** `_entry_template.json` Template Updated 
+   + Now enforces single ROLE choice 
+   + Directs to `placement.json` document when picking tags 
 
-  + Please review this 
-    - Explains what each type of tag is 
-    - How to use tag types 
-  + Lists all tags 
-    - Ensures more tag overlap across project entries 
-    - Use a simplified combination of tags 
-    - Resist adding longer, complex tags 
-    - For example I might tag "Social Media" and then "Advertising" on a post meaning on another post I could tag "Google Search" and "Advertising" 
+#### 3. Tag Strategy, Cleanup, and Logic 
 
- * **Added the list of FEATURED toggle tags** 
+  * **Logic notes to implement for toggle tags** 
 
-   + Ensures we are featuring tags that are actual being used 
-   + Creates one-stop-shop document 
+    1. Pull any tag that contains the toggle tag word 
+       - They should work for any tag that contains even part of the toggle tag 
+       - E.g., "Design" should pull up "Graphic Design" and "Print Design" 
+    2. Only pull from `technology`, `media`, and `skill` 
+       - Toggle tags should not filter to show any matches with `role` tags 
+       - This will prevent overly redundant tags surfacing as options to filter by 
 
- * **Missing SEO title, description, and thumbnail for section pages** 
+  * **Tag clean-up process required for all 15 JSON objects** 
 
-   + Created a default 
-     - It has places where things are plugged in, like which tag it is, into the Title 
-     - Image dynamically pulled 
-     - Alt text combination of tag and breadcrumb 
+    1. Copy over all tags from the JSON to `placement.md` 
+    2. Delete the tags from the project entry JSON for now 
+    3. When all JSONs have be cleaned out, review and simplify tags on `placement.md`
+       + In many cases we can break them down 
+         - Put `media` part in that list
+         - Put `skill` or `technology` in that list
+         - E.g., `email` (media) `copywriter` (skill)
+       + Make synonymous tags identical
+       + List of `role` tags should be MINIMAL
+         - Only add to the `role` tags when adding the tag to a JSON 
+    4. After Sean reviews full `placement.md` tag list 
+       + Add appropriate tags to each JSON 
+         - Shoot for 4-7 in the `technology`, `media`, and `skill` categories 
+         - Keeping tag selection diverse and broad, opt for more rather than less 
+    5. While in the JSON there are some updates to make 
+       + v3.1 has the "Enforced single role value, added placement.json reference for tag consistency" 
+       + We also need to add alt.text 
+         - For the thumbnail slideshow 
+         - For the video embed 
+         - For any on-page images 
+       + Q: For assets > project URL and GitHub Repository 
+         - When pasted on social or in a doc it populates the thumbnail and title/description 
+         - Do we need to pull those and have them places separately in the JSON for them to be used in the same way on the page? 
 
-#### 2. Resulting required updates to JSON project entry files and schema needed 
+  * **All JSON files to process for above steps**
 
-  * **We can only have one ROLE for each entry** 
+    1. `/Users/seanivore/Development/360-design/assets/entries/uid-iqi-479.json`
+    2. `/Users/seanivore/Development/360-design/assets/entries/uid-lul-419.json`
+    3. `/Users/seanivore/Development/360-design/assets/entries/uid-qor-090.json`
+    4. `/Users/seanivore/Development/360-design/assets/entries/uid-rfr-187.json`
+    5. `/Users/seanivore/Development/360-design/assets/entries/uid-sgt-851.json`
+    6. `/Users/seanivore/Development/360-design/assets/entries/uid-srs-009.json`
+    7. `/Users/seanivore/Development/360-design/assets/entries/uid-tev-176.json`
+    8. `/Users/seanivore/Development/360-design/assets/entries/uid-unw-889.json`
+    9. `/Users/seanivore/Development/360-design/assets/entries/uid-wgw-370.json` 
+    10. `/Users/seanivore/Development/360-design/assets/entries/uid-wnw-867.json`
+    11. `/Users/seanivore/Development/360-design/assets/entries/uid-wty-542.json`
+    12. `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json`
+    13. `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json`
+    14. `/Users/seanivore/Development/360-design/assets/entries/uid-fth-565.json`
+    15. `/Users/seanivore/Development/360-design/assets/entries/uid-hwi-844.json` 
+
+#### 4. Does the `home_entry_pages_spec.md` SPEC Need Another Update  
   
-  + Role should never be more than one 
-    - Use mort sensible, and BROADEST, option 
-    - Any secondary options can end up in skills/media contextual tagging 
-
-  + When writing an entry, go to `placement.json` for reusable role options 
-    - If it is there, use exact same spelling, tense, etc. 
-    - If it is not there, add new role use to the JSON list 
-
-  + Is there a way to put this into our schema? `./assets/docs/_entry_template.json` 
-    - That makes sure it is only one entry? 
-    - Additionally this needs full review and updates `./assets/docs/ADD_NEW_PROJECT.md`
-
- * **Updated code and docs for elimination of `featured.json`**
-
-  + New `placement.json` file created 
-    - I used find-replace for all instances of `featured.json` 
-    - Written in docs or code with the new, same path, `placement.json` 
-  + There was one JS that had the path 
-    - Check JS code file 
-    - Make sure it will still function since I changed the JSON schema 
-
-#### 3. Completing the Work for 1 and 2 Changes Above 
-
-  * **First we want to make sure the `placement.json` tag lists are comprehensive**
-
-  + All contextual tags should be pulled and worked into `placement.json` 
-  + Delete from entry JSON for now 
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-iqi-479.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-lul-419.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-qor-090.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-rfr-187.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-sgt-851.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-srs-009.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-tev-176.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-unw-889.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-wgw-370.json` 
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-wnw-867.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-wty-542.json`
-
-  * **Second we need to review the tags and simplify** 
-
-  + In many cases we can break them down 
-    - Put media part in that list 
-    - Put skill or tech in that list 
-    - E.g., `email` (media) `copywriter` (skill)
-  + And make synonymous tags identical 
-  + List of Roles should be MINIMAL 
-    - Probably best to only fill this out when actually adding to JSON 
-    - We'll do that after this second step 
-
-  * **Sean should review tag list and then we should add them again to all JSON entries**
-
-  + This means all those listed above for step one 
-    - That step said to delete them from the JSON after adding to `placement.json` 
-    - Adding them fresh ensures accuracy 
-
-  + While updating each of these 15, please write the various alt.text needs on the fly 
-    - I added for video 
-    - For thumbnail the is an array of them now but just one for the slideshow might be fine 
-    - Then, currently, we don't have any posts with additional pictures, but there is an alt.text spot for when there are 
-
-  + These are read to have new tags added; already missing all contextual tags 
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-fth-565.json`
-    - `/Users/seanivore/Development/360-design/assets/entries/uid-hwi-844.json` 
-
-  * **In retrospect, I wish we were using tags associated with numerical codes** 
-
-    - That would allow us more freedom with how we word a tag 
-    - It would group similar tags 
-    - Mentioning so we can consider if now is the time since we're overhauling them, or later 
-
-#### 4. Updating `home_entry_pages_spec.md` Spec 
-
- * **All of the things we discussed in chat** 
-
-   + I won't list them again here 
-
- * **Remaining notes in the `home_entry_pages_spec.md` document** 
-
-   + I left a few for context 
-     - They were just more detailed information to integrate into the spec 
-     - Please complete and then delete those as you update the spec with our discussed feedback from the chat 
+  + It has been updated with all previous notes and feedback
+  + Add any toggle logic details necessary to be ready to hand off to Claude Code 
 
 #### 5. Review, Bring Up To Date Resource Docs Claude Code Needs 
 

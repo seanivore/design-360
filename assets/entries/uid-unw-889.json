@@ -14,10 +14,10 @@
         "slug": "training-yoga-sales"
     },
     "tagging":{
-        "technology": ["Webflow", "Hand-Drawn Design", "iPad Pro", "Apple Pencil", "GitHub Pages"],
-        "media": ["Web Design", "Digital Illustration", "Wellness Platform", "Training Portal"],
-        "role": ["Web Designer"], 
-        "skill": ["Webflow Development", "Brand Design", "Hand-Drawn Illustration", "Client Collaboration", "Visual Identity", "Wellness Industry Design"]
+        "technology": [],
+        "media": [],
+        "role": "Digital Consultant", 
+        "skill": []
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "personal-design-branding-art.mp4",
         "video_url": "https://youtu.be/LmwTrPKaUtg",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/LmwTrPKaUtg?si=wfQU81GdbJ7psu8o&amp;controls=0' title='Client Branded Webflow Online Training Platform' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Experience moving through this custom digital art covered Webflow site for a small business in the lifestyle and fitness industry.",
         "thumbnail_images": [
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-1.webp",
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-2.webp",
@@ -34,9 +34,13 @@
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-5.webp",
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-6.webp"
         ], 
-        "thumbnail_alt_text": [],
-        "page_imagery": [],
-        "page_imagery_alt_text": []
+        "thumbnail_alt_text": ["Slideshow of various images showing a Webflow designed site covered in custom designed brand art."],
+        "page_imagery": [
+            "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-1.webp",
+            "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-2.webp",
+            "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-3.webp"
+        ],
+        "page_imagery_alt_text": ["Mobile view shows beautifully responsive, custom art covered, Webflow designed website."]
         },
     "assets": {
         "project_url": "https://online-pt-trainer.august.style",

@@ -49,15 +49,18 @@
   "active_tags": {
     "toggle_tags": [
       "AI",
-      "Creative Director",
+      "Creative",
       "Social Media",
+      "Strategy",
       "Design",
       "Product",
+      "Marketing",
+      "Digital",
       "Copywriting",
       "Management",
       "Consulting",
-      "Production", 
-      "Development"
+      "Producer", 
+      "Developer"
     ],
     "placement_tags":{
       "section": [
@@ -94,6 +97,7 @@
           "CSS",
           "Agentic",
           "Custom Lottie",
+          "Customer Portal",
           "Vector Art"
         ],
         "media": [
@@ -106,10 +110,14 @@
           "Portfolio Template",
           "Technical Documentation",
           "Hand-Drawn Animation",
+          "Custom Artwork",
+          "Digital Illustrations",
           "Blog Platform", 
           "Social Media",
           "Video", 
           "Motion Graphic",
+          "Lifestyle", 
+          "Wellness",
           "Email", 
           "SMS", 
           "Viral",
@@ -121,10 +129,15 @@
         ],
         "role": [
           "Web Developer",
-          "Creative Director"
+          "Creative Director",
+          "Digital Consultant"
         ],
         "skill": [
           "Creative Direction",
+          "Developer",
+          "Programming",
+          "Digital Consulting",
+          "Business Consulting",
           "Advertising",
           "Marketing",
           "Art History",
@@ -135,11 +148,14 @@
           "Designer",
           "Branding",
           "Account Management",
+          "Client Collaboration",
+          "Visual Identity",
           "Typography",
           "Animation",
           "Copywriting",
           "Team Management",
           "Project Management",
+          "Product Marketing",
           "Automation",
           "User Design", 
           "Full-Stack",

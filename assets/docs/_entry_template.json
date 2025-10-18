@@ -1,23 +1,23 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-10T15:20:00.000000Z",
+    "last_updated": "2025-10-18T13:31:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.0",
-    "schema_update": "removed slug to rename the file name as slug and removed html from that file name"
+    "schema_version": "3.1",
+    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-abd-123", 
     "placement": {
-        "section": "",
-        "sub_section": "", 
+        "section": "Web | Print | Digital | Video",
+        "sub_section": "See placement.json for current options", 
         "slug": "page-slug-would-be-html-file-name"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": [], 
-        "skill": []
+        "technology": ["See placement.json > active_tags > contextual_tags > technology"],
+        "media": ["See placement.json > active_tags > contextual_tags > media"],
+        "role": "SINGLE VALUE - Choose ONE from placement.json > contextual_tags > role", 
+        "skill": ["See placement.json > active_tags > contextual_tags > skill"]
     }
 },
 "content": {
