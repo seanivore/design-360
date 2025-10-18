@@ -48,13 +48,16 @@
     },
   "active_tags": {
     "toggle_tags": [
-      "Agentic Systems",
-      "Creative Direction",
-      "System Design",
+      "AI",
+      "Creative Director",
+      "Social Media",
+      "Design",
       "Product",
       "Copywriting",
       "Management",
-      "Consulting"
+      "Consulting",
+      "Production", 
+      "Development"
     ],
     "placement_tags":{
       "section": [
@@ -76,14 +79,22 @@
       "contextual_tags": {
         "technology": [
           "Webflow CMS", 
+          "AI",
           "Make.com", 
           "Notion API", 
           "GitHub Pages",
           "Responsive Design",
           "E-Commerce", 
-          "Adobe Creative Cloud Desktop Applications",
-          "Adobe Creative Cloud Tablet Applications",
-          "Apple iPad Pro & Pencil"
+          "Adobe Desktop Apps",
+          "Adobe iPad Apps",
+          "iPad",
+          "Apple Pencil",
+          "JavaScript", 
+          "Python Script",
+          "CSS",
+          "Agentic",
+          "Custom Lottie",
+          "Vector Art"
         ],
         "media": [
           "Landing Page",
@@ -95,31 +106,46 @@
           "Portfolio Template",
           "Technical Documentation",
           "Hand-Drawn Animation",
-          "Blog Platform"
+          "Blog Platform", 
+          "Social Media",
+          "Video", 
+          "Motion Graphic",
+          "Email", 
+          "SMS", 
+          "Viral",
+          "Content",
+          "Editorial",
+          "User Interface",
+          "Digital",
+          "Business"
         ],
         "role": [
           "Web Developer",
-          "Creative Director",
-          "Systems Designer"
+          "Creative Director"
         ],
         "skill": [
-          "JavaScript",
-          "Web Design",
-          "Editorial Layout Design",
+          "Creative Direction",
+          "Advertising",
+          "Marketing",
+          "Art History",
+          "Hand Drawn",
+          "Illustration",
+          "System Architecture",
+          "Producer",
+          "Designer",
+          "Branding",
+          "Account Management",
           "Typography",
-          "Python Scripts", 
-          "Animated CSS",
-          "Custom Lottie Animation",
+          "Animation",
           "Copywriting",
           "Team Management",
-          "Automation Architecture",
-          "User Research", 
-          "Custom Navigation",
-          "Full-Stack Problem Solving",
-          "Modular Architecture", 
-          "Front End Focused", 
-          "Back End Build", 
-          "Agentic System Management"
+          "Project Management",
+          "Automation",
+          "User Design", 
+          "Full-Stack",
+          "Modular", 
+          "Front End", 
+          "Back End" 
         ]
       }
     }

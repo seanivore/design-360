@@ -69,7 +69,7 @@ index.html              `august.style/`
 ├── assets/
 │   ├── js/
 │   │   ├── data-loader.js 
-│   │   ├── featured.json
+│   │   ├── placement.json
 │   │   ├── filter-controller.js 
 │   │   ├── manifest.json
 │   │   ├── section-controller.js
@@ -135,9 +135,62 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
 ### Preparations for Next Phase 
 
+#### 1. Simplification by Consolidation of `featured.json` to `placement.json` 
+
+ * **Lists all tags** 
+
+  + Please review this 
+    - Explains what each type of tag is 
+    - How to use tag types 
+  + Lists all tags 
+    - Ensures more tag overlap across project entries 
+    - Use a simplified combination of tags 
+    - Resist adding longer, complex tags 
+    - For example I might tag "Social Media" and then "Advertising" on a post meaning on another post I could tag "Google Search" and "Advertising" 
+
+ * **Added the list of FEATURED toggle tags** 
+
+   + Ensures we are featuring tags that are actual being used 
+   + Creates one-stop-shop document 
+
+ * **Missing SEO title, description, and thumbnail for section pages** 
+
+   + Created a default 
+     - It has places where things are plugged in, like which tag it is, into the Title 
+     - Image dynamically pulled 
+     - Alt text combination of tag and breadcrumb 
+
+#### 2. Resulting required updates to JSON project entry files and schema needed 
+
+  * **We can only have one ROLE for each entry** 
+  
+  + Role should never be more than one 
+    - Use mort sensible, and BROADEST, option 
+    - Any secondary options can end up in skills/media contextual tagging 
+
+  + When writing an entry, go to `placement.json` for reusable role options 
+    - If it is there, use exact same spelling, tense, etc. 
+    - If it is not there, add new role use to the JSON list 
+
+  + Is there a way to put this into our schema? `./assets/docs/_entry_template.json` 
+    - That makes sure it is only one entry? 
+    - Additionally this needs full review and updates `./assets/docs/ADD_NEW_PROJECT.md`
+
+ * **Updated code and docs for elimination of `featured.json`**
+
   + New `placement.json` file created 
-    - 
-  + All contextual tags should be pulled and worked into `placement.json`; delete from entry JSON for now 
+    - I used find-replace for all instances of `featured.json` 
+    - Written in docs or code with the new, same path, `placement.json` 
+  + There was one JS that had the path 
+    - Check JS code file 
+    - Make sure it will still function since I changed the JSON schema 
+
+#### 3. Completing the Work for 1 and 2 Changes Above 
+
+  * **First we want to make sure the `placement.json` tag lists are comprehensive**
+
+  + All contextual tags should be pulled and worked into `placement.json` 
+  + Delete from entry JSON for now 
     - `/Users/seanivore/Development/360-design/assets/entries/uid-iqi-479.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-lul-419.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-qor-090.json`
@@ -149,15 +202,31 @@ python3 -m http.server 5500 --bind 127.0.0.1
     - `/Users/seanivore/Development/360-design/assets/entries/uid-wgw-370.json` 
     - `/Users/seanivore/Development/360-design/assets/entries/uid-wnw-867.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-wty-542.json`
-  + In `placement.json` we want to ensure our tags are strategically organized 
-    - Minimize duplicates by choosing one method of phrasing and appropriate category 
-    - Ensure logic of the category grouping makes sense 
-    - Once complete and Sean reviews we move on to now use the official lists to add tags official in to the entry JSONs 
-  + Already missing all contextual tags; these and then the above list must be completed 
+
+  * **Second we need to review the tags and simplify** 
+
+  + In many cases we can break them down 
+    - Put media part in that list 
+    - Put skill or tech in that list 
+    - E.g., `email` (media) `copywriter` (skill)
+  + And make synonymous tags identical 
+  + List of Roles should be MINIMAL 
+    - Probably best to only fill this out when actually adding to JSON 
+    - We'll do that after this second step 
+
+  * **Sean should review tag list and then we should add them again to all JSON entries**
+
+  + This means all those listed above for step one 
+    - That step said to delete them from the JSON after adding to `placement.json` 
+    - Adding them fresh ensures accuracy 
+
+  + These are read to have new tags added; already missing all contextual tags 
     - `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-fth-565.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-hwi-844.json` 
+
+
 
 ### *Phase 2:* Homepage 
   + Create homepage tiles, and section page tiles 
@@ -205,7 +274,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
   2. On every JSON the 'section' and 'sub_section are **PLACEMENT** tags 
      + There are just four sections: Web, Print, Video, Digital 
      + Subsections (like Webflow) are created as needed 
-  3. Featured.json identifies handful of contextual tags to be **TOGGLE** tags 
+  3. placement.json identifies handful of contextual tags to be **TOGGLE** tags 
      + Selected to give content some prominence or guide the user a certain way 
      + These are only shown on the PLACEMENT 'section-type' tag filtered section page 
      + Clicking through an on-page tag will never show toggle tags; instead will 

@@ -37,7 +37,7 @@
     + All Phase 1 (current) files are complete, working, tested (`section.html`, all controllers, `data-loader.js`, etc.)
     + 15 JSON project entries exist in `./assets/entries/...`
     + `./assets/js/manifest.json` is current and complete
-    + `./assets/js/featured.json` defines 'toggle' tags
+    + `./assets/js/placement.json` defines 'toggle' tags
 
   * **Architecture Context:**
 
@@ -167,7 +167,7 @@
   * **Data Files:**
 
     - `./assets/js/manifest.json` (URL→JSON mapping - WORKING ✅)
-    - `./assets/js/featured.json` (toggle tags config - WORKING ✅)
+    - `./assets/js/placement.json` (toggle tags config - WORKING ✅)
     - `./assets/entries/*.json` (15 complete project entries - WORKING ✅)
 
   * **Documentation:**

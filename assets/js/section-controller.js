@@ -87,7 +87,7 @@
      */
     async function loadFeaturedTags() {
         try {
-            const response = await fetch('/assets/js/featured.json');
+            const response = await fetch('/assets/js/placement.json');
             if (!response.ok) {
                 console.warn('Featured tags not found, using all tags');
                 return [];

@@ -96,7 +96,7 @@ index.html               `august.style/`
 ├── CNAME
 ├── 404.html 
 ├── generate_manifest.py
-├── featured.json
+├── placement.json
 ├── section.html
 └── styles.css 
 ```

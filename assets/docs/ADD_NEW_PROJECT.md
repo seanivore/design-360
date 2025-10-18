@@ -79,10 +79,10 @@
 * **Copy above as a resource, AI can write 2-4 sentences for the `page_copy` items and a single `tagging` item** 
 
   11. These 4 will be headers and page sections mirrored on every project entry page 
-      - (1) In the `tagging` section add a `role` for the project 
+      - (1) In the `tagging` section add **ONE** `role` for the project 
         + This is placed prominently unlike other tags  
-        + This is ideally one role, possibly a job title; for complex cases Sean will need to help or update after 
-        + In other-words this is the context of involvement, relationship to project 
+        + Context of involvement, relationship to project 
+        + If there are other roles that you wanted to add, PUT THEM IN SKILLS  
       - (2) Write `pattern` section  
         + This should humbly, indirectly highlight my innate pattern spotting ability
         + Frame this as the logic behind why the project was an opportunity to take on 
@@ -116,33 +116,9 @@
      + These are meant to be very comprehensive, capitalizing on words used on job openings and on resumes 
      + The will also be placed on the project entry page top-right as toggle tag point describes above 
 
-* **Must include section tags for content filtering** 
-
-| Tag             | Type         |
-| --------------- | ------------ |
-| **Web**         | Section tag  |
-| **Print**       | Section tag  |
-| **Digital**     | Section tag  |
-| **Video**       | Section tag  |
-| Generative AI   | Toggle tag   |    # The toggle tags are open to be changed,
-| Product         | Toggle tag   |      as the goal is to show off exactly what 
-| Copywriting     | Toggle tag   |      the hiring managers are likely looking to 
-| Interactive     | Toggle tag   |      isolate or filter down to just that content 
-| Team Manager    | Toggle tag   |      we just have to make sure the tag exists as a 
-| Consulting      | Toggle tag   |      contextual tag already 
-
-* **Skill-based job titles to work into copy and contextual tags** 
-
-  + (Creative, Art) Director 
-  + (Social, Video, Email, SMS, Viral, Content) Producer
-  + (Digital, Print, Illustration, System, Generative AI, UI/UX) Designer 
-  + (Innovations, Marketing, Digital) Manager, Strategist 
-  + (Copy, UI/UX) Writer 
-  + (Web, Front-End, App) Developer 
-  + (Advertising, Process Optimization, Automation, AI Integration) Specialist 
-  + (Remote/Team, Client/Account, Project) Manager 
-  + (Digital, Business, Branding) Consultant 
-
-* **Tag examples illustrating depth and comprehensiveness** 
-
-*Web Designer + Account Management + Business Development Consultant + Framer + Webflow + Local Rebuild + GitHub Pages + AI Writing + API Publishing API + Database Management + Workflow Automation + AI Writing + AI Image Creation + AI Creative Planning + AI Photo Editing + Art History + E-Commerce + Back-end Store Automation + Fashion Design + System Design + Product + Branding + Hand Drawn + Digital Art + Illustration + Adobe Creative Cloud + Photoshop + After Effects + Adobe Illustrator + Apple Pen + Apple iPad Pro + Adobe Fresco + Vector Art + Custom Animation + Lottie Files + Full Stack Management + Email Marketing + Subject Matter Expert + Social Media Advertising + Print Design + Organic Social Media Consulting* 
+  + See current list of tags by category 
+    - Here: `/Users/seanivore/Development/360-design/assets/js/placement.json`
+  + Rather than new or one long tag 
+    - Try to use combination of small shorter tags 
+    - This makes them all more versatile 
+    - It keeps the overall number of tags down while creating more overlap 
