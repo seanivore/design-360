@@ -2,7 +2,7 @@ permalink: /:basename/
 title: Creative Generalist Portfolio | Sean August Horvath 
 description: Polished collection highlighting Horvath's digital, print, web, and other design, copywriting a diverse set experience in viral digital marketing and innovations. 
 baseurl: "/"
-url: "https://august.style/"
+url: "https://www.august.style/"
 collections:
   pages:
     output: true

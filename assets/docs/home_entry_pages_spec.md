@@ -1,40 +1,43 @@
 # Claude Code Agentic Workflow SPEC for Homepage & Entry Pages 
 
-*C: I have added COMMENTS like this one, or QUESTIONS using Q: lead-in throughout* 
+*C: I have added C: COMMENTS or Q: QUESTIONS like this one, throughout* 
 
   > 1.Ingest the information from this file
   > 2.Implement the Low-Level Tasks
   > 3.Generate code that will satisfy High and Mid Level Objective
+  > 4.Perform all requested testing and validation 
 
 ---
+
+*C: I have been changing document formatting to be more clearly hierarchal which appears to improve CC performance* 
 
 ## Objectives
 
 ### High-Level
 
-  + Build two core remaining portfolio pages: Homepage (`index.html`), Entry Page Template (`entry.html`)
+  + Build two core remaining portfolio pages: Homepage (`./index.html`) and an Entry Page Template (`./entry.html`)
     - Homepage showcases 4 section tiles with random project selection on each load
     - Entry pages display individual projects with related posts based on tag matching
   + Complete the "Single-JSON Portfolio Architecture" with full dynamic content population
 
 ### Mid-Level
 
-  + Create `index.html` with three sections: Projects, About, Contact
-  + Implement homepage tiles that randomly select images with paired entry text from project JSON files in each section
-  + Build `entry.html` template that dynamically populates from JSON based on URL
-  + Create `entry-controller.js` to handle URL parsing, JSON loading, and related posts logic
+  + Create `./index.html` with three sections: Projects, About, Contact
+  + Implement homepage tiles that randomly select `thumbnail_images` and `tile_text` from project JSON files in each section
+  + Build `./entry.html` template that dynamically populates from JSON based on URL
+  + Create `./assets/js/entry-controller.js` to handle URL parsing, JSON loading, and related posts provided logic
   + Implement time-seeded related posts algorithm for consistent-but-changing recommendations
   + Ensure all pages work with both localhost testing (URL params) and production (404 routing)
-  + Match existing design system from `section.html` (dark mode, sharp corners, gradient background)
+  + Match existing design system from `./section.html` (dark mode, sharp corners, gradient background)
 
 ### Implementation Notes
 
   * **Dependencies:**
 
-    + All Phase 1 files are complete and working (`section.html`, all controllers, `data-loader.js`, etc.)
-    + 15 JSON entries exist in `./assets/entries/...`
-    + `manifest.json` is current and complete
-    + `featured.json` defines toggle tags
+    + All Phase 1 (current) files are complete, working, tested (`section.html`, all controllers, `data-loader.js`, etc.)
+    + 15 JSON project entries exist in `./assets/entries/...`
+    + `./assets/js/manifest.json` is current and complete
+    + `./assets/js/featured.json` defines 'toggle' tags
 
   * **Architecture Context:**
 
@@ -44,30 +47,43 @@
     + See and understand JSON contents for dynamic population 
       - `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
       - (example) `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json` 
+      - No need to read the entire collection located in `./assets/entries/...`
     + This is a "mini-SPA" using a 404 routing trick for clean URLs on GitHub Pages
       - Localhost testing uses URL parameters (?section=Web) as workaround
-      - All content dynamically populated from JSON; **ABSOLUTELY NO HARDCODING**
+      - All content dynamically populated from JSON; **ABSOLUTELY NO HARDCODING** 
 
-  * **Design Standards:**
+*C: We should probably add a step where all newly created code files are reviewed strictly for hardcoding* 
 
-    + Mobile-first for real 
-      - Meaning no hover interactions
-      - Smooth transitions @ ~300ms cubic-bezier 
-    + Dark mode default 
+  * **Design Standards:** *C: I added a few FYC review please* 
+
+    + Strict mobile-first only 
+      - E.g., no hover interactions anywhere because they don't work on mobile 
+      - Create smooth transitions @ ~300ms cubic-bezier 
+    + Dark mode default *Q: should we create Light mode and add standard header nav toggle now or later?* 
       - Charcoal background 
       - Vertical gradient "glare" effect on body background
-      - White text 
-    + Tiles generally 
+      - White text with clean, simple, natural shadow blending 
+    + Tiles to access all (4) section categories and all entries 
       - Sharp corners 
       - No border-radius 
+      - Realism with shading, boarder highlights etc. simple, timeless 
     + Magazine aesthetic 
-      - Visual-first 
-      - Minimal text on tiles
+      - Visual-first planning is essential 
+      - Minimal text on tiles 
+      - User should get understanding of most entries and not need to click through many 
 
   * **JSON Structure Reference:**
 
     + `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
     + example: `/Users/seanivore/Development/360-design/assets/entries/uid-rfr-187.json`
+
+*Q: two points for role; we need a running list to ensure we're reusing the same wording across projects, and later we consider click-through main filter on populated section page, so we either need logic for which to pick, or to go through and only have one on all entries, putting the other with proper tense in skill tags* 
+
+*C: points for all dynamic content loaded on proposed HTML for entry page template later; (1) we keep referencing 'Page Name' later but actually mean `slug` in one instance and `breadcrumb`, I think, in another; (2) We mention placement and using `video_embed` and `thumbnail_images`, but do not mention using any of the alt. texts or the `page_imagery`; (3) I want to ensure we have `seo_title` and `seo_description` are also in the template to be loaded* 
+
+*Q: since we mention no hardcoding, and we did provide my about and contact information for that page, should we do the same for any SEO Title, SEO Description, and a SEO Thumbnail image with alt. text for the homepage?* 
+
+*C: the above question begs the question how we can do something similar for the dynamically loading section pages; only thought seems overly complex but if we somewhere always listed any used tags (which could double as a way to check that we're using the same exact tags and no plurals versus not plural, different tenses, etc.) and give each tag all three SEO elements; which actually we could create a JSON for tags; all this would sort of be a little annoying when adding a new entry, but in the contact of only adding a JSON versus a full HTML page that is integrated etc. I suppose it is pretty manageable*
 
 ```json
 {
@@ -133,49 +149,49 @@
 
 ## Context
 
-### Starting Context - Files Already Complete
+### Starting Context - Files Already Complete (all of Phase 1)
 
   * **Core Pages:**
 
-    - `section.html` (section page template - WORKING ✅)
-    - `404.html` (routing helper - WORKING ✅)
-    - `styles.css` (complete design system - WORKING ✅)
+    - `./section.html` (section page template - WORKING ✅)
+    - `./404.html` (routing helper - WORKING ✅)
+    - `./styles.css` (complete design system - WORKING ✅)
 
   * **JavaScript Modules:**
 
-    - `/assets/js/data-loader.js` (JSON fetching, filtering, caching - WORKING ✅)
-    - `/assets/js/tile-renderer.js` (section tile rendering - WORKING ✅)
-    - `/assets/js/filter-controller.js` (tag filtering, sticky filters - WORKING ✅)
-    - `/assets/js/section-controller.js` (section page orchestration - WORKING ✅)
+    - `./assets/js/data-loader.js` (JSON fetching, filtering, caching - WORKING ✅)
+    - `./assets/js/tile-renderer.js` (section tile rendering - WORKING ✅)
+    - `./assets/js/filter-controller.js` (tag filtering, sticky filters - WORKING ✅)
+    - `./assets/js/section-controller.js` (section page orchestration - WORKING ✅)
 
   * **Data Files:**
 
-    - `/assets/js/manifest.json` (URL→JSON mapping - WORKING ✅)
-    - `/assets/js/featured.json` (toggle tags config - WORKING ✅)
-    - `/assets/entries/*.json` (15 complete project entries - WORKING ✅)
+    - `./assets/js/manifest.json` (URL→JSON mapping - WORKING ✅)
+    - `./assets/js/featured.json` (toggle tags config - WORKING ✅)
+    - `./assets/entries/*.json` (15 complete project entries - WORKING ✅)
 
   * **Documentation:**
     
-    - `/assets/docs/ARCHITECTURE.md` (system design doc)
-    - `/assets/docs/SPEC.md` (project overview)
-    - `/assets/docs/_entry_template.json` (JSON schema)
+    - `./assets/docs/ARCHITECTURE.md` (system design doc)
+    - `./assets/docs/SPEC.md` (project overview)
+    - `./assets/docs/_entry_template.json` (JSON schema)
 
 ### Context at Completion & New Files to Create
 
-  * **New Pages:**
+  * **Create New Pages:**
 
     - `index.html` (homepage with Projects/About/Contact sections)
     - `entry.html` (entry page template for individual projects)
 
-  * **New JavaScript:**
+  * **Create New JavaScript:**
 
     - `/assets/js/entry-controller.js` (entry page orchestration)
     - `/assets/js/homepage-controller.js` (homepage tile logic)
 
-  * **Assets Needed:**
+  * **Use or Produce Assets Needed:**
 
-    - Profile picture at `/assets/media/profile.jpg` (or similar)
-    - Social icons (use simple SVG or icon font)
+    - Profile picture at `./assets/media/profile-picture-horvath.webp` 
+    - Social icons (use simple SVG or icon font) 
 
 ---
 
@@ -190,33 +206,39 @@
 
   * **Prompt:** Create the homepage controller that handles random section tile selection
 
-  * **Action:** CREATE `/assets/js/homepage-controller.js`
+  * **Action:** CREATE `./assets/js/homepage-controller.js`
 
   * **Functions to CREATE:**
 
      - `selectRandomProjectFromSection(section)` - Picks one random project from a section
      - `loadHomepageTiles()` - Loads 4 section tiles (Web, Print, Digital, Video)
      - `renderHomepageTile(project, section)` - Renders a single homepage tile
-     - `shuffleSectionOrder()` - Randomizes the order of the 4 section tiles
+     - `shuffleSectionOrder()` - Randomizes the order of the 4 section tiles on every reload 
      - `init()` - Initializes the homepage
 
   * **Details:**
-     
+
      - Use `DataLoader.loadAllProjects()` to get all entries
      - Filter by section: Web, Print, Digital, Video
-     - Randomly select ONE project from each section's entries
+     - Randomly select ONE project from each section's entries for each section's section tile 
      - Use that project's `thumbnail_images` and `tile_text` arrays
      - On page reload, different projects should be selected
-     - Section tiles should be in random order (not always Web→Print→Digital→Video)
+     - Section tiles should be in random order (not always Web→Print→Digital→Video) on reload 
      - Include project count badge located out of the way but visible, changing with filter use (e.g. "15 projects")
+
+*Q: I altered the last point because for UX the UI seems like this should be near the top, probably near the horizontally scrolling tag filter navigation; so only once per page, on homepage and on section page populated by any tag. Is my alteration sufficient or should it be altered and also perhaps `section.html`?*
 
 #### 2. Create `index.html` Structure
 
   * **Prompt:** Create the homepage HTML with Projects, About, and Contact sections
 
-  * **Action:** CREATE `index.html`
+  * **Action:** CREATE `./index.html`
 
   * **Structure to CREATE:**
+
+*Q: for below, the 'Projects' heading, we don't preface about with a heading, but do contact; but also maybe we want to use a specific styling for this instead of the same as the title on entry pages so that it can be sized different, etc?* 
+
+*C: I altered notes somewhere about only needing hyperlink text for contact links and no icon because it conflicted with other details above; I'd prefer just icon and am not sure how the below HTML should exactly be changed to represent that* 
 
 ```html
 <!DOCTYPE html>
@@ -266,13 +288,17 @@
 </html>
 ```
 
+*Q: I noticed that there are only three scripts listed but on `./section.html` we have 4 JS files listed; is that accurate?* 
+
   * **Details:**
 
       - Use #projects, #about, #contact IDs for anchor linking
-      - Profile picture should be circle-cropped via CSS
-      - Social links should be simple icons 
+      - Profile picture should be circle-cropped via CSS with ~5 px wide white stroke 
+      - Social links should be simple icons, no text needed 
       - Match header/footer from `section.html` exactly
       - Smooth scroll behavior for anchor links
+
+*Q: two micro-interaction type questions; for page loading should we have some kind of progressive element fade in? Or should we do that after the fact?* 
 
 #### 3. Add Homepage Specific Styles to `styles.css`
 
@@ -336,34 +362,34 @@ html {
 
   * **Details:**
 
-      - Homepage tiles should be larger and squarer than section tiles
+      - Homepage tiles should be larger and square compared to section tiles
       - Use existing CSS variables and design tokens
-      - Ensure responsive behavior (1 column mobile, 2 column desktop)
-      - Profile picture should be circle-cropped
+      - Ensure responsive behavior (1 column mobile, 2 column desktop) *C: it would be nice for them to shrink/grow a tiny bit but not a lot, between each device fixed size point* 
+      - Profile picture should be circle-cropped with white stroke around *C: should we mention things like shadow and blending per items like here, or somewhere more larger and general to be clear it would apply to basically everything from text to tiles* 
       - Maintain consistent spacing using existing variables
 
 #### 4. Update `tile-renderer.js` for homepage tiles
 
   * **Prompt:** Add homepage tile rendering function to `tile-renderer.js`
 
-  * **Action:** UPDATE `/assets/js/tile-renderer.js`
+  * **Action:** UPDATE `./assets/js/tile-renderer.js`
 
   * **Function to ADD:**
 
-      - `renderHomepageTile(project, section, container)` - Renders homepage tile with image swipe
+      - `renderHomepageTile(project, section, container)` - Renders homepage tile with image swipe, gesture on mobile
 
   * **Details:**
 
       + Similar to `renderSectionTile()` but:
         - Larger aspect ratio (1:1 square)
-        - Shows section name as overlay (e.g., "WEB")
+        - Shows section name as overlay (e.g., "WEB") *C: since this is unlike section tiles, maybe we be more detailed; perhaps the image section has a very slight 5% black layer, to place it on the image but not covering it all* 
       + Links to /web (or /print, /digital, /video)
-        - Includes swipe functionality for `thumbnail_images`
+        - Includes swipe functionality for `thumbnail_images` *C: commenting because of the details about the function to add listed above; seems confusing* 
       + Text from `tile_text` array cycles with images
         - Should return the created tile element
-        - Use existing swipe logic from section tiles
+        - Use existing swipe logic from section tiles *C: mentioned twice I think* 
 
-#### 5. Test homepage on localhost
+#### 5. Test Homepage on localhost
 
   * **Prompt:** Manual testing step - load homepage and verify functionality
 
@@ -373,12 +399,13 @@ html {
 
       - Visit `http://localhost:3000/` or `http://localhost:3000/index.html`
       - Verify 4 section tiles appear in random order
-      - Verify each tile shows images from a random project in that section
-      - Reload page - tiles should show different projects and different order
+      - Verify each tile shows images from a random project in that section with text defining section 
+      - Reload page - tiles should show different projects and be in a different order
       - Test swipe functionality on tiles
       - Test smooth scroll to #about and #contact
       - Verify profile picture displays
       - Verify social links work
+      - Verify sizing, spacing, etc. of all elements follows best practice norms 
       - Check responsive behavior (resize window)
 
 ### PHASE 3: ENTRY PAGES
@@ -387,7 +414,7 @@ html {
 
   * **Prompt:** Create the entry page controller with related posts logic
 
-  * **Action:** CREATE `/assets/js/entry-controller.js`
+  * **Action:** CREATE `./assets/js/entry-controller.js`
 
   * **Functions to CREATE:**
 
@@ -403,13 +430,13 @@ html {
 
   * **Details:**
 
-   - Use `manifest.json` to map URL path to JSON file
+   - Use `./assets/js/manifest.json` to map URL path to JSON file *Q: I'm confused what updates this manifest automatically and how often, do we have that planned?* 
    - Related posts logic:
 
-      1. Calculate tag overlap for all other projects (count matching tags)
+      1. Calculate tag overlap for all other projects (count matching tags) *C: as mentioned before, this is part of the reason we might want a way to standardize and show the list of tags for User/AI to use and in what grammatical form when adding JSON entries* 
       2. Filter to top scorers (ties allowed)
-      3. Use time-based seed (changes daily) for consistent-but-rotating selection
-      4. Select 3 projects randomly from top scorers using seeded random
+      3. Use time-based seed (changes daily) for consistent-but-rotating selection *Q: what do you think about every 6 hours?* 
+      4. Select 3 projects randomly from top scorers using seeded random *Q: what do you think about 5 tiles, ps how does it handle if there were like 7 ties?* 
       5. Every project gets recommended, but order rotates daily
 
    - Time seed should use: `Math.floor(Date.now() / (1000 * 60 * 60 * 24))` for daily rotation
@@ -428,9 +455,11 @@ function seededRandom(seed) {
 
   * **Prompt:** Create the entry page HTML template
 
-  * **Action:** CREATE `entry.html`
+  * **Action:** CREATE `./entry.html`
 
   * **Structure to CREATE:**
+
+*C: just a note that I mentioned missing content to be added, also similar notes as are provided for the index.html page; also we want decent padding on the sides of the related post tiles except for mobile* 
 
 ```html
 <!DOCTYPE html>
@@ -532,20 +561,21 @@ function seededRandom(seed) {
 </html>
 ```
 
-**Details:**
-- Breadcrumbs format: Web › HTML/CSS/JS › Project Name where 'Project Name' is `breadcrumb` from JSON 
-- Tags should be clickable links to `section.html` with that tag filtered
-- Role heading uses the actual role from JSON (e.g., "Web Developer") *Q: how do we deal with JSON that has two role's listed* 
-- Image slideshows use `thumbnail_images` array
-- Content sections start 2-column (image + text) then expand full-width below images
-- Video embed should be full-width iframe
-- Related posts use same tile rendering as section page *C: Let's create L/R padding for related section tiles and add 5 not 3* 
+  * **Details:**
+      
+      - Breadcrumbs format: Web › HTML/CSS/JS › Project Name where 'Project Name' is `breadcrumb` from JSON 
+      - Tags should be clickable links to `section.html` with that tag filtered
+      - Role heading uses the actual role from JSON (e.g., "Web Developer") *Q: how do we deal with JSON that has two role's listed, as mentioned before* 
+      - Image slideshows use `thumbnail_images` array
+      - Content sections start 2-column (image slideshow + text) then expand full-width below images
+      - Video embed should be full-width iframe *Q: potentially added other page photos not mentioned right?* 
+      - Related posts use same tile rendering as section page *C: Let's create L/R padding for related section tiles and add 5 not 3* 
 
 #### 8. Add entry page styles to `styles.css`
 
-**Prompt:** Add CSS for entry pages via existing file update 
+  * **Prompt:** Add CSS for entry pages via existing file update 
 
-**Action:** UPDATE `/Users/seanivore/Development/360-design/styles.css`
+  * **Action:** UPDATE `./styles.css`
 
 **Styles to ADD:**
 ```css
@@ -626,24 +656,26 @@ function seededRandom(seed) {
 }
 ```
 
-**Details:**
-- Match heading hierarchy from SPEC.md
-- H1 = `page_title` (large, heavy)
-- H2 = `page_subtitle` (smaller than H3)
-- H3 = entry page's section headings (Pattern, Action, etc. from `page_copy`)
-- H4 = tags on page (pulled from any JSON `tagging` category)
-- H5 = breadcrumbs (make almost identical to tags on the page)
-- Two-column layout for content sections (image + text)
-- Text wraps to full width below images
-- Responsive: single column on mobile; swipe gesture image slideshow 
+  * **Details:**
+
+      - Match heading hierarchy from `SPEC.md`
+      - H1 = `page_title` (large, heavy)
+      - H2 = `page_subtitle` (smaller than H3)
+      - H3 = entry page's section headings (Pattern, Action, etc. from `page_copy` plus Role from `tagging`)
+      - H4 = tags on page (pulled from any JSON `tagging` category) sans `role` 
+      - H5 = `breadcrumbs` (make almost identical to tags on the page)
+      - Two-column layout for content sections (image + text)
+      - Text wraps to full width below images
+      - Responsive: single column on mobile; swipe gesture image slideshow 
 
 #### 9. Update `404.html` to handle entry routing
 
-**Prompt:** Ensure and verify `404.html` correctly routes entry page URLs
+  * **Prompt:** Ensure and verify `404.html` correctly routes entry page URLs
 
-**Action:** UPDATE `/Users/seanivore/Development/360-design/404.html`
+  * **Action:** UPDATE `./404.html`
 
-**Logic to VERIFY:**
+  * **Logic to VERIFY:**
+
 ```javascript
 // Already implemented, just verify:
 // If URL path exists in manifest.entries → redirect to entry.html
@@ -651,38 +683,43 @@ function seededRandom(seed) {
 // Store path in sessionStorage for controller to read
 ```
 
-**Details:**
-- `404.html` should already have this logic from Phase 1
-- Just verify it's checking `manifest.entries` properly
-- Entry paths are 3 segments: /web/html-css-js/project-"name" ("name" is `breadcrumb` on JSON)
-- Should set `sessionStorage.entryPath` and redirect to `/entry.html`
+  * **Details:**
+
+      - `404.html` should already have this logic from completed Phase 1
+      - Just verify it's checking `manifest.entries` properly
+      - Entry paths are 3 segments: /web/html-css-js/"project name" (this is `breadcrumb` on JSON)
+      - Should set `sessionStorage.entryPath` and redirect to `/entry.html`
 
 #### 10. Test entry pages on localhost
 
-**Prompt:** Manual testing step - perform test of entry page loading and page's related posts
+  * **Prompt:** Manual testing step - perform test of entry page loading and page's related posts
 
-**Action:** MANUAL TEST with URL parameter workaround
+  * **Action:** MANUAL TEST with URL parameter workaround
 
-**Tests to PERFORM:**
-- Create test URL: `http://localhost:3000/entry.html?path=web/html-css-js/personalized-fashion-magazine`
-- Verify page loads correct project data
-- Verify all content sections populate (`title`, `subtitle`, `role`, `pattern`, `action`, `measured`, etc.)
-- Verify images display and slideshow works
-- Verify video embed displays (if present)
-- Verify `breadcrumb` list is correct and formatted nicely
-- Verify tags are clickable and link to section page with only that tag locked as section page filter
-- Verify related posts appear
-- Reload page - related posts should be the same (time-seeded consistency)
-- Test different entry pages for all of the same above verifications 
-- Check console for related posts scoring logs
+  * **Tests to PERFORM:**
 
-#### 11. Test full production routing locally with http-server
+      - Create test URL: `http://localhost:3000/entry.html?path=web/html-css-js/personalized-fashion-magazine`
+      - Verify page loads correct project data
+      - Verify all content sections populate (`title`, `subtitle`, `role`, `pattern`, `action`, `measured`, etc.)
+      - Verify images display and slideshow works
+      - Verify video embed displays (if present)
+      - Verify `breadcrumb` list is correct and formatted nicely
+      - Verify tags are clickable and link to section page with only that tag locked as section page filter
+      - Verify related posts appear
+      - Reload page - related posts should be the same (time-seeded consistency)
+      - Test different entry pages for all of the same above verifications 
+      - Check console for related posts scoring logs
 
-**Prompt:** Set up better local server manual test 404 routing
+*Q: Mentioned before but maybe we should check if browser design use is a skill to add to Claude Code, a feature I have not had time to explore yet, but I assume it is and probably preferred to an MCP; and then since we'd be using that, we should be sure that it considers things from a design layout standpoint and makes adjustments that ensure an aesthetically pleasing page, which is the main use for other AI browser preview tools; I think that might actually just take screen shots when the screen opens, I don't actually mean the browser use tool. Perhaps please research skills and this specifically for us?* 
 
-**Action:** MANUAL SETUP & TEST
+#### 11. Test Full Production Routing Locally With HTTP-Server 
 
-**Commands to RUN:**
+  * **Prompt:** Set up better local server manual test 404 routing
+
+  * **Action:** MANUAL SETUP & TEST
+
+  * **Commands to RUN:**
+
 ```bash
 # Install http-server if not present
 npm install -g http-server
@@ -694,20 +731,23 @@ http-server -p 8080 -c-1 --proxy http://localhost:8080?
 # (See `ARCHITECTURE.md` for details)
 ```
 
-**Tests to PERFORM:**
-- Visit `http://localhost:8080/web` (should work like production)
-- Visit `http://localhost:8080/web/html-css-js`
-- Visit `http://localhost:8080/web/html-css-js/project-name`
-- Verify all routes work without URL parameters
-- Verify normalization (lowercase web → Web in JSON)
+  * **Tests to PERFORM:**
 
-#### 12. Deploy to GitHub Pages for full testing
+      - Visit `http://localhost:8080/web` (should work like production)
+      - Visit `http://localhost:8080/web/html-css-js`
+      - Visit `http://localhost:8080/web/html-css-js/project-name`
+      - Verify all routes work without URL parameters
+      - Verify normalization (lowercase web → Web in JSON)
 
-**Prompt:** Push to GitHub Pages and test production URLs
+#### 12. Deploy to GitHub Pages for Full Testing 
 
-**Action:** MANUAL DEPLOYMENT 
+*C: I've pretty much always had to go into the GitHub settings. Maybe once it worked and I just didn't understand things or have them set up properly and we should try again.* 
 
-**Steps to PERFORM:**  *Q: should we push to a new branch; perhaps a new MO for me* 
+  * **Prompt:** Push to GitHub Pages and test production URLs
+
+  * **Action:** MANUAL DEPLOYMENT 
+
+  * **Steps to PERFORM:**  *Q: should we push to a new branch; perhaps a new MO for me* 
 ```bash
 # Ensure all files committed
 git add .
@@ -718,88 +758,99 @@ git push
 # Wait 1-2 minutes for deployment
 ```
 
-**Tests to PERFORM:**  *Q: should I first ask if browser use is possible and if not learn how to add via MCP or new 'Skill'* 
-- Visit `august.style` (homepage)
-- Click all four section tiles → should go to `august.style/web`, /print, etc.
-- Click project tiles → should go to august.style/web/html-css-js/project-name ('project-name' being `breadcrumb` on JSON)
-- Test tag filtering on section pages
-- Test related posts on entry pages
-- Test breadcrumbs and navigation
-- Verify all images and videos load
-- Test on mobile device
-- Test on atypical in-between mobile/tablet/desktop sizes to see if nothing looks awkward 
+  * **Tests to PERFORM:** 
+      
+      - Visit `www.august.style` (homepage)
+      - Click all four section tiles → should go to `www.august.style/web`, /print, etc.
+      - Click project tiles → should go to `www.august.style/web/html-css-js/project-name` ('project-name' being `breadcrumb` on JSON)
+      - Test tag filtering on section pages
+      - Test related posts on entry pages
+      - Test breadcrumbs and navigation
+      - Verify all images and videos load
+      - Test on mobile device
+      - Test on atypical in-between mobile/tablet/desktop sizes to see if nothing looks awkward 
 
-#### 13. Polish and final tweaks
+#### 13. Polish and final tweaks *C: the mention of testing keyboard navigation felt random compared to other testing steps which makes me curious if, by the end here, we're losing the necessary detailed specificity needed by Claude Code*  
 
-**Prompt:** Address any remaining design/UX issues
+  * **Prompt:** Address any remaining design/UX issues
 
-**Action:** UPDATE styles.css and controllers as needed
+  * **Action:** UPDATE `./styles.css` and controllers as needed
 
-**Items to POLISH:**
-- Tile slide transitions (mentioned earlier)
-- Smooth page transitions
-- Loading states
-- Error handling (404s, missing images)
-- Accessibility (alt text, ARIA labels)
-- SEO meta tags
-- Performance optimization
+  * **Items to POLISH:**
 
-**Details:**
-- Review SPEC.md for micro-interactions notes
-- Ensure all animations are smooth (300ms)
-- Test keyboard navigation
-- Verify screen reader compatibility
-- Add meta descriptions to all pages
-- Optimize image loading
+      - Tile slide transitions (mentioned earlier)
+      - Smooth page transitions
+      - Loading states
+      - Error handling (404s, missing images)
+      - Accessibility (alt text, ARIA labels)
+      - SEO meta tags *C: I mentioned above adding these to the template HTML FYI* 
+      - Performance optimization
+
+ *  **Details:** 
+
+      - Review `SPEC.md` and `ARCHITECTURE.md` for micro-interactions notes
+      - Ensure all animations are smooth (300ms)
+      - Test keyboard navigation
+      - Verify screen reader compatibility
+      - Add meta descriptions to all pages
+      - Optimize image loading
 
 ---
 
+*C: some updates needed below based on above comments and questions; and then also please be sure to open and review both ARCHITECTURE.md and SPEC.md before I pass along to have this started since some small things have changed over time*
+
 ## Success Criteria
 
-✅ Homepage loads with 4 randomized section tiles  
-✅ Section tiles show random projects on each reload  
-✅ Entry pages load from clean URLs  
-✅ Entry pages populate all content from JSON  
-✅ Related posts show 3 relevant projects  
-✅ Related posts rotate daily (time-seeded)  
-✅ All pages work on localhost with URL params  
-✅ All pages work on GitHub Pages with clean URLs  
-✅ Tag filtering works on section pages  
-✅ Sticky filters work correctly  
-✅ Mobile responsive  
-✅ Design matches Phase 1 aesthetic  
+   + ✅ Homepage loads with 4 randomized section tiles  
+   + ✅ Section tiles show random projects on each reload  
+   + ✅ Entry pages load from clean URLs  
+   + ✅ Entry pages populate all content from JSON  
+   + ✅ Related posts show 3 relevant projects  
+   + ✅ Related posts rotate daily (time-seeded)  
+   + ✅ All pages work on localhost with URL params  
+   + ✅ All pages work on GitHub Pages with clean URLs  
+   + ✅ Tag filtering works on section pages  
+   + ✅ Sticky filters work correctly  
+   + ✅ Mobile responsive  
+   + ✅ Design matches Phase 1 aesthetic  
 
 ---
 
 ## Notes for Claude Code
 
-**Read First:**
-- /Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md (full system design)
-- /Users/seanivore/Development/360-design/assets/docs/SPEC.md (project overview)
+  * **Read First:**
 
-**Testing Strategy:**
-- Localhost: Use URL parameters (?section=Web, ?path=web/html-css-js/project)
-- Production: Clean URLs work via 404 routing
+      - `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` (full system design)
+      - `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` (project overview)
 
-**Common Pitfalls:**
-- Don't hardcode project lists - always use manifest.json
-- Capitalization matters on localhost (section=Web not section=web)
-- Related posts should use time-seeded random, not pure random
-- Tag links from entry pages should preserve the clicked tag as sticky filter
+  * **Testing Strategy:**
 
-**Debugging:**
-- Console logs should use emoji prefixes (📂, ✅, ❌, 🔍, 📊)
-- Log related posts scoring to verify algorithm
-- Log URL parsing to verify routing
+      - Localhost: Use URL parameters (?section=Web, ?path=web/html-css-js/project)
+      - Production: Clean URLs work via 404 routing
 
-**Reference Implementation:**
-- Look at section-controller.js for controller patterns
-- Look at tile-renderer.js for tile rendering patterns
-- Look at data-loader.js for data fetching patterns
-- Look at filter-controller.js for filtering patterns
+  * **Common Pitfalls:**
+
+      - Don't hardcode project lists - always use manifest.json
+      - Capitalization matters on localhost (section=Web not section=web)
+      - Related posts should use time-seeded random, not pure random
+      - Tag links from entry pages should preserve the clicked tag as sticky filter
+
+  * **Debugging:**
+
+      - Console logs should use emoji prefixes (📂, ✅, ❌, 🔍, 📊)
+      - Log related posts scoring to verify algorithm
+      - Log URL parsing to verify routing
+
+  * **Reference Implementation:**
+
+      - Look at `section-controller.js` for controller patterns
+      - Look at `tile-renderer.js` for tile rendering patterns
+      - Look at `data-loader.js` for data fetching patterns
+      - Look at `filter-controller.js` for filtering patterns
 
 ---
 
-*Spec created: 2025-10-16*  
+*Spec created: 2025-10-16* 
+*Spec updated: 2025-10-18* 
 *Phase 1 completed in Claude Chat*  
-*Phase 2 & 3 ready for Claude Code or Claude Chat*
+*Phase 2 & 3 ready for Claude Code* 
