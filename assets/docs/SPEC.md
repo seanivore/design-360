@@ -209,13 +209,13 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
 * **Project Page headings** 
 
-| Class | JSON Variable                  | Styling Guide     | 
-| ----- | ------------------------------ | ----------------- | 
-| H1    | `page_title`                   | Large, heavy      | 
-| H2    | `page_subtitle`                | Smaller than H3   | 
-| H3    | `role` & `page_copy` headings  | Main sections     |
-| H4    | `media`, `technology`, `skill` | Page content tags | 
-| H5    | `breadcrumb`                   | Similar to H4     | 
+| Class | JSON Variable                  | Styling Guide              | 
+| ----- | ------------------------------ | -------------------------- | 
+| H1    | `page_title`                   | Large, heavy               | 
+| H2    | `page_subtitle`                | Smaller than H3            | 
+| H3    | `role` & `page_copy` headings  | Main sections              |
+| H4    | `media`, `technology`, `skill` | Not category, tags on page | 
+| H5    | `breadcrumb`                   | Similar to H4              | 
 
 
 * **Include light mode and dark mode options with dark mode defaulted** 

@@ -1,5 +1,7 @@
 # Claude Code Agentic Workflow SPEC for Homepage & Entry Pages 
 
+*C: I have added COMMENTS like this one, or QUESTIONS using Q: lead-in throughout* 
+
   > 1.Ingest the information from this file
   > 2.Implement the Low-Level Tasks
   > 3.Generate code that will satisfy High and Mid Level Objective
@@ -200,10 +202,10 @@
 
   * **Details:**
      
-     - Use DataLoader.loadAllProjects() to get all entries
+     - Use `DataLoader.loadAllProjects()` to get all entries
      - Filter by section: Web, Print, Digital, Video
      - Randomly select ONE project from each section's entries
-     - Use that project's thumbnail_images and tile_text arrays
+     - Use that project's `thumbnail_images` and `tile_text` arrays
      - On page reload, different projects should be selected
      - Section tiles should be in random order (not always Web→Print→Digital→Video)
      - Include project count badge located out of the way but visible, changing with filter use (e.g. "15 projects")
@@ -238,7 +240,7 @@
   <section id="about">
     <img src="/assets/media/profile.jpg" alt="Sean August Horvath" class="profile-pic">
     <div class="about-content">
-      <h2>Sean August Horvath, Creative Generalist</h2>
+      <h2>Sean August Horvath, Creative Innovation Generalist</h2>
       <p>14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft.</p>
     </div>
   </section>
@@ -356,8 +358,8 @@ html {
         - Larger aspect ratio (1:1 square)
         - Shows section name as overlay (e.g., "WEB")
       + Links to /web (or /print, /digital, /video)
-        - Includes swipe functionality for thumbnail_images
-      + Text from tile_text array cycles with images
+        - Includes swipe functionality for `thumbnail_images`
+      + Text from `tile_text` array cycles with images
         - Should return the created tile element
         - Use existing swipe logic from section tiles
 
@@ -389,7 +391,7 @@ html {
 
   * **Functions to CREATE:**
 
-      - `parseEntryURL()` - Extracts section/subsection/slug from URL
+      - `parseEntryURL()` - Extracts `section`/`sub_section`/`slug` from URL
       - `loadEntry(urlPath)` - Loads project JSON based on URL
       - `calculateTagMatches(project, allProjects)` - Scores projects by tag overlap
       - `selectRelatedPosts(project, allProjects, count=3)` - Picks related projects
@@ -531,19 +533,19 @@ function seededRandom(seed) {
 ```
 
 **Details:**
-- Breadcrumbs format: Web › HTML/CSS/JS › Project Name
-- Tags should be clickable links to section.html with that tag filtered
-- Role heading uses the actual role from JSON (e.g., "Web Developer")
-- Image slideshows use thumbnail_images array
+- Breadcrumbs format: Web › HTML/CSS/JS › Project Name where 'Project Name' is `breadcrumb` from JSON 
+- Tags should be clickable links to `section.html` with that tag filtered
+- Role heading uses the actual role from JSON (e.g., "Web Developer") *Q: how do we deal with JSON that has two role's listed* 
+- Image slideshows use `thumbnail_images` array
 - Content sections start 2-column (image + text) then expand full-width below images
 - Video embed should be full-width iframe
-- Related posts use same tile rendering as section page
+- Related posts use same tile rendering as section page *C: Let's create L/R padding for related section tiles and add 5 not 3* 
 
-#### 8. Add entry page styles to styles.css
+#### 8. Add entry page styles to `styles.css`
 
-**Prompt:** Add CSS for entry pages
+**Prompt:** Add CSS for entry pages via existing file update 
 
-**Action:** UPDATE /Users/seanivore/Development/360-design/styles.css
+**Action:** UPDATE `/Users/seanivore/Development/360-design/styles.css`
 
 **Styles to ADD:**
 ```css
@@ -626,20 +628,20 @@ function seededRandom(seed) {
 
 **Details:**
 - Match heading hierarchy from SPEC.md
-- H1 = page_title (large, heavy)
-- H2 = page_subtitle (smaller than H3)
-- H3 = section headings (Pattern, Action, etc.)
-- H4 = tag categories
-- H5 = breadcrumbs
+- H1 = `page_title` (large, heavy)
+- H2 = `page_subtitle` (smaller than H3)
+- H3 = entry page's section headings (Pattern, Action, etc. from `page_copy`)
+- H4 = tags on page (pulled from any JSON `tagging` category)
+- H5 = breadcrumbs (make almost identical to tags on the page)
 - Two-column layout for content sections (image + text)
 - Text wraps to full width below images
-- Responsive: single column on mobile
+- Responsive: single column on mobile; swipe gesture image slideshow 
 
-#### 9. Update 404.html to handle entry routing
+#### 9. Update `404.html` to handle entry routing
 
-**Prompt:** Ensure 404.html correctly routes entry page URLs
+**Prompt:** Ensure and verify `404.html` correctly routes entry page URLs
 
-**Action:** UPDATE /Users/seanivore/Development/360-design/404.html
+**Action:** UPDATE `/Users/seanivore/Development/360-design/404.html`
 
 **Logic to VERIFY:**
 ```javascript
@@ -650,33 +652,33 @@ function seededRandom(seed) {
 ```
 
 **Details:**
-- 404.html should already have this logic from Phase 1
-- Just verify it's checking manifest.entries properly
-- Entry paths are 3 segments: /web/html-css-js/project-name
-- Should set sessionStorage.entryPath and redirect to /entry.html
+- `404.html` should already have this logic from Phase 1
+- Just verify it's checking `manifest.entries` properly
+- Entry paths are 3 segments: /web/html-css-js/project-"name" ("name" is `breadcrumb` on JSON)
+- Should set `sessionStorage.entryPath` and redirect to `/entry.html`
 
 #### 10. Test entry pages on localhost
 
-**Prompt:** Manual testing step - test entry page loading and related posts
+**Prompt:** Manual testing step - perform test of entry page loading and page's related posts
 
 **Action:** MANUAL TEST with URL parameter workaround
 
 **Tests to PERFORM:**
 - Create test URL: `http://localhost:3000/entry.html?path=web/html-css-js/personalized-fashion-magazine`
 - Verify page loads correct project data
-- Verify all content sections populate (title, subtitle, pattern, action, measured)
+- Verify all content sections populate (`title`, `subtitle`, `role`, `pattern`, `action`, `measured`, etc.)
 - Verify images display and slideshow works
 - Verify video embed displays (if present)
-- Verify breadcrumbs are correct
-- Verify tags are clickable and link to section page with filter
-- Verify 3 related posts appear
+- Verify `breadcrumb` list is correct and formatted nicely
+- Verify tags are clickable and link to section page with only that tag locked as section page filter
+- Verify related posts appear
 - Reload page - related posts should be the same (time-seeded consistency)
-- Test different entry pages
+- Test different entry pages for all of the same above verifications 
 - Check console for related posts scoring logs
 
 #### 11. Test full production routing locally with http-server
 
-**Prompt:** Set up better local server to test 404 routing
+**Prompt:** Set up better local server manual test 404 routing
 
 **Action:** MANUAL SETUP & TEST
 
@@ -689,13 +691,13 @@ npm install -g http-server
 http-server -p 8080 -c-1 --proxy http://localhost:8080?
 
 # Or use Python with custom handler
-# (See ARCHITECTURE.md for details)
+# (See `ARCHITECTURE.md` for details)
 ```
 
 **Tests to PERFORM:**
-- Visit http://localhost:8080/web (should work like production)
-- Visit http://localhost:8080/web/html-css-js
-- Visit http://localhost:8080/web/html-css-js/project-name
+- Visit `http://localhost:8080/web` (should work like production)
+- Visit `http://localhost:8080/web/html-css-js`
+- Visit `http://localhost:8080/web/html-css-js/project-name`
 - Verify all routes work without URL parameters
 - Verify normalization (lowercase web → Web in JSON)
 
@@ -703,28 +705,29 @@ http-server -p 8080 -c-1 --proxy http://localhost:8080?
 
 **Prompt:** Push to GitHub Pages and test production URLs
 
-**Action:** MANUAL DEPLOYMENT
+**Action:** MANUAL DEPLOYMENT 
 
-**Steps to PERFORM:**
+**Steps to PERFORM:**  *Q: should we push to a new branch; perhaps a new MO for me* 
 ```bash
 # Ensure all files committed
 git add .
-git commit -m "Add homepage and entry pages - Phase 2 & 3 complete"
-git push origin main
+git commit -m "Claude Code SPEC creation and testing of homepage and entry pages with features"
+git push 
 
 # GitHub Pages should auto-deploy from main branch
 # Wait 1-2 minutes for deployment
 ```
 
-**Tests to PERFORM:**
-- Visit august.style (homepage)
-- Click section tiles → should go to august.style/web, /print, etc.
-- Click project tiles → should go to august.style/web/html-css-js/project-name
+**Tests to PERFORM:**  *Q: should I first ask if browser use is possible and if not learn how to add via MCP or new 'Skill'* 
+- Visit `august.style` (homepage)
+- Click all four section tiles → should go to `august.style/web`, /print, etc.
+- Click project tiles → should go to august.style/web/html-css-js/project-name ('project-name' being `breadcrumb` on JSON)
 - Test tag filtering on section pages
 - Test related posts on entry pages
 - Test breadcrumbs and navigation
 - Verify all images and videos load
 - Test on mobile device
+- Test on atypical in-between mobile/tablet/desktop sizes to see if nothing looks awkward 
 
 #### 13. Polish and final tweaks
 
