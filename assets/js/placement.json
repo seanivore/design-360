@@ -75,13 +75,27 @@
       },
       "contextual_tags": {
         "technology": [
-          "JavaScript",
-          "CSS Animation",
-          "Responsive Design"
+          "Webflow CMS", 
+          "Make.com", 
+          "Notion API", 
+          "GitHub Pages",
+          "Responsive Design",
+          "E-Commerce", 
+          "Adobe Creative Cloud Desktop Applications",
+          "Adobe Creative Cloud Tablet Applications",
+          "Apple iPad Pro & Pencil"
         ],
         "media": [
-          "Landing Page Design",
-          "Social Media Content"
+          "Landing Page",
+          "Social Media",
+          "Website",
+          "Fashion Photography",
+          "Virtual Magazine", 
+          "Digital Product",
+          "Portfolio Template",
+          "Technical Documentation",
+          "Hand-Drawn Animation",
+          "Blog Platform"
         ],
         "role": [
           "Web Developer",
@@ -89,9 +103,23 @@
           "Systems Designer"
         ],
         "skill": [
+          "JavaScript",
+          "Web Design",
+          "Editorial Layout Design",
+          "Typography",
+          "Python Scripts", 
+          "Animated CSS",
+          "Custom Lottie Animation",
           "Copywriting",
           "Team Management",
-          "User Research"
+          "Automation Architecture",
+          "User Research", 
+          "Custom Navigation",
+          "Full-Stack Problem Solving",
+          "Modular Architecture", 
+          "Front End Focused", 
+          "Back End Build", 
+          "Agentic System Management"
         ]
       }
     }

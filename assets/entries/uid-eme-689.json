@@ -14,10 +14,10 @@
         "slug": "modular-portfolio-build"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages", "Vanilla JS", "Modular Architecture"],
-        "media": ["Web Design", "Digital Product", "Portfolio System", "Documentation"],
-        "role": ["Web Developer"], 
-        "skill": ["Front-End Development", "System Design", "Technical Documentation", "UI/UX Design", "Tag Navigation", "Convention Standards", "AI-Assisted Development"]
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
     }
 },
 "content": {

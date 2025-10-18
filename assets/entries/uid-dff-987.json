@@ -14,10 +14,10 @@
         "slug": "automated-e-commerce-shop-lookbook"
     },
     "tagging":{
-        "technology": ["Webflow", "Make.com", "Notion API", "CMS Automation", "GitHub Pages", "Python Scripts", "E-Commerce Integration"],
-        "media": ["Web Design", "E-Commerce Platform", "Fashion Magazine", "Digital Product"],
-        "role": ["Web Designer"], 
-        "skill": ["Webflow Development", "Automation Architecture", "CMS Design", "Custom Navigation", "Backend Integration", "Path Management", "Full-Stack Problem Solving"]
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
     }
 },
 "content": {

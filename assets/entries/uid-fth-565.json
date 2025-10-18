@@ -14,10 +14,10 @@
         "slug": "animated-cms-weekly-blogs"
     },
     "tagging":{
-        "technology": ["Webflow", "Lottie Animation", "After Effects", "Adobe Illustrator", "Make.com", "CMS Automation", "GitHub Pages", "Python Scripts"],
-        "media": ["Web Design", "Hand-Drawn Animation", "Digital Illustration", "Blog Platform"],
-        "role": ["Web Designer"], 
-        "skill": ["Webflow Development", "Animation Design", "Hand-Drawn Illustration", "CMS Architecture", "Automation Systems", "iPad Pro Design", "Apple Pencil Artwork", "Path Management"]
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
     }
 },
 "content": {

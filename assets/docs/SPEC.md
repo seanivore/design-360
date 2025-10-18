@@ -133,6 +133,32 @@ python3 -m http.server 5500 --bind 127.0.0.1
 > http://localhost:5500/section.html
  ```
 
+### Preparations for Next Phase 
+
+  + New `placement.json` file created 
+    - 
+  + All contextual tags should be pulled and worked into `placement.json`; delete from entry JSON for now 
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-iqi-479.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-lul-419.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-qor-090.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-rfr-187.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-sgt-851.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-srs-009.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-tev-176.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-unw-889.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-wgw-370.json` 
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-wnw-867.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-wty-542.json`
+  + In `placement.json` we want to ensure our tags are strategically organized 
+    - Minimize duplicates by choosing one method of phrasing and appropriate category 
+    - Ensure logic of the category grouping makes sense 
+    - Once complete and Sean reviews we move on to now use the official lists to add tags official in to the entry JSONs 
+  + Already missing all contextual tags; these and then the above list must be completed 
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-fth-565.json`
+    - `/Users/seanivore/Development/360-design/assets/entries/uid-hwi-844.json` 
+
 ### *Phase 2:* Homepage 
   + Create homepage tiles, and section page tiles 
   + Create `index.html` with Projects, About, Contact 

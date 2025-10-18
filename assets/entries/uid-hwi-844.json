@@ -14,10 +14,10 @@
         "slug": "personalized-fashion-magazine"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages", "Responsive Design"],
-        "media": ["Web Design", "Fashion Photography", "Digital Magazine", "Editorial Layout"],
-        "role": ["Web Designer"], 
-        "skill": ["Front-End Development", "Editorial Design", "Typography", "Visual Hierarchy", "Photo Journal Layout", "Art Direction"]
+        "technology": [],
+        "media": [],
+        "role": [], 
+        "skill": []
     }
 },
 "content": {
