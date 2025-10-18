@@ -14,10 +14,10 @@
         "slug": "css-animated-micro-interactions"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "CSS Animation", "Glassmorphism", "Jekyll", "Markdown"],
-        "media": ["Web Design", "Presentation Platform", "Digital Product", "Documentation"],
-        "role": ["Web Designer"], 
-        "skill": ["CSS Animation", "Front-End Development", "Presentation Design", "Markdown Integration", "Visual Effects", "UI/UX Design"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

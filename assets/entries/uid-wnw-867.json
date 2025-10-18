@@ -14,10 +14,10 @@
         "slug": "minimalist-web-store-product"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "E-Commerce Design", "Product Gallery", "Responsive Design"],
-        "media": ["Web Design", "E-Commerce Platform", "Product Photography", "Digital Store"],
-        "role": ["Web Designer"], 
-        "skill": ["E-Commerce Design", "Product Page Design", "Front-End Development", "Minimalist Design", "Gallery Navigation", "Conversion Design"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

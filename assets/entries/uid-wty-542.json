@@ -14,10 +14,10 @@
         "slug": "visual-artist-process-portfolio"
     },
     "tagging":{
-        "technology": ["Webflow", "iPad Pro", "Apple Pencil", "Adobe Illustrator", "Adobe Fresco", "Vector Art", "GitHub Pages", "Python Scripts"],
-        "media": ["Web Design", "Digital Illustration", "Hand-Drawn Art", "NFT Collection", "Portfolio Platform"],
-        "role": ["Web Designer"], 
-        "skill": ["Webflow Development", "Digital Illustration", "Visual Design", "Typography", "Brand Identity", "Process Documentation", "Vector Illustration", "Web3 Brand Assets"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

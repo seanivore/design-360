@@ -16,7 +16,7 @@
     "tagging":{
         "technology": [],
         "media": [],
-        "role": [], 
+        "role": "", 
         "skill": []
     }
 },

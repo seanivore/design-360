@@ -14,10 +14,10 @@
         "slug": "ai-meditation-mobile-app"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "Mobile-First Design", "Progressive Web App", "AI Interface Design"],
-        "media": ["Web Design", "Mobile App UI", "Digital Product", "Wellness Platform"],
-        "role": ["Web Designer"], 
-        "skill": ["Mobile UI/UX Design", "Conversational Interface", "Gesture Design", "Wellness App Design", "Voice-to-Text Integration", "Progressive Web App Development"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

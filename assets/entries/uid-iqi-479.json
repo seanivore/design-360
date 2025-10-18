@@ -14,10 +14,10 @@
         "slug": "dynamic-modular-portfolio-architecture"
     },
     "tagging":{
-        "technology": ["JavaScript", "JSON", "GitHub Pages", "CSS", "Python", "HTML", "Dynamic Updates", "Agentic AI Systems"],
-        "media": ["Scalable System Design", "Portfolio Website", "Single-Page Application"],
-        "role": ["Systems Designer", "Developer"], 
-        "skill": ["Information Architecture", "Modular Design", "DRY Principles", "Agentic Coding", "Creative Direction", "User Design"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

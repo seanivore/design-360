@@ -14,10 +14,10 @@
         "slug": "data-visualization-dashboard"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "Data Visualization", "Dashboard Design", "Chart Animation", "Real-Time Data"],
-        "media": ["Web Design", "Data Dashboard", "Analytics Platform", "Digital Product"],
-        "role": ["Web Designer"], 
-        "skill": ["Dashboard Design", "Data Visualization", "Information Architecture", "UI/UX Design", "Front-End Development", "Chart Design", "System Organization"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

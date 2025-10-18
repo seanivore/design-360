@@ -14,10 +14,10 @@
         "slug": "ai-design-fashion-lookbook"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "Google Lens API", "Computer Vision Integration", "Responsive Design"],
-        "media": ["Web Design", "Fashion Photography", "E-Commerce Integration", "Digital Magazine"],
-        "role": ["Web Designer"], 
-        "skill": ["Front-End Development", "API Integration", "Fashion Editorial Design", "E-Commerce UX", "Visual Search", "Multi-Section Navigation"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

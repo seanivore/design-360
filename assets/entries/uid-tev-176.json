@@ -14,10 +14,10 @@
         "slug": "blog-lookbook-print-gallery"
     },
     "tagging":{
-        "technology": ["Framer", "Notion API", "CMS Integration", "Generative AI", "API Automation"],
-        "media": ["Web Design", "Digital Product", "E-Commerce", "Blog Platform"],
-        "role": ["Web Designer"], 
-        "skill": ["No-Code Development", "CMS Architecture", "AI Content Strategy", "Visual Design", "System Integration", "E-Commerce Setup", "Bauhaus Design"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {

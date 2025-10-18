@@ -14,10 +14,10 @@
         "slug": "saas-product-sale-features"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "CSS Animation", "Responsive Design", "Landing Page Optimization"],
-        "media": ["Web Design", "SaaS Product", "Digital Product", "Conversion Design"],
-        "role": ["Web Designer"], 
-        "skill": ["Landing Page Design", "Conversion Optimization", "CSS Animation", "User Journey Design", "Front-End Development", "Micro-Interactions", "Modular Architecture"]
+        "technology": [],
+        "media": [],
+        "role": "", 
+        "skill": []
     }
 },
 "content": {
