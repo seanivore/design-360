@@ -158,26 +158,19 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
   * **Tag clean-up process required for all 15 JSON objects** 
 
-    1. Copy over all tags from the JSON to `placement.md` 
-    2. Delete the tags from the project entry JSON for now 
-    3. When all JSONs have be cleaned out, review and simplify tags on `placement.md`
-       + In many cases we can break them down 
-         - Put `media` part in that list
-         - Put `skill` or `technology` in that list
-         - E.g., `email` (media) `copywriter` (skill)
-       + Make synonymous tags identical
-       + List of `role` tags should be MINIMAL
-         - Only add to the `role` tags when adding the tag to a JSON 
-    4. After Sean reviews full `placement.md` tag list 
+    1. **COMPLETE** Copy over all tags from the JSON to `placement.md` 
+    2. **COMPLETE** Delete the tags from the project entry JSON for now 
+    3. **COMPLETE** When all JSONs have be cleaned out, review and simplify tags on `placement.md`
+    4. **SEAN REVIEW COMPLETE** After Sean reviews full `placement.md` tag list 
        + Add appropriate tags to each JSON 
-         - Shoot for 4-7 in the `technology`, `media`, and `skill` categories 
-         - Keeping tag selection diverse and broad, opt for more rather than less 
+         - Use on page text, image filenames, etc. for insight 
+         - Opt for more, rather than less, without being redundant or stretching reality  
     5. While in the JSON there are some updates to make 
        + v3.1 has the "Enforced single role value, added placement.json reference for tag consistency" 
        + We also need to add alt.text 
          - For the thumbnail slideshow 
          - For the video embed 
-         - For any on-page images 
+         - For any on-page images, if present
        + Q: For assets > project URL and GitHub Repository 
          - When pasted on social or in a doc it populates the thumbnail and title/description 
          - Do we need to pull those and have them places separately in the JSON for them to be used in the same way on the page? 
@@ -202,8 +195,8 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
 #### 4. Does the `home_entry_pages_spec.md` SPEC Need Another Update  
   
-  + It has been updated with all previous notes and feedback
-  + Add any toggle logic details necessary to be ready to hand off to Claude Code 
+  + I added `page_imagery` to two entires so we need to make sure that is in the HTML proposed for entry 
+  + Add any **toggle logic** details necessary to be ready to hand off to Claude Code 
 
 #### 5. Review, Bring Up To Date Resource Docs Claude Code Needs 
 
