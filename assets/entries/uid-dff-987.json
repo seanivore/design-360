@@ -35,7 +35,14 @@
             "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-6.webp"
         ], 
         "thumbnail_alt_text": [],
-        "page_imagery": [],
+        "page_imagery": [
+            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-1.webp",
+            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-2.webp",
+            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-3.webp",
+            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-4.webp",
+            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-5.webp",
+            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-6.webp"
+        ],
         "page_imagery_alt_text": []
         },
     "assets": {
