@@ -220,13 +220,46 @@ python3 -m http.server 5500 --bind 127.0.0.1
     - That step said to delete them from the JSON after adding to `placement.json` 
     - Adding them fresh ensures accuracy 
 
+  + While updating each of these 15, please write the various alt.text needs on the fly 
+    - I added for video 
+    - For thumbnail the is an array of them now but just one for the slideshow might be fine 
+    - Then, currently, we don't have any posts with additional pictures, but there is an alt.text spot for when there are 
+
   + These are read to have new tags added; already missing all contextual tags 
     - `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-fth-565.json`
     - `/Users/seanivore/Development/360-design/assets/entries/uid-hwi-844.json` 
 
+  * **In retrospect, I wish we were using tags associated with numerical codes** 
 
+    - That would allow us more freedom with how we word a tag 
+    - It would group similar tags 
+    - Mentioning so we can consider if now is the time since we're overhauling them, or later 
+
+#### 4. Updating `home_entry_pages_spec.md` Spec 
+
+ * **All of the things we discussed in chat** 
+
+   + I won't list them again here 
+
+ * **Remaining notes in the `home_entry_pages_spec.md` document** 
+
+   + I left a few for context 
+     - They were just more detailed information to integrate into the spec 
+     - Please complete and then delete those as you update the spec with our discussed feedback from the chat 
+
+#### 5. Review, Bring Up To Date Resource Docs Claude Code Needs 
+
+  * **Changes for you to please address** 
+
+   + Changes necessary to reflect our evolving plan in the two important resources we direct them to 
+     - This very document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
+     - The ARCHITECTURE document `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` 
+     - And then please update the adding a new entry help document while everything is in context: 
+       `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md`
+
+---
 
 ### *Phase 2:* Homepage 
   + Create homepage tiles, and section page tiles 

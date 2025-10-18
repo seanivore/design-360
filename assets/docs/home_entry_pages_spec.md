@@ -1,15 +1,11 @@
 # Claude Code Agentic Workflow SPEC for Homepage & Entry Pages 
 
-*C: I have added C: COMMENTS or Q: QUESTIONS like this one, throughout* 
-
   > 1.Ingest the information from this file
   > 2.Implement the Low-Level Tasks
   > 3.Generate code that will satisfy High and Mid Level Objective
   > 4.Perform all requested testing and validation 
 
 ---
-
-*C: I have been changing document formatting to be more clearly hierarchal which appears to improve CC performance* 
 
 ## Objectives
 
@@ -52,14 +48,12 @@
       - Localhost testing uses URL parameters (?section=Web) as workaround
       - All content dynamically populated from JSON; **ABSOLUTELY NO HARDCODING** 
 
-*C: We should probably add a step where all newly created code files are reviewed strictly for hardcoding* 
-
-  * **Design Standards:** *C: I added a few FYC review please* 
+  * **Design Standards:** 
 
     + Strict mobile-first only 
       - E.g., no hover interactions anywhere because they don't work on mobile 
       - Create smooth transitions @ ~300ms cubic-bezier 
-    + Dark mode default *Q: should we create Light mode and add standard header nav toggle now or later?* 
+    + Dark mode default and only option for now 
       - Charcoal background 
       - Vertical gradient "glare" effect on body background
       - White text with clean, simple, natural shadow blending 
@@ -77,14 +71,6 @@
     + `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
     + example: `/Users/seanivore/Development/360-design/assets/entries/uid-rfr-187.json`
 
-*Q: two points for role; we need a running list to ensure we're reusing the same wording across projects, and later we consider click-through main filter on populated section page, so we either need logic for which to pick, or to go through and only have one on all entries, putting the other with proper tense in skill tags* 
-
-*C: points for all dynamic content loaded on proposed HTML for entry page template later; (1) we keep referencing 'Page Name' later but actually mean `slug` in one instance and `breadcrumb`, I think, in another; (2) We mention placement and using `video_embed` and `thumbnail_images`, but do not mention using any of the alt. texts or the `page_imagery`; (3) I want to ensure we have `seo_title` and `seo_description` are also in the template to be loaded* 
-
-*Q: since we mention no hardcoding, and we did provide my about and contact information for that page, should we do the same for any SEO Title, SEO Description, and a SEO Thumbnail image with alt. text for the homepage?* 
-
-*C: the above question begs the question how we can do something similar for the dynamically loading section pages; only thought seems overly complex but if we somewhere always listed any used tags (which could double as a way to check that we're using the same exact tags and no plurals versus not plural, different tenses, etc.) and give each tag all three SEO elements; which actually we could create a JSON for tags; all this would sort of be a little annoying when adding a new entry, but in the contact of only adding a JSON versus a full HTML page that is integrated etc. I suppose it is pretty manageable*
-
 ```json
 {
   "categorization": {
@@ -97,7 +83,7 @@
     "tagging":{
         "technology": ["JavaScript", "JSON", "GitHub Pages", "CSS", "Python", "HTML", "Dynamic Updates", "Agentic AI Systems"],
         "media": ["Scalable System Design", "Portfolio Website", "Single-Page Application"],
-        "role": ["Systems Designer", "Developer"], 
+        "role": ["Systems Designer"], 
         "skill": ["Information Architecture", "Modular Design", "DRY Principles", "Agentic Coding", "Creative Direction", "User Design"]
     }
 },
@@ -226,8 +212,6 @@
      - Section tiles should be in random order (not always Web→Print→Digital→Video) on reload 
      - Include project count badge located out of the way but visible, changing with filter use (e.g. "15 projects")
 
-*Q: I altered the last point because for UX the UI seems like this should be near the top, probably near the horizontally scrolling tag filter navigation; so only once per page, on homepage and on section page populated by any tag. Is my alteration sufficient or should it be altered and also perhaps `section.html`?*
-
 #### 2. Create `index.html` Structure
 
   * **Prompt:** Create the homepage HTML with Projects, About, and Contact sections
@@ -235,10 +219,6 @@
   * **Action:** CREATE `./index.html`
 
   * **Structure to CREATE:**
-
-*Q: for below, the 'Projects' heading, we don't preface about with a heading, but do contact; but also maybe we want to use a specific styling for this instead of the same as the title on entry pages so that it can be sized different, etc?* 
-
-*C: I altered notes somewhere about only needing hyperlink text for contact links and no icon because it conflicted with other details above; I'd prefer just icon and am not sure how the below HTML should exactly be changed to represent that* 
 
 ```html
 <!DOCTYPE html>
@@ -288,8 +268,6 @@
 </html>
 ```
 
-*Q: I noticed that there are only three scripts listed but on `./section.html` we have 4 JS files listed; is that accurate?* 
-
   * **Details:**
 
       - Use #projects, #about, #contact IDs for anchor linking
@@ -297,8 +275,6 @@
       - Social links should be simple icons, no text needed 
       - Match header/footer from `section.html` exactly
       - Smooth scroll behavior for anchor links
-
-*Q: two micro-interaction type questions; for page loading should we have some kind of progressive element fade in? Or should we do that after the fact?* 
 
 #### 3. Add Homepage Specific Styles to `styles.css`
 
@@ -384,10 +360,10 @@ html {
         - Larger aspect ratio (1:1 square)
         - Shows section name as overlay (e.g., "WEB") *C: since this is unlike section tiles, maybe we be more detailed; perhaps the image section has a very slight 5% black layer, to place it on the image but not covering it all* 
       + Links to /web (or /print, /digital, /video)
-        - Includes swipe functionality for `thumbnail_images` *C: commenting because of the details about the function to add listed above; seems confusing* 
+        - Includes swipe functionality for `thumbnail_images` 
       + Text from `tile_text` array cycles with images
         - Should return the created tile element
-        - Use existing swipe logic from section tiles *C: mentioned twice I think* 
+        - Use existing swipe logic from section tiles 
 
 #### 5. Test Homepage on localhost
 
@@ -430,13 +406,13 @@ html {
 
   * **Details:**
 
-   - Use `./assets/js/manifest.json` to map URL path to JSON file *Q: I'm confused what updates this manifest automatically and how often, do we have that planned?* 
+   - Use `./assets/js/manifest.json` to map URL path to JSON file 
    - Related posts logic:
 
-      1. Calculate tag overlap for all other projects (count matching tags) *C: as mentioned before, this is part of the reason we might want a way to standardize and show the list of tags for User/AI to use and in what grammatical form when adding JSON entries* 
+      1. Calculate tag overlap for all other projects (count matching tags) 
       2. Filter to top scorers (ties allowed)
-      3. Use time-based seed (changes daily) for consistent-but-rotating selection *Q: what do you think about every 6 hours?* 
-      4. Select 3 projects randomly from top scorers using seeded random *Q: what do you think about 5 tiles, ps how does it handle if there were like 7 ties?* 
+      3. Use time-based seed (changes daily) for consistent-but-rotating selection 
+      4. Select 3 projects randomly from top scorers using seeded random 
       5. Every project gets recommended, but order rotates daily
 
    - Time seed should use: `Math.floor(Date.now() / (1000 * 60 * 60 * 24))` for daily rotation
@@ -458,8 +434,6 @@ function seededRandom(seed) {
   * **Action:** CREATE `./entry.html`
 
   * **Structure to CREATE:**
-
-*C: just a note that I mentioned missing content to be added, also similar notes as are provided for the index.html page; also we want decent padding on the sides of the related post tiles except for mobile* 
 
 ```html
 <!DOCTYPE html>
@@ -565,11 +539,11 @@ function seededRandom(seed) {
       
       - Breadcrumbs format: Web › HTML/CSS/JS › Project Name where 'Project Name' is `breadcrumb` from JSON 
       - Tags should be clickable links to `section.html` with that tag filtered
-      - Role heading uses the actual role from JSON (e.g., "Web Developer") *Q: how do we deal with JSON that has two role's listed, as mentioned before* 
+      - Role heading uses the actual role from JSON (e.g., "Web Developer") 
       - Image slideshows use `thumbnail_images` array
       - Content sections start 2-column (image slideshow + text) then expand full-width below images
-      - Video embed should be full-width iframe *Q: potentially added other page photos not mentioned right?* 
-      - Related posts use same tile rendering as section page *C: Let's create L/R padding for related section tiles and add 5 not 3* 
+      - Video embed should be full-width iframe 
+      - Related posts use same tile rendering as section page 
 
 #### 8. Add entry page styles to `styles.css`
 
@@ -741,13 +715,11 @@ http-server -p 8080 -c-1 --proxy http://localhost:8080?
 
 #### 12. Deploy to GitHub Pages for Full Testing 
 
-*C: I've pretty much always had to go into the GitHub settings. Maybe once it worked and I just didn't understand things or have them set up properly and we should try again.* 
-
   * **Prompt:** Push to GitHub Pages and test production URLs
 
   * **Action:** MANUAL DEPLOYMENT 
 
-  * **Steps to PERFORM:**  *Q: should we push to a new branch; perhaps a new MO for me* 
+  * **Steps to PERFORM:**  *Q: lets push to a new branch, in git and github call it `generalist-portfolio-v1`*
 ```bash
 # Ensure all files committed
 git add .
@@ -788,7 +760,7 @@ git push
 
  *  **Details:** 
 
-      - Review `SPEC.md` and `ARCHITECTURE.md` for micro-interactions notes
+      - Review `SPEC.md` and `ARCHITECTURE.md` for micro-interactions notes 
       - Ensure all animations are smooth (300ms)
       - Test keyboard navigation
       - Verify screen reader compatibility
@@ -796,8 +768,6 @@ git push
       - Optimize image loading
 
 ---
-
-*C: some updates needed below based on above comments and questions; and then also please be sure to open and review both ARCHITECTURE.md and SPEC.md before I pass along to have this started since some small things have changed over time*
 
 ## Success Criteria
 
