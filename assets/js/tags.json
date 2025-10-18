@@ -1,0 +1,32 @@
+{
+  "approved_tags": {
+    "technology": [
+      "JavaScript",
+      "CSS Animation",
+      "Responsive Design"
+    ],
+    "media": [
+      "Landing Page Design",
+      "Social Media Content"
+    ],
+    "role": [
+      "Web Developer",
+      "Creative Director",
+      "Systems Designer"
+    ],
+    "skill": [
+      "Copywriting",
+      "Team Management",
+      "User Research"
+    ]
+  },
+  "seo_metadata": {
+    "Copywriting": {
+      "seo_title": "Copywriting Projects - Strategic Content & Messaging",
+      "seo_description": "Portfolio of copywriting work spanning web content, brand messaging, and strategic communications.",
+      "seo_image": "/assets/media/og-copywriting.jpg",
+      "seo_image_alt": "Copywriting portfolio samples"
+    }
+    // ... etc for each commonly-used tag
+  }
+}

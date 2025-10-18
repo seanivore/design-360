@@ -6,12 +6,12 @@
     "usage": "These tags appear on /web, /print, /digital, /video pages if they exist in that section's entries"
   },
   "toggle_tags": [
-    "Agentic AI Systems",
+    "Agentic Systems",
     "Creative Direction",
     "System Design",
     "Product",
     "Copywriting",
-    "Team Manager",
+    "Management",
     "Consulting"
   ],
   "notes": [
@@ -20,4 +20,16 @@
     "Toggle tags only display on section-type pages, not on click-through contextual tag pages",
     "Order in this array determines display order (left to right after subsection and role tags)"
   ]
+}
+{
+  "placement_tags":{
+        "section":[
+            "Web",
+            "Print",
+            "Digital",
+            "Video"
+        ],
+        ""
+    }
+
 }
