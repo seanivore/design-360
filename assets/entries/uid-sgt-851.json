@@ -1,10 +1,10 @@
 {
   "_metadata": {
-    "last_updated": "2025-10-10T15:20:00.000000Z",
+    "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.0",
-    "schema_update": "removed slug to rename the file name as slug and removed html from that file name"
+    "schema_version": "3.1",
+    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-sgt-851", 
