@@ -145,7 +145,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
    + Now enforces single ROLE choice 
    + Directs to `placement.json` document when picking tags 
 
-#### 3. Tag Strategy, Cleanup, and Logic 
+#### 3. Tag Strategy, Cleanup, and Logic *WE ARE HERE*
 
   * **Logic notes to implement for toggle tags** 
 
@@ -193,7 +193,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
     14. `/Users/seanivore/Development/360-design/assets/entries/uid-fth-565.json`
     15. `/Users/seanivore/Development/360-design/assets/entries/uid-hwi-844.json` 
 
-#### 4. Does the `home_entry_pages_spec.md` SPEC Need Another Update  
+#### 4. Does the `home_entry_pages_spec.md` SPEC Need Another Update 
   
   + I added `page_imagery` to two entires so we need to make sure that is in the HTML proposed for entry 
   + Add any **toggle logic** details necessary to be ready to hand off to Claude Code 
