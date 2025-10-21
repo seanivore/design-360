@@ -48,6 +48,7 @@
     "assets": {
         "project_url": "https://print-shop-fashion.august.style",
         "github_repository": "https://github.com/seanivore/webflow-store"
+    }
     },
     "teaser_copy":{
         "seo_title": "Automated Webflow CMS Shop & Fashion Gallery",
@@ -66,7 +67,6 @@
         "pattern": "Managing 800+ products across an e-commerce store and fashion lookbook manually would be unsustainable. Webflow's CMS capabilities combined with Notion's database flexibility and Make.com's automation workflows created an opportunity for a completely automated content and inventory management system. The complexity came from needing three distinct sections—e-commerce store, fashion lookbook magazine, and editorial content—all pulling from interconnected databases while maintaining separate navigation patterns and checkout integration.",
         "action": "Architected and built a fully automated Webflow e-commerce system with custom backend integration. Connected Make.com automation workflows to Notion databases containing product information, fashion imagery, and editorial content, which automatically populate Webflow CMS collections and sync inventory across all storefronts. Designed custom navigation that elegantly handles the site's complexity—users can flow between shopping, lookbook inspiration, and editorial content without losing context. When the site was later pulled from Webflow for GitHub Pages deployment, developed comprehensive Python utility scripts to fix common path issues: image path corrections, navigation link repairs, nested directory handling, and specialized lookbook navigation fixes. The scripts demonstrate full-stack problem-solving by addressing the technical challenges of moving a complex automated system between platforms.", 
         "measured": "Successfully automated management of 800+ products across multiple site sections, eliminating manual data entry and dramatically reducing time spent on inventory updates. The Make.com integration enabled real-time synchronization between Notion databases, Webflow CMS, and checkout systems—adding a new product takes minutes instead of hours. The custom navigation architecture proved robust enough to handle the site's complexity while remaining intuitive for users. The Python scripts that enabled GitHub Pages deployment showcase full-stack capabilities beyond just Webflow design, solving real technical challenges around path management in deeply nested directory structures."
-    }
-}, 
+},
     "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

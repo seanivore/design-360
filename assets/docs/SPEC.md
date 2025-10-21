@@ -133,56 +133,64 @@ python3 -m http.server 5500 --bind 127.0.0.1
 > http://localhost:5500/section.html
  ```
 
-### Final Preparations for Claude Code Build 
-
-  + The `home_entry_pages_spec.md` SPEC needs an update 
-
+### Task List  
 
 #### 1. **COMPLETE** Created `placement.json` to Replace `featured.json` and Updated Files 
    + All code and documents have been updated 
    + On `section-controller.js` specifically we changed 
      - OLD: `return data.toggle_tags || [];`
      - NEW: `return data.active_tags?.toggle_tags || [];`
-
 #### 2. **COMPLETE** `_entry_template.json` Template Updated 
    + Now enforces single ROLE choice 
    + Directs to `placement.json` document when picking tags 
+   + Explains each value including which will show up dynamically on the website including where 
+#### 3. **COMPLETE** Tag Strategy, Cleanup, other JSON Updates 
+   + All tags used added to `placement.json` 
+   + Lists of tags optimized and then re-added to all project entry JSON files 
+   + Added single `video_alt_text`, `thumb_slideshow_alt_text`, and `page_image_group_alt_text` to JSON objects 
+   + Added some `page_imagery` to a couple JSON file project entries 
 
-#### 3. Tag Strategy, Cleanup, and Logic *WE ARE HERE*
+#### 4. Review, Bring Up To Date Claude Code Resources 
 
-  * **Logic notes to implement for toggle tags** 
+  * **Changes necessary to reflect our evolving plan** 
+  
+    + Update in the two important resources we direct them to 
+      - This very document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
+      - The ARCHITECTURE document `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` 
+    + And then please update the adding a new entry help document while everything is in context: 
+      `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
+    + Ensure the defined HTML proposed fits all template values 
+      - Check for details added to `assets/docs/_entry_template.json` 
+      - `page_imagery` have values now for two entries and more to come 
+      - Alt text added for video embed and for group of page imagery 
+      - Thumbnail slideshow to be used for both on tile placement and on page 
 
-    1. Pull any tag that contains the toggle tag word 
-       - They should work for any tag that contains even part of the toggle tag 
-       - E.g., "Design" should pull up "Graphic Design" and "Print Design" 
-    2. Only pull from `technology`, `media`, and `skill` 
-       - Toggle tags shouldn't be `role` tags 
-       - This will prevent overly redundant tags surfacing as options to filter by 
-    3. Confirm regarding Entry JSON value at assets > project URL and GitHub Repository 
+  * **Changes for you to please address** 
+
+  1. Implement placement of "Toggle Tags" in nav 
+     + These tags are only used on homepage horizontal scrolling tag filter nav 
+       - They should follow tags in list order 
+       - 1st `section` tags, 2nd `Toggle Tags` tags, 3rd `sub_section` tags 
+     + Find toggle tags dynamically from `./assets/js/placement.json` file 
+       - These are to give us control over directing viewers to best content 
+       - Able to be changed depending on hiring needs at the time 
+  2. Implement logic for 'Toggle Tag's 
+     + Toggle tags filter to show any project entry tile that the JSON contains even part of the toggle tag 
+         - E.g., "Design" should pull up "Graphic Design" and "Print Design" 
+         - This will allow us to showcase more variety with ease 
+     + Toggle Tags should only pull from `technology`, `media`, and `skill` contextual tags 
+         - Toggle Tags should never be a `section`, `sub_section`, or `role` tag 
+         - If `section`, `sub_section`, or `role` tag contains part of the Toggle Tag, still do not pull from those tags 
+  3. Section page meta seo info 
+     + This was previously undefined because for entry pages it comes from the entry JSON 
+       - SEO Title, Description, and Thumbnail are defined 
+       - The copy with space for the name of the tag were added to `placement.json` as well
+  4. Confirm regarding Entry JSON value at assets > project URL and GitHub Repository 
        - When pasted on social or in search results, the thumbnail and title/description show
        - Do we need to pull those and have them places separately in the JSON for them to be used in the same way on the page? 
        - Basically we want to be sure it builds the visual "This is a link" type tile for these on-entry-page elements 
 
-  * **Tag clean-up process required for all 15 JSON objects** 
 
-    1. **COMPLETE** Create tags JSON as `placement.md` 
-    2. **COMPLETE** Simplify tag list and then replace on all JSON  
-    3. **COMPLETE** While in the JSON there are some updates to make 
-
-#### 4.  
-  
-  + I added `page_imagery` to two entires so we need to make sure that is in the HTML proposed for entry 
-  + Add any **toggle logic** details necessary to be ready to hand off to Claude Code 
-
-#### 5. Review, Bring Up To Date Resource Docs Claude Code Needs 
-
-  * **Changes for you to please address** 
-
-   + Changes necessary to reflect our evolving plan in the two important resources we direct them to 
-     - This very document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
-     - The ARCHITECTURE document `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` 
-     - And then please update the adding a new entry help document while everything is in context: 
-       `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md`
 
 ---
 
