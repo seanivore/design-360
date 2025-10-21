@@ -121,7 +121,8 @@
           "Template",
           "Portfolio",
           "E-Commerce",
-          "Podcasting"
+          "Podcast", 
+          "Web App"
         ],
         "role": [
           "Web Developer",
@@ -145,7 +146,7 @@
           "Publishing",
           "System Design",
           "Conversation Design",
-          "UI/UI Writing",
+          "UX/UI Writing",
           "User Design",
           "Advertising",
           "Marketing",

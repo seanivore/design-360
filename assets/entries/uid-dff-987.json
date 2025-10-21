@@ -68,5 +68,5 @@
         "measured": "Successfully automated management of 800+ products across multiple site sections, eliminating manual data entry and dramatically reducing time spent on inventory updates. The Make.com integration enabled real-time synchronization between Notion databases, Webflow CMS, and checkout systems—adding a new product takes minutes instead of hours. The custom navigation architecture proved robust enough to handle the site's complexity while remaining intuitive for users. The Python scripts that enabled GitHub Pages deployment showcase full-stack capabilities beyond just Webflow design, solving real technical challenges around path management in deeply nested directory structures."
     }
 }, 
-    "notes": ["Use thumbnail images on-page for now"]
+    "notes": ["Place thumbnail slideshow on-page as well"]
 }

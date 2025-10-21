@@ -60,5 +60,5 @@
         "measured": "Successfully created portfolio platform that showcases extensive illustration work while maintaining usability and visual impact. The bold framing device provides consistent identity across varied illustration styles, from quick sketches to finished detailed pieces. The site effectively documents artistic process and range—personal creative work, commercial brand assets, and blockchain-minted art—demonstrating versatility and dedication to craft. The GitHub Pages migration scripts solved real technical challenges around maintaining hundreds of image paths across nested directories, showing full-stack problem-solving beyond just Webflow design capabilities."
     }
 }, 
-    "notes": ["Use thumbnail images on-page for now"]
+    "notes": ["Place thumbnail slideshow on-page as well"]
 }

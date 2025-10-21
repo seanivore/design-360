@@ -61,5 +61,5 @@
         "measured": "Successfully delivered comprehensive AI research across multiple formats while maintaining visual cohesion and fast load times. The CSS-only animation approach keeps the homepage performant even with complex visual effects. The dual presentation system accommodates both slide-deck-style research summaries and detailed indexed documentation, making technical concepts accessible to different learning styles. The markdown integration enables quick content updates—new research findings can be added and published in minutes rather than hours of HTML work."
     }
 }, 
-    "notes": ["Use thumbnail images on-page for now"]
+    "notes": ["Place thumbnail slideshow on-page as well"]
 }

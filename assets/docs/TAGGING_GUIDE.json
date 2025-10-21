@@ -3,35 +3,13 @@
   
   "entries": [
     {
-      "entry_id": "uid-hwi-844",
-      "title": "Art History-Inspired Fashion Lookbook Website",
-      "tags": {
-        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-        "media": ["Digital Product"],
-        "role": "Web Developer",
-        "skill": ["Typography", "Graphic Design", "Publishing", "Art History", "Fashion Photography"]
-      },
-      "alt_text": {
-        "video_alt_text": "Walkthrough of editorial-style photo journal website featuring AI in-painted fashion photography inspired by art historical movements from Impressionism to Neo-Expressionism",
-        "thumb_slideshow_alt_text": [
-          "Large-format fashion photograph displayed with generous white space and editorial typography hierarchy",
-          "Full-bleed image layout creating gallery-like visual impact on desktop view",
-          "Typography system showing sophisticated use of heading hierarchy and breathing room between sections",
-          "Mobile-responsive adaptation maintaining editorial pacing while showcasing full-bleed imagery",
-          "Visual transition between art movements using subtle design cues rather than heavy navigation",
-          "Clean interface with minimal UI elements allowing fashion photography to command attention"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-iqi-479",
       "title": "Single-JSON Portfolio Architecture",
       "tags": {
-        "technology": ["HTML", "CSS", "JavaScript", "JSON", "GitHub Pages", "Jekyll", "Python Script"],
-        "media": ["Single Page Application"],
-        "role": "Web Developer",
-        "skill": ["System Design", "Modularity", "DRY Principles", "Scaling System", "Full-Stack"]
+        "technology": ["HTML", "CSS", "JavaScript", "JSON", "GitHub Pages", "Jekyll", "Python Script", "Agentic", "AI", "Generative", "Responsive", "Mobile-First"],
+        "media": ["Single Page Application", "Template", "Portfolio", "Web App"],
+        "role": "App Developer",
+        "skill": ["System Design", "Modularity", "DRY Principles", "Scaling System", "Full-Stack", "Scaling System", "UX/UI Writing", "User Design"]
       },
       "alt_text": {
         "video_alt_text": "Demonstration of hybrid SPA architecture using 404 routing trick and JSON content system enabling 50+ unique pages from just 2 HTML templates",

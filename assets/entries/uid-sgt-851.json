@@ -61,5 +61,5 @@
         "measured": "Successfully created a casual portfolio complement that serves a different purpose than polished showcase sites—this version prioritizes accessibility and quick scanning over visual drama. The morphing gradient achieves its goal of adding interest without overwhelming text content. The conversational tone and straightforward format make technical projects approachable, while the sub-1-second load time ensures the page works flawlessly on any connection. The contrast between this casual overview and more polished portfolio sites demonstrates range in both design thinking and technical execution."
     }
 }, 
-    "notes": ["Use thumbnail images on-page for now"]
+    "notes": ["Place thumbnail slideshow on-page as well"]
 }

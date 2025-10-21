@@ -14,10 +14,10 @@
         "slug": "personalized-fashion-magazine"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages", "AI", "Generative", "Responsive"],
+        "media": ["Digital Product", "Website"],
+        "role": "Web Developer", 
+        "skill": ["Typography", "Content Production", "Copywriting", "Graphic Design", "Publishing", "Art History", "Fashion Photography", "Product Staging", "Automation", "Scaling System", "Branding"]
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "archetype-ai-print-style-guide.mp4",
         "video_url": "https://youtu.be/M29AWaEOdP4",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/M29AWaEOdP4?si=7Qg2uZKRhFr7r-K8&amp;controls=0' title='Classic Visual-Centric Photo Journal Web Design' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Walkthrough of editorial-style photo journal website featuring AI in-painted fashion photography inspired by art historical movements from Impressionism to Neo-Expressionism",
         "thumbnail_images": [
             "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp",
             "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-2.webp",
@@ -33,7 +33,7 @@
             "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-4.webp",
             "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-5.webp"
         ], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "Walkthrough of editorial-style photo journal website featuring AI in-painted fashion photography inspired by art historical movements from Impressionism to Neo-Expressionism",
         "page_imagery": [],
         "page_image_group_alt_text": ""
         },
@@ -46,7 +46,7 @@
         "seo_description": "Simple yet clean and timeless, this custom website design is showcasing a photoblog of AI in-painted fashion photoshoot inspiration", 
         "page_title": "Art History-Inspired Fashion Lookbook Website", 
         "page_subtitle": "Editorial layout bringing luxury print design to digital", 
-        "breadcrumb": "Magazine-Style Photo Journal",
+        "breadcrumb": "Archetype-Centric Fashion Magazine",
         "tile_text": [
             "Impressionist to Neo-Expressionist art movements",
             "Multi-part narrative with cohesive visual identity",
@@ -59,6 +59,6 @@
         "action": "Built a custom HTML/CSS/JS photo journal that prioritizes large-format imagery with minimal interface elements. Developed a typography system using hierarchy and white space to create breathing room between sections, allowing each fashion spread to command attention. Structured the multi-part narrative with clear visual transitions between art movements—Impressionism to Surrealism to Neo-Expressionism—using subtle design cues rather than heavy-handed navigation. The layout adapts to showcase full-bleed images on desktop while maintaining editorial pacing on mobile devices.", 
         "measured": "Successfully translated luxury print editorial aesthetics into a digital experience that maintains visual impact and narrative cohesion. The clean, timeless design lets the fashion photography and art historical references take center stage without competing with UI elements. The multi-section structure guides users through character arcs naturally, with the minimal interface encouraging full immersion in the visual storytelling rather than typical web browsing behavior."
     }
-}, 
-    "notes": ["Use thumbnail images on-page for now"]
+},
+    "notes": ["Place thumbnail slideshow on-page as well"]
 }
