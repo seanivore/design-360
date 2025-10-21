@@ -87,15 +87,31 @@ const TileRenderer = (() => {
      */
     function addSectionTileSwipe(tile, imageCount, textCount) {
         let startX = 0;
+        let startY = 0;
         let currentIndex = 0;
+        let isSwiping = false;
 
         const images = tile.querySelectorAll('.tile-section__image');
         const texts = tile.querySelectorAll('.tile-section__text');
+        const imageContainer = tile.querySelector('.tile-section__image-container');
 
         // Touch start
         tile.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-        }, { passive: true });
+            startY = e.touches[0].clientY;
+            isSwiping = false;
+        });
+
+        // Touch move - detect if user is swiping
+        tile.addEventListener('touchmove', (e) => {
+            const moveX = Math.abs(e.touches[0].clientX - startX);
+            const moveY = Math.abs(e.touches[0].clientY - startY);
+
+            // If horizontal movement > vertical, it's a swipe
+            if (moveX > moveY && moveX > 10) {
+                isSwiping = true;
+            }
+        });
 
         // Touch end
         tile.addEventListener('touchend', (e) => {
@@ -103,7 +119,10 @@ const TileRenderer = (() => {
             const diff = startX - endX;
 
             // Swipe threshold: 50px
-            if (Math.abs(diff) > 50) {
+            if (isSwiping && Math.abs(diff) > 50) {
+                e.preventDefault(); // Prevent link navigation
+                e.stopPropagation();
+
                 if (diff > 0 && currentIndex < imageCount - 1) {
                     // Swipe left - next
                     currentIndex++;
@@ -114,7 +133,19 @@ const TileRenderer = (() => {
 
                 updateSectionTile();
             }
-        }, { passive: true });
+        });
+
+        // Desktop: Click on image container to cycle
+        if (imageContainer) {
+            imageContainer.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Cycle to next image
+                currentIndex = (currentIndex + 1) % imageCount;
+                updateSectionTile();
+            });
+        }
 
         function updateSectionTile() {
             // Update images
@@ -216,15 +247,31 @@ const TileRenderer = (() => {
      */
     function addHomepageTileSwipe(tile, imageCount, textCount) {
         let startX = 0;
+        let startY = 0;
         let currentIndex = 0;
+        let isSwiping = false;
 
         const images = tile.querySelectorAll('.homepage-tile__image');
         const texts = tile.querySelectorAll('.homepage-tile__text p');
+        const imagesContainer = tile.querySelector('.homepage-tile__images');
 
         // Touch start
         tile.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-        }, { passive: true });
+            startY = e.touches[0].clientY;
+            isSwiping = false;
+        });
+
+        // Touch move - detect if user is swiping
+        tile.addEventListener('touchmove', (e) => {
+            const moveX = Math.abs(e.touches[0].clientX - startX);
+            const moveY = Math.abs(e.touches[0].clientY - startY);
+
+            // If horizontal movement > vertical, it's a swipe
+            if (moveX > moveY && moveX > 10) {
+                isSwiping = true;
+            }
+        });
 
         // Touch end
         tile.addEventListener('touchend', (e) => {
@@ -232,7 +279,10 @@ const TileRenderer = (() => {
             const diff = startX - endX;
 
             // Swipe threshold: 50px
-            if (Math.abs(diff) > 50) {
+            if (isSwiping && Math.abs(diff) > 50) {
+                e.preventDefault(); // Prevent link navigation
+                e.stopPropagation();
+
                 if (diff > 0 && currentIndex < imageCount - 1) {
                     // Swipe left - next
                     currentIndex++;
@@ -243,7 +293,19 @@ const TileRenderer = (() => {
 
                 updateHomepageTile();
             }
-        }, { passive: true });
+        });
+
+        // Desktop: Click on images container to cycle
+        if (imagesContainer) {
+            imagesContainer.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Cycle to next image
+                currentIndex = (currentIndex + 1) % imageCount;
+                updateHomepageTile();
+            });
+        }
 
         function updateHomepageTile() {
             // Update images - simple active class toggle
