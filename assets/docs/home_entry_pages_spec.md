@@ -437,12 +437,12 @@ html {
 ```
 
   * **Details:**
-      - Homepage tiles: Square (1:1), larger than section tiles
-      - Count badge: Small, top-right corner, semi-transparent background
-      - Profile pic: 5px white stroke with consistent shadow pattern
-      - Social icons: 48x48px containers, 32x32px icons, no text
-      - Responsive: 1 column mobile, 2 columns desktop
-      - Consistent shadow pattern across all elements
+    - Homepage tiles: Square (1:1), larger than section tiles
+    - Count badge: Small, top-right corner, semi-transparent background
+    - Profile pic: 5px white stroke with consistent shadow pattern
+    - Social icons: 48x48px containers, 32x32px icons, no text
+    - Responsive: 1 column mobile, 2 columns desktop
+    - Consistent shadow pattern across all elements
 
 #### 4. Update `tile-renderer.js` for Homepage Tiles
 
@@ -509,27 +509,34 @@ function renderHomepageTile(project, section, projectCount) {
 ```
 
   * **Details:**
-      - Similar to `renderSectionTile()` but square (1:1)
-      - Section name overlay with 5% black layer beneath text
-      - Swipe functionality cycles images AND text
-      - Count badge shows in top-right corner
-      - Links to section page (e.g., /web)
+    - Similar to `renderSectionTile()` but square (1:1)
+    - Section name overlay with 5% black layer beneath text
+    - Swipe functionality cycles images AND text
+    - Count badge shows in top-right corner
+    - Links to section page (e.g., /web)
 
 #### 5. Test Homepage on Localhost
 
   * **Action:** MANUAL TEST
 
   * **Tests to PERFORM:**
-      - Visit `http://localhost:5500/` or `http://localhost:5500/index.html`
-      - Verify 4 section tiles appear in random order
-      - Verify each tile shows random project from that section
-      - Reload page - tiles show different projects and different order
-      - Test image swipe functionality
-      - Verify count badges show correct numbers
-      - Test smooth scroll to #about and #contact
-      - Verify profile picture displays with stroke and shadow
-      - Verify social icon links work
-      - Check responsive behavior (resize window)
+    - Visit `http://localhost:5500/` or `http://localhost:5500/index.html`
+    - Verify 4 section tiles appear in random order
+    - Verify each tile shows random project from that section
+    - Reload page - tiles show different projects and different order
+    - Test image swipe functionality
+    - Verify count badges show correct numbers
+    - Test smooth scroll to #about and #contact
+    - Verify profile picture displays with stroke and shadow
+    - Verify social icon links work
+    - Check responsive behavior (resize window)
+
+  * **Use for Testing**
+
+```bash
+    python3 -m http.server 5500 --bind 127.0.0.1
+    # View: http://localhost:5500/section.html
+```
 
 ---
 
@@ -540,7 +547,7 @@ function renderHomepageTile(project, section, projectCount) {
   * **Action:** CREATE `./assets/js/entry-controller.js`
 
   * **Functions to CREATE:**
-      - `parseEntryURL()` - Extracts section/sub_section/slug from URL
+      - `parseEntryURL()` - Extracts `section`/`sub_section`/`slug` from URL
       - `loadEntry(urlPath)` - Loads project JSON from manifest
       - `calculateTagMatches(project, allProjects)` - Scores projects by tag overlap
       - `selectRelatedPosts(project, allProjects, count=5)` - Picks 5 related projects
@@ -552,14 +559,15 @@ function renderHomepageTile(project, section, projectCount) {
 
   * **Details:**
 
-   **Related Posts Logic:**
-   1. Calculate tag overlap (count matching tags across technology/media/skill)
-   2. Filter to top scorers (ties allowed)
-   3. Use 6-hour time seed: `Math.floor(Date.now() / (1000 * 60 * 60 * 6))`
-   4. Select 5 projects randomly from top scorers using seededRandom
-   5. Every project recommended eventually, order rotates every 6 hours
+   + **Related Posts Logic:**
+     1. Calculate tag overlap (count matching tags across technology/media/skill)
+     2. Filter to top scorers (ties allowed)
+     3. Use 6-hour time seed: `Math.floor(Date.now() / (1000 * 60 * 60 * 6))`
+     4. Select 5 projects randomly from top scorers using seededRandom
+     5. Every project recommended eventually, order rotates every 6 hours
 
-   **Seeded Random:**
+   + **Seeded Random:**
+
 ```javascript
 function seededRandom(seed) {
   const x = Math.sin(seed++) * 10000;
@@ -567,21 +575,22 @@ function seededRandom(seed) {
 }
 ```
 
-   **Content Population (renderEntryContent must include ALL of these):**
-   - SEO meta tags from `seo_title`, `seo_description`
-   - **Top Layout:** Breadcrumbs (top left) + Tags hover card (top right)
-     * Breadcrumbs: section › subsection › breadcrumb (clickable links)
-     * Tags card: ONLY technology/media/skill tags, comma or bullet separated
-     * Hover card with micro-interaction (subtle lift on hover)
-   - Page title and subtitle
-   - Role heading and content (role is NOT in tags card, used as H3 heading)
-   - Pattern, Action, Measured sections
-   - Thumbnail slideshow with alt text
-   - Video embed with alt text (if exists)
-   - **page_imagery** section with alt text (if exists)
-   - **project_url** embed (prominent with title/description/image - like og:image preview)
-   - **github_repository** embed (GitHub's auto-generated card style)
-   - **Bottom Layout:** Breadcrumbs (bottom left) + Tags card (bottom right) - REPEATED
+   * **Content Population (renderEntryContent must include ALL of these):**
+
+     + SEO meta tags from `seo_title`, `seo_description`
+     + **Top Layout:** Breadcrumbs (top left) + Tags hover card (top right)
+       - Breadcrumbs: section › subsection › breadcrumb (clickable links)
+       - Tags card: ONLY technology/media/skill tags, comma or bullet separated
+       - Hover card with micro-interaction (subtle lift on hover)
+     + Page title and subtitle
+     + Role heading and content (role is NOT in tags card, used as H3 heading)
+     + Pattern, Action, Measured sections
+     + Thumbnail slideshow with alt text
+     + Video embed with alt text (if exists)
+     + **page_imagery** section with alt text (if exists)
+     + **project_url** embed (prominent with title/description/image - like og:image preview)
+     + **github_repository** embed (GitHub's auto-generated card style)
+     + **Bottom Layout:** Breadcrumbs (bottom left) + Tags card (bottom right) - REPEATED
 
 #### 7. Create `entry.html` Template
 
@@ -730,18 +739,18 @@ function seededRandom(seed) {
 ```
 
   * **Details:**
-      - **Layout Pattern:** Breadcrumbs (left) + Tags Card (right) at top AND bottom
-      - Breadcrumbs: section › subsection › breadcrumb (clickable links to filter section page)
-      - Tags card: ONLY technology/media/skill (NOT section/subsection/role)
-      - Tags: Comma or bullet (•) separated, clickable links to filtered section page
-      - Hover card: Subtle lift animation on hover, max-width 400px
-      - Role heading: Uses actual role from JSON as H3 (NOT in tags card)
-      - Content sections: 2-column desktop, 1-column mobile, text extends full-width
-      - Project URL embed: Prominent preview card with title/description/image
-      - GitHub embed: GitHub's auto-generated card style (repo stats, description)
-      - Video: Full-width iframe with alt text (if exists)
-      - Page imagery: Grid layout with alt text (if exists)
-      - Related posts: 5 tiles with proper L/R padding
+    - **Layout Pattern:** Breadcrumbs (left) + Tags Card (right) at top AND bottom
+    - Breadcrumbs: section › subsection › breadcrumb (clickable links to filter section page)
+    - Tags card: ONLY technology/media/skill (NOT section/subsection/role)
+    - Tags: Comma or bullet (•) separated, clickable links to filtered section page
+    - Hover card: Subtle lift animation on hover, max-width 400px
+    - Role heading: Uses actual role from JSON as H3 (NOT in tags card)
+    - Content sections: 2-column desktop, 1-column mobile, text extends full-width
+    - Project URL embed: Prominent preview card with title/description/image
+    - GitHub embed: GitHub's auto-generated card style (repo stats, description)
+    - Video: Full-width iframe with alt text (if exists)
+    - Page imagery: Grid layout with alt text (if exists)
+    - Related posts: 5 tiles with proper L/R padding
 
 #### 8. Add Entry Page Styles to `styles.css`
 
@@ -933,68 +942,70 @@ function seededRandom(seed) {
 ```
 
   * **Details:**
-      - H1 = page_title (large, 3rem, heavy)
-      - H2 = page_subtitle (smaller than H3, 1.5rem)
-      - H3 = section headings (1.75rem)
-      - H4 = tags (0.875rem, uppercase, heavy)
-      - H5 = breadcrumbs (0.875rem, uppercase)
-      - Tags ribbon: Full 100vw with horizontal scroll
-      - Content: 2-column desktop, 1-column mobile
-      - Related posts: Proper L/R padding, centered grid
-      - Consistent shadow pattern throughout
+    - H1 = page_title (large, 3rem, heavy)
+    - H2 = page_subtitle (smaller than H3, 1.5rem)
+    - H3 = section headings (1.75rem)
+    - H4 = tags (0.875rem, uppercase, heavy)
+    - H5 = breadcrumbs (0.875rem, uppercase)
+    - Tags ribbon: Full 100vw with horizontal scroll
+    - Content: 2-column desktop, 1-column mobile
+    - Related posts: Proper L/R padding, centered grid
+    - Consistent shadow pattern throughout
 
 #### 9. Verify `404.html` Entry Routing
 
   * **Action:** UPDATE `./404.html` (if needed)
 
   * **Logic to VERIFY:**
-      - Checks `manifest.entries` for path existence
-      - If path in manifest → `entry.html`
-      - If 1-2 segments → `section.html`
-      - Sets `sessionStorage.entryPath` properly
+    - Checks `manifest.entries` for path existence
+    - If path in manifest → `entry.html`
+    - If 1-2 segments → `section.html`
+    - Sets `sessionStorage.entryPath` properly
 
 #### 10. Test Entry Pages on Localhost
 
   * **Action:** MANUAL TEST
 
   * **Tests:**
-      - Visit `http://localhost:5500/entry.html?path=web/html-css-js/personalized-fashion-magazine`
-      - Verify all content populates (title, subtitle, role, pattern, action, measured)
-      - Verify thumbnail slideshow works with alt text
-      - Verify video embed displays (if exists) with alt text
-      - Verify page_imagery displays (if exists) with alt text
-      - Verify project_url embed displays prominently
-      - Verify github_repository card displays
-      - Verify breadcrumbs correct and clickable
-      - Verify tags ribbon scrolls horizontally
-      - Verify tags are clickable links
-      - Verify 5 related posts appear with proper padding
-      - Reload - related posts should be same (6-hour consistency)
-      - Check console for related posts scoring logs
-      - Test different entry pages
+    - Visit `http://localhost:5500/entry.html?path=web/html-css-js/personalized-fashion-magazine`
+    - Verify all content populates (title, subtitle, role, pattern, action, measured)
+    - Verify thumbnail slideshow works with alt text
+    - Verify video embed displays (if exists) with alt text
+    - Verify page_imagery displays (if exists) with alt text
+    - Verify project_url embed displays prominently
+    - Verify github_repository card displays
+    - Verify breadcrumbs correct and clickable
+    - Verify tags ribbon scrolls horizontally
+    - Verify tags are clickable links
+    - Verify 5 related posts appear with proper padding
+    - Reload - related posts should be same (6-hour consistency)
+    - Check console for related posts scoring logs
+    - Test different entry pages
 
 #### 11. Test Production Routing with HTTP-Server
 
   * **Action:** MANUAL TEST
 
   * **Commands:**
+
 ```bash
 npm install -g http-server
 http-server -p 8080 -c-1 --proxy http://localhost:8080?
 ```
 
   * **Tests:**
-      - Visit `http://localhost:8080/web`
-      - Visit `http://localhost:8080/web/html-css-js`
-      - Visit `http://localhost:8080/web/html-css-js/project-name`
-      - Verify all routes work without URL parameters
-      - Verify normalization (lowercase web → Web in JSON)
+    - Visit `http://localhost:8080/web`
+    - Visit `http://localhost:8080/web/html-css-js`
+    - Visit `http://localhost:8080/web/html-css-js/project-name`
+    - Verify all routes work without URL parameters
+    - Verify normalization (lowercase web → Web in JSON)
 
 #### 12. Deploy to GitHub Pages
 
   * **Action:** MANUAL DEPLOYMENT
 
   * **Steps:**
+
 ```bash
 # Create new branch
 git checkout -b generalist-portfolio-v1
@@ -1007,52 +1018,52 @@ git push origin generalist-portfolio-v1
 ```
 
   * **Tests:**
-      - Visit `www.august.style`
-      - Click section tiles → `/web`, `/print`, etc.
-      - Click project tiles → `/web/html-css-js/project-name`
-      - Test tag filtering
-      - Test related posts
-      - Test breadcrumbs and navigation
-      - Verify all images/videos load
-      - Test on mobile device
-      - Test responsive breakpoints
+    - Visit `www.august.style`
+    - Click section tiles → `/web`, `/print`, etc.
+    - Click project tiles → `/web/html-css-js/project-name`
+    - Test tag filtering
+    - Test related posts
+    - Test breadcrumbs and navigation
+    - Verify all images/videos load
+    - Test on mobile device
+    - Test responsive breakpoints
 
 #### 13. Polish and Final Tweaks
 
   * **Action:** UPDATE files as needed
 
   * **Items to POLISH:**
-      - Tile slide transitions
-      - Smooth page transitions
-      - Loading states
-      - Error handling (404s, missing images)
-      - Accessibility (alt text, ARIA labels)
-      - SEO meta tags (all templates)
-      - Performance optimization
-      - Keyboard navigation
-      - Screen reader compatibility
+    - Tile slide transitions
+    - Smooth page transitions
+    - Loading states
+    - Error handling (404s, missing images)
+    - Accessibility (alt text, ARIA labels)
+    - SEO meta tags (all templates)
+    - Performance optimization
+    - Keyboard navigation
+    - Screen reader compatibility
 
 #### 14. Anti-Hardcoding Audit
 
   * **Action:** MANUAL CODE REVIEW
 
   * **Files to CHECK:**
-      - `homepage-controller.js`
-      - `entry-controller.js`
-      - `index.html`
-      - `entry.html`
+    - `homepage-controller.js`
+    - `entry-controller.js`
+    - `index.html`
+    - `entry.html`
 
   * **Items to VERIFY:**
-      - No hardcoded project lists
-      - No hardcoded tag lists
-      - No hardcoded section names (pull from manifest/JSON)
-      - All content from JSON or data files
-      - All URLs constructed dynamically
+    - No hardcoded project lists
+    - No hardcoded tag lists
+    - No hardcoded section names (pull from manifest/JSON)
+    - All content from JSON or data files
+    - All URLs constructed dynamically
 
   * **Search For:**
-      - Array literals with project data
-      - String literals with tag names
-      - Hardcoded section names outside of config
+    - Array literals with project data
+    - String literals with tag names
+    - Hardcoded section names outside of config
 
   * **Fix:** Replace any hardcoded values with dynamic loading
 
@@ -1080,34 +1091,35 @@ git push origin generalist-portfolio-v1
 ## Notes for Claude Code
 
   * **Read First:**
-      - `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
-      - `/Users/seanivore/Development/360-design/assets/docs/SPEC.md`
+    - `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
+    - `/Users/seanivore/Development/360-design/assets/docs/SPEC.md`
 
   * **Testing Strategy:**
-      - Localhost: URL parameters (?section=Web, ?path=web/html-css-js/project)
-      - Production: Clean URLs via 404 routing
+    - Localhost: URL parameters (?section=Web, ?path=web/html-css-js/project)
+    - Production: Clean URLs via 404 routing
 
   * **Common Pitfalls:**
-      - Don't hardcode - use manifest.json and placement.json
-      - Capitalization matters on localhost (section=Web not section=web)
-      - Related posts: 6-hour seed, 5 tiles (not 3)
-      - Role is now STRING not ARRAY (schema v3.1)
-      - Tag links preserve clicked tag as sticky filter
+    - Don't hardcode - use manifest.json and placement.json
+    - Capitalization matters on localhost (section=Web not section=web)
+    - Related posts: 6-hour seed, 5 tiles (not 3)
+    - Role is now STRING not ARRAY (schema v3.1)
+    - Tag links preserve clicked tag as sticky filter
 
   * **Debugging:**
-      - Console logs: emoji prefixes (📂, ✅, ❌, 🔍, 📊)
-      - Log related posts scoring
-      - Log URL parsing
+    - Console logs: emoji prefixes (📂, ✅, ❌, 🔍, 📊)
+    - Log related posts scoring
+    - Log URL parsing
 
   * **Reference Implementation:**
-      - `section-controller.js` for controller patterns
-      - `tile-renderer.js` for tile rendering
-      - `data-loader.js` for data fetching
-      - `filter-controller.js` for filtering
+    - `section-controller.js` for controller patterns
+    - `tile-renderer.js` for tile rendering
+    - `data-loader.js` for data fetching
+    - `filter-controller.js` for filtering
 
 ---
 
 *Spec created: 2025-10-16*  
-*Spec updated: 2025-10-18 (Session 05 - All decisions finalized)*  
-*Phase 1 completed in Claude Chat*  
+*Spec updated: 2025-10-18 (Session 05 - All decisions finalized)* 
+*Spec updated: 2025-10-21 (Session 07 - Integration of finalized decisions confirmed)*
+*Phase 1 completed in Claude Chat* 
 *Phase 2 & 3 ready for Claude Code*
