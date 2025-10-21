@@ -134,49 +134,77 @@ const TileRenderer = (() => {
     }
 
     /**
-     * Render a homepage tile (large/square format)
+     * Render a homepage tile (1:1 square format)
      * Used on homepage to link to section pages
-     * Shows 1/8th bleed of next image (handled in CSS)
+     * Shows section overlay, count badge, and random project images/text
+     * @param {Object} tileData - Data from homepage-controller
+     *   {
+     *     section: 'Web',
+     *     sectionURL: '/web',
+     *     thumbnailImages: [...],
+     *     tileTexts: [...],
+     *     altText: 'Alt text for images',
+     *     projectCount: 5
+     *   }
      */
-    function renderHomepageTile(sectionData) {
-        const { title, subtitle, images, texts, link } = sectionData;
+    function renderHomepageTile(tileData) {
+        const { section, sectionURL, thumbnailImages, tileTexts, altText, projectCount } = tileData;
 
         const tile = document.createElement('a');
-        tile.href = link;
-        tile.className = 'tile-homepage fade-in-item';
+        tile.href = sectionURL;
+        tile.className = 'homepage-tile fade-in-item';
         tile.setAttribute('data-current-index', '0');
+        tile.setAttribute('data-section', section);
 
-        // Create carousel HTML (no dots - just images with bleed)
-        const carouselHTML = `
-            <div class="tile-homepage__image-carousel">
-                <div class="tile-homepage__images">
-                    ${images.map((img, index) => `
-                        <img 
-                            src="${img}" 
-                            alt="${title}" 
-                            class="tile-homepage__image"
-                            loading="lazy"
-                        />
-                    `).join('')}
-                </div>
+        // Count badge (top-right)
+        const badgeHTML = `
+            <div class="homepage-tile__count-badge">
+                ${projectCount} project${projectCount !== 1 ? 's' : ''}
             </div>
         `;
 
-        // Get first text or fallback to subtitle
-        const displayText = texts && texts.length > 0 ? texts[0] : subtitle;
+        // Images container
+        const imagesHTML = thumbnailImages.length > 0 ? `
+            <div class="homepage-tile__images">
+                ${thumbnailImages.map((img, index) => `
+                    <img
+                        src="/${img}"
+                        alt="${altText}"
+                        class="homepage-tile__image ${index === 0 ? 'active' : ''}"
+                        loading="lazy"
+                    />
+                `).join('')}
+            </div>
+        ` : '';
+
+        // Section overlay (with gradient background and section name)
+        const overlayHTML = `
+            <div class="homepage-tile__overlay">
+                <span class="section-name">${section.toUpperCase()}</span>
+            </div>
+        `;
+
+        // Tile text container (cycles with images if available)
+        const textHTML = tileTexts.length > 0 ? `
+            <div class="homepage-tile__text">
+                ${tileTexts.map((text, index) => `
+                    <p style="display: ${index === 0 ? 'block' : 'none'};" data-text-index="${index}">
+                        ${text}
+                    </p>
+                `).join('')}
+            </div>
+        ` : '';
 
         tile.innerHTML = `
-            ${carouselHTML}
-            <div class="tile-homepage__content">
-                <h2 class="tile-homepage__title">${title}</h2>
-                <p class="tile-homepage__subtitle">${subtitle}</p>
-                ${displayText ? `<p class="tile-homepage__text">${displayText}</p>` : ''}
-            </div>
+            ${badgeHTML}
+            ${imagesHTML}
+            ${overlayHTML}
+            ${textHTML}
         `;
 
-        // Add swipe functionality
-        if (images.length > 1) {
-            addHomepageTileSwipe(tile, images.length, texts);
+        // Add swipe functionality if multiple images
+        if (thumbnailImages.length > 1) {
+            addHomepageTileSwipe(tile, thumbnailImages.length, tileTexts.length);
         }
 
         return tile;
@@ -184,22 +212,22 @@ const TileRenderer = (() => {
 
     /**
      * Add swipe functionality to homepage tiles
-     * Cycles through images and optionally text
+     * Cycles through images and text
      */
-    function addHomepageTileSwipe(tile, imageCount, texts) {
-        const carousel = tile.querySelector('.tile-homepage__images');
-        const textElement = tile.querySelector('.tile-homepage__text');
-
+    function addHomepageTileSwipe(tile, imageCount, textCount) {
         let startX = 0;
         let currentIndex = 0;
 
+        const images = tile.querySelectorAll('.homepage-tile__image');
+        const texts = tile.querySelectorAll('.homepage-tile__text p');
+
         // Touch start
-        carousel.addEventListener('touchstart', (e) => {
+        tile.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
         }, { passive: true });
 
         // Touch end
-        carousel.addEventListener('touchend', (e) => {
+        tile.addEventListener('touchend', (e) => {
             const endX = e.changedTouches[0].clientX;
             const diff = startX - endX;
 
@@ -218,20 +246,20 @@ const TileRenderer = (() => {
         }, { passive: true });
 
         function updateHomepageTile() {
-            // Move carousel (each image is 87.5% width with 12.5% margin)
-            carousel.style.transform = `translateX(-${currentIndex * 87.5}%)`;
+            // Update images - simple active class toggle
+            images.forEach((img, index) => {
+                img.classList.toggle('active', index === currentIndex);
+            });
 
-            // Update text if available
-            if (textElement && texts && texts.length > 0) {
-                const textIndex = currentIndex % texts.length;
-                textElement.style.opacity = '0';
-
-                setTimeout(() => {
-                    textElement.textContent = texts[textIndex];
-                    textElement.style.opacity = '1';
-                }, 150); // Half of transition duration for smooth cross-fade
+            // Update text (cycle through available texts)
+            if (textCount > 0) {
+                const textIndex = currentIndex % textCount;
+                texts.forEach((text, index) => {
+                    text.style.display = index === textIndex ? 'block' : 'none';
+                });
             }
 
+            // Store current index
             tile.setAttribute('data-current-index', currentIndex);
         }
     }
