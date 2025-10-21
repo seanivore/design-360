@@ -178,9 +178,21 @@ index.html           `august.style/`
 
     1. Confirm accuracy throughout the rest of this document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
     2. ARCHITECTURE document `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
-    3. Confirm `./section.html` has all necessary elements (as above for CC SPEC doc) 
-       `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
-    4. Update new entry help document while everything is in context `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
+    3. Update Claude Code SPEC `/Users/seanivore/Development/360-design/assets/docs/home_entry_pages_spec.md`
+       - Entry page tags as hover card (top right + bottom right), NOT full-width ribbon
+       - Breadcrumbs repeated at bottom (bottom left)
+       - Only technology/media/skill in tags card (role is separate H3 heading)
+    4. Verify `./section.html` HEAD has SEO meta tags for dynamic population
+       - Title: `<title><!-- Populated by JS --></title>`
+       - Description: `<meta name="description" content="">`
+       - OG tags: og:title, og:description, og:image, og:image:alt
+       - JS should populate from placement.json seo_metadata with [Tag] replacement
+    5. Verify `./assets/js/section-controller.js` implements toggle tag logic
+       - Partial string matching ("Design" matches "Graphic Design", "Print Design")
+       - Only filters technology/media/skill tags (NEVER section/sub_section/role)
+       - Toggle tags appear ONLY on section-type pages (e.g., /web, /print)
+    6. Update entry template reference `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
+    7. Update new entry help document while everything is in context `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
 
 ---
 

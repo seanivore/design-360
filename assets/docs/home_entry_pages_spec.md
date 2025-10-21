@@ -569,17 +569,19 @@ function seededRandom(seed) {
 
    **Content Population (renderEntryContent must include ALL of these):**
    - SEO meta tags from `seo_title`, `seo_description`
+   - **Top Layout:** Breadcrumbs (top left) + Tags hover card (top right)
+     * Breadcrumbs: section › subsection › breadcrumb (clickable links)
+     * Tags card: ONLY technology/media/skill tags, comma or bullet separated
+     * Hover card with micro-interaction (subtle lift on hover)
    - Page title and subtitle
-   - Breadcrumbs (section › subsection › breadcrumb)
-   - All tags as horizontal scrolling ribbon under title (full 100vw)
-   - Role heading and content
+   - Role heading and content (role is NOT in tags card, used as H3 heading)
    - Pattern, Action, Measured sections
    - Thumbnail slideshow with alt text
    - Video embed with alt text (if exists)
    - **page_imagery** section with alt text (if exists)
    - **project_url** embed (prominent with title/description/image - like og:image preview)
    - **github_repository** embed (GitHub's auto-generated card style)
-   - Repeat tags before related posts in simple column format
+   - **Bottom Layout:** Breadcrumbs (bottom left) + Tags card (bottom right) - REPEATED
 
 #### 7. Create `entry.html` Template
 
@@ -612,18 +614,25 @@ function seededRandom(seed) {
       <!-- JS populates: Web › HTML/CSS/JS › Project Name -->
     </nav>
     
+    <!-- Top Layout: Breadcrumbs (left) + Tags Hover Card (right) -->
+    <div class="entry-top-layout">
+      <!-- Breadcrumbs (top left) -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <!-- JS populates: Web › HTML/CSS/JS › Project Name -->
+      </nav>
+      
+      <!-- Tags Hover Card (top right) -->
+      <div class="entry-tags-card">
+        <!-- JS populates: comma/bullet separated technology, media, skill tags -->
+        <!-- Hover card with micro-interaction -->
+      </div>
+    </div>
+    
     <!-- Title & Subtitle -->
     <section class="entry-header">
       <h1 id="entry-title"></h1>
       <h2 id="entry-subtitle"></h2>
     </section>
-    
-    <!-- Tags Ribbon (full 100vw, horizontal scroll) -->
-    <div class="entry-tags-ribbon">
-      <div class="entry-tags-scroll">
-        <!-- JS populates: section, subsection, role, all contextual tags -->
-      </div>
-    </div>
     
     <!-- Main Content (4 sections: Role, Pattern, Action, Measured) -->
     <section class="entry-content">
@@ -686,9 +695,17 @@ function seededRandom(seed) {
     <!-- Divider -->
     <hr class="content-divider">
     
-    <!-- Tags List (repeated before related posts) -->
-    <div class="entry-tags-list">
-      <!-- JS populates: simple column format -->
+    <!-- Bottom Layout: Breadcrumbs (left) + Tags (right) - Repeated -->
+    <div class="entry-bottom-layout">
+      <!-- Breadcrumbs (bottom left) -->
+      <nav class="breadcrumbs breadcrumbs--bottom" aria-label="Breadcrumb">
+        <!-- JS populates: Web › HTML/CSS/JS › Project Name -->
+      </nav>
+      
+      <!-- Tags (bottom right) -->
+      <div class="entry-tags-card entry-tags-card--bottom">
+        <!-- JS populates: comma/bullet separated technology, media, skill tags -->
+      </div>
     </div>
     
     <!-- Related Posts -->
@@ -713,15 +730,17 @@ function seededRandom(seed) {
 ```
 
   * **Details:**
-      - Breadcrumbs: section › subsection › breadcrumb (clickable)
-      - Tags ribbon: Full 100vw horizontal scroll (matches section page pattern)
-      - Tags clickable links to section page with that tag as filter
-      - Role heading uses actual role from JSON
-      - Content sections: 2-column then full-width text wrap
-      - Project URL embed: Prominent preview with title/description/image
-      - GitHub embed: GitHub's auto-generated card style (from screenshot)
-      - Video: Full-width iframe with alt text
-      - Page imagery: Additional images with alt text
+      - **Layout Pattern:** Breadcrumbs (left) + Tags Card (right) at top AND bottom
+      - Breadcrumbs: section › subsection › breadcrumb (clickable links to filter section page)
+      - Tags card: ONLY technology/media/skill (NOT section/subsection/role)
+      - Tags: Comma or bullet (•) separated, clickable links to filtered section page
+      - Hover card: Subtle lift animation on hover, max-width 400px
+      - Role heading: Uses actual role from JSON as H3 (NOT in tags card)
+      - Content sections: 2-column desktop, 1-column mobile, text extends full-width
+      - Project URL embed: Prominent preview card with title/description/image
+      - GitHub embed: GitHub's auto-generated card style (repo stats, description)
+      - Video: Full-width iframe with alt text (if exists)
+      - Page imagery: Grid layout with alt text (if exists)
       - Related posts: 5 tiles with proper L/R padding
 
 #### 8. Add Entry Page Styles to `styles.css`
@@ -761,43 +780,67 @@ function seededRandom(seed) {
   margin-bottom: var(--space-lg);
 }
 
-/* Tags Ribbon (full 100vw) */
-.entry-tags-ribbon {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background: var(--color-surface-dark);
-  padding: var(--space-md) 0;
+/* Entry Top/Bottom Layout (breadcrumbs + tags) */
+.entry-top-layout,
+.entry-bottom-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-lg);
+  gap: var(--space-lg);
+}
+
+.entry-bottom-layout {
+  margin-top: var(--space-lg);
   margin-bottom: var(--space-xl);
 }
 
-.entry-tags-scroll {
-  display: flex;
-  gap: var(--space-md);
-  overflow-x: auto;
-  padding: 0 var(--space-lg);
-  scrollbar-width: none;
+@media (max-width: 768px) {
+  .entry-top-layout,
+  .entry-bottom-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-.entry-tags-scroll::-webkit-scrollbar {
-  display: none;
+/* Tags Hover Card (top right / bottom right) */
+.entry-tags-card {
+  position: relative;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border-radius: 4px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 400px;
 }
 
-.entry-tags-scroll a {
-  white-space: nowrap;
+.entry-tags-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.entry-tags-card a {
   font-size: 0.875rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-weight: 600;
   color: var(--color-text-secondary);
+  text-decoration: none;
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.entry-tags-scroll a:hover {
+.entry-tags-card a:hover {
   color: var(--color-accent);
+}
+
+.entry-tags-card a:not(:last-child)::after {
+  content: ' • ';
+  margin: 0 var(--space-xs);
+  color: var(--color-text-secondary);
+  opacity: 0.5;
 }
 
 /* Content Sections */
@@ -865,12 +908,7 @@ function seededRandom(seed) {
   border-top: 1px solid var(--color-border);
 }
 
-/* Tags List (before related posts) */
-.entry-tags-list {
-  margin-bottom: var(--space-xl);
-  font-size: 0.875rem;
-  line-height: 1.8;
-}
+
 
 /* Related Posts */
 .related-posts {
