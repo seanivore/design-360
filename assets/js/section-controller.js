@@ -261,12 +261,12 @@
             });
             subsections.forEach(sub => addTag(sub, 'subsection'));
 
-            // 2. Add roles from current projects
+            // 2. Add roles from current projects (role is now STRING in schema v3.1)
             const roles = new Set();
             shuffledProjects.forEach(project => {
-                const roleArray = project.categorization.tagging.role;
-                if (Array.isArray(roleArray)) {
-                    roleArray.forEach(role => roles.add(role));
+                const role = project.categorization.tagging.role;
+                if (role && typeof role === 'string') {
+                    roles.add(role);
                 }
             });
             roles.forEach(role => addTag(role, 'role'));
@@ -307,12 +307,12 @@
             });
             subsections.forEach(sub => addTag(sub, 'subsection'));
 
-            // 3. Add roles
+            // 3. Add roles (role is now STRING in schema v3.1)
             const roles = new Set();
             shuffledProjects.forEach(project => {
-                const roleArray = project.categorization.tagging.role;
-                if (Array.isArray(roleArray)) {
-                    roleArray.forEach(role => roles.add(role));
+                const role = project.categorization.tagging.role;
+                if (role && typeof role === 'string') {
+                    roles.add(role);
                 }
             });
             roles.forEach(role => addTag(role, 'role'));

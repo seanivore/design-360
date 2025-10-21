@@ -127,90 +127,29 @@ index.html           `august.style/`
       - Claude Code SPEC `/Users/seanivore/Development/360-design/assets/docs/home_entry_pages_spec.md` 
       - JSON entry file template `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
 
-### Review, Bring Up To Date Claude Code Resources 
+### Pre-Implementation Verification Completed 
 
-  * **1. Check SPEC's HTML guide for missing values**
+  * **All core documentation reviewed and updated (Session 07, October 2025)**
+  
+    + `home_entry_pages_spec.md`: Entry page hover card layout confirmed
+    + `ARCHITECTURE.md`: Entry page pattern section added
+    + `section-controller.js`: Role STRING handling updated
+    + `section.html`: SEO meta tag structure added
+    + `SPEC.md`: Entry page template details expanded
+    + `ADD_NEW_PROJECT.md`: Schema v3.1 fields documented
 
-    1. Display `project_url` and `github_repository` as clean styled text links on entry pages **NOT every entry**
-    2. Variable elements that may or may not be present on any single JSON entry 
-       + `video_alt_text` for `video_embed` should be prominent on page after `action`, before `measured` **NOT every entry**
-       + `thumb_slideshow_alt_text` for `thumbnail_images` which make slideshow **EVERY PROJECT**
-         - Slide show is used on both the homepage's tile type and section page tile 
-         - Slide show is included on entry template as prominent visual unless `notes` say otherwise 
-       + `page_image_group_alt_text` for `page_imagery` which are secondary images to place below `measured` section **NOT every entry**
-    3. Entry page breadcrumb top left and bottom left after content in `section` / `sub_section` / `breadcrumb` order **EVERY PROJECT**
-    4. Entry page should get text-wrapped, centered comma or • separated list of tags **EVERY PROJECT**
-       + Placed page top right on hover card with micro-interaction for click 
-         - Only includes `technology`, `media`, `skills` in that order, but no headings 
-         - The `role` tag should still be hyperlinked so filtered section page but will be placed as 1 of 4 page content sections 
-         - There is only every ONE `role` applied to any single project entry 
-    5. Only use in meta og placement: `seo_title` and `seo_description` plus the first `thumbnail_images` of slide show list **EVERY PROJECT**
-    6. Use only on page, not on home or section page tile: `page_title` and `page_subtitle` **EVERY PROJECT**
-    7. One-liners for home and section tile that change when a thumb slide is moved to the next image: `tile_text` **EVERY PROJECT** 
-
-  * **2. New information or information and logic to update**
-
-    1. Creation of `assets/js/placement.json` replaced `featured.json` file 
-       + Defines 'Toggle Tags' to pull dynamically on section-tag type section pages 
-         - Data found at `active_tags.toggle_tags` array 
-         - All code and documents have been updated but we should double check 
-         - `section-controller.js` had specific path update 
-       + Toggle tags must also be tags listed as contextual tags 
-    2. Previously undefined Section Page SEO Metadata also on `placement.json`
-       + Located at `seo_metadata` on `placement.json` 
-       + Uses dynamic template 
-         - "<Tag> Projects by Sean August Horvath"
-         - Description includes 'portfolio' keyword and generalist positioning
-         - Image should be randomly pulled from one entry's `thumbnail_images` that contains the tag
-    3. Special 'toggle tag' logic and placement specifics 
-       + Appear **ONLY** in section-tag filtered section page 
-         - With other tags in horizontal scrolling tag filter navigation 
-         - E.g. /web, /print, /video, /digital 
-       + **Do not appear** on section page's tag nav after user clicked-through a contextual tag from a project entry page 
-         - This is sensible because this type of section pages would inherently be showing contextual tags that projects with the filtered tag share 
-         - And the actual section-type tag filtered section page doesn't show contextual tags beyond toggle and role 
-       + Toggle tags are placed first in the navigation tag list: `toggle_tags` tags, `section` tags, `sub_section` tags, `role` tags 
-       + They populate partial string matching, e.g. "Design" matches "Graphic Design", "Print Design", "User Design" 
-         - ONLY matches `technology`/`media`/`skill` tags, NEVER `section`/`sub_section`/`role` 
-         - Even if `section`/`sub_section`/`role` contains partial match, ignore it
-
-  * **3. Ensure the above updates are accurate on important pages** 
-
-    1. Confirm accuracy throughout the rest of this document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
-    2. ARCHITECTURE document `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
-    3. Update Claude Code SPEC `/Users/seanivore/Development/360-design/assets/docs/home_entry_pages_spec.md`
-       - Entry page tags as hover card (top right + bottom right), NOT full-width ribbon
-       - Breadcrumbs repeated at bottom (bottom left)
-       - Only technology/media/skill in tags card (role is separate H3 heading)
-    4. Verify `./section.html` HEAD has SEO meta tags for dynamic population
-       - Title: `<title><!-- Populated by JS --></title>`
-       - Description: `<meta name="description" content="">`
-       - OG tags: og:title, og:description, og:image, og:image:alt
-       - JS should populate from placement.json seo_metadata with <Tag> replacement
-    5. Verify `./assets/js/section-controller.js` implements toggle tag logic
-       - Partial string matching ("Design" matches "Graphic Design", "Print Design")
-       - Only filters technology/media/skill tags (NEVER section/sub_section/role)
-       - Toggle tags appear ONLY on section-type pages (e.g., /web, /print)
-    6. Update entry template reference `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
-    7. Update new entry help document while everything is in context `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
+  * **Ready for Phase 2 (Homepage) and Phase 3 (Entry Pages) implementation**
 
 ---
 
-### *Phase 2:* Homepage 
-  + Create homepage tiles, and section page tiles 
+### *Phase 2:* Homepage, Both Content Tile Types 
+  + Create homepage tiles style and then the section page tile style 
   + Create `index.html` with Projects, About, Contact 
-  + Tiles that randomly select images and associated tile text from section entries 
-  + Social icons, profile picture 
-  + Use UX/UI design section details below, memory, and architecture.md 
 
 ### *Phase 3:* Entry Pages 
   + Create `entry.html` template 
   + Create `entry-controller.js`
-  + Related post logic 
-    - Select of all JSON entries with matching tags, select the top four based on number of matching tags 
-    - When there is a tie between JSON objects, choose completely randomly 
-    - *ACTUALLY* is there a way to do this that maybe has math incorporate the 00:00:00 time so that the selection of which JSONs with matching tags is always different -- because that would be rad 
-  + Use UX/UI design section details below, memory, and architecture.md 
+  + Update `section.html` template 
 
 ### *Phase 4:* Test Tag Filtering Logic 
 
@@ -234,16 +173,16 @@ index.html           `august.style/`
 
 #### The Tag Types & Their Placement on Section Pages 
 
-  1. On every JSON under 'tagging' are **CONTEXTUAL** tags 
+  1. On every JSON under `tagging` are **CONTEXTUAL** tags 
      + UI on page highlights with a heading the ROLE tag  
      + UI separation of other contextual tags is just for backend comprehensiveness assurance purposes 
-       - technology 
-       - media 
-       - skill 
-  2. On every JSON the 'section' and 'sub_section are **PLACEMENT** tags 
-     + There are just four sections: Web, Print, Video, Digital 
+       - `technology` 
+       - `media` 
+       - `skill` 
+  2. On every JSON the `section` and `sub_section` are **PLACEMENT** tags 
+     + There are just four sections: /web, /print, /video, /digital 
      + Subsections (like Webflow) are created as needed 
-  3. placement.json identifies handful of contextual tags to be **TOGGLE** tags 
+  3. `placement.json` identifies handful of contextual tags to be **TOGGLE** tags 
      + Selected to give content some prominence or guide the user a certain way 
      + These are only shown on the PLACEMENT 'section-type' tag filtered section page 
      + Clicking through an on-page tag will never show toggle tags; instead will 
@@ -252,7 +191,7 @@ index.html           `august.style/`
 
 #### Order of Tag Display in Section Page's Horizontally Scrolling Filter Navigation 
   
-  1. If the main tag is a PLACEMENT tag ('section'-type), ordered from left to right 
+  1. If the main tag is a PLACEMENT tag (`section`-type), ordered from left to right 
      - `toggle_tags` first in distinct color 
      - `sub_section` second with complimentary accent color 
      - `role` tags from that site section tagged entries last, in another color 
@@ -280,7 +219,6 @@ index.html           `august.style/`
 | H3    | `role` & `page_copy` headings  | Main sections              |
 | H4    | `media`, `technology`, `skill` | Not category, tags on page | 
 | H5    | `breadcrumb`                   | Similar to H4              | 
-
 
 * **Dark mode defaulted; no build setup for light mode needed yet** 
 
@@ -356,14 +294,24 @@ index.html           `august.style/`
 
   + Page elements listed from top to bottom 
     - Extremely simple header, very short/narrow, much like one used as header nav on homepage here: `https://developer-technologist.august.style/` 
-    - Breadcrumbs at top left of page 
-    - Right aligned column of top right justified tag list for project 
-    - Single column for page title and subtitle 
-    - Four page sections start as two columns with slideshow using thumbnail images in right column with text extending below wrapping across full width instead of staying one column 
-    - Video embed(s) if applicable and/or any other page images 
-    - Horizontal line page break with breadcrumbs again, below and left justified; same with right alighted and justified tag list 
-    - Populate ~3 related posts based on random selecting entries that share tags; these randomize making them different on every page reload 
-    - Extremely simple footer, very short/narrow, with only copyright and then icons for each contact method; this presumes the heading nav is fixed and follows scroll down 
+    - **Top Layout:** Breadcrumbs (top left) + Tags hover card (top right)
+      * Breadcrumbs: section › sub_section › breadcrumb (clickable links)
+      * Tags card: ONLY technology/media/skill tags (comma or bullet separated)
+      * Max-width 400px, hover micro-interaction with subtle lift
+      * Role is NOT in tags card - used as H3 heading in content
+    - Single column for page title (H1) and subtitle (H2)
+    - Four page sections as two columns with slideshow using thumbnail_images in right column
+      * First section uses role as H3 heading (NOT in tags card)
+      * Pattern, Action, Measured sections follow
+      * Text extends below wrapping across full width
+    - Optional content (if exists in JSON):
+      * project_url embed (prominent card with title/description/image)
+      * github_repository embed (GitHub-style repo card)
+      * video_embed with video_alt_text
+      * page_imagery array with page_image_group_alt_text
+    - **Bottom Layout:** Horizontal line + Breadcrumbs (bottom left) + Tags card (bottom right) - REPEATED
+    - Related posts section: 5 tiles with proper L/R padding, 6-hour rotation
+    - Extremely simple footer, very short/narrow, with only copyright and then icons for each contact method 
 
 *For more details, please see `ARCHITECTURE.md`* 
 

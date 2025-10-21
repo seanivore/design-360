@@ -20,8 +20,10 @@
   1. Get an `entry_id` by running bash command `uid` then adding an underscore to front of ID 
   2. Add `section`, applicable `sub_section`, then `slug` is the would-be HTML file name (but we don't have HTML files for each page)
      - `section` options = Print, Digital, Web, or Video 
-     - `sub_section` is created as context tags based on need while build the collection of project entries 
-     - `slug` field entry example = 'automated-e-commerce-shop-lookbook' 
+     - `sub_section` is created based on need while building the collection of project entries
+       * Reference existing sub_sections in placement.json before creating new ones
+       * New sub_sections should ideally represent more than one project entry
+     - `slug` field entry example = 'automated-e-commerce-shop-lookbook' (NO .html extension) 
 
 * **After preparing above basics, human completes the following or works with AI to do so** 
 
@@ -36,20 +38,25 @@
      - This is the rest of the project entry URL so remove stop words, prepositions, determiners from `seo_title` 
      - Replace spaces with hyphens and make everything lowercase 
      - Example: 'blog-lookbook-print-gallery.html' 
-  5. Finally, add all `media` > `assets`
+  5. Finally, add all `media` > `assets` (schema v3.1 fields)
      - The `video_filename` which is collected for possible future needs  
      - If available, add any `video_url` so it can be linked throughout the post a few times 
      - If there was a video, grab and slightly edit the `video_embed` to place it on the page 
        + Have the double quotes changed to single 
        + Replace 'YouTube Video Player' with the project entry's `seo_title`
+       + **NEW:** Add `video_alt_text` describing the video for accessibility
      - Gather `thumbnail_images` and prepare them accordingly  
        + Select ~ 6 images to become gesture-swiped collection of content tile thumbnails 
-       + Crop and resize thumbnail images to 1920 px by 1080 px 
+       + Crop and resize thumbnail images to 1920 px by 1080 px
+       + **NEW:** Add `thumb_slideshow_alt_text` describing the slideshow for accessibility 
      - Then add `page_imagery` to the array if available 
        + Use video stills, images from old portfolio posts, or at least the actual thumbnails from the tile placement 
        + They must be converted and compressed in the same way the `thumbnail_images` were
-     - Most projects will hav a `project_url` to link to; i.e. websites designed or developed, social media posts, etc. 
-     - Then add the `github_repository` if possible, to be placed on the project entry page 
+       + **NEW:** Add `page_image_group_alt_text` describing the additional images for accessibility
+     - Most projects will have a `project_url` to link to; i.e. websites designed or developed, social media posts, etc. 
+       + This will display as prominent embed card on entry page
+     - Then add the `github_repository` if available, to be placed on the project entry page
+       + This will display as GitHub-style repo card 
   6. Add `notes` to aid AI in filling out rest of JSON 
      - Look through the old portfolio entries, most can be found in applying-to-jobs directory 
      - Include summaries from those documents and also add any URL to previous portfolio entry posts 
@@ -79,8 +86,10 @@
 * **Copy above as a resource, AI can write 2-4 sentences for the `page_copy` items and a single `tagging` item** 
 
   11. These 4 will be headers and page sections mirrored on every project entry page 
-      - (1) In the `tagging` section add **ONE** `role` for the project 
-        + This is placed prominently unlike other tags  
+      - (1) In the `tagging` section add **ONE** `role` for the project (schema v3.1: role is STRING not array)
+        + **CRITICAL:** Choose ONLY ONE role from placement.json > contextual_tags > role
+        + This is displayed as H3 heading on entry page, NOT in tags hover card
+        + Still hyperlinked to filtered section page
         + Context of involvement, relationship to project 
         + If there are other roles that you wanted to add, PUT THEM IN SKILLS  
       - (2) Write `pattern` section  
@@ -96,10 +105,13 @@
 
 * **Lastly, AI fills in section `tagging` which are used for content tile filtering and contextual information** 
 
-  12. Populate JSON tag lists for context tag types using the guidance on tagging creation section below 
-      - `technology` tags 
-      - `media` tags 
-      - `skill` tags 
+  12. Populate JSON tag lists for context tag types using placement.json as reference
+      - **ALWAYS** reference placement.json > active_tags > contextual_tags before adding tags
+      - `technology` tags - List all temporally relevant or topical technology used
+      - `media` tags - Where this project lived; the place technology and skill met
+      - `skill` tags - Remaining terminology hiring managers want to know
+      - Try to use existing tags before creating new ones
+      - If creating new tag, ensure it doesn't duplicate existing concepts 
 
 ### Tag Creation Protocol Guidance 
 
@@ -116,9 +128,16 @@
      + These are meant to be very comprehensive, capitalizing on words used on job openings and on resumes 
      + The will also be placed on the project entry page top-right as toggle tag point describes above 
 
-  + See current list of tags by category 
-    - Here: `/Users/seanivore/Development/360-design/assets/js/placement.json`
+  + **ALWAYS reference placement.json for current tag lists**
+    - Location: `/Users/seanivore/Development/360-design/assets/js/placement.json`
+    - Schema 2.0 includes comprehensive tag catalog with usage notes
+    - Check active_tags > contextual_tags for all approved tags
   + Rather than new or one long tag 
     - Try to use combination of small shorter tags 
     - This makes them all more versatile 
-    - It keeps the overall number of tags down while creating more overlap 
+    - It keeps the overall number of tags down while creating more overlap
+  + **Entry Page Display:**
+    - Tags hover card (top right + bottom right) shows: technology, media, skill ONLY
+    - Role is displayed as H3 heading, NOT in tags card
+    - Section and sub_section shown in breadcrumbs, NOT in tags
+    - All tags clickable links to filtered section page 
