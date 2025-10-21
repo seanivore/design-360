@@ -14,10 +14,10 @@
         "slug": "animated-cms-weekly-blogs"
     },
     "tagging":{
-        "technology": ["Git",],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["Git", "Webflow", "CMS", "Lottie", "AI", "Generative", "Make.com", "Python Script", "Adobe Creative Cloud Apps", "Responsive"],
+        "media": ["Digital Product", "Blog", "Website"],
+        "role": "Web Developer", 
+        "skill": ["Animation", "Illustration", "Automation", "Content Production", "Publishing", "Full-Stack", "Graphic Design", "Copywriting", "System Design", "Branding", "No-Code Development", "Web Design"]
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "hand-drawn-anim-ai-blogs.mp4",
         "video_url": "https://youtu.be/LakcBI95rfU",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/LakcBI95rfU?si=Ml8H49Xs5LXGL5iv&amp;controls=0' title='Custom Lottie Animated Webflow CMS Daily Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Webflow CMS blog platform publishing 200+ weekly AI-generated posts featuring custom hand-drawn Lottie animations created with iPad Pro, with line animations directing user navigation through automated content",
         "thumbnail_images": [
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp",
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-2.webp",
@@ -34,7 +34,7 @@
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-5.webp",
             "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-6.webp"
         ], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "Webflow CMS blog platform publishing 200+ weekly AI-generated posts featuring custom hand-drawn Lottie animations created with iPad Pro, with line animations directing user navigation through automated content",
         "page_imagery": [],
         "page_image_group_alt_text": ""
         },
