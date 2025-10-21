@@ -3,50 +3,6 @@
   
   "entries": [
     {
-      "entry_id": "uid-rfr-187",
-      "title": "Complete SaaS Conversion Flow with CSS Animation",
-      "tags": {
-        "technology": [],
-        "media": [],
-        "role": "",
-        "skill": []
-      },
-      "alt_text": {
-        "video_alt_text": "",
-        "thumb_slideshow_alt_text": [
-          "SaaS landing page featuring animated feature cards and clear tiered pricing differentiation",
-          "Sign-up flow with CSS-only progress indicators and form validation feedback",
-          "Profile setup screen showing multi-step form states with smooth transitions",
-          "Conversion-optimized layout with social proof elements and CTAs at optimal scroll depths",
-          "Modular component structure demonstrating brand customization through CSS variables",
-          "Complete user journey from landing through sign-up to profile showing cohesive design language"
-        ]
-      }
-    },
-    
-    {
-      "entry_id": "uid-sgt-851",
-      "title": "Casual Projects Overview with Morphing Gradients",
-      "tags": {
-        "technology": ["HTML", "CSS"],
-        "media": ["Landing Page"],
-        "role": "Web Developer",
-        "skill": ["Animation", "Typography"]
-      },
-      "alt_text": {
-        "video_alt_text": "Lightweight single-page portfolio with continuously morphing gradient background animation created using pure CSS keyframes and blend modes",
-        "thumb_slideshow_alt_text": [
-          "Morphing gradient background with fluid color transitions providing visual depth",
-          "Typography hierarchy over animated background showing careful spacing and readability",
-          "Conversational project list with direct links maintaining casual approachable tone",
-          "Full page view demonstrating how gradient animation adds interest without overwhelming text",
-          "CSS keyframes and blend modes creating smooth color transitions throughout page",
-          "Minimal format proving engaging design doesn't require JavaScript or heavy assets"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-srs-009",
       "title": "AI Application Analytics Dashboard Interface",
       "tags": {

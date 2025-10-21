@@ -14,10 +14,10 @@
         "slug": "amorphous-gradient-css-animation"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["HTML", "CSS", "Generative", "Responsive"],
+        "media": ["Landing Page", "Website", "Template", "Portfolio"],
+        "role": "Web Developer", 
+        "skill": ["Animation", "Typography", "Branding", "Web Design"]
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "single-page-projects-overview-website.mp4",
         "video_url": "https://youtu.be/w14lqrILIyY",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/w14lqrILIyY?si=EzfBG0p1YDnMug_e&amp;controls=0' title='Gradient Morphing CSS Animation Web Design' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Lightweight single-page portfolio with continuously morphing gradient background animation created using pure CSS keyframes and blend modes",
         "thumbnail_images": [
             "assets/media/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-1.webp",
             "assets/media/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-2.webp",
@@ -34,7 +34,7 @@
             "assets/media/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-5.webp",
             "assets/media/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-6.webp"
         ], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "Lightweight single-page portfolio with continuously morphing gradient background animation created using pure CSS keyframes and blend modes",
         "page_imagery": [],
         "page_image_group_alt_text": ""
         },
