@@ -6,13 +6,13 @@
       "entry_id": "uid-rfr-187",
       "title": "Complete SaaS Conversion Flow with CSS Animation",
       "tags": {
-        "technology": ["HTML", "CSS"],
-        "media": ["SaaS", "Landing Page"],
-        "role": "Web Developer",
-        "skill": ["Animation", "Marketing", "Product", "Front-End"]
+        "technology": [],
+        "media": [],
+        "role": "",
+        "skill": []
       },
       "alt_text": {
-        "video_alt_text": "Three-stage SaaS conversion funnel walkthrough showing landing page with tiered pricing, sign-up flow with progress indicators, and profile setup—all using enterprise-grade CSS architecture without JavaScript",
+        "video_alt_text": "",
         "thumb_slideshow_alt_text": [
           "SaaS landing page featuring animated feature cards and clear tiered pricing differentiation",
           "Sign-up flow with CSS-only progress indicators and form validation feedback",
