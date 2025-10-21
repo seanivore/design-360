@@ -31,10 +31,10 @@
   * **Use Native `read_file` or `read_multiple_files` tool**
     + Read listed important files when starting a new session 
     + Always read these files carefully and in full 
-    + Total token sum of all important documents is *21,430 tokens*
+    + Total token sum of all important documents is *32,754 tokens*
       
   * **Important files include** 
-    + Claude Code SPEC `/Users/seanivore/Development/360-design/assets/docs/home_entry_pages_spec.md` *9,083 tokens*
+    + Claude Code SPEC `/Users/seanivore/Development/360-design/assets/docs/home_entry_pages_spec.md` *17,217 tokens*
       - Your structured guide 
       - All that musts be done 
     + Architecture `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` *4,742 tokens*
@@ -51,3 +51,7 @@
     + Planning document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` *4,201 tokens*
       - Original sketch for this website build 
       - Helpful for illustrative understanding of project 
+    + Playwright Browser Automation Skills via Claude Code Plugin 
+      `/Users/seanivore/.claude/plugins/marketplaces/playwright-skill/skills/playwright-skill/SKILL.md` *3,190 tokens* 
+      - Referenced throughout for testing and validation 
+      - Included emphasis on agentic design perfecting loop 
