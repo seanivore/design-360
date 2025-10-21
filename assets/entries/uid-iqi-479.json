@@ -14,10 +14,10 @@
         "slug": "dynamic-modular-portfolio-architecture"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["HTML", "CSS", "JavaScript", "JSON", "GitHub Pages", "Jekyll", "Python Script", "Agentic", "AI", "Generative", "Responsive", "Mobile-First"],
+        "media": ["Single Page Application", "Template", "Portfolio", "Web App"],
+        "role": "App Developer", 
+        "skill": ["System Design", "Modularity", "DRY Principles", "Scaling System", "Full-Stack", "Scaling System", "UX/UI Writing", "User Design"]
     }
 },
 "content": {
@@ -25,9 +25,9 @@
         "video_filename": "",
         "video_url": "",
         "video_embed": "", 
-        "video_alt_text": "",
+        "video_alt_text": "Demonstration of hybrid SPA architecture using 404 routing trick and JSON content system enabling 50+ unique pages from just 2 HTML templates",
         "thumbnail_images": [], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "Demonstration of hybrid SPA architecture using 404 routing trick and JSON content system enabling 50+ unique pages from just 2 HTML templates",
         "page_imagery": [],
         "page_image_group_alt_text": ""
         },
@@ -53,5 +53,5 @@
         "measured": "Result: Add new entries by creating one JSON file. Update design once, all pages update. Infinite scalability with zero code duplication." 
     }
 }, 
-    "notes": ["Images, thumbnails coming soon"]
+    "notes": ["Images, thumbnails coming soon; this is the actual site we are currently building"]
 }

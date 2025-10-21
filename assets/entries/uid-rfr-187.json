@@ -61,5 +61,5 @@
         "measured": "Successfully demonstrated enterprise-level SaaS web design capabilities through three distinct conversion stages that work together as a cohesive user journey. The CSS-only animation approach maintains performance while delivering sophisticated interactions—page load times stay under 2 seconds even on 3G connections. The modular architecture proved its value by enabling complete brand color changes in under 10 minutes through CSS variable updates. The conversion flow showcases understanding of multi-step user journeys, conversion psychology, and technical execution of modern web design patterns."
     }
 }, 
-    "notes": ["Place thumbnail slideshow on-page as well"]
+    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

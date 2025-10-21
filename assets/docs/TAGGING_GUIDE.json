@@ -3,65 +3,6 @@
   
   "entries": [
     {
-      "entry_id": "uid-iqi-479",
-      "title": "Single-JSON Portfolio Architecture",
-      "tags": {
-        "technology": ["HTML", "CSS", "JavaScript", "JSON", "GitHub Pages", "Jekyll", "Python Script", "Agentic", "AI", "Generative", "Responsive", "Mobile-First"],
-        "media": ["Single Page Application", "Template", "Portfolio", "Web App"],
-        "role": "App Developer",
-        "skill": ["System Design", "Modularity", "DRY Principles", "Scaling System", "Full-Stack", "Scaling System", "UX/UI Writing", "User Design"]
-      },
-      "alt_text": {
-        "video_alt_text": "Demonstration of hybrid SPA architecture using 404 routing trick and JSON content system enabling 50+ unique pages from just 2 HTML templates",
-        "thumb_slideshow_alt_text": []
-      }
-    },
-    
-    {
-      "entry_id": "uid-lul-419",
-      "title": "AI-Managed Wellness App Replacing Traditional Menus",
-      "tags": {
-        "technology": ["HTML", "CSS", "JavaScript", "AI"],
-        "media": ["Progressive Web App", "Mobile App", "Voice Interface"],
-        "role": "App Developer",
-        "skill": ["Conversation Design", "UI/UI Writing", "User Design", "Product"]
-      },
-      "alt_text": {
-        "video_alt_text": "Mobile-first progressive web app interface showcasing AI chat-driven meditation sessions, voice journaling, and gesture-based controls replacing traditional button-heavy wellness app navigation",
-        "thumb_slideshow_alt_text": [
-          "Clean AI chat interface with soft gradients guiding user through meditation session selection",
-          "Voice-to-text journaling screen showing minimal UI focused on calm meditative experience",
-          "Gesture control demonstration showing swipe navigation and hold-to-record for emotional check-ins",
-          "Conversational AI prompts replacing traditional menu forms for session duration and preferences",
-          "Sentiment analysis visualization showing AI-driven personalized wellness recommendations",
-          "Full app flow demonstrating how natural dialogue handles complex functionality without cluttered menus"
-        ]
-      }
-    },
-    
-    {
-      "entry_id": "uid-qor-090",
-      "title": "AI Agent Research Presentation Platform",
-      "tags": {
-        "technology": ["HTML", "CSS", "Markdown", "Jekyll", "GitHub Pages"],
-        "media": ["Landing Page"],
-        "role": "Web Developer",
-        "skill": ["Animation", "Content Production", "Publishing", "System Design"]
-      },
-      "alt_text": {
-        "video_alt_text": "CSS-animated presentation platform featuring glassmorphic tiles, two distinct presentation deck formats, and markdown-based documentation for AI research case studies",
-        "thumb_slideshow_alt_text": [
-          "Homepage showcasing glassmorphic tiles with smooth CSS-only micro-interactions",
-          "Traditional slide deck format presenting AI voice marketing research findings",
-          "Agentic workflow case study displayed in presentation mode with clean visual hierarchy",
-          "Markdown-based index section showing auto-converted documentation with clear navigation",
-          "Hover state demonstration of geometric shapes guiding users to different content areas",
-          "Full platform view showing unified design across blog posts, presentations, and indexed documentation"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-rfr-187",
       "title": "Complete SaaS Conversion Flow with CSS Animation",
       "tags": {

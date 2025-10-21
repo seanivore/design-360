@@ -14,10 +14,10 @@
         "slug": "css-animated-micro-interactions"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["HTML", "CSS", "Markdown", "Jekyll", "GitHub Pages", "Agentic", "AI", "Generative", "Responsive"],
+        "media": ["Landing Page", "Website", "Template", "Presentation Deck"],
+        "role": "Web Developer", 
+        "skill": ["Animation", "Content Production", "Publishing", "System Design", "Copywriting", "SaaS", "Automation", "Scaling System", "UX/UI Writing", "User Design", "Product", "Web Design"]
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "landing-page-research-presentations-data.mp4",
         "video_url": "https://youtu.be/hNdy_KW1w8U",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections and Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
         "thumbnail_images": [
             "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
             "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
@@ -34,7 +34,7 @@
             "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-5.webp",
             "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-6.webp"
         ], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
         "page_imagery": [],
         "page_image_group_alt_text": ""
         },
@@ -61,5 +61,5 @@
         "measured": "Successfully delivered comprehensive AI research across multiple formats while maintaining visual cohesion and fast load times. The CSS-only animation approach keeps the homepage performant even with complex visual effects. The dual presentation system accommodates both slide-deck-style research summaries and detailed indexed documentation, making technical concepts accessible to different learning styles. The markdown integration enables quick content updates—new research findings can be added and published in minutes rather than hours of HTML work."
     }
 }, 
-    "notes": ["Place thumbnail slideshow on-page as well"]
+    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }
