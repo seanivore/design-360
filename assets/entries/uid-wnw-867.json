@@ -14,10 +14,10 @@
         "slug": "minimalist-web-store-product"
     },
     "tagging":{
-        "technology": ["Git",],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["Git", "HTML", "CSS", "JavaScript", "Agentic", "GitHub Pages", "Jekyll", "Responsive"],
+        "media": ["E-Commerce", "Digital Product", "Website"],
+        "role": "Web Developer", 
+        "skill": ["Product Staging", "Marketing", "Typography", "Art History", "Web Design"]
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "framed-staged-art-history-print-shop.mp4",
         "video_url": "https://youtu.be/9qVi5_zoNaM",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/9qVi5_zoNaM?si=D-oRb-tYkO1dEq3m&amp;controls=0' title='Minimalist Web Store Product Gallery and Pages' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
         "thumbnail_images": [
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp",
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-2.webp",
@@ -33,7 +33,7 @@
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-4.webp",
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-5.webp"
         ], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
         "page_imagery": [],
         "page_image_group_alt_text": ""
         },

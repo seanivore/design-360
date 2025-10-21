@@ -3,28 +3,6 @@
   
   "entries": [
     {
-      "entry_id": "uid-wnw-867",
-      "title": "Timeless E-Commerce Gallery for Art Prints",
-      "tags": {
-        "technology": ["HTML", "CSS", "JavaScript"],
-        "media": ["E-Commerce"],
-        "role": "Web Developer",
-        "skill": ["Product Photography", "Marketing", "Typography"]
-      },
-      "alt_text": {
-        "video_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
-        "thumb_slideshow_alt_text": [
-          "Clean product gallery with generous white space letting art prints command attention",
-          "Two-column product page layout showing large imagery beside essential purchase details",
-          "Category filtering system handling large catalog without overwhelming visual complexity",
-          "Product staging photography showing prints in realistic home settings for scale context",
-          "Restrained typography and minimal interface supporting timeless aesthetic for art sales",
-          "Full catalog view demonstrating how clean design prevents browsing fatigue across 500+ items"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-wty-542",
       "title": "Hand-Illustrated Portfolio Showcasing Creative Process",
       "tags": {
