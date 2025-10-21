@@ -165,7 +165,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
     + And then please update the adding a new entry help document while everything is in context: 
       `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
     + Ensure the defined HTML proposed fits all template values 
-      - Check for details added to `assets/docs/_entry_template.json` 
+      - Check for details added to `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
       - `page_imagery` have values now for two entries and more to come 
       - Alt text added for video embed and for group of page imagery 
       - Thumbnail slideshow to be used for both on tile placement and on page 
@@ -176,7 +176,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
      + These tags are only used on homepage horizontal scrolling tag filter nav 
        - They should follow tags in list order 
        - 1st `section` tags, 2nd `Toggle Tags` tags, 3rd `sub_section` tags 
-     + Find toggle tags dynamically from `./assets/js/placement.json` file 
+     + Find toggle tags dynamically from `/Users/seanivore/Development/360-design/assets/js/placement.json` file 
        - These are to give us control over directing viewers to best content 
        - Able to be changed depending on hiring needs at the time 
   2. Implement logic for 'Toggle Tag's 
@@ -189,7 +189,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
   3. Section page meta seo info 
      + This was previously undefined because for entry pages it comes from the entry JSON 
        - SEO Title, Description, and Thumbnail are defined 
-       - The copy with space for the name of the tag were added to `placement.json` as well
+       - The copy with space for the name of the tag were added to `/Users/seanivore/Development/360-design/assets/js/placement.json` as well
 
 ---
 
