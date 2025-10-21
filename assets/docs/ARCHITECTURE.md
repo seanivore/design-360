@@ -257,7 +257,7 @@ const fullPath = `${section}/${sub_section}/${slug}`
 
 3. **Section SEO Metadata** (`seo_metadata`)
    - Dynamic templates for section page meta tags
-   - Format: "[Tag] Projects by Sean August Horvath"
+   - Format: "<Tag> Projects by Sean August Horvath"
    - Includes portfolio keyword and generalist positioning
    - Images randomly selected from matching project thumbnails
 
