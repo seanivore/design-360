@@ -133,7 +133,10 @@ python3 -m http.server 5500 --bind 127.0.0.1
 > http://localhost:5500/section.html
  ```
 
-### Preparations for Next Phase 
+### Final Preparations for Claude Code Build 
+
+  + The `home_entry_pages_spec.md` SPEC needs an update 
+
 
 #### 1. **COMPLETE** Created `placement.json` to Replace `featured.json` and Updated Files 
    + All code and documents have been updated 
@@ -153,47 +156,20 @@ python3 -m http.server 5500 --bind 127.0.0.1
        - They should work for any tag that contains even part of the toggle tag 
        - E.g., "Design" should pull up "Graphic Design" and "Print Design" 
     2. Only pull from `technology`, `media`, and `skill` 
-       - Toggle tags should not filter to show any matches with `role` tags 
+       - Toggle tags shouldn't be `role` tags 
        - This will prevent overly redundant tags surfacing as options to filter by 
+    3. Confirm regarding Entry JSON value at assets > project URL and GitHub Repository 
+       - When pasted on social or in search results, the thumbnail and title/description show
+       - Do we need to pull those and have them places separately in the JSON for them to be used in the same way on the page? 
+       - Basically we want to be sure it builds the visual "This is a link" type tile for these on-entry-page elements 
 
   * **Tag clean-up process required for all 15 JSON objects** 
 
-    1. **COMPLETE** Copy over all tags from the JSON to `placement.md` 
-    2. **COMPLETE** Delete the tags from the project entry JSON for now 
-    3. **COMPLETE** When all JSONs have be cleaned out, review and simplify tags on `placement.md`
-    4. **SEAN REVIEW COMPLETE** After Sean reviews full `placement.md` tag list 
-       + Add appropriate tags to each JSON 
-         - Use on page text, image filenames, etc. for insight 
-         - Opt for more, rather than less, without being redundant or stretching reality  
-    5. While in the JSON there are some updates to make 
-       + v3.1 has the "Enforced single role value, added placement.json reference to template for tag consistency" 
-       + We also need to add alt.text 
-         - For the thumbnail slideshow 
-         - For the video embed 
-         - For any on-page images, if present
-       + Q: For assets > project URL and GitHub Repository 
-         - When pasted on social or in a doc it populates the thumbnail and title/description 
-         - Do we need to pull those and have them places separately in the JSON for them to be used in the same way on the page? 
+    1. **COMPLETE** Create tags JSON as `placement.md` 
+    2. **COMPLETE** Simplify tag list and then replace on all JSON  
+    3. **COMPLETE** While in the JSON there are some updates to make 
 
-  * **All JSON files to process for above steps**
-
-    1. `/Users/seanivore/Development/360-design/assets/entries/uid-iqi-479.json`
-    2. `/Users/seanivore/Development/360-design/assets/entries/uid-lul-419.json`
-    3. `/Users/seanivore/Development/360-design/assets/entries/uid-qor-090.json`
-    4. `/Users/seanivore/Development/360-design/assets/entries/uid-rfr-187.json`
-    5. `/Users/seanivore/Development/360-design/assets/entries/uid-sgt-851.json`
-    6. `/Users/seanivore/Development/360-design/assets/entries/uid-srs-009.json`
-    7. `/Users/seanivore/Development/360-design/assets/entries/uid-tev-176.json`
-    8. `/Users/seanivore/Development/360-design/assets/entries/uid-unw-889.json`
-    9. `/Users/seanivore/Development/360-design/assets/entries/uid-wgw-370.json` 
-    10. `/Users/seanivore/Development/360-design/assets/entries/uid-wnw-867.json`
-    11. `/Users/seanivore/Development/360-design/assets/entries/uid-wty-542.json`
-    12. `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json`
-    13. `/Users/seanivore/Development/360-design/assets/entries/uid-eme-689.json`
-    14. `/Users/seanivore/Development/360-design/assets/entries/uid-fth-565.json`
-    15. `/Users/seanivore/Development/360-design/assets/entries/uid-hwi-844.json` 
-
-#### 4. Does the `home_entry_pages_spec.md` SPEC Need Another Update 
+#### 4.  
   
   + I added `page_imagery` to two entires so we need to make sure that is in the HTML proposed for entry 
   + Add any **toggle logic** details necessary to be ready to hand off to Claude Code 
