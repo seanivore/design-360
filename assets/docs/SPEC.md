@@ -152,6 +152,11 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
 #### 4. Review, Bring Up To Date Claude Code Resources 
 
+  * **Confirm regarding Entry JSON value at assets > project URL and GitHub Repository**
+
+    + Is there a way to pull through the thumbnail and title shown when these links are shared? 
+    + Basically we want to be sure it builds the visual "This is a link" type tile for these on-entry-page elements 
+
   * **Changes necessary to reflect our evolving plan** 
   
     + Update in the two important resources we direct them to 
@@ -185,12 +190,6 @@ python3 -m http.server 5500 --bind 127.0.0.1
      + This was previously undefined because for entry pages it comes from the entry JSON 
        - SEO Title, Description, and Thumbnail are defined 
        - The copy with space for the name of the tag were added to `placement.json` as well
-  4. Confirm regarding Entry JSON value at assets > project URL and GitHub Repository 
-       - When pasted on social or in search results, the thumbnail and title/description show
-       - Do we need to pull those and have them places separately in the JSON for them to be used in the same way on the page? 
-       - Basically we want to be sure it builds the visual "This is a link" type tile for these on-entry-page elements 
-
-
 
 ---
 
