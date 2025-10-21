@@ -188,9 +188,16 @@
     - `index.html` (homepage)
     - `entry.html` (entry page template)
 
+  * **Update Pages:**
+    - `section.html`
+
   * **Create New JavaScript:**
     - `/assets/js/entry-controller.js`
     - `/assets/js/homepage-controller.js`
+
+  * **Create Two Content Tile Types:** 
+    - Homepage tile (links out to site section)
+    - Section page tiles (filtered by tags, for site section and beyond)
 
   * **Assets Needed:**
     - Profile picture at `./assets/media/profile-picture-horvath.webp` 
@@ -220,7 +227,10 @@
      - Randomly select ONE project per section for that section's tile 
      - Use project's `thumbnail_images` and `tile_text` arrays
      - Section tiles randomize order on every reload
-     - **Project count badge**: Display "X projects" in top-right corner of each section tile (small, out of way but visible)
+     - Selected project for section's tile changes on every reload 
+     - **Project count badge** 
+       + Display "X projects" in top-right corner of each section tile (small, out of way but visible)
+       + Represents number of JSON entries that have that `section` tag type applied 
 
 #### 2. Create `index.html` Structure
 
