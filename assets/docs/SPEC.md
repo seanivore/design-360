@@ -158,7 +158,7 @@ index.html           `august.style/`
     2. Previously undefined Section Page SEO Metadata also on `placement.json`
        + Located at `seo_metadata` on `placement.json` 
        + Uses dynamic template 
-         - "[Tag] Projects by Sean August Horvath"
+         - "<Tag> Projects by Sean August Horvath"
          - Description includes 'portfolio' keyword and generalist positioning
          - Image should be randomly pulled from one entry's `thumbnail_images` that contains the tag
     3. Special 'toggle tag' logic and placement specifics 
@@ -168,7 +168,7 @@ index.html           `august.style/`
        + **Do not appear** on section page's tag nav after user clicked-through a contextual tag from a project entry page 
          - This is sensible because this type of section pages would inherently be showing contextual tags that projects with the filtered tag share 
          - And the actual section-type tag filtered section page doesn't show contextual tags beyond toggle and role 
-       + Toggle tags are placed first in the navigation tag list: `toggle` tags, `section` tags, `sub_section` tags, `role` tags 
+       + Toggle tags are placed first in the navigation tag list: `toggle_tags` tags, `section` tags, `sub_section` tags, `role` tags 
        + They populate partial string matching, e.g. "Design" matches "Graphic Design", "Print Design", "User Design" 
          - ONLY matches `technology`/`media`/`skill` tags, NEVER `section`/`sub_section`/`role` 
          - Even if `section`/`sub_section`/`role` contains partial match, ignore it
