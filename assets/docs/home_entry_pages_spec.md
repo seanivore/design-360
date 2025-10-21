@@ -119,9 +119,9 @@
         "video_embed": "", 
         "video_alt_text": "",
         "thumbnail_images": ["/assets/media/project/thumb1.jpg"], 
-        "thumbnail_alt_text": ["Project thumbnail showing..."],
+        "thumb_slideshow_alt_text": ["Project thumbnail showing..."],
         "page_imagery": ["/assets/media/project/img1.jpg"],
-        "page_imagery_alt_text": ["Additional project image showing..."]
+        "page_image_group_alt_text": ["Additional project image showing..."]
     },
     "assets": {
         "project_url": "https://august.style",
@@ -481,7 +481,7 @@ function renderHomepageTile(project, section, projectCount) {
   project.content.media.thumbnail_images.forEach((img, i) => {
     const imgEl = document.createElement('img');
     imgEl.src = img;
-    imgEl.alt = project.content.media.thumbnail_alt_text[i] || `${section} project image`;
+    imgEl.alt = project.content.media.thumb_slideshow_alt_text[i] || `${section} project image`;
     imgEl.className = i === 0 ? 'active' : '';
     imageContainer.appendChild(imgEl);
   });

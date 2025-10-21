@@ -4,7 +4,7 @@
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
+    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-srs-009", 
@@ -32,9 +32,9 @@
             "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-3.webp",
             "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-4.webp"
         ], 
-        "thumbnail_alt_text": [],
+        "thumb_slideshow_alt_text": "",
         "page_imagery": [],
-        "page_imagery_alt_text": []
+        "page_image_group_alt_text": ""
         },
     "assets": {
         "project_url": "https://design.august.style/projects/ai-admin-dashboard",

@@ -4,7 +4,7 @@
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
+    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-lul-419", 
@@ -34,9 +34,9 @@
             "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-5.webp",
             "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-6.webp"
         ], 
-        "thumbnail_alt_text": [],
+        "thumb_slideshow_alt_text": "",
         "page_imagery": [],
-        "page_imagery_alt_text": []
+        "page_image_group_alt_text": ""
         },
     "assets": {
         "project_url": "https://design.august.style/projects/mindflow-app",

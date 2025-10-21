@@ -4,7 +4,7 @@
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
+    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-abd-123", 
@@ -14,26 +14,26 @@
         "slug": "page-slug-would-be-html-file-name"
     },
     "tagging":{
-        "technology": ["See placement.json > active_tags > contextual_tags > technology"],
-        "media": ["See placement.json > active_tags > contextual_tags > media"],
-        "role": "SINGLE VALUE - Choose ONE from placement.json > contextual_tags > role", 
-        "skill": ["See placement.json > active_tags > contextual_tags > skill"]
+        "technology": ["See placement.json > active_tags > contextual_tags > technology", "For any desired tag that would help tell the story of the project entry, try first to create it with a combination of tags across the groups", "If the desired tag cannot be expressed with a combination of tags from across the groups, then add it as a single new tag to one of the three main contextual tag groups, or, in specific cases, to the role tag value"],
+        "media": ["See placement.json > active_tags > contextual_tags > media", "For any desired tag that would help tell the story of the project entry, try first to create it with a combination of tags across the groups", "If the desired tag cannot be expressed with a combination of tags from across the groups, then add it as a single new tag to one of the three main contextual tag groups, or, in specific cases, to the role tag value"],
+        "role": "SINGLE VALUE - Choose ONE from placement.json > contextual_tags > role; there will be instances where the appropriate tag does not yet exist and a new one should only be created when it is the absolute most appropriate, encompassing role for that specific project entry", 
+        "skill": ["See placement.json > active_tags > contextual_tags > skill", "For any desired tag that would help tell the story of the project entry, try first to create it with a combination of tags across the groups", "If the desired tag cannot be expressed with a combination of tags from across the groups, then add it as a single new tag to one of the three main contextual tag groups, or, in specific cases, to the role tag value"]
     }
 },
 "content": {
     "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "", 
-        "video_alt_text": "",
-        "thumbnail_images": [], 
-        "thumbnail_alt_text": [],
-        "page_imagery": [],
-        "page_imagery_alt_text": []
+        "video_filename": "If applicable, this is just for reference if needed in the future",
+        "video_url": "If a video embed is provided, the URL should be used somewhere on the page entry's text as a hyperlink paired with the actual video embedded on the page, if there is one",
+        "video_embed": "If provided, to be embedded on the project entry page prominently", 
+        "video_alt_text": "One alt text value that is present to describe the video if a video embed was provided to be placed on the project entry page",
+        "thumbnail_images": ["An array of images provided to be placed as a slideshow for the project's content tiles both on the Homepage and on any Section Page, this slideshow will also be placed on the project entry page to enforce the visual first storytelling"], 
+        "thumb_slideshow_alt_text": "One alt text value that is present to describe the slideshow as displayed on the content's homepage/section page, and as displayed on the actual project entry's page",
+        "page_imagery": ["An array of images provided that, if provided, are to be placed on the project entry page as a slideshow"],
+        "page_image_group_alt_text": "One alt text value that is present to describe the group of additional on-project-page images when they have been provided; leave empty if there are no page images provided for a project"
         },
     "assets": {
-        "project_url": "",
-        "github_repository": ""
+        "project_url": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed",
+        "github_repository": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed"
     },
     "teaser_copy":{
         "seo_title": "",

@@ -94,7 +94,6 @@
           "Agentic",
           "AI",
           "Generative",
-          "E-Commerce",
           "Make.com",
           "Notion API",
           "GitHub Pages",
@@ -116,7 +115,13 @@
           "Social Media",
           "Email",
           "NFT",
-          "Voice Interface"
+          "Voice Interface", 
+          "Blog", 
+          "Website",
+          "Template",
+          "Portfolio",
+          "E-Commerce",
+          "Podcasting"
         ],
         "role": [
           "Web Developer",
@@ -133,7 +138,7 @@
           "Illustration",
           "Copywriting",
           "Fashion Photography",
-          "Product Photography",
+          "Product Staging",
           "Optimization",
           "Automation",
           "Scaling System",
@@ -153,7 +158,8 @@
           "Full-Stack",
           "DRY Principles",
           "Modularity",
-          "Product"
+          "Product", 
+          "Web Design"
         ]
       }
     }

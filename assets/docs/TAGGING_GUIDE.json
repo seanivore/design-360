@@ -1,0 +1,298 @@
+{
+  "re_tagging_guide": "Below are suggested tags (technology/media/role/skill) and alt text for all 15 JSON entries. Tags selected from placement.json schema 2.0 catalog. Alt text suggestions for video (website screen grabs), thumbnails (slideshow images), and page_imagery where applicable.",
+  
+  "entries": [
+    {
+      "entry_id": "uid-hwi-844",
+      "title": "Art History-Inspired Fashion Lookbook Website",
+      "tags": {
+        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+        "media": ["Digital Product"],
+        "role": "Web Developer",
+        "skill": ["Typography", "Graphic Design", "Publishing", "Art History", "Fashion Photography"]
+      },
+      "alt_text": {
+        "video_alt_text": "Walkthrough of editorial-style photo journal website featuring AI in-painted fashion photography inspired by art historical movements from Impressionism to Neo-Expressionism",
+        "thumb_slideshow_alt_text": [
+          "Large-format fashion photograph displayed with generous white space and editorial typography hierarchy",
+          "Full-bleed image layout creating gallery-like visual impact on desktop view",
+          "Typography system showing sophisticated use of heading hierarchy and breathing room between sections",
+          "Mobile-responsive adaptation maintaining editorial pacing while showcasing full-bleed imagery",
+          "Visual transition between art movements using subtle design cues rather than heavy navigation",
+          "Clean interface with minimal UI elements allowing fashion photography to command attention"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-iqi-479",
+      "title": "Single-JSON Portfolio Architecture",
+      "tags": {
+        "technology": ["HTML", "CSS", "JavaScript", "JSON", "GitHub Pages", "Jekyll", "Python Script"],
+        "media": ["Single Page Application"],
+        "role": "Web Developer",
+        "skill": ["System Design", "Modularity", "DRY Principles", "Scaling System", "Full-Stack"]
+      },
+      "alt_text": {
+        "video_alt_text": "Demonstration of hybrid SPA architecture using 404 routing trick and JSON content system enabling 50+ unique pages from just 2 HTML templates",
+        "thumb_slideshow_alt_text": []
+      }
+    },
+    
+    {
+      "entry_id": "uid-lul-419",
+      "title": "AI-Managed Wellness App Replacing Traditional Menus",
+      "tags": {
+        "technology": ["HTML", "CSS", "JavaScript", "AI"],
+        "media": ["Progressive Web App", "Mobile App", "Voice Interface"],
+        "role": "App Developer",
+        "skill": ["Conversation Design", "UI/UI Writing", "User Design", "Product"]
+      },
+      "alt_text": {
+        "video_alt_text": "Mobile-first progressive web app interface showcasing AI chat-driven meditation sessions, voice journaling, and gesture-based controls replacing traditional button-heavy wellness app navigation",
+        "thumb_slideshow_alt_text": [
+          "Clean AI chat interface with soft gradients guiding user through meditation session selection",
+          "Voice-to-text journaling screen showing minimal UI focused on calm meditative experience",
+          "Gesture control demonstration showing swipe navigation and hold-to-record for emotional check-ins",
+          "Conversational AI prompts replacing traditional menu forms for session duration and preferences",
+          "Sentiment analysis visualization showing AI-driven personalized wellness recommendations",
+          "Full app flow demonstrating how natural dialogue handles complex functionality without cluttered menus"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-qor-090",
+      "title": "AI Agent Research Presentation Platform",
+      "tags": {
+        "technology": ["HTML", "CSS", "Markdown", "Jekyll", "GitHub Pages"],
+        "media": ["Landing Page"],
+        "role": "Web Developer",
+        "skill": ["Animation", "Content Production", "Publishing", "System Design"]
+      },
+      "alt_text": {
+        "video_alt_text": "CSS-animated presentation platform featuring glassmorphic tiles, two distinct presentation deck formats, and markdown-based documentation for AI research case studies",
+        "thumb_slideshow_alt_text": [
+          "Homepage showcasing glassmorphic tiles with smooth CSS-only micro-interactions",
+          "Traditional slide deck format presenting AI voice marketing research findings",
+          "Agentic workflow case study displayed in presentation mode with clean visual hierarchy",
+          "Markdown-based index section showing auto-converted documentation with clear navigation",
+          "Hover state demonstration of geometric shapes guiding users to different content areas",
+          "Full platform view showing unified design across blog posts, presentations, and indexed documentation"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-rfr-187",
+      "title": "Complete SaaS Conversion Flow with CSS Animation",
+      "tags": {
+        "technology": ["HTML", "CSS"],
+        "media": ["SaaS", "Landing Page"],
+        "role": "Web Developer",
+        "skill": ["Animation", "Marketing", "Product", "Front-End"]
+      },
+      "alt_text": {
+        "video_alt_text": "Three-stage SaaS conversion funnel walkthrough showing landing page with tiered pricing, sign-up flow with progress indicators, and profile setup—all using enterprise-grade CSS architecture without JavaScript",
+        "thumb_slideshow_alt_text": [
+          "SaaS landing page featuring animated feature cards and clear tiered pricing differentiation",
+          "Sign-up flow with CSS-only progress indicators and form validation feedback",
+          "Profile setup screen showing multi-step form states with smooth transitions",
+          "Conversion-optimized layout with social proof elements and CTAs at optimal scroll depths",
+          "Modular component structure demonstrating brand customization through CSS variables",
+          "Complete user journey from landing through sign-up to profile showing cohesive design language"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-sgt-851",
+      "title": "Casual Projects Overview with Morphing Gradients",
+      "tags": {
+        "technology": ["HTML", "CSS"],
+        "media": ["Landing Page"],
+        "role": "Web Developer",
+        "skill": ["Animation", "Typography"]
+      },
+      "alt_text": {
+        "video_alt_text": "Lightweight single-page portfolio with continuously morphing gradient background animation created using pure CSS keyframes and blend modes",
+        "thumb_slideshow_alt_text": [
+          "Morphing gradient background with fluid color transitions providing visual depth",
+          "Typography hierarchy over animated background showing careful spacing and readability",
+          "Conversational project list with direct links maintaining casual approachable tone",
+          "Full page view demonstrating how gradient animation adds interest without overwhelming text",
+          "CSS keyframes and blend modes creating smooth color transitions throughout page",
+          "Minimal format proving engaging design doesn't require JavaScript or heavy assets"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-srs-009",
+      "title": "AI Application Analytics Dashboard Interface",
+      "tags": {
+        "technology": ["HTML", "CSS", "JavaScript", "AI"],
+        "media": ["Analytics Dashboard", "SaaS"],
+        "role": "Web Developer",
+        "skill": ["User Design", "Product", "System Design"]
+      },
+      "alt_text": {
+        "video_alt_text": "Enterprise analytics dashboard interface designed for AI application monitoring, featuring interactive animated charts visualizing model performance, memory utilization, and decision flows",
+        "thumb_slideshow_alt_text": [
+          "Dashboard overview showing sophisticated information hierarchy for AI-specific metrics",
+          "Animated chart responding to user engagement and displaying real-time data updates",
+          "Memory system visualization showing agentic decision-making patterns and correlations",
+          "Multi-model interaction display with temporal relationship indicators",
+          "Enterprise-level interface handling massive datasets with responsive performance optimization",
+          "Complex AI system metrics organized into digestible visual segments with clear hierarchy"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-unw-889",
+      "title": "Wellness Training Platform with Custom Brand Identity",
+      "tags": {
+        "technology": ["Webflow", "CMS"],
+        "media": ["Landing Page", "Digital Product"],
+        "role": "Digital Consultant",
+        "skill": ["Graphic Design", "Illustration", "Branding", "Account Management"]
+      },
+      "alt_text": {
+        "video_alt_text": "Custom-designed Webflow wellness training platform featuring hand-drawn brand identity elements including logo, background illustrations, and decorative details reflecting client's teaching philosophy",
+        "thumb_slideshow_alt_text": [
+          "Hand-drawn logo and brand elements created with iPad Pro and Apple Pencil",
+          "Custom background illustrations expressing wellness and healing philosophy",
+          "Webflow training program layout showcasing cohesive visual identity throughout",
+          "Decorative details adding personality and warmth to platform design",
+          "Full site view demonstrating how hand-drawn elements differentiate from generic wellness templates",
+          "Client content management interface showing Webflow CMS capabilities"
+        ],
+        "page_image_group_alt_text": [
+          "Mobile responsive view of wellness training platform maintaining custom hand-drawn aesthetic and brand personality across all screen sizes"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-wgw-370",
+      "title": "Shoppable Fashion Lookbook with Google Lens API",
+      "tags": {
+        "technology": ["HTML", "CSS", "JavaScript"],
+        "media": ["Digital Product", "E-Commerce"],
+        "role": "Web Developer",
+        "skill": ["Fashion Photography", "Product", "Marketing", "Art History"]
+      },
+      "alt_text": {
+        "video_alt_text": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
+        "thumb_slideshow_alt_text": [
+          "Magazine-style editorial layout with progressive disclosure revealing shoppable product matches",
+          "Google Lens API integration showing visual search matching fashion photography to products",
+          "Multi-section architecture navigating between archetypal character journeys and art movements",
+          "E-commerce conversion pathway demonstrating editorial experience transitioning to product pages",
+          "Computer vision technology automatically identifying outfit items for direct purchase",
+          "Full lookbook demonstrating balance between inspirational editorial content and commerce functionality"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-wnw-867",
+      "title": "Timeless E-Commerce Gallery for Art Prints",
+      "tags": {
+        "technology": ["HTML", "CSS", "JavaScript"],
+        "media": ["E-Commerce"],
+        "role": "Web Developer",
+        "skill": ["Product Photography", "Marketing", "Typography"]
+      },
+      "alt_text": {
+        "video_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
+        "thumb_slideshow_alt_text": [
+          "Clean product gallery with generous white space letting art prints command attention",
+          "Two-column product page layout showing large imagery beside essential purchase details",
+          "Category filtering system handling large catalog without overwhelming visual complexity",
+          "Product staging photography showing prints in realistic home settings for scale context",
+          "Restrained typography and minimal interface supporting timeless aesthetic for art sales",
+          "Full catalog view demonstrating how clean design prevents browsing fatigue across 500+ items"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-wty-542",
+      "title": "Hand-Illustrated Portfolio Showcasing Creative Process",
+      "tags": {
+        "technology": ["Webflow", "CMS", "Python Script"],
+        "media": ["Digital Product", "NFT"],
+        "role": "Creative Director",
+        "skill": ["Illustration", "Graphic Design", "Branding", "Publishing"]
+      },
+      "alt_text": {
+        "video_alt_text": "Webflow portfolio featuring hundreds of hand-drawn iPad Pro illustrations with bold gold frames and impactful typography, documenting artistic process from sketches to 10+ hour detailed pieces including Web3 DAO brand assets",
+        "thumb_slideshow_alt_text": [
+          "Bold gold frame visual identity complementing detailed digital illustration work",
+          "Collection of hand-drawn pieces showing range from quick sketches to finished detailed artwork",
+          "Web3 DAO brand assets and minted NFT pieces displayed with gallery-like presentation",
+          "Typography hierarchy and white space preventing visual overwhelm across massive collection",
+          "iPad Pro and Apple Pencil created artwork demonstrating artistic process and evolution",
+          "Navigation architecture organizing hundreds of illustrations across personal, commercial, and blockchain work"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-dff-987",
+      "title": "800+ Product Store with Automated CMS Management",
+      "tags": {
+        "technology": ["Webflow", "CMS", "Make.com", "Notion API", "Python Script"],
+        "media": ["E-Commerce", "Digital Product"],
+        "role": "Web Developer",
+        "skill": ["Automation", "Scaling System", "Graphic Design", "Publishing", "Full-Stack"]
+      },
+      "alt_text": {
+        "video_alt_text": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
+        "thumb_slideshow_alt_text": [
+          "Custom navigation system elegantly handling complex multi-section site architecture",
+          "Make.com automation workflows connecting Notion databases to Webflow CMS collections",
+          "E-commerce storefront showing synchronized inventory across multiple product categories",
+          "Fashion lookbook magazine section with automated content population from Notion",
+          "Editorial content area demonstrating seamless flow between shopping and inspiration",
+          "Backend integration visualization showing real-time sync between databases and checkout"
+        ],
+        "page_image_group_alt_text": [
+          "Mobile responsive views of e-commerce store, fashion lookbook, and editorial sections maintaining visual consistency and navigation clarity across all devices and content types"
+        ]
+      }
+    },
+    
+    {
+      "entry_id": "uid-fth-565",
+      "title": "200+ Weekly Blogs with Custom Hand-Drawn Animation",
+      "tags": {
+        "technology": ["Webflow", "CMS", "Lottie", "AI", "Generative", "Make.com", "Python Script", "Adobe Creative Cloud"],
+        "media": ["Digital Product"],
+        "role": "Web Developer",
+        "skill": ["Animation", "Illustration", "Automation", "Content Production", "Publishing", "Full-Stack"]
+      },
+      "alt_text": {
+        "video_alt_text": "Webflow CMS blog platform publishing 200+ weekly AI-generated posts featuring custom hand-drawn Lottie animations created with iPad Pro, with line animations directing user navigation through automated content",
+        "thumb_slideshow_alt_text": [
+          "Hand-drawn illustrations created with iPad Pro converted to Lottie animations for movement without file bloat",
+          "Custom line animations guiding user attention through blog navigation and section discovery",
+          "Webflow CMS architecture supporting automated AI-generated weekly astrological blog content",
+          "Make.com automation workflow publishing complete posts with appropriate animated elements",
+          "Cohesive animation library maintaining visual identity across high-volume content generation",
+          "Full blog platform showing how custom artwork transforms automated content into distinctive branded experience"
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "All video_alt_text descriptions focus on website screen grab demonstrations",
+    "Thumbnail alt text provides specific descriptions for each slideshow image",
+    "Tags selected from placement.json schema 2.0 approved catalog",
+    "Role field uses single value as enforced by v3.1 schema",
+    "Two entries (uid-unw-889 and uid-dff-987) include page_image_group_alt_text for additional on-page images",
+    "Entry uid-iqi-479 has no media yet (thumbnails/video coming soon per notes)"
+  ]
+}

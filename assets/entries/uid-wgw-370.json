@@ -4,7 +4,7 @@
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
+    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-wgw-370", 
@@ -34,9 +34,9 @@
             "assets/media/ai-design-fashion-lookbook/thumb-slides-5-ai-design-fashion-lookbook.webp",
             "assets/media/ai-design-fashion-lookbook/thumb-slides-6-ai-design-fashion-lookbook.webp"
         ], 
-        "thumbnail_alt_text": [],
+        "thumb_slideshow_alt_text": "",
         "page_imagery": [], 
-        "page_imagery_alt_text": []
+        "page_image_group_alt_text": ""
         },
     "assets": {
         "project_url": "https://design.august.style/projects/summer-lookbook-part-1",

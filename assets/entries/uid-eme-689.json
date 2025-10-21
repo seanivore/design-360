@@ -4,7 +4,7 @@
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
+    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-eme-689", 
@@ -14,10 +14,10 @@
         "slug": "modular-portfolio-build"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages", "Jekyll"],
+        "media": ["Website", "Template", "Portfolio"],
+        "role": "Web Developer", 
+        "skill": ["System Design", "Publishing", "Modularity", "DRY Principles", "Typography", "Web Design"]
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "template-tag-nav-visual-website.mp4",
         "video_url": "https://youtu.be/OLZHwv2o-zQ",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OLZHwv2o-zQ?si=1px7OtROcUfpq8il&amp;controls=0' title='Build a Visual Tag-Navigated Portfolio with AI Help' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Screen recording demonstrating tag-based navigation and modular component structure built using simple HTML/CSS/JS for a personal, comprehensive portfolio system designed for AI-assisted development workflows and then shared in a public template format for User to easily adapt for their own use and learn to code using AI on an easy project",
         "thumbnail_images": [
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp",
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-2.webp",
@@ -34,9 +34,9 @@
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-5.webp",
             "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-6.webp"
         ], 
-        "thumbnail_alt_text": [],
+        "thumb_slideshow_alt_text": "Screenshots of a website demonstrating tag-based navigation and modular component structure built using simple HTML/CSS/JS for a personal, comprehensive portfolio system designed for AI-assisted development workflows and then shared in a public template format for User to easily adapt for their own use and learn to code using AI on an easy project",
         "page_imagery": [],
-        "page_imagery_alt_text": []
+        "page_image_group_alt_text": ""
         },
     "assets": {
         "project_url": "https://developer-technologist.august.style",

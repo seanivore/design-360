@@ -4,7 +4,7 @@
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
+    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-wnw-867", 
@@ -33,9 +33,9 @@
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-4.webp",
             "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-5.webp"
         ], 
-        "thumbnail_alt_text": [],
+        "thumb_slideshow_alt_text": "",
         "page_imagery": [],
-        "page_imagery_alt_text": []
+        "page_image_group_alt_text": ""
         },
     "assets": {
         "project_url": "https://design.august.style/projects/webflow-print-series",

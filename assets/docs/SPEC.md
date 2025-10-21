@@ -166,7 +166,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
          - Use on page text, image filenames, etc. for insight 
          - Opt for more, rather than less, without being redundant or stretching reality  
     5. While in the JSON there are some updates to make 
-       + v3.1 has the "Enforced single role value, added placement.json reference for tag consistency" 
+       + v3.1 has the "Enforced single role value, added placement.json reference to template for tag consistency" 
        + We also need to add alt.text 
          - For the thumbnail slideshow 
          - For the video embed 

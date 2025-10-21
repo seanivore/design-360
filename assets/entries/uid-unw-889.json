@@ -4,7 +4,7 @@
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference for tag consistency"
+    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
   },
   "categorization": {
     "entry_id": "uid-unw-889", 
@@ -34,13 +34,13 @@
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-5.webp",
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-6.webp"
         ], 
-        "thumbnail_alt_text": ["Slideshow of various images showing a Webflow designed site covered in custom designed brand art."],
+        "thumb_slideshow_alt_text": ["Slideshow of various images showing a Webflow designed site covered in custom designed brand art."],
         "page_imagery": [
             "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-1.webp",
             "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-2.webp",
             "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-3.webp"
         ],
-        "page_imagery_alt_text": ["Mobile view shows beautifully responsive, custom art covered, Webflow designed website."]
+        "page_image_group_alt_text": ["Mobile view shows beautifully responsive, custom art covered, Webflow designed website."]
         },
     "assets": {
         "project_url": "https://online-pt-trainer.august.style",
