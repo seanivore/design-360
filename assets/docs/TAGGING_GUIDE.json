@@ -3,53 +3,6 @@
   
   "entries": [
     {
-      "entry_id": "uid-wty-542",
-      "title": "Hand-Illustrated Portfolio Showcasing Creative Process",
-      "tags": {
-        "technology": [],
-        "media": [],
-        "role": "",
-        "skill": []
-      },
-      "alt_text": {
-        "video_alt_text": "",
-        "thumb_slideshow_alt_text": [
-          "Bold gold frame visual identity complementing detailed digital illustration work",
-          "Collection of hand-drawn pieces showing range from quick sketches to finished detailed artwork",
-          "Web3 DAO brand assets and minted NFT pieces displayed with gallery-like presentation",
-          "Typography hierarchy and white space preventing visual overwhelm across massive collection",
-          "iPad Pro and Apple Pencil created artwork demonstrating artistic process and evolution",
-          "Navigation architecture organizing hundreds of illustrations across personal, commercial, and blockchain work"
-        ]
-      }
-    },
-    
-    {
-      "entry_id": "uid-dff-987",
-      "title": "800+ Product Store with Automated CMS Management",
-      "tags": {
-        "technology": ["Webflow", "CMS", "Make.com", "Notion API", "Python Script"],
-        "media": ["E-Commerce", "Digital Product"],
-        "role": "Web Developer",
-        "skill": ["Automation", "Scaling System", "Graphic Design", "Publishing", "Full-Stack"]
-      },
-      "alt_text": {
-        "video_alt_text": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
-        "thumb_slideshow_alt_text": [
-          "Custom navigation system elegantly handling complex multi-section site architecture",
-          "Make.com automation workflows connecting Notion databases to Webflow CMS collections",
-          "E-commerce storefront showing synchronized inventory across multiple product categories",
-          "Fashion lookbook magazine section with automated content population from Notion",
-          "Editorial content area demonstrating seamless flow between shopping and inspiration",
-          "Backend integration visualization showing real-time sync between databases and checkout"
-        ],
-        "page_image_group_alt_text": [
-          "Mobile responsive views of e-commerce store, fashion lookbook, and editorial sections maintaining visual consistency and navigation clarity across all devices and content types"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-fth-565",
       "title": "200+ Weekly Blogs with Custom Hand-Drawn Animation",
       "tags": {
