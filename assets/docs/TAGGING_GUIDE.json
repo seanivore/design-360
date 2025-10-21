@@ -6,13 +6,13 @@
       "entry_id": "uid-wty-542",
       "title": "Hand-Illustrated Portfolio Showcasing Creative Process",
       "tags": {
-        "technology": ["Webflow", "CMS", "Python Script"],
-        "media": ["Digital Product", "NFT"],
-        "role": "Creative Director",
-        "skill": ["Illustration", "Graphic Design", "Branding", "Publishing"]
+        "technology": [],
+        "media": [],
+        "role": "",
+        "skill": []
       },
       "alt_text": {
-        "video_alt_text": "Webflow portfolio featuring hundreds of hand-drawn iPad Pro illustrations with bold gold frames and impactful typography, documenting artistic process from sketches to 10+ hour detailed pieces including Web3 DAO brand assets",
+        "video_alt_text": "",
         "thumb_slideshow_alt_text": [
           "Bold gold frame visual identity complementing detailed digital illustration work",
           "Collection of hand-drawn pieces showing range from quick sketches to finished detailed artwork",
