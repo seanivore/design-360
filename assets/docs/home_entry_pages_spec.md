@@ -1,9 +1,11 @@
-# Claude Code Agentic Workflow SPEC for Homepage & Entry Pages 
+# Claude Code Agentic Workflow SPEC for Complete Site Testing & Implementation
 
-  > 1 - Ingest the information from this file
-  > 2 - Implement the Low-Level Tasks
-  > 3 - Generate code that will satisfy High and Mid Level Objective
-  > 4 - Perform all requested testing and validation 
+  > 1 - Context PRIME `/Users/seanivore/Development/360-design/.claude/commands/prime.md`
+  > 2 - Ingest the information from this file
+  > 3 - Implement the Low-Level Tasks
+  > 4 - Generate code that will satisfy High and Mid Level Objectives 
+  > 5 - Perform all requested testing and validation, including visual spot-checking
+  > 6 - Test complete site navigation flow across all three page types
 
 ---
 
@@ -15,6 +17,7 @@
     - Homepage showcases 4 section tiles with random project selection on each load
     - Entry pages display individual projects with related posts based on tag matching
   + Complete the "Single-JSON Portfolio Architecture" with full dynamic content population
+  + Validate complete site navigation flow across all three page types: Homepage → Section Pages → Entry Pages
 
 ### Mid-Level
 
@@ -205,9 +208,102 @@
 
 ---
 
+## Browser Automation & Visual Design Testing
+
+### CRITICAL: Playwright Browser Automation Workflow
+
+  * **Installed Skill:** Playwright Browser Automation at `~/.claude/plugins/marketplaces/playwright-skill/`
+    + **Purpose:** Automated testing AND iterative visual design perfection
+    + **Key Capability:** Take screenshots at multiple viewports to review and refine UI design
+
+  * **MANDATORY: Use Headless Mode for Screenshot Loops**
+    + Always use `headless: true` when taking screenshots for design review
+    + Prevents browser windows from popping up on screen during iterative loops
+    + Only use `headless: false` (visible browser) for interactive debugging
+
+  * **Visual Design Perfection Workflow:**
+
+    1. **Auto-detect dev server:**
+       ```bash
+       cd ~/.claude/plugins/marketplaces/playwright-skill/skills/playwright-skill && node -e "require('./lib/helpers').detectDevServers().then(servers => console.log(JSON.stringify(servers)))"
+       ```
+
+    2. **Take screenshots at all breakpoints (HEADLESS MODE):**
+       + Mobile: 375x667px
+       + Tablet: 768x1024px  
+       + Desktop: 1920x1080px
+       + Full-page screenshots to see complete layout
+
+    3. **Review screenshots for design perfection:**
+       + Typography: Font sizes, weights, line heights, letter spacing
+       + Spacing: Padding, margins, gaps between elements
+       + Sizing: Element dimensions, aspect ratios, proportions
+       + Shadows: Consistent soft layered shadows across ALL elements
+       + Corners: Sharp corners (no border-radius) on tiles
+       + Colors: Accent colors, text contrast, background gradients
+       + Alignment: Elements lined up properly, consistent grid
+       + Magazine aesthetic: Minimal text, visual-first, clean classic look
+
+    4. **Make CSS adjustments based on screenshot review**
+
+    5. **REPEAT: Screenshot → Review → Adjust → Screenshot again**
+       + This is an AGENTIC process - keep looping until design is perfect
+       + Don't stop after one screenshot - iterate multiple times
+       + Each viewport should look polished and professional
+       + Pay attention to small details: 2px spacing matters!
+
+  * **Example Playwright Script Pattern (Headless Mode):**
+
+    ```javascript
+    // /tmp/playwright-test-responsive.js
+    const { chromium } = require('playwright');
+    
+    const TARGET_URL = 'http://localhost:5500'; // Auto-detected
+    
+    (async () => {
+      const browser = await chromium.launch({ headless: true }); // ← HEADLESS!
+      const page = await browser.newPage();
+      
+      const viewports = [
+        { name: 'mobile', width: 375, height: 667 },
+        { name: 'tablet', width: 768, height: 1024 },
+        { name: 'desktop', width: 1920, height: 1080 }
+      ];
+      
+      for (const viewport of viewports) {
+        await page.setViewportSize({ width: viewport.width, height: viewport.height });
+        await page.goto(TARGET_URL);
+        await page.waitForTimeout(1000); // Let animations settle
+        
+        await page.screenshot({
+          path: `/tmp/${viewport.name}.png`,
+          fullPage: true
+        });
+        
+        console.log(`📸 Screenshot saved: /tmp/${viewport.name}.png`);
+      }
+      
+      await browser.close();
+    })();
+    ```
+
+  * **Execution Pattern:**
+    ```bash
+    # Write script to /tmp
+    # Then execute from skill directory:
+    cd ~/.claude/plugins/marketplaces/playwright-skill/skills/playwright-skill && node run.js /tmp/playwright-test-responsive.js
+    ```
+
+---
+
 ## Low Level Tasks
 
 ### PHASE 2: HOMEPAGE
+
+  * **TILE TYPE REFERENCE:**
+    - **For complete tile specifications, see ARCHITECTURE.md "Implementation Notes" section**
+    - **Homepage Tiles:** Square (1:1 aspect ratio), show section name overlay with 5% black layer beneath text, display project count badge (top-right), link to section pages, use swipe to cycle through ONE project's images/text per section
+    - **Section Page Tiles:** 16:9 aspect ratio, magazine aesthetic (NO title/subtitle on tile), show teaser text that cycles with images, link to individual entry pages, already built in Phase 1 ✅
 
 #### 1. Create `homepage-controller.js`
 
@@ -458,6 +554,16 @@ html {
 
   * **Action:** UPDATE `./assets/js/tile-renderer.js`
 
+  * **VISUAL DISTINCTION FROM SECTION TILES:**
+    - Homepage tiles: **1:1 aspect ratio** (square)
+    - Section tiles: **16:9 aspect ratio** (landscape)
+    - Homepage tiles: **Section name overlay** with semi-transparent black layer
+    - Section tiles: **NO overlays**, magazine aesthetic with cycling teaser text
+    - Homepage tiles: **Project count badge** in top-right corner
+    - Section tiles: **NO badges**, clean visual-first presentation
+    - Homepage tiles: **Link to section pages** (/web, /print, etc.)
+    - Section tiles: **Link to entry pages** (/web/html-css-js/project-name)
+
   * **Function to ADD:**
 
 ```javascript
@@ -525,28 +631,104 @@ function renderHomepageTile(project, section, projectCount) {
     - Count badge shows in top-right corner
     - Links to section page (e.g., /web)
 
-#### 5. Test Homepage on Localhost
+#### 5. Test Homepage with Playwright Browser Automation
 
-  * **Action:** MANUAL TEST
+  * **Action:** AUTOMATED TESTING + VISUAL DESIGN REVIEW (Playwright)
 
-  * **Tests to PERFORM:**
-    - Visit `http://localhost:5500/` or `http://localhost:5500/index.html`
-    - Verify 4 section tiles appear in random order
-    - Verify each tile shows random project from that section
-    - Reload page - tiles show different projects and different order
-    - Test image swipe functionality
-    - Verify count badges show correct numbers
-    - Test smooth scroll to #about and #contact
-    - Verify profile picture displays with stroke and shadow
-    - Verify social icon links work
-    - Check responsive behavior (resize window)
+  * **Step 1: Auto-detect dev server**
+    ```bash
+    cd ~/.claude/plugins/marketplaces/playwright-skill/skills/playwright-skill && node -e "require('./lib/helpers').detectDevServers().then(servers => console.log(JSON.stringify(servers)))"
+    ```
 
-  * **Use for Testing**
+  * **Step 2: Functional Testing (Headless Mode)**
 
-```bash
+    + Create `/tmp/playwright-test-homepage-functional.js` with:
+      - Navigate to homepage (detected URL or http://localhost:5500)
+      - Verify 4 section tiles present (check `.homepage-tile` count)
+      - Verify count badges display (check `.homepage-tile__count-badge`)
+      - Test tile clicks navigate to correct URLs
+      - **Broken Link Check:** Test all navigation links on homepage (section tiles, social links, breadcrumbs) return 200 responses
+      - Verify profile picture loads (check `img.profile-pic`)
+      - Verify social links present (check `.social-links a`)
+      - Test smooth scroll to #about and #contact anchors
+      - Console log all test results
+
+    + Execute with `headless: true` mode
+
+    + **Playwright Broken Link Pattern** (from SKILL.md):
+      ```javascript
+      const links = await page.locator('a[href^="http"]').all();
+      const results = { working: 0, broken: [] };
+      
+      for (const link of links) {
+        const href = await link.getAttribute('href');
+        try {
+          const response = await page.request.head(href);
+          if (response.ok()) {
+            results.working++;
+          } else {
+            results.broken.push({ url: href, status: response.status() });
+          }
+        } catch (e) {
+          results.broken.push({ url: href, error: e.message });
+        }
+      }
+      ```
+
+  * **Step 3: Visual Design Review (ITERATIVE - Headless Mode)**
+
+    + Create `/tmp/playwright-test-homepage-visual.js` with:
+      - Take full-page screenshots at Mobile (375x667), Tablet (768x1024), Desktop (1920x1080)
+      - Use `headless: true` to prevent browser pop-ups
+      - Save to `/tmp/homepage-mobile.png`, `/tmp/homepage-tablet.png`, `/tmp/homepage-desktop.png`
+
+    + **REVIEW Screenshots for:**
+      - **Section Tiles:** Square aspect ratio (1:1), sharp corners, consistent spacing
+      - **Typography:** H1.section-heading size/weight, about-title hierarchy  
+      - **Spacing:** Tile grid gap, section padding, margins between Projects/About/Contact
+      - **Profile Picture:** Circular with 5px white stroke, soft shadow
+      - **Social Icons:** 48x48px containers, 32x32px icons, proper spacing
+      - **Count Badges:** Top-right placement, readable text, semi-transparent background
+      - **Mobile Layout:** Single column, proper padding, no horizontal overflow
+      - **Desktop Layout:** 2-column grid, centered max-width, balanced whitespace
+      - **Shadows:** Consistent soft layered shadows on tiles, profile pic, all elements
+      - **Magazine Aesthetic:** Visual-first, minimal text, clean and timeless
+
+    + **ITERATE: Make CSS adjustments → Screenshot again → Compare → Refine**
+      - This is NOT a one-shot process
+      - Keep looping until design looks perfect at ALL breakpoints
+      - Pay attention to pixel-perfect spacing (2-4px adjustments matter!)
+      - Ensure smooth responsive behavior (no awkward in-between states)
+
+  * **Step 4: Random Order Validation (Multiple Runs)**
+
+    + Run functional test script 3-5 times
+    + Verify tile order changes each time
+    + Verify different projects selected for each section
+    + Document that randomization works correctly
+
+  * **Step 5: Image Swipe Interaction (Visible Browser)**
+
+    + Create `/tmp/playwright-test-homepage-swipe.js` with `headless: false`
+    + Manually verify image swipe functionality on tiles
+    + Test text cross-fade syncs with image changes
+    + Verify 1/8th image bleed is visible
+
+  * **Success Criteria:**
+    ✅ All functional tests pass  
+    ✅ Design looks perfect at mobile, tablet, desktop  
+    ✅ Typography hierarchy is clear  
+    ✅ Spacing is consistent and balanced  
+    ✅ Shadows are subtle and layered  
+    ✅ Tiles have sharp corners  
+    ✅ Random order works correctly  
+    ✅ Profile picture has stroke and shadow  
+    ✅ Social icons are properly sized  
+
+  * **Note:** If dev server not running, start with:
+    ```bash
     python3 -m http.server 5500 --bind 127.0.0.1
-    # View: http://localhost:5500/section.html
-```
+    ```
 
 ---
 
@@ -972,45 +1154,285 @@ function seededRandom(seed) {
     - If 1-2 segments → `section.html`
     - Sets `sessionStorage.entryPath` properly
 
-#### 10. Test Entry Pages on Localhost
+#### 10. Test Entry Pages with Playwright Browser Automation
 
-  * **Action:** MANUAL TEST
+  * **Action:** AUTOMATED TESTING + VISUAL DESIGN REVIEW (Playwright)
 
-  * **Tests:**
-    - Visit `http://localhost:5500/entry.html?path=web/html-css-js/personalized-fashion-magazine`
-    - Verify all content populates (title, subtitle, role, pattern, action, measured)
-    - Verify thumbnail slideshow works with alt text
-    - Verify video embed displays (if exists) with alt text
-    - Verify page_imagery displays (if exists) with alt text
-    - Verify project_url embed displays prominently
-    - Verify github_repository card displays
-    - Verify breadcrumbs correct and clickable
-    - Verify tags ribbon scrolls horizontally
-    - Verify tags are clickable links
-    - Verify 5 related posts appear with proper padding
-    - Reload - related posts should be same (6-hour consistency)
-    - Check console for related posts scoring logs
-    - Test different entry pages
+  * **Step 1: Auto-detect dev server** (same as Task 5)
 
-#### 11. Test Production Routing with HTTP-Server
+  * **Step 2: Functional Testing (Headless Mode)**
 
-  * **Action:** MANUAL TEST
+    + Create `/tmp/playwright-test-entry-functional.js` with:
+      - Navigate to entry page: `http://localhost:5500/entry.html?path=web/html-css-js/slug`
+      - Verify ALL content populates from JSON:
+        * Check H1 (`#entry-title`) displays page_title
+        * Check H2 (`#entry-subtitle`) displays page_subtitle
+        * Check H3 role heading displays role (NOT in tags card)
+        * Check pattern/action/measured sections populate
+        * Verify thumbnail slideshow images load with alt text
+        * Verify video embed (if exists) with video_alt_text
+        * Verify page_imagery (if exists) with page_image_group_alt_text
+        * Verify project_url embed displays prominently
+        * Verify github_repository card displays
+      - Verify breadcrumbs structure: section › subsection › breadcrumb
+      - Verify tags hover card (top right + bottom right):
+        * Contains ONLY technology/media/skill tags
+        * Does NOT contain section/subsection/role
+        * Tags are clickable links
+      - **Broken Link Check:** Test all clickable links on entry page (breadcrumbs, tags, related posts, project_url, github_repository) for valid responses
+      - Verify 5 related posts render (not 3)
+      - Reload 3 times - related posts should stay same (6-hour consistency)
+      - Check console logs for related posts scoring algorithm
+      - Test 2-3 different entry pages
+      - Console log all validation results
 
-  * **Commands:**
+    + Execute with `headless: true` mode
 
-```bash
-npm install -g http-server
-http-server -p 8080 -c-1 --proxy http://localhost:8080?
-```
+  * **Step 3: Visual Design Review (ITERATIVE - Headless Mode)**
 
-  * **Tests:**
-    - Visit `http://localhost:8080/web`
-    - Visit `http://localhost:8080/web/html-css-js`
-    - Visit `http://localhost:8080/web/html-css-js/project-name`
-    - Verify all routes work without URL parameters
-    - Verify normalization (lowercase web → Web in JSON)
+    + Create `/tmp/playwright-test-entry-visual.js` with:
+      - Take full-page screenshots at Mobile (375x667), Tablet (768x1024), Desktop (1920x1080)
+      - Test 2-3 different entry pages to ensure consistency
+      - Use `headless: true` to prevent browser pop-ups
+      - Save to `/tmp/entry-[page]-[viewport].png` pattern
 
-#### 12. Deploy to GitHub Pages
+    + **REVIEW Screenshots for:**
+      - **Top Layout:** Breadcrumbs (left) + Tags hover card (right) properly positioned
+      - **Typography:** H1 (3rem, 700), H2 (1.5rem, 400), H3 (1.75rem, 600) hierarchy clear
+      - **Tags Hover Card:** Max-width 400px, bullet/comma separated, hover lift effect
+      - **Content Sections:** 2-column desktop, 1-column mobile, proper image/text balance
+      - **Embeds:** project_url prominent with title/description/image, github card styled
+      - **Video:** Full-width iframe, 16:9 aspect ratio, proper spacing
+      - **Page Imagery:** Grid layout, consistent image sizing, proper alt text
+      - **Bottom Layout:** Breadcrumbs + Tags repeated symmetrically
+      - **Related Posts:** 5 tiles (not 3!), proper L/R padding, centered grid
+      - **Spacing:** Consistent var(--space-*) usage, balanced whitespace
+      - **Shadows:** Soft layered shadows on cards, embeds, images
+      - **Mobile:** Single column, no horizontal scroll, proper touch targets
+      - **Tablet:** Proper breakpoint behavior, no awkward layouts
+      - **Desktop:** Max-width 1200px, centered, generous padding
+      - **Magazine Aesthetic:** Clean, minimal, visual-first, timeless
+
+    + **ITERATE: CSS Refinement Loop**
+      - Adjust typography scales for better hierarchy
+      - Fine-tune spacing between sections (4-8px adjustments)
+      - Perfect shadow layering for depth without heaviness
+      - Ensure tags hover card lift is subtle but noticeable
+      - Verify embed cards stand out but don't dominate
+      - Check related posts grid balances properly
+      - **KEEP LOOPING** until every breakpoint looks polished
+
+  * **Step 4: Content Population Validation**
+
+    + Test entries with different content combinations:
+      - Entry with video_embed + page_imagery
+      - Entry with project_url but no github_repository
+      - Entry with github_repository but no video
+      - Entry with minimal content (no optional fields)
+    + Verify layout adapts gracefully to missing content
+    + Ensure no broken images or empty sections
+
+  * **Step 5: Related Posts Algorithm Validation**
+
+    + Run test at different times to verify 6-hour rotation
+    + Check console logs for tag matching scores
+    + Verify seededRandom produces consistent results
+    + Document that same 5 posts appear within 6-hour window
+    + Verify different posts appear after 6-hour window passes
+
+  * **Step 6: Interactive Testing (Visible Browser)**
+
+    + Create `/tmp/playwright-test-entry-interaction.js` with `headless: false`
+    + Test thumbnail slideshow swipe functionality
+    + Test breadcrumb link navigation
+    + Test tag link navigation (should go to filtered section page)
+    + Test related post tile clicks
+    + Verify smooth transitions and animations
+
+  * **Success Criteria:**
+    ✅ All content populates correctly from JSON  
+    ✅ Layout pattern correct: Breadcrumbs (left) + Tags (right) at top AND bottom  
+    ✅ Tags card contains ONLY technology/media/skill (role is H3 heading)  
+    ✅ Typography hierarchy is clear and consistent  
+    ✅ Embeds display prominently and professionally  
+    ✅ Related posts shows 5 tiles (not 3) with proper padding  
+    ✅ 6-hour rotation works correctly  
+    ✅ Design looks perfect at all breakpoints  
+    ✅ Spacing is balanced and generous  
+    ✅ Shadows are consistent and subtle  
+    ✅ Magazine aesthetic maintained throughout
+
+#### 11. Test Section Pages & Complete Site Navigation Flow with Playwright
+
+  * **Action:** COMPREHENSIVE SITE-WIDE NAVIGATION VALIDATION (Playwright)
+
+  * **Purpose:** Validate that section.html (already built in Phase 1) works correctly with new homepage/entry pages, and test complete user journey across all three page types
+
+  * **Step 1: Auto-detect dev server** (same as previous tasks)
+
+  * **Step 2: Section Page Functional Testing (Headless Mode)**
+
+    + Create `/tmp/playwright-test-section-functional.js` with:
+      - Navigate to section pages: `/web`, `/print`, `/digital`, `/video`
+      - Verify section tiles render correctly (check `.tile-section` count)
+      - Verify tag filters display horizontally scrolling
+      - Test main filter heading displays (not in tag list)
+      - Verify sticky filter behavior (main filter can't be removed)
+      - **Broken Link Check:** Test ALL navigation links on section pages:
+        * Section tile links (to entry pages)
+        * Tag filter links (to filtered section pages)
+        * Breadcrumb links (back to homepage)
+        * Header navigation links
+        * Footer social links
+      - Test subsection URLs: `/web/html-css-js`, `/web/webflow`, etc.
+      - Verify toggle tags appear ONLY on section-type pages (not click-through)
+      - Test tag activation (click tag → filters apply → tiles filter)
+      - Verify tiles maintain random order when filtering
+      - Test multiple active tags simultaneously
+      - Reload 3 times - verify tile order reshuffles each time
+      - Console log all test results
+
+    + Execute with `headless: true` mode
+
+  * **Step 3: Complete Navigation Flow Testing (End-to-End)**
+
+    + Create `/tmp/playwright-test-complete-flow.js` with:
+      - **Journey 1: Homepage → Section → Entry → Related Post**
+        * Start at `/` (homepage)
+        * Click Web section tile → verify lands on `/web`
+        * Verify section tiles load and tag filters display
+        * Click first project tile → verify lands on entry page
+        * Verify entry content populates from JSON
+        * Click related post tile → verify lands on different entry
+        * Click breadcrumb → verify returns to section page
+      - **Journey 2: Tag Click-Through Navigation**
+        * Navigate to entry page
+        * Click tag in tags hover card → verify lands on filtered section page
+        * Verify sticky filter = clicked tag
+        * Verify toggle tags do NOT appear (click-through page)
+        * Verify all contextual tags from matching projects display
+        * Test clicking section tag → verify filters to that section
+      - **Journey 3: Breadcrumb Navigation**
+        * Navigate to `/web/html-css-js/project-slug`
+        * Click "HTML/CSS/JS" in breadcrumb → verify lands on `/web/html-css-js`
+        * Click "Web" in breadcrumb → verify lands on `/web`
+        * Click site logo → verify returns to homepage
+      - **Journey 4: Header/Footer Navigation**
+        * Test all header nav links from each page type
+        * Test all footer social links from each page type
+        * Verify smooth anchor scrolling on homepage (#about, #contact)
+      - Console log success/failure for each journey step
+
+    + Use `headless: true` mode
+    + Document any broken navigation paths
+
+  * **Step 4: Visual Design Review - Section Pages (ITERATIVE - Headless Mode)**
+
+    + Create `/tmp/playwright-test-section-visual.js` with:
+      - Take full-page screenshots at Mobile (375x667), Tablet (768x1024), Desktop (1920x1080)
+      - Test section page: `/web`
+      - Test subsection page: `/web/html-css-js`
+      - Test click-through filtered page: navigate via tag click, screenshot result
+      - Use `headless: true` to prevent browser pop-ups
+      - Save to `/tmp/section-[type]-[viewport].png` pattern
+
+    + **REVIEW Screenshots for:**
+      - **Section Tiles:** 16:9 aspect ratio (NOT 1:1 like homepage)
+      - **Magazine Aesthetic:** NO title/subtitle on tiles, just visuals + teaser text
+      - **Tag Filters:** Horizontal scroll, main filter as heading (not in list)
+      - **Typography:** Consistent with homepage/entry pages
+      - **Spacing:** Proper tile grid gaps, filter navigation spacing
+      - **Sticky Filter Behavior:** Main filter heading visible and clear
+      - **Toggle Tags:** Visible on section-type pages, hidden on click-through
+      - **Shadows:** Consistent soft layered shadows on tiles
+      - **Mobile:** Single column layout, horizontal scroll for tags
+      - **Desktop:** Large padding, centered tiles, proper spacing
+
+    + **ITERATE:** Screenshot → Review → CSS Adjustments → Screenshot again
+      - Ensure section tiles visually distinct from homepage tiles
+      - Verify magazine aesthetic (visual-first, minimal text)
+      - Perfect responsive behavior at all breakpoints
+
+  * **Step 5: Tag Filter Interaction Testing (Visible Browser)**
+
+    + Create `/tmp/playwright-test-tag-interaction.js` with `headless: false`
+    + Test tag activation:
+      - Click tag → verify active state (color change, moves left)
+      - Click again → verify deactivates and returns to original position
+      - Test multiple tags active simultaneously
+      - Verify main filter cannot be clicked off
+    + Test tile filtering:
+      - Activate tag → verify unrelated tiles fade out
+      - Verify related tiles slide into new positions
+      - Deactivate tag → verify all tiles return smoothly
+    + Test tag reordering:
+      - Active tags should physically move to left in DOM
+      - Verify smooth transition animations (300ms)
+
+  * **Success Criteria:**
+    ✅ Section pages render correctly with all Phase 1 functionality intact  
+    ✅ All navigation links work (homepage ↔ section ↔ entry)  
+    ✅ Broken link checks pass for all page types  
+    ✅ Complete user journeys work end-to-end  
+    ✅ Tag filtering works correctly on section pages  
+    ✅ Sticky filters behave properly  
+    ✅ Toggle tags appear only on section-type pages  
+    ✅ Section tiles visually distinct from homepage tiles (16:9 vs 1:1)  
+    ✅ Magazine aesthetic maintained (no title/subtitle on section tiles)  
+    ✅ Design consistency across all three page types  
+    ✅ Responsive behavior perfect at all breakpoints  
+
+#### 12. Test Production Routing with Playwright Browser Automation
+
+  * **Action:** AUTOMATED ROUTING VALIDATION (Playwright)
+
+  * **Prerequisites:**
+    ```bash
+    npm install -g http-server
+    http-server -p 8080 -c-1 --proxy http://localhost:8080?
+    ```
+
+  * **Step 1: Create Routing Validation Script (Headless Mode)**
+
+    + Create `/tmp/playwright-test-routing.js` with:
+      - Test section URLs: `/web`, `/print`, `/digital`, `/video`
+      - Test subsection URLs: `/web/html-css-js`, `/web/webflow`, `/web/framer`
+      - Test entry URLs: `/web/html-css-js/slug-project-name`
+      - For each URL:
+        * Navigate to clean URL (no parameters)
+        * Verify correct page loads (check page title, H1, unique content)
+        * Verify no 404 errors
+        * Verify JavaScript executes properly
+        * Console log success/failure for each route
+      - Test case normalization: `/web` → loads projects with section="Web"
+      - Use `headless: true` mode
+
+  * **Step 2: 404 Routing Flow Validation**
+
+    + Verify routing logic:
+      - URL with 3+ segments → entry.html
+      - URL with 1-2 segments → section.html
+      - manifest.json lookup works correctly
+      - sessionStorage values set properly
+
+  * **Step 3: Visual Verification (Quick Screenshots)**
+
+    + Take screenshot of each page type:
+      - Section page (`/web`)
+      - Subsection page (`/web/html-css-js`)
+      - Entry page (`/web/html-css-js/slug`)
+    + Verify pages render identically to localhost testing
+    + Use `headless: true` mode
+
+  * **Success Criteria:**
+    ✅ All clean URLs load without errors  
+    ✅ 404 routing redirects work correctly  
+    ✅ Case normalization functions properly  
+    ✅ Content loads dynamically from JSON  
+    ✅ No URL parameters needed in production  
+    ✅ Pages render identically to localhost
+
+#### 13. Deploy to GitHub Pages
 
   * **Action:** MANUAL DEPLOYMENT
 
@@ -1038,22 +1460,160 @@ git push origin generalist-portfolio-v1
     - Test on mobile device
     - Test responsive breakpoints
 
-#### 13. Polish and Final Tweaks
+#### 14. Polish and Final Tweaks with Iterative Visual Design Perfection
 
-  * **Action:** UPDATE files as needed
+  * **Action:** ITERATIVE REFINEMENT using Playwright screenshot loops (Headless Mode)
 
-  * **Items to POLISH:**
-    - Tile slide transitions
-    - Smooth page transitions
-    - Loading states
-    - Error handling (404s, missing images)
-    - Accessibility (alt text, ARIA labels)
-    - SEO meta tags (all templates)
-    - Performance optimization
-    - Keyboard navigation
-    - Screen reader compatibility
+  * **CRITICAL: This is an AGENTIC visual design perfection process**
+    + Use Playwright to take screenshots, review, adjust CSS, screenshot again
+    + Keep looping until design is pixel-perfect at ALL breakpoints
+    + Don't stop after one pass - iterate 3-5+ times if needed
+    + Pay attention to tiny details: 2px can make or break visual balance
 
-#### 14. Anti-Hardcoding Audit
+  * **Step 1: Comprehensive Visual Audit (Headless Mode)**
+
+    + Create `/tmp/playwright-test-comprehensive-visual.js` with:
+      - Screenshot ALL page types at ALL breakpoints:
+        * Homepage: Mobile (375x667), Tablet (768x1024), Desktop (1920x1080)
+        * Section page: Same 3 viewports
+        * Entry page: Same 3 viewports (test 2-3 different entries)
+      - Save organized: `/tmp/audit-[page]-[viewport].png`
+      - Use `headless: true` mode
+
+    + **REVIEW ALL Screenshots for:**
+      - **Typography Hierarchy:**
+        * H1: Large, bold, commanding presence
+        * H2: Clearly subordinate to H1, but distinct from H3
+        * H3: Section heading weight, readable at all sizes
+        * Body: Legible, proper line height (1.5-1.6), balanced spacing
+        * Tags: Small but readable, consistent weight
+      - **Spacing Consistency:**
+        * Tile grid gaps: Equal and balanced
+        * Section padding: Generous but not excessive
+        * Element margins: Rhythmic vertical spacing
+        * Content padding: Breathing room around text
+        * Related posts: Proper L/R padding, not cramped
+      - **Element Sizing:**
+        * Tiles: Proper aspect ratios (1:1 homepage, 16:9 section)
+        * Images: Sharp, not pixelated or stretched
+        * Buttons/links: Adequate touch targets (44x44px minimum)
+        * Profile picture: Perfectly circular, proper size
+        * Count badges: Visible but not overwhelming
+      - **Shadow Consistency:**
+        * ALL elements use same soft layered shadow pattern
+        * Shadows: `0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.05)`
+        * No heavy or harsh shadows anywhere
+        * Consistent depth perception across site
+      - **Corner Treatment:**
+        * Tiles: Sharp corners (border-radius: 0)
+        * Tags card: Subtle radius (4px) for hover card
+        * Profile picture: Perfect circle (50%)
+        * No inconsistent rounding
+      - **Color Balance:**
+        * Background: Charcoal with subtle gradient glare
+        * Text: White with proper contrast
+        * Accent: Blue (#4a9eff) used consistently
+        * Shadows: Black with low opacity, layered
+      - **Magazine Aesthetic:**
+        * Visual-first: Images dominate, text minimal
+        * Clean: No clutter, generous whitespace
+        * Timeless: Classic layout, no trendy effects
+        * Professional: Polished, high-quality feel
+
+  * **Step 2: CSS Refinement Iterations (LOOP 3-5+ times)**
+
+    + For EACH issue found in screenshots:
+      1. Make targeted CSS adjustment
+      2. Re-run screenshot script
+      3. Compare new vs. old screenshot
+      4. Document improvement or iterate further
+      5. Repeat until perfect
+
+    + **Common Adjustments:**
+      - Typography: Adjust font-size by 0.125-0.25rem increments
+      - Spacing: Adjust padding/margin by 2-4px increments
+      - Shadows: Fine-tune opacity by 0.01-0.02 increments
+      - Colors: Adjust accent shades for better contrast
+      - Grid gaps: Balance tile spacing for visual harmony
+      - Breakpoints: Smooth transitions between viewport sizes
+
+  * **Step 3: Responsive Behavior Validation**
+
+    + Create `/tmp/playwright-test-responsive-transitions.js` with:
+      - Test intermediate viewport sizes:
+        * 480px, 640px, 960px, 1280px, 1440px
+      - Verify no awkward layout shifts
+      - Ensure smooth responsive behavior
+      - Check for horizontal overflow
+      - Use `headless: true` mode
+
+    + **Fix any issues:**
+      - Add media queries for problematic sizes
+      - Adjust max-widths and breakpoints
+      - Ensure single-column mobile, 2-column desktop
+      - Test edge cases (very wide screens, very narrow)
+
+  * **Step 4: Animation and Transition Polish**
+
+    + Review all transitions:
+      - Tile hover effects: Subtle translateY(-2px)
+      - Tags hover card: Gentle lift with shadow increase
+      - Smooth 300ms cubic-bezier(0.4, 0, 0.2, 1)
+      - Image cross-fades: Opacity transitions
+      - Tag activation: Color change smooth
+
+    + Use visible browser (`headless: false`) for timing verification
+    + Ensure animations feel natural, not robotic
+
+  * **Step 5: Functional Polish**
+
+    + Error handling:
+      - Missing images: Fallback or graceful hide
+      - Failed JSON load: User-friendly error message
+      - 404 routing: Smooth redirect without flash
+    + Loading states:
+      - Skeleton screens or subtle loaders
+      - No jarring content shifts
+    + Accessibility:
+      - All images have alt text (from JSON)
+      - ARIA labels on interactive elements
+      - Keyboard navigation works smoothly
+      - Screen reader compatible
+    + SEO:
+      - Meta tags populate dynamically
+      - og:image from JSON thumbnails
+      - Proper heading hierarchy
+    + Performance:
+      - Images optimized (WebP, proper sizes)
+      - CSS minified for production
+      - JavaScript efficient
+      - No unnecessary re-renders
+
+  * **Step 6: Final Comprehensive Screenshot Review**
+
+    + Take final full-site screenshots at all breakpoints
+    + Compare side-by-side with initial audit screenshots
+    + Document all improvements made
+    + Verify every issue from initial audit is resolved
+    + Get final sign-off that design is pixel-perfect
+
+  * **Success Criteria:**
+    ✅ Typography hierarchy is perfect at all breakpoints  
+    ✅ Spacing is rhythmic and balanced throughout  
+    ✅ Shadows are consistent and subtle on ALL elements  
+    ✅ Corners treated correctly (sharp tiles, rounded cards)  
+    ✅ Colors balanced with proper contrast  
+    ✅ Magazine aesthetic maintained everywhere  
+    ✅ Responsive behavior smooth with no awkward states  
+    ✅ Animations feel natural and polished  
+    ✅ All functional requirements met  
+    ✅ Accessibility fully implemented  
+    ✅ SEO optimized  
+    ✅ Performance optimized  
+    ✅ Design looks professional and timeless  
+    ✅ Ready for production deployment
+
+#### 15. Anti-Hardcoding Audit
 
   * **Action:** MANUAL CODE REVIEW
 
@@ -1081,6 +1641,8 @@ git push origin generalist-portfolio-v1
 
 ## Success Criteria
 
+### Functional Requirements:
+
    + ✅ Homepage loads with 4 randomized section tiles  
    + ✅ Section tiles show random projects on each reload  
    + ✅ Entry pages load from clean URLs  
@@ -1091,10 +1653,23 @@ git push origin generalist-portfolio-v1
    + ✅ All pages work on GitHub Pages with clean URLs  
    + ✅ Tag filtering works on section pages  
    + ✅ Sticky filters work correctly  
-   + ✅ Mobile responsive  
-   + ✅ Design matches Phase 1 aesthetic
-   + ✅ Consistent shadow/blend styling across ALL elements
    + ✅ No hardcoded values anywhere (Task #14 verified)
+
+### Visual Design Requirements (Playwright-Verified):
+
+   + ✅ **Typography:** Hierarchy perfect at all breakpoints (H1 > H2 > H3 > body)
+   + ✅ **Spacing:** Rhythmic, balanced, generous whitespace throughout
+   + ✅ **Shadows:** Consistent soft layered pattern on ALL elements
+   + ✅ **Corners:** Sharp on tiles (0), subtle on cards (4px), circular profile (50%)
+   + ✅ **Colors:** Accent blue (#4a9eff) consistent, proper text contrast
+   + ✅ **Magazine Aesthetic:** Visual-first, minimal text, clean, timeless
+   + ✅ **Mobile (375px):** Single column, no overflow, proper touch targets
+   + ✅ **Tablet (768px):** Smooth breakpoint transition, balanced layout
+   + ✅ **Desktop (1920px):** 2-column grids, max-width centering, generous padding
+   + ✅ **Responsive:** No awkward intermediate states, smooth viewport transitions
+   + ✅ **Animations:** 300ms cubic-bezier, natural feel, subtle hover effects
+   + ✅ **Design matches Phase 1 aesthetic:** Consistent with section.html styling
+   + ✅ **Pixel-Perfect:** Iteratively refined through 3-5+ screenshot review cycles
 
 ---
 
