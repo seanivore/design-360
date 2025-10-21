@@ -14,10 +14,10 @@
         "slug": "ai-design-fashion-lookbook"
     },
     "tagging":{
-        "technology": ["Git",],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["Git", "HTML", "CSS", "JavaScript", "Generative", "Responsive"],
+        "media": ["Digital Product", "E-Commerce", "Website"],
+        "role": "Web Developer", 
+        "skill": ["Fashion Photography", "Product", "Marketing", "Art History", "Copywriting", "Scaling System", "Web Design"]
     }
 },
 "content": {
@@ -25,7 +25,7 @@
         "video_filename": "fashion-generative-in-painted-looks.mp4",
         "video_url": "https://youtu.be/JFg2fXPmuhw",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JFg2fXPmuhw?si=A-3vL7RMlVcafMa0&amp;controls=0' title='AI In-Painted Fashion Lookbook Website Development' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
         "thumbnail_images": [
             "assets/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp",
             "assets/media/ai-design-fashion-lookbook/thumb-slides-2-ai-design-fashion-lookbook.webp",
@@ -34,7 +34,7 @@
             "assets/media/ai-design-fashion-lookbook/thumb-slides-5-ai-design-fashion-lookbook.webp",
             "assets/media/ai-design-fashion-lookbook/thumb-slides-6-ai-design-fashion-lookbook.webp"
         ], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
         "page_imagery": [], 
         "page_image_group_alt_text": ""
         },

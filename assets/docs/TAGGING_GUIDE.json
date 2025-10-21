@@ -3,28 +3,6 @@
   
   "entries": [
     {
-      "entry_id": "uid-wgw-370",
-      "title": "Shoppable Fashion Lookbook with Google Lens API",
-      "tags": {
-        "technology": ["HTML", "CSS", "JavaScript"],
-        "media": ["Digital Product", "E-Commerce"],
-        "role": "Web Developer",
-        "skill": ["Fashion Photography", "Product", "Marketing", "Art History"]
-      },
-      "alt_text": {
-        "video_alt_text": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
-        "thumb_slideshow_alt_text": [
-          "Magazine-style editorial layout with progressive disclosure revealing shoppable product matches",
-          "Google Lens API integration showing visual search matching fashion photography to products",
-          "Multi-section architecture navigating between archetypal character journeys and art movements",
-          "E-commerce conversion pathway demonstrating editorial experience transitioning to product pages",
-          "Computer vision technology automatically identifying outfit items for direct purchase",
-          "Full lookbook demonstrating balance between inspirational editorial content and commerce functionality"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-wnw-867",
       "title": "Timeless E-Commerce Gallery for Art Prints",
       "tags": {
