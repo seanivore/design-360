@@ -186,7 +186,7 @@ index.html           `august.style/`
        - Title: `<title><!-- Populated by JS --></title>`
        - Description: `<meta name="description" content="">`
        - OG tags: og:title, og:description, og:image, og:image:alt
-       - JS should populate from placement.json seo_metadata with [Tag] replacement
+       - JS should populate from placement.json seo_metadata with <Tag> replacement
     5. Verify `./assets/js/section-controller.js` implements toggle tag logic
        - Partial string matching ("Design" matches "Graphic Design", "Print Design")
        - Only filters technology/media/skill tags (NEVER section/sub_section/role)
