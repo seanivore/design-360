@@ -288,10 +288,10 @@
   2. **Tag Catalog** (`active_tags.contextual_tags`)
      + Comprehensive list of all approved tags
      + Four categories: 
-       - technology 
-       - media 
-       - role 
-       - skill
+       - `technology` 
+       - `media` 
+       - `role` 
+       - `skill`
      + Prevents tag inconsistencies 
        - Plurals 
        - Tense issues, etc. 
