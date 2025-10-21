@@ -118,14 +118,46 @@ This manifest is **auto-generated** by scanning all JSON files.
 
 ```json
 {
-  "placement": {
-    "section": "Web",              // ← Capitalized!
-    "sub_section": "HTML/CSS/JS",  // ← Has slashes!
-    "slug": "project-name"         // ← Clean, no extension
+  "categorization": {
+    "entry_id": "uid-abc-123",
+    "placement": {
+      "section": "Web",              // ← Capitalized!
+      "sub_section": "HTML/CSS/JS",  // ← Has slashes!
+      "slug": "project-name"         // ← Clean, no extension
+    },
+    "tagging": {
+      "technology": ["CSS Animation", "Responsive Design"],  // ← Spaces!
+      "media": ["Portfolio Website"],
+      "role": "Creative Technologist",  // ← STRING not array (v3.1)
+      "skill": ["Landing Page Design"]   // ← Pretty!
+    }
   },
-  "tagging": {
-    "technology": ["CSS Animation", "Responsive Design"],  // ← Spaces!
-    "skill": ["Landing Page Design"]                       // ← Pretty!
+  "content": {
+    "media": {
+      "video_embed": "https://...",
+      "video_alt_text": "Screen recording showing website interaction",  // ← v3.1
+      "thumbnail_images": ["/assets/media/thumb1.jpg"],
+      "thumb_slideshow_alt_text": "Project thumbnail showcasing design",  // ← v3.1
+      "page_imagery": ["/assets/media/page1.jpg"],  // ← v3.1
+      "page_image_group_alt_text": "Additional project images"  // ← v3.1
+    },
+    "assets": {
+      "project_url": "https://example.com",  // ← v3.1
+      "github_repository": "https://github.com/user/repo"  // ← v3.1
+    },
+    "teaser_copy": {
+      "seo_title": "Project Name | Portfolio",
+      "seo_description": "Brief project description...",
+      "page_title": "Project Display Title",
+      "page_subtitle": "Project Subtitle",
+      "breadcrumb": "Short Name",
+      "tile_text": ["Teaser line 1", "Teaser line 2"]
+    },
+    "page_copy": {
+      "pattern": "The challenge or context...",
+      "action": "What was done...",
+      "measured": "Results and impact..."
+    }
   }
 }
 ```
@@ -201,9 +233,53 @@ const fullPath = `${section}/${sub_section}/${slug}`
 
 ---
 
+## Central Configuration: placement.json
+
+**Purpose:** Single source of truth for site-wide configuration
+
+**Location:** `/assets/js/placement.json`
+
+**Schema Version:** 2.0 (October 18, 2025)
+
+### What It Contains:
+
+1. **Toggle Tags** (`active_tags.toggle_tags`)
+   - Strategic tags shown ONLY on section-type pages (/web, /print, etc.)
+   - Used to guide users toward key portfolio content
+   - Must exist as actual tags in project entries
+   - Examples: AI, Creative, Social Media, Strategy, Design
+
+2. **Tag Catalog** (`active_tags.contextual_tags`)
+   - Comprehensive list of all approved tags
+   - Four categories: technology, media, role, skill
+   - Prevents tag inconsistencies (plurals, tense issues)
+   - Reference when adding new entries
+
+3. **Section SEO Metadata** (`seo_metadata`)
+   - Dynamic templates for section page meta tags
+   - Format: "[Tag] Projects by Sean August Horvath"
+   - Includes portfolio keyword and generalist positioning
+   - Images randomly selected from matching project thumbnails
+
+### Toggle Tags Logic:
+
+**Display Rules:**
+- Appear ONLY on section-type filtered pages (/web, /print, etc.)
+- Do NOT appear on click-through tag-filtered pages
+- Partial string matching ("Design" matches "Graphic Design", "Print Design")
+- Match only technology/media/skill tags, NEVER section/sub_section/role
+- Order: toggle_tags → section → sub_section → role
+
+**Why This Works:**
+- Section pages show curated navigation with toggle tags
+- Click-through pages show organic contextual tags from matching projects
+- Prevents redundant filtering (toggle tags wouldn't add value on click-through pages)
+
+---
+
 ## JSON Field Changes (October 10, 2025)
 
-We made these updates to all 14 web section JSONs:
+We made these updates to all 15 project entry JSONs:
 
 ### Before:
 ```json
@@ -224,10 +300,19 @@ We made these updates to all 14 web section JSONs:
 }
 ```
 
-**Changes made:**
+**Schema v1.0 → v2.1 Changes (October 10, 2025):**
 1. **Deleted `slug` field** - It was redundant (just section + subsection)
 2. **Renamed `file_name` to `slug`** - More accurate naming
 3. **Removed `.html` extension** - Cleaner, prevents bugs
+
+**Schema v2.1 → v3.1 Changes (October 18, 2025):**
+1. **Changed `role` from array to string** - Single role per project
+2. **Added `video_alt_text`** - Accessibility for video embeds
+3. **Changed `thumbnail_alt_text` to `thumb_slideshow_alt_text`** - Clarity
+4. **Added `page_imagery` array** - Additional on-page images
+5. **Added `page_image_group_alt_text`** - Accessibility for page images
+6. **Added `project_url`** - External project links
+7. **Added `github_repository`** - GitHub repo links
 
 ---
 

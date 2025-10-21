@@ -36,7 +36,8 @@
   8. All site (IMGs, URLs, copy, tag nav) content dynamically populated from project entry JSON; vanilla JS, no build 
   9. Highly visual, four 2-4 short sentence section project entry pages; headings **ROLE**, **PATTERN**, **ACTION**, and **MEASURED** 
   10. Homepage tile visual and text is completely random from every entry in that respective section for each tile 
-  11. Section pages have "toggle" tags which streamline the navigation to direct users towards specific content 
+  11. Section pages have "toggle" tags (defined in placement.json) which streamline the navigation to direct users towards specific content
+  12. Section page SEO metadata (title/description templates) also defined in placement.json for dynamic generation 
 
   **Architecture**
     - Manifest-based routing (works with any URL depth)
