@@ -554,15 +554,53 @@ html {
 
   * **Action:** UPDATE `./assets/js/tile-renderer.js`
 
+  * **CONTEXT: Existing Section Tile Implementation (Phase 1)**
+    
+    Section tiles are already built and working. Here's the current structure for reference:
+
+    ```javascript
+    // EXISTING: renderSectionTile() - Already implemented in Phase 1
+    function renderSectionTile(project) {
+      const tile = document.createElement('a');
+      tile.href = entryURL;
+      tile.className = 'tile-section fade-in-item';
+      
+      // HTML Structure:
+      tile.innerHTML = `
+        <div class="tile-section__content">
+          <!-- Multiple <p> elements for tile_text array -->
+          <!-- First text visible, others hidden -->
+        </div>
+        <div class="tile-section__images">
+          <div class="tile-section__image-container">
+            <!-- Multiple <img> elements for thumbnail_images -->
+            <!-- First image has .active class -->
+          </div>
+        </div>
+      `;
+      
+      // Swipe cycles both images AND text
+      // Text cycles: textIndex = currentIndex % textCount
+      return tile;
+    }
+    ```
+
+    **Key Points:**
+    - 16:9 aspect ratio (set in CSS)
+    - Magazine aesthetic: NO title/subtitle, just teaser text + images
+    - Text cycles with images (cross-fade)
+    - Links to entry pages
+    - Already has swipe functionality
+
   * **VISUAL DISTINCTION FROM SECTION TILES:**
     - Homepage tiles: **1:1 aspect ratio** (square)
-    - Section tiles: **16:9 aspect ratio** (landscape)
+    - Section tiles: **16:9 aspect ratio** (landscape) ← EXISTING
     - Homepage tiles: **Section name overlay** with semi-transparent black layer
-    - Section tiles: **NO overlays**, magazine aesthetic with cycling teaser text
+    - Section tiles: **NO overlays**, magazine aesthetic with cycling teaser text ← EXISTING
     - Homepage tiles: **Project count badge** in top-right corner
-    - Section tiles: **NO badges**, clean visual-first presentation
+    - Section tiles: **NO badges**, clean visual-first presentation ← EXISTING
     - Homepage tiles: **Link to section pages** (/web, /print, etc.)
-    - Section tiles: **Link to entry pages** (/web/html-css-js/project-name)
+    - Section tiles: **Link to entry pages** (/web/html-css-js/project-name) ← EXISTING
 
   * **Function to ADD:**
 
