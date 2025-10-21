@@ -14,10 +14,10 @@
         "slug": "training-yoga-sales"
     },
     "tagging":{
-        "technology": ["Git",],
-        "media": [],
+        "technology": ["Webflow", "CMS", "HTML", "Responsive", "Adobe Creative Cloud Apps"],
+        "media": ["Landing Page", "Digital Product", "Website"],
         "role": "Digital Consultant", 
-        "skill": []
+        "skill": ["Graphic Design", "Illustration", "Branding", "Account Management", "User Design", "Optimization", "No-Code Development", "Product", "Web Design"]
     }
 },
 "content": {
@@ -34,7 +34,7 @@
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-5.webp",
             "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-6.webp"
         ], 
-        "thumb_slideshow_alt_text": ["Slideshow of various images showing a Webflow designed site covered in custom designed brand art."],
+        "thumb_slideshow_alt_text": ["Custom-designed Webflow wellness training platform featuring hand-drawn brand identity elements including logo, background illustrations, and decorative details reflecting client's teaching philosophy."],
         "page_imagery": [
             "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-1.webp",
             "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-2.webp",

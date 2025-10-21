@@ -3,31 +3,6 @@
   
   "entries": [
     {
-      "entry_id": "uid-unw-889",
-      "title": "Wellness Training Platform with Custom Brand Identity",
-      "tags": {
-        "technology": ["Webflow", "CMS"],
-        "media": ["Landing Page", "Digital Product"],
-        "role": "Digital Consultant",
-        "skill": ["Graphic Design", "Illustration", "Branding", "Account Management"]
-      },
-      "alt_text": {
-        "video_alt_text": "Custom-designed Webflow wellness training platform featuring hand-drawn brand identity elements including logo, background illustrations, and decorative details reflecting client's teaching philosophy",
-        "thumb_slideshow_alt_text": [
-          "Hand-drawn logo and brand elements created with iPad Pro and Apple Pencil",
-          "Custom background illustrations expressing wellness and healing philosophy",
-          "Webflow training program layout showcasing cohesive visual identity throughout",
-          "Decorative details adding personality and warmth to platform design",
-          "Full site view demonstrating how hand-drawn elements differentiate from generic wellness templates",
-          "Client content management interface showing Webflow CMS capabilities"
-        ],
-        "page_image_group_alt_text": [
-          "Mobile responsive view of wellness training platform maintaining custom hand-drawn aesthetic and brand personality across all screen sizes"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-wgw-370",
       "title": "Shoppable Fashion Lookbook with Google Lens API",
       "tags": {
