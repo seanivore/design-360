@@ -14,7 +14,7 @@
         "slug": "training-yoga-sales"
     },
     "tagging":{
-        "technology": [],
+        "technology": ["Git",],
         "media": [],
         "role": "Digital Consultant", 
         "skill": []

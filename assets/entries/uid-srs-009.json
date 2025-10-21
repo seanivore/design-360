@@ -14,10 +14,10 @@
         "slug": "data-visualization-dashboard"
     },
     "tagging":{
-        "technology": [],
-        "media": [],
-        "role": "", 
-        "skill": []
+        "technology": ["Git","HTML", "CSS", "JavaScript", "Agentic", "GitHub Pages", "Jekyll", "Responsive"],
+        "media": ["Analytics Dashboard", "SaaS", "Digital Product"],
+        "role": "Web Developer", 
+        "skill": ["User Design", "Product", "System Design", "Scaling System", "Automation", "Web Design"]
     }
 },
 "content": {
@@ -25,14 +25,14 @@
         "video_filename": "ai-app-analysis-panel.mp4",
         "video_url": "https://youtu.be/HY7RDDFLeKI",
         "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/HY7RDDFLeKI?si=OKY7WvnjYGIoOa6a&amp;controls=0' title='Animated Analytics Dashboard for Robust AI-Centric Apps' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "",
+        "video_alt_text": "Enterprise analytics dashboard interface designed for AI application monitoring, featuring interactive animated charts visualizing model performance, memory utilization, and decision flows",
         "thumbnail_images": [
             "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp",
             "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-2.webp",
             "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-3.webp",
             "assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-4.webp"
         ], 
-        "thumb_slideshow_alt_text": "",
+        "thumb_slideshow_alt_text": "Enterprise analytics dashboard interface designed for AI application monitoring, featuring interactive animated charts visualizing model performance, memory utilization, and decision flows",
         "page_imagery": [],
         "page_image_group_alt_text": ""
         },

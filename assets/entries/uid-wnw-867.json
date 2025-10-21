@@ -14,7 +14,7 @@
         "slug": "minimalist-web-store-product"
     },
     "tagging":{
-        "technology": [],
+        "technology": ["Git",],
         "media": [],
         "role": "", 
         "skill": []

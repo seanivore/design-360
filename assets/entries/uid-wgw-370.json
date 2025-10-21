@@ -14,7 +14,7 @@
         "slug": "ai-design-fashion-lookbook"
     },
     "tagging":{
-        "technology": [],
+        "technology": ["Git",],
         "media": [],
         "role": "", 
         "skill": []

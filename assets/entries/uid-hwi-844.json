@@ -14,7 +14,7 @@
         "slug": "personalized-fashion-magazine"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "GitHub Pages", "AI", "Generative", "Responsive"],
+        "technology": ["Git","HTML", "CSS", "JavaScript", "GitHub Pages", "AI", "Generative", "Responsive"],
         "media": ["Digital Product", "Website"],
         "role": "Web Developer", 
         "skill": ["Typography", "Content Production", "Copywriting", "Graphic Design", "Publishing", "Art History", "Fashion Photography", "Product Staging", "Automation", "Scaling System", "Branding"]

@@ -3,28 +3,6 @@
   
   "entries": [
     {
-      "entry_id": "uid-srs-009",
-      "title": "AI Application Analytics Dashboard Interface",
-      "tags": {
-        "technology": ["HTML", "CSS", "JavaScript", "AI"],
-        "media": ["Analytics Dashboard", "SaaS"],
-        "role": "Web Developer",
-        "skill": ["User Design", "Product", "System Design"]
-      },
-      "alt_text": {
-        "video_alt_text": "Enterprise analytics dashboard interface designed for AI application monitoring, featuring interactive animated charts visualizing model performance, memory utilization, and decision flows",
-        "thumb_slideshow_alt_text": [
-          "Dashboard overview showing sophisticated information hierarchy for AI-specific metrics",
-          "Animated chart responding to user engagement and displaying real-time data updates",
-          "Memory system visualization showing agentic decision-making patterns and correlations",
-          "Multi-model interaction display with temporal relationship indicators",
-          "Enterprise-level interface handling massive datasets with responsive performance optimization",
-          "Complex AI system metrics organized into digestible visual segments with clear hierarchy"
-        ]
-      }
-    },
-    
-    {
       "entry_id": "uid-unw-889",
       "title": "Wellness Training Platform with Custom Brand Identity",
       "tags": {

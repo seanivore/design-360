@@ -14,7 +14,7 @@
         "slug": "visual-artist-process-portfolio"
     },
     "tagging":{
-        "technology": [],
+        "technology": ["Git",],
         "media": [],
         "role": "", 
         "skill": []

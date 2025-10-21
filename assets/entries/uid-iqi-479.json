@@ -14,7 +14,7 @@
         "slug": "dynamic-modular-portfolio-architecture"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "JSON", "GitHub Pages", "Jekyll", "Python Script", "Agentic", "AI", "Generative", "Responsive", "Mobile-First"],
+        "technology": ["Git","HTML", "CSS", "JavaScript", "JSON", "GitHub Pages", "Jekyll", "Python Script", "Agentic", "AI", "Generative", "Responsive", "Mobile-First"],
         "media": ["Single Page Application", "Template", "Portfolio", "Web App"],
         "role": "App Developer", 
         "skill": ["System Design", "Modularity", "DRY Principles", "Scaling System", "Full-Stack", "Scaling System", "UX/UI Writing", "User Design"]

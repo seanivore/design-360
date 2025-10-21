@@ -14,7 +14,7 @@
         "slug": "saas-product-sale-features"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "Agentic", "GitHub Pages", "Jekyll", "Responsive"],
+        "technology": ["Git","HTML", "CSS", "JavaScript", "Agentic", "GitHub Pages", "Jekyll", "Responsive"],
         "media": ["SaaS", "Landing Page", "Digital Product", "Website", "Template"],
         "role": "Web Developer", 
         "skill": ["Animation", "Marketing", "Front-End", "Copywriting", "Product Staging", "Advertising", "Web Design"]

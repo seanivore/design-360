@@ -14,7 +14,7 @@
         "slug": "animated-cms-weekly-blogs"
     },
     "tagging":{
-        "technology": [],
+        "technology": ["Git",],
         "media": [],
         "role": "", 
         "skill": []

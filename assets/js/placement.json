@@ -81,7 +81,7 @@
         "Video": [] 
       },
       "contextual_tags": {
-        "technology": [
+        "technology": ["Git",
           "Webflow", 
           "CMS",
           "Framer",
@@ -101,7 +101,8 @@
           "Responsive",
           "Mobile-First",
           "Adobe Creative Cloud",
-          "Lottie"
+          "Lottie",
+          "Git"
         ],
         "media": [
           "Progressive Web App",

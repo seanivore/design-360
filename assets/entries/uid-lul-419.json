@@ -14,7 +14,7 @@
         "slug": "ai-meditation-mobile-app"
     },
     "tagging":{
-        "technology": ["HTML", "CSS", "JavaScript", "AI"],
+        "technology": ["Git","HTML", "CSS", "JavaScript", "AI"],
         "media": ["Progressive Web App", "Mobile App", "Voice Interface"],
         "role": "App Developer", 
         "skill": ["Conversation Design", "UI/UI Writing", "User Design", "Product"]
