@@ -13,13 +13,13 @@
   3. Create a UI that makes previewing 50+ projects across fields easy, without many clicks 
   4. Build for longevity and creating more of an ease of maintenance and updating 
 
-### Content 
+### Content UI 
 
-* **Project content entry management** 
+  * **Project content management** 
 
-  - Website content is populated and managed using JSON files for each entry 
-    + Functionality like tag navigation filtering and image slideshows is dynamic 
-    + Creating new entries or making updates is easier than ever 
+    + Website content is populated and managed using JSON files for each entry 
+      - Functionality like tag navigation filtering and image slideshows is dynamic 
+      - Creating new entries or making updates is easier than ever 
 
   1. JSON entry template schema: `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json`
   2. Comprehensive steps for preparing JSON: `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
@@ -39,23 +39,23 @@
   11. Section pages have "toggle" tags which streamline the navigation to direct users towards specific content 
 
   **Architecture**
-    - ✅ Manifest-based routing (works with any URL depth)
-    - ✅ Sticky filters (main filter can't be removed)
-    - ✅ Main filter shown as heading (not in tag list)
-    - ✅ Tag ordering adapts to page type
+    - Manifest-based routing (works with any URL depth)
+    - Sticky filters (main filter can't be removed)
+    - Main filter shown as heading (not in tag list)
+    - Tag ordering adapts to page type
 
   **Design**
-    - ✅ Tags are plain text (no pills - timeless!)
-    - ✅ Vertical gradient glare (subtle depth)
-    - ✅ Magazine aesthetic (just visuals + teaser)
-    - ✅ Text cycles with images (cross-fade magic)
-    - ✅ Soft layered shadows (CSS realism)
+    - Tags are plain text (no pills - timeless!)
+    - Vertical gradient glare (subtle depth)
+    - Magazine aesthetic (just visuals + teaser)
+    - Text cycles with images (cross-fade magic)
+    - Soft layered shadows (CSS realism)
 
   **UX**
-    - ✅ Active tags move to front (DOM reordering)
-    - ✅ Random ordering maintained during filtering
-    - ✅ 1/8th image bleed hints at swipe
-    - ✅ Smooth 300ms transitions everywhere
+    - Active tags move to front (DOM reordering)
+    - Random ordering maintained during filtering
+    - 1/8th image bleed hints at swipe
+    - Smooth 300ms transitions everywhere
 
 * **Website structure** 
 *Incomplete; example to illustrate structure only*
@@ -63,9 +63,9 @@
 ```
 /Users/seanivore/Development/360-design...
 
-index.html              `august.style/`
-│   ├── #about          `.index.html#about` -> `august.style/about` 
-│   └── #contact        `.index.html#contact` -> `august.style/contact` 
+index.html           `august.style/`
+│   ├── #about       `.index.html#about` -> `august.style/about` 
+│   └── #contact     `.index.html#contact` -> `august.style/contact` 
 ├── assets/
 │   ├── js/
 │   │   ├── data-loader.js 
@@ -99,97 +99,87 @@ index.html              `august.style/`
 
 ### Project State Context Priming 
 
-  * **Minimize LLM limitations** 
+  * **1. Use `think` Tool to Minimize LLM limitations** 
 
-  - Use native `think` tool if you are able to multi task between thoughts with tools 
-  - Otherwise use the `sequential_thinking` Model Context Protocol server to think while hou review the following 
-  - Maintain project state via updates for across AI instance flow
+    + Native `think` or `sequential_thinking` Model Context Protocol server
+      - Tool use between thoughts; plan ahead and review work 
+      - Maintain project state for across AI instance flow
   
-  * **Check project state** 
+  * **2. Update Project State to `memory` Tool** 
 
-  - Start the `memory` MCP tool 
-  - Search exact entity term `generalist-portfolio` 
+    + Native `memory` or `memory` Model Context Protocol server
+      - Search exact entity term `generalist-portfolio` 
+      - Read last update or two 
+    
+    + Add entry milestones that maintain context even if suddenly disconnected 
+      - Be explicit and lay out next step details regularly 
+      - Update after small task completion; during if notable or necessary 
 
-  * **Read important files using the `read_file` tool if you want to keep the information in your context the whole time** 
+  * **3. Use `read_multiple_file` For All Important Files** 
 
-  - Read this architecture document written by AI for AI to continue the work: `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
-  
-  - Understand the JSON entry file by viewing: 
-    + The template `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
-    + One of the entries `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json` 
+    + Native `read` or `system_file` Model Context Protocol server's `read_file` tool 
+      - MCP leaves read content persistent in context 
+      - Always read listed important files in full when starting a new session 
+      
+    + Important files include 
+      - Architecture `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` 
+      - Claude Code SPEC `/Users/seanivore/Development/360-design/assets/docs/home_entry_pages_spec.md` 
+      - JSON entry file template `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
 
-  * **Adding project state updates** 
+### Review, Bring Up To Date Claude Code Resources 
 
-  - Add entry milestones that maintain context even if suddenly disconnected
-  - About to start a series of tasks, record what you're about to do
-  - Also record the next steps in case connection is interrupted during first tasks
-  - Add updates throughout completing the tasks, particularly anything notable or necessary for next steps
-  - Update after completion of those tasks; add what is next or reference having mentioned it if nothing has changed
+  * **1. Check SPEC's HTML guide for missing values**
 
----
+    1. Display `project_url` and `github_repository` as clean styled text links on entry pages **NOT every entry**
+    2. Variable elements that may or may not be present on any single JSON entry 
+       + `video_alt_text` for `video_embed` should be prominent on page after `action`, before `measured` **NOT every entry**
+       + `thumb_slideshow_alt_text` for `thumbnail_images` which make slideshow **EVERY PROJECT**
+         - Slide show is used on both the homepage's tile type and section page tile 
+         - Slide show is included on entry template as prominent visual unless `notes` say otherwise 
+       + `page_image_group_alt_text` for `page_imagery` which are secondary images to place below `measured` section **NOT every entry**
+    3. Entry page breadcrumb top left and bottom left after content in `section` / `sub_section` / `breadcrumb` order **EVERY PROJECT**
+    4. Entry page should get text-wrapped, centered comma or • separated list of tags **EVERY PROJECT**
+       + Placed page top right on hover card with micro-interaction for click 
+         - Only includes `technology`, `media`, `skills` in that order, but no headings 
+         - The `role` tag should still be hyperlinked so filtered section page but will be placed as 1 of 4 page content sections 
+         - There is only every ONE `role` applied to any single project entry 
+    5. Only use in meta og placement: `seo_title` and `seo_description` plus the first `thumbnail_images` of slide show list **EVERY PROJECT**
+    6. Use only on page, not on home or section page tile: `page_title` and `page_subtitle` **EVERY PROJECT**
+    7. One-liners for home and section tile that change when a thumb slide is moved to the next image: `tile_text` **EVERY PROJECT** 
 
-```bash
-python3 -m http.server 5500 --bind 127.0.0.1
-> http://localhost:5500/section.html
- ```
+  * **2. New information or information and logic to update**
 
-### Task List  
+    1. Creation of `assets/js/placement.json` replaced `featured.json` file 
+       + Defines 'Toggle Tags' to pull dynamically on section-tag type section pages 
+         - Data found at `active_tags.toggle_tags` array 
+         - All code and documents have been updated but we should double check 
+         - `section-controller.js` had specific path update 
+       + Toggle tags must also be tags listed as contextual tags 
+    2. Previously undefined Section Page SEO Metadata also on `placement.json`
+       + Located at `seo_metadata` on `placement.json` 
+       + Uses dynamic template 
+         - "[Tag] Projects by Sean August Horvath"
+         - Description includes 'portfolio' keyword and generalist positioning
+         - Image should be randomly pulled from one entry's `thumbnail_images` that contains the tag
+    3. Special 'toggle tag' logic and placement specifics 
+       + Appear **ONLY** in section-tag filtered section page 
+         - With other tags in horizontal scrolling tag filter navigation 
+         - E.g. /web, /print, /video, /digital 
+       + **Do not appear** on section page's tag nav after user clicked-through a contextual tag from a project entry page 
+         - This is sensible because this type of section pages would inherently be showing contextual tags that projects with the filtered tag share 
+         - And the actual section-type tag filtered section page doesn't show contextual tags beyond toggle and role 
+       + Toggle tags are placed first in the navigation tag list: `toggle` tags, `section` tags, `sub_section` tags, `role` tags 
+       + They populate partial string matching, e.g. "Design" matches "Graphic Design", "Print Design", "User Design" 
+         - ONLY matches `technology`/`media`/`skill` tags, NEVER `section`/`sub_section`/`role` 
+         - Even if `section`/`sub_section`/`role` contains partial match, ignore it
 
-#### 1. **COMPLETE** Created `placement.json` to Replace `featured.json` and Updated Files 
-   + All code and documents have been updated 
-   + On `section-controller.js` specifically we changed 
-     - OLD: `return data.toggle_tags || [];`
-     - NEW: `return data.active_tags?.toggle_tags || [];`
-#### 2. **COMPLETE** `_entry_template.json` Template Updated 
-   + Now enforces single ROLE choice 
-   + Directs to `placement.json` document when picking tags 
-   + Explains each value including which will show up dynamically on the website including where 
-#### 3. **COMPLETE** Tag Strategy, Cleanup, other JSON Updates 
-   + All tags used added to `placement.json` 
-   + Lists of tags optimized and then re-added to all project entry JSON files 
-   + Added single `video_alt_text`, `thumb_slideshow_alt_text`, and `page_image_group_alt_text` to JSON objects 
-   + Added some `page_imagery` to a couple JSON file project entries 
+  * **3. Ensure the above updates are accurate on important pages** 
 
-#### 4. Review, Bring Up To Date Claude Code Resources 
-
-  * **Confirm regarding Entry JSON value at assets > project URL and GitHub Repository**
-
-    + Is there a way to pull through the thumbnail and title shown when these links are shared? 
-    + Basically we want to be sure it builds the visual "This is a link" type tile for these on-entry-page elements 
-
-  * **Changes necessary to reflect our evolving plan** 
-  
-    + Update in the two important resources we direct them to 
-      - This very document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
-      - The ARCHITECTURE document `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` 
-    + And then please update the adding a new entry help document while everything is in context: 
-      `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
-    + Ensure the defined HTML proposed fits all template values 
-      - Check for details added to `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
-      - `page_imagery` have values now for two entries and more to come 
-      - Alt text added for video embed and for group of page imagery 
-      - Thumbnail slideshow to be used for both on tile placement and on page 
-
-  * **Changes for you to please address** 
-
-  1. Implement placement of "Toggle Tags" in nav 
-     + These tags are only used on homepage horizontal scrolling tag filter nav 
-       - They should follow tags in list order 
-       - 1st `section` tags, 2nd `Toggle Tags` tags, 3rd `sub_section` tags 
-     + Find toggle tags dynamically from `/Users/seanivore/Development/360-design/assets/js/placement.json` file 
-       - These are to give us control over directing viewers to best content 
-       - Able to be changed depending on hiring needs at the time 
-  2. Implement logic for 'Toggle Tag's 
-     + Toggle tags filter to show any project entry tile that the JSON contains even part of the toggle tag 
-         - E.g., "Design" should pull up "Graphic Design" and "Print Design" 
-         - This will allow us to showcase more variety with ease 
-     + Toggle Tags should only pull from `technology`, `media`, and `skill` contextual tags 
-         - Toggle Tags should never be a `section`, `sub_section`, or `role` tag 
-         - If `section`, `sub_section`, or `role` tag contains part of the Toggle Tag, still do not pull from those tags 
-  3. Section page meta seo info 
-     + This was previously undefined because for entry pages it comes from the entry JSON 
-       - SEO Title, Description, and Thumbnail are defined 
-       - The copy with space for the name of the tag were added to `/Users/seanivore/Development/360-design/assets/js/placement.json` as well
+    1. Confirm accuracy throughout the rest of this document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` 
+    2. ARCHITECTURE document `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md`
+    3. Confirm `./section.html` has all necessary elements (as above for CC SPEC doc) 
+       `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` 
+    4. Update new entry help document while everything is in context `/Users/seanivore/Development/360-design/assets/docs/ADD_NEW_PROJECT.md` 
 
 ---
 
@@ -223,6 +213,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
   - User clicked through from homepage to a 'section'-type tag filtered section page 
     + Will ONLY show tiles from that section
     + Has no available tag to change that 
+    + Has the TOGGLE TAGS listed first
   - User clicked through from project entry page contextual or sub_section or role tag 
     + Will see ALL tiles from any tag category or section tag; e.g. print, digital, web "copywriting" 
     + The section-type tags are available tag filters 
@@ -249,14 +240,14 @@ python3 -m http.server 5500 --bind 127.0.0.1
 #### Order of Tag Display in Section Page's Horizontally Scrolling Filter Navigation 
   
   1. If the main tag is a PLACEMENT tag ('section'-type), ordered from left to right 
-     - `sub_section` first with different color 
-     - `role`(s) next in another color 
-     - The rest are just toggle tags only tags 
+     - `toggle_tags` first in distinct color 
+     - `sub_section` second with complimentary accent color 
+     - `role` tags from that site section tagged entries last, in another color 
   2. Main tag is CONTEXTUAL (click-through from entry page tag), ordered from left to right 
      - `section` 
      - `sub_section` 
      - `role` 
-     - contextual tags (as populated from the relevant JSON files based on the tag that was clicked through)
+     - `contextual_tags` (as populated from the relevant JSON files based on the tag that was clicked through)
 
 ### *Phase 4:* Polish 
   + Test all functionality 
@@ -278,7 +269,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
 | H5    | `breadcrumb`                   | Similar to H4              | 
 
 
-* **Include light mode and dark mode options with dark mode defaulted** 
+* **Dark mode defaulted; no build setup for light mode needed yet** 
 
   + Background 
     - Use simple off-wite versus black/charcoal 
@@ -320,7 +311,7 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
   + Use a social media circle style profile picture to the left of a right column with the two blocks of text below 
 
-   > Sean August Horvath, Creative Generalist 
+   > Sean August Horvath, Creative Innovations Generalist 
 
    > 14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Pattern recognition is my superpower; making it teachable is my craft. 
 
