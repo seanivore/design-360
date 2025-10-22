@@ -105,11 +105,13 @@
      */
     function updatePageHeader() {
         let mainFilterHeading = null;
+        let docTitle = '';
 
         switch (viewType.type) {
             case 'all':
                 pageTitle.textContent = 'All Projects';
                 pageSubtitle.textContent = `${shuffledProjects.length} projects across all categories`;
+                docTitle = 'All Projects | Sean August Horvath';
                 break;
 
             case 'section':
@@ -121,6 +123,7 @@
 
                 pageTitle.textContent = 'Projects';
                 pageSubtitle.textContent = `${shuffledProjects.length} ${sectionName.toLowerCase()} projects`;
+                docTitle = `${sectionName} Projects | Sean August Horvath`;
                 break;
 
             case 'subsection':
@@ -135,8 +138,30 @@
 
                     pageTitle.textContent = subsectionName;
                     pageSubtitle.textContent = `${shuffledProjects.length} projects`;
+                    docTitle = `${subsectionName} | ${sectionName} | Sean August Horvath`;
                 }
                 break;
+        }
+
+        // Update document title
+        document.title = docTitle;
+
+        // Update meta tags
+        const description = `Portfolio showcasing ${shuffledProjects.length} ${viewType.section || 'creative'} projects by Sean August Horvath, spanning web development, print design, digital products, and video production.`;
+
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.setAttribute('content', description);
+        }
+
+        let ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+            ogTitle.setAttribute('content', docTitle);
+        }
+
+        let ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) {
+            ogDesc.setAttribute('content', description);
         }
 
         // Display main filter heading if present
@@ -242,12 +267,18 @@
         const tagsWithTypes = [];
         const seenTags = new Set();
 
-        // Helper to add unique tags
+        // Helper to add unique tags (only if they have matching projects)
         function addTag(tag, type) {
             const normalized = DataLoader.normalizeForURL(tag);
             if (!seenTags.has(normalized)) {
-                seenTags.add(normalized);
-                tagsWithTypes.push({ tag, type });
+                // Check if this tag has any matching projects
+                const matchingProjects = DataLoader.filterByTags(shuffledProjects, [normalized]);
+
+                // Only add tag if it has at least one matching project
+                if (matchingProjects.length > 0) {
+                    seenTags.add(normalized);
+                    tagsWithTypes.push({ tag, type });
+                }
             }
         }
 

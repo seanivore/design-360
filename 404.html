@@ -14,6 +14,11 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles.css">
 
+    <!-- Load core JavaScript files FIRST (before template injection) -->
+    <script src="/assets/js/data-loader.js"></script>
+    <script src="/assets/js/tile-renderer.js"></script>
+    <script src="/assets/js/filter-controller.js"></script>
+
     <script>
         /**
          * 404 ROUTING HANDLER - Single Page Architecture
@@ -69,12 +74,21 @@
                     }
                 });
 
-                // Execute scripts from template
+                // Execute controller scripts from template (dependencies already loaded)
                 const scripts = Array.from(doc.querySelectorAll('script[src]'));
                 for (const script of scripts) {
+                    const scriptSrc = script.src;
+
+                    // Skip core files (already loaded in head)
+                    if (scriptSrc.includes('data-loader.js') ||
+                        scriptSrc.includes('tile-renderer.js') ||
+                        scriptSrc.includes('filter-controller.js')) {
+                        continue;
+                    }
+
+                    // Load controller scripts
                     const newScript = document.createElement('script');
-                    newScript.src = script.src;
-                    newScript.async = false; // Maintain execution order
+                    newScript.src = script.getAttribute('src'); // Use relative path
                     document.body.appendChild(newScript);
                     await new Promise(resolve => {
                         newScript.onload = resolve;

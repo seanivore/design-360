@@ -56,6 +56,7 @@ const FilterController = (() => {
 
     /**
      * Toggle a tag (activate if inactive, deactivate if active)
+     * SINGLE-SELECT: Only one tag (besides sticky filter) can be active
      * Sticky filters cannot be toggled off
      */
     function toggleTag(tag) {
@@ -70,16 +71,17 @@ const FilterController = (() => {
         const index = activeTags.indexOf(normalized);
 
         if (index === -1) {
-            // Activate tag
-            activeTags.push(normalized);
+            // Activate tag - CLEAR all other non-sticky tags first
+            activeTags = stickyFilter ? [stickyFilter, normalized] : [normalized];
         } else {
-            // Deactivate tag
+            // Deactivate tag - remove it
             activeTags.splice(index, 1);
         }
 
         updateHash();
         updateFilterPills();
-        reorderActiveTags();
+        // DISABLED: Tag reordering causes confusion with single-select
+        // reorderActiveTags();
 
         // Trigger callback if set
         if (onFilterChange) {
