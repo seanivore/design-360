@@ -144,7 +144,7 @@ const DataLoader = (() => {
 
     /**
      * Filter projects by tags
-     * Tags can come from any of the 4 tag categories
+     * Tags can come from placement (section, sub_section) OR tagging categories
      * Note: In schema v3.1, role is a STRING (not array)
      */
     function filterByTags(projects, tags) {
@@ -156,9 +156,14 @@ const DataLoader = (() => {
 
         return projects.filter(project => {
             const tagging = project.categorization.tagging;
+            const placement = project.categorization.placement;
 
-            // Build array of all tags (role is STRING in v3.1, others are arrays)
+            // Build array of all tags including placement AND tagging
             const allTags = [
+                // Placement tags
+                placement.section,
+                placement.sub_section,
+                // Tagging tags (role is STRING in v3.1, others are arrays)
                 ...tagging.technology,
                 ...tagging.media,
                 ...(tagging.role ? [tagging.role] : []), // Wrap string role in array
