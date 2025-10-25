@@ -15,7 +15,7 @@
 
 ## Issues *Updated 2025-10-25*
 
-### **FIXED, PENDING** Weird URL Behavior When Using "GO BACK" from Entry Page Selected With Tag Applied  
+### **PENDING, BUT ALSO ADDED 2 ISSUES** Weird URL Behavior When Using "GO BACK" from Entry Page Selected With Tag Applied  
 
   * **Sticking on the same URL example, but go to an entry page, then go back, nothing shows on same URL**
 
@@ -33,6 +33,25 @@
 
     + `toggle_tag` keywords in the navigation filter
     + `section` tags in the filter 
+
+  * **ADDITIONAL TAG ISSUE: The HTML/CSS/JS sub_section tag is strangely missing** 
+
+   + Both the Webflow and Framer `active_tags.placement_tags.sub_section` tags are working 
+   + The breadcrumb on HTML/CSS/JS sub_section entries 
+     - Go to `august.style/web#tags=web+html-css-js` 
+     - No tags show probably because it is not showing as a filtering option 
+
+  * **Missing ideal tag functionality logic** 
+
+    + When a user clicks through ANY tag in the tag box of a project entry 
+      - Remove the section-type tag on the section page so that project from more than just "web" surface (when we have them) 
+      - Obviously the tag the user clicked through should be applied when the page loads (for the entire site's projects)
+    + Show the follow tag types in a random order other than making the clicked-through tag first and selected already 
+      - For all tags that exist on all active JSON that come up for the clicked-through tag 
+      - Actually, even better UX would be if the clicked-through tag was not able to be unselected 
+      - Then instead of "Web" it would say that tag 
+      - All of the projects' `categorization.tagging` tags 
+      - This would include `technology`, `media`, `role`, and `skill` 
 
 ### 1. Section Page Counter 
 
