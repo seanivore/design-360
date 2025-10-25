@@ -1566,8 +1566,9 @@ html {
     padding: 0 var(--space-lg);
 }
 
-/* Mobile-specific adjustments */
+/* Mobile-specific adjustments - Millennial App Vibe */
 @media (max-width: 767px) {
+    /* Entry pages */
     .entry-top-layout,
     .entry-bottom-row {
         flex-direction: column;
@@ -1593,5 +1594,80 @@ html {
 
     .related-posts-section .section-heading {
         font-size: var(--font-size-lg);
+    }
+
+    /* Homepage sections - tighter spacing for more content */
+    .homepage-section {
+        padding: var(--space-lg) 0;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    /* About section - comfortable card on mobile */
+    .about-content {
+        padding: var(--space-md);
+    }
+
+    .about-title {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Smaller, punchier profile pic */
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Contact section - slightly smaller icons */
+    .social-link {
+        width: 48px;
+        height: 48px;
+    }
+
+    .social-link svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Container - reduce side padding for more content */
+    .container {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    /* Homepage tiles - tighter grid */
+    .homepage-tile-grid {
+        gap: var(--space-lg);
+        padding: 0 var(--space-md);
+    }
+
+    /* Section tiles - optimize for vertical scrolling */
+    .tile-grid-section {
+        gap: var(--space-md);
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    /* Tag filters - smaller, punchier */
+    .tag-filter {
+        font-size: 0.8125rem;
+        padding: 6px 14px;
+    }
+
+    /* Header - compact but touchable */
+    .site-header {
+        padding: var(--space-md) 0;
+    }
+
+    .site-logo {
+        font-size: 1.125rem;
+    }
+
+    .site-nav a {
+        font-size: 0.9375rem;
+        padding: 8px 12px;
     }
 }
