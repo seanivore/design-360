@@ -280,6 +280,17 @@ const FilterController = (() => {
             }
         });
 
+        // CRITICAL: If page loaded with hash tags, trigger initial render
+        // This handles back button navigation where URL already has hash
+        if (hashTags.length > 0 && onFilterChange) {
+            // Defer to ensure DOM is ready and pills are rendered
+            setTimeout(() => {
+                updateFilterPills();
+                reorderActiveTags();
+                onFilterChange(activeTags);
+            }, 0);
+        }
+
         return activeTags;
     }
 
