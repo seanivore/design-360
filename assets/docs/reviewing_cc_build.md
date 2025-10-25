@@ -113,6 +113,10 @@
 
 ### 5. Full Site and Start Design Review Loop 
 
+  * **Entry page design perfecting** 
+
+    + I will let you have creative control for the entry page perfecting before I start providing details 
+
   * **Review all design on all device sizes** 
 
     + Start design perfecting loop tweaking as needed 
