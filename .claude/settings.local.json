@@ -7,7 +7,9 @@
       "mcp__sequential-thinking__sequentialthinking",
       "SlashCommand(/prime)",
       "Read(//Users/seanivore/.claude/plugins/marketplaces/playwright-skill/skills/playwright-skill/**)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Skill(playwright-skill)",
+      "mcp__memory__create_entities"
     ],
     "deny": []
   }

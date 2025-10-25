@@ -5,33 +5,17 @@
   1. All loading but not rendering issues fixed across all three templates 
   2. Functioning of filter UI on section pages adjusted 
   3. Homepage tile design updated 
+  4. Tag logic and debugging; toggle-tag partial word matching 
+  5. Eliminated the special sub_section section pages that breadcrumbs had 
+  6. Back button fix ✅ (code is correct, awaiting cache)
+    - Callback triggers on init when hash present
+    - Checks BEFORE adding sticky filter to avoid false positives
+    - The only remaining test failure is the back button, which is due to GitHub Pages CDN cache
+    - Fix is in the code (commit d013c0c) and will work once the cache clears
 
 ## Issues *Updated 2025-10-25*
 
-### 1. Tag Logic 
-
-#### `placement.json` Toggle-Tag Keywords on Section Page 
-
-  * **`toggle_tag` is search query; show all `contextual_tags` with partial word match** 
-
-    + Featured content is coordinated using tags listed here at `placement.json` `active_tags.toggle_tags` 
-    + Project entry JSONs do **NOT** have `toggle_tags` listed, only `contextual_tags` to be featured 
-    + Use provided `toggle_tag` as search terms that find any tags from the follow on `placement.json`; match even just one word 
-      - `categorization.tagging.technology` results 
-      - `categorization.tagging.media` results 
-      - `categorization.tagging.skill` results 
-
-  * **Example of what to show in the tag filter list along with their entries** 
-
-    + Feature those search result tags by placing them in the section-type section pages 
-      - For example, right now the tags one `august.style/web/` say "AI, Copywriting, Marketing, Product"  
-    + But take 'Product' for example, when tag is clicked: `august.style/web#tags=web+product`
-      - All entries with 'product' listed under their `active_tags.placement_tags.contextual_tags.skill` show (fine) 
-      - It **SHOULD** also include 'Digital Product' `active_tags.placement_tags.contextual_tags.media`
-      - It **SHOULD** also include 'Product Staging' from `active_tags.placement_tags.contextual_tags.skill`
-    + The same logic should apply for any tags from those three groups that have 'AI' in them, etc. for all the toggle_tag keywords
-
-#### Weird URL Behavior When Using "GO BACK" from Entry Page Selected With Tag Applied  
+### **FIXED, PENDING** Weird URL Behavior When Using "GO BACK" from Entry Page Selected With Tag Applied  
 
   * **Sticking on the same URL example, but go to an entry page, then go back, nothing shows on same URL**
 
@@ -50,44 +34,18 @@
     + `toggle_tag` keywords in the navigation filter
     + `section` tags in the filter 
 
-#### Missing the role Tags on the Section Page Nav Filters 
+### 1. Section Page Counter 
 
-  * **In the horizontal row of tags we should have the following** 
+  * **On the section page it shows the number of entries for the section but should be updating with the filters** 
 
-    + First are any tags listed under `active_tags.placement_tags.sub_section.web` 
-    + Second are listed any keywords from `active_tags.toggle_tags` **THAT DO HAVE AN ENTRY, NO EMPTY TAGS SHOULD LIST** 
-    + Third and missing tags are the `active_tags.placement_tags.contextual_tags.role` 
-      - Again though, only show tags that have 'web' under `active_tags.placement_tags.section`
-      - **AND** have that `role` tag 
-      - As in, don't list empty `role` tags 
+    + "15 web projects" on `august.style/web/` is great 
+    + When filters are applied it should update the count to help UX when there are many projects 
+      - Example this page august.style/web#tags=web+framer only has 1 result 
+      - Should say 1 project 
 
-#### Clicking a Contextual Tag on an Entry Page's Tag List 
+  * **Let's remove "web" to make more sense for filtered results, and will make template simpler across sections** 
 
-  * **When on an entry page and a contextual tag is clicked, the section page URL is accurate, but it isn't filtering** 
-
-    + For example if you're on this entry page `august.style/web/webflow/automated-e-commerce-shop-lookbook`
-      - Then you click 'CMS' from the tags on the page 
-      - You are taken to `august.style/web#tag=cms` which is accurate 
-      - But it shows all 15 project tiles 
-
-#### We Do **NOT** Want **Special** sub_section Section Pages 
-
-  * **When you click the `sub_section` in an entry's `breadcrumb` it goes to a special page and shouldn't**
-
-    + For example if you're on this entry page 
-      - If you click the 'Webflow' breadcrumb it goes to this page `august.style/web/webflow` **don't want**
-      - But when you click 'Webflow' from the list of tags on the page it goes to `august.style/web#tag=webflow` **ACCURATE URL** 
-      - (And as mentioned in note above this one, all 15 projects are listed on that URL which is **NOT ACCURATE**)
-
-    + We don't want the special page because it makes the UX more complex than it needs to be 
-
-  * **Treat the sub_section tags the same as other tags in all places**
-
-### 2. Homepage Tile Design 
-
-  * **More design adjustments coming...**
-
-### 3. Section Page Filter Tag Navigation Design 
+### 2. Section Page Filter Tag Navigation Design 
 
   * **Update the design of the horizontal row and tags**
 
@@ -101,3 +59,68 @@
       - `sub_section` tags 
       - `toggle_tags` 
       - `role` tags 
+
+### 3. Updating Homepage Tile Design 
+
+  * **Further improving thumbnail slideshow UI** 
+
+    +  Add previous thumbnail image similarly to how the next thumbnail class `homepage-tile__next-preview` was added 
+      - Create more space on R and L of thumbnail image by making tile wider 
+      - Of course, when at the first or last picture, the main image should still be fully R / L aligned  
+
+    + Make the slideshow more visibly obvious 
+      - Inset entire thumbnail slideshow elements by putting 2-5 px padding inside class `homepage-tile__images-area`
+      - Give `homepage-tile__images-area` class an off white/light gray slid background 
+      - Make `homepage-tile__next-preview` and previous preview width and height both 80% instead of 90% 
+      - The smaller next and previous image will just make the entire situation easier to see that it is a slideshow 
+
+  * **Adjusting text for better thumbnail visibility** 
+
+    + Move class `section-name` and `project-count` down 
+      - Put them into the tile-text area class `homepage-tile__text-area` 
+      - Put them both at the bottom left corner of that area 
+      - Adjust each font down a bit 
+    
+    + Make the size of the font for class `data-text-index` smaller 
+      - It currently has a few slides where the line goes into two line WHICH IS OKAY 
+      - But when it does, it makes the entire class `homepage-tile` taller 
+      - Let's make the font smaller so it doesn't even bother the height 
+      - But also make the height fixed to be safe and make sure all of the tiles look the same 
+    
+    + Move class `homepage-tile__dots` to be at the top of the class `homepage-tile__text-area`
+      - We can also make them smaller 
+      - Give top padding if needed 
+      - Visually, would be nice to have the gap above the tile text wider than below 
+
+### 4. Updating Section Page Tile Design 
+
+  * **Improve the overall aesthetic of the tile for clear slide usability** 
+
+    + Make many of the same updates that we made for the thumbnail slideshow on the homepage tiles 
+      - Make sure we're showing the full 12:9 ratio main tail 
+      - Place it in an inset window with extra space on L and R sides and a gray background / off white background 
+      - Organize the previous and next thumbnail images just like on home page but show more of each because the tile is wider
+      - Remove all radius corner to make the sharp right angles 
+
+    + Give class `tile-grid-section` a L and R padding 
+      - Make the wide tile slightly less wide 
+      - Create distinction in width between class `container` elements class `tag-filters-container` and class `page-header` 
+    
+    + Adjust the on-tile text 
+      - Make the font smaller
+      - Allow for a 2 line wrap 
+      - Make sure tile size is fixed and doesn't change with length of tile text 
+
+### 5. Full Site and Start Design Review Loop 
+
+  * **Review all design on all device sizes** 
+
+    + Start design perfecting loop tweaking as needed 
+    + It seemed like the font sizes can all be downsized proportionately for mobile 
+    + Class `site-header` `site-nav` should align with the bottom of the class `container` area 
+
+  * **Swap site background color with lighter tile color** 
+
+    + I think we should make the background the lighter charcoal and tiles darker 
+      - Because I'd like to also have realistic, sharp shadows
+      - This would allow for blending that would give the page depth and a bit of lighting 
