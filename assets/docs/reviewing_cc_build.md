@@ -16,7 +16,7 @@
 
 ## Issues *Updated 2025-10-25* 
 
-### 1. Load Versus Rendering Issue  
+### 1. Load Versus Rendering Issue 
 
   * **Homepage appears to always load and render fine** 
 
@@ -133,7 +133,14 @@ GET https://www.august.style/web/html-css-js/personalized-fashion-magazine 404 (
     + Click-through/tap-through regions 
       - Tapping/clicking the section tag's entire square should click through 
       - Tapping/clicking the entire lower black tile-text region should click through 
+  
   * **Ensure that the above guidelines hold true across all breakpoints**
+
+    + Agentic visual design reviewing should be done on the section tiles 
+      - Gauge bar for quality of visual design based on the feedback for the homepage tiles 
+      - Visual design of section tiles can be similarly improved 
+      - NOT to say they should be the same tile, but just based on how clunky, empty, and just rough the section tiles look 
+    + Human can give feedback if needed 
 
 ### 3. Section Page Filter Tag Navigation Design 
 
