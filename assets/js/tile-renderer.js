@@ -187,17 +187,21 @@ const TileRenderer = (() => {
         tile.setAttribute('data-section', section);
         tile.setAttribute('data-direction', 'forward'); // Track swipe direction
 
-        // Section header (top-left) - clickable
-        const headerHTML = `
-            <a href="${sectionURL}" class="homepage-tile__header">
-                <span class="section-name">${section.toUpperCase()}</span>
-                <span class="project-count">${projectCount} project${projectCount !== 1 ? 's' : ''}</span>
-            </a>
-        `;
-
-        // Image area with current + next preview
+        // Image area with prev + current + next preview
         const imagesHTML = thumbnailImages.length > 0 ? `
             <div class="homepage-tile__images-area">
+                ${thumbnailImages.length > 1 ? `
+                    <div class="homepage-tile__prev-preview">
+                        ${thumbnailImages.map((img, index) => `
+                            <img
+                                src="/${img}"
+                                alt="${altText}"
+                                class="homepage-tile__preview-image ${index === thumbnailImages.length - 1 ? 'active' : ''}"
+                                loading="lazy"
+                            />
+                        `).join('')}
+                    </div>
+                ` : ''}
                 <div class="homepage-tile__main-image">
                     ${thumbnailImages.map((img, index) => `
                         <img
@@ -232,7 +236,7 @@ const TileRenderer = (() => {
             </div>
         ` : '';
 
-        // Text area (bottom black section) - clickable
+        // Text area with dots, text, and header
         const textHTML = tileTexts.length > 0 ? `
             <a href="${sectionURL}" class="homepage-tile__text-area">
                 ${dotsHTML}
@@ -243,11 +247,14 @@ const TileRenderer = (() => {
                         </p>
                     `).join('')}
                 </div>
+                <div class="homepage-tile__header">
+                    <span class="section-name">${section.toUpperCase()}</span>
+                    <span class="project-count">${projectCount} project${projectCount !== 1 ? 's' : ''}</span>
+                </div>
             </a>
         ` : '';
 
         tile.innerHTML = `
-            ${headerHTML}
             ${imagesHTML}
             ${textHTML}
         `;
@@ -342,10 +349,19 @@ const TileRenderer = (() => {
                 img.classList.toggle('active', index === currentIndex);
             });
 
-            // Update preview images (show next in sequence)
+            // Update preview images
+            // First half are prev previews, second half are next previews
+            const prevIndex = (currentIndex - 1 + imageCount) % imageCount;
             const nextIndex = (currentIndex + 1) % imageCount;
+
             previewImages.forEach((img, index) => {
-                img.classList.toggle('active', index === nextIndex);
+                // Check if this is prev or next based on the image's parent
+                const isPrevPreview = img.closest('.homepage-tile__prev-preview');
+                if (isPrevPreview) {
+                    img.classList.toggle('active', index === prevIndex);
+                } else {
+                    img.classList.toggle('active', index === nextIndex);
+                }
             });
 
             // Update text (cycle through available texts)
@@ -361,25 +377,15 @@ const TileRenderer = (() => {
                 dot.classList.toggle('active', index === currentIndex);
             });
 
-            // Update layout direction (align current image based on position)
-            if (currentIndex === imageCount - 1) {
-                // Last image: align right (preview on left)
-                tile.classList.add('at-end');
-                tile.classList.remove('at-start');
-            } else if (currentIndex === 0) {
-                // First image: align left (preview on right)
+            // Update boundary state
+            if (currentIndex === 0) {
                 tile.classList.add('at-start');
                 tile.classList.remove('at-end');
+            } else if (currentIndex === imageCount - 1) {
+                tile.classList.add('at-end');
+                tile.classList.remove('at-start');
             } else {
-                // Middle images: follow swipe direction
-                const direction = tile.getAttribute('data-direction');
-                if (direction === 'backward') {
-                    tile.classList.add('at-end');
-                    tile.classList.remove('at-start');
-                } else {
-                    tile.classList.add('at-start');
-                    tile.classList.remove('at-end');
-                }
+                tile.classList.remove('at-start', 'at-end');
             }
 
             // Store current index
