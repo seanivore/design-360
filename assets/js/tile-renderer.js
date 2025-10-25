@@ -388,12 +388,16 @@ const TileRenderer = (() => {
 
             // Render each tile
             projects.forEach((project, index) => {
-                const tile = renderSectionTile(project);
+                try {
+                    const tile = renderSectionTile(project);
 
-                // Stagger animation by setting delay dynamically
-                tile.style.animationDelay = `${index * 100}ms`;
+                    // Stagger animation by setting delay dynamically
+                    tile.style.animationDelay = `${index * 100}ms`;
 
-                container.appendChild(tile);
+                    container.appendChild(tile);
+                } catch (error) {
+                    console.error(`❌ Failed to render tile for project:`, project.categorization?.entry_id, error);
+                }
             });
 
             hideLoading();

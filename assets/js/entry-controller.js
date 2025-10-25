@@ -56,8 +56,8 @@ const EntryController = (() => {
      * Populate page metadata (SEO tags)
      */
     function populateMetadata(project) {
-        const { content, teaser_copy } = project;
-        const { media } = content;
+        const { content } = project;
+        const { media, teaser_copy } = content;
 
         // Update page title
         document.title = teaser_copy.seo_title || teaser_copy.page_title;
@@ -94,8 +94,9 @@ const EntryController = (() => {
      * Populate breadcrumbs
      */
     function populateBreadcrumbs(project) {
-        const { categorization, teaser_copy } = project;
+        const { categorization, content } = project;
         const { placement } = categorization;
+        const { teaser_copy } = content;
 
         const breadcrumbContainers = document.querySelectorAll('.entry-breadcrumbs');
 
@@ -142,9 +143,9 @@ const EntryController = (() => {
      * Populate main content sections
      */
     function populateContent(project) {
-        const { categorization, content, teaser_copy, page_copy } = project;
+        const { categorization, content } = project;
         const { tagging } = categorization;
-        const { media, assets } = content;
+        const { media, assets, teaser_copy, page_copy } = content;
 
         // Page title and subtitle
         const titleEl = document.getElementById('entry-title');
