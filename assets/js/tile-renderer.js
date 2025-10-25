@@ -12,9 +12,9 @@ const TileRenderer = (() => {
      * Text cycles through tile_text array as images swipe
      */
     function renderSectionTile(project) {
-        const { categorization, content } = project;
+        const { categorization, content, teaser_copy } = project;
         const { placement } = categorization;
-        const { teaser_copy, media } = content;
+        const { media } = content;
 
         // Build entry URL
         const section = DataLoader.normalizeForURL(placement.section);
