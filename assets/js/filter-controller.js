@@ -254,6 +254,7 @@ const FilterController = (() => {
 
         // Parse initial tags from hash
         const hashTags = parseHashTags();
+        const hasHashTags = hashTags.length > 0; // Check BEFORE adding sticky filter
 
         // Merge sticky filter with hash tags
         if (stickyFilter && !hashTags.includes(stickyFilter)) {
@@ -280,9 +281,10 @@ const FilterController = (() => {
             }
         });
 
-        // CRITICAL: If page loaded with hash tags, trigger initial render
-        // This handles back button navigation where URL already has hash
-        if (hashTags.length > 0 && onFilterChange) {
+        // CRITICAL: If page loaded with hash tags (non-sticky), trigger initial render
+        // This handles back button navigation where URL already has hash filtering
+        // Only fire if there were ACTUAL hash tags in URL, not just the sticky filter
+        if (hasHashTags && onFilterChange) {
             // Defer to ensure DOM is ready and pills are rendered
             setTimeout(() => {
                 updateFilterPills();
