@@ -12,6 +12,14 @@ const TileRenderer = (() => {
      * Text cycles through tile_text array as images swipe
      */
     function renderSectionTile(project) {
+        // DEBUG: Log what we receive
+        console.log('🔍 renderSectionTile called with:', {
+            hasProject: !!project,
+            projectKeys: project ? Object.keys(project) : 'none',
+            hasTeaserCopy: project && 'teaser_copy' in project,
+            teaserCopyKeys: project?.teaser_copy ? Object.keys(project.teaser_copy) : 'none'
+        });
+
         const { categorization, content, teaser_copy } = project;
         const { placement } = categorization;
         const { media } = content;
