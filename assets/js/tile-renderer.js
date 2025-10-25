@@ -14,7 +14,7 @@ const TileRenderer = (() => {
     function renderSectionTile(project) {
         const { categorization, content } = project;
         const { placement } = categorization;
-        const { media, teaser_copy } = content;
+        const { media = {}, teaser_copy = {} } = content;
 
         // Build entry URL
         const section = DataLoader.normalizeForURL(placement.section);
@@ -26,10 +26,10 @@ const TileRenderer = (() => {
         const thumbnails = media.thumbnail_images || [];
 
         // Get tile text (all available)
-        const tileTexts = teaser_copy.tile_text || [];
+        const tileTexts = teaser_copy?.tile_text || [];
 
         // Fallback if no tile_text provided
-        const defaultText = teaser_copy.page_subtitle || teaser_copy.page_title || '';
+        const defaultText = teaser_copy?.page_subtitle || teaser_copy?.page_title || 'View Project';
         if (tileTexts.length === 0 && defaultText) {
             tileTexts.push(defaultText);
         }
@@ -42,11 +42,12 @@ const TileRenderer = (() => {
         tile.setAttribute('data-current-index', '0');
 
         // Build images HTML with prev/next previews
+        const altText = teaser_copy?.page_title || 'Project image';
         const mainImagesHTML = thumbnails.length > 0 ?
             thumbnails.map((img, index) => `
                 <img
                     src="/${img}"
-                    alt="${teaser_copy.page_title}"
+                    alt="${altText}"
                     class="tile-section__image ${index === 0 ? 'active' : ''}"
                     loading="lazy"
                 />
@@ -58,7 +59,7 @@ const TileRenderer = (() => {
                 ${thumbnails.map((img, index) => `
                     <img
                         src="/${img}"
-                        alt="${teaser_copy.page_title}"
+                        alt="${altText}"
                         class="tile-section__preview-image ${index === thumbnails.length - 1 ? 'active' : ''}"
                         loading="lazy"
                     />
@@ -72,7 +73,7 @@ const TileRenderer = (() => {
                 ${thumbnails.map((img, index) => `
                     <img
                         src="/${img}"
-                        alt="${teaser_copy.page_title}"
+                        alt="${altText}"
                         class="tile-section__preview-image ${index === 1 ? 'active' : ''}"
                         loading="lazy"
                     />
@@ -394,18 +395,21 @@ const TileRenderer = (() => {
             });
 
             // Update preview images
-            // First half are prev previews, second half are next previews
             const prevIndex = (currentIndex - 1 + imageCount) % imageCount;
             const nextIndex = (currentIndex + 1) % imageCount;
 
-            previewImages.forEach((img, index) => {
-                // Check if this is prev or next based on the image's parent
-                const isPrevPreview = img.closest('.homepage-tile__prev-preview');
-                if (isPrevPreview) {
-                    img.classList.toggle('active', index === prevIndex);
-                } else {
-                    img.classList.toggle('active', index === nextIndex);
-                }
+            // Get prev and next preview containers
+            const prevPreviewImages = tile.querySelectorAll('.homepage-tile__prev-preview .homepage-tile__preview-image');
+            const nextPreviewImages = tile.querySelectorAll('.homepage-tile__next-preview .homepage-tile__preview-image');
+
+            // Update prev preview images
+            prevPreviewImages.forEach((img, index) => {
+                img.classList.toggle('active', index === prevIndex);
+            });
+
+            // Update next preview images
+            nextPreviewImages.forEach((img, index) => {
+                img.classList.toggle('active', index === nextIndex);
             });
 
             // Update text (cycle through available texts)
