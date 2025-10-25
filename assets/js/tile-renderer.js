@@ -41,21 +41,49 @@ const TileRenderer = (() => {
         tile.setAttribute('data-entry-id', categorization.entry_id);
         tile.setAttribute('data-current-index', '0');
 
-        // Build images HTML (all images, first one active)
-        const imagesHTML = thumbnails.length > 0 ?
+        // Build images HTML with prev/next previews
+        const mainImagesHTML = thumbnails.length > 0 ?
             thumbnails.map((img, index) => `
-                <img 
-                    src="/${img}" 
-                    alt="${teaser_copy.page_title}" 
+                <img
+                    src="/${img}"
+                    alt="${teaser_copy.page_title}"
                     class="tile-section__image ${index === 0 ? 'active' : ''}"
                     loading="lazy"
                 />
             `).join('') : '';
 
+        // Previous preview images
+        const prevPreviewHTML = thumbnails.length > 1 ? `
+            <div class="tile-section__prev-preview">
+                ${thumbnails.map((img, index) => `
+                    <img
+                        src="/${img}"
+                        alt="${teaser_copy.page_title}"
+                        class="tile-section__preview-image ${index === thumbnails.length - 1 ? 'active' : ''}"
+                        loading="lazy"
+                    />
+                `).join('')}
+            </div>
+        ` : '';
+
+        // Next preview images
+        const nextPreviewHTML = thumbnails.length > 1 ? `
+            <div class="tile-section__next-preview">
+                ${thumbnails.map((img, index) => `
+                    <img
+                        src="/${img}"
+                        alt="${teaser_copy.page_title}"
+                        class="tile-section__preview-image ${index === 1 ? 'active' : ''}"
+                        loading="lazy"
+                    />
+                `).join('')}
+            </div>
+        ` : '';
+
         // Build text HTML (all texts, first one visible)
         const textHTML = tileTexts.length > 0 ?
             tileTexts.map((text, index) => `
-                <p class="tile-section__text" 
+                <p class="tile-section__text"
                    style="display: ${index === 0 ? 'block' : 'none'};"
                    data-text-index="${index}">
                     ${text}
@@ -67,9 +95,11 @@ const TileRenderer = (() => {
                 ${textHTML}
             </div>
             <div class="tile-section__images">
+                ${prevPreviewHTML}
                 <div class="tile-section__image-container">
-                    ${imagesHTML}
+                    ${mainImagesHTML}
                 </div>
+                ${nextPreviewHTML}
             </div>
         `;
 
@@ -92,6 +122,7 @@ const TileRenderer = (() => {
         let isSwiping = false;
 
         const images = tile.querySelectorAll('.tile-section__image');
+        const previewImages = tile.querySelectorAll('.tile-section__preview-image');
         const texts = tile.querySelectorAll('.tile-section__text');
         const imageContainer = tile.querySelector('.tile-section__image-container');
 
@@ -148,9 +179,22 @@ const TileRenderer = (() => {
         }
 
         function updateSectionTile() {
-            // Update images
+            // Update main images
             images.forEach((img, index) => {
                 img.classList.toggle('active', index === currentIndex);
+            });
+
+            // Update preview images
+            const prevIndex = (currentIndex - 1 + imageCount) % imageCount;
+            const nextIndex = (currentIndex + 1) % imageCount;
+
+            previewImages.forEach((img, index) => {
+                const isPrevPreview = img.closest('.tile-section__prev-preview');
+                if (isPrevPreview) {
+                    img.classList.toggle('active', index === prevIndex);
+                } else {
+                    img.classList.toggle('active', index === nextIndex);
+                }
             });
 
             // Update text (cycle through available texts)
