@@ -63,6 +63,8 @@ const DataLoader = (() => {
             }
             const project = await response.json();
             console.log(`✅ Loaded: ${jsonPath}`);
+            console.log(`  🔑 Keys: ${Object.keys(project).join(', ')}`);
+            console.log(`  ✓ Has teaser_copy: ${'teaser_copy' in project}`);
             cache.projects.set(jsonPath, project);
             return project;
         } catch (error) {
