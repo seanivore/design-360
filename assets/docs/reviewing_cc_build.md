@@ -1,7 +1,92 @@
 # Website Feedback for Claude Code Build 
-*10-22-2025* 
 
-## 1. Homepage Tile Design 
+## Fix Updates Made *10-22-2025* 
+
+  1. Section page SEO title - Now shows "Web Projects | Sean August Horvath" instead of HTML comment
+     + Check fix and confirm it is dynamic still 
+       - If it is, then look into what exactly the fix was 
+       - Many elements (see issue list below) are 'loaded' but not rendering 
+  2. Section page loading - All 15 tiles load correctly on first try (was showing 0-11 randomly)
+     + This is still an issue; to clarify 
+       - The projects that should be loading are loading according to the Console 
+       - Not all are rendering (see issues list below for finer details )
+  3. Tag filtering - Single-select only, empty tags hidden, no more reordering 
+  4. Entry pages - Already working! (You might just need hard refresh: Cmd+Shift+R) 
+     + Same issue still present; same clarification as noted above for section page 
+
+## Issues *Updated 2025-10-25* 
+
+### 1. Load Versus Rendering Issue  
+
+  * **Homepage appears to always load and render fine** 
+
+    +  Console paged below
+      - Mostly curious if it is intentional to have two updates for 'no projects found' 
+      - Might be a place where the code is *almost* duplicate or unnecessarily complex 
+
+```
+✅ Successfully loaded 15/15 projects data-loader.js:111 
+📊 After filtering: 15 projects data-loader.js:112 
+✅ Loaded 15 total projects homepage-controller.js:112 
+🔀 Shuffled section order: (4) ['Video', 'Print', 'Digital', 'Web']
+⚠️ No projects found for section: Video homepage-controller.js:22 
+⚠️ Skipping Video - no projects found homepage-controller.js:126 
+⚠️ No projects found for section: Print homepage-controller.js:22 
+⚠️ Skipping Print - no projects found homepage-controller.js:126 
+⚠️ No projects found for section: Digital homepage-controller.js:22 
+⚠️ Skipping Digital - no projects found homepage-controller.js:126 
+🎲 Selected random project for Web: uid-sgt-851 homepage-controller.js:30 
+✅ Rendered 1 homepage tiles homepage-controller.js:152 
+```
+
+  * **Section (Web) page always loads all projects, never renders 15, sometimes renders 0**
+
+    + Console pasted below 
+      - I see the above has a 'rendered' confirmation that comes from `homepage-controller.js`
+      - Should this `assets/js/section-controller.js` be working like it does on homepage? 
+      - The errors with `tile-renderer.js` looks to always have those same issues on this (Web) section page 
+    + The most I can get on reload is 13 but it always say "Loading projects..." at bottom of page 
+      - Can this UI notification be made accurate? Only show when there is something still loading? 
+      - The User would be less likely to know the site had an error ... 
+    + Note that I cannot yet check tag click-through section pages (contextual on-page tags)
+
+```
+✅ Loaded: assets/entries/uid-qor-090.json data-loader.js:65 
+✅ Successfully loaded 15/15 projects data-loader.js:111 
+📊 After filtering: 15 projects data-loader.js:112 
+Uncaught TypeError: Cannot read properties of undefined (reading 'tile_text') tile-renderer.js:29 
+    at renderSectionTile (tile-renderer.js:29:39)
+    at tile-renderer.js:391:30
+    at Array.forEach (<anonymous>)
+    at tile-renderer.js:390:22
+```
+
+  * **Entry pages never render any visible elements** 
+
+    + Console pasted below 
+      - I can see from browser tab the the SEO title is indeed not showing 
+      - Instead the SEO just says <-!- Populated by JS -!-> 
+    + Literally nothing on page is showing other than 
+      - PATTERN, ACTION, MEASURED headings 
+      - A block for the thumb slideshow location 
+      - Horizontal line and smaller block for tags (breadcrumbs and contextual tags missing)
+      - Heading Related Posts showing but no posts 
+    + No matter how many refreshes or 'hard refreshes' nothing loads 
+
+```
+GET https://www.august.style/web/html-css-js/personalized-fashion-magazine 404 (Not Found) personalized-fashion-magazine:1 
+📄 Loading entry page template personalized-fashion-magazine:42 
+🚀 Initializing entry page... entry-controller.js:424 
+📍 Entry path: web/html-css-js/personalized-fashion-magazine entry-controller.js:429 
+🔍 Fetching: /assets/entries/uid-hwi-844.json data-loader.js:58 
+✅ Loaded: assets/entries/uid-hwi-844.json data-loader.js:65 
+✅ Project loaded: uid-hwi-844 entry-controller.js:441 
+❌ Error initializing entry page: TypeError: Cannot read properties of undefined (reading 'seo_title') entry-controller.js:453 
+    at populateMetadata (entry-controller.js:63:38)
+    at Object.init (entry-controller.js:444:13)
+```
+
+### 2. Homepage Tile Design 
 
   * **Adjust the thumbnail slide layout** 
   
@@ -48,31 +133,9 @@
     + Click-through/tap-through regions 
       - Tapping/clicking the section tag's entire square should click through 
       - Tapping/clicking the entire lower black tile-text region should click through 
-    
   * **Ensure that the above guidelines hold true across all breakpoints**
 
-## 2. Section Page SEO Title & Tile Loading Issues  
-
-  * **SEO Title** 
-
-    + Starting at the very top, the SEO title is showing wrong text
-      - This is very present on the browser tab 
-      - It says <-!--Populated by JS from Placement.JSON --!->
-
-  * **Project loading reliability** 
-
-    + Most times I click through none of the project are loaded 
-      - Only when I refresh does it load the projects 
-      - I can tell they're loaded because it will then say 15 projects 
-    + When refreshed and projects load they still down show on page 
-      - Usually the first reload none show up 
-      - Each reload more (or less) will show up 
-      - You almost never get all 15 
-    + The "loading project..." text is always present 
-      - If the loading is problematic this UI just gives it away faster 
-      - Perhaps an actual "load more" button would be more effective 
-
-## 3. Section Page Filter Tag Navigation  
+### 3. Section Page Filter Tag Navigation Design 
 
   * **Update the design of the horizontal row and tags**
 
@@ -86,26 +149,3 @@
       - `sub_section` tags 
       - `toggle_tags` 
       - `role` tags 
-
-  * **UI of filter tags**
-    
-    + Lets turn off the movement of the tag to the front when it is on 
-      - The actual UX of using it with them moving to the front is actually very confusing 
-      - Additionally, there are very few tags when multiple tags are applied 
-      - Removing this functionality will make people less apt to apply more than one tag at a time 
-
-  * **Functionality and tag content issues** 
-
-    + Currently there are many tags that filter and show no content 
-      - `toggle_tags` should only be present if there are projects using those tags 
-      - Based on the tagging functionality logic, every tag should have project tiles when applied alone 
-      - Any tags that don't have entries just shouldn't be in the list 
-    + Update tag logic so that ONLY ONE TAG FILTER can be applied at a time 
-      - When a new tag is clicked, it should turn off the current tag applied, if there is one 
-      - And then apply itself immediately 
-      - This means the only way to turn off any tags applied is to click/tap the tag applied 
-    + None of this is relevant for the section tag that is always applied no matter what
-      - The same would be true for any contextual click-through tag 
-      - Either clicked through from homepage (section tag applied) or from an entry page (contextual tag) they are locked and not in the list
-
-      
