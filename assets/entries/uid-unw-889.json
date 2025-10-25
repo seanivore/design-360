@@ -1,12 +1,12 @@
 {
-  "_metadata": {
+"_metadata": {
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
     "schema_version": "3.1",
     "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
-  },
-  "categorization": {
+},
+"categorization": {
     "entry_id": "uid-unw-889", 
     "placement": {
         "section": "Web",
