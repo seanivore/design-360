@@ -102,10 +102,12 @@
 
     /**
      * Update page title and main filter heading
+     * @param {number} filteredCount - Number of projects after filtering (defaults to total)
      */
-    function updatePageHeader() {
+    function updatePageHeader(filteredCount = shuffledProjects.length) {
         let mainFilterHeading = null;
         let docTitle = '';
+        const projectCountText = `${filteredCount} ${filteredCount === 1 ? 'project' : 'projects'}`;
 
         switch (viewType.type) {
             case 'all':
@@ -131,11 +133,11 @@
 
                     mainFilterHeading = tagDisplayName;
                     pageTitle.textContent = 'Projects';
-                    pageSubtitle.textContent = `${shuffledProjects.length} ${shuffledProjects.length === 1 ? 'project' : 'projects'}`;
+                    pageSubtitle.textContent = projectCountText;
                     docTitle = `${tagDisplayName} Projects | Sean August Horvath`;
                 } else {
                     pageTitle.textContent = 'All Projects';
-                    pageSubtitle.textContent = `${shuffledProjects.length} projects across all categories`;
+                    pageSubtitle.textContent = `${projectCountText} across all categories`;
                     docTitle = 'All Projects | Sean August Horvath';
                 }
                 break;
@@ -148,7 +150,8 @@
                 mainFilterHeading = sectionName;
 
                 pageTitle.textContent = 'Projects';
-                pageSubtitle.textContent = `${shuffledProjects.length} ${sectionName.toLowerCase()} projects`;
+                // Remove section name from subtitle - just show count
+                pageSubtitle.textContent = projectCountText;
                 docTitle = `${sectionName} Projects | Sean August Horvath`;
                 break;
 
@@ -163,7 +166,7 @@
                     mainFilterHeading = `${sectionName} › ${subsectionName}`;
 
                     pageTitle.textContent = subsectionName;
-                    pageSubtitle.textContent = `${shuffledProjects.length} projects`;
+                    pageSubtitle.textContent = projectCountText;
                     docTitle = `${subsectionName} | ${sectionName} | Sean August Horvath`;
                 }
                 break;
@@ -280,8 +283,8 @@
         // Render tiles (maintains shuffle order, just hides non-matching)
         TileRenderer.renderSectionTiles(projectsToRender, tileGrid);
 
-        // Update page header
-        updatePageHeader();
+        // Update page header with filtered count
+        updatePageHeader(projectsToRender.length);
     }
 
     /**
