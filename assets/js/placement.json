@@ -79,7 +79,9 @@
                 "Framer",
                 "Application"
             ],
-            "Print": [],
+            "Print": [
+                "Paperback"
+            ],
             "Digital": [], 
             "Video": [] 
         },

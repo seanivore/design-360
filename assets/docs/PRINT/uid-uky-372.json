@@ -8,11 +8,11 @@
 },
 
 "categorization": {
-    "entry_id": "uid-abd-123", 
+    "entry_id": "uid-uky-372", 
     "placement": {
-        "section": "Web | Print | Digital | Video",
-        "sub_section": "See placement.json for current options; new sub_section tag additions should ideally represent more than one project entry", 
-        "slug": "page-slug-would-be-html-file-name"
+        "section": "Print",
+        "sub_section": "Paperback", 
+        "slug": "illustration-lgbtq-poetry-paperback"
     },
     "tagging":{
         "technology": ["See placement.json > active_tags > contextual_tags > technology", "For any desired tag that would help tell the story of the project entry, try first to create it with a combination of tags across the groups", "If the desired tag cannot be expressed with a combination of tags from across the groups, then add it as a single new tag to one of the three main contextual tag groups, or, in specific cases, to the role tag value"],
@@ -24,18 +24,26 @@
 
 "content": {
     "media": {
-        "video_filename": "If applicable, this is just for reference if needed in the future",
-        "video_url": "If a video embed is provided, the URL should be used somewhere on the page entry's text as a hyperlink paired with the actual video embedded on the page, if there is one",
-        "video_embed": "If provided, to be embedded on the project entry page prominently", 
-        "video_alt_text": "One alt text value that is present to describe the video if a video embed was provided to be placed on the project entry page",
-        "thumbnail_images": ["An array of images provided to be placed as a slideshow for the project's content tiles both on the Homepage and on any Section Page, this slideshow will also be placed on the project entry page to enforce the visual first storytelling"], 
-        "thumb_slideshow_alt_text": "One alt text value that is present to describe the slideshow as displayed on the content's homepage/section page, and as displayed on the actual project entry's page",
-        "page_imagery": ["An array of images provided that, if provided, are to be placed on the project entry page as a slideshow"],
-        "page_image_group_alt_text": "One alt text value that is present to describe the group of additional on-project-page images when they have been provided; leave empty if there are no page images provided for a project"
+        "video_filename": "",
+        "video_url": "",
+        "video_embed": "", 
+        "video_alt_text": "",
+        "thumbnail_images": [
+            "/Users/seanivore/Development/360-design/assets/media/print/illustration-lgbtq-poetry-paperback/thumb-slide-illustration-lgbtq-poetry-paperback-1.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/print/illustration-lgbtq-poetry-paperback/thumb-slide-illustration-lgbtq-poetry-paperback-2.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/print/illustration-lgbtq-poetry-paperback/thumb-slide-illustration-lgbtq-poetry-paperback-3.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/print/illustration-lgbtq-poetry-paperback/thumb-slide-illustration-lgbtq-poetry-paperback-4.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/print/illustration-lgbtq-poetry-paperback/thumb-slide-illustration-lgbtq-poetry-paperback-5.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/print/illustration-lgbtq-poetry-paperback/thumb-slide-illustration-lgbtq-poetry-paperback-6.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/print/illustration-lgbtq-poetry-paperback/thumb-slide-illustration-lgbtq-poetry-paperback-7.webp"
+        ], 
+        "thumb_slideshow_alt_text": "Photographs of the published paperback opened to show poetry and accompanying illustration",
+        "page_imagery": [],
+        "page_image_group_alt_text": ""
         },
     "assets": {
-        "project_url": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed",
-        "github_repository": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed"
+        "project_url": "https://www.amazon.com/PANTONE-3537-Sean-August-Horvath-ebook/dp/B07LCKJPHD/",
+        "github_repository": ""
     },
     "teaser_copy":{
         "seo_title": "Used only for meta data",
@@ -52,5 +60,16 @@
     }
 }, 
 
-    "notes": []
+    "notes": [
+        "We should either make the PROJECT URL an array or handle these extra store links another way.", 
+        "https://www.everand.com/book/395790538/Pantone-3537-Up",
+        "https://www.kobo.com/us/en/ebook/pantone-3537-up?srsltid=AfmBOopK6TsVMqy3ZdcXe5RFWDARysnGDokhye1Jq4F7H1dYC7gHqpT4",
+        "https://bookwire.bowker.com/book/USA/Pantone-3537-Up-9780578430997-Horvath-Sean-August-66582645",
+        "https://porrua.mx/pantone-3537-up-1230002991047.html",
+        "https://www.bol.com/nl/nl/p/pantone-3537-up/9200000103646173/",
+        "https://www.barnesandnoble.com/w/pantone-3537-up-sean-august-horvath/1129908743",
+        "https://www.gandhi.com.mx/pantone-3537-up-1/p",
+        "https://visual-producer.august.style/horvath-work-experience/press-poetry-review-blogged-pitched-self-published-illustrated-gay-love-poetry.html",
+        "https://visual-producer.august.style/horvath-work-experience/illustrations-published-paper-back-gay-poetry.html"
+    ]
 }

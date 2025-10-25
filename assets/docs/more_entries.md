@@ -41,16 +41,69 @@ Need and entry for when we made like 20+ webpages from having Claude Code subage
 
 ## Grouping Content 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o4rZkumLHQU?si=pemzSCffNi4BoqzD&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+marketing manager innovations 
+/Users/seanivore/Dropbox/Administrative/Employment/Portfolio/OLD 
+'/Users/seanivore/Dropbox/Administrative/Employment/Job Hunting/M+R Benchmarks'
+'/Users/seanivore/Dropbox/Administrative/Employment/Job Hunting/Sean Horvath Performance Memo.docx'
+'/Users/seanivore/Dropbox/August Style Brands/Framer Website/Portfolio Entries/PETA'
+
+video 3d vfx logo 
+'/Users/seanivore/Dropbox/August Style Brands/Assets/Abstract Pixel/Logo'
+'/Users/seanivore/Dropbox/August Style Brands/Assets/Abstract Pixel/pattern-bg-abstract-pixel'
+'/Users/seanivore/Dropbox/August Style Brands/Assets/bg-pattern-vert-ad.mp4'
+
+youtube video engagement prompts 
+'/Users/seanivore/Dropbox/August Style Brands/Assets/Endcards Opacque Layers'
+
+astrology symbols digital illustration 
+'/Users/seanivore/Dropbox/August Style Brands/Assets/Illustration/Astrology Symbols'
+'/Users/seanivore/Dropbox/August Style Brands/Assets/xPlanetIcons'
+
+bauhaus web ui icons 
+'/Users/seanivore/Dropbox/August Style Brands/Branding/bauhaus nav icons'
+
+digital branding art deco 
+'/Users/seanivore/Dropbox/August Style Brands/Assets/Illustration/Digital Artwork'
+
+gestures skeleton digital art 
+'/Users/seanivore/Dropbox/August Style Brands/Assets/Illustration/Gesture Badges'
+
+lookbook shopping fashion design 
+'/Users/seanivore/Dropbox/August Style Brands/Assets/Shopping the Lookbook'
+'/Users/seanivore/Dropbox/August Style Brands/Content/Production/Shop The Lookbook'
+
+social media meta advertising 
+/Users/seanivore/Dropbox/Administrative/Employment/Portfolio/2024
+'/Users/seanivore/Dropbox/August Style Brands/Framer Website/Portfolio Entries/Meta Ads'
+
+podcast science news media 
+'/Users/seanivore/Dropbox/Administrative/Employment/LinkedIn Articles'
+'/Users/seanivore/Dropbox/August Style Brands/Content/Production/Podcast Deep Dive/Website/webp/New Folder With Items'
+'/Users/seanivore/Dropbox/August Style Brands/Framer Website/Thumbnails'
+
 ### **Print** 
 
-  1. Illustrated LGBTQ poetry paperback with 200+ sales 
-     `https://visual-producer.august.style/horvath-work-experience/illustrations-published-paper-back-gay-poetry.html` 
-     `https://visual-producer.august.style/horvath-work-experience/press-poetry-review-blogged-pitched-self-published-illustrated-gay-love-poetry.html` 
 
   2. Illustrated Web3 Product Marketing comic book with 3,000+ prints 
      `https://visual-producer.august.style/horvath-work-experience/web3-comic-book-illustrator-print-design-branding.html` 
 
 ### **Digital** 
+
+design art history series 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Web Images Promoted/Design Article Series'
+
+horoscope thumbnails 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Web Images Promoted/Sign Horoscopes'
+facebook posts 
+/Users/seanivore/Dropbox/Workspaces/portfolio-entries/astrofluenced-fb-posts
+
+glitch art 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Production/Trippy World of Glitch Art A Style Guide'
+
+ai staged art deco wall art 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Shop/2403 Art Deco Interior Design Feature/Staged Art Deco'
 
   1. Web3 modernized memes 
      `https://visual-producer.august.style/horvath-work-experience/100-pepe-the-frog-variety-clothing-meme-graphic-design-vector.html` 
@@ -135,12 +188,31 @@ Need and entry for when we made like 20+ webpages from having Claude Code subage
 
   2. Raining on man Web3 video 
      `https://visual-producer.august.style/horvath-work-experience/defi-ad-producer-illustrator-video-content-producer.html` 
+     '/Users/seanivore/Dropbox/August Style Brands/Content/illustration-showcase/social-video/man-rain'
+
+fully automated video short production 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Marketing + Social/2023'
+'/Users/seanivore/Dropbox/August Style Brands/Content/Marketing + Social'
+
+glitch art house social advertising
+'/Users/seanivore/Dropbox/August Style Brands/Content/Production/Advert Jerome LOL Glitch Art'
+
+audio and design 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Production/Art History Storytelling/Bauhaus'
+
+astrology newsletter automated design 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Production/Astro Newsletter/Week of Sunday, Sep 08, 2024'
+
+ai virtual interior design photoshoot 
+'/Users/seanivore/Dropbox/August Style Brands/Content/Production/Interior Design Storytelling/Alexa_s Art Deco DTLA Loft'
 
   3. Patrick Bateman crypto social video 
      `https://visual-producer.august.style/horvath-work-experience/american-psycho-andrew-bateman-meme-social-content-animation-web3-branding-producer.html` 
+     '/Users/seanivore/Dropbox/August Style Brands/Content/illustration-showcase/social-video/bateman/bateman.mp4'
 
   4. 3D FX on 2D video 
      `https://visual-producer.august.style/horvath-work-experience/3d-crypto-coin-logo-llama-introduces-silent-defi.html`
+     '/Users/seanivore/Dropbox/August Style Brands/Content/illustration-showcase/motion-design/llama.mp4'
 
   5. Background After Effects FX 3D Tunnel 
      `https://visual-producer.august.style/horvath-work-experience/visual-artist-content-producer-designs-animated-effects-neon-grid-tunnel-never-ending.html` 
@@ -199,7 +271,7 @@ Need and entry for when we made like 20+ webpages from having Claude Code subage
   2. Printed Product 
      `https://visual-producer.august.style/horvath-work-experience/illustration-digital-product-design-marketing-e-commerce-sales.html` 
 
-
+'/Users/seanivore/Dropbox/August Style Brands/Content/Shop/xAdmin/Wall Art Size Guide'
 
 ### **Interactive** 
 
