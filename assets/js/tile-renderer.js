@@ -12,14 +12,9 @@ const TileRenderer = (() => {
      * Text cycles through tile_text array as images swipe
      */
     function renderSectionTile(project) {
-        // DEBUG: Log exactly what keys we have
-        console.log('🔍 renderSectionTile - project keys:', project ? Object.keys(project) : 'null');
-        console.log('🔍 renderSectionTile - has teaser_copy:', project && 'teaser_copy' in project);
-        console.log('🔍 renderSectionTile - has page_copy:', project && 'page_copy' in project);
-
-        const { categorization, content, teaser_copy } = project;
+        const { categorization, content } = project;
         const { placement } = categorization;
-        const { media } = content;
+        const { media, teaser_copy } = content;
 
         // Build entry URL
         const section = DataLoader.normalizeForURL(placement.section);
