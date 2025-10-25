@@ -11,10 +11,14 @@
 
 :root {
     /* Colors - Dark Theme Default */
-    --color-bg-primary: #2a2a2a; /* Lighter charcoal for depth */
-    --color-bg-secondary: #2a2a2a; /* Match primary for consistency */
-    --color-bg-tile: #1a1a1a; /* Darker tiles for contrast */
-    --color-bg-dark: #0f0f0f; /* Even darker for text areas */
+    --color-bg-primary: #2a2a2a;
+    /* Lighter charcoal for depth */
+    --color-bg-secondary: #2a2a2a;
+    /* Match primary for consistency */
+    --color-bg-tile: #1a1a1a;
+    /* Darker tiles for contrast */
+    --color-bg-dark: #0f0f0f;
+    /* Even darker for text areas */
     --color-text-primary: #f5f5f5;
     --color-text-secondary: #b0b0b0;
     --color-accent: #4a9eff;
@@ -391,7 +395,8 @@ a:active {
 /* Section Tiles (Wide/Short, Images to Side) - Magazine Aesthetic */
 .tile-section {
     background-color: var(--color-bg-tile);
-    border-radius: 0; /* Sharp right angles */
+    border-radius: 0;
+    /* Sharp right angles */
     box-shadow: var(--tile-shadow);
     overflow: hidden;
     transition: box-shadow var(--duration-normal) var(--easing-standard);
@@ -400,7 +405,8 @@ a:active {
     gap: var(--space-lg);
     padding: var(--space-md);
     margin-bottom: var(--space-md);
-    min-height: 160px; /* Fixed height */
+    min-height: 160px;
+    /* Fixed height */
     max-height: 160px;
     position: relative;
 }
@@ -433,12 +439,16 @@ a:active {
 /* Images area with slideshow - inset design */
 .tile-section__images {
     flex-shrink: 0;
-    width: 240px; /* Wider for better slideshow visibility */
-    height: 144px; /* Fixed height: 160px tile - 16px padding = 144px */
+    width: 240px;
+    /* Wider for better slideshow visibility */
+    height: 144px;
+    /* Fixed height: 160px tile - 16px padding = 144px */
     position: relative;
     display: flex;
-    background: #2a2a2a; /* Gray background */
-    padding: 4px; /* Inset */
+    background: #2a2a2a;
+    /* Gray background */
+    padding: 4px;
+    /* Inset */
     gap: 4px;
 }
 
@@ -661,8 +671,10 @@ a:active {
 .tile-grid-section {
     display: flex;
     flex-direction: column;
-    padding: var(--space-lg) var(--space-xl); /* Added L/R padding */
-    max-width: 1200px; /* Slightly less wide */
+    padding: var(--space-lg) var(--space-xl);
+    /* Added L/R padding */
+    max-width: 1200px;
+    /* Slightly less wide */
     margin: 0 auto;
 }
 
@@ -842,7 +854,7 @@ a:active {
     box-shadow: var(--tile-shadow);
     overflow: hidden;
     transition: transform var(--duration-normal) var(--easing-standard),
-                box-shadow var(--duration-normal) var(--easing-standard);
+        box-shadow var(--duration-normal) var(--easing-standard);
     display: flex;
     flex-direction: column;
 }
@@ -858,8 +870,10 @@ a:active {
     width: 100%;
     aspect-ratio: 16 / 9;
     display: flex;
-    background: #2a2a2a; /* Light gray background */
-    padding: 4px; /* Inset padding */
+    background: #2a2a2a;
+    /* Light gray background */
+    padding: 4px;
+    /* Inset padding */
     cursor: pointer;
 }
 
@@ -930,7 +944,7 @@ a:active {
     object-position: top center;
     opacity: 0;
     transition: opacity 0.5s var(--easing-standard),
-                transform 0.5s var(--easing-standard);
+        transform 0.5s var(--easing-standard);
 }
 
 .homepage-tile__image.active {
@@ -948,8 +962,8 @@ a:active {
     border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     transition: opacity 0.3s var(--easing-standard),
-                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.5s var(--easing-standard);
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.5s var(--easing-standard);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -970,7 +984,8 @@ a:active {
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
-    min-height: 140px; /* Fixed height */
+    min-height: 140px;
+    /* Fixed height */
     max-height: 140px;
 }
 
@@ -992,7 +1007,7 @@ a:active {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     transition: background 0.3s var(--easing-standard),
-                transform 0.3s var(--easing-standard);
+        transform 0.3s var(--easing-standard);
     cursor: pointer;
 }
 
@@ -1095,17 +1110,17 @@ a:active {
     border-radius: 50%;
     border: 4px solid var(--color-accent);
     box-shadow: 0 4px 16px rgba(96, 165, 250, 0.3),
-                0 0 0 1px rgba(96, 165, 250, 0.1);
+        0 0 0 1px rgba(96, 165, 250, 0.1);
     object-fit: cover;
     flex-shrink: 0;
     transition: transform var(--duration-normal) var(--easing-standard),
-                box-shadow var(--duration-normal) var(--easing-standard);
+        box-shadow var(--duration-normal) var(--easing-standard);
 }
 
 .profile-pic:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 24px rgba(96, 165, 250, 0.4),
-                0 0 0 1px rgba(96, 165, 250, 0.2);
+        0 0 0 1px rgba(96, 165, 250, 0.2);
 }
 
 .about-content {
@@ -1155,9 +1170,9 @@ a:active {
     border-radius: 50%;
     border: 1px solid transparent;
     transition: transform var(--duration-normal) var(--easing-standard),
-                color var(--duration-fast) var(--easing-standard),
-                background var(--duration-fast) var(--easing-standard),
-                border-color var(--duration-fast) var(--easing-standard);
+        color var(--duration-fast) var(--easing-standard),
+        background var(--duration-fast) var(--easing-standard),
+        border-color var(--duration-fast) var(--easing-standard);
     text-decoration: none;
 }
 
@@ -1216,6 +1231,7 @@ html {
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1285,7 +1301,7 @@ html {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-relaxed);
     transition: border-color var(--duration-fast) var(--easing-standard),
-                background var(--duration-fast) var(--easing-standard);
+        background var(--duration-fast) var(--easing-standard);
     position: relative;
 }
 
@@ -1455,7 +1471,8 @@ html {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
     background: var(--color-bg-tile);
     box-shadow: var(--tile-shadow);
     overflow: hidden;
@@ -1531,8 +1548,8 @@ html {
     text-decoration: none;
     color: var(--color-text-primary);
     transition: transform var(--duration-normal) var(--easing-standard),
-                box-shadow var(--duration-normal) var(--easing-standard),
-                border-color var(--duration-normal) var(--easing-standard);
+        box-shadow var(--duration-normal) var(--easing-standard),
+        border-color var(--duration-normal) var(--easing-standard);
     max-width: 600px;
 }
 
@@ -1567,8 +1584,8 @@ html {
     text-decoration: none;
     color: var(--color-text-primary);
     transition: transform var(--duration-normal) var(--easing-standard),
-                box-shadow var(--duration-normal) var(--easing-standard),
-                border-color var(--duration-normal) var(--easing-standard);
+        box-shadow var(--duration-normal) var(--easing-standard),
+        border-color var(--duration-normal) var(--easing-standard);
     max-width: 600px;
 }
 
@@ -1637,6 +1654,7 @@ html {
 
 /* Mobile-specific adjustments - Millennial App Vibe */
 @media (max-width: 767px) {
+
     /* Entry pages */
     .entry-top-layout,
     .entry-bottom-row {
