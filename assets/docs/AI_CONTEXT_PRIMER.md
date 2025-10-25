@@ -1,49 +1,61 @@
 # AI Context Primer: Single-JSON Portfolio Architecture
 *Complete reference for AI assistants working on august.style*
 
-**Purpose:** This document provides everything a new AI instance needs to understand and work on this project effectively. Read this first before making any changes.
+  * **Purpose:** This document provides everything a new AI instance needs to understand and work on this project effectively. Read this first before making any changes.
 
 ---
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Architecture Explained](#architecture-explained)
-3. [How to Run & Test Locally](#how-to-run--test-locally)
-4. [File Structure & Key Files](#file-structure--key-files)
-5. [Design System & Styling](#design-system--styling)
-6. [Adding New Projects](#adding-new-projects)
-7. [Tag System & Navigation](#tag-system--navigation)
-8. [Mobile-First Design Principles](#mobile-first-design-principles)
-9. [Common Pitfalls & Important Notes](#common-pitfalls--important-notes)
-10. [Deployment](#deployment)
+  1. [Project Overview](#project-overview)
+  2. [Architecture Explained](#architecture-explained)
+  3. [How to Run & Test Locally](#how-to-run--test-locally)
+  4. [File Structure & Key Files](#file-structure--key-files)
+  5. [Design System & Styling](#design-system--styling)
+  6. [Adding New Projects](#adding-new-projects)
+  7. [Tag System & Navigation](#tag-system--navigation)
+  8. [Mobile-First Design Principles](#mobile-first-design-principles)
+  9. [Common Pitfalls & Important Notes](#common-pitfalls--important-notes)
+  10. [Deployment](#deployment)
 
 ---
 
 ## Project Overview
 
 ### What This Is
-A creative generalist portfolio website (august.style) that displays 50+ projects across web, print, digital, and video using an innovative architecture:
-- **50+ portfolio pages from only 2 HTML templates**
-- **All content dynamically loaded from JSON files**
-- **No build process, no frameworks, pure HTML/CSS/JS**
-- **Hosted on GitHub Pages with clean URLs**
+
+  * **A portfolio website (august.style) that displays projects across web, print, digital, and video using an innovative architecture** 
+  
+    + Portfolio pages render from just 2 HTML templates
+    + All content dynamically loaded from JSON files
+      - No build process 
+      - No frameworks 
+      - Pure HTML/CSS/JS 
+    + Hosted on GitHub Pages with clean URLs
 
 ### The Core Innovation
-Traditional portfolios require maintaining 50+ HTML files. This architecture uses:
-- **2 HTML templates** (`section.html`, `entry.html`) + homepage
-- **50+ JSON files** (one per project)
-- **SPA-style routing** via 404 redirect trick
-- **Dynamic filtering** with tag-based navigation
+
+  * **Traditional portfolios require maintaining HTML files for every entry, but this architecture is novel**
+
+    + 2 HTML templates 
+      - `section.html`
+      - `entry.html`
+      - homepage at `index.html`
+    + As many JSON files as needed in one location 
+      - Just one per project
+      - `assets/entries/...`
+    + SPA-style routing via 404 redirect trick
+    + Dynamic filtering with tag-based navigation
 
 ### Message & Purpose
-**Problem:** Economic uncertainty + AI integration = organizational downsizing
-**Solution:** Generalist portfolio that shows cross-functional capabilities, making the owner "downsizing-friendly" for optimized modern workforces
 
-**UX Goal:** Hiring managers can preview 50+ projects without excessive clicking:
-- Tile thumbnails slideshow (swipe through images)
-- Text cycles with images (tells full story on tile)
-- Visual-first magazine aesthetic
+  * **Problem:** Economic uncertainty + AI integration = organizational downsizing
+  * **Solution:** Generalist portfolio to showcase cross-functional "downsizing-friendly" capabilities 
+
+    + **UX Goal:** Hiring managers can preview 50+ projects without excessive clicking
+      - Swipe tile thumbnail slideshow 
+      - Text cycles with images to tell full story 
+      - Visual-first magazine aesthetic
 
 ---
 
@@ -51,17 +63,20 @@ Traditional portfolios require maintaining 50+ HTML files. This architecture use
 
 ### The Clever Part: Hybrid Routing
 
-This project uses **three routing strategies simultaneously**:
+  * **This project uses three routing strategies simultaneously**
 
-#### 1. Jekyll (GitHub Pages) - Clean URLs
+#### 1. Jekyll via GitHub Pages for Clean URLs 
+
 ```
 Traditional: august.style/entry.html
 Our result:  august.style/web/html-css-js/project-name
 ```
-- Jekyll removes `.html` extensions automatically
-- We leverage this WITHOUT using Jekyll templates
 
-#### 2. SPA Routing (404 Trick) - Dynamic Loading
+  + Jekyll removes `.html` extensions automatically
+  + We leverage this WITHOUT using Jekyll templates
+
+#### 2. SPA 404 Routing Trick for Dynamic Loading
+
 ```
 User visits: august.style/web/html-css-js/slug
 ↓
@@ -72,33 +87,41 @@ No file exists → GitHub Pages serves 404.html
 JavaScript loads: Correct JSON based on URL path
 ```
 
-**This is unconventional but brilliant.** We're making GitHub Pages think it's serving static files while actually running a mini single-page application.
+  * **This is unconventional but brilliant** 
+    + We're making GitHub Pages think it's serving static files 
+    + While actually running a mini single-page application 
 
-#### 3. Hash Routing - Dynamic Filtering
+#### 3. Hash Routing for Dynamic Filtering
+
 ```
 august.style/web#tags=copywriting+illustration
 ```
-- Base page loads (`section.html`)
-- Hash changes don't trigger page reload
-- JavaScript reads hash, filters tiles dynamically
+
+  + Base page loads (`section.html`)
+    - Hash changes don't trigger page reload
+    - JavaScript reads hash, filters tiles dynamically
 
 ### How It Actually Works
 
-**One Template, Many Pages:**
+  * **One template, many pages**
 
-**`section.html` handles:**
-- `/web` → Filter to section="Web"
-- `/web/html-css-js` → Filter to section="Web" AND subsection="HTML/CSS/JS"
-- `/projects` → Show everything
-- Plus hash filtering: `#tags=copywriting`
-- Tiles shuffled every reload, filters remain applied
+  + `section.html` handles 
+    - `/web` → Filter to section="Web"
+    - `/web/html-css-js` → Filter to section="Web" AND subsection="HTML/CSS/JS"
+    - `/projects` → Show everything
+  + Plus hash filtering: `#tags=copywriting`
+    - Tiles shuffled every reload 
+    - Filters remain applied
 
-**`entry.html` handles:**
-- `/web/html-css-js/slug-project-name` → Load correct JSON, render page
+  * **`entry.html` handles**
+  
+    + `/web/html-css-js/slug-project-name` → Load correct JSON, render page
 
-**How does it know which JSON to load?**
-- `manifest.json` maps URLs to JSON files
-- Auto-generated by scanning all JSON files
+  * **How does it know which JSON to load?**
+  
+    + `manifest.json` 
+      - Maps URLs to JSON files
+      - Auto-generated by scanning all JSON files
 
 ```json
 {
@@ -108,42 +131,44 @@ august.style/web#tags=copywriting+illustration
 }
 ```
 
-### The Routing Flow Example
+### Routing Flow Example
 
-**User visits:** `august.style/web/html-css-js/saas-product`
+  * **User visits** `august.style/web/html-css-js/saas-product`
+    
+    1. GitHub Pages looks for file
+       - Checks: `/web/html-css-js/saas-product.html` → Not found
+       - Checks: `/web/html-css-js/saas-product/index.html` → Not found
+       - Serves: `404.html`
 
-1. **GitHub Pages looks for file:**
-   - Checks: `/web/html-css-js/saas-product.html` → Not found
-   - Checks: `/web/html-css-js/saas-product/index.html` → Not found
-   - Serves: `404.html`
+    2. `404.html` analyzes URL
 
-2. **`404.html` analyzes URL:**
-   ```javascript
-   const segments = path.split('/').filter(Boolean);
-   if (segments.length >= 3) {
-     // Entry page
-     sessionStorage.setItem('entryPath', path);
-     window.location.replace('/entry.html');
-   } else {
-     // Section page
-     sessionStorage.setItem('sectionPath', path);
-     window.location.replace('/section.html');
-   }
-   ```
+        ```javascript
+        const segments = path.split('/').filter(Boolean);
+        if (segments.length >= 3) {
+            // Entry page
+            sessionStorage.setItem('entryPath', path);
+            window.location.replace('/entry.html');
+        } else {
+            // Section page
+            sessionStorage.setItem('sectionPath', path);
+            window.location.replace('/section.html');
+        }
+        ```
 
-3. **`entry.html` loads:**
-   ```javascript
-   const path = sessionStorage.getItem('entryPath');
-   const manifest = await fetch('/manifest.json').then(r => r.json());
-   const jsonPath = manifest.entries[path];
-   const data = await fetch(jsonPath).then(r => r.json());
-   // Populate page with data
-   ```
+    3. `entry.html` loads
 
-4. **Result:**
-   - URL stays: `august.style/web/html-css-js/saas-product` ✅
-   - Content from: `uid-abc-123.json` ✅
-   - User sees: Beautiful project page ✅
+        ```javascript
+        const path = sessionStorage.getItem('entryPath');
+        const manifest = await fetch('/manifest.json').then(r => r.json());
+        const jsonPath = manifest.entries[path];
+        const data = await fetch(jsonPath).then(r => r.json());
+        // Populate page with data
+        ```
+
+    4. Result
+       - URL stays: `august.style/web/html-css-js/saas-product` ✅
+       - Content from: `uid-abc-123.json` ✅
+       - User sees: Beautiful project page ✅
 
 ---
 
@@ -151,7 +176,12 @@ august.style/web#tags=copywriting+illustration
 
 ### Local Development Server
 
-**IMPORTANT:** Must use a server (not `file://`). GitHub Pages 404 routing doesn't work locally, so we use URL parameters:
+  * **IMPORTANT** 
+  
+    + Must use a server 
+      - Not `file://` 
+      - GitHub Pages 404 routing doesn't work locally 
+      - Use URL parameters
 
 ```bash
 # Start local server
@@ -160,19 +190,22 @@ python3 -m http.server 5500 --bind 127.0.0.1
 
 ### Testing Different Page Types
 
-**Homepage:**
+  * **Homepage**
+
 ```
 http://localhost:5500/
 ```
 
-**Section Pages:**
+  * **Section Pages**
+
 ```
 http://localhost:5500/section.html?section=web
 http://localhost:5500/section.html?section=print
 http://localhost:5500/section.html?section=web&subsection=html-css-js
 ```
 
-**Entry Pages:**
+  * **Entry Pages**
+
 ```
 http://localhost:5500/entry.html?path=web/html-css-js/project-slug
 http://localhost:5500/entry.html?path=web/webflow/automated-shop
@@ -180,7 +213,8 @@ http://localhost:5500/entry.html?path=web/webflow/automated-shop
 
 ### URL Parameter Pattern
 
-**Controllers check for parameters FIRST:**
+  * **Controllers check for parameters FIRST**
+
 ```javascript
 // section-controller.js
 const urlParams = new URLSearchParams(window.location.search);
@@ -198,11 +232,11 @@ if (!pathParam) {
 
 ### Testing Workflow
 
-1. **Start server** on port 5500
-2. **Test section pages** with `?section=web` parameter
-3. **Test entry pages** with `?path=web/html-css-js/slug` parameter
-4. **Test filtering** by clicking tags (hash-based, works locally)
-5. **Test tile shuffling** by reloading pages multiple times
+  1. **Start server** on port 5500
+  2. **Test section pages** with `?section=web` parameter
+  3. **Test entry pages** with `?path=web/html-css-js/slug` parameter
+  4. **Test filtering** by clicking tags (hash-based, works locally)
+  5. **Test tile shuffling** by reloading pages multiple times
 
 ---
 
@@ -243,45 +277,51 @@ if (!pathParam) {
 
 ### Key JavaScript Modules
 
-**`data-loader.js`**
-- Loads manifest.json
-- Fetches project JSON files
-- Normalizes URLs (`normalizeForURL()` function)
-- Case-insensitive filtering
+  * **`data-loader.js`**
 
-**`tile-renderer.js`**
-- `renderSectionTile()` - 16:9 landscape tiles for section pages
-- `renderHomepageTile()` - 1:1 square tiles for homepage
-- Magazine aesthetic: NO title/subtitle on section tiles
+    - Loads manifest.json
+    - Fetches project JSON files
+    - Normalizes URLs (`normalizeForURL()` function)
+    - Case-insensitive filtering
 
-**`filter-controller.js`**
-- Tag activation/deactivation
-- Sticky filter logic (main filter can't be removed)
-- DOM reordering (active tags move to left)
+  * **`tile-renderer.js`**
 
-**`section-controller.js`**
-- Parses URL (section/subsection)
-- Loads matching projects
-- Handles tag filtering
-- Tile shuffling on reload
+    - `renderSectionTile()` - 16:9 landscape tiles for section pages
+    - `renderHomepageTile()` - 1:1 square tiles for homepage
+    - Magazine aesthetic: NO title/subtitle on section tiles
 
-**`entry-controller.js`**
-- Parses entry URL path
-- Loads project JSON
-- Populates page content
-- Related posts algorithm (6-hour rotation)
+  * **`filter-controller.js`**
 
-**`homepage-controller.js`**
-- Randomly selects 1 project per section
-- Renders 4 section tiles
-- Shuffles tile order on reload
-- Count badges show project totals
+    - Tag activation/deactivation
+    - Sticky filter logic (main filter can't be removed)
+    - DOM reordering (active tags move to left)
+
+  * **`section-controller.js`**
+    
+    - Parses URL (section/subsection)
+    - Loads matching projects
+    - Handles tag filtering
+    - Tile shuffling on reload
+
+  * **`entry-controller.js`**
+
+    - Parses entry URL path
+    - Loads project JSON
+    - Populates page content
+    - Related posts algorithm (6-hour rotation)
+
+  * **`homepage-controller.js`**
+    
+    - Randomly selects 1 project per section
+    - Renders 4 section tiles
+    - Shuffles tile order on reload
+    - Count badges show project totals
 
 ---
 
 ## Design System & Styling
 
-### Color Scheme (Dark Mode Only)
+### Color Scheme is Dark Mode Only 
 
 ```css
 :root {
@@ -310,23 +350,26 @@ if (!pathParam) {
 
 ### Design Principles
 
-**Magazine Aesthetic:**
-- Visual-first design
-- Minimal text on tiles
-- Clean, timeless look
-- No trendy effects
+  * **Magazine Aesthetic**
+    
+    - Visual-first design
+    - Minimal text on tiles
+    - Clean, timeless look
+    - No trendy effects
 
-**Mobile-First:**
-- All interactions work on touch
-- No hover-only functionality
-- Smooth transitions (300ms)
-- Sequential element fade-in
+  * **Mobile-First**
+    
+    - All interactions work on touch
+    - No hover-only functionality
+    - Smooth transitions (300ms)
+    - Sequential element fade-in
 
-**Sharp & Realistic:**
-- **Tiles:** Sharp corners (border-radius: 0)
-- **Shadows:** Realistic, layered depth
-- **Typography:** Clear hierarchy
-- **Spacing:** Generous whitespace
+  * **Sharp & Realistic**
+
+    - **Tiles:** Sharp corners (border-radius: 0)
+    - **Shadows:** Realistic, layered depth
+    - **Typography:** Clear hierarchy
+    - **Spacing:** Generous whitespace
 
 ### Typography Scale
 
@@ -363,19 +406,21 @@ if (!pathParam) {
 
 ### Tile Types
 
-**Homepage Tiles (Square):**
-- Aspect ratio: 1:1
-- Section name overlay with 5% black layer
-- Project count badge (top-right)
-- Links to section pages
-- Swipe cycles images + text
+  * **Homepage Tiles**
 
-**Section Tiles (Landscape):**
-- Aspect ratio: 16:9
-- NO title/subtitle (magazine aesthetic)
-- Shows teaser text that cycles with images
-- Prev/next preview thumbnails
-- Links to entry pages
+    - Aspect ratio closer to 1:1
+    - Section name overlay with 5% black layer
+    - Project count badge 
+    - Links to section pages
+    - Swipe cycles images + text
+
+  * **Section Tiles**
+
+    - A landscape aspect ratio closer to 16:9
+    - NO title/subtitle (magazine aesthetic)
+    - Shows teaser text that cycles with images
+    - Prev/next preview thumbnails
+    - Links to entry pages
 
 ### Spacing System
 
@@ -396,13 +441,13 @@ if (!pathParam) {
 
 ### Quick Reference
 
-1. **Generate entry_id:** Run `uid` command, add underscore prefix
-2. **Choose section:** Web, Print, Digital, or Video
-3. **Create subsection** (if needed) - check existing ones first
-4. **Write slug:** Clean, no extension (e.g., `project-name`)
-5. **Fill JSON** using template at `assets/docs/_entry_template.json`
-6. **Save to** `assets/entries/uid-xxx-###.json`
-7. **Regenerate manifest:** `python3 generate_manifest.py`
+  1. **Generate entry_id:** Run `uid` command, add underscore prefix
+  2. **Choose section:** Web, Print, Digital, or Video
+  3. **Create subsection** (if needed) - check existing ones first
+  4. **Write slug:** Clean, no extension (e.g., `project-name`)
+  5. **Fill JSON** using template at `assets/docs/_entry_template.json`
+  6. **Save to** `assets/entries/uid-xxx-###.json`
+  7. **Regenerate manifest:** `python3 generate_manifest.py`
 
 ### JSON Structure (Schema v3.1)
 
@@ -452,20 +497,21 @@ if (!pathParam) {
 }
 ```
 
-### Schema v3.1 Changes (October 2025)
+### Schema v3.1 Changes *October 2025*
 
-**Changed from v2.1:**
-1. `role` is now STRING (not array) - single role per project
-2. Added `video_alt_text` - accessibility for video embeds
-3. Changed `thumbnail_alt_text` to `thumb_slideshow_alt_text` - clarity
-4. Added `page_imagery` array - additional on-page images
-5. Added `page_image_group_alt_text` - accessibility
-6. Added `project_url` - external project links
-7. Added `github_repository` - GitHub repo links
+  * **Changed from v2.1:**
 
-### Important: Human-Readable JSON
+    1. `role` is now STRING (not array) - single role per project
+    2. Added `video_alt_text` - accessibility for video embeds
+    3. Changed `thumbnail_alt_text` to `thumb_slideshow_alt_text` - clarity
+    4. Added `page_imagery` array - additional on-page images
+    5. Added `page_image_group_alt_text` - accessibility
+    6. Added `project_url` - external project links
+    7. Added `github_repository` - GitHub repo links
 
-**DO NOT "fix" the capitalization!** This is intentional:
+### Important to Keep JSON Human-Readable
+
+  * **DO NOT "fix" the capitalization! This is intentional**
 
 ```json
 "section": "Web"              // ← NOT "web"
@@ -473,7 +519,7 @@ if (!pathParam) {
 "role": "Creative Technologist" // ← NOT "creative-technologist"
 ```
 
-**Why?** These values display on pages. JavaScript normalizes them for URLs:
+  * **Why? These values display on pages. JavaScript normalizes them for URLs**
 
 ```javascript
 function normalizeForURL(str) {
@@ -485,11 +531,12 @@ function normalizeForURL(str) {
 // "HTML/CSS/JS" → "html-css-js"
 ```
 
-**Benefits:**
-- JSON readable by humans
-- Values display nicely on pages
-- URL logic centralized in one function
-- Change URL format without touching 50+ JSONs
+  * **Benefits**
+
+    - JSON readable by humans
+    - Values display nicely on pages
+    - URL logic centralized in one function
+    - Change URL format without touching 50+ JSONs
 
 ---
 
@@ -497,33 +544,38 @@ function normalizeForURL(str) {
 
 ### Three Types of Tags
 
-**1. Placement Tags** (in JSON `categorization.placement`)
-- `section` - Web, Print, Digital, Video (4 total)
-- `sub_section` - Created as needed (e.g., Webflow, Framer)
+  1. Placement Tags (in JSON `categorization.placement`)
+    
+     - `section` - Web, Print, Digital, Video (4 total)
+     - `sub_section` - Created as needed (e.g., Webflow, Framer)
 
-**2. Contextual Tags** (in JSON `categorization.tagging`)
-- `technology` - Tools, frameworks, languages used
-- `media` - Where project lived (Website, Social Media, etc.)
-- `role` - Single role for this project (STRING, v3.1)
-- `skill` - Other relevant skills
+  2. Contextual Tags (in JSON `categorization.tagging`)
+    
+     - `technology` - Tools, frameworks, languages used
+     - `media` - Where project lived (Website, Social Media, etc.)
+     - `role` - Single role for this project (STRING, v3.1)
+     - `skill` - Other relevant skills
 
-**3. Toggle Tags** (defined in `placement.json`)
-- Strategic tags shown ONLY on section-type pages
-- Guide users toward key portfolio content
-- Examples: AI, Creative, Social Media, Strategy, Design
+  3. Toggle Tags (defined in `placement.json`)
+  
+     - Strategic tags shown ONLY on section-type pages
+     - Guide users toward key portfolio content
+     - Examples: AI, Creative, Social Media, Strategy, Design
 
 ### Tag Display Rules
 
-**Section Pages:**
+  * **Section Pages**
 
-**Section-type filtered** (e.g., `/web`):
+   + Section-type filtered (e.g., `/web`)
+
 ```
 Order: toggle_tags → sub_section → role
 Shows: Only projects from that section
 Main filter: "WEB" as heading (not in tag list)
 ```
 
-**Click-through filtered** (e.g., clicked "Copywriting" tag):
+   + Click-through filtered** (e.g., clicked "Copywriting" tag)
+
 ```
 Order: section → sub_section → role → contextual_tags
 Shows: ALL projects with that tag (across all sections)
@@ -531,42 +583,46 @@ Main filter: "COPYWRITING" as heading
 NO toggle tags shown
 ```
 
-**Entry Pages:**
+  * **Entry Pages**
+  
+    + Top Layout: Breadcrumbs (left) + Tags hover card (right)
+      - Breadcrumbs: `section › sub_section › breadcrumb` (clickable)
+      - Tags card: `technology`, `media`, `skill` ONLY (comma/bullet separated)
+      - Max-width: 400px
+      - Hover: Subtle lift effect
 
-**Top Layout:** Breadcrumbs (left) + Tags hover card (right)
-- Breadcrumbs: `section › sub_section › breadcrumb` (clickable)
-- Tags card: `technology`, `media`, `skill` ONLY (comma/bullet separated)
-- Max-width: 400px
-- Hover: Subtle lift effect
+  * **What's NOT in tags card**
+  
+    - `section` - shown in breadcrumbs
+    - `sub_section` - shown in breadcrumbs
+    - `role` - displayed as H3 heading in content
 
-**What's NOT in tags card:**
-- `section` - shown in breadcrumbs
-- `sub_section` - shown in breadcrumbs
-- `role` - displayed as H3 heading in content
-
-**Bottom Layout:** Repeat of top layout for UX flow
+  * **Bottom Layout:** Repeat of top layout for UX flow
 
 ### Sticky Filter Logic
 
-**Main filter cannot be removed:**
-- It's displayed as heading (not in tag list)
-- Other tags can be activated/deactivated
-- Reload maintains filters (stored in URL hash)
-- Tile order still shuffles on reload
+  * **Main filter cannot be removed:**
+  
+    - It's displayed as heading (not in tag list)
+    - Other tags can be activated/deactivated
+    - Reload maintains filters (stored in URL hash)
+    - Tile order still shuffles on reload
 
 ### Tag Creation Protocol
 
-**Before adding new tags:**
-1. Check `placement.json > active_tags > contextual_tags`
-2. Use existing tags when possible
-3. Prefer short, versatile tags over long specific ones
-4. Ensure no duplicate concepts (e.g., don't add "UI Design" if "Design" exists)
+  * **Before adding new tags**
 
-**Tag Strategy:**
-- Combine multiple short tags rather than one long tag
-- Creates more overlap between projects
-- Keeps total tag count manageable
-- More versatile for hiring manager searches
+    1. Check `placement.json > active_tags > contextual_tags`
+    2. Use existing tags when possible
+    3. Prefer short, versatile tags over long specific ones
+    4. Ensure no duplicate concepts (e.g., don't add "UI Design" if "Design" exists)
+
+  * **Tag Strategy**
+
+    - Combine multiple short tags rather than one long tag
+    - Creates more overlap between projects
+    - Keeps total tag count manageable
+    - More versatile for hiring manager searches
 
 ---
 
@@ -574,25 +630,29 @@ NO toggle tags shown
 
 ### Core Rules
 
-**1. No Hover-Only Interactions**
-- Everything must work on touch
-- Use `:active` for press states
-- Micro-interactions on tap/click
+  1. No Hover-Only Interactions
+     
+     + Everything must work on touch
+     + Use `:active` for press states
+     + Micro-interactions on tap/click
 
-**2. Smooth Transitions**
-- 300ms duration
-- `cubic-bezier(0.4, 0, 0.2, 1)` easing
-- Sequential element fade-in
+  2. Smooth Transitions
+    
+     + 300ms duration
+     +  `cubic-bezier(0.4, 0, 0.2, 1)` easing
+     +  Sequential element fade-in
 
-**3. Touch-Friendly Targets**
-- Minimum 44x44px touch areas
-- Adequate spacing between interactive elements
-- Clear visual feedback on tap
+  3. Touch-Friendly Targets 
+     
+     + Minimum 44x44px touch areas
+     + Adequate spacing between interactive elements
+     + Clear visual feedback on tap
 
-**4. Responsive Strategy**
-- Mobile: Single column layout
-- Tablet: Transitions smoothly
-- Desktop: 2-column grids, max-width centering
+  4. Responsive Strategy
+  
+     + Mobile: Single column layout
+     + Tablet: Transitions smoothly
+     + Desktop: 2-column grids, max-width centering
 
 ### Breakpoints
 
@@ -610,23 +670,26 @@ NO toggle tags shown
 
 ### Tile Interactions
 
-**Image Swipe:**
-- Touch: swipe gesture
-- Keyboard: arrow keys
-- Smooth cross-fade transitions
-- 1/8th image bleed hints at swipe
+  * **Image Swipe**
+    
+    + Touch: swipe gesture
+    + Keyboard: arrow keys
+    + Smooth cross-fade transitions
+    + 1/8th image bleed hints at swipe
 
-**Text Cycling:**
-- Syncs with image swipe
-- Cross-fade animation
-- Matches image timing
+  * **Text Cycling**
 
-**Tag Filtering:**
-- Tap to activate
-- Active tags move to left (DOM reordering)
-- Unrelated tiles fade out
-- Related tiles slide to new positions
-- Smooth 300ms transitions
+    + Syncs with image swipe
+    + Cross-fade animation
+    + Matches image timing
+
+  * **Tag Filtering**
+  
+    + Tap to activate
+    + Active tags move to left (DOM reordering)
+    + Unrelated tiles fade out
+    + Related tiles slide to new positions
+    + Smooth 300ms transitions
 
 ---
 
@@ -634,19 +697,22 @@ NO toggle tags shown
 
 ### DO NOT "Fix" These Things
 
-**1. Capitalization in JSON**
+  1. Capitalization in JSON
+
 ```json
 "section": "Web"  // ← Correct (displays on page)
 NOT: "web"        // ← Wrong
 ```
 
-**2. Spaces and Slashes in JSON**
+  2. Spaces and Slashes in JSON
+
 ```json
 "sub_section": "HTML/CSS/JS"  // ← Correct
 NOT: "html-css-js"            // ← Wrong
 ```
 
-**3. Role as String (v3.1)**
+  3. Role as String (v3.1) 
+
 ```json
 "role": "Creative Technologist"  // ← Correct (single string)
 NOT: ["Creative Technologist"]   // ← Wrong (was array in v2.1)
@@ -654,48 +720,57 @@ NOT: ["Creative Technologist"]   // ← Wrong (was array in v2.1)
 
 ### Common Mistakes
 
-**1. Testing Without Server**
-- ❌ Opening `file:///index.html` won't work
-- ✅ Use `python3 -m http.server 5500`
+  1. Testing Without Server
 
-**2. Forgetting URL Parameters for Local Testing**
-- ❌ `http://localhost:5500/section.html` (breaks on reload)
-- ✅ `http://localhost:5500/section.html?section=web`
+     + ❌ Opening `file:///index.html` won't work
+     + ✅ Use `python3 -m http.server 5500`
 
-**3. Hardcoding Values**
-- ❌ `const sections = ['Web', 'Print', 'Digital', 'Video'];`
-- ✅ Load from manifest.json dynamically
+  2. Forgetting URL Parameters for Local Testing
+  
+     + ❌ `http://localhost:5500/section.html` (breaks on reload)
+     + ✅ `http://localhost:5500/section.html?section=web`
 
-**4. Breaking Normalization**
-- ❌ Creating new normalization functions
-- ✅ Use `DataLoader.normalizeForURL()` everywhere
+  3. Hardcoding Values 
+  
+     + ❌ `const sections = ['Web', 'Print', 'Digital', 'Video'];`
+     + ✅ Load from manifest.json dynamically
 
-**5. Missing Alt Text**
-- ❌ Leaving alt text fields empty
-- ✅ Add descriptive alt text for accessibility
+  4. Breaking Normalization 
+  
+     + ❌ Creating new normalization functions
+     + ✅ Use `DataLoader.normalizeForURL()` everywhere
+     
+  5. Missing Alt Text
+     
+     + ❌ Leaving alt text fields empty
+     + ✅ Add descriptive alt text for accessibility
 
 ### Architecture-Specific Notes
 
-**Manifest Generation:**
-- Run `python3 generate_manifest.py` after adding/modifying entries
-- Commit updated manifest.json
-- Don't manually edit manifest.json
+  * **Manifest Generation**
+  
+    + Run `python3 generate_manifest.py` after adding/modifying entries
+      - Commit updated manifest.json
+      - Don't manually edit manifest.json
 
-**404 Routing:**
-- Only works in production (GitHub Pages)
-- Use URL parameters for local testing
-- Don't try to test 404 routing locally
+  * **404 Routing**
 
-**Related Posts:**
-- Uses 6-hour time seed (not daily)
-- Shows 5 posts (not 3)
-- Deterministic random using seededRandom()
-- Consistent within 6-hour window
+    + Only works in production (GitHub Pages)
+      - Use URL parameters for local testing
+      - Don't try to test 404 routing locally
 
-**Tag Matching:**
-- Case-insensitive
-- Partial string matching for toggle tags
-- "Design" matches "Graphic Design", "Print Design", etc.
+  * **Related Posts**
+  
+    + Uses 6-hour time seed (not daily)
+      - Shows 5 posts (not 3)
+      - Deterministic random using seededRandom()
+      - Consistent within 6-hour window
+
+  * **Tag Matching**
+
+    + Case-insensitive
+      - Partial string matching for toggle tags
+      - "Design" matches "Graphic Design", "Print Design", etc.
 
 ---
 
@@ -703,13 +778,13 @@ NOT: ["Creative Technologist"]   // ← Wrong (was array in v2.1)
 
 ### Pre-Deployment Checklist
 
-- [ ] Generate manifest.json (`python3 generate_manifest.py`)
-- [ ] Test all page types locally
-- [ ] Verify tag filtering works
-- [ ] Check responsive breakpoints
-- [ ] Validate all JSON files
-- [ ] Test entry pages load correctly
-- [ ] Verify images/videos load
+  - [ ] Generate manifest.json (`python3 generate_manifest.py`)
+  - [ ] Test all page types locally
+  - [ ] Verify tag filtering works
+  - [ ] Check responsive breakpoints
+  - [ ] Validate all JSON files
+  - [ ] Test entry pages load correctly
+  - [ ] Verify images/videos load
 
 ### Deployment Process
 
@@ -734,38 +809,41 @@ git push origin feature-name
 
 ### Post-Deployment Testing
 
-1. Visit `www.august.style`
-2. Test homepage tiles link correctly
-3. Click section tiles → `/web`, `/print`, etc.
-4. Click project tiles → `/web/html-css-js/project-name`
-5. Test tag filtering on section pages
-6. Test related posts on entry pages
-7. Test breadcrumb navigation
-8. Verify all images/videos load
-9. Test on mobile device
-10. Check responsive breakpoints
+  1. Visit `www.august.style`
+  2. Test homepage tiles link correctly
+  3. Click section tiles → `/web`, `/print`, etc.
+  4. Click project tiles → `/web/html-css-js/project-name`
+  5. Test tag filtering on section pages
+  6. Test related posts on entry pages
+  7. Test breadcrumb navigation
+  8. Verify all images/videos load
+  9. Test on mobile device
+  10. Check responsive breakpoints
 
 ---
 
 ## Quick Start for New AI Instances
 
-**If you're a new AI working on this project:**
+  * **If you're a new AI working on this project**
 
-1. **Read this entire document first**
-2. **Run local server:** `python3 -m http.server 5500`
-3. **Test homepage:** `http://localhost:5500/`
-4. **Test section:** `http://localhost:5500/section.html?section=web`
-5. **Test entry:** `http://localhost:5500/entry.html?path=web/html-css-js/slug`
-6. **Review key files:**
-   - `assets/docs/_entry_template.json` - JSON structure
-   - `assets/js/placement.json` - Site configuration
-   - `styles.css` - Design system
-7. **Before making changes:**
-   - Understand the routing architecture
-   - Don't "fix" intentional design choices
-   - Test locally before pushing
+    1. Read this entire document first
+    2. Run local server `python3 -m http.server 5500`
+    3. Test homepage `http://localhost:5500/`
+    4. Test section `http://localhost:5500/section.html?section=web`
+    5. Test entry `http://localhost:5500/entry.html?path=web/html-css-js/slug`
+    6. Review key files
+       + `assets/docs/_entry_template.json` - JSON structure
+       + `assets/js/placement.json` - Site configuration
+       + `styles.css` - Design system
+    7. Before making changes
+       + Understand the routing architecture
+       + Don't "fix" intentional design choices
+       + Test locally before pushing
 
-**Remember:** This architecture is unconventional but intentional. If something looks "wrong" (capitalization, routing, tag structure), read this document first before changing it.
+  * **Remember that this architecture is unconventional but intentional** 
+  
+  + If something looks "wrong" like capitalization, routing, tag structure 
+  + Read this document first before changing it 
 
 ---
 
