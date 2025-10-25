@@ -26,32 +26,23 @@
       - When it has implications for rest of process 
       - When planning changes and major decisions are made 
 
-## 3. Use `read_multiple_files` for All Important Files 
+## 3. Use `read_file` for All Important Files 
 
   * **Use Native `read_file` or `read_multiple_files` tool**
-    + Read listed important files when starting a new session 
-    + Always read these files carefully and in full 
-    + Total token sum of all important documents is *32,754 tokens*
-      
-  * **Important files include** 
-    + Claude Code SPEC `/Users/seanivore/Development/360-design/assets/docs/home_entry_pages_spec.md` *17,217 tokens*
-      - Your structured guide 
-      - All that musts be done 
-    + Architecture `/Users/seanivore/Development/360-design/assets/docs/ARCHITECTURE.md` *4,742 tokens*
-      - Deeper details needed for building 
-      - Reference for better understanding of process, requirements, etc. 
-    + JSON entry file template `/Users/seanivore/Development/360-design/assets/docs/_entry_template.json` *1,452 tokens*
-      - To understand what each project entry includes 
-      - Template provides details for each value 
-      - Find actual project entry JSON files here in `./assets/entries/...`
-      - 15 entries totaling 22,723 tokens 
-    + Read one actual JSON project entry `/Users/seanivore/Development/360-design/assets/entries/uid-dff-987.json` *1,952 tokens*
-      - Fully understand what each HTML template will need 
-      - Help visual design by understanding contents and visuals 
-    + Planning document `/Users/seanivore/Development/360-design/assets/docs/SPEC.md` *4,201 tokens*
-      - Original sketch for this website build 
-      - Helpful for illustrative understanding of project 
+    + Read important files listed before starting any new session  
+    + Always read them carefully and in full 
+
+  * **Read AI context priming file** 
+    + After architecture was built, Claude Code wrote the following
+      `/Users/seanivore/Development/360-design/assets/docs/AI_CONTEXT_PRIMER.md` *5,606 tokens* 
+      - For AI starting a session working on this website
+    + All design essentials, rules, architecture 
+      - JSON entries, three dynamic HTML pages, and navigation tags 
+      - Hosted on static Jekyll GitHub Pages 
+
+  * **If you are Claude Code this one is for you** 
     + Playwright Browser Automation Skills via Claude Code Plugin 
       `/Users/seanivore/.claude/plugins/marketplaces/playwright-skill/skills/playwright-skill/SKILL.md` *3,190 tokens* 
-      - Referenced throughout for testing and validation 
-      - Included emphasis on agentic design perfecting loop 
+      - Testing and validation; console review 
+      - Screenshots of local or live site to check design 
+      - Write scripts on fly 
