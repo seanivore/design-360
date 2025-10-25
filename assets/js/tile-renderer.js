@@ -181,55 +181,74 @@ const TileRenderer = (() => {
     function renderHomepageTile(tileData) {
         const { section, sectionURL, thumbnailImages, tileTexts, altText, projectCount } = tileData;
 
-        const tile = document.createElement('a');
-        tile.href = sectionURL;
+        const tile = document.createElement('div');
         tile.className = 'homepage-tile fade-in-item';
         tile.setAttribute('data-current-index', '0');
         tile.setAttribute('data-section', section);
+        tile.setAttribute('data-direction', 'forward'); // Track swipe direction
 
-        // Count badge (top-right)
-        const badgeHTML = `
-            <div class="homepage-tile__count-badge">
-                ${projectCount} project${projectCount !== 1 ? 's' : ''}
-            </div>
+        // Section header (top-left) - clickable
+        const headerHTML = `
+            <a href="${sectionURL}" class="homepage-tile__header">
+                <span class="section-name">${section.toUpperCase()}</span>
+                <span class="project-count">${projectCount} project${projectCount !== 1 ? 's' : ''}</span>
+            </a>
         `;
 
-        // Images container
+        // Image area with current + next preview
         const imagesHTML = thumbnailImages.length > 0 ? `
-            <div class="homepage-tile__images">
-                ${thumbnailImages.map((img, index) => `
-                    <img
-                        src="/${img}"
-                        alt="${altText}"
-                        class="homepage-tile__image ${index === 0 ? 'active' : ''}"
-                        loading="lazy"
-                    />
+            <div class="homepage-tile__images-area">
+                <div class="homepage-tile__main-image">
+                    ${thumbnailImages.map((img, index) => `
+                        <img
+                            src="/${img}"
+                            alt="${altText}"
+                            class="homepage-tile__image ${index === 0 ? 'active' : ''}"
+                            loading="lazy"
+                        />
+                    `).join('')}
+                </div>
+                ${thumbnailImages.length > 1 ? `
+                    <div class="homepage-tile__next-preview">
+                        ${thumbnailImages.map((img, index) => `
+                            <img
+                                src="/${img}"
+                                alt="${altText}"
+                                class="homepage-tile__preview-image ${index === 1 ? 'active' : ''}"
+                                loading="lazy"
+                            />
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        ` : '';
+
+        // Navigation dots
+        const dotsHTML = thumbnailImages.length > 1 ? `
+            <div class="homepage-tile__dots">
+                ${thumbnailImages.map((_, index) => `
+                    <span class="dot ${index === 0 ? 'active' : ''}" data-index="${index}"></span>
                 `).join('')}
             </div>
         ` : '';
 
-        // Section overlay (with gradient background and section name)
-        const overlayHTML = `
-            <div class="homepage-tile__overlay">
-                <span class="section-name">${section.toUpperCase()}</span>
-            </div>
-        `;
-
-        // Tile text container (cycles with images if available)
+        // Text area (bottom black section) - clickable
         const textHTML = tileTexts.length > 0 ? `
-            <div class="homepage-tile__text">
-                ${tileTexts.map((text, index) => `
-                    <p style="display: ${index === 0 ? 'block' : 'none'};" data-text-index="${index}">
-                        ${text}
-                    </p>
-                `).join('')}
-            </div>
+            <a href="${sectionURL}" class="homepage-tile__text-area">
+                ${dotsHTML}
+                <div class="homepage-tile__text">
+                    ${tileTexts.map((text, index) => `
+                        <p style="display: ${index === 0 ? 'block' : 'none'};" data-text-index="${index}">
+                            ${text}
+                        </p>
+                    `).join('')}
+                </div>
+            </a>
         ` : '';
 
         tile.innerHTML = `
-            ${badgeHTML}
+            ${headerHTML}
             ${imagesHTML}
-            ${overlayHTML}
             ${textHTML}
         `;
 
@@ -243,7 +262,7 @@ const TileRenderer = (() => {
 
     /**
      * Add swipe functionality to homepage tiles
-     * Cycles through images and text
+     * Direction-aware layout with smooth transitions
      */
     function addHomepageTileSwipe(tile, imageCount, textCount) {
         let startX = 0;
@@ -251,12 +270,17 @@ const TileRenderer = (() => {
         let currentIndex = 0;
         let isSwiping = false;
 
-        const images = tile.querySelectorAll('.homepage-tile__image');
+        const mainImages = tile.querySelectorAll('.homepage-tile__image');
+        const previewImages = tile.querySelectorAll('.homepage-tile__preview-image');
         const texts = tile.querySelectorAll('.homepage-tile__text p');
-        const imagesContainer = tile.querySelector('.homepage-tile__images');
+        const dots = tile.querySelectorAll('.dot');
+        const imagesArea = tile.querySelector('.homepage-tile__images-area');
 
         // Touch start
         tile.addEventListener('touchstart', (e) => {
+            // Don't interfere with link clicks
+            if (e.target.closest('a')) return;
+
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
             isSwiping = false;
@@ -275,42 +299,53 @@ const TileRenderer = (() => {
 
         // Touch end
         tile.addEventListener('touchend', (e) => {
+            if (!isSwiping) return;
+
             const endX = e.changedTouches[0].clientX;
             const diff = startX - endX;
 
             // Swipe threshold: 50px
-            if (isSwiping && Math.abs(diff) > 50) {
-                e.preventDefault(); // Prevent link navigation
+            if (Math.abs(diff) > 50) {
+                e.preventDefault();
                 e.stopPropagation();
 
                 if (diff > 0 && currentIndex < imageCount - 1) {
                     // Swipe left - next
                     currentIndex++;
+                    tile.setAttribute('data-direction', 'forward');
                 } else if (diff < 0 && currentIndex > 0) {
                     // Swipe right - previous
                     currentIndex--;
+                    tile.setAttribute('data-direction', 'backward');
                 }
 
                 updateHomepageTile();
             }
         });
 
-        // Desktop: Click on images container to cycle
-        if (imagesContainer) {
-            imagesContainer.addEventListener('click', (e) => {
+        // Desktop: Click on images area to cycle
+        if (imagesArea) {
+            imagesArea.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
 
                 // Cycle to next image
                 currentIndex = (currentIndex + 1) % imageCount;
+                tile.setAttribute('data-direction', 'forward');
                 updateHomepageTile();
             });
         }
 
         function updateHomepageTile() {
-            // Update images - simple active class toggle
-            images.forEach((img, index) => {
+            // Update main images with transition
+            mainImages.forEach((img, index) => {
                 img.classList.toggle('active', index === currentIndex);
+            });
+
+            // Update preview images (show next in sequence)
+            const nextIndex = (currentIndex + 1) % imageCount;
+            previewImages.forEach((img, index) => {
+                img.classList.toggle('active', index === nextIndex);
             });
 
             // Update text (cycle through available texts)
@@ -321,9 +356,38 @@ const TileRenderer = (() => {
                 });
             }
 
+            // Update navigation dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+
+            // Update layout direction (align current image based on position)
+            if (currentIndex === imageCount - 1) {
+                // Last image: align right (preview on left)
+                tile.classList.add('at-end');
+                tile.classList.remove('at-start');
+            } else if (currentIndex === 0) {
+                // First image: align left (preview on right)
+                tile.classList.add('at-start');
+                tile.classList.remove('at-end');
+            } else {
+                // Middle images: follow swipe direction
+                const direction = tile.getAttribute('data-direction');
+                if (direction === 'backward') {
+                    tile.classList.add('at-end');
+                    tile.classList.remove('at-start');
+                } else {
+                    tile.classList.add('at-start');
+                    tile.classList.remove('at-end');
+                }
+            }
+
             // Store current index
             tile.setAttribute('data-current-index', currentIndex);
         }
+
+        // Initialize with correct state
+        updateHomepageTile();
     }
 
     /**
