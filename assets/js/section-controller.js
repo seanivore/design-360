@@ -109,9 +109,35 @@
 
         switch (viewType.type) {
             case 'all':
-                pageTitle.textContent = 'All Projects';
-                pageSubtitle.textContent = `${shuffledProjects.length} projects across all categories`;
-                docTitle = 'All Projects | Sean August Horvath';
+                // Check if this is site-wide tag filtering
+                if (viewType.siteWideTag) {
+                    // Find the original tag name (not normalized)
+                    let tagDisplayName = viewType.siteWideTag;
+
+                    // Try to find the original casing from the projects
+                    if (shuffledProjects.length > 0) {
+                        const allTags = [];
+                        shuffledProjects.forEach(p => {
+                            const tagging = p.categorization.tagging;
+                            allTags.push(...tagging.technology, ...tagging.media, ...tagging.skill);
+                        });
+                        const matchingTag = allTags.find(t =>
+                            DataLoader.normalizeForURL(t) === viewType.siteWideTag
+                        );
+                        if (matchingTag) {
+                            tagDisplayName = matchingTag;
+                        }
+                    }
+
+                    mainFilterHeading = tagDisplayName;
+                    pageTitle.textContent = 'Projects';
+                    pageSubtitle.textContent = `${shuffledProjects.length} ${shuffledProjects.length === 1 ? 'project' : 'projects'}`;
+                    docTitle = `${tagDisplayName} Projects | Sean August Horvath`;
+                } else {
+                    pageTitle.textContent = 'All Projects';
+                    pageSubtitle.textContent = `${shuffledProjects.length} projects across all categories`;
+                    docTitle = 'All Projects | Sean August Horvath';
+                }
                 break;
 
             case 'section':
@@ -340,8 +366,41 @@
             });
             roles.forEach(role => addTag(role, 'role'));
 
+        } else if (viewType.type === 'all' && viewType.siteWideTag) {
+            // SITE-WIDE TAG FILTERING: Show all tags EXCEPT sections
+            // This allows users to see projects from ALL sections with a specific tag
+
+            // 1. Add subsections (from all matching projects)
+            const subsections = new Set();
+            shuffledProjects.forEach(project => {
+                subsections.add(project.categorization.placement.sub_section);
+            });
+            subsections.forEach(sub => addTag(sub, 'subsection'));
+
+            // 2. Add roles (role is now STRING in schema v3.1)
+            const roles = new Set();
+            shuffledProjects.forEach(project => {
+                const role = project.categorization.tagging.role;
+                if (role && typeof role === 'string') {
+                    roles.add(role);
+                }
+            });
+            roles.forEach(role => addTag(role, 'role'));
+
+            // 3. Add all contextual tags (technology, media, skill)
+            const contextualTags = new Set();
+            shuffledProjects.forEach(project => {
+                const tagging = project.categorization.tagging;
+                ['technology', 'media', 'skill'].forEach(category => {
+                    if (Array.isArray(tagging[category])) {
+                        tagging[category].forEach(tag => contextualTags.add(tag));
+                    }
+                });
+            });
+            contextualTags.forEach(tag => addTag(tag, 'contextual'));
+
         } else {
-            // CLICK-THROUGH PAGE (from entry page tag): Show all tags
+            // CLICK-THROUGH PAGE (legacy): Show all tags including sections
 
             // 1. Add sections
             const sections = new Set();
@@ -396,6 +455,19 @@
         } else if (viewType.type === 'subsection') {
             // Sticky filter is the subsection
             stickyFilter = viewType.subsection;
+        } else if (viewType.type === 'all') {
+            // For 'all' view, check if there's a tag in the hash (site-wide tag filtering)
+            const hash = window.location.hash.slice(1);
+            const tagMatch = hash.match(/tags?=([^&]+)/);
+            if (tagMatch) {
+                // Site-wide tag filtering: use the first tag as sticky filter
+                const tags = tagMatch[1].split('+');
+                if (tags.length > 0) {
+                    stickyFilter = tags[0];
+                    // Store the site-wide tag for later use in page header
+                    viewType.siteWideTag = stickyFilter;
+                }
+            }
         }
 
         // Get tags to display (based on page type)

@@ -122,6 +122,7 @@ const EntryController = (() => {
     /**
      * Populate tags hover cards (top-right and bottom-right)
      * ONLY includes technology/media/skill tags (NOT section/subsection/role)
+     * Links go to site-wide tag filtering (shows ALL projects with that tag)
      */
     function populateTagsCards(project) {
         const { categorization } = project;
@@ -138,7 +139,8 @@ const EntryController = (() => {
 
         tagsCardContainers.forEach(container => {
             container.innerHTML = allTags.map(tag => {
-                const tagURL = `/${DataLoader.normalizeForURL(categorization.placement.section)}#tag=${DataLoader.normalizeForURL(tag)}`;
+                // Site-wide tag filtering: shows ALL projects with this tag (not just current section)
+                const tagURL = `/projects#tag=${DataLoader.normalizeForURL(tag)}`;
                 return `<a href="${tagURL}" class="entry-tag">${tag}</a>`;
             }).join(' • ');
         });
