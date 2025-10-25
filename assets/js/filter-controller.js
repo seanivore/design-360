@@ -15,18 +15,26 @@ const FilterController = (() => {
      * Supports both singular and plural: #tag=value or #tags=value+value2
      * Example: #tags=copywriting+illustration -> ['copywriting', 'illustration']
      * Example: #tag=cms -> ['cms']
+     *
+     * NOTE: Cannot use URLSearchParams because it decodes + as space!
+     * Must manually parse the hash to preserve + as a delimiter.
      */
     function parseHashTags() {
         const hash = window.location.hash.slice(1); // Remove #
-        const params = new URLSearchParams(hash);
 
-        // Try plural first, then singular (for entry page links)
-        const tagsParam = params.get('tags') || params.get('tag');
-
-        if (!tagsParam) {
+        if (!hash) {
             return [];
         }
 
+        // Manually parse to avoid URLSearchParams decoding + as space
+        // Look for either tags= or tag=
+        const tagsMatch = hash.match(/tags?=([^&]+)/);
+
+        if (!tagsMatch) {
+            return [];
+        }
+
+        const tagsParam = tagsMatch[1];
         return tagsParam.split('+').map(t => t.trim()).filter(Boolean);
     }
 
