@@ -283,7 +283,8 @@
         }
 
         if (viewType.type === 'section' || viewType.type === 'subsection') {
-            // SECTION-TYPE PAGE: Show subsection, role, and featured tags
+            // SECTION-TYPE PAGE: Show subsection, toggle_tags, then role
+            // Order: subsection → toggle_tag keywords → role tags
 
             // 1. Add subsections from current projects
             const subsections = new Set();
@@ -292,17 +293,8 @@
             });
             subsections.forEach(sub => addTag(sub, 'subsection'));
 
-            // 2. Add roles from current projects (role is now STRING in schema v3.1)
-            const roles = new Set();
-            shuffledProjects.forEach(project => {
-                const role = project.categorization.tagging.role;
-                if (role && typeof role === 'string') {
-                    roles.add(role);
-                }
-            });
-            roles.forEach(role => addTag(role, 'role'));
-
-            // 3. Add featured tags (if they exist in current projects)
+            // 2. Add featured toggle_tag keywords (if they exist in current projects)
+            // Featured tags are KEYWORDS that match any tag containing that word
             if (featuredTags.length > 0) {
                 const allProjectTags = new Set();
                 shuffledProjects.forEach(project => {
@@ -314,12 +306,39 @@
                     });
                 });
 
-                featuredTags.forEach(featuredTag => {
-                    if (allProjectTags.has(featuredTag)) {
-                        addTag(featuredTag, 'contextual');
-                    }
+                // For each toggle tag keyword, find all matching tags with partial word match
+                featuredTags.forEach(toggleTag => {
+                    const toggleLower = toggleTag.toLowerCase();
+
+                    // Find all project tags that contain this toggle tag as a word
+                    const matchingTags = Array.from(allProjectTags).filter(projectTag => {
+                        const tagLower = projectTag.toLowerCase();
+
+                        // Split tag into words (by spaces and hyphens)
+                        const words = tagLower.split(/[\s\-\/]+/);
+
+                        // Check if toggle tag matches any word or is contained in the tag
+                        return words.some(word =>
+                            word === toggleLower ||
+                            word.includes(toggleLower) ||
+                            tagLower.includes(toggleLower)
+                        );
+                    });
+
+                    // Add each matching tag
+                    matchingTags.forEach(tag => addTag(tag, 'contextual'));
                 });
             }
+
+            // 3. Add roles from current projects (role is now STRING in schema v3.1)
+            const roles = new Set();
+            shuffledProjects.forEach(project => {
+                const role = project.categorization.tagging.role;
+                if (role && typeof role === 'string') {
+                    roles.add(role);
+                }
+            });
+            roles.forEach(role => addTag(role, 'role'));
 
         } else {
             // CLICK-THROUGH PAGE (from entry page tag): Show all tags

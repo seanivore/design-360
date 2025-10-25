@@ -92,6 +92,7 @@ const EntryController = (() => {
 
     /**
      * Populate breadcrumbs
+     * Sub_section links use hash filtering (not special pages)
      */
     function populateBreadcrumbs(project) {
         const { categorization, content } = project;
@@ -102,7 +103,11 @@ const EntryController = (() => {
 
         breadcrumbContainers.forEach(container => {
             const sectionURL = `/${DataLoader.normalizeForURL(placement.section)}`;
-            const subsectionURL = `/${DataLoader.normalizeForURL(placement.section)}/${DataLoader.normalizeForURL(placement.sub_section)}`;
+
+            // Sub_section uses hash filtering, not a special page
+            const normalizedSection = DataLoader.normalizeForURL(placement.section);
+            const normalizedSubsection = DataLoader.normalizeForURL(placement.sub_section);
+            const subsectionURL = `/${normalizedSection}#tags=${normalizedSection}+${normalizedSubsection}`;
 
             container.innerHTML = `
                 <a href="${sectionURL}">${placement.section}</a>

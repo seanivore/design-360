@@ -12,12 +12,16 @@ const FilterController = (() => {
 
     /**
      * Parse tags from URL hash
+     * Supports both singular and plural: #tag=value or #tags=value+value2
      * Example: #tags=copywriting+illustration -> ['copywriting', 'illustration']
+     * Example: #tag=cms -> ['cms']
      */
     function parseHashTags() {
         const hash = window.location.hash.slice(1); // Remove #
         const params = new URLSearchParams(hash);
-        const tagsParam = params.get('tags');
+
+        // Try plural first, then singular (for entry page links)
+        const tagsParam = params.get('tags') || params.get('tag');
 
         if (!tagsParam) {
             return [];

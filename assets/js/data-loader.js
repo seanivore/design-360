@@ -145,6 +145,7 @@ const DataLoader = (() => {
     /**
      * Filter projects by tags
      * Tags can come from any of the 4 tag categories
+     * Note: In schema v3.1, role is a STRING (not array)
      */
     function filterByTags(projects, tags) {
         if (!tags || tags.length === 0) {
@@ -155,10 +156,12 @@ const DataLoader = (() => {
 
         return projects.filter(project => {
             const tagging = project.categorization.tagging;
+
+            // Build array of all tags (role is STRING in v3.1, others are arrays)
             const allTags = [
                 ...tagging.technology,
                 ...tagging.media,
-                ...tagging.role,
+                ...(tagging.role ? [tagging.role] : []), // Wrap string role in array
                 ...tagging.skill
             ].map(t => normalizeForURL(t));
 
@@ -170,6 +173,7 @@ const DataLoader = (() => {
     /**
      * Get all unique tags from a list of projects
      * Returns object with tags categorized
+     * Note: In schema v3.1, role is a STRING (not array)
      */
     function getAllTags(projects) {
         const tagSet = new Set();
@@ -179,7 +183,7 @@ const DataLoader = (() => {
             [
                 ...tagging.technology,
                 ...tagging.media,
-                ...tagging.role,
+                ...(tagging.role ? [tagging.role] : []), // Wrap string role in array
                 ...tagging.skill
             ].forEach(tag => tagSet.add(tag));
         });
