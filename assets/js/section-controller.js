@@ -479,11 +479,50 @@
         // Render filter pills
         FilterController.renderFilterPills(tagsWithTypes, tagFiltersContainer);
 
+        // Setup scroll shadows for tag filters
+        setupScrollShadows();
+
         // Initialize filter controller with callback and sticky filter
         FilterController.init((activeTags) => {
             // Re-render when filters change
             renderView();
         }, stickyFilter);
+    }
+
+    /**
+     * Setup scroll shadows for tag filters
+     * Adds/removes classes based on scroll position
+     */
+    function setupScrollShadows() {
+        const wrapper = document.querySelector('.tag-filters-wrapper');
+        const scroller = document.getElementById('tag-filters');
+
+        if (!wrapper || !scroller) return;
+
+        function updateShadows() {
+            const scrollLeft = scroller.scrollLeft;
+            const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+
+            // Show left shadow if scrolled from start
+            if (scrollLeft > 10) {
+                wrapper.classList.add('scrolled-left');
+            } else {
+                wrapper.classList.remove('scrolled-left');
+            }
+
+            // Hide right shadow if at end
+            if (scrollLeft >= maxScroll - 10) {
+                wrapper.classList.add('scrolled-right');
+            } else {
+                wrapper.classList.remove('scrolled-right');
+            }
+        }
+
+        // Update on scroll
+        scroller.addEventListener('scroll', updateShadows);
+
+        // Initial update
+        setTimeout(updateShadows, 100);
     }
 
     /**

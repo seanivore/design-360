@@ -21,13 +21,13 @@
     --color-border: #333333;
     --color-shadow: rgba(0, 0, 0, 0.5);
 
-    /* Tag Colors - Subtle Differentiation */
-    --color-tag-subsection: #6b7280;
-    /* Cool gray for sub_section */
-    --color-tag-role: #8b92a0;
-    /* Warmer gray for role */
-    --color-tag-contextual: #9ca3af;
-    /* Light gray for contextual */
+    /* Tag Colors - Distinct Differentiation */
+    --color-tag-subsection: #60a5fa;
+    /* Bright blue for sub_section */
+    --color-tag-role: #fb923c;
+    /* Warm orange for role */
+    --color-tag-contextual: #a78bfa;
+    /* Violet for contextual */
 
     /* Spacing System */
     --space-xs: 8px;
@@ -437,6 +437,7 @@ a:active {
 
 .tag-filters-container {
     margin-bottom: var(--space-lg);
+    position: relative;
 }
 
 /* Main filter heading (section name when on section page) */
@@ -449,25 +450,68 @@ a:active {
     margin-bottom: var(--space-sm);
 }
 
+/* Wrapper for scroll shadows */
+.tag-filters-wrapper {
+    position: relative;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    padding: var(--space-md) var(--space-lg);
+    overflow: hidden;
+}
+
+/* Left shadow gradient */
+.tag-filters-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    background: linear-gradient(to right, var(--color-bg-secondary), transparent);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* Right shadow gradient */
+.tag-filters-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    background: linear-gradient(to left, var(--color-bg-secondary), transparent);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* Show left shadow when scrolled */
+.tag-filters-wrapper.scrolled-left::before {
+    opacity: 1;
+}
+
+/* Hide right shadow when at end */
+.tag-filters-wrapper.scrolled-right::after {
+    opacity: 0;
+}
+
 .tag-filters {
     display: flex;
     gap: var(--space-lg);
     overflow-x: auto;
     scroll-snap-type: x proximity;
-    padding: var(--space-sm) 0;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    position: relative;
+    z-index: 1;
 }
 
 .tag-filters::-webkit-scrollbar {
     display: none;
-}
-
-/* Force last tag to bleed off screen */
-.tag-filters::after {
-    content: '';
-    flex-shrink: 0;
-    width: 1px;
 }
 
 /* Tags as plain text - no pills, no containers */
