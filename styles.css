@@ -458,7 +458,8 @@ a:active {
 /* Individual images in scroll */
 .tile-section__image {
     flex-shrink: 0;
-    width: 280px;  /* Default mobile size */
+    width: 280px;
+    /* Default mobile size */
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border: 2px solid #ffffff;
@@ -940,7 +941,8 @@ a:active {
 /* Individual images in scroll */
 .homepage-tile__image {
     flex-shrink: 0;
-    width: 280px;  /* Default mobile size */
+    width: 280px;
+    /* Default mobile size */
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border: 2px solid #ffffff;
@@ -951,13 +953,6 @@ a:active {
 @media (min-width: 768px) and (max-width: 1023px) {
     .homepage-tile__image {
         width: 350px;
-    }
-}
-
-/* Desktop: Larger images */
-@media (min-width: 1024px) {
-    .homepage-tile__image {
-        width: 400px;
     }
 }
 
