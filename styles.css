@@ -895,7 +895,7 @@ a:active {
 /* Homepage Tile Grid */
 .homepage-tile-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 400px;
     gap: var(--space-md);
     max-width: 1400px;
     margin: 0 auto;
@@ -905,7 +905,7 @@ a:active {
 
 @media (min-width: 768px) {
     .homepage-tile-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 400px;
         gap: var(--space-xl);
         padding: 0 var(--space-lg);
     }
@@ -926,7 +926,7 @@ a:active {
 
 /* Horizontal scrolling image gallery - simple overflow container */
 .homepage-tile__image-scroll {
-    width: 100%;
+    width: 400px;
     display: flex;
     gap: var(--space-sm);
     overflow-x: auto;
