@@ -424,20 +424,28 @@ a:active {
    SECTION TILES - Simplified Horizontal Scroll
    ============================================ */
 
-/* Wrapper - "the window" - constrains width, centered in grid cell */
+/* Wrapper - fixed widths at each breakpoint for consistent tile heights */
 .tile-section-wrapper {
     width: 100%;
-    max-width: 600px;  /* The constraint that makes 90% meaningful */
+    /* Mobile: Full width */
+    max-width: 100%;
     margin: 0 auto var(--space-md) auto;
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-/* Mobile: Full width */
-@media (max-width: 767px) {
+/* Tablet: Fixed width (768-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
     .tile-section-wrapper {
-        max-width: 100%;
+        width: 480px;  /* Fixed size */
+    }
+}
+
+/* Desktop: Fixed width (1024px+) */
+@media (min-width: 1024px) {
+    .tile-section-wrapper {
+        width: 540px;  /* Fixed size */
     }
 }
 
@@ -945,20 +953,28 @@ a:active {
    HOMEPAGE TILES - Simplified Horizontal Scroll
    ============================================ */
 
-/* Wrapper - "the window" - constrains width, centered in grid cell */
+/* Wrapper - fixed widths at each breakpoint for consistent tile heights */
 .homepage-tile-wrapper {
     width: 100%;
-    max-width: 600px;  /* The constraint that makes 90% meaningful */
+    /* Mobile: Full width */
+    max-width: 100%;
     margin: 0 auto var(--space-md) auto;
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-/* Mobile: Full width */
-@media (max-width: 767px) {
+/* Tablet: Fixed width for 2-column grid (768-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
     .homepage-tile-wrapper {
-        max-width: 100%;
+        width: 480px;  /* Fixed size */
+    }
+}
+
+/* Desktop: Fixed width for 2-column grid (1024px+) */
+@media (min-width: 1024px) {
+    .homepage-tile-wrapper {
+        width: 540px;  /* Fixed size */
     }
 }
 
