@@ -424,26 +424,43 @@ a:active {
    SECTION TILES - Simplified Horizontal Scroll
    ============================================ */
 
-/* Wrapper at 100% width - no constraints */
+/* Wrapper - "the window" - constrains width, centered in grid cell */
 .tile-section-wrapper {
     width: 100%;
+    max-width: 600px;  /* The constraint that makes 90% meaningful */
+    margin: 0 auto var(--space-md) auto;
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: var(--space-md);
 }
 
-/* Horizontal scrolling image gallery - full width */
+/* Mobile: Full width */
+@media (max-width: 767px) {
+    .tile-section-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* Horizontal scrolling image gallery - extends beyond wrapper */
 .tile-section__image-scroll {
-    width: 100%;
+    width: calc(100% + var(--space-xl));  /* Wider than wrapper */
+    margin-left: calc(var(--space-lg) * -1);  /* Pull left to center overflow */
     display: flex;
     gap: var(--space-sm);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    padding: var(--space-xs) 0;
+    padding: var(--space-xs) var(--space-lg);
     margin-bottom: calc(var(--space-xs) * -1);
-    /* Pull text area up slightly to overlap */
+}
+
+/* Mobile: Full width, no bleed */
+@media (max-width: 767px) {
+    .tile-section__image-scroll {
+        width: 100%;
+        margin-left: 0;
+        padding: var(--space-xs) 0;
+    }
 }
 
 /* Hide scrollbar but keep functionality */
@@ -928,26 +945,43 @@ a:active {
    HOMEPAGE TILES - Simplified Horizontal Scroll
    ============================================ */
 
-/* Wrapper at 100% width - no constraints */
+/* Wrapper - "the window" - constrains width, centered in grid cell */
 .homepage-tile-wrapper {
     width: 100%;
+    max-width: 600px;  /* The constraint that makes 90% meaningful */
+    margin: 0 auto var(--space-md) auto;
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: var(--space-md);
 }
 
-/* Horizontal scrolling image gallery - full width */
+/* Mobile: Full width */
+@media (max-width: 767px) {
+    .homepage-tile-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* Horizontal scrolling image gallery - extends beyond wrapper */
 .homepage-tile__image-scroll {
-    width: 100%;
+    width: calc(100% + var(--space-xl));  /* Wider than wrapper */
+    margin-left: calc(var(--space-lg) * -1);  /* Pull left to center overflow */
     display: flex;
     gap: var(--space-sm);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    padding: var(--space-xs) 0;
+    padding: var(--space-xs) var(--space-lg);
     margin-bottom: calc(var(--space-xs) * -1);
-    /* Pull text area up slightly to overlap */
+}
+
+/* Mobile: Full width, no bleed */
+@media (max-width: 767px) {
+    .homepage-tile__image-scroll {
+        width: 100%;
+        margin-left: 0;
+        padding: var(--space-xs) 0;
+    }
 }
 
 /* Hide scrollbar but keep functionality */
