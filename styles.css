@@ -424,29 +424,13 @@ a:active {
    SECTION TILES - Simplified Horizontal Scroll
    ============================================ */
 
-/* Wrapper - fixed widths at each breakpoint for consistent tile heights */
+/* Wrapper - contains tile, provides consistent structure */
 .tile-section-wrapper {
     width: 100%;
-    /* Mobile: Full width */
-    max-width: 100%;
     margin: 0 auto var(--space-md) auto;
     display: flex;
     flex-direction: column;
     position: relative;
-}
-
-/* Tablet: Fixed width (768-1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .tile-section-wrapper {
-        width: 480px;  /* Fixed size */
-    }
-}
-
-/* Desktop: Fixed width (1024px+) */
-@media (min-width: 1024px) {
-    .tile-section-wrapper {
-        width: 540px;  /* Fixed size */
-    }
 }
 
 /* Horizontal scrolling image gallery - simple overflow container */
@@ -922,29 +906,13 @@ a:active {
    HOMEPAGE TILES - Simplified Horizontal Scroll
    ============================================ */
 
-/* Wrapper - fixed widths at each breakpoint for consistent tile heights */
+/* Wrapper - contains tile, provides consistent structure */
 .homepage-tile-wrapper {
     width: 100%;
-    /* Mobile: Full width */
-    max-width: 100%;
     margin: 0 auto var(--space-md) auto;
     display: flex;
     flex-direction: column;
     position: relative;
-}
-
-/* Tablet: Fixed width for 2-column grid (768-1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .homepage-tile-wrapper {
-        width: 480px;  /* Fixed size */
-    }
-}
-
-/* Desktop: Fixed width for 2-column grid (1024px+) */
-@media (min-width: 1024px) {
-    .homepage-tile-wrapper {
-        width: 540px;  /* Fixed size */
-    }
 }
 
 /* Horizontal scrolling image gallery - simple overflow container */
