@@ -713,34 +713,7 @@ a:active {
    TILE GRIDS
    ============================================ */
 
-.tile-grid-homepage {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-    padding: var(--space-lg) 0;
-}
-
-/* Tablet - 2 columns */
-@media (min-width: 768px) {
-    .tile-grid-homepage {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.tile-grid-section {
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-lg) 4px;
-    /* Minimal padding on mobile */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .tile-grid-section {
-        padding: var(--space-lg) var(--space-xl);
-    }
-}
+/* OLD CLASSES REMOVED - Using .homepage-tile-grid and .tile-section-wrapper instead */
 
 /* ============================================
    ANIMATIONS - Sequential Fade In
@@ -1767,18 +1740,7 @@ html {
         padding-right: var(--space-md);
     }
 
-    /* Homepage tiles - tighter grid */
-    .homepage-tile-grid {
-        gap: var(--space-lg);
-        padding: 0 var(--space-md);
-    }
-
-    /* Section tiles - optimize for vertical scrolling */
-    .tile-grid-section {
-        gap: var(--space-md);
-        padding-left: var(--space-md);
-        padding-right: var(--space-md);
-    }
+    /* Tile grid mobile adjustments removed - handled in main tile styles above */
 
     /* Tag filters - smaller, punchier */
     .tag-filter {
