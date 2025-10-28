@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-lul-419", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Conversation Design", "UI/UI Writing", "User Design", "Product"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "ai-ui-meditation-journal-app.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://design.august.style/projects/mindflow-app",
         "github_repository": "https://github.com/seanivore/design-site"
     },
@@ -60,6 +63,7 @@
         "action": "Designed a mobile-first progressive web app centered on an AI chat interface that guides users through their entire wellness journey. The conversational UI handles session selection, duration preferences, and reflection journaling through natural dialogue rather than forms and buttons. Developed intuitive gesture controls for meditation sessions—swipe gestures for navigation, hold-to-record for voice journaling, and simple taps for emotional check-ins. The visual design uses soft gradients and minimal elements to maintain focus on the meditative experience rather than the interface itself.", 
         "measured": "Successfully reduced cognitive load by eliminating traditional menu navigation—users complete entire meditation sessions through conversational prompts and gesture controls. The voice-to-text journaling removes typing friction, making reflection more accessible during calm states. The AI-driven interface adapts recommendations based on user patterns and emotional states, creating a personalized wellness experience that feels more like talking to a mindfulness coach than using an app."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

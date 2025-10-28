@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-rfr-187", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Animation", "Marketing", "Front-End", "Copywriting", "Product Staging", "Advertising", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "saas-trial-contact-sign-up.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://design.august.style/projects/css-anim-saas-landing",
         "github_repository": "https://github.com/seanivore/design-site"
     },
@@ -60,6 +63,7 @@
         "action": "Designed and developed a complete three-page SaaS conversion system: landing page with animated feature cards and tiered pricing, streamlined sign-up flow with progress indicators, and guided profile setup with multi-step form states. All animations and micro-interactions use pure CSS—hover states, loading indicators, form validation feedback, and page transitions work smoothly without JavaScript overhead. The modular component structure allows quick brand customization through CSS variable swaps. Implemented conversion best practices including social proof elements, clear CTAs at optimal scroll depths, and reduced cognitive load through progressive disclosure of information.", 
         "measured": "Successfully demonstrated enterprise-level SaaS web design capabilities through three distinct conversion stages that work together as a cohesive user journey. The CSS-only animation approach maintains performance while delivering sophisticated interactions—page load times stay under 2 seconds even on 3G connections. The modular architecture proved its value by enabling complete brand color changes in under 10 minutes through CSS variable updates. The conversion flow showcases understanding of multi-step user journeys, conversion psychology, and technical execution of modern web design patterns."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

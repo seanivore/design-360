@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-unw-889", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Graphic Design", "Illustration", "Branding", "Account Management", "User Design", "Optimization", "No-Code Development", "Product", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "personal-design-branding-art.mp4",
@@ -43,6 +45,7 @@
         "page_image_group_alt_text": ["Mobile view shows beautifully responsive, custom art covered, Webflow designed website."]
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://online-pt-trainer.august.style",
         "github_repository": "https://github.com/seanivore/ckheals"
     },
@@ -64,6 +67,7 @@
         "action": "Collaborated closely with client to understand their teaching methodology, values, and vision for their online presence. Designed and hand-drew all brand elements using iPad Pro and Apple Pencil—custom logo, background illustrations, decorative details—creating cohesive visual identity that expresses the client's personality and wellness philosophy. Built the Webflow platform to showcase training programs while enabling the client to manage content independently. The hand-drawn approach deliberately avoided AI-generated content, maintaining the authentic human touch essential to wellness industry trust and credibility. Every design element serves the goal of expressing the client's unique approach to health and fitness training.", 
         "measured": "Successfully translated client vision into distinctive visual brand identity that differentiates them in a crowded wellness market. The hand-drawn elements create warmth and personality impossible to achieve with stock imagery or AI-generated graphics. The Webflow platform empowers the client to maintain their site independently while preserving the custom design integrity. The project demonstrates ability to collaborate with clients on brand development, not just execute predetermined designs—essential for freelance and agency work where brand identity often needs to be created alongside the website."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-eme-689", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["System Design", "Publishing", "Modularity", "DRY Principles", "Typography", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "template-tag-nav-visual-website.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://developer-technologist.august.style",
         "github_repository": "https://github.com/seanivore/portfolio"
     },
@@ -60,6 +63,7 @@
         "action": "Developed a comprehensive modular system with extensively documented conventions in CONVENTIONS.md that serve as both human reference and AI training material. Created reusable component patterns for navigation, project cards, and content sections that maintain consistency across 50+ portfolio entries. Implemented tag-based filtering system using vanilla JavaScript for lightweight performance. The entire architecture emphasizes simplicity and repeatability—each pattern is documented with examples, making it easy for AI to generate new pages that match existing structure perfectly.", 
         "measured": "Successfully built and maintained a comprehensive portfolio spanning technical development, creative work, and strategic projects—all using a consistent system that works flawlessly with AI pair programming. The documented conventions enabled rapid page creation across multiple AI sessions without breaking patterns or introducing inconsistencies. The template has become a shareable resource for others building their first HTML/CSS/JS sites, particularly those working with AI assistance."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

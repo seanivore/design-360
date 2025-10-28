@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-wnw-867", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Product Staging", "Marketing", "Typography", "Art History", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "framed-staged-art-history-print-shop.mp4",
@@ -38,6 +40,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://design.august.style/projects/webflow-print-series",
         "github_repository": "https://github.com/seanivore/design-site"
     },
@@ -59,6 +62,7 @@
         "action": "Built a minimalist e-commerce gallery that prioritizes product photography through generous white space and restrained typography. Developed a clean navigation system that handles the large catalog without overwhelming users—category filtering feels effortless rather than complex. Product pages use a simple two-column layout: large product imagery on one side, essential details and purchase options on the other. The staging photography shows prints in realistic home settings that help customers visualize scale and context without dominating the product itself. All design decisions support the conversion goal while respecting the timeless aesthetic appropriate for art sales.", 
         "measured": "Successfully designed an e-commerce experience that lets art prints remain the focus while providing all functionality needed for confident purchasing decisions. The clean interface proved its effectiveness by keeping users engaged through large catalog browsing without the fatigue that cluttered galleries create. The minimalist approach demonstrates design maturity—knowing when to add elements and when restraint serves the project better. The timeless aesthetic ensures the site won't feel dated, which is essential for art commerce where trust and perceived quality directly impact conversion."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

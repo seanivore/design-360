@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-sgt-851", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Animation", "Typography", "Branding", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "single-page-projects-overview-website.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://projects.august.style",
         "github_repository": "https://github.com/seanivore/seanivore-contact"
     },
@@ -60,6 +63,7 @@
         "action": "Built a lightweight single-page portfolio using pure HTML and CSS with a continuously morphing gradient background animation. The animation uses CSS keyframes and blend modes to create fluid color transitions that add visual depth without distraction. Typography choices and spacing create hierarchy and readability over the animated background—projects are listed with conversational descriptions and direct links rather than cards or heavy formatting. The entire page loads in under 1 second with the animation running smoothly, proving that engaging design doesn't require JavaScript or large asset libraries.", 
         "measured": "Successfully created a casual portfolio complement that serves a different purpose than polished showcase sites—this version prioritizes accessibility and quick scanning over visual drama. The morphing gradient achieves its goal of adding interest without overwhelming text content. The conversational tone and straightforward format make technical projects approachable, while the sub-1-second load time ensures the page works flawlessly on any connection. The contrast between this casual overview and more polished portfolio sites demonstrates range in both design thinking and technical execution."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-iqi-479", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["System Design", "Modularity", "DRY Principles", "Scaling System", "Full-Stack", "Scaling System", "UX/UI Writing", "User Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "",
@@ -32,6 +34,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://august.style",
         "github_repository": "https://github.com/seanivore/design-360"
     },
@@ -52,6 +55,7 @@
         "action": "Designed hybrid SPA architecture using 404 routing trick + JSON content system. Two HTML templates dynamically populate from entry files. Manifest generation automates URL mapping.", 
         "measured": "Result: Add new entries by creating one JSON file. Update design once, all pages update. Infinite scalability with zero code duplication." 
     }
-}, 
-    "notes": ["Images, thumbnails coming soon; this is the actual site we are currently building"]
+},
+
+"notes": ["Images, thumbnails coming soon; this is the actual site we are currently building"]
 }

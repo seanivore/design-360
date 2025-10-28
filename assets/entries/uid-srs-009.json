@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-srs-009", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["User Design", "Product", "System Design", "Scaling System", "Automation", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "ai-app-analysis-panel.mp4",
@@ -37,6 +39,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://design.august.style/projects/ai-admin-dashboard",
         "github_repository": "https://github.com/seanivore/design-site"
     },
@@ -58,6 +61,7 @@
         "action": "Designed an enterprise-grade analytics dashboard specifically for AI application monitoring, featuring interactive animated charts that respond to user engagement and real-time data updates. Developed a sophisticated information hierarchy that organizes AI-specific metrics—model performance, memory utilization, decision trees, and event correlations—into digestible visual segments. The chart animations provide context through motion, showing relationships between data points rather than just static snapshots. The interface architecture handles massive datasets while maintaining responsive performance through strategic data loading and visualization optimization.", 
         "measured": "Successfully demonstrated capability to design for complex enterprise systems beyond typical portfolio projects. The dashboard interface handles the unique challenges of AI application analytics—multiple concurrent data streams, temporal relationships, and hierarchical decision flows—while maintaining clarity and usability. The animated visualizations prove that motion design can enhance rather than distract from data comprehension when applied purposefully. The project showcases understanding of both AI system architecture and enterprise-level interface design."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

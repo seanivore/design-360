@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-qor-090", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Animation", "Content Production", "Publishing", "System Design", "Copywriting", "SaaS", "Automation", "Scaling System", "UX/UI Writing", "User Design", "Product", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "landing-page-research-presentations-data.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://presenting.august.style",
         "github_repository": "https://github.com/seanivore/presentation-decks"
     },
@@ -60,6 +63,7 @@
         "action": "Built a versatile platform with three distinct sections: a CSS-animated homepage featuring glassmorphic tiles with micro-interactions, two full presentation deck areas for AI voice marketing research and agentic workflow implementations, and a markdown-based index system that auto-converts documentation to clean HTML. The homepage animations use pure CSS for buttery-smooth performance, with hover and focus states that guide users naturally to different content areas. Integrated Jekyll for markdown processing, allowing rapid updates to documentation sections without touching HTML.", 
         "measured": "Successfully delivered comprehensive AI research across multiple formats while maintaining visual cohesion and fast load times. The CSS-only animation approach keeps the homepage performant even with complex visual effects. The dual presentation system accommodates both slide-deck-style research summaries and detailed indexed documentation, making technical concepts accessible to different learning styles. The markdown integration enables quick content updates—new research findings can be added and published in minutes rather than hours of HTML work."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

@@ -3,8 +3,8 @@
     "last_updated": "2025-10-18T13:31:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
 
 "categorization": {
@@ -34,6 +34,7 @@
         "page_image_group_alt_text": "One alt text value that is present to describe the group of additional on-project-page images when they have been provided; leave empty if there are no page images provided for a project"
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed",
         "github_repository": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed"
     },

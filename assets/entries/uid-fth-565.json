@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
   },
+
 "categorization": {
     "entry_id": "uid-fth-565", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Animation", "Illustration", "Automation", "Content Production", "Publishing", "Full-Stack", "Graphic Design", "Copywriting", "System Design", "Branding", "No-Code Development", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "hand-drawn-anim-ai-blogs.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://generative-horoscopes.august.style",
         "github_repository": "https://github.com/seanivore/astrofluenced"
     },
@@ -60,6 +63,7 @@
         "action": "Designed and illustrated extensive custom artwork using iPad Pro and Apple Pencil, creating hand-drawn backgrounds and illustrations that were converted to Lottie animations via After Effects and Adobe Illustrator. The animations serve dual purposes: adding visual interest and guiding user navigation through custom line animations that direct attention to different blog sections. Built the Webflow CMS architecture to support 200+ weekly AI-generated blog posts that publish automatically via Make.com automation—users input weekly astrological data, AI generates content, and the system publishes complete with appropriate animated elements. When migrating from Webflow to GitHub Pages, developed Python utility scripts to handle conditional content visibility, external link conversion, image path corrections, and collection page generation across zodiac signs, art deco elements, artist interpretations, and timeline visualizations.", 
         "measured": "Successfully married high-volume AI content generation with custom artistic identity through strategic use of hand-drawn Lottie animations. The automated publishing system handles 200+ weekly posts while maintaining visual cohesion through the custom animation library. The hand-drawn elements transform what could feel like a content mill into a distinctive branded experience. The GitHub Pages migration scripts demonstrate ability to solve complex technical challenges around content visibility, path management, and collection generation—full-stack problem-solving that goes beyond just Webflow design work."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

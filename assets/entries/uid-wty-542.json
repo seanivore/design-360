@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-wty-542", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Illustration", "Graphic Design", "Branding", "Publishing", "Web Design", "No-Code Development"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "custom-designed-illustrator-site.mp4",
@@ -38,6 +40,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://visual-producer.august.style",
         "github_repository": "https://github.com/seanivore/webflow-2023"
     },
@@ -59,6 +62,7 @@
         "action": "Designed a Webflow portfolio with distinctive visual identity: bold gold frames and impactful typography that create gallery-like presentation for digital illustration work. The site architecture organizes hundreds of hand-drawn pieces created with iPad Pro and Apple Pencil, documenting artistic process across multiple styles and purposes—from personal creative exploration to brand assets for Web3 DAO projects to pieces minted as NFTs on various platforms. The design uses strategic white space and clear hierarchy to prevent visual overwhelm despite the massive collection. When migrating from Webflow to GitHub Pages, developed Python scripts to handle path verification and correction across the complex directory structure, ensuring all images, GIFs, CSS references, and portfolio section links remained functional.", 
         "measured": "Successfully created portfolio platform that showcases extensive illustration work while maintaining usability and visual impact. The bold framing device provides consistent identity across varied illustration styles, from quick sketches to finished detailed pieces. The site effectively documents artistic process and range—personal creative work, commercial brand assets, and blockchain-minted art—demonstrating versatility and dedication to craft. The GitHub Pages migration scripts solved real technical challenges around maintaining hundreds of image paths across nested directories, showing full-stack problem-solving beyond just Webflow design capabilities."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }

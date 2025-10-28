@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:23:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-tev-176", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Automation", "No-Code Development", "Content Production", "Graphic Design", "Fashion Photography", "Product Staging", "Scaling System", "Art History", "Web Design", "Copywriting"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "ai-gen-blog-fashion-lookbook-print-shop.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://ai-generated-content.august.style",
         "github_repository": "https://github.com/seanivore/framer-cms-lookbook"
     },
@@ -60,6 +63,7 @@
         "action": "Developed a single reusable Framer component connected to a Notion database that dynamically populates content across all three sections. Integrated Notion-to-Framer automation for seamless publishing workflows, designed custom micro-interactions using geometric shapes that respond to user engagement, and built out a 500+ item print shop with automated inventory management. The design system uses bold geometric forms and a limited color palette to create visual hierarchy while keeping load times minimal.", 
         "measured": "Successfully automated the publishing pipeline for 200+ weekly AI-generated blog posts analyzing podcast content from multiple series. The single-component architecture reduced development time by 70% compared to traditional multi-page builds, while the Notion integration eliminated manual content entry entirely. The fashion lookbook section showcases 81 images through dynamic CMS population, and the print shop maintains real-time inventory across the automated system."
     }
-}, 
-    "notes": ["Thumbnails to be used as a slideshow on the page as well"]
+},
+
+"notes": ["Thumbnails to be used as a slideshow on the page as well"]
 }

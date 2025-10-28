@@ -3,9 +3,10 @@
     "last_updated": "2025-10-18T21:24:00.000000Z",
     "required_fields": true,
     "template_type": "portfolio_entry",
-    "schema_version": "3.1",
-    "schema_update": "Enforced single role value, added placement.json reference to template for tag consistency"
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
 },
+
 "categorization": {
     "entry_id": "uid-wgw-370", 
     "placement": {
@@ -20,6 +21,7 @@
         "skill": ["Fashion Photography", "Product", "Marketing", "Art History", "Copywriting", "Scaling System", "Web Design"]
     }
 },
+
 "content": {
     "media": {
         "video_filename": "fashion-generative-in-painted-looks.mp4",
@@ -39,6 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://design.august.style/projects/summer-lookbook-part-1",
         "github_repository": "https://github.com/seanivore/design-site"
     },
@@ -60,6 +63,7 @@
         "action": "Developed a custom HTML/CSS/JS fashion lookbook that integrates Google Lens API for visual search functionality, enabling users to identify and purchase items directly from editorial photography. The magazine-style layout uses progressive disclosure patterns—users can enjoy the editorial experience first, then reveal shoppable product matches through intuitive interactions. Built a multi-section architecture that handles complex navigation between different archetypal character journeys and art historical movements while maintaining conversion-focused pathways to product pages. The integration balances editorial storytelling with e-commerce functionality, keeping the primary experience inspirational while making purchase options readily accessible.", 
         "measured": "Successfully merged editorial fashion content with e-commerce functionality through computer vision technology, demonstrating capability to integrate advanced APIs into consumer-facing interfaces. The Google Lens integration reduces friction in the inspiration-to-purchase journey by automatically matching outfits to products, eliminating manual search steps. The progressive disclosure UX maintains the magazine experience while providing clear pathways to conversion when users are ready to purchase. The project showcases both technical integration skills and understanding of fashion e-commerce conversion psychology."
     }
-}, 
-    "notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+},
+
+"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
 }
