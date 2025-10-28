@@ -11,7 +11,7 @@
 
 :root {
     /* Colors - Palette 1: Cereal Magazine Aesthetic */
-    --color-bg-primary: #363635;
+    --color-bg-primary: ##1f1f1f;
     /* Jet - dark charcoal */
     --color-bg-secondary: #363635;
     /* Match primary */
@@ -195,15 +195,13 @@ body::after {
     content: '';
     position: fixed;
     top: 0;
-    left: 50%;
+    left: 35%;
     transform: translateX(-50%);
-    width: 40%;
+    width: 60%;
     height: 100%;
     background: linear-gradient(to right,
             transparent 0%,
-            rgba(255, 255, 255, 0.015) 30%,
-            rgba(255, 255, 255, 0.025) 50%,
-            rgba(255, 255, 255, 0.015) 70%,
+            #6e6e6e29 50%,
             transparent 100%);
     pointer-events: none;
     z-index: -1;
@@ -548,6 +546,7 @@ a:active {
 }
 
 @media (min-width: 768px) {
+
     .tile-section__prev-preview,
     .tile-section__next-preview {
         display: block;
@@ -1092,6 +1091,7 @@ a:active {
 }
 
 @media (min-width: 768px) {
+
     .homepage-tile__prev-preview,
     .homepage-tile__next-preview {
         width: 15%;
