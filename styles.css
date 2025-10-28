@@ -971,10 +971,19 @@ a:active {
 @media (max-width: 767px) {
     .homepage-tile__image-scroll {
         gap: var(--space-xs);
+        width: 100vw;
     }
 
     .homepage-tile__image {
         width: 100vw;
+    }
+
+    .homepage-tile-wrapper {
+        width: 100vw;
+    }
+
+    .homepage-tile-grid {
+        padding: 0px;
     }
 }
 
@@ -997,13 +1006,6 @@ a:active {
 .homepage-tile__text-area:hover {
     background: #0a0a0a;
     box-shadow: var(--tile-shadow-hover);
-}
-
-/* Mobile: Full width text area */
-@media (max-width: 767px) {
-    .homepage-tile__text-area {
-        max-width: 100%;
-    }
 }
 
 /* Tile text - compact with 2-line limit */
