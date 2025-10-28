@@ -487,9 +487,14 @@ a:active {
 @media (max-width: 767px) {
     .tile-section__image-scroll {
         gap: var(--space-xs);
+        width: 100vw;
     }
 
     .tile-section__image {
+        width: 100vw;
+    }
+
+    .tile-section-wrapper {
         width: 100vw;
     }
 }
@@ -511,13 +516,6 @@ a:active {
 .tile-section__text-area:hover {
     background: #0a0a0a;
     box-shadow: var(--tile-shadow-hover);
-}
-
-/* Mobile: Full width text area */
-@media (max-width: 767px) {
-    .tile-section__text-area {
-        max-width: 100%;
-    }
 }
 
 /* Tile text - compact with 2-line limit */
