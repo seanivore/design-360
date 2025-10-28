@@ -58,14 +58,19 @@
             <h2 id="entry-subtitle"><!-- Populated by JS --></h2>
         </header>
 
-        <!-- Main Content: Two Columns (Text + Thumbnail Slideshow) -->
+        <!-- Role Section (H3) -->
+        <section class="entry-section entry-role-section">
+            <h3 id="entry-role"><!-- Populated by JS --></h3>
+        </section>
+
+        <!-- Optional: Video Embed (moved below role) -->
+        <section id="entry-video" class="entry-optional-section" style="display: none;">
+            <!-- Populated by entry-controller.js if video_embed exists -->
+        </section>
+
+        <!-- Main Content: Two Columns (Text + Thumbnail Images) -->
         <div class="entry-main-content">
             <div class="entry-text-column">
-                <!-- Role Section (H3) -->
-                <section class="entry-section">
-                    <h3 id="entry-role"><!-- Populated by JS --></h3>
-                </section>
-
                 <!-- Pattern Section -->
                 <section class="entry-section">
                     <h4 class="section-label">PATTERN</h4>
@@ -86,16 +91,16 @@
             </div>
 
             <div class="entry-media-column">
-                <!-- Thumbnail Slideshow -->
-                <div id="entry-thumbnail-slideshow" class="entry-thumbnail-slideshow">
+                <!-- Thumbnail Images (first 3 on desktop) -->
+                <div id="entry-thumbnail-images-column" class="entry-thumbnail-images-column">
                     <!-- Populated by entry-controller.js -->
                 </div>
             </div>
         </div>
 
-        <!-- Optional: Video Embed -->
-        <section id="entry-video" class="entry-optional-section" style="display: none;">
-            <!-- Populated by entry-controller.js if video_embed exists -->
+        <!-- Remaining Thumbnail Images (below 2-column layout) -->
+        <section id="entry-thumbnail-images-grid" class="entry-thumbnail-images-grid" style="display: none;">
+            <!-- Populated by entry-controller.js -->
         </section>
 
         <!-- Optional: Page Imagery -->

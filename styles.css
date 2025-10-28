@@ -420,191 +420,131 @@ a:active {
 }
 
 /* Section Tiles (Wide/Short, Images to Side) - Magazine Aesthetic */
+/* ============================================
+   SECTION TILES - Simplified Horizontal Scroll
+   ============================================ */
+
 .tile-section {
     background-color: var(--color-bg-tile);
     border-radius: 0;
     box-shadow: var(--tile-shadow);
     overflow: visible;
-    /* Allow image bleed */
     transition: box-shadow var(--duration-normal) var(--easing-standard);
-    cursor: pointer;
     display: flex;
     flex-direction: column;
-    /* Stack on mobile */
-    gap: 0;
-    padding: 0;
     margin-bottom: var(--space-md);
     position: relative;
+    max-width: 90%;
+    /* Narrower than images for visual emphasis */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tile-section:active {
     box-shadow: var(--tile-shadow-hover);
 }
 
-@media (min-width: 768px) {
+/* Horizontal scrolling image gallery */
+.tile-section__image-scroll {
+    display: flex;
+    gap: var(--space-sm);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+    padding: var(--space-xs) 0;
+    /* Small top bleed */
+    margin-top: calc(var(--space-xs) * -1);
+    /* Pull images up to bleed over tile */
+}
+
+/* Hide scrollbar but keep functionality */
+.tile-section__image-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.tile-section__image-scroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Individual images in scroll */
+.tile-section__image {
+    flex-shrink: 0;
+    width: 280px;
+    /* Fixed width for consistent layout */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    /* Bright white border */
+    box-shadow: var(--tile-shadow);
+}
+
+/* Mobile: Images go full viewport width */
+@media (max-width: 767px) {
     .tile-section {
-        flex-direction: row;
-        gap: 0;
-        /* No gap - images will overflow */
-        padding: var(--space-md) 0 var(--space-md) var(--space-md);
-        /* Padding on left/top/bottom, not right */
-        min-height: 200px;
-        /* Taller to accommodate larger images */
-        max-height: 200px;
+        max-width: 100%;
+        /* Full width on mobile */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .tile-section__image-scroll {
+        gap: var(--space-xs);
+        padding: var(--space-xs) var(--space-xs);
+    }
+
+    .tile-section__image {
+        width: 100vw;
+        /* Full viewport width on mobile */
     }
 }
 
-.tile-section__content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    padding: var(--space-sm) var(--space-md);
-    /* Compact padding on mobile */
-    background: var(--color-bg-dark);
+/* Desktop: Wider images */
+@media (min-width: 768px) {
+    .tile-section__image {
+        width: 400px;
+    }
 }
 
-/* Tile text - smaller with 2-line wrap */
+/* Text area - clickable link to entry */
+.tile-section__text-area {
+    background: var(--color-bg-dark);
+    padding: var(--space-sm) var(--space-md);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    display: block;
+    transition: background var(--duration-fast) var(--easing-standard);
+}
+
+.tile-section__text-area:hover {
+    background: #0a0a0a;
+}
+
+/* Tile text - compact with 2-line limit */
 .tile-section__text {
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.4;
     color: var(--color-text-primary);
-    transition: opacity var(--duration-normal) var(--easing-standard);
+    margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-@media (min-width: 768px) {
-    .tile-section__content {
-        padding: 0 var(--space-lg) 0 0;
-        /* Right padding to separate from images */
-        background: none;
-    }
-}
-
-/* Images area with slideshow */
-.tile-section__images {
-    flex-shrink: 0;
-    width: 100%;
-    /* Full width on mobile */
-    aspect-ratio: 16 / 9;
-    position: relative;
-    display: flex;
-    background: none;
-    padding: 0;
-    gap: 0;
-    order: -1;
-    /* Images first on mobile */
-}
-
-@media (min-width: 768px) {
-    .tile-section__images {
-        width: 400px;
-        /* Much larger on desktop */
-        height: calc(100% + 8px);
-        /* Overflow top/bottom by 4px each */
-        margin: -4px 0;
-        /* Negative margin to allow overflow */
-        background: none;
-        /* No gray background */
-        padding: 0;
-        gap: 0;
-        order: 0;
-    }
-}
-
-/* Previous preview (left) - small but wide */
-.tile-section__prev-preview {
-    width: 0;
-    /* Hidden on mobile */
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    display: none;
-}
-
-/* Main image container (center) */
-.tile-section__image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-/* Next preview (right) - small but wide */
-.tile-section__next-preview {
-    width: 0;
-    /* Hidden on mobile */
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    display: none;
-}
-
-@media (min-width: 768px) {
-
-    .tile-section__prev-preview,
-    .tile-section__next-preview {
-        display: block;
-        width: 80px;
-        /* Narrow width but shows half the image */
-        flex-shrink: 0;
+/* Mobile: Even more compact */
+@media (max-width: 767px) {
+    .tile-section__text-area {
+        padding: var(--space-xs) var(--space-sm);
     }
 
-    .tile-section__image-container {
-        flex: 1;
-        /* Takes remaining space */
+    .tile-section__text {
+        font-size: 0.85rem;
     }
-}
-
-/* Main images */
-.tile-section__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity var(--duration-normal) var(--easing-standard);
-}
-
-.tile-section__image.active {
-    opacity: 1;
-}
-
-/* Preview images - show half the image in narrow container */
-.tile-section__preview-image {
-    position: absolute;
-    width: 160px;
-    /* Actual image width - double the container */
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    transition: opacity 0.3s var(--easing-standard);
-    top: 0;
-}
-
-/* Position prev image to show right half */
-.tile-section__prev-preview .tile-section__preview-image {
-    right: 0;
-    /* Align to right edge */
-}
-
-/* Position next image to show left half */
-.tile-section__next-preview .tile-section__preview-image {
-    left: 0;
-    /* Align to left edge */
-}
-
-.tile-section__preview-image.active {
-    opacity: 0.6;
-    /* Faded to indicate preview */
 }
 
 /* ============================================
@@ -1001,17 +941,22 @@ a:active {
     }
 }
 
-/* Homepage Tile - Redesigned with 16:9 images + preview */
+/* ============================================
+   HOMEPAGE TILES - Simplified Horizontal Scroll
+   ============================================ */
+
 .homepage-tile {
-    position: relative;
     background: var(--color-bg-tile);
     box-shadow: var(--tile-shadow);
     overflow: visible;
-    /* Allow image bleed */
     transition: transform var(--duration-normal) var(--easing-standard),
         box-shadow var(--duration-normal) var(--easing-standard);
     display: flex;
     flex-direction: column;
+    position: relative;
+    max-width: 90%;
+    /* Narrower than images for visual emphasis */
+    margin: 0 auto var(--space-md) auto;
 }
 
 .homepage-tile:hover {
@@ -1019,230 +964,89 @@ a:active {
     box-shadow: var(--tile-shadow-hover);
 }
 
+/* Mobile: Full width */
 @media (max-width: 767px) {
     .homepage-tile {
-        /* On mobile, separate tile from image */
-        margin: 4px 0;
-        /* Tiny gap at top/bottom */
-        overflow: visible;
+        max-width: 100%;
     }
 }
 
-/* Images Area - Inset with gray background for slideshow clarity */
-.homepage-tile__images-area {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
+/* Horizontal scrolling image gallery */
+.homepage-tile__image-scroll {
     display: flex;
-    background: #2a2a2a;
-    /* Light gray background */
-    padding: 4px;
-    /* Inset padding */
-    cursor: pointer;
+    gap: var(--space-sm);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--space-xs) 0;
+    /* Small top bleed */
+    margin-top: calc(var(--space-xs) * -1);
+    /* Pull images up to bleed over tile */
 }
 
-@media (max-width: 767px) {
-    .homepage-tile__images-area {
-        /* On mobile, bleed to edges like Google */
-        width: calc(100% + 8px);
-        /* Extend beyond tile */
-        margin-left: -4px;
-        /* Offset to screen edge */
-        margin-right: -4px;
-        padding: 0;
-        /* No inset on mobile */
-        background: none;
-    }
+/* Hide scrollbar but keep functionality */
+.homepage-tile__image-scroll::-webkit-scrollbar {
+    display: none;
 }
 
-/* Main image container (80% width, centered) */
-.homepage-tile__main-image {
-    position: relative;
-    width: 80%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+.homepage-tile__image-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Previous preview container */
-.homepage-tile__prev-preview {
-    position: relative;
-    width: 10%;
-    /* Small on mobile */
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-/* Next preview container */
-.homepage-tile__next-preview {
-    position: relative;
-    width: 10%;
-    /* Small on mobile */
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: 768px) {
-
-    .homepage-tile__prev-preview,
-    .homepage-tile__next-preview {
-        width: 15%;
-        /* Wider on desktop to show more of the image */
-    }
-
-    .homepage-tile__main-image {
-        width: 70%;
-        /* Adjust main to compensate */
-    }
-}
-
-/* Direction-aware layout - Always show prev on left, main in center, next on right */
-.homepage-tile__prev-preview {
-    order: 1;
-}
-
-.homepage-tile__main-image {
-    order: 2;
-}
-
-.homepage-tile__next-preview {
-    order: 3;
-}
-
-/* Hide previous preview at start */
-.homepage-tile.at-start .homepage-tile__prev-preview {
-    visibility: hidden;
-}
-
-/* Hide next preview at end */
-.homepage-tile.at-end .homepage-tile__next-preview {
-    visibility: hidden;
-}
-
-/* Main images */
+/* Individual images in scroll */
 .homepage-tile__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    flex-shrink: 0;
+    width: 280px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    object-position: top center;
-    opacity: 0;
-    transition: opacity 0.5s var(--easing-standard),
-        transform 0.5s var(--easing-standard);
+    border: 2px solid #ffffff;
+    /* Bright white border */
+    box-shadow: var(--tile-shadow);
 }
 
-.homepage-tile__image.active {
-    opacity: 1;
+/* Mobile: Images go full viewport width */
+@media (max-width: 767px) {
+    .homepage-tile__image-scroll {
+        gap: var(--space-xs);
+        padding: var(--space-xs) var(--space-xs);
+    }
+
+    .homepage-tile__image {
+        width: 100vw;
+        /* Full viewport width on mobile */
+    }
 }
 
-/* Preview images - smaller for clarity */
-.homepage-tile__preview-image {
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-    transition: opacity 0.3s var(--easing-standard),
-        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-        box-shadow 0.5s var(--easing-standard);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Desktop: Wider images */
+@media (min-width: 768px) {
+    .homepage-tile__image {
+        width: 400px;
+    }
 }
 
-.homepage-tile__preview-image.active {
-    opacity: 0.8;
-}
-
-/* Text Area - Reorganized layout */
+/* Text Area - clickable link to section */
 .homepage-tile__text-area {
     background: var(--color-bg-dark);
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
     text-decoration: none;
     color: var(--color-text-primary);
-    cursor: pointer;
-    transition: background 0.2s var(--easing-standard);
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
-    min-height: 140px;
-    /* Fixed height */
-    max-height: 140px;
+    gap: var(--space-xs);
+    transition: background var(--duration-fast) var(--easing-standard);
 }
 
 .homepage-tile__text-area:hover {
     background: #0a0a0a;
 }
 
-@media (max-width: 767px) {
-    .homepage-tile__text-area {
-        padding: var(--space-sm) var(--space-md);
-        /* Reduced padding on mobile */
-        min-height: 110px;
-        max-height: 110px;
-        gap: 6px;
-    }
-}
-
-/* Navigation Dots - at top of text area */
-.homepage-tile__dots {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    order: 1;
-}
-
-.homepage-tile__dots .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transition: background 0.3s var(--easing-standard),
-        transform 0.3s var(--easing-standard);
-    cursor: pointer;
-}
-
-.homepage-tile__dots .dot.active {
-    background: rgba(255, 255, 255, 0.9);
-    transform: scale(1.2);
-}
-
-@media (max-width: 767px) {
-    .homepage-tile__dots {
-        gap: 4px;
-        /* Tighter spacing */
-    }
-
-    .homepage-tile__dots .dot {
-        width: 5px;
-        height: 5px;
-        /* Smaller dots */
-    }
-}
-
-/* Tile text - smaller and fixed */
+/* Tile text - compact with 2-line limit */
 .homepage-tile__text {
     color: var(--color-text-primary);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    order: 2;
-    flex: 1;
-}
-
-.homepage-tile__text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1250,21 +1054,12 @@ a:active {
     overflow: hidden;
 }
 
-/* Header moved to bottom left of text area */
+/* Header with section name and count */
 .homepage-tile__header {
     display: flex;
     gap: var(--space-xs);
     align-items: center;
-    /* Changed from baseline for better mobile alignment */
-    text-decoration: none;
-    color: var(--color-text-primary);
-    cursor: pointer;
-    transition: transform var(--duration-fast) var(--easing-standard);
-    order: 3;
-}
-
-.homepage-tile__header:hover {
-    transform: scale(1.02);
+    margin-top: var(--space-xs);
 }
 
 .homepage-tile__header .section-name {
@@ -1280,15 +1075,18 @@ a:active {
     color: var(--color-text-secondary);
 }
 
+/* Mobile: More compact */
 @media (max-width: 767px) {
-    .homepage-tile__header {
-        gap: 6px;
-        /* Tighter gap */
+    .homepage-tile__text-area {
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .homepage-tile__text {
+        font-size: 0.85rem;
     }
 
     .homepage-tile__header .section-name {
         font-size: 0.95rem;
-        /* Slightly smaller */
     }
 
     .homepage-tile__header .project-count {
@@ -1578,17 +1376,33 @@ html {
     line-height: var(--line-height-relaxed);
 }
 
-/* Main Content: Two Columns (Text + Thumbnail Slideshow) */
+/* ============================================
+   ENTRY PAGE - Main Content Layout
+   ============================================ */
+
+/* Role section (above main content) */
+.entry-role-section {
+    margin-bottom: var(--space-lg);
+}
+
+.entry-role-section h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+/* Main Content: Two Columns on Desktop, Single Column on Mobile */
 .entry-main-content {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
     margin-bottom: var(--space-xxl);
 }
 
 @media (min-width: 768px) {
     .entry-main-content {
         grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
     }
 }
 
@@ -1601,13 +1415,6 @@ html {
 
 .entry-section {
     margin-bottom: var(--space-md);
-}
-
-.entry-section h3 {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--space-sm);
-    color: var(--color-text-primary);
 }
 
 .section-label {
@@ -1630,60 +1437,45 @@ html {
     color: var(--color-text-secondary);
 }
 
-/* Media Column */
-.entry-media-column {
-    position: relative;
+/* Thumbnail Images Column (Desktop: 3 stacked images) */
+.entry-thumbnail-images-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
 }
 
-/* Thumbnail Slideshow */
-.entry-thumbnail-slideshow {
-    position: relative;
+/* Hide column images on mobile - we'll show them differently */
+@media (max-width: 767px) {
+    .entry-thumbnail-images-column {
+        display: none;
+    }
+}
+
+/* Individual thumbnail images */
+.entry-thumbnail-image {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: var(--color-bg-tile);
-    overflow: hidden;
-    box-shadow: var(--tile-shadow);
-    border-radius: 4px;
-}
-
-.entry-thumbnail-slideshow::after {
-    content: '⟨  swipe  ⟩';
-    position: absolute;
-    bottom: 12px;
-    right: 16px;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.6);
-    background: rgba(0, 0, 0, 0.4);
-    padding: 4px 10px;
-    border-radius: 12px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--duration-fast) var(--easing-standard);
-}
-
-.entry-thumbnail-slideshow:hover::after {
-    opacity: 1;
-}
-
-.entry-thumbnail-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity var(--duration-normal) var(--easing-standard);
+    box-shadow: var(--tile-shadow);
 }
 
-.entry-thumbnail-image.active {
-    opacity: 1;
+/* Thumbnail Images Grid (Desktop: 4 per row, Mobile: 2 per row) */
+.entry-thumbnail-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xxl);
+}
+
+@media (min-width: 768px) {
+    .entry-thumbnail-images-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 /* Optional Sections */
 .entry-optional-section {
-    margin: var(--space-xxl) 0;
+    margin: var(--space-lg) 0;
 }
 
 /* Video Container */
@@ -1695,6 +1487,24 @@ html {
     background: var(--color-bg-tile);
     box-shadow: var(--tile-shadow);
     overflow: hidden;
+}
+
+/* Mobile: Full viewport width */
+@media (max-width: 767px) {
+    #entry-video .video-container {
+        width: 100vw;
+        margin-left: calc(-1 * var(--space-md));
+        /* Offset container padding */
+    }
+}
+
+/* Desktop: Max width 800px, centered */
+@media (min-width: 768px) {
+    #entry-video .video-container {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .video-container iframe {

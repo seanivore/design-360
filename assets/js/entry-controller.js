@@ -175,8 +175,8 @@ const EntryController = (() => {
         const measuredEl = document.getElementById('entry-measured');
         if (measuredEl) measuredEl.textContent = page_copy.measured;
 
-        // Thumbnail slideshow
-        populateThumbnailSlideshow(media);
+        // Thumbnail images (shuffled and split between column and grid)
+        populateThumbnailImages(media);
 
         // Optional: Video embed
         if (media.video_embed) {
@@ -200,55 +200,56 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate thumbnail slideshow (right column, two-column layout)
+     * Populate thumbnail images in new layout
+     * - Shuffles images on each reload
+     * - Desktop: First 3 in column, rest in grid
+     * - Mobile: All images in grid (column hidden via CSS)
      */
-    function populateThumbnailSlideshow(media) {
-        const container = document.getElementById('entry-thumbnail-slideshow');
-        if (!container || !media.thumbnail_images || media.thumbnail_images.length === 0) return;
+    function populateThumbnailImages(media) {
+        const columnContainer = document.getElementById('entry-thumbnail-images-column');
+        const gridContainer = document.getElementById('entry-thumbnail-images-grid');
 
-        container.innerHTML = media.thumbnail_images.map((img, index) => `
-            <img
-                src="/${img}"
-                alt="${media.thumb_slideshow_alt_text || 'Project image'}"
-                class="entry-thumbnail-image ${index === 0 ? 'active' : ''}"
-                loading="lazy"
-            />
-        `).join('');
+        if (!media.thumbnail_images || media.thumbnail_images.length === 0) return;
 
-        // Add swipe functionality if multiple images
-        if (media.thumbnail_images.length > 1) {
-            addThumbnailSwipe(container, media.thumbnail_images.length);
+        // Shuffle images for variety on each reload
+        const shuffledImages = DataLoader.shuffleArray([...media.thumbnail_images]);
+        const altText = media.thumb_slideshow_alt_text || 'Project image';
+
+        // Split images: first 3 for column (desktop), rest for grid
+        const columnImages = shuffledImages.slice(0, 3);
+        const gridImages = shuffledImages.slice(3);
+
+        // Populate column container (first 3 images - desktop only, hidden on mobile)
+        if (columnContainer && columnImages.length > 0) {
+            columnContainer.innerHTML = columnImages.map(img => `
+                <img
+                    src="/${img}"
+                    alt="${altText}"
+                    class="entry-thumbnail-image"
+                    loading="lazy"
+                />
+            `).join('');
         }
-    }
 
-    /**
-     * Add swipe functionality to thumbnail slideshow
-     */
-    function addThumbnailSwipe(container, imageCount) {
-        let startX = 0;
-        let currentIndex = 0;
-        const images = container.querySelectorAll('.entry-thumbnail-image');
+        // Populate grid container
+        // Desktop: Remaining images (after first 3)
+        // Mobile: ALL images (column is hidden)
+        if (gridContainer) {
+            const isMobile = window.innerWidth < 768;
+            const imagesToShow = isMobile ? shuffledImages : gridImages;
 
-        container.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        }, { passive: true });
-
-        container.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 50) {
-                if (diff > 0 && currentIndex < imageCount - 1) {
-                    currentIndex++;
-                } else if (diff < 0 && currentIndex > 0) {
-                    currentIndex--;
-                }
-
-                images.forEach((img, index) => {
-                    img.classList.toggle('active', index === currentIndex);
-                });
+            if (imagesToShow.length > 0) {
+                gridContainer.innerHTML = imagesToShow.map(img => `
+                    <img
+                        src="/${img}"
+                        alt="${altText}"
+                        class="entry-thumbnail-image"
+                        loading="lazy"
+                    />
+                `).join('');
+                gridContainer.style.display = 'grid';
             }
-        }, { passive: true });
+        }
     }
 
     /**
