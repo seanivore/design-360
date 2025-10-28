@@ -127,6 +127,7 @@
         "page_image_group_alt_text": ["Additional project image showing..."]
     },
     "assets": {
+        "project_url_text": "",
         "project_url": "https://august.style",
         "github_repository": "https://github.com/seanivore/design-360"
     },
