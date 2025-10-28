@@ -426,7 +426,7 @@ a:active {
 
 /* Wrapper - contains tile, provides consistent structure */
 .tile-section-wrapper {
-    width: 100%;
+    width: 350px;
     margin: 0 auto var(--space-md) auto;
     display: flex;
     flex-direction: column;
@@ -435,12 +435,15 @@ a:active {
 
 /* Horizontal scrolling image gallery - simple overflow container */
 .tile-section__image-scroll {
-    width: 100%;
     display: flex;
     gap: var(--space-sm);
+    width: 350px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     padding: var(--space-xs) 0;
     margin-bottom: calc(var(--space-xs) * -1);
 }
@@ -458,7 +461,7 @@ a:active {
 /* Individual images in scroll */
 .tile-section__image {
     flex-shrink: 0;
-    width: 280px;
+    width: 350px;
     /* Default mobile size */
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -476,7 +479,7 @@ a:active {
 /* Desktop: Larger images */
 @media (min-width: 1024px) {
     .tile-section__image {
-        width: 400px;
+        width: 350px;
     }
 }
 
@@ -697,6 +700,11 @@ a:active {
 /* ============================================
    TILE GRIDS
    ============================================ */
+
+.tile-grid-section {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* OLD CLASSES REMOVED - Using .homepage-tile-grid and .tile-section-wrapper instead */
 
