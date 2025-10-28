@@ -4,6 +4,25 @@
 
   * **Must see Figma mock-up** 
 
+    + What they currently look like 
+
+      - Homepage tile desktop 
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/homepage-tile-desktop.jpg`
+      - Homepage tile mobile
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/homepage-tile-mobile.jpg`
+      - Section page tile desktop
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/section-page-tile-thumbnail.jpg`
+      - Section page tile mobile
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/section-page-tile-mobile.jpg`
+
+    + Mock-up to redesign the tiles to look like 
+    
+      - Homepage L, section page R 
+      - Should look the same on all devices 
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/tile-update-examples.jpeg` 
+
+  * **Details for tile redesign** 
+
     + Thumbnail image is kept at its full 16:9 ratio 
 
       - Delete the previous and next thumbnail image entirely, don't need the class or HTML 
