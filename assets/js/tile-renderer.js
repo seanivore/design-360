@@ -32,12 +32,12 @@ const TileRenderer = (() => {
         // Alt text
         const altText = teaser_copy?.page_title || 'Project image';
 
-        // Create tile container
+        // Create wrapper container (100% width)
         const tile = document.createElement('div');
-        tile.className = 'tile-section fade-in-item';
+        tile.className = 'tile-section-wrapper fade-in-item';
         tile.setAttribute('data-entry-id', categorization.entry_id);
 
-        // Build horizontal scrolling image gallery
+        // Build horizontal scrolling image gallery (100% width)
         const imagesHTML = thumbnails.length > 0 ? `
             <div class="tile-section__image-scroll">
                 ${thumbnails.map(img => `
@@ -51,7 +51,7 @@ const TileRenderer = (() => {
             </div>
         ` : '';
 
-        // Build text area
+        // Build text area (90% width)
         const textHTML = `
             <a href="${entryURL}" class="tile-section__text-area">
                 <p class="tile-section__text">${displayText}</p>
@@ -83,11 +83,12 @@ const TileRenderer = (() => {
     function renderHomepageTile(tileData) {
         const { section, sectionURL, thumbnailImages, tileTexts, altText, projectCount } = tileData;
 
+        // Wrapper at 100% width
         const tile = document.createElement('div');
-        tile.className = 'homepage-tile fade-in-item';
+        tile.className = 'homepage-tile-wrapper fade-in-item';
         tile.setAttribute('data-section', section);
 
-        // Build horizontal scrolling image gallery
+        // Build horizontal scrolling image gallery (100% width)
         const imagesHTML = thumbnailImages.length > 0 ? `
             <div class="homepage-tile__image-scroll">
                 ${thumbnailImages.map(img => `
@@ -104,7 +105,7 @@ const TileRenderer = (() => {
         // Get display text (just use first one - simpler)
         const displayText = tileTexts[0] || '';
 
-        // Build text area with section header
+        // Build text area with section header (90% width)
         const textHTML = `
             <a href="${sectionURL}" class="homepage-tile__text-area">
                 <p class="homepage-tile__text">${displayText}</p>

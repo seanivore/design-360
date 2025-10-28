@@ -424,39 +424,26 @@ a:active {
    SECTION TILES - Simplified Horizontal Scroll
    ============================================ */
 
-.tile-section {
-    background-color: var(--color-bg-tile);
-    border-radius: 0;
-    box-shadow: var(--tile-shadow);
-    overflow: visible;
-    transition: box-shadow var(--duration-normal) var(--easing-standard);
+/* Wrapper at 100% width - no constraints */
+.tile-section-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--space-md);
     position: relative;
-    max-width: 90%;
-    /* Narrower than images for visual emphasis */
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: var(--space-md);
 }
 
-.tile-section:active {
-    box-shadow: var(--tile-shadow-hover);
-}
-
-/* Horizontal scrolling image gallery */
+/* Horizontal scrolling image gallery - full width */
 .tile-section__image-scroll {
+    width: 100%;
     display: flex;
     gap: var(--space-sm);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
     padding: var(--space-xs) 0;
-    /* Small top bleed */
-    margin-top: calc(var(--space-xs) * -1);
-    /* Pull images up to bleed over tile */
+    margin-bottom: calc(var(--space-xs) * -1);
+    /* Pull text area up slightly to overlap */
 }
 
 /* Hide scrollbar but keep functionality */
@@ -466,41 +453,17 @@ a:active {
 
 .tile-section__image-scroll {
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
 }
 
 /* Individual images in scroll */
 .tile-section__image {
     flex-shrink: 0;
     width: 280px;
-    /* Fixed width for consistent layout */
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border: 2px solid #ffffff;
-    /* Bright white border */
     box-shadow: var(--tile-shadow);
-}
-
-/* Mobile: Images go full viewport width */
-@media (max-width: 767px) {
-    .tile-section {
-        max-width: 100%;
-        /* Full width on mobile */
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .tile-section__image-scroll {
-        gap: var(--space-xs);
-        padding: var(--space-xs) var(--space-xs);
-    }
-
-    .tile-section__image {
-        width: 100vw;
-        /* Full viewport width on mobile */
-    }
 }
 
 /* Desktop: Wider images */
@@ -510,18 +473,42 @@ a:active {
     }
 }
 
-/* Text area - clickable link to entry */
+/* Mobile: Images go full viewport width */
+@media (max-width: 767px) {
+    .tile-section__image-scroll {
+        gap: var(--space-xs);
+        padding: var(--space-xs) var(--space-xs);
+    }
+
+    .tile-section__image {
+        width: 100vw;
+    }
+}
+
+/* Text area - 90% width for narrower tile effect */
 .tile-section__text-area {
     background: var(--color-bg-dark);
+    box-shadow: var(--tile-shadow);
     padding: var(--space-sm) var(--space-md);
     text-decoration: none;
     color: var(--color-text-primary);
     display: block;
-    transition: background var(--duration-fast) var(--easing-standard);
+    transition: background var(--duration-fast) var(--easing-standard),
+        box-shadow var(--duration-normal) var(--easing-standard);
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .tile-section__text-area:hover {
     background: #0a0a0a;
+    box-shadow: var(--tile-shadow-hover);
+}
+
+/* Mobile: Full width text area */
+@media (max-width: 767px) {
+    .tile-section__text-area {
+        max-width: 100%;
+    }
 }
 
 /* Tile text - compact with 2-line limit */
@@ -536,12 +523,8 @@ a:active {
     overflow: hidden;
 }
 
-/* Mobile: Even more compact */
+/* Mobile: More compact text */
 @media (max-width: 767px) {
-    .tile-section__text-area {
-        padding: var(--space-xs) var(--space-sm);
-    }
-
     .tile-section__text {
         font-size: 0.85rem;
     }
@@ -945,44 +928,26 @@ a:active {
    HOMEPAGE TILES - Simplified Horizontal Scroll
    ============================================ */
 
-.homepage-tile {
-    background: var(--color-bg-tile);
-    box-shadow: var(--tile-shadow);
-    overflow: visible;
-    transition: transform var(--duration-normal) var(--easing-standard),
-        box-shadow var(--duration-normal) var(--easing-standard);
+/* Wrapper at 100% width - no constraints */
+.homepage-tile-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
-    max-width: 90%;
-    /* Narrower than images for visual emphasis */
-    margin: 0 auto var(--space-md) auto;
+    margin-bottom: var(--space-md);
 }
 
-.homepage-tile:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--tile-shadow-hover);
-}
-
-/* Mobile: Full width */
-@media (max-width: 767px) {
-    .homepage-tile {
-        max-width: 100%;
-    }
-}
-
-/* Horizontal scrolling image gallery */
+/* Horizontal scrolling image gallery - full width */
 .homepage-tile__image-scroll {
+    width: 100%;
     display: flex;
     gap: var(--space-sm);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
     padding: var(--space-xs) 0;
-    /* Small top bleed */
-    margin-top: calc(var(--space-xs) * -1);
-    /* Pull images up to bleed over tile */
+    margin-bottom: calc(var(--space-xs) * -1);
+    /* Pull text area up slightly to overlap */
 }
 
 /* Hide scrollbar but keep functionality */
@@ -1026,20 +991,32 @@ a:active {
     }
 }
 
-/* Text Area - clickable link to section */
+/* Text Area - 90% width for narrower tile effect */
 .homepage-tile__text-area {
     background: var(--color-bg-dark);
+    box-shadow: var(--tile-shadow);
     padding: var(--space-sm) var(--space-md);
     text-decoration: none;
     color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
-    transition: background var(--duration-fast) var(--easing-standard);
+    transition: background var(--duration-fast) var(--easing-standard),
+        box-shadow var(--duration-normal) var(--easing-standard);
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .homepage-tile__text-area:hover {
     background: #0a0a0a;
+    box-shadow: var(--tile-shadow-hover);
+}
+
+/* Mobile: Full width text area */
+@media (max-width: 767px) {
+    .homepage-tile__text-area {
+        max-width: 100%;
+    }
 }
 
 /* Tile text - compact with 2-line limit */
@@ -1075,12 +1052,8 @@ a:active {
     color: var(--color-text-secondary);
 }
 
-/* Mobile: More compact */
+/* Mobile: More compact text */
 @media (max-width: 767px) {
-    .homepage-tile__text-area {
-        padding: var(--space-xs) var(--space-sm);
-    }
-
     .homepage-tile__text {
         font-size: 0.85rem;
     }
