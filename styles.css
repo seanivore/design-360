@@ -956,6 +956,11 @@ a:active {
     }
 }
 
+/* Desktop: Larger images */
+.homepage-tile__image {
+    width: 400px;
+}
+
 /* Mobile portrait: Full viewport width */
 @media (max-width: 767px) {
     .homepage-tile__image-scroll {
