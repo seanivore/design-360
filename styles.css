@@ -449,26 +449,16 @@ a:active {
     }
 }
 
-/* Horizontal scrolling image gallery - extends beyond wrapper */
+/* Horizontal scrolling image gallery - simple overflow container */
 .tile-section__image-scroll {
-    width: calc(100% + var(--space-xl));  /* Wider than wrapper */
-    margin-left: calc(var(--space-lg) * -1);  /* Pull left to center overflow */
+    width: 100%;
     display: flex;
     gap: var(--space-sm);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    padding: var(--space-xs) var(--space-lg);
+    padding: var(--space-xs) 0;
     margin-bottom: calc(var(--space-xs) * -1);
-}
-
-/* Mobile: Full width, no bleed */
-@media (max-width: 767px) {
-    .tile-section__image-scroll {
-        width: 100%;
-        margin-left: 0;
-        padding: var(--space-xs) 0;
-    }
 }
 
 /* Hide scrollbar but keep functionality */
@@ -484,25 +474,31 @@ a:active {
 /* Individual images in scroll */
 .tile-section__image {
     flex-shrink: 0;
-    width: 280px;
+    width: 280px;  /* Default mobile size */
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border: 2px solid #ffffff;
     box-shadow: var(--tile-shadow);
 }
 
-/* Desktop: Wider images */
-@media (min-width: 768px) {
+/* Tablet: Medium images */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .tile-section__image {
+        width: 350px;
+    }
+}
+
+/* Desktop: Larger images */
+@media (min-width: 1024px) {
     .tile-section__image {
         width: 400px;
     }
 }
 
-/* Mobile: Images go full viewport width */
+/* Mobile portrait: Full viewport width */
 @media (max-width: 767px) {
     .tile-section__image-scroll {
         gap: var(--space-xs);
-        padding: var(--space-xs) var(--space-xs);
     }
 
     .tile-section__image {
@@ -978,26 +974,16 @@ a:active {
     }
 }
 
-/* Horizontal scrolling image gallery - extends beyond wrapper */
+/* Horizontal scrolling image gallery - simple overflow container */
 .homepage-tile__image-scroll {
-    width: calc(100% + var(--space-xl));  /* Wider than wrapper */
-    margin-left: calc(var(--space-lg) * -1);  /* Pull left to center overflow */
+    width: 100%;
     display: flex;
     gap: var(--space-sm);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    padding: var(--space-xs) var(--space-lg);
+    padding: var(--space-xs) 0;
     margin-bottom: calc(var(--space-xs) * -1);
-}
-
-/* Mobile: Full width, no bleed */
-@media (max-width: 767px) {
-    .homepage-tile__image-scroll {
-        width: 100%;
-        margin-left: 0;
-        padding: var(--space-xs) 0;
-    }
 }
 
 /* Hide scrollbar but keep functionality */
@@ -1013,31 +999,35 @@ a:active {
 /* Individual images in scroll */
 .homepage-tile__image {
     flex-shrink: 0;
-    width: 280px;
+    width: 280px;  /* Default mobile size */
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border: 2px solid #ffffff;
-    /* Bright white border */
     box-shadow: var(--tile-shadow);
 }
 
-/* Mobile: Images go full viewport width */
+/* Tablet: Medium images */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .homepage-tile__image {
+        width: 350px;
+    }
+}
+
+/* Desktop: Larger images */
+@media (min-width: 1024px) {
+    .homepage-tile__image {
+        width: 400px;
+    }
+}
+
+/* Mobile portrait: Full viewport width */
 @media (max-width: 767px) {
     .homepage-tile__image-scroll {
         gap: var(--space-xs);
-        padding: var(--space-xs) var(--space-xs);
     }
 
     .homepage-tile__image {
         width: 100vw;
-        /* Full viewport width on mobile */
-    }
-}
-
-/* Desktop: Wider images */
-@media (min-width: 768px) {
-    .homepage-tile__image {
-        width: 400px;
     }
 }
 
