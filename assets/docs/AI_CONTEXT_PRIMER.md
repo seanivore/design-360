@@ -52,7 +52,7 @@
   * **Problem:** Economic uncertainty + AI integration = organizational downsizing
   * **Solution:** Generalist portfolio to showcase cross-functional "downsizing-friendly" capabilities 
 
-    + **UX Goal:** Hiring managers can preview 50+ projects without excessive clicking
+    + **UX Goal:** Hiring managers can preview many, many projects without excessive clicking
       - Swipe tile thumbnail slideshow 
       - Text cycles with images to tell full story 
       - Visual-first magazine aesthetic
@@ -286,8 +286,8 @@ if (!pathParam) {
 
   * **`tile-renderer.js`**
 
-    - `renderSectionTile()` - 16:9 landscape tiles for section pages
-    - `renderHomepageTile()` - 1:1 square tiles for homepage
+    - `renderSectionTile()` - tiles for section pages
+    - `renderHomepageTile()` - tiles for homepage
     - Magazine aesthetic: NO title/subtitle on section tiles
 
   * **`filter-controller.js`**
@@ -325,24 +325,24 @@ if (!pathParam) {
 
 ```css
 :root {
-  /* Background - Lighter charcoal for depth */
-  --color-bg-primary: #2a2a2a;
-  --color-bg-secondary: #2a2a2a;
+  /* Background dark and lighter match charcoal */
+  --color-bg-primary: #1f1f1f;
+  --color-bg-secondary: #363635;
 
-  /* Tiles - Darker for contrast */
-  --color-bg-tile: #1a1a1a;
+  /* Tile's dark text area */
+  2 px solid image stroke: ##ffffff;
   --color-bg-dark: #0f0f0f;  /* Text areas */
 
   /* Text */
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #b0b0b0;
+  --color-text-primary: #EBEBEB;
+  --color-text-secondary: #D7CDCC;
 
   /* Accent */
-  --color-accent: #4a9eff;
-  --color-accent-active: #2d7fd4;
+  --color-accent: #9C528B;
+  --color-accent-active: #7d4070;
 
   /* Borders & Shadows */
-  --color-border: #333333;
+  --color-border: #595A4A;
   --tile-shadow: 0 2px 8px rgba(0, 0, 0, 0.4),
                  0 4px 16px rgba(0, 0, 0, 0.3);
 }
@@ -408,18 +408,17 @@ if (!pathParam) {
 
   * **Homepage Tiles**
 
-    - Aspect ratio closer to 1:1
-    - Section name overlay with 5% black layer
+    - Oversized thumbnail 
     - Project count badge 
     - Links to section pages
     - Swipe cycles images + text
 
   * **Section Tiles**
 
-    - A landscape aspect ratio closer to 16:9
+    - Similar to homepage 
+    - Without project count badge or section 
     - NO title/subtitle (magazine aesthetic)
     - Shows teaser text that cycles with images
-    - Prev/next preview thumbnails
     - Links to entry pages
 
 ### Spacing System
@@ -449,55 +448,62 @@ if (!pathParam) {
   6. **Save to** `assets/entries/uid-xxx-###.json`
   7. **Regenerate manifest:** `python3 generate_manifest.py`
 
-### JSON Structure (Schema v3.1)
+### JSON Structure (Schema v3.2)
 
 ```json
 {
-  "categorization": {
+"categorization": {
     "entry_id": "uid-abc-123",
     "placement": {
-      "section": "Web",              // Capitalized!
-      "sub_section": "HTML/CSS/JS",  // Has slashes!
-      "slug": "project-name"         // Clean, no .html
+        "section": "Web",              // Capitalized!
+        "sub_section": "HTML/CSS/JS",  // Has slashes!
+        "slug": "project-name"         // Clean, no .html
     },
     "tagging": {
-      "technology": ["JavaScript", "CSS Animation"],
-      "media": ["Portfolio Website"],
-      "role": "Creative Technologist",  // STRING (v3.1)
-      "skill": ["Landing Page Design"]
+        "technology": ["JavaScript", "CSS Animation"],
+        "media": ["Portfolio Website"],
+        "role": "Creative Technologist",  // STRING (v3.1)
+        "skill": ["Landing Page Design"]
     }
-  },
-  "content": {
+},
+"content": {
     "media": {
-      "video_embed": "...",
-      "video_alt_text": "...",                    // v3.1
-      "thumbnail_images": ["/assets/media/..."],
-      "thumb_slideshow_alt_text": "...",          // v3.1
-      "page_imagery": ["/assets/media/..."],      // v3.1
-      "page_image_group_alt_text": "..."          // v3.1
+        "video_embed": "...",
+        "video_alt_text": "...",                  // v3.1
+        "thumbnail_images": ["/assets/media/..."],
+        "thumb_slideshow_alt_text": "...",        // v3.1
+        "page_imagery": ["/assets/media/..."],    // v3.1
+        "page_image_group_alt_text": "..."        // v3.1
     },
     "assets": {
-      "project_url": "https://...",               // v3.1
-      "github_repository": "https://github.com/..." // v3.1
+        "project_url_text": "august.style/etc",   // v3.2
+        "project_url": "https://...",             // v3.1
+        "github_repository": "https://github..."  // v3.1
     },
     "teaser_copy": {
-      "seo_title": "...",
-      "seo_description": "...",
-      "page_title": "...",
-      "page_subtitle": "...",
-      "breadcrumb": "...",
-      "tile_text": ["...", "..."]  // Multiple lines
+        "seo_title": "...",
+        "seo_description": "...",
+        "page_title": "...",
+        "page_subtitle": "...",
+        "breadcrumb": "...",
+        "tile_text": ["...", "..."]  // Multiple lines
     },
     "page_copy": {
-      "pattern": "The challenge or context...",
-      "action": "What was done...",
-      "measured": "Results and impact..."
+        "pattern": "The challenge or context...",
+        "action": "What was done...",
+        "measured": "Results and impact..."
     }
-  }
+}
 }
 ```
 
-### Schema v3.1 Changes *October 2025*
+### Schema v3.2 & More Changes *October 2025*
+
+  * **Changed from v3.1:** 
+
+    1. Added `project_url_text` 
+    2. Line break between objects 
+    3. Cleaned up with larger, proper indents 
 
   * **Changed from v2.1:**
 
@@ -672,23 +678,22 @@ NO toggle tags shown
 
   * **Image Swipe**
     
-    + Touch: swipe gesture
-    + Keyboard: arrow keys
-    + Smooth cross-fade transitions
-    + 1/8th image bleed hints at swipe
+    + Simple hidden hidden overflow 
+    + Long single row of 16:9 thumbnail images 
 
-  * **Text Cycling**
-
-    + Syncs with image swipe
+  * **Text Cycling**    *<-!- This needs to be re-added!*
+  *Removed because coded gesture wasn't reliably functional* 
+  
+    + Syncs with image swipe 
     + Cross-fade animation
     + Matches image timing
 
   * **Tag Filtering**
   
     + Tap to activate
-    + Active tags move to left (DOM reordering)
-    + Unrelated tiles fade out
-    + Related tiles slide to new positions
+    + Tap again to turn off 
+    + Tap other tag to turn off 
+    + Related tiles slide to new positions     *<-!- Nope, but great idea!*
     + Smooth 300ms transitions
 
 ---
