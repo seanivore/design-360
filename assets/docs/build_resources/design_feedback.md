@@ -1,97 +1,88 @@
 # Web Design Updates 
 
-## Homepage Content Tiles 
+## Content Tile Issue Context 
 
-  * **Must see Figma mock-up** 
+  * **Content tiles are perfect on desktop**
 
-    + What they currently look like 
+    + Homepage and Section Page tiles are almost identical 
 
-      - Homepage tile desktop 
-        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/homepage-tile-desktop.jpg`
-      - Homepage tile mobile
-        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/homepage-tile-mobile.jpg`
-      - Section page tile desktop
-        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/section-page-tile-thumbnail.jpg`
-      - Section page tile mobile
-        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/section-page-tile-mobile.jpg`
+      - Both have extra-wide thumbnail image extending wider than tile 
+      - Both have the tile-teaser text 
+      - Just homepage tile has project count and section tag 
 
-    + Mock-up to redesign the tiles to look like 
+    + Updated simple scrolling thumbnail effect 
+
+      - Thumbnail is a row of thumbnail images 
+      - A wrapper is placed on top and then set to hide-overflow but have scrolling bar 
+      - So instead of some annoying swipe or click code it is as simple as the tag navigation bar scroll 
+
+  * **I got it working but AI had trouble getting it right** 
+
+    + AI couldn't figure out how to structure things to just show one thumbnail at a time
+     
+      - I explained a few times, they did a few rounds 
+      - I sort of think issues started because they didn't fully read the CSS and missed classes 
+
+    + Eventually I just fixed it on my own 
+
+      - I sort of just clicked layers in Insights and added/removed styling 
+      - I knew what I needed but not where so kept trying until it worked properly 
+
+    + The scrolling and one thumbnail showing is working 
+
+      - Across devices the tile itself looks right 
+      - But I'm having an issue on mobile that I'll describe in next section 
+
+  * **Mentioning context because CSS might be a mess** 
+
+    + Which isn't a huge deal  
+
+      - If it looks okay on live site then, meh 
+      - But might be helpful to know to help trouble-shoot the issue I'm having 
+
+## Content Tile Issue on Mobile 
+
+  * **First here's how they look on desktop** 
+
+    + They are perfected here, no need to alter these styles for desktop 
     
-      - Homepage L, section page R 
-      - Should look the same on all devices 
-        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/tile-update-examples.jpeg` 
+      - I scrolled the thumb a bit to show how works 
+      - Section Page Tile 
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/annoying-vw-mobile-thumb-issue-4.jpg` 
+      - Homepage Tile 
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/annoying-vw-mobile-thumb-issue-5.jpg`
 
-  * **Details for tile redesign** 
+  * **On MOBILE the thumbnail is supposed to be 100 vw right up to the L/R screen edges** 
 
-    + Thumbnail image is kept at its full 16:9 ratio 
+    + Padding from `.container` messing it up I think 
 
-      - Delete the previous and next thumbnail image entirely, don't need the class or HTML 
-      - Image has very thin, bright white 1-2 px wide stroke 
-    
-    + Thumbnail images scroll across horizontal space with everything outside hidden 
+      - So I looked at the YouTube embed to see how that works nicely without nested padding issues 
+      - YouTube Embed on Entry Page for Mobile 
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/annoying-vw-mobile-thumb-issue-1.jpg`
 
-      - The idea here is to create the same kind of UI with smooth scrolling just like the tags 
-      - Then instead of clicking to next or playing with the (not working) special swipe gesture, it will just be SIMPLE 
-      - Obviously I can easily swipe the horizontal scrolling tags -- let's just use same treatment on thumbs 
+    + Homepage, Section Page, and Entry because of Related Projects are all experiencing the issue 
 
-    + Note that the "tile" is narrower than the thumbnail image 
+      - The padding is making the tile extend out of the viewport to the right
+      - The viewport is allowing a scroll horizontal on entire page 
+      - Homepage Mobile 
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/annoying-vw-mobile-thumb-issue-3.jpg`
+      - Related Posts on Entry Page 
+        `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/annoying-vw-mobile-thumb-issue-2.jpg`
 
-      - This is to emphasize the feeling of it being so visual-first
-      - There is a bit of the tile out the top, above the thumbnail 
-      - Compact the padding and margins to be tight 
+  * **Turning off the padding on `.container` messes everything else up** 
 
-  * **Mobile and Desktop should look basically identical on screen** 
+    + My last resort was going to be to just add padding to all mobile elements and remove from `.container` 
+      
+      - Before doing something that drastic I wanted to check in with you 
+      - Also because the CSS is just getting messier 
+      - I'm having trouble keeping things straight in my head, re: Classes, Mobile, Etc. 
 
-    + The spacing shown is meant to work well for both devices 
-    + But on mobile make the THUMBNAIL 100 VW at 100% wide 
-    
-    + This should make a lot of space to enlarge the font 
+## Our Task 
 
-      - Create enough space for the font so that it could go into two lines 
-      - Then let's make the size fixed for all tiles 
+  * **Can you please help me by...** 
 
-## Section Page Content Tiles 
+    + After reviewing all of the above, and the images, and `AI_CONTEXT_PRIMER.md` please 
 
-  * **See the Homepage Content Tile & Figma mockup** 
-
-    + This is exactly the same except no need to put the section name ("WEB") 
-    + And we can remove the counter 
-    + Then make the bottom less H since we don't have that text 
-
-## Project Entry Page Layout Update 
-
-  * **Move `YOUTUBE EMBED` below `ROLE`** 
-
-    + Keep these upper items in their current order 
-
-      - Breadcrumb path 
-      - Tag keyword cloud 
-      - Title and subtitle 
-      - Role 
-
-    + Then the **YOUTUBE EMBED** next 
-
-      - MOBILE give it 100 vw 
-      - DESKTOP give it max width ~800 px 
-
-  * **Separate thumbnail images from slideshow to display in full** 
-
-    + Keep them at their full 19:6 ratio 
-    + Ensure the logic allows 3 to 8 images 
-    + Have them shuffle their order every reload 
-
-    + On DESKTOP 
-
-      - Maintain the two columns
-      - On the left are the three blocks of text; leave these and their headers exactly as they are 
-      - On the right stack 3 of the thumbnail images 
-      - Then return to single column below and place the rest of them with 4 in a row 
-
-    + On MOBILE 
-
-      - Maintain just one column
-      - Place 1 between the `pattern` and the `action` blocks of text 
-      - Place 1 between the `action` and `measured` blocks of text 
-      - Make sure these two images are 100 vw just like the YouTube embed was 
-      - After `measured`, no matter how many images are left, place them below this last text block
-      - But this time put 2 per row and keep their combined width a bit less wider than the text blocks 
+      - Check out the CSS and see what is going on 
+      - Help me make sense of things 
+      - And basically help me get the tile laid out on mobile properly with thumbnail 100 vw 
