@@ -488,6 +488,7 @@ a:active {
     .tile-section__image-scroll {
         gap: var(--space-xs);
         width: 100vw;
+        margin-left: calc(-1 * var(--space-md));  /* Escape container padding */
     }
 
     .tile-section__image {
@@ -972,6 +973,7 @@ a:active {
     .homepage-tile__image-scroll {
         gap: var(--space-xs);
         width: 100vw;
+        margin-left: calc(-1 * var(--space-md));  /* Escape container padding */
     }
 
     .homepage-tile__image {
