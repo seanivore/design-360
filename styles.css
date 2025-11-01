@@ -476,14 +476,14 @@ a:active {
 /* Tablet: Medium images */
 @media (min-width: 768px) and (max-width: 1023px) {
     .tile-section__image {
-        width: 350px;
+        width: 300px;
     }
 }
 
 /* Desktop: Larger images */
 @media (min-width: 1024px) {
     .tile-section__image {
-        width: 350px;
+        width: 300px;
     }
 }
 
@@ -526,7 +526,7 @@ a:active {
 
 /* Tile text - compact with 2-line limit */
 .tile-section__text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.4;
     color: var(--color-text-primary);
     margin: 0;
@@ -972,13 +972,13 @@ a:active {
 /* Tablet: Medium images */
 @media (min-width: 768px) and (max-width: 1023px) {
     .homepage-tile__image {
-        width: 350px;
+        width: 300px;
     }
 }
 
 /* Desktop: Larger images */
 .homepage-tile__image {
-    width: 400px;
+    width: 350px;
 }
 
 /* Mobile portrait: Full viewport width */
