@@ -135,6 +135,7 @@ html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;  /* Prevent horizontal scroll */
 }
 
 body {
@@ -181,7 +182,7 @@ body::before {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;  /* Use viewport width, not body width */
     height: 100%;
     /* background-image: url('../media/ornate-pattern.svg'); */
     background-repeat: repeat;
@@ -197,7 +198,7 @@ body::after {
     top: 0;
     left: 35%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 60vw;  /* Use viewport width, not body width */
     height: 100%;
     background: linear-gradient(to right,
             transparent 0%,
