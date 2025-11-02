@@ -27,7 +27,7 @@
     /* Plum - main accent */
     --color-accent-active: #7d4070;
     /* Darker plum for active states */
-    --color-border: #595A4A;
+    --color-border: #474545;
     /* Ebony - gray-green */
     --color-shadow: rgba(0, 0, 0, 0.5);
 
@@ -297,11 +297,11 @@ a:active {
     top: 0;
     width: 100%;
     background-color: var(--color-bg-secondary);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 0.10rem solid #474545;
     padding: var(--space-sm) 0;
     /* Reduced from --space-md */
     z-index: 100;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 10px rgb(0 0 0 / 61%);
 }
 
 .site-header .container {
@@ -868,17 +868,17 @@ a:active {
     margin: var(--space-md) auto 0;
     /* Tri-color bars using multiple backgrounds */
     background:
-        linear-gradient(var(--color-accent-terracotta), var(--color-accent-terracotta)) center 0 / 300px 8px no-repeat,
-        linear-gradient(var(--color-accent-blue), var(--color-accent-blue)) center 16px / 250px 8px no-repeat,
-        linear-gradient(var(--color-accent-mauve), var(--color-accent-mauve)) center 32px / 200px 8px no-repeat;
+        linear-gradient(var(--color-accent-terracotta), #6f5139) center 0 / 300px 8px no-repeat,
+        linear-gradient(var(--color-accent-blue), #3c525b) center 16px / 250px 8px no-repeat,
+        linear-gradient(var(--color-accent-mauve), #402a32) center 32px / 200px 8px no-repeat;
 }
 
 @media (max-width: 767px) {
     .section-heading::after {
         background:
-            linear-gradient(var(--color-accent-terracotta), var(--color-accent-terracotta)) center 0 / 200px 6px no-repeat,
-            linear-gradient(var(--color-accent-blue), var(--color-accent-blue)) center 12px / 166px 6px no-repeat,
-            linear-gradient(var(--color-accent-mauve), var(--color-accent-mauve)) center 24px / 132px 6px no-repeat;
+            linear-gradient(var(--color-accent-terracotta), #6f5139) center 0 / 200px 6px no-repeat,
+            linear-gradient(var(--color-accent-blue), #3c525b) center 12px / 166px 6px no-repeat,
+            linear-gradient(var(--color-accent-mauve), #402a32) center 24px / 132px 6px no-repeat;
         height: 36px;
     }
 }
