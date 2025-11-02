@@ -4,7 +4,7 @@ We've been cleaning up the design on this fun architecture of a website we built
 
 No need to check in the memory MCP for the project at this point; instead we have an AI Context Primer document that should be just enough. 
 
-Note that you need to use the `filesystem` MCP to access the paths I'm providing; I guess you have a newer native file tool that is just for a sandbox environment. 
+Note that you need to use the `filesystem` MCP to access the paths I'm providing; I guess you have a newer native file tool that is just for a sandbox environment. There is a full repo tree at the bottom of the design_feedback.md document so that you can find full paths that way. 
 
 `/Users/seanivore/Development/360-design/assets/docs/AI_CONTEXT_PRIMER.md`
 
@@ -16,6 +16,37 @@ So once you review it all and know what to do, give it a think and then just let
 `/Users/seanivore/Development/360-design/assets/js/entry-controller.js`
 
 Looking forward to hear what you think! 💃 
+
+---
+
+# Important Page Paths 
+
+## Site-Wide 
+
+  - Styles `/Users/seanivore/Development/360-design/styles.css` 
+  - Data loader populates dynamic content `/Users/seanivore/Development/360-design/assets/js/data-loader.js` 
+  - Homepage, section page, and related posts content tile HTML `/Users/seanivore/Development/360-design/assets/js/entry-controller.js`
+  - Manifest to help find URLs `/Users/seanivore/Development/360-design/assets/js/manifest.json` 
+  - Placement to inform toggle-tag keywords `/Users/seanivore/Development/360-design/assets/js/placement.json` 
+  - Redirect trick for dynamic pages on stage page host `/Users/seanivore/Development/360-design/404.html` 
+  - Generate new manifest script `/Users/seanivore/Development/360-design/generate_manifest.py` 
+  - All active project entries inside `/Users/seanivore/Development/360-design/assets/entries/...` 
+
+## Homepage Specific 
+
+  - Tile shuffling, placement `/Users/seanivore/Development/360-design/assets/js/homepage-controller.js` 
+  - Homepage template `/Users/seanivore/Development/360-design/index.html` 
+
+## Section Page Specific 
+
+  - Filter controller `/Users/seanivore/Development/360-design/assets/js/filter-controller.js` 
+  - Section controller `/Users/seanivore/Development/360-design/assets/js/section-controller.js` 
+  - Section page template `/Users/seanivore/Development/360-design/section.html`
+
+## Project Entry Page Specific 
+
+  - Entry controller `/Users/seanivore/Development/360-design/assets/js/filter-controller.js` 
+  - Entry page template `/Users/seanivore/Development/360-design/entry.html` 
 
 ---
 
@@ -88,8 +119,6 @@ Looking forward to hear what you think! 💃
   + Let's match the background of the footer to the header 
     - I also fixed the box-shadow of the .site-header which we should mimic for footer 
     - Also please mimic use the same border-bottom stroke size and color as .site-header 
-
----
 
 ## 2. Website Color Palette 
 
@@ -247,3 +276,65 @@ Looking forward to hear what you think! 💃
     3. current copy deleted (or overwritten) `./assets/js/manifest.json` 
     4. update toggle-tag keyword search (if it isn't already dynamic) `./assets/js/placement.json` 
     5. the does it need to push again? or is it good? I guess it can't push again if the trigger to run is when it is pushed -- wdyt? 
+
+---
+
+# Repository Structure 
+
+```
+/Users/seanivore/Development/360-design/...
+├── _config.yml
+├── 404.html
+├── assets
+│   ├── docs
+│   │   ├── _entry_template.json
+│   │   ├── AI_CONTEXT_PRIMER.md
+│   │   ├── build_resources
+│   │   │   ├── design_feedback.md
+│   │   │   └── more_entries.md
+│   │   ├── PRINT
+│   │   │   ├── uid-uky-372.json
+│   │   │   └── uid-xgb-670.json
+│   ├── entries
+│   │   ├── uid-dff-987.json
+│   │   ├── uid-eme-689.json
+│   │   ├── uid-fth-565.json
+│   │   ├── uid-hwi-844.json
+│   │   ├── uid-iqi-479.json
+│   │   ├── uid-lul-419.json
+│   │   ├── uid-qor-090.json
+│   │   ├── uid-rfr-187.json
+│   │   ├── uid-sgt-851.json
+│   │   ├── uid-srs-009.json
+│   │   ├── uid-tev-176.json
+│   │   ├── uid-unw-889.json
+│   │   ├── uid-wgw-370.json
+│   │   ├── uid-wnw-867.json
+│   │   └── uid-wty-542.json
+│   ├── favicon
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-96x96.png
+│   │   ├── favicon.ico
+│   │   ├── favicon.svg
+│   │   ├── site.webmanifest
+│   │   ├── web-app-manifest-192x192.png
+│   │   └── web-app-manifest-512x512.png
+│   ├── js
+│   │   ├── data-loader.js
+│   │   ├── entry-controller.js
+│   │   ├── filter-controller.js
+│   │   ├── homepage-controller.js
+│   │   ├── manifest.json
+│   │   ├── placement.json
+│   │   ├── section-controller.js
+│   │   └── tile-renderer.js
+│   └── media
+│       └── profile-picture-horvath.webp
+├── CNAME
+├── entry.html
+├── generate_manifest.py
+├── index.html
+├── README.md
+├── section.html
+└── styles.css
+```
