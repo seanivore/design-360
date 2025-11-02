@@ -233,3 +233,17 @@ Looking forward to hear what you think! 💃
       - Goes here: `https://www.august.style/web#tags=web+product` 
       - Which obviously we don't want "Web" in there though 
       - But apparently without web it still isn't working 
+
+## 6. Fully Automated Manifest Rebuild Every `git push` 
+
+  + I for *exactly* how it was described that this could be set up 
+    - But definitely want to do it if we can 
+    
+  + For example I want to remove the one entry that doesn't have images yet 
+    - But I don't want to have to run the python script manually 
+
+    1. `git push` 
+    2. runs the generation script `./generate_manifest.py` 
+    3. current copy deleted (or overwritten) `./assets/js/manifest.json` 
+    4. update toggle-tag keyword search (if it isn't already dynamic) `./assets/js/placement.json` 
+    5. the does it need to push again? or is it good? I guess it can't push again if the trigger to run is when it is pushed -- wdyt? 
