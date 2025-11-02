@@ -25,7 +25,7 @@ const TileRenderer = (() => {
         // Get thumbnail images (all available)
         const thumbnails = media.thumbnail_images || [];
 
-        // Get tile text (just use first one - simpler)
+        // Get tile text (use first one initially, then cycle)
         const tileTexts = teaser_copy?.tile_text || [];
         const displayText = tileTexts[0] || teaser_copy?.page_subtitle || teaser_copy?.page_title || 'View Project';
 
@@ -62,6 +62,24 @@ const TileRenderer = (() => {
             ${imagesHTML}
             ${textHTML}
         `;
+
+        // Set up text cycling if there are multiple texts
+        if (tileTexts.length > 1) {
+            const textElement = tile.querySelector('.tile-section__text');
+            let currentIndex = 0;
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % tileTexts.length;
+                if (textElement) {
+                    textElement.style.transition = 'opacity 0.3s ease';
+                    textElement.style.opacity = '0';
+                    setTimeout(() => {
+                        textElement.textContent = tileTexts[currentIndex];
+                        textElement.style.opacity = '1';
+                    }, 200);
+                }
+            }, 4000); // Change text every 4 seconds
+        }
 
         return tile;
     }
@@ -102,7 +120,7 @@ const TileRenderer = (() => {
             </div>
         ` : '';
 
-        // Get display text (just use first one - simpler)
+        // Get display text (use first one initially, then cycle)
         const displayText = tileTexts[0] || '';
 
         // Build text area with section header (90% width)
@@ -110,8 +128,8 @@ const TileRenderer = (() => {
             <a href="${sectionURL}" class="homepage-tile__text-area">
                 <p class="homepage-tile__text">${displayText}</p>
                 <div class="homepage-tile__header">
-                    <span class="section-name">${section.toUpperCase()}</span>
-                    <span class="project-count">${projectCount} project${projectCount !== 1 ? 's' : ''}</span>
+                    <span class="section-name">${section.toUpperCase()} PROJECTS</span>
+                    <span class="project-count">(${projectCount})</span>
                 </div>
             </a>
         `;
@@ -120,6 +138,23 @@ const TileRenderer = (() => {
             ${imagesHTML}
             ${textHTML}
         `;
+
+        // Set up text cycling if there are multiple texts
+        if (tileTexts.length > 1) {
+            const textElement = tile.querySelector('.homepage-tile__text');
+            let currentIndex = 0;
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % tileTexts.length;
+                if (textElement) {
+                    textElement.style.opacity = '0';
+                    setTimeout(() => {
+                        textElement.textContent = tileTexts[currentIndex];
+                        textElement.style.opacity = '1';
+                    }, 200);
+                }
+            }, 4000); // Change text every 4 seconds
+        }
 
         return tile;
     }

@@ -146,13 +146,11 @@
                 // Capitalize section name
                 const sectionName = viewType.section.charAt(0).toUpperCase() + viewType.section.slice(1);
 
-                // Show section as main filter heading (small, above title)
-                mainFilterHeading = sectionName;
-
-                pageTitle.textContent = 'Projects';
-                // Remove section name from subtitle - just show count
-                pageSubtitle.textContent = projectCountText;
+                // Format: "Web Projects (15)"
+                pageTitle.textContent = `${sectionName} Projects (${filteredCount})`;
+                pageSubtitle.textContent = '';
                 docTitle = `${sectionName} Projects | Sean August Horvath`;
+                mainFilterHeading = null; // Don't show separate heading for section pages
                 break;
 
             case 'subsection':
@@ -273,8 +271,17 @@
         let projectsToRender = shuffledProjects;
 
         // Filter out sticky filter for tag filtering logic
+        // EXCEPT for site-wide tag filtering (when we're on /projects with a tag)
         const stickyFilter = FilterController.getStickyFilter();
-        const filterTags = activeTags.filter(tag => tag !== stickyFilter);
+        let filterTags;
+        
+        if (viewType.type === 'all' && viewType.siteWideTag) {
+            // Site-wide tag filtering: use all active tags including sticky filter
+            filterTags = activeTags;
+        } else {
+            // Section/subsection pages: exclude sticky filter (section/subsection)
+            filterTags = activeTags.filter(tag => tag !== stickyFilter);
+        }
 
         if (filterTags.length > 0) {
             projectsToRender = DataLoader.filterByTags(shuffledProjects, filterTags);

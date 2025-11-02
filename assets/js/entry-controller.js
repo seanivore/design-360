@@ -110,6 +110,8 @@ const EntryController = (() => {
             const subsectionURL = `/${normalizedSection}#tags=${normalizedSection}+${normalizedSubsection}`;
 
             container.innerHTML = `
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">›</span>
                 <a href="${sectionURL}">${placement.section}</a>
                 <span class="breadcrumb-separator">›</span>
                 <a href="${subsectionURL}">${placement.sub_section}</a>
