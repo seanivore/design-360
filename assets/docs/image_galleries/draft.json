@@ -1,0 +1,47 @@
+{
+"categorization": {
+    "entry_id": "", 
+    "placement": {
+        "section": "Digital",
+        "sub_section": "Generative", 
+        "slug": "baroque-jan-davidsz-de-heem-still-life"
+    },
+    "tagging":{
+        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting"],
+        "media": ["Baroque, Painting, Still Life, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "role": "AI Graphic Designer", 
+        "skill": ["Content Production, Graphic Design, Illustration, Copywriting, Fashion Photography, Product Staging, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+    }
+},
+
+"content": {
+    "media": {
+        "video_filename": "",
+        "video_url": "",
+        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/226118003?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>", 
+        "video_alt_text": "A series of polished, professional looking paintings of a fruit still life scene, produced in the style of Jan Davidsz de Heem",
+        "thumbnail_images": [""], 
+        "thumb_slideshow_alt_text": "A series of polished, professional looking paintings of a fruit still life scene, produced in the style of Jan Davidsz de Heem",
+        "page_imagery": [""],
+        "page_image_group_alt_text": ""
+        },
+    "assets": {
+        "project_url_text": "behance.net/gallery/Jan-Davidsz-de-Heem-Still-Life",
+        "project_url": "https://www.behance.net/gallery/226118003/Still-Life-Baroque-Fruit-Jan-Davidsz-de-Heem-Inspired",
+        "github_repository": ""
+    },
+    "teaser_copy":{
+        "seo_title": "Used only for meta data",
+        "seo_description": "Used only for meta data", 
+        "page_title": "On entry page only", 
+        "page_subtitle": "On entry page only", 
+        "breadcrumb": "Baroque Fruit Painting",
+        "tile_text": ["About four different lines of text that are teasers to the content helping to tell as much of the story of the project entry as possible from right on the Content Tile; these will cycle when the content tile thumb is swiped to the next"]
+    },
+    "page_copy":{
+        "pattern": "Second section on every project entry page",
+        "action": "Third section on every project entry page", 
+        "measured": "Fourth section on every project entry page" 
+    }
+}
+}

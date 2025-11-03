@@ -82,7 +82,9 @@
             "Print": [
                 "Paperback"
             ],
-            "Digital": [], 
+            "Digital": [
+                "Generative"
+            ], 
             "Video": [] 
         },
         "contextual_tags": {
@@ -105,7 +107,9 @@
                 "Jekyll",
                 "Responsive",
                 "Mobile-First",
-                "Adobe Creative Cloud Apps",
+                "Creative Cloud",
+                "Adobe Firefly",
+                "Photoshop In-painting",
                 "Lottie",
                 "Git"
             ],
@@ -129,13 +133,17 @@
                 "E-Commerce",
                 "Podcast", 
                 "Web App",
-                "Deck Presentation"
+                "Deck Presentation",
+                "Digital Art",
+                "Print", 
+                "Baroque"
             ],
             "role": [
                 "Web Developer",
                 "App Developer",
                 "Creative Director",
-                "Digital Consultant"
+                "Digital Consultant",
+                "AI Graphic Designer"
             ],
             "skill": [
                 "Animation",
