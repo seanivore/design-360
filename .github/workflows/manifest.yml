@@ -1,9 +1,12 @@
 name: Generate Manifest
 
+permissions:
+    contents: write
+
 on:
     push:
         branches:
-            - 360-design
+            - design-360
         paths:
             - "assets/entries/**"
             - "generate_manifest.py"
