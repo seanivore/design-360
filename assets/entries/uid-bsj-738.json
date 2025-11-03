@@ -1,4 +1,12 @@
 {
+"_metadata": {
+    "last_updated": "2025-10-18T13:31:00.000000Z",
+    "required_fields": true,
+    "template_type": "portfolio_entry",
+    "schema_version": "3.2",
+    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
+},
+
 "categorization": {
     "entry_id": "uid-bsj-738",
     "placement": {
@@ -7,10 +15,10 @@
         "slug": "baroque-de-heem-still-life"
     },
     "tagging":{
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting"],
+        "technology": ["AI, Generative, Adobe Firefly"],
         "media": ["Baroque, Painting, Still Life, Digital Art, Print, Social Media, Digital Product, NFT"],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Fashion Photography, Product Staging, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": ["Content Production, Graphic Design, Product Staging, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
     }
 },
 
@@ -20,7 +28,14 @@
         "video_url": "",
         "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/226118003?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "A series of polished, professional-looking fruit still lifes rendered in the style of Jan Davidsz de Heem, with rich baroque composition and luminous color.",
-        "thumbnail_images": [""],
+        "thumbnail_images": [
+            "/Users/seanivore/Development/360-design/assets/media/digital/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-1.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/digital/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-2.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/digital/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-3.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/digital/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-4.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/digital/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-5.webp", 
+            "/Users/seanivore/Development/360-design/assets/media/digital/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-6.webp"
+        ],
         "thumb_slideshow_alt_text": "Rotating still life images evoking baroque painting: deep chiaroscuro, abundance of fruit and foliage, and balanced tabletop arrangements.",
         "page_imagery": [""],
         "page_image_group_alt_text": ""
@@ -37,15 +52,17 @@
         "page_subtitle": "Generative painting study with baroque composition, chiaroscuro, and rich color.",
         "breadcrumb": "Baroque Fruit Painting",
         "tile_text": [
-            "Generative study inspired by Jan Davidsz de Heem's baroque still lifes.",
-            "Deep chiaroscuro with luminous fruit and balanced tabletop arrangements.",
-            "Modern AI pipeline with painterly finishing for museum-grade polish."
+            "Generative study inspired by Jan Davidsz de Heem's baroque still life",
+            "Deep chiaroscuro with luminous fruit and balanced tabletop arrangements",
+            "Modern AI pipeline with painterly finishing for museum-grade polish"
         ]
     },
     "page_copy":{
         "pattern": "Baroque still life demands abundant detail, balanced arrangements, and dramatic chiaroscuro that lets luminous fruit and foliage emerge from shadow with restrained, elegant color harmony.",
         "action": "A generative-first workflow shaped the composition, then selective in-painting and finishing established highlights, edge control, and subtle texture to achieve a painterly, historically faithful presence.",
-        "measured": "Delivers portfolio-ready still lifes that read as classic baroque at thumbnail and hold up in detail, suitable for print, social showcases, and provenance-anchored digital editions."
+        "measured": "Delivers portfolio-ready still life that read as classic baroque at thumbnail and hold up in detail, suitable for print, social showcases, and provenance-anchored digital editions."
     }
-}
+}, 
+
+"notes": []
 }
