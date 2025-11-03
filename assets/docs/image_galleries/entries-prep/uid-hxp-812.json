@@ -1,0 +1,50 @@
+{
+"categorization": {
+    "entry_id": "uid-hxp-812",
+    "placement": {
+        "section": "Digital",
+        "sub_section": "Generative",
+        "slug": "bau-noir-haus"
+    },
+    "tagging": {
+        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
+        "media": ["Bauhaus, Minimalism, Geometric, Abstract, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "role": "Graphic Designer",
+        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "",
+        "video_url": "",
+        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/PROJECT_ID?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
+        "video_alt_text": "A monochrome generative study channeling Bauhaus geometry: stark contrast, precise forms, and disciplined composition.",
+        "thumbnail_images": [""],
+        "thumb_slideshow_alt_text": "Black and white geometric abstractions with Bauhaus inspired forms and strong contrast.",
+        "page_imagery": [""],
+        "page_image_group_alt_text": ""
+    },
+    "assets": {
+        "project_url_text": "",
+        "project_url": "",
+        "github_repository": ""
+    },
+    "teaser_copy": {
+        "seo_title": "Bau Noir Haus: Monochrome Bauhaus Geometry in Generative Abstraction",
+        "seo_description": "A monochrome generative collection exploring Bauhaus inspired geometry, stark contrast, and disciplined balance for modern graphic panels.",
+        "page_title": "Bau Noir Haus",
+        "page_subtitle": "Monochrome Bauhaus geometry with disciplined balance and contrast.",
+        "breadcrumb": "Bauhaus Noir",
+        "tile_text": [
+            "Monochrome geometric Bauhaus study.",
+            "Stark contrast and precise forms.",
+            "Generative panels for modern display."
+        ]
+    },
+    "page_copy": {
+        "pattern": "Bauhaus geometry favors clarity: precise shapes, high contrast, and balanced grids that read instantly and scale cleanly.",
+        "action": "A generative pipeline produced core forms and layout, then in painting refined edge quality, contrast discipline, and spatial balance.",
+        "measured": "Yields crisp panels that perform at tile scale and hold integrity for print, social showcases, and provenance linked digital editions."
+    }
+}
+}

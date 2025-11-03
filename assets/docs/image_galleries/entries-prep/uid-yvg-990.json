@@ -1,0 +1,50 @@
+{
+"categorization": {
+    "entry_id": "uid-yvg-990",
+    "placement": {
+        "section": "Digital",
+        "sub_section": "Generative",
+        "slug": "dragon-headshots"
+    },
+    "tagging": {
+        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
+        "media": ["Art Nouveau, Art Deco, Illustration, Portrait, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "role": "Graphic Designer",
+        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "",
+        "video_url": "",
+        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/PROJECT_ID?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
+        "video_alt_text": "A generative collection of dragon portrait studies with art nouveau and art deco cues, crisp silhouettes, and ornamental line work.",
+        "thumbnail_images": [""],
+        "thumb_slideshow_alt_text": "Dragon head portraits rendered with decorative line work, geometric ornament, and balanced highlights.",
+        "page_imagery": [""],
+        "page_image_group_alt_text": ""
+    },
+    "assets": {
+        "project_url_text": "",
+        "project_url": "",
+        "github_repository": ""
+    },
+    "teaser_copy": {
+        "seo_title": "Dragon Headshots: Generative Portrait Studies with Art Nouveau and Art Deco Cues",
+        "seo_description": "A decorative portrait series exploring dragon head silhouettes and geometric ornament with a generative pipeline and disciplined finishing.",
+        "page_title": "Dragon Headshots",
+        "page_subtitle": "Decorative dragon portraits with geometric ornament and crisp silhouettes.",
+        "breadcrumb": "Dragon Portrait Series",
+        "tile_text": [
+            "Decorative dragon portrait studies.",
+            "Geometric ornament and crisp silhouette control.",
+            "Generative workflow with disciplined finishing."
+        ]
+    },
+    "page_copy": {
+        "pattern": "Decorative portrait work leans on clear silhouettes, controlled highlights, and repeatable ornamental motifs that read cleanly at tile scale.",
+        "action": "A generative first pass defined silhouette and motif rhythm, then in painting refined edge discipline, highlight placement, and line weight.",
+        "measured": "Produces a cohesive portrait set that reads instantly in grids and carries enough detail for print, social showcases, and provenance linked digital editions."
+    }
+}
+}
