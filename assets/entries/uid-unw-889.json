@@ -45,7 +45,7 @@
         "page_image_group_alt_text": ["Mobile view shows beautifully responsive, custom art covered, Webflow designed website."]
         },
     "assets": {
-        "project_url_text": "",
+        "project_url_text": "august.style/personal-training-online",
         "project_url": "https://online-pt-trainer.august.style",
         "github_repository": "https://github.com/seanivore/ckheals"
     },
@@ -69,5 +69,5 @@
     }
 },
 
-"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+"notes": []
 }

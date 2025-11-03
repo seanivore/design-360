@@ -63,18 +63,11 @@
             "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-6.webp"
         ],
         "thumb_slideshow_alt_text": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
-        "page_imagery": [
-            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-1.webp",
-            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-2.webp",
-            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-3.webp",
-            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-4.webp",
-            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-5.webp",
-            "assets/media/automated-e-commerce-shop-lookbook/img-automated-e-commerce-shop-lookbook-mobile-6.webp"
-        ],
+        "page_imagery": [],
         "page_image_group_alt_text": ""
     },
     "assets": {
-        "project_url_text": "",
+        "project_url_text": "fashion-art.august.style",
         "project_url": "https://print-shop-fashion.august.style",
         "github_repository": "https://github.com/seanivore/webflow-store"
     },
@@ -98,7 +91,5 @@
     }
 },
 
-"notes": [
-    "Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"
-]
+"notes": []
 }

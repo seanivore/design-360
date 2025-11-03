@@ -50,6 +50,14 @@ Looking forward to hear what you think! 💃
 
 # Design & Website Review Updates 
 
+## 1. Update Project URL 
+
+  + Update project URL text with `content.assets.project_url_text` 
+    - This is just a simplified version of the actual website 
+    - Use it as text for the hyperlink to avoid lengthy project URLs on entry pages 
+
+---
+
 ## 1. Homepage Updates 
 
 ### Tile Text Formatting Update 

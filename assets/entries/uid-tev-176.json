@@ -41,7 +41,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
-        "project_url_text": "",
+        "project_url_text": "august.style/generative-content",
         "project_url": "https://ai-generated-content.august.style",
         "github_repository": "https://github.com/seanivore/framer-cms-lookbook"
     },
@@ -65,5 +65,5 @@
     }
 },
 
-"notes": ["Thumbnails to be used as a slideshow on the page as well"]
+"notes": []
 }

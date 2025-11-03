@@ -39,7 +39,7 @@
         "page_image_group_alt_text": ""
         },
     "assets": {
-        "project_url_text": "",
+        "project_url_text": "august.style/data-analysis-dashboard",
         "project_url": "https://design.august.style/projects/ai-admin-dashboard",
         "github_repository": "https://github.com/seanivore/design-site"
     },
@@ -63,5 +63,5 @@
     }
 },
 
-"notes": ["Place thumbnail slideshow on-page as prominent visual media for this web section entry; if additional on-page images are provided, place them as secondary visual slideshow element"]
+"notes": []
 }
