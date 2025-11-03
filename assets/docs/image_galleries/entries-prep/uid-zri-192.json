@@ -1,0 +1,50 @@
+{
+"categorization": {
+    "entry_id": "uid-zri-192",
+    "placement": {
+        "section": "Digital",
+        "sub_section": "Generative",
+        "slug": "constructivism-landscapes"
+    },
+    "tagging": {
+        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
+        "media": ["Constructivism, Landscape, Abstract, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "role": "Graphic Designer",
+        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+    }
+},
+"content": {
+    "media": {
+        "video_filename": "",
+        "video_url": "",
+        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/216060883?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
+        "video_alt_text": "Constructivist leaning abstract landscapes with geometric structure, flowing forms, and vibrant color fields suggesting mountains and water.",
+        "thumbnail_images": [""],
+        "thumb_slideshow_alt_text": "Stylized mountain and water scenes with geometric structure, sweeping curves, and warm to cool color transitions.",
+        "page_imagery": [""],
+        "page_image_group_alt_text": ""
+    },
+    "assets": {
+        "project_url_text": "behance.net/gallery/Art-Plus-Industry",
+        "project_url": "https://www.behance.net/gallery/216060883/Art-Plus-Industry",
+        "github_repository": ""
+    },
+    "teaser_copy": {
+        "seo_title": "Constructivism Landscapes: Generative Abstract Mountains and Color Fields",
+        "seo_description": "A generative landscape study blending constructivist geometry with flowing forms and vibrant gradients across mountain and water compositions.",
+        "page_title": "Constructivism Landscapes",
+        "page_subtitle": "Abstract mountains and water scenes with geometric structure and vibrant color.",
+        "breadcrumb": "Constructivism Landscapes",
+        "tile_text": [
+            "Geometric structure meets flowing landscape forms.",
+            "Vibrant gradients across mountains and calm water.",
+            "Generative compositions with disciplined color pacing."
+        ]
+    },
+    "page_copy": {
+        "pattern": "Constructivist landscapes balance strong geometric frameworks with clear color relationships, letting structure guide motion across terrain and water.",
+        "action": "A generative pass established compositional axes and gradient fields, then in painting refined edge control, value steps, and spatial rhythm.",
+        "measured": "Produces cohesive panels that read clearly at tile scale and hold layered depth for print, social showcases, and provenance linked digital editions."
+    }
+}
+}
