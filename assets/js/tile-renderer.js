@@ -125,9 +125,7 @@ const TileRenderer = (() => {
 
         // Build text area with section header (90% width)
         const textHTML = `
-            <a href="${sectionURL}" class="homepage-tile__text-area">
-                <p class="homepage-tile__text">${displayText}</p>
-                <div class="homepage-tile__header">
+            <a href="${sectionURL}" <div class="homepage-tile__header">
                     <span class="section-name">${section.toUpperCase()} PROJECTS</span>
                     <span class="project-count">(${projectCount})</span>
                 </div>
