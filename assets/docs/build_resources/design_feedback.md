@@ -1,6 +1,11 @@
 Hello, friend 💎
 
-We've been cleaning up the design on this fun architecture of a website we built, making it real pretty now. I have a few adjustment suggestions I was hoping you'd be able to help me with. Let me know if you see anything along the way, too. Then there are two functionality things that I'd like to look at last, please. 
+We've been cleaning up the design on this fun architecture of a website we built for my new generalist portfolio. We did use the `memory` MCP at the start when building but haven't touched it during these last handful of sessions where we've been fixing things and changing the design, primarily because they've been rather short sessions. 
+
+However, I just got a UI prompt to turn on Claude project memory, as it looks like you have something native now. You'll see in the details for the design updates that getting the mobile view of the tiles has been annoying and I'd like to sort out making sure we know what the classes and setup should be, and then make sure all of them are done properly. Given this we might want to add a new memory update. If we use the MCP still let's just do `generalist-portfolio` as we have been before. But just FYI none of the prior updates will be that helpful, at least, not nearly as helpful as this. 
+
+
+making it real pretty now. I have a few adjustment suggestions I was hoping you'd be able to help me with. Let me know if you see anything along the way, too. Then there are two functionality things that I'd like to look at last, please. 
 
 No need to check in the memory MCP for the project at this point; instead we have an AI Context Primer document that should be just enough. 
 
@@ -14,6 +19,163 @@ Not 100% sure what the most token efficient way to make edits will, but options 
 So once you review it all and know what to do, give it a think and then just let me know as you jump in to start.
 
 Looking forward to hear what you think! 💃 
+
+---
+
+# Design & Website Review Updates 
+
+## 1. Project Entry Fixes 
+
+  * **First lets update project URL to use pretty text from the JSON** 
+    
+    + Update project URL text with `content.assets.project_url_text` 
+      - This is just a simplified version of the actual website 
+      - Use it as text for the hyperlink to avoid lengthy project URLs on entry pages 
+
+  * **Then let's make the two URLs look prettier on the page** 
+  
+    + While working on this Project URL let's clean up what it looks like on the page 
+      - Both Project URL and GitHub URL should look similar 
+      - They should be much smaller and centered on the page, one above the other in a column 
+    + Please see IMAGE 8 for what they look like on the page right now because we went to fix this once already and it looks the same 
+      - IMAGE 8 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-entry-page-links.jpg` 
+      - Note that not all projects will have a Project URL, and not all will have a GitHub URL 
+
+## 2. Header Nav `.site-header` & Footer `.site-footer`
+
+  + Let's try giving this some color by making it a gradient from one color on L to another on R 
+    - FAR LEFT: #4c748a
+    - FAR RIGHT: #42222f 
+  + Otherwise nothing really changes 
+    - We still want to have the shading as it is to look like it is off and above the page below 
+
+## 3. Homepage Heading & Tile Optimization 
+
+  * **Looking at the example image, I'd love to create something similar** 
+
+    + Please see the IMAGE 1 current homepage tile and IMAGE 2 example image 
+      - IMAGE 1 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-homepage-tile.jpg` 
+      - IMAGE 2 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-homepage-tile-thumb-example.jpg`
+
+  * **Before changing the tiles let's change the name of the section** 
+
+    + It currently says projects in too many places of the website 
+    + Let's say something other than "Projects" as the section heading 
+      - Areas of Expertise 
+      - Showcase Sections 
+      - IDK that I like either of those ... ideas? 
+
+  * **Next, let's simplify the tile's text area in a way that makes more sense for the homepage** 
+
+    + Remove the `content.teaser_copy.tile_text` slideshow completely 
+      - Then let's make the section name very centered with the word 'Projects' 
+      - We need to set the size of the text block section to a fixed height and width 
+      - All sections should have the same size bottom text section 
+    + Please see IMAGE 3 for project counter 
+      - View for styling the COLOR of text versus parenthesis 
+      - View for styling the size compared to the section header text 
+      - IMAGE 3 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-tile-counter.jpg` 
+
+  * **For the thumbnail long horizontal scrolling section** 
+
+    + DON'T CHANGE THESE THINGS 
+      - Make sure we KEEP the nice, white stroke we have and gap between thumbnails 
+      - Make sure we KEEP them all displaying as their full 19:6 ratio 
+    + DO CHANGE THESE THINGS 
+      - Let's make them two rows 
+      - Let's change the container that is working as the "window" to show them scrolling through wider 
+      - Window should show ~2.25 on one row 
+      - If possible, can we stagger the top and bottom row? 
+      - To make the stagger work, we can adjust the scroll alignment so that it doesn't necessarily start at far left 
+
+  * **On page load and during scrolling, there will always be some number of thumbnails bleeding out of container window** 
+
+    + Intentional UX to *FEEL* there is a lot of images to showcase in each section 
+      - See diagram example below 
+
+```
+        ┌ ─ CONTAINER ─ ┐
+<--     [THUMB] [THUMB] [THUMB] [THUMB] [THUMB] [THUMB]
+<-- [THUMB] [THUMB] [THUMB] [THUMB] [THUMB] [THUMB]   
+        └ ─ CONTAINER ─ ┘
+```
+```
+                              ┌ ─ CONTAINER ─ ┐
+    [THUMB] [THUMB] [THUMB] [THUMB] [THUMB] [THUMB] -->
+[THUMB] [THUMB] [THUMB] [THUMB] [THUMB] [THUMB]     -->
+                              └ ─ CONTAINER ─ ┘
+```
+  * **Increase image variety in homepage tiles** 
+
+    + Last aspect of the homepage tiles we want to change is where the thumbnails are pulled from 
+      - Let's NOT only randomly select ONE project from the section and using those thumbnails 
+      - Instead let's pull ONE thumb per randomly selected project 
+    + LOGIC to implement: 
+      - Randomly select a project entry 
+      - Randomly select one thumbnail from that project entry 
+      - From the remaining project entries, randomly select the second project entry 
+      - And so on, making sure that when there are enough project entries, no project entry is used twice 
+      - The shuffle should randomize on every reload still 
+    + When there are not enough project entries to pull the required number of thumbnails 
+      - This will only be the case initially until I get more entries in all the sections but 
+      - Let's just have the process start over in the same way until there are enough thumbnails 
+
+  * **Let's confirm what makes sense, but I'm imagining 5 or 6 thumbnails for top and the same for bottom rows** 
+
+    + We're showing more images by getting larger BOTH vertically and horizontally 
+      - So in theory we should be able to do this without making the whole take larger 
+      - However, I'm stating this just to ensure we keep the same general aspect ratio because 
+    + Let's then make the tiles larger and on all devices just have ONE tile per row, ONE column 
+      - This will make it so the user sees one tile primarily at a time 
+      - It will focus them in on scrolling left and right a bit 
+    + And then it works well because there will only be four homepage tiles 
+      - When I'm done adding project entry JSONs 
+      - Even if I added more sections, it would be very few compared to the projects making this one column stack make sense 
+
+## 4. Project Counter on Section Pages Looks Ridiculous 
+
+  + Please see IMAGE 4 and note the styling of the number in parenthesis 
+    - When AI last made this change so that it changed every time a different filter was applied 
+    - They decided to leave it giant like this even though they had IMAGE 3 as an example 
+  + Please see IMAGE 3 for how we want the nice, clean, well designed image counter and section heading to look 
+    - IMAGE 4 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-section-page-project-counter.jpg` 
+    - IMAGE 3 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-tile-counter.jpg`
+
+## 5. Review of Tile's Thumbnail Container Structure 
+
+  * **Review the structure of the HTML and class styling on all tile and record what is accurate** 
+
+    + See IMAGE 5 because the related posts somehow again aren't bleeding on mobile 
+    + IMAGE 5 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-tile-mobile-related-posts.jpg`
+      - I think this has something to do with `.tile-section-wrapper` needing a negative padding 
+      - That would let it go outside of the page's content `.container` that I think all pages have 
+    + Compare to IMAGE 6 because the section tiles ARE bleeding nicely on mobile 
+    + IMAGE 6 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-tile-mobile-section.jpg`
+      - But I can't tell where the negative padding is there 
+      - Do all tiles have the `.tile-section__image-scroll` AND the tile section wrapper? 
+
+  * **Regardless of the above answers, we need to find ONE method and document it and make sure all are created the same** 
+
+    + I've been fighting with them for hours now on multiple occasions so let's justs get them figured out once and for all 
+    + Then make sure all are using the same method across all devices 
+
+  * **While doing this we need to fix the way that the tablet responsiveness is working** 
+
+    + See IMAGE 7 for what happens when you get smaller than desktop but don't reach mobile 
+    + IMAGE 7 `/Users/seanivore/Development/360-design/assets/docs/feedback_screenshots/x-tiles-tablet-responsiveness.jpg`
+      - This occurs right at 1023 px wide 
+      - Where 1024 px wide looks good 
+    + Then at 767 px wide they turn to one row 
+      - Which is okay though still very large 
+      - I think maybe let's leave this as okay for now and just fix the above between 768 to 1023 px wide 
+      - They continue this way down below 430 px which is where they switch to mobile and still look good 
+
+  * **Based on the above it seems like it is just the upper range of tablet or whatever happens below 1024 px that needs help**
+
+    + Actually I think if we make sure it goes to 1 column at 1023 px right away it should be better 
+    + The primary issue is just that the full width of the thumbnail container window 
+      - And thus thumbnail and a bit of the next 
+      - Should never be partially covered like in the IMAGE 7 screenshot 
 
 ---
 
@@ -48,247 +210,10 @@ Looking forward to hear what you think! 💃
 
 ---
 
-# Design & Website Review Updates 
+# Directory Structure 
 
-## 1. Update Project URL 
+  * **These are all on my local system, so you might need to use the filesystem MCP and `read_file` but I'm providing them here like this so that you don't have to go through the whole `list_available_directories` or whatever that one is because sometimes in the past doing that has made us randomly hit the context window max** 
 
-  + Update project URL text with `content.assets.project_url_text` 
-    - This is just a simplified version of the actual website 
-    - Use it as text for the hyperlink to avoid lengthy project URLs on entry pages 
-
-
----
-
-## 1. Homepage Updates 
-
-### Tile Text Formatting Update 
-
-  * **Change some of the spacing, alignment, coloring**
-
-    + Let's change the wording on the tiles 
-      - Instead of 'WEB' and then '# projects' 
-      - How about 'WEB PROJECTS (15)' 
-      - Use the current font styling on 'web' for 'web projects' 
-      - Adjust font styling of '(N)' based on this inspo image 
-        `/Users/seanivore/Development/360-design/assets/docs/tile_visual_inspo/x-tile-counter.jpg` which was taken from the homepage of 
-        `developer-technologist.august.style`
-    + My intention is to make it obvious that they should CLICK the text box area to click through -- unless we are able to make the thumbnail(s) clickable too now that we set up a super simple method for their scrolling slideshow 
-
-    + Please see how I skewed the thumbnail on desktop to make the UI obvious 
-      - This is what makes users see they can swipe scroll 
-      - Add it to mobile/tablet as well please 
-      - Probably something like 90 vw — we still want the thumbnail(s) to bleed on mobile 
-      - See example `/Users/seanivore/Development/360-design/assets/docs/tile_visual_inspo/x-tile-thumb-skew.jpg` 
-
-```css
-.homepage-tile__header .section-name
-.homepage-tile__header .project-count
-```
-
-  + Right align both the section name and project count 
-  + Stack the section name above the project count 
-  + Change the 'hover' coloring of the section name to just be persistent
-    - Update the hover to change to complimentary color 
-    - Perhaps these should better match the main three accents
-      (1) 'color-accent-terracotta', (2) 'color-accent-blue', (3) 'color-accent-mauve'
-    - Might be better/cool to find a complimentary color and then add horizontal bar break on tile 
-
-```css 
-.homepage-tile__text-area {
-    padding: 0.75rem;
-}
-```
-
-  + Slight adjustment to padding around the text part of the tile 
-    - **Please also do this to the section tiles too though**
-    - Maintain consistency across site  
-
-### Copy Alterations 
-
-  + Change "Contact" to "Say hello!" 
-
-  + Break up single line "Sean August Horvath, Creative Innovations Generalist"
-    - Let's make 'Sean August Horvath' the current size styling as this area's main heading 
-    - Make the title into a subheading to my name 
-    - Change the title wording to "Creative Generalist, Innovations & Design" 
-
-  + In about section copy 
-    - Any thoughts on "Pattern recognition" wording alternatives? 
-    - Saying you're a "pattern spotter" is rather trite and overused 
-    - We want to say the same thing but avoid the wording that triggers the brain to think "ah, you and everyone else" because everyone else is sort of wishing and well I'm definitely legit lol, like 'trend spotter' but modern, hmm, thoughts? 
-
-  + The header and body text are center aligned on mobile 
-    - Should be left aligned just like on desktop 
-    - Please make sure the tablet view is left aligned as well 
-
-### Footer Blending Update 
-
-  + Let's match the background of the footer to the header 
-    - I also fixed the box-shadow of the .site-header which we should mimic for footer 
-    - Also please mimic use the same border-bottom stroke size and color as .site-header 
-
-## 2. Website Color Palette 
-
-### Tri-Color, Faded Hip Vibe Decor 
-
-  * **As on homepage, where else can we use this ornamentally on the site's other two template pages** 
-
-    + Re: (1) 'color-accent-terracotta', (2) 'color-accent-blue', (3) 'color-accent-mauve'
-      - These are the actual aesthetic along with the two background colors 
-      - Other colors are from before we selected this 'hipster' 'cereal' aesthetic 
-      - We should review those old colors and adjust them to fit the new vibe 
-      - Selecting new colors, not replacing them with these three 
-      - These three are in a three horizontal line UI decor so other colors won't take away from that 
-
-  * **Update other colored text across website** 
-  
-    + Hover hyperlink text color 
-      - 'Sean August Horvath' logo home nav text button 
-      - Give header nav 'Projects About Contact' a hover color 
-      - Find other locations on site that need update 
-    
-    + Stroke encircling profile photo and vertical bar on About 
-      - Make sure this color is only used here 
-      - But def could match the cereal hipster vibe better 
-  
-    + Update hover glow color fx on the contact icons 
-
-### About Section Background 
-
-  + Just want to make the background more obvious
-    - This updated looks good, I tested it 
-    - But can you also give it a super slight linear gradient to have a glare
-    - Glare like depth sort of like background has 
-
-```css 
-.about-content {
-    background: rgb(255 255 255 / 10%);
-}
-```
-
-  * **Notable colored items to change** 
-
-    + Particularly not fitting well on bullet point • next to Related Posts
-    + Pattern, action, measured...
-    + Hyperlinks, i.e. breadcrumbs and large links on page 
-
-## 3. Section Page Template Updates 
-
-### Thumbnail Visual Enhancement 
-
-  + Tiles on section page, make them no more than 2 columns on desktop 
-  + Then enlarge the tile 
-
-### Section Page Heading, Subheading, Section Name Layout 
-
-  * **Right now it looks like the three headings have the same spacing between them; boring** 
-
-  + Please see current appearance first: `/Users/seanivore/Development/360-design/assets/docs/tile_visual_inspo/x-section-header-nav.jpg` **ALSO IMAGE TO REFERENCE IN NEXT SECTION UPDATE NOTES**
-
-  + Let's change the counter 
-    - Give it the same kind of formatting update as we did on the homepage tiles 
-    - Instead of '# projects' just place '(#)' next to Projects header 
-    - Reference updated styling for the number counter above in homepage tile notes if needed 
-
-  + Let's add the section name 'Web' etc. to sit before 'Projects' 
-    - So that each section will say 'Web Projects' 
-    - Or 'Print Projects' etc. 
-
-### UX of Tag Filter Navigation UI Improvements 
-
-  * **This is not optimized to show as many tiles on screen at once as possible** 
-  
-    + Condensed for easy reading maybe 
-    + Bleed the L/R ends of the navigation filter bar  
-    + Potentially could get a lot more minimalist; maybe even under nav idk 
-
-    + In there a way to pull in the cereal hipster bars here? If not then maybe just underlining the header? 
-
-## 4. Entry Page Template Updates 
-
-### Unwieldy Project & Github Link UI 
-
-  + Please see the current screenshot: `/Users/seanivore/Development/360-design/assets/docs/tile_visual_inspo/x-entry-page-links.jpg` 
-    - They are huge 
-    - Same on mobile 
-    - Once smaller let's get them fixed container size so that they'll both always have two same sized boxes 
-    - Then we can center them on the page 
-
-### Breadcrumb Placement and Content 
-
-  + Page on mobile is very long 
-    - And there is no way to get back home once at bottom 
-    - Let's update **ALL** breadcrumbs 
-
-  + Add 'Home' to font of all breadcrumbs 
-  + Place a third one on entry page template after the related posts 
-
-  + Intention is that we don't need to change the footer on entry pages to add a home button since we'll now have the 3rd bottom breadcrumbs meaning we can keep the footer just the pretty contact icons like it is now 
-
-### 'Rest of Thumb Images' Grid 
-
-  + Re: the class `.entry-thumbnail-images-grid` 
-
-    - I wanted to center it but the page I was on it showed 4 cells for but only had 3 images 
-    - Is there a way to make it make whatever number of cells the page needs? 
-    - They all have different number of images 
-    - Then center it on the page? 
-
-### Related Posts 
-
-  + Please see current screenshot for desktop: `/Users/seanivore/Development/360-design/assets/docs/tile_visual_inspo/x-related-posts.jpg` 
-
-    - I'm thinking we could actually open the window for the thumbnails even wider on desktop 
-    - It is already full vw on mobile 
-    - We could show like 2.25 thumbs right off the bat on desktop though 
-
-## 5. Functionality Issues to Resolve 
-
-### Tile Text Teasers 
-
-  * **We changed how the thumbnail swipes but now it doesn't trigger the tile text to change**
-  
-    + We definitely want to keep the new UI/UX for thumbnail scrolling 
-    + But how can we take advantage of the fact that all entries have ~4 tile text lines 
-      - Can they still be triggered by scrolling the thumbnail? 
-      - Or maybe just timed? 
-
-### Clicking Through Contextual Tags on Entry Pages 
-
-  * **They should go to a SITE WIDE filtering of that click-through tag** 
-
-    + Currently we only have web section 
-    + But when you click through a tag it doesn't filter for it 
-
-    + Example 
-      - Starting on this page: `https://www.august.style/web/html-css-js/ai-meditation-mobile-app`
-      - Clicking through 'product' you go here: `https://www.august.style/projects#tag=product`
-      - The URL looks right but it is showing 15 projects 
-      - It should be 6 projects 
-      - When you go to the web section and click 'product' filter from the nav it works
-      - Goes here: `https://www.august.style/web#tags=web+product` 
-      - Which obviously we don't want "Web" in there though 
-      - But apparently without web it still isn't working 
-
-## 6. Fully Automated Manifest Rebuild Every `git push` 
-
-  + I for *exactly* how it was described that this could be set up 
-    - But definitely want to do it if we can 
-    
-  + For example I want to remove the one entry that doesn't have images yet 
-    - But I don't want to have to run the python script manually 
-
-    1. `git push` 
-    2. runs the generation script `./generate_manifest.py` 
-    3. current copy deleted (or overwritten) `./assets/js/manifest.json` 
-    4. update toggle-tag keyword search (if it isn't already dynamic) `./assets/js/placement.json` 
-    5. the does it need to push again? or is it good? I guess it can't push again if the trigger to run is when it is pushed -- wdyt? 
-
----
-
-# Repository Structure 
-
-```
 /Users/seanivore/Development/360-design/...
 ├── _config.yml
 ├── 404.html
@@ -344,4 +269,3 @@ Looking forward to hear what you think! 💃
 ├── README.md
 ├── section.html
 └── styles.css
-```
