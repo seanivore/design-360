@@ -2,16 +2,10 @@ Hello, friend 💎
 
 We've been cleaning up the design on this fun architecture of a website we built for my new generalist portfolio. We did use the `memory` MCP at the start when building but haven't touched it during these last handful of sessions where we've been fixing things and changing the design, primarily because they've been rather short sessions. 
 
-However, I just got a UI prompt to turn on Claude project memory, as it looks like you have something native now. You'll see in the details for the design updates that getting the mobile view of the tiles has been annoying and I'd like to sort out making sure we know what the classes and setup should be, and then make sure all of them are done properly. Given this we might want to add a new memory update. If we use the MCP still let's just do `generalist-portfolio` as we have been before. But just FYI none of the prior updates will be that helpful, at least, not nearly as helpful as this. 
-
-
-making it real pretty now. I have a few adjustment suggestions I was hoping you'd be able to help me with. Let me know if you see anything along the way, too. Then there are two functionality things that I'd like to look at last, please. 
-
-No need to check in the memory MCP for the project at this point; instead we have an AI Context Primer document that should be just enough. 
-
-Note that you need to use the `filesystem` MCP to access the paths I'm providing; I guess you have a newer native file tool that is just for a sandbox environment. There is a full repo tree at the bottom of the `design_feedback.md` document so that you can find full paths that way. Most cases you'll just need the styles file. But I've listed what the other paths are and what each document does inside the above as well. 
+However, I just got a UI prompt to turn on Claude project memory, as it looks like you have something native now. You'll see in the details for the design updates that getting the mobile view of the tiles has been annoying and I'd like to sort out making sure we know what the classes and setup should be, and then make sure all of them are done properly. Given this we might want to add a new memory update. If we use the MCP still let's just do `generalist-portfolio` as we have been before. But just FYI none of the prior updates will be that helpful, at least, not nearly as helpful as our AI context primer document which you can `read_file` (probably with the `filesystem` MCP to access paths on my system). There is a full repo tree at the bottom of the `design_feedback.md` document so that you can find full paths that way. Most cases you'll just need the styles file. But I've listed what the other paths are and what each document does inside as well. 
 
 `/Users/seanivore/Development/360-design/assets/docs/AI_CONTEXT_PRIMER.md`
+`/Users/seanivore/Development/360-design/assets/docs/build_resources/design_feedback.md`
 `/Users/seanivore/Development/360-design/styles.css`
 
 Not 100% sure what the most token efficient way to make edits will, but options include writing a new copy of the CSS (maybe best if it is a mess) to an artifact, writing an artifact with just a note of what text is there now and what to replace it with (basically the same as when making edits) for me to handle, or using the `edit_file` after having `read_file` so you know what text to 'replace' with the tool. 
@@ -212,8 +206,13 @@ Looking forward to hear what you think! 💃
 
 # Directory Structure 
 
-  * **These are all on my local system, so you might need to use the filesystem MCP and `read_file` but I'm providing them here like this so that you don't have to go through the whole `list_available_directories` or whatever that one is because sometimes in the past doing that has made us randomly hit the context window max** 
+  * **These are all on my local system** 
+  
+    + So you might need to use the filesystem MCP and `read_file` 
+      - I'm providing them here like this so that you don't have to go through the whole `list_available_directories` or whatever 
+      - Because sometimes in the past doing that has made us randomly hit the context window max 
 
+```
 /Users/seanivore/Development/360-design/...
 ├── _config.yml
 ├── 404.html
@@ -224,33 +223,11 @@ Looking forward to hear what you think! 💃
 │   │   ├── build_resources
 │   │   │   ├── design_feedback.md
 │   │   │   └── more_entries.md
-│   │   ├── PRINT
-│   │   │   ├── uid-uky-372.json
-│   │   │   └── uid-xgb-670.json
+│   │   └── feedback_screenshots
 │   ├── entries
-│   │   ├── uid-dff-987.json
-│   │   ├── uid-eme-689.json
-│   │   ├── uid-fth-565.json
-│   │   ├── uid-hwi-844.json
-│   │   ├── uid-iqi-479.json
-│   │   ├── uid-lul-419.json
-│   │   ├── uid-qor-090.json
-│   │   ├── uid-rfr-187.json
-│   │   ├── uid-sgt-851.json
-│   │   ├── uid-srs-009.json
-│   │   ├── uid-tev-176.json
-│   │   ├── uid-unw-889.json
-│   │   ├── uid-wgw-370.json
-│   │   ├── uid-wnw-867.json
-│   │   └── uid-wty-542.json
+│   │   ├── uid-bsj-738.json
+│   │   └── **and many more**
 │   ├── favicon
-│   │   ├── apple-touch-icon.png
-│   │   ├── favicon-96x96.png
-│   │   ├── favicon.ico
-│   │   ├── favicon.svg
-│   │   ├── site.webmanifest
-│   │   ├── web-app-manifest-192x192.png
-│   │   └── web-app-manifest-512x512.png
 │   ├── js
 │   │   ├── data-loader.js
 │   │   ├── entry-controller.js
@@ -261,7 +238,11 @@ Looking forward to hear what you think! 💃
 │   │   ├── section-controller.js
 │   │   └── tile-renderer.js
 │   └── media
-│       └── profile-picture-horvath.webp
+│       ├── digital
+│       ├── print
+│       ├── profile-picture-horvath.webp
+│       ├── video
+│       └── web
 ├── CNAME
 ├── entry.html
 ├── generate_manifest.py
@@ -269,3 +250,4 @@ Looking forward to hear what you think! 💃
 ├── README.md
 ├── section.html
 └── styles.css
+```
