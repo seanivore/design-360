@@ -443,6 +443,7 @@ li a:hover {
 
 /* ============================================
    HOMEPAGE TILES (Dual-Row Variant)
+   Shows ~2.25 thumbnails per row with stagger
    ============================================ */
 
 .tile-homepage {
@@ -459,15 +460,18 @@ li a:hover {
     margin-bottom: var(--space-sm);
 }
 
-/* Gallery Window for each row */
+/* Gallery Window - Shows 2.25 thumbnails */
 .tile-homepage-gallery-window {
     position: relative;
-    width: 100%;
-    height: auto;
+    width: 45rem;
+    /* 2.25 × 20rem thumbnail */
+    height: 11.875rem;
+    /* Height of one 16:9 thumbnail + padding */
     overflow: hidden;
+    margin: 0 auto;
 }
 
-/* Gallery Row - Absolute positioned scroll container */
+/* Gallery Row - Scrollable container */
 .tile-homepage-gallery-row {
     position: absolute;
     top: 0;
@@ -485,16 +489,21 @@ li a:hover {
     display: none;
 }
 
-/* Stagger second row by offsetting scroll start */
-.tile-homepage-gallery-window:nth-child(2) .tile-homepage-gallery-row {
-    left: -3rem;
-    /* Negative left to create stagger */
+/* Top row - starts offset for stagger */
+.tile-homepage-gallery-window:first-child .tile-homepage-gallery-row {
+    padding-left: 10rem;
+    /* 0.5 × thumbnail width */
+}
+
+/* Bottom row - starts flush */
+.tile-homepage-gallery-window:last-child .tile-homepage-gallery-row {
+    padding-left: 0;
 }
 
 .tile-homepage-image {
     flex-shrink: 0;
-    width: 17.5rem;
-    /* 280px - slightly smaller for dual-row */
+    width: 20rem;
+    /* Base thumbnail width */
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border: 0.125rem solid #ffffff;
@@ -559,7 +568,7 @@ li a:hover {
     color: var(--color-accent-terracotta);
 }
 
-/* Mobile: Full width, full bleed */
+/* Mobile: Full bleed, smaller thumbnails */
 @media (max-width: 47.9375rem) {
     .tile-homepage {
         width: 100%;
@@ -569,10 +578,11 @@ li a:hover {
     .tile-homepage-gallery-window {
         width: 100vw;
         margin-left: calc(-1 * var(--space-md));
+        height: auto;
     }
 
-    .tile-homepage-gallery-window:nth-child(2) .tile-homepage-gallery-row {
-        left: calc(-3rem + var(--space-md));
+    .tile-homepage-gallery-window:first-child .tile-homepage-gallery-row {
+        padding-left: calc(10rem - var(--space-md));
         /* Adjust for escaped padding */
     }
 
@@ -593,15 +603,24 @@ li a:hover {
     }
 }
 
-/* Tablet: Maintain dual-row, adjust sizing */
+/* Tablet: Adjust window and thumbnail sizing */
 @media (min-width: 48rem) and (max-width: 63.9375rem) {
     .tile-homepage {
         max-width: 100%;
     }
 
+    .tile-homepage-gallery-window {
+        width: 36rem;
+        /* 2.25 × 16rem */
+    }
+
+    .tile-homepage-gallery-window:first-child .tile-homepage-gallery-row {
+        padding-left: 8rem;
+        /* 0.5 × 16rem */
+    }
+
     .tile-homepage-image {
         width: 16rem;
-        /* 256px */
     }
 }
 
