@@ -1,14 +1,15 @@
 /**
  * TILE RENDERER
- * Creates HTML for project tiles using the unified tile system
- * Magazine aesthetic: Clean, scrollable horizontal galleries
+ * Creates HTML for project tiles
+ * Handles both homepage tiles (large/square) and section tiles (wide/short)
+ * Magazine aesthetic: Section tiles show only teaser text, no titles
  */
 
 const TileRenderer = (() => {
 
     /**
-     * Render a section tile (magazine aesthetic)
-     * Uses window/absolute positioning for reliable scroll behavior
+     * Render a section tile (magazine aesthetic - text + images only)
+     * Simplified horizontal scroll design matching tag filters UX
      */
     function renderSectionTile(project) {
         const { categorization, content } = project;
@@ -21,67 +22,63 @@ const TileRenderer = (() => {
         const slug = placement.slug;
         const entryURL = `/${section}/${subsection}/${slug}`;
 
-        // Get thumbnail images
+        // Get thumbnail images (all available)
         const thumbnails = media.thumbnail_images || [];
 
-        // Get tile text (first one for display)
+        // Get tile text (use first one initially, then cycle)
         const tileTexts = teaser_copy?.tile_text || [];
         const displayText = tileTexts[0] || teaser_copy?.page_subtitle || teaser_copy?.page_title || 'View Project';
 
         // Alt text
-        const altText = media.thumb_slideshow_alt_text || teaser_copy?.page_title || 'Project image';
+        const altText = teaser_copy?.page_title || 'Project image';
 
-        // Create tile wrapper
+        // Create wrapper container (100% width)
         const tile = document.createElement('div');
-        tile.className = 'tile fade-in-item';
+        tile.className = 'tile-section-wrapper fade-in-item';
         tile.setAttribute('data-entry-id', categorization.entry_id);
 
-        // Build gallery window (fixed viewport)
-        const galleryWindow = document.createElement('div');
-        galleryWindow.className = 'tile-gallery-window';
+        // Build horizontal scrolling image gallery (100% width)
+        const imagesHTML = thumbnails.length > 0 ? `
+            <div class="tile-section__image-scroll">
+                ${thumbnails.map(img => `
+                    <img
+                        src="/${img}"
+                        alt="${altText}"
+                        class="tile-section__image"
+                        loading="lazy"
+                    />
+                `).join('')}
+            </div>
+        ` : '';
 
-        // Build gallery container (absolute positioned scroll)
-        const gallery = document.createElement('div');
-        gallery.className = 'tile-gallery';
+        // Build text area (90% width)
+        const textHTML = `
+            <a href="${entryURL}" class="tile-section__text-area">
+                <p class="tile-section__text">${displayText}</p>
+            </a>
+        `;
 
-        // Add images to gallery
-        thumbnails.forEach(img => {
-            const image = document.createElement('img');
-            image.src = `/${img}`;
-            image.alt = altText;
-            image.className = 'tile-image';
-            image.loading = 'lazy';
-            gallery.appendChild(image);
-        });
+        tile.innerHTML = `
+            ${imagesHTML}
+            ${textHTML}
+        `;
 
-        galleryWindow.appendChild(gallery);
-
-        // Build text area
-        const textArea = document.createElement('a');
-        textArea.href = entryURL;
-        textArea.className = 'tile-text-area';
-
-        const text = document.createElement('p');
-        text.className = 'tile-text';
-        text.textContent = displayText;
-
-        textArea.appendChild(text);
-
-        // Assemble tile
-        tile.appendChild(galleryWindow);
-        tile.appendChild(textArea);
-
-        // Set up text cycling if multiple texts available
+        // Set up text cycling if there are multiple texts
         if (tileTexts.length > 1) {
+            const textElement = tile.querySelector('.tile-section__text');
             let currentIndex = 0;
+
             setInterval(() => {
                 currentIndex = (currentIndex + 1) % tileTexts.length;
-                text.style.opacity = '0';
-                setTimeout(() => {
-                    text.textContent = tileTexts[currentIndex];
-                    text.style.opacity = '1';
-                }, 200);
-            }, 4000);
+                if (textElement) {
+                    textElement.style.transition = 'opacity 0.3s ease';
+                    textElement.style.opacity = '0';
+                    setTimeout(() => {
+                        textElement.textContent = tileTexts[currentIndex];
+                        textElement.style.opacity = '1';
+                    }, 200);
+                }
+            }, 4000); // Change text every 4 seconds
         }
 
         return tile;
@@ -89,93 +86,75 @@ const TileRenderer = (() => {
 
 
     /**
-     * Render a homepage tile with dual-row gallery
+     * Render a homepage tile
+     * Simplified horizontal scroll design with section name and project count
      * @param {Object} tileData - Data from homepage-controller
      *   {
      *     section: 'Web',
      *     sectionURL: '/web',
-     *     thumbnailImagesTop: [...],    // Top row images
-     *     thumbnailImagesBottom: [...], // Bottom row images
-     *     altText: 'Alt text',
+     *     thumbnailImages: [...],
+     *     tileTexts: [...],
+     *     altText: 'Alt text for images',
      *     projectCount: 5
      *   }
      */
     function renderHomepageTile(tileData) {
-        const { section, sectionURL, thumbnailImagesTop, thumbnailImagesBottom, altText, projectCount } = tileData;
+        const { section, sectionURL, thumbnailImages, tileTexts, altText, projectCount } = tileData;
 
-        // Create tile wrapper
+        // Wrapper at 100% width
         const tile = document.createElement('div');
-        tile.className = 'tile-homepage fade-in-item';
+        tile.className = 'homepage-tile-wrapper fade-in-item';
         tile.setAttribute('data-section', section);
 
-        // Create dual-row gallery container
-        const gallery = document.createElement('div');
-        gallery.className = 'tile-homepage-gallery';
+        // Build horizontal scrolling image gallery (100% width)
+        const imagesHTML = thumbnailImages.length > 0 ? `
+            <div class="homepage-tile__image-scroll">
+                ${thumbnailImages.map(img => `
+                    <img
+                        src="/${img}"
+                        alt="${altText}"
+                        class="homepage-tile__image"
+                        loading="lazy"
+                    />
+                `).join('')}
+            </div>
+        ` : '';
 
-        // Create top row
-        const topRowWindow = document.createElement('div');
-        topRowWindow.className = 'tile-homepage-gallery-window';
+        // Get display text (use first one initially, then cycle)
+        const displayText = tileTexts[0] || '';
 
-        const topRow = document.createElement('div');
-        topRow.className = 'tile-homepage-gallery-row';
+        // Build text area with section header (90% width)
+        const textHTML = `
+            <a href="${sectionURL}" class="homepage-tile__text-area">
+                <p class="homepage-tile__text">${displayText}</p>
+                <div class="homepage-tile__header">
+                    <span class="section-name">${section.toUpperCase()} PROJECTS</span>
+                    <span class="project-count">(${projectCount})</span>
+                </div>
+            </a>
+        `;
 
-        thumbnailImagesTop.forEach(img => {
-            const image = document.createElement('img');
-            image.src = `/${img}`;
-            image.alt = altText;
-            image.className = 'tile-homepage-image';
-            image.loading = 'lazy';
-            topRow.appendChild(image);
-        });
+        tile.innerHTML = `
+            ${imagesHTML}
+            ${textHTML}
+        `;
 
-        topRowWindow.appendChild(topRow);
+        // Set up text cycling if there are multiple texts
+        if (tileTexts.length > 1) {
+            const textElement = tile.querySelector('.homepage-tile__text');
+            let currentIndex = 0;
 
-        // Create bottom row
-        const bottomRowWindow = document.createElement('div');
-        bottomRowWindow.className = 'tile-homepage-gallery-window';
-
-        const bottomRow = document.createElement('div');
-        bottomRow.className = 'tile-homepage-gallery-row';
-
-        thumbnailImagesBottom.forEach(img => {
-            const image = document.createElement('img');
-            image.src = `/${img}`;
-            image.alt = altText;
-            image.className = 'tile-homepage-image';
-            image.loading = 'lazy';
-            bottomRow.appendChild(image);
-        });
-
-        bottomRowWindow.appendChild(bottomRow);
-
-        // Assemble gallery
-        gallery.appendChild(topRowWindow);
-        gallery.appendChild(bottomRowWindow);
-
-        // Create text area with header
-        const textArea = document.createElement('a');
-        textArea.href = sectionURL;
-        textArea.className = 'tile-homepage-text';
-
-        const header = document.createElement('div');
-        header.className = 'tile-homepage-header';
-
-        const sectionName = document.createElement('span');
-        sectionName.className = 'tile-homepage-section';
-        sectionName.textContent = `${section.toUpperCase()} PROJECTS`;
-
-        const count = document.createElement('span');
-        count.className = 'tile-homepage-count';
-        count.textContent = `(${projectCount})`;
-
-        header.appendChild(sectionName);
-        header.appendChild(count);
-
-        textArea.appendChild(header);
-
-        // Assemble tile
-        tile.appendChild(gallery);
-        tile.appendChild(textArea);
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % tileTexts.length;
+                if (textElement) {
+                    textElement.style.opacity = '0';
+                    setTimeout(() => {
+                        textElement.textContent = tileTexts[currentIndex];
+                        textElement.style.opacity = '1';
+                    }, 200);
+                }
+            }, 4000); // Change text every 4 seconds
+        }
 
         return tile;
     }
@@ -225,11 +204,13 @@ const TileRenderer = (() => {
 
     /**
      * Render multiple section tiles into a container
+     * Tiles appear in random order, maintained during filtering
      */
     function renderSectionTiles(projects, container) {
         showLoading(container);
         hideEmptyState();
 
+        // Small delay to show loading state
         setTimeout(() => {
             container.innerHTML = '';
 
@@ -239,10 +220,14 @@ const TileRenderer = (() => {
                 return;
             }
 
+            // Render each tile
             projects.forEach((project, index) => {
                 try {
                     const tile = renderSectionTile(project);
+
+                    // Stagger animation by setting delay dynamically
                     tile.style.animationDelay = `${index * 100}ms`;
+
                     container.appendChild(tile);
                 } catch (error) {
                     console.error(`❌ Failed to render tile for project:`, project.categorization?.entry_id, error);
