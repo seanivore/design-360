@@ -16,6 +16,75 @@ Looking forward to hear what you think! 💃
 
 ---
 
+# Update Issues 
+
+## New Pages And Code 
+
+  * **These issues are new since the updates listed below** 
+
+    + It is important to note that we needed to clean up a mess of duplicate and poor consistently named classes in the CSS 
+      - This led to `styles.css` being rewritten 
+      - The `homepage-controller.js` had to be rewritten 
+      - The `tile-renderer.js` had to be rewritten 
+    + To be clear, I'm not trying to say that the old code files were better or accurate 
+      - You can see the original versions if needed 
+      - `/Users/seanivore/Development/360-design/assets/js/homepage-controller_OLD.js`
+      - `/Users/seanivore/Development/360-design/assets/js/tile-renderer_OLD.js` 
+      - `/Users/seanivore/Development/360-design/styles_OLD.css` 
+
+  * **Just a few notable things before I get into specifics to fix** 
+
+    + I think the section page is in part an issue because of missing class 
+      - I can see that `.tile-grid-section` is used in the HTML of 
+        `/Users/seanivore/Development/360-design/section.html` 
+      - That class is not listed on the new CSS file 
+    + Because of this error, it seems like we should examine for accuracy the templates 
+      - Then look at the new files to see if anything else might be missing causing the layout issues we're seeing 
+      - `/Users/seanivore/Development/360-design/index.html`
+      - `/Users/seanivore/Development/360-design/section.html` 
+      - `/Users/seanivore/Development/360-design/entry.html`
+    + Ah, ha! See *below* I think I did find evidence that this is the issue 
+
+  * **Based on the above note and *referenced* note below, it seems that reviewing those HTML templates might fix a lot of this mess**
+
+## Homepage 
+
+  * **I think I got confused on recommending proportional thumbnail calculations** 
+
+    + I used a math example to calculate proportion of thumbnails based on section 
+      - This doesn't make sense since the sections are separate tilers 
+      - We should be able to roll this back completely 
+    + Thumbnails should be randomly selected from project tagged with that section the tile is 
+      - When there are more than 10 entries in a section, no need to double up 
+      - When a section has less than 10, like digital has 3 
+      - We just want to be sure to take as equal number as possible from all entries 
+
+  * **The thumbnail text area is very confusingly laid out** 
+
+    + I think that only seeing the screen shots will really do it justice 
+      - However, the `index.html` has classes *and it was also a page not updated when updating tiles* 
+      - See class `.homepage-tile-grid` which is missing from our CSS 
+      - `/Users/seanivore/Development/360-design/index.html` 
+
+  * **Thumbnail `.tile-homepage-section` hover from CSS "/* Section hover colors */"**
+
+    + 
+
+## Section Page 
+
+  + Mobile view is the same but sort of makes sense of what might be happening
+    - Tiles have no container (100vw) 
+    - With thumbnails visible (at 90vw each) and hidden but scrollable overflow 
+  + Tiles seem to have no meaningful height 
+    - I can see the tile_text is changing on though it isn't visible, because of the tiles tweaking periodically 
+    - Obviously the whole tile needs height, with the appropriate amount of thumb so that the 16:9 ratio lasts 
+    - Then text section below it that is centered and maybe 80% of whatever the tile's container is (not referencing the thumbs) 
+
+
+
+
+---
+
 # Design & Website Review Updates 
 
 ## 1. Project Entry Fixes 
