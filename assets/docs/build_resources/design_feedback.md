@@ -16,7 +16,26 @@ Looking forward to hear what you think! 💃
 
 ---
 
+Removed the max width from class tile-text-area and instead kept the width to 90 percent; added align-self set to center; added height set to 4 rem; then on class tile-gallery I updated the position to relative; finally, I deleted the unused "window" class since it is actually the tile gallery that is set to overflow-x on auto. This fixed the tiles on the section page just for desktop all other pages and then devices need to be examined
+
 # Update Issues 
+
+  + Removed "max" width and then added the following 
+
+```css 
+.tile-text-area {
+    align-self: center;
+    width: 90%;
+    height: 4rem;
+}
+```
+  + Fixed position so it was relative instead of absolute 
+
+```css
+.tile-gallery {
+    position: relative;
+}
+```
 
 ## New Pages And Code 
 
