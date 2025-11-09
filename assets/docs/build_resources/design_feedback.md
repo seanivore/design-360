@@ -20,8 +20,7 @@ Looking forward to hear what you think! 💃
 
 ## Fixing the Tiles 
 
- * **Round one of fixes** 
- 1. Removed the max width from class tile-text-area and instead kept the width to 90 percent; added align-self set to center; added height set to 4 rem; then on class tile-gallery I updated the position to relative; finally, I deleted the unused "window" class since it is actually the tile gallery that is set to overflow-x on auto. This fixed the tiles on the section page just for desktop all other pages and then devices need to be examined**
+### Round 1 of Fixes 
 
   + Removed "max" width and then added the following 
 
@@ -40,8 +39,7 @@ Looking forward to hear what you think! 💃
 }
 ```
 
-* **Round two of fixes** 
-2. Removed the flex direction class and scroll overflow and bar because the non-media class was accurate already by making the tiles a column; same with the overflow and scroll bar; Then for the related posts tiles specifically, the view of the thumbnails was made super wide, this then required a new class to be created to update the text block only on related posts so that it didn't remain super wide along with the thumb slides
+### Round 2 of Fixes 
 
   + Removed flex direction class and scroll overflow and bar
     - Non-media is accurate (column) 
@@ -81,10 +79,30 @@ Looking forward to hear what you think! 💃
 } 
 ```
 
+### Round 3 of Fixes 
 
+  + Optimized tablet tile layout 
+    - It was bleeding just on one side 
+    - Wide enough that we don't really need bleed on either yet
 
+```css 
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .tile {
+        max-width: 50rem;
+    }
+}
+```
+media (min-width: 48rem) {
+    #entry-video .video-container
+Specificity: (1,1,0)
+ {
+  + 
 
+@media (max-width: 47.9375rem) {
+    .tile-image {
 
+        width: 100vw;
+        margin-left: calc(-1 * var(--space-md));
 ----
 
 ## New Pages And Code 
