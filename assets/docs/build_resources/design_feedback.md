@@ -95,7 +95,7 @@ Looking forward to hear what you think! 💃
 media (min-width: 48rem) {
     #entry-video .video-container
 Specificity: (1,1,0)
- {
+ {ad
   + 
 
 @media (max-width: 47.9375rem) {
