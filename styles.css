@@ -606,7 +606,7 @@ li a:hover {
     }
 }
 
-/* Related Posts Grid - Horizontal scroll on mobile */
+/* Related Posts Grid */
 .grid-related {
     display: flex;
     flex-direction: column;
@@ -616,9 +616,6 @@ li a:hover {
 
 @media (min-width: 48rem) {
     .grid-related {
-        flex-direction: row;
-        overflow-x: auto;
-        scrollbar-width: none;
         padding: 0 var(--space-xl);
     }
 
@@ -627,9 +624,11 @@ li a:hover {
     }
 
     .grid-related .tile {
-        flex-shrink: 0;
-        width: calc(100vw / 2.25);
-        min-width: 21.875rem;
+        max-width: 110rem;
+    }
+
+    .grid-related .tile-text-area {
+        width: 60%;
     }
 }
 

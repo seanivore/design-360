@@ -16,9 +16,12 @@ Looking forward to hear what you think! 💃
 
 ---
 
-Removed the max width from class tile-text-area and instead kept the width to 90 percent; added align-self set to center; added height set to 4 rem; then on class tile-gallery I updated the position to relative; finally, I deleted the unused "window" class since it is actually the tile gallery that is set to overflow-x on auto. This fixed the tiles on the section page just for desktop all other pages and then devices need to be examined
-
 # Update Issues 
+
+## Fixing the Tiles 
+
+ * **Round one of fixes** 
+ 1. Removed the max width from class tile-text-area and instead kept the width to 90 percent; added align-self set to center; added height set to 4 rem; then on class tile-gallery I updated the position to relative; finally, I deleted the unused "window" class since it is actually the tile gallery that is set to overflow-x on auto. This fixed the tiles on the section page just for desktop all other pages and then devices need to be examined**
 
   + Removed "max" width and then added the following 
 
@@ -36,6 +39,53 @@ Removed the max width from class tile-text-area and instead kept the width to 90
     position: relative;
 }
 ```
+
+* **Round two of fixes** 
+2. Removed the flex direction class and scroll overflow and bar because the non-media class was accurate already by making the tiles a column; same with the overflow and scroll bar; Then for the related posts tiles specifically, the view of the thumbnails was made super wide, this then required a new class to be created to update the text block only on related posts so that it didn't remain super wide along with the thumb slides
+
+  + Removed flex direction class and scroll overflow and bar
+    - Non-media is accurate (column) 
+    - Scroll overflow and bar already on tile-gallery 
+
+```css 
+@media (min-width: 48rem) {
+    .grid-related {
+        /* flex-direction: column; */ 
+        /* overflow-x: auto; */
+        /* scrollbar-width: none; */
+    }
+}
+```
+
+  + Below 48 rem device with, before mobile, layout update 
+    - Gave related posts a wilder view of thumbnails to scroll 
+    - Then created new class for text area 
+    - Made text area smaller from 90% to 60% 
+
+```css 
+@media (min-width: 48rem) {
+    .grid-related .tile {
+        /* flex-shrink: 0; */
+        /* width: calc(100vw / 2.25); */
+        /* min-width: 21.875rem; */
+        max-width: 110rem;
+    }
+}
+```
+
+```css 
+@media (min-width: 48rem) {
+    .grid-related .tile-text-area {
+        width: 60%; 
+    }
+} 
+```
+
+
+
+
+
+----
 
 ## New Pages And Code 
 
