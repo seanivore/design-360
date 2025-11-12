@@ -442,7 +442,6 @@ li a:hover {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
-    margin-bottom: var(--space-sm);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
@@ -486,6 +485,8 @@ li a:hover {
     color: var(--color-text-primary);
     transition: background var(--duration-fast) var(--easing),
         box-shadow var(--duration-normal) var(--easing);
+    display: flex;
+    justify-content: flex-end;
 }
 
 .tile-homepage-text:hover {
@@ -564,7 +565,8 @@ li a:hover {
 /* Tablet */
 @media (min-width: 48rem) and (max-width: 63.9375rem) {
     .tile-homepage {
-        max-width: 100%;
+        max-width: 40rem;
+        width: 100%;
     }
 
     .tile-homepage-image {

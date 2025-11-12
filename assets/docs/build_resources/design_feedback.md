@@ -106,7 +106,43 @@ Looking forward to hear what you think! 💃
     max-width: 100vw;
     margin-left: calc(-1 * var(--space-md));
     margin-right: calc(+1 * var(--space-md));
+    }
+}
 ```
+
+### Round 4 of Fixes 
+
+  + Looking at the homepage tiles on mobile the text block is messed up 
+    - Set it to flex box instead of inline 
+    - Flex-end so that the text in the box is aligned to the right of the box 
+  + Then turned off the margin spacing the text box far away from the thumb 
+    - Checked all displays for first two updates 
+    - Both are necessary for all displays 
+  + Third makes the max width smaller than the default 
+    - This is so that it looks nice on tablet 
+    - Since mobile is bleed, it should not effect that 
+
+```css
+.tile-homepage-text {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tile-homepage-gallery {
+    /* margin-bottom: var(--space-sm); */
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .tile-homepage {
+        max-width: 40rem;
+        width: 100%;
+    }
+}
+```
+
+
+## AI Requested Updates 
+
 
 
 
