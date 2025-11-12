@@ -88,7 +88,7 @@ Looking forward to hear what you think! 💃
 ```css 
 @media (min-width: 48rem) and (max-width: 63.9375rem) {
     .tile {
-        max-width: 50rem;
+        max-width: 48rem;
     }
 }
 ```
@@ -137,6 +137,18 @@ Looking forward to hear what you think! 💃
         max-width: 40rem;
         width: 100%;
     }
+}
+```
+### Round 5 of Fixes 
+
+  + Adding missing spacing between elements on the project entry page 
+
+```css 
+.video-container {
+    margin-bottom: var(--space-md);
+}
+.entry-thumbnail-image {
+    margin-bottom: var(--space-md);
 }
 ```
 

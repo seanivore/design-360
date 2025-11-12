@@ -409,7 +409,7 @@ li a:hover {
 /* Tablet: Single column with appropriate sizing */
 @media (min-width: 48rem) and (max-width: 63.9375rem) {
     .tile {
-        max-width: 50rem;
+        max-width: 48rem;
     }
 
     .tile-image {
@@ -1303,6 +1303,7 @@ li a:hover {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     box-shadow: var(--tile-shadow);
+    margin-bottom: var(--space-md);
 }
 
 /* Project Links */
@@ -1392,6 +1393,7 @@ li a:hover {
     background: var(--color-bg-tile);
     box-shadow: var(--tile-shadow);
     overflow: hidden;
+    margin-bottom: var(--space-md);
 }
 
 @media (max-width: 47.9375rem) {
