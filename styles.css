@@ -638,14 +638,10 @@ li a:hover {
 }
 
 /* Mobile: Break out of entry container padding */
-@media (max-width: 47.9375rem) {
+/* @media (max-width: 47.9375rem) {
     .related-posts-section {
-        margin-left: calc(-1 * var(--space-md));
-        margin-right: calc(-1 * var(--space-md));
-        padding-left: var(--space-md);
-        padding-right: var(--space-md);
     }
-}
+} */
 
 /* ============================================
    TAG FILTERS

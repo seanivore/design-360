@@ -13,6 +13,11 @@ Looking forward to hear what you think! 💃
 
 ---
 
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(-1 * var(--space-md));
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+
 # Design & Website Review Updates 
 
 ## AI Requested Updates 
