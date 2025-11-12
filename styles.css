@@ -629,6 +629,7 @@ li a:hover {
 
     .grid-related .tile {
         max-width: 100rem;
+        margin-left: calc(-2 * var(--space-md));
     }
 
     .grid-related .tile-text-area {
