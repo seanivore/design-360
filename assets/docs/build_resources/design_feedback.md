@@ -92,17 +92,25 @@ Looking forward to hear what you think! 💃
     }
 }
 ```
-media (min-width: 48rem) {
-    #entry-video .video-container
-Specificity: (1,1,0)
- {ad
-  + 
 
+  + The above sort of fixed but moving to mobile to get that proper first 
+    - The tile was still set to 100% vw 
+    - For some reason the discussed negative padding was missing 
+    - Mobile (and maybe tablet) are to bleed the screen 
+  + Noticing that `.tile-image` is 90vw already which is correct 
+
+```css
 @media (max-width: 47.9375rem) {
-    .tile-image {
+    .tile {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(-1 * var(--space-md));
+    margin-right: calc(+1 * var(--space-md));
+```
 
-        width: 100vw;
-        margin-left: calc(-1 * var(--space-md));
+
+
+
 ----
 
 ## New Pages And Code 

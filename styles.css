@@ -395,8 +395,10 @@ li a:hover {
 /* Mobile: Full bleed with 90vw images */
 @media (max-width: 47.9375rem) {
     .tile {
-        width: 100%;
-        max-width: none;
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(+1 * var(--space-md));
     }
 
     .tile-image {
