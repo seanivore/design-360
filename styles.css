@@ -511,7 +511,7 @@ li a:hover {
     left: 0.75rem;
     width: 1.5rem;
     height: 2rem;
-    background: 
+    background:
         linear-gradient(var(--color-accent-terracotta), #6f5139) left 0 / 1.5rem 0.25rem no-repeat,
         linear-gradient(var(--color-accent-blue), #3c525b) left 0.75rem / 1.25rem 0.25rem no-repeat,
         linear-gradient(var(--color-accent-mauve), #402a32) left 1.5rem / 1rem 0.25rem no-repeat;
@@ -672,6 +672,8 @@ li a:hover {
 .tag-filters-container {
     margin-bottom: var(--space-lg);
     position: relative;
+    margin-left: calc(-0.8 * var(--space-md));
+    margin-right: calc(-0.8 * var(--space-md));
 }
 
 .main-filter-heading {
@@ -685,14 +687,7 @@ li a:hover {
 
 .tag-filters-wrapper {
     position: relative;
-    padding: var(--space-sm) 0.125rem;
     overflow: hidden;
-}
-
-@media (min-width: 48rem) {
-    .tag-filters-wrapper {
-        padding: var(--space-md) 0.125rem;
-    }
 }
 
 /* Vertical bars on sides - "rolling into slit" effect */
@@ -723,7 +718,7 @@ li a:hover {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 5rem;
+    width: 8rem;
     pointer-events: none;
     z-index: 2;
     transition: opacity var(--duration-normal) var(--easing);
@@ -777,9 +772,7 @@ li a:hover {
     background: none;
     border: none;
     font-family: 'Agency FB', -apple-system-ui-monospace, ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-heavy);
-    letter-spacing: 0.02em;
+    font-size: 2rem;
     text-transform: uppercase;
     color: var(--color-text-secondary);
     cursor: pointer;
@@ -791,7 +784,7 @@ li a:hover {
 
 @media (min-width: 48rem) {
     .tag-filter {
-        font-size: 0.9375rem;
+        font-size: 2rem;
     }
 }
 
