@@ -1046,7 +1046,7 @@ This portfolio was created to address a critical gap in the creative industry: t
 ### Contact & Links
 
 - **Portfolio:** [august.style](https://august.style)
-- **Email:** hello@august.style
+- **Email:** sean@august.style
 - **Location:** Available for remote work, open to relocation
 - **Specializations:** Creative technologist, generalist portfolios, AI integration, systems optimization
 
