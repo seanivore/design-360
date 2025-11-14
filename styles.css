@@ -704,12 +704,9 @@ li a:hover {
 }
 
 /* Gradient shadows for "rolling into slit" effect */
-.tag-filters {
-    position: relative;
-}
-
-.tag-filters::before,
-.tag-filters::after {
+/* Fixed to container edges, not scrolling with content */
+.tag-filters-container::before,
+.tag-filters-container::after {
     content: '';
     position: absolute;
     top: 0;
@@ -720,23 +717,25 @@ li a:hover {
     transition: opacity var(--duration-normal) var(--easing);
 }
 
-.tag-filters::before {
+.tag-filters-container::before {
     left: 0;
     background: linear-gradient(to right, var(--color-bg-primary), transparent);
     opacity: 0;
 }
 
-.tag-filters::after {
+.tag-filters-container::after {
     right: 0;
     background: linear-gradient(to left, var(--color-bg-primary), transparent);
     opacity: 1;
 }
 
-.tag-filters-wrapper.scrolled-left .tag-filters::before {
+/* Show left shadow when scrolled right */
+.tag-filters-container:has(.tag-filters-wrapper.scrolled-left)::before {
     opacity: 1;
 }
 
-.tag-filters-wrapper.scrolled-right .tag-filters::after {
+/* Hide right shadow when scrolled to end */
+.tag-filters-container:has(.tag-filters-wrapper.scrolled-right)::after {
     opacity: 0;
 }
 
