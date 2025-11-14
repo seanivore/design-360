@@ -5,6 +5,18 @@
    ============================================ */
 
 /* ============================================
+   CUSTOM FONTS
+   ============================================ */
+
+@font-face {
+    font-family: 'Agency FB';
+    src: url('/assets/fonts/AgencyFB-RegularCondensed.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================
    CSS VARIABLES
    ============================================ */
 
@@ -764,8 +776,8 @@ li a:hover {
     padding: 0;
     background: none;
     border: none;
-    font-family: -apple-system-ui-monospace, ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
-    font-size: 0.75rem;
+    font-family: 'Agency FB', -apple-system-ui-monospace, ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+    font-size: 0.875rem;
     font-weight: var(--font-weight-heavy);
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -779,7 +791,7 @@ li a:hover {
 
 @media (min-width: 48rem) {
     .tag-filter {
-        font-size: 0.8125rem;
+        font-size: 0.9375rem;
     }
 }
 
