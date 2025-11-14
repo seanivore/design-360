@@ -192,7 +192,7 @@ const EntryController = (() => {
 
         // Optional: Project URL
         if (assets && assets.project_url) {
-            populateProjectURL(assets.project_url);
+            populateProjectURL(assets);
         }
 
         // Optional: GitHub repository
@@ -325,14 +325,17 @@ const EntryController = (() => {
     /**
      * Populate project URL embed
      */
-    function populateProjectURL(url) {
+    function populateProjectURL(assets) {
         const container = document.getElementById('entry-project-url');
-        if (!container) return;
+        if (!container || !assets.project_url) return;
+
+        // Use project_url_text if available, otherwise show full URL
+        const displayText = assets.project_url_text || assets.project_url;
 
         container.innerHTML = `
-            <a href="${url}" target="_blank" rel="noopener noreferrer" class="project-link-card">
+            <a href="${assets.project_url}" target="_blank" rel="noopener noreferrer" class="project-link-card">
                 <span class="link-icon">🔗</span>
-                <span class="link-url">${url}</span>
+                <span class="link-url">${displayText}</span>
             </a>
         `;
         container.style.display = 'block';

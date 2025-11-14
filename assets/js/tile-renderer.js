@@ -33,12 +33,19 @@ const TileRenderer = (() => {
         gallery.className = 'tile-gallery';
 
         thumbnails.forEach(img => {
+            const imageLink = document.createElement('a');
+            imageLink.href = entryURL;
+            imageLink.style.display = 'block';
+            imageLink.style.flexShrink = '0';
+
             const image = document.createElement('img');
             image.src = `/${img}`;
             image.alt = altText;
             image.className = 'tile-image';
             image.loading = 'lazy';
-            gallery.appendChild(image);
+            
+            imageLink.appendChild(image);
+            gallery.appendChild(imageLink);
         });
 
         // Text area
@@ -90,24 +97,38 @@ const TileRenderer = (() => {
         const topRow = document.createElement('div');
         topRow.className = 'tile-homepage-gallery-row';
         thumbnailImagesTop.forEach(img => {
+            const imageLink = document.createElement('a');
+            imageLink.href = sectionURL;
+            imageLink.style.display = 'block';
+            imageLink.style.flexShrink = '0';
+
             const image = document.createElement('img');
             image.src = `/${img}`;
             image.alt = altText;
             image.className = 'tile-homepage-image';
             image.loading = 'lazy';
-            topRow.appendChild(image);
+            
+            imageLink.appendChild(image);
+            topRow.appendChild(imageLink);
         });
 
         // Bottom row
         const bottomRow = document.createElement('div');
         bottomRow.className = 'tile-homepage-gallery-row';
         thumbnailImagesBottom.forEach(img => {
+            const imageLink = document.createElement('a');
+            imageLink.href = sectionURL;
+            imageLink.style.display = 'block';
+            imageLink.style.flexShrink = '0';
+
             const image = document.createElement('img');
             image.src = `/${img}`;
             image.alt = altText;
             image.className = 'tile-homepage-image';
             image.loading = 'lazy';
-            bottomRow.appendChild(image);
+            
+            imageLink.appendChild(image);
+            bottomRow.appendChild(imageLink);
         });
 
         gallery.appendChild(topRow);

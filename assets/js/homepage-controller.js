@@ -1,15 +1,14 @@
 /**
  * HOMEPAGE CONTROLLER
  * Manages homepage section tiles with dynamic section detection
- * and proportional thumbnail distribution
+ * and random thumbnail selection from section-tagged projects
  * 
- * Pulls thumbnails proportionally based on project count per section
- * Example: If Web has 14 projects (70%) and Print has 6 (30%),
- * thumbnails are allocated 70/30 accordingly
+ * Pulls 12 random thumbnails from projects tagged with each section
+ * When a section has <10 entries, distributes images equally from all entries
  */
 
 const HomepageController = (() => {
-    const THUMBNAILS_PER_ROW = 6;  // Number of thumbnails per row (12 total)
+    const THUMBNAILS_TOTAL = 12;  // Total thumbnails per homepage tile (two rows of 6)
 
     /**
      * Get all unique sections dynamically from projects
@@ -43,60 +42,21 @@ const HomepageController = (() => {
         return counts;
     }
 
-    /**
-     * Calculate proportional thumbnail allocation
-     * Uses "largest remainder method" for fair rounding
-     * @param {Object} sectionCounts - { 'Web': 14, 'Digital': 3 }
-     * @param {Number} totalThumbnails - Total thumbnails to allocate (12)
-     * @returns {Object} - { 'Web': 10, 'Digital': 2 }
-     */
-    function calculateProportionalAllocation(sectionCounts, totalThumbnails) {
-        const totalProjects = Object.values(sectionCounts).reduce((sum, count) => sum + count, 0);
 
-        if (totalProjects === 0) {
-            return {};
-        }
-
-        const allocation = {};
-        const remainders = {};
-        let allocatedSoFar = 0;
-
-        // Calculate exact proportions and floor them
-        Object.entries(sectionCounts).forEach(([section, count]) => {
-            const exactShare = (count / totalProjects) * totalThumbnails;
-            const flooredShare = Math.floor(exactShare);
-            allocation[section] = flooredShare;
-            remainders[section] = exactShare - flooredShare;
-            allocatedSoFar += flooredShare;
-        });
-
-        // Distribute remaining slots to sections with largest remainders
-        const remaining = totalThumbnails - allocatedSoFar;
-        const sortedByRemainder = Object.entries(remainders)
-            .sort((a, b) => b[1] - a[1])
-            .map(entry => entry[0]);
-
-        for (let i = 0; i < remaining; i++) {
-            const section = sortedByRemainder[i];
-            allocation[section] += 1;
-        }
-
-        console.log('📊 Proportional allocation:', allocation);
-
-        return allocation;
-    }
 
     /**
      * Select random thumbnails from a section
+     * When section has >=10 entries: no duplicates needed
+     * When section has <10 entries: distribute equally from all entries
      * @param {String} section - Section name
      * @param {Array} allProjects - All loaded projects
-     * @param {Number} count - Number of thumbnails to get
+     * @param {Number} count - Number of thumbnails to get (12)
      * @returns {Array} - Array of thumbnail paths
      */
     function selectRandomThumbnails(section, allProjects, count) {
         const sectionProjects = DataLoader.filterBySection(allProjects, section);
 
-        if (sectionProjects.length === 0 || count === 0) {
+        if (sectionProjects.length === 0) {
             return [];
         }
 
@@ -104,28 +64,67 @@ const HomepageController = (() => {
         const shuffledProjects = DataLoader.shuffleArray([...sectionProjects]);
         const thumbnails = [];
 
-        // Pull one thumbnail from each project until we have enough
-        let projectIndex = 0;
-        while (thumbnails.length < count) {
-            const project = shuffledProjects[projectIndex % shuffledProjects.length];
-            const projectThumbnails = project.content.media.thumbnail_images || [];
+        // If we have 10+ projects, no need to duplicate
+        if (sectionProjects.length >= 10) {
+            // Pull one random thumbnail from each project until we have 12
+            let projectIndex = 0;
+            while (thumbnails.length < count && projectIndex < shuffledProjects.length * 2) {
+                const project = shuffledProjects[projectIndex % shuffledProjects.length];
+                const projectThumbnails = project.content.media.thumbnail_images || [];
 
-            if (projectThumbnails.length > 0) {
-                // Randomly select one thumbnail from this project
-                const randomThumbIndex = Math.floor(Math.random() * projectThumbnails.length);
-                thumbnails.push(projectThumbnails[randomThumbIndex]);
+                if (projectThumbnails.length > 0) {
+                    // Randomly select one thumbnail from this project
+                    const randomThumbIndex = Math.floor(Math.random() * projectThumbnails.length);
+                    thumbnails.push(projectThumbnails[randomThumbIndex]);
+                }
+
+                projectIndex++;
+
+                // Safety check: prevent infinite loop
+                if (projectIndex > shuffledProjects.length * 10) {
+                    console.warn(`⚠️ Could only gather ${thumbnails.length}/${count} thumbnails for ${section}`);
+                    break;
+                }
             }
+        } else {
+            // Less than 10 projects: distribute equally from all entries
+            const thumbsPerProject = Math.ceil(count / sectionProjects.length);
+            
+            shuffledProjects.forEach(project => {
+                const projectThumbnails = project.content.media.thumbnail_images || [];
+                
+                // Shuffle this project's thumbnails
+                const shuffledThumbs = DataLoader.shuffleArray([...projectThumbnails]);
+                
+                // Take up to thumbsPerProject thumbnails from this project
+                const thumbsToTake = Math.min(thumbsPerProject, shuffledThumbs.length);
+                for (let i = 0; i < thumbsToTake && thumbnails.length < count; i++) {
+                    thumbnails.push(shuffledThumbs[i]);
+                }
+            });
 
-            projectIndex++;
+            // If still need more, cycle through again
+            let projectIndex = 0;
+            while (thumbnails.length < count) {
+                const project = shuffledProjects[projectIndex % shuffledProjects.length];
+                const projectThumbnails = project.content.media.thumbnail_images || [];
 
-            // Safety check: prevent infinite loop
-            if (projectIndex > shuffledProjects.length * 10) {
-                console.warn(`⚠️ Could only gather ${thumbnails.length}/${count} thumbnails for ${section}`);
-                break;
+                if (projectThumbnails.length > 0) {
+                    const randomThumbIndex = Math.floor(Math.random() * projectThumbnails.length);
+                    thumbnails.push(projectThumbnails[randomThumbIndex]);
+                }
+
+                projectIndex++;
+
+                // Safety check
+                if (projectIndex > shuffledProjects.length * 20) {
+                    console.warn(`⚠️ Could only gather ${thumbnails.length}/${count} thumbnails for ${section}`);
+                    break;
+                }
             }
         }
 
-        console.log(`🎲 Selected ${thumbnails.length} thumbnails for ${section}`);
+        console.log(`🎲 Selected ${thumbnails.length} thumbnails for ${section} (${sectionProjects.length} projects)`);
 
         return thumbnails;
     }
@@ -141,16 +140,15 @@ const HomepageController = (() => {
      * Build homepage tile data for a section
      * @param {String} section - Section name
      * @param {Array} allProjects - All projects
-     * @param {Number} thumbnailCount - Number of thumbnails for this section
      * @returns {Object} - Tile data for rendering
      */
-    function buildHomepageTileData(section, allProjects, thumbnailCount) {
+    function buildHomepageTileData(section, allProjects) {
         // Get project count for display
         const sectionProjects = DataLoader.filterBySection(allProjects, section);
         const projectCount = sectionProjects.length;
 
-        // Get proportionally allocated thumbnails
-        const allThumbnails = selectRandomThumbnails(section, allProjects, thumbnailCount);
+        // Get 12 random thumbnails from this section
+        const allThumbnails = selectRandomThumbnails(section, allProjects, THUMBNAILS_TOTAL);
 
         // Split into top and bottom rows (as evenly as possible)
         const halfPoint = Math.ceil(allThumbnails.length / 2);
@@ -213,27 +211,16 @@ const HomepageController = (() => {
             const sectionCounts = countProjectsPerSection(allProjects);
             console.log('📊 Projects per section:', sectionCounts);
 
-            // Calculate proportional thumbnail allocation
-            const totalThumbnails = THUMBNAILS_PER_ROW * 2;  // 12 total per tile
-            const thumbnailAllocation = calculateProportionalAllocation(sectionCounts, totalThumbnails);
-
             // Shuffle section order for variety on each reload
             const shuffledSections = shuffleSectionOrder(sections);
             console.log('🔀 Shuffled section order:', shuffledSections);
 
-            // Build tile data for each section
+            // Build tile data for each section (12 thumbnails each)
             const tilesToRender = [];
 
             for (const section of shuffledSections) {
-                const thumbnailCount = thumbnailAllocation[section] || 0;
-
-                if (thumbnailCount === 0) {
-                    console.warn(`⚠️ Skipping ${section} - no thumbnails allocated`);
-                    continue;
-                }
-
-                // Build tile data with proportionally allocated thumbnails
-                const tileData = buildHomepageTileData(section, allProjects, thumbnailCount);
+                // Build tile data with 12 random thumbnails from this section
+                const tileData = buildHomepageTileData(section, allProjects);
                 tilesToRender.push(tileData);
             }
 
@@ -269,8 +256,7 @@ const HomepageController = (() => {
         init,
         loadHomepageTiles,
         extractSections,
-        countProjectsPerSection,
-        calculateProportionalAllocation
+        countProjectsPerSection
     };
 })();
 

@@ -101,7 +101,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6rem;
 }
 
 body {
@@ -479,7 +479,7 @@ li a:hover {
     background: var(--color-bg-dark);
     box-shadow: var(--tile-shadow);
     padding: 0.75rem;
-    max-width: 90%;
+    max-width: 17rem;
     margin: 0 auto;
     text-decoration: none;
     color: var(--color-text-primary);
@@ -487,6 +487,22 @@ li a:hover {
         box-shadow var(--duration-normal) var(--easing);
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: var(--space-sm);
+    position: relative;
+}
+
+/* Decorative line trio pointing to section name */
+.tile-homepage-text::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    width: 1.5rem;
+    height: 2rem;
+    background: 
+        linear-gradient(var(--color-accent-terracotta), #6f5139) left 0 / 1.5rem 0.25rem no-repeat,
+        linear-gradient(var(--color-accent-blue), #3c525b) left 0.75rem / 1.25rem 0.25rem no-repeat,
+        linear-gradient(var(--color-accent-mauve), #402a32) left 1.5rem / 1rem 0.25rem no-repeat;
 }
 
 .tile-homepage-text:hover {
@@ -657,48 +673,70 @@ li a:hover {
 
 .tag-filters-wrapper {
     position: relative;
-    background: var(--color-bg-tile);
-    border: 0.0625rem solid var(--color-border);
-    padding: var(--space-xs) var(--space-sm);
+    padding: var(--space-sm) 0.125rem;
     overflow: hidden;
 }
 
 @media (min-width: 48rem) {
     .tag-filters-wrapper {
-        padding: var(--space-sm) var(--space-md);
+        padding: var(--space-md) 0.125rem;
     }
 }
 
-/* Scroll shadow gradients */
+/* Vertical bars on sides - "rolling into slit" effect */
 .tag-filters-wrapper::before,
 .tag-filters-wrapper::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 3.75rem;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 2;
+    width: 0.1875rem;
+    background: var(--color-border);
+    z-index: 3;
 }
 
 .tag-filters-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, var(--color-bg-tile), transparent);
-    opacity: 0;
 }
 
 .tag-filters-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, var(--color-bg-tile), transparent);
+}
+
+/* Gradient shadows for "rolling into slit" effect */
+.tag-filters {
+    position: relative;
+}
+
+.tag-filters::before,
+.tag-filters::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 5rem;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity var(--duration-normal) var(--easing);
+}
+
+.tag-filters::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-primary), transparent);
+    opacity: 0;
+}
+
+.tag-filters::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-primary), transparent);
     opacity: 1;
 }
 
-.tag-filters-wrapper.scrolled-left::before {
+.tag-filters-wrapper.scrolled-left .tag-filters::before {
     opacity: 1;
 }
 
-.tag-filters-wrapper.scrolled-right::after {
+.tag-filters-wrapper.scrolled-right .tag-filters::after {
     opacity: 0;
 }
 
@@ -727,10 +765,10 @@ li a:hover {
     padding: 0;
     background: none;
     border: none;
-    font-family: var(--font-family-base);
-    font-size: 0.8125rem;
+    font-family: -apple-system-ui-monospace, ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+    font-size: 0.75rem;
     font-weight: var(--font-weight-heavy);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--color-text-secondary);
     cursor: pointer;
@@ -742,7 +780,7 @@ li a:hover {
 
 @media (min-width: 48rem) {
     .tag-filter {
-        font-size: var(--font-size-sm);
+        font-size: 0.8125rem;
     }
 }
 
@@ -789,6 +827,7 @@ li a:hover {
 .page-header h1 {
     margin-bottom: var(--space-xs);
     letter-spacing: -0.02em;
+    display: inline-block;
 }
 
 .page-header p {
@@ -1301,79 +1340,61 @@ li a:hover {
 #entry-project-url,
 #entry-github-repo {
     display: flex;
-    justify-content: center;
-    margin: var(--space-md) 0;
-}
-
-.project-link-card {
-    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-xl) auto;
+    max-width: 20rem;
+}
+
+.project-link-card,
+.github-repo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-md);
     background: var(--color-bg-tile);
     border: 0.0625rem solid var(--color-border);
-    border-radius: 0.5rem;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.06);
+    border-radius: 0.25rem;
     text-decoration: none;
     color: var(--color-text-primary);
-    transition: transform var(--duration-normal) var(--easing),
-        box-shadow var(--duration-normal) var(--easing),
-        border-color var(--duration-normal) var(--easing);
-    max-width: 25rem;
+    transition: transform var(--duration-fast) var(--easing),
+        border-color var(--duration-fast) var(--easing);
     width: 100%;
 }
 
-.project-link-card:hover {
-    transform: translateY(-0.125rem);
-    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
+.project-link-card:hover,
+.github-repo-card:hover {
+    transform: translateY(-0.0625rem);
     border-color: var(--color-accent);
 }
 
 .link-icon {
-    font-size: 1.125rem;
-    filter: grayscale(0.3);
+    font-size: 0.875rem;
+    opacity: 0.7;
     flex-shrink: 0;
 }
 
 .link-url {
-    font-size: var(--font-size-sm);
+    font-size: 0.8125rem;
     color: var(--color-accent-blue);
     font-weight: var(--font-weight-medium);
-}
-
-.github-repo-card {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
-    background: var(--color-bg-tile);
-    border: 0.0625rem solid var(--color-border);
-    border-radius: 0.5rem;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.06);
-    text-decoration: none;
-    color: var(--color-text-primary);
-    transition: transform var(--duration-normal) var(--easing),
-        box-shadow var(--duration-normal) var(--easing),
-        border-color var(--duration-normal) var(--easing);
-    max-width: 25rem;
-    width: 100%;
-}
-
-.github-repo-card:hover {
-    transform: translateY(-0.125rem);
-    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
-    border-color: var(--color-accent);
+    text-align: center;
 }
 
 .github-icon {
+    width: 1rem;
+    height: 1rem;
     flex-shrink: 0;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .repo-name {
-    font-size: var(--font-size-sm);
+    font-size: 0.8125rem;
     color: var(--color-accent-blue);
     font-weight: var(--font-weight-medium);
+    text-align: center;
 }
 
 /* Video Container */

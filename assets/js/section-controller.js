@@ -146,8 +146,8 @@
                 // Capitalize section name
                 const sectionName = viewType.section.charAt(0).toUpperCase() + viewType.section.slice(1);
 
-                // Format: "Web Projects (15)"
-                pageTitle.textContent = `${sectionName} Projects (${filteredCount})`;
+                // Format: "Web Projects" with count in smaller, colored text
+                pageTitle.innerHTML = `${sectionName} Projects <span style="font-size: 0.8125rem; font-weight: 400; color: var(--color-text-secondary); margin-left: 0.5rem;">(${filteredCount})</span>`;
                 pageSubtitle.textContent = '';
                 docTitle = `${sectionName} Projects | Sean August Horvath`;
                 mainFilterHeading = null; // Don't show separate heading for section pages
