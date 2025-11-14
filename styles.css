@@ -1348,7 +1348,7 @@ li a:hover {
     align-items: center;
     gap: var(--space-sm);
     margin: var(--space-xl) auto;
-    max-width: 20rem;
+    max-width: 30rem;
 }
 
 .project-link-card,
@@ -1357,7 +1357,7 @@ li a:hover {
     align-items: center;
     justify-content: center;
     gap: var(--space-xs);
-    padding: var(--space-xs) var(--space-md);
+    padding: 1.5rem;
     background: var(--color-bg-tile);
     border: 0.0625rem solid var(--color-border);
     border-radius: 0.25rem;
@@ -1375,7 +1375,7 @@ li a:hover {
 }
 
 .link-icon {
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     opacity: 0.7;
     flex-shrink: 0;
 }
@@ -1388,8 +1388,8 @@ li a:hover {
 }
 
 .github-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     flex-shrink: 0;
     opacity: 0.7;
 }
