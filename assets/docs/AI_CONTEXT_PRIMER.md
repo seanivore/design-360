@@ -1,22 +1,79 @@
-# AI Context Primer: Single-JSON Portfolio Architecture
+# Single-JSON Portfolio Architecture
 *Complete reference for AI assistants working on august.style*
 
-  * **Purpose:** This document provides everything a new AI instance needs to understand and work on this project effectively. Read this first before making any changes.
+**Live Site:** [august.style](https://august.style)
+
+  * **Purpose:** This document provides everything a new AI instance needs to understand and work on this project effectively. It also serves as the primary README for this repository. Read this first before making any changes.
 
 ---
 
 ## Table of Contents
 
   1. [Project Overview](#project-overview)
-  2. [Architecture Explained](#architecture-explained)
-  3. [How to Run & Test Locally](#how-to-run--test-locally)
-  4. [File Structure & Key Files](#file-structure--key-files)
-  5. [Design System & Styling](#design-system--styling)
-  6. [Adding New Projects](#adding-new-projects)
-  7. [Tag System & Navigation](#tag-system--navigation)
-  8. [Mobile-First Design Principles](#mobile-first-design-principles)
-  9. [Common Pitfalls & Important Notes](#common-pitfalls--important-notes)
-  10. [Deployment](#deployment)
+  2. [Recent Updates (November 2025)](#recent-updates-november-2025)
+  3. [Architecture Explained](#architecture-explained)
+  4. [How to Run & Test Locally](#how-to-run--test-locally)
+  5. [File Structure & Key Files](#file-structure--key-files)
+  6. [Design System & Styling](#design-system--styling)
+  7. [Adding New Projects](#adding-new-projects)
+  8. [Tag System & Navigation](#tag-system--navigation)
+  9. [Mobile-First Design Principles](#mobile-first-design-principles)
+  10. [Common Pitfalls & Important Notes](#common-pitfalls--important-notes)
+  11. [Deployment](#deployment)
+  12. [About the Creator & Project](#about-the-creator--project)
+
+---
+
+## Recent Updates (November 2025)
+
+### Design & UX Refinements
+
+  * **Homepage Tile Interactivity**
+    + All images now clickable (not just text bar)
+    + Added decorative line trio pointing to section names
+    + Improved visual hierarchy with color accents
+
+  * **Project Counter Styling**
+    + Fixed oversized counter display on section pages
+    + Now matches homepage tile styling (smaller, color-differentiated)
+    + Format: "Section Projects (count)" with distinct styling
+
+  * **Filter Navigation Bar**
+    + Condensed monospace font for better thumb-friendliness
+    + Removed background and border for cleaner look
+    + Added 5rem gradient shadows on both sides
+    + Added vertical bars creating "rolling into slit" effect
+    + Significantly improved mobile usability
+
+  * **Navigation Scroll Behavior**
+    + Fixed About/Contact links scrolling incorrectly from section/entry pages
+    + Adjusted scroll-padding-top from 5rem to 6rem
+    + Native browser hash navigation now works perfectly
+
+  * **Project URL Display**
+    + New `project_url_text` field for cleaner URL presentation
+    + URLs now smaller, centered, and stacked vertically
+    + Both Project URL and GitHub URL have consistent styling
+
+### Technical Improvements
+
+  * **Tile System Refinements**
+    + Homepage thumbnail selection reverted to pure random (12 per section)
+    + When sections have <10 entries, distributes equally from all entries
+    + Fixed tile layout bleeding on tablet devices
+    + Optimized tile-text-area positioning (width: 90%, height: 4rem)
+    + Tile-gallery position corrected to relative (was absolute)
+
+  * **Responsive Layout Updates**
+    + Mobile tiles properly bleed screen with negative margins
+    + Tablet max-width optimized (48rem for tiles, 40rem for homepage)
+    + Added proper spacing between video containers and thumbnail images
+    + Grid-related layout cleaned up (removed unnecessary overflow/scroll)
+
+  * **Schema Updates (v3.2)**
+    + Added `project_url_text` field for display-friendly URLs
+    + Improved JSON formatting with proper indentation and line breaks
+    + Enhanced readability for human editors
 
 ---
 
@@ -408,10 +465,12 @@ if (!pathParam) {
 
   * **Homepage Tiles**
 
-    - Oversized thumbnail 
+    - Oversized thumbnail gallery (all images clickable)
     - Project count badge 
+    - Decorative line trio pointing to section name
     - Links to section pages
-    - Swipe cycles images + text
+    - Swipe cycles images
+    - Text container: max-width 17rem, aligned right
 
   * **Section Tiles**
 
@@ -420,6 +479,35 @@ if (!pathParam) {
     - NO title/subtitle (magazine aesthetic)
     - Shows teaser text that cycles with images
     - Links to entry pages
+    - Text area: width 90%, height 4rem, self-centered
+    - Gallery position: relative (not absolute)
+
+### Filter Navigation Styling
+
+  * **Tag Filter Bar (Section Pages)**
+
+    - Condensed monospace font for thumb-friendliness
+    - No background or border (clean, minimal)
+    - Minimal left/right padding
+    - Vertical bars (2-3px) on both sides
+    - 5rem gradient shadows (left and right)
+    - "Rolling into slit" visual effect
+    - Subliminal scroll cue for users
+
+```css
+.tag-filters-wrapper::before, .tag-filters-wrapper::after {
+    width: 5rem;  /* Gradient shadow width */
+    pointer-events: none;
+    z-index: 2;
+}
+```
+
+  * **Project Counter Display**
+
+    - Smaller, color-differentiated count
+    - Format: "Section Projects (count)"
+    - Matches homepage tile counter styling
+    - Not oversized like heading text
 
 ### Spacing System
 
@@ -476,9 +564,9 @@ if (!pathParam) {
         "page_image_group_alt_text": "..."        // v3.1
     },
     "assets": {
-        "project_url_text": "august.style/etc",   // v3.2
-        "project_url": "https://...",             // v3.1
-        "github_repository": "https://github..."  // v3.1
+        "project_url_text": "august.style/etc",   // v3.2 - Display text for project URL
+        "project_url": "https://...",             // v3.1 - Full project URL (optional)
+        "github_repository": "https://github..."  // v3.1 - GitHub repo URL (optional)
     },
     "teaser_copy": {
         "seo_title": "...",
@@ -497,13 +585,22 @@ if (!pathParam) {
 }
 ```
 
-### Schema v3.2 & More Changes *October 2025*
+### Schema v3.2 Changes *November 2025*
 
-  * **Changed from v3.1:** 
+  * **What's new in v3.2:** 
 
-    1. Added `project_url_text` 
-    2. Line break between objects 
-    3. Cleaned up with larger, proper indents 
+    1. Added `project_url_text` field in assets section
+       - Displays cleaner, shortened URL text on entry pages
+       - Example: "august.style/project" instead of full URL
+       - Optional field (not all projects need external URLs)
+    2. Improved JSON formatting
+       - Added line breaks between major objects
+       - Larger, consistent indentation
+       - Better readability for human editors
+    3. Enhanced URL display styling
+       - Both project_url and github_repository shown smaller
+       - Centered and stacked vertically
+       - Consistent card-style presentation 
 
   * **Changed from v2.1:**
 
@@ -674,12 +771,60 @@ NO toggle tags shown
 }
 ```
 
+### Responsive Layout Behavior
+
+  * **Mobile (< 768px)**
+
+    + Tiles bleed full screen width (100vw)
+    + Negative margins compensate for container padding
+    + Single column layout
+    + Homepage tiles optimized for portrait orientation
+
+```css
+@media (max-width: 47.9375rem) {
+    .tile {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(+1 * var(--space-md));
+    }
+}
+```
+
+  * **Tablet (768px - 1024px)**
+
+    + Tiles constrained to prevent bleeding
+    + Max-width: 48rem for section tiles
+    + Max-width: 40rem for homepage tiles
+    + Centered layout with proper margins
+
+```css
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .tile {
+        max-width: 48rem;
+    }
+    .tile-homepage {
+        max-width: 40rem;
+        width: 100%;
+    }
+}
+```
+
+  * **Desktop (> 1024px)**
+
+    + 2-column grid layouts where appropriate
+    + Max-width centering for readability
+    + Related posts grid optimized (max-width: 110rem)
+    + Generous whitespace
+
 ### Tile Interactions
 
   * **Image Swipe**
     
-    + Simple hidden hidden overflow 
-    + Long single row of 16:9 thumbnail images 
+    + Simple hidden overflow 
+    + Long single row of 16:9 thumbnail images
+    + All images clickable on homepage tiles
+    + Click-through to section or entry pages
 
   * **Text Cycling**    *<-!- This needs to be re-added!*
   *Removed because coded gesture wasn't reliably functional* 
@@ -693,7 +838,7 @@ NO toggle tags shown
     + Tap to activate
     + Tap again to turn off 
     + Tap other tag to turn off 
-    + Related tiles slide to new positions     *<-!- Nope, but great idea!*
+    + Tiles re-render with smooth transitions
     + Smooth 300ms transitions
 
 ---
@@ -845,6 +990,14 @@ git push origin feature-name
        + Don't "fix" intentional design choices
        + Test locally before pushing
 
+  * **For AI Agents using MCP (Model Context Protocol)**
+
+    + This document references the Filesystem MCP for file access
+    + Paths are provided for agents working in environments like Claude Desktop
+    + Regular developers can access files normally through their IDE/editor
+    + Use `Filesystem:read_file` or `Filesystem:edit_file` for MCP-based workflows
+    + Human developers: just open files normally!
+
   * **Remember that this architecture is unconventional but intentional** 
   
   + If something looks "wrong" like capitalization, routing, tag structure 
@@ -852,6 +1005,66 @@ git push origin feature-name
 
 ---
 
+## About the Creator & Project
+
+### Project Purpose
+
+This portfolio was created to address a critical gap in the creative industry: the lack of recognition for multi-disciplinary talent in traditional hiring processes. As organizations downsize and integrate AI capabilities, the value of generalists who can bridge art, product, and growth becomes increasingly important.
+
+**The Challenge:** Traditional job applications don't recognize cross-functional expertise. Most roles target single-discipline skills, yet modern teams need versatile collaborators who can:
+- Spot system inefficiencies across domains
+- Connect creative and technical workflows
+- Adapt quickly as AI transforms every department
+- Reduce hiring needs through multi-role capabilities
+
+**The Solution:** A portfolio architecture that demonstrates both creative breadth AND technical sophistication. This single-JSON system itself serves as a portfolio piece, showcasing:
+- Innovative technical problem-solving
+- Clean, maintainable code architecture
+- Design system thinking
+- Full-stack creative/technical integration
+
+### About Sean August Horvath
+
+**Creative Systems Strategist** with 14 years bridging design, technology, and growth strategy. Background in psychology combined with pattern-matching abilities leads to consistent identification of optimization opportunities that others miss.
+
+**Career Highlights:**
+- Took PETA from 2-person team to 8+ through viral social campaigns and data-driven innovation
+- Rapidly promoted at LA agencies after implementing operational improvements
+- Led branding for Web3 privacy protocol DAO
+- Extensive crypto industry experience and AI-pair programming expertise
+
+**Current Focus:**
+- Building AI-powered tools and MCPs
+- Creating MVPs and prototypes with AI collaboration
+- Seeking roles that value cross-functional "downsizing-friendly" capabilities
+- Targeting AI Social Graphic Design positions and crypto industry roles
+
+**Technical Skills:** HTML/CSS/JavaScript, Python, Jekyll, Webflow, Framer, Solana blockchain development, Make.com automation, AI-pair programming, systems optimization
+
+**Design Skills:** Web design, print, digital, video, social content, branding, UX/UI, data visualization, copywriting
+
+### Contact & Links
+
+- **Portfolio:** [august.style](https://august.style)
+- **Email:** hello@august.style
+- **Location:** Available for remote work, open to relocation
+- **Specializations:** Creative technologist, generalist portfolios, AI integration, systems optimization
+
+### Technology Stack
+
+This portfolio demonstrates:
+- Pure HTML/CSS/JS (no framework overhead)
+- Single-JSON architecture (infinite scalability)
+- Jekyll on GitHub Pages (clean URLs, free hosting)
+- Mobile-first responsive design
+- Accessible, semantic markup
+- Git version control with detailed documentation
+
+**Philosophy:** "Unconventionally smart" solutions that leverage existing tools creatively rather than reinventing wheels. Emphasis on maintainable code, clear architecture, and user experience details.
+
+---
+
 *Document created: 2025-10-25*
+*Last updated: 2025-11-14*
 *For project: Creative Generalist Portfolio (august.style)*
 *Architecture by: Sean August Horvath + Claude Sonnet 4.5*
