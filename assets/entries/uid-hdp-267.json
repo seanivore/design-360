@@ -20,12 +20,12 @@
         "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/217385779?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "A minimal generative set with restrained geometry, ample negative space, and clear color relationships.",
         "thumbnail_images": [
-            "/Users/seanivore/Development/360-design/assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-1.webp",
-            "/Users/seanivore/Development/360-design/assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-2.webp",
-            "/Users/seanivore/Development/360-design/assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-3.webp",
-            "/Users/seanivore/Development/360-design/assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-4.webp",
-            "/Users/seanivore/Development/360-design/assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-5.webp",
-            "/Users/seanivore/Development/360-design/assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-6.webp"
+            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-1.webp",
+            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-2.webp",
+            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-3.webp",
+            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-4.webp",
+            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-5.webp",
+            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-6.webp"
         ],
         "thumb_slideshow_alt_text": "Minimal geometric panels with clean edges, negative space, and simple color steps.",
         "page_imagery": [],
