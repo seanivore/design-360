@@ -4,11 +4,11 @@
     "placement": {
         "section": "Digital",
         "sub_section": "Generative",
-        "slug": "pie-claesz-vibes"
+        "slug": "pie-claesz"
     },
     "tagging":{
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting"],
-        "media": ["Baroque, Painting, Still Life, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": ["AI, Generative, Adobe Firefly, Canva, Cursor, Dia AI, Claude AI"],
+        "media": ["Baroque, Painting, Still Life, Digital Art, Print, Digital Product"],
         "role": "Graphic Designer",
         "skill": ["Content Production, Graphic Design, Illustration, Fashion Photography, Product Staging, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
     }
@@ -18,16 +18,22 @@
     "media": {
         "video_filename": "",
         "video_url": "",
-        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/226147329?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
+        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/226117987?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "Generative still life study channeling Pieter Claesz: restrained palette, tabletop composition, and quiet, balanced light.",
-        "thumbnail_images": [""],
+        "thumbnail_images": [
+            "/Users/seanivore/Development/360-design/assets/media/digital/pie-claesz/thumb-pie-claesz-1.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/pie-claesz/thumb-pie-claesz-2.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/pie-claesz/thumb-pie-claesz-3.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/pie-claesz/thumb-pie-claesz-4.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/pie-claesz/thumb-pie-claesz-5.webp"
+        ],
         "thumb_slideshow_alt_text": "A series of still life images with muted tones, balanced arrangement, and understated highlights in the manner of Pieter Claesz.",
-        "page_imagery": [""],
+        "page_imagery": [],
         "page_image_group_alt_text": ""
         },
     "assets": {
         "project_url_text": "behance.net/gallery/Pie-Claesz-Vibes",
-        "project_url": "https://www.behance.net/gallery/226147329/Pie-Claesz-Vibes",
+        "project_url": "https://www.behance.net/gallery/226117987/Pie-Claesz-Vibes",
         "github_repository": ""
     },
     "teaser_copy":{
@@ -37,9 +43,9 @@
         "page_subtitle": "Muted palette, balanced still life, and quiet light in a generative study.",
         "breadcrumb": "Claesz Still Life",
         "tile_text": [
-            "Still life study in the spirit of Pieter Claesz.",
-            "Muted tones and balanced tabletop composition.",
-            "Gentle light shaping with generative tooling."
+            "Still life study in the spirit of Pieter Claesz",
+            "Muted tones and balanced tabletop composition",
+            "Gentle light shaping with generative tooling"
         ]
     },
     "page_copy":{

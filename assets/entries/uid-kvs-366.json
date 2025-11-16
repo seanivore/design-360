@@ -7,8 +7,8 @@
         "slug": "flowering-symmetric-asymmetry"
     },
     "tagging":{
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
-        "media": ["Art Nouveau, Floral, Abstract, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": ["AI, Generative, Adobe Firefly, Canva, Cursor Dia AI, Claude AI, Lightroom"],
+        "media": ["Art Nouveau, Floral, Abstract, Digital Art, Print, Digital Product"],
         "role": "Graphic Designer",
         "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
     }
@@ -18,16 +18,22 @@
     "media": {
         "video_filename": "",
         "video_url": "",
-        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/226013907?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
+        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/217386181?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "A generative art nouveau collection with floral motifs, flowing symmetry, and balanced decorative forms.",
-        "thumbnail_images": [""],
+        "thumbnail_images": [
+            "/Users/seanivore/Development/360-design/assets/media/digital/flowering-symmetric-asymmetry/thumb-flowering-symmetric-asymmetry-1.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/flowering-symmetric-asymmetry/thumb-flowering-symmetric-asymmetry-2.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/flowering-symmetric-asymmetry/thumb-flowering-symmetric-asymmetry-3.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/flowering-symmetric-asymmetry/thumb-flowering-symmetric-asymmetry-4.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/flowering-symmetric-asymmetry/thumb-flowering-symmetric-asymmetry-5.webp"
+        ],
         "thumb_slideshow_alt_text": "Floral abstractions with graceful symmetry and art nouveau line work, rendered in luminous color.",
-        "page_imagery": [""],
+        "page_imagery": [],
         "page_image_group_alt_text": ""
         },
     "assets": {
-        "project_url_text": "behance.net/gallery/Flowering-Symmetric-Asymmetry",
-        "project_url": "https://www.behance.net/gallery/226013907/Flowering-Symmetric-Asymmetry",
+        "project_url_text": "behance.gallery/Flowering-Symmetric-Asymmetry",
+        "project_url": "https://www.behance.net/gallery/217386181/Flowering-Symmetric-Asymmetry",
         "github_repository": ""
     },
     "teaser_copy":{
@@ -37,9 +43,9 @@
         "page_subtitle": "Art nouveau floral abstractions with flowing symmetry and luminous color.",
         "breadcrumb": "Art Nouveau Series",
         "tile_text": [
-            "Floral motifs shaped by generative symmetry.",
-            "Graceful ornament and luminous color fields.",
-            "Decorative balance with modern tooling."
+            "Floral motifs shaped by generative symmetry",
+            "Graceful ornament and luminous color fields",
+            "Decorative balance with modern tooling"
         ]
     },
     "page_copy":{

@@ -7,10 +7,10 @@
         "slug": "gradient-bauhaus"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
-        "media": ["Gradient, Minimalism, Bauhaus, Abstract, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": ["AI, Generative, Adobe Firefly, Lightroom, Canva"],
+        "media": ["Gradient, Minimalism, Bauhaus, Abstract, Digital Art, Print, Digital Product"],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Art History, Product"]
     }
 },
 "content": {
@@ -19,9 +19,16 @@
         "video_url": "",
         "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/217385795?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "A generative gradient study exploring depth through layered color transitions, soft edges, and controlled value steps.",
-        "thumbnail_images": [""],
+        "thumbnail_images": [
+            "/Users/seanivore/Development/360-design/assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
+            "/Users/seanivore/Development/360-design/assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
+        ],
         "thumb_slideshow_alt_text": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
-        "page_imagery": [""],
+        "page_imagery": [],
         "page_image_group_alt_text": ""
     },
     "assets": {
@@ -36,9 +43,9 @@
         "page_subtitle": "Layered color transitions and controlled value for clean panels.",
         "breadcrumb": "Gradient Abstracts",
         "tile_text": [
-            "Layered gradients with soft edge control.",
-            "Disciplined value steps for spatial depth.",
-            "Generative panels with minimal polish."
+            "Layered gradients with soft edge control",
+            "Disciplined value steps for spatial depth",
+            "Generative panels with minimal polish"
         ]
     },
     "page_copy": {
