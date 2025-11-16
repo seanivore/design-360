@@ -4,10 +4,10 @@
     "placement": {
         "section": "Digital",
         "sub_section": "Generative",
-        "slug": "steampunk-clockwork-splendor"
+        "slug": "clockwork-splendor"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
+        "technology": ["AI, Generative, Adobe Firefly, Canva, Dia AI, Cursor, Claude AI, Behance, Lightroom"],
         "media": ["Steampunk, Victorian, Industrial, Cityscape, Architecture, Digital Art, Print, Social Media, Digital Product, NFT"],
         "role": "Graphic Designer",
         "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
@@ -19,9 +19,16 @@
         "video_url": "",
         "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/216060847?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "Steampunk cityscapes blending Victorian architecture with exposed gears, domes, airships, and soft golden light.",
-        "thumbnail_images": [""],
+        "thumbnail_images": [
+            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-1.webp",
+            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-2.webp",
+            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-3.webp",
+            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-4.webp",
+            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-5.webp",
+            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-6.webp"
+        ],
         "thumb_slideshow_alt_text": "Victorian inspired city scenes with gears, cogs, airships, and warm sunset tones.",
-        "page_imagery": [""],
+        "page_imagery": [],
         "page_image_group_alt_text": ""
     },
     "assets": {
@@ -36,9 +43,9 @@
         "page_subtitle": "Victorian industrial cityscapes with gears, domes, and airships.",
         "breadcrumb": "Steampunk Cityscapes",
         "tile_text": [
-            "Victorian forms meet exposed clockwork.",
-            "Airships, domes, and golden hour atmosphere.",
-            "Generative layouts refined for architectural clarity."
+            "Victorian forms meet exposed clockwork",
+            "Airships, domes, and golden hour atmosphere",
+            "Generative layouts refined for architectural clarity"
         ]
     },
     "page_copy": {

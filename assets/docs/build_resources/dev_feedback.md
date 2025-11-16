@@ -13,6 +13,16 @@ Looking forward to hear what you think! 💃
 
 # Design & Website Review Updates 
 
+## 1. Homepage Tile Thumbnail Display Logic 
+
+  * **Currently displays duplicates** 
+
+    + Right now there is just one project in the "Video" tagged section 
+      - This one project only has 5 or 6 thumbnail images 
+      - The homepage tile is pulling duplicate thumbnail images to make quota 
+      - Not enough thumbs via low number of projects should be the only exception where the full thumbnail image quota isn't met 
+      - And we should make sure that, generally speaking, there are no duplicates allowed, period 
+
 ---
 
 # Important Page Paths 

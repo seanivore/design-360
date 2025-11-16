@@ -4,10 +4,10 @@
     "placement": {
         "section": "Digital",
         "sub_section": "Generative",
-        "slug": "constructivism-landscapes"
+        "slug": "constructi-landscapes"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
+        "technology": ["AI, Generative, Adobe Firefly, Canva, Dia AI, Cursor, Claude AI, Behance, Lightroom"],
         "media": ["Constructivism, Landscape, Abstract, Digital Art, Print, Social Media, Digital Product, NFT"],
         "role": "Graphic Designer",
         "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
@@ -19,13 +19,20 @@
         "video_url": "",
         "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/216060883?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "Constructivist leaning abstract landscapes with geometric structure, flowing forms, and vibrant color fields suggesting mountains and water.",
-        "thumbnail_images": [""],
+        "thumbnail_images": [
+            "assets/media/digital/constructi-landscapes/thumb-constructi-landscapes-1.webp",
+            "assets/media/digital/constructi-landscapes/thumb-constructi-landscapes-2.webp",
+            "assets/media/digital/constructi-landscapes/thumb-constructi-landscapes-3.webp",
+            "assets/media/digital/constructi-landscapes/thumb-constructi-landscapes-4.webp",
+            "assets/media/digital/constructi-landscapes/thumb-constructi-landscapes-5.webp",
+            "assets/media/digital/constructi-landscapes/thumb-constructi-landscapes-6.webp"
+        ],
         "thumb_slideshow_alt_text": "Stylized mountain and water scenes with geometric structure, sweeping curves, and warm to cool color transitions.",
-        "page_imagery": [""],
+        "page_imagery": [],
         "page_image_group_alt_text": ""
     },
     "assets": {
-        "project_url_text": "behance.net/gallery/Art-Plus-Industry",
+        "project_url_text": "behance.gallery/Art-Plus-Industry",
         "project_url": "https://www.behance.net/gallery/216060883/Art-Plus-Industry",
         "github_repository": ""
     },
@@ -36,9 +43,9 @@
         "page_subtitle": "Abstract mountains and water scenes with geometric structure and vibrant color.",
         "breadcrumb": "Constructivism Landscapes",
         "tile_text": [
-            "Geometric structure meets flowing landscape forms.",
-            "Vibrant gradients across mountains and calm water.",
-            "Generative compositions with disciplined color pacing."
+            "Geometric structure meets flowing landscape forms",
+            "Vibrant gradients across mountains and calm water",
+            "Generative compositions with disciplined color pacing"
         ]
     },
     "page_copy": {

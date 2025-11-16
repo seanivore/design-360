@@ -4,11 +4,11 @@
     "placement": {
         "section": "Digital",
         "sub_section": "Generative",
-        "slug": "constructivism-haus"
+        "slug": "constructi-haus"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
-        "media": ["Constructivism, Geometric, Poster, Abstract, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": ["AI, Generative, Adobe Firefly, Canva, Dia AI, Cursor, Claude AI, Behance, Lightroom"],
+        "media": ["Constructivism, Geometric, Poster, Abstract, Digital Art, Print, Digital Product"],
         "role": "Graphic Designer",
         "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
     }
@@ -17,16 +17,23 @@
     "media": {
         "video_filename": "",
         "video_url": "",
-        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/PROJECT_ID?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
+        "video_embed": "<div style='left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;'><iframe src='https://www.behance.net/embed/project/217385873?ilo0=1' style='top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;' allowfullscreen allow='clipboard-write *; fullscreen *;'></iframe></div>",
         "video_alt_text": "A constructivist inspired generative set with bold geometry, directional cues, and disciplined compositional grids.",
-        "thumbnail_images": [""],
+        "thumbnail_images": [
+            "assets/media/digital/constructi-haus/thumb-constructi-haus-1.webp",
+            "assets/media/digital/constructi-haus/thumb-constructi-haus-2.webp",
+            "assets/media/digital/constructi-haus/thumb-constructi-haus-3.webp",
+            "assets/media/digital/constructi-haus/thumb-constructi-haus-4.webp",
+            "assets/media/digital/constructi-haus/thumb-constructi-haus-5.webp",
+            "assets/media/digital/constructi-haus/thumb-constructi-haus-6.webp"
+        ],
         "thumb_slideshow_alt_text": "Constructivist panels with strong geometry, directional balance, and grid discipline.",
-        "page_imagery": [""],
+        "page_imagery": [],
         "page_image_group_alt_text": ""
     },
     "assets": {
-        "project_url_text": "",
-        "project_url": "",
+        "project_url_text": "behance.gallery/Constructivism-Haus",
+        "project_url": "https://www.behance.net/gallery/217385873/Constructivism-Haus",
         "github_repository": ""
     },
     "teaser_copy": {
@@ -36,9 +43,9 @@
         "page_subtitle": "Bold geometry and directional balance in disciplined grids.",
         "breadcrumb": "Constructivist Study",
         "tile_text": [
-            "Bold constructivist geometry and clear grids.",
-            "Directional balance with poster friendly contrast.",
-            "Generative panels with precise finishing."
+            "Bold constructivist geometry and clear grids",
+            "Directional balance with poster friendly contrast",
+            "Generative panels with precise finishing"
         ]
     },
     "page_copy": {
