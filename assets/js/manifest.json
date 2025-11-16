@@ -16,16 +16,26 @@
     "digital/generative/bohemian-abstractions": "assets/entries/uid-kts-582.json",
     "digital/generative/flowering-symmetric-asymmetry": "assets/entries/uid-kvs-366.json",
     "digital/generative/pie-claesz": "assets/entries/uid-lrt-041.json",
+    "digital/generative/constructi-haus": "assets/entries/uid-lrt-716.json",
     "web/html-css-js/ai-meditation-mobile-app": "assets/entries/uid-lul-419.json",
+    "digital/generative/flat-bauhaus": "assets/entries/uid-mnu-667.json",
+    "digital/generative/humanistic-exploration": "assets/entries/uid-nvw-152.json",
+    "digital/generative/clockwork-splendor": "assets/entries/uid-pzy-452.json",
     "web/html-css-js/css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
+    "digital/generative/surreal-heads": "assets/entries/uid-rda-284.json",
     "web/html-css-js/saas-product-sale-features": "assets/entries/uid-rfr-187.json",
     "web/html-css-js/amorphous-gradient-css-animation": "assets/entries/uid-sgt-851.json",
+    "digital/generative/neo-expresi-cyber": "assets/entries/uid-spc-535.json",
     "web/html-css-js/data-visualization-dashboard": "assets/entries/uid-srs-009.json",
     "web/framer/blog-lookbook-print-gallery": "assets/entries/uid-tev-176.json",
     "web/webflow/training-yoga-sales": "assets/entries/uid-unw-889.json",
+    "digital/generative/psychedelic-impressi": "assets/entries/uid-vlf-055.json",
+    "digital/generative/ethereal-amalgamations": "assets/entries/uid-vue-009.json",
     "web/html-css-js/ai-design-fashion-lookbook": "assets/entries/uid-wgw-370.json",
     "web/html-css-js/minimalist-web-store-product": "assets/entries/uid-wnw-867.json",
-    "web/webflow/visual-artist-process-portfolio": "assets/entries/uid-wty-542.json"
+    "web/webflow/visual-artist-process-portfolio": "assets/entries/uid-wty-542.json",
+    "digital/generative/dragon-headshots": "assets/entries/uid-yvg-990.json",
+    "digital/generative/constructi-landscapes": "assets/entries/uid-zri-192.json"
   },
   "sections": {
     "digital": [
@@ -39,7 +49,17 @@
       "uid-iir-099",
       "uid-kts-582",
       "uid-kvs-366",
-      "uid-lrt-041"
+      "uid-lrt-041",
+      "uid-lrt-716",
+      "uid-mnu-667",
+      "uid-nvw-152",
+      "uid-pzy-452",
+      "uid-rda-284",
+      "uid-spc-535",
+      "uid-vlf-055",
+      "uid-vue-009",
+      "uid-yvg-990",
+      "uid-zri-192"
     ],
     "web": [
       "uid-dff-987",
@@ -64,6 +84,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps URLs to JSON file paths for dynamic loading",
-    "entry_count": 26
+    "entry_count": 36
   }
 }
