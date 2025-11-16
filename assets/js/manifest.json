@@ -5,8 +5,17 @@
     "web/html-css-js/modular-portfolio-build": "assets/entries/uid-eme-689.json",
     "digital/generative/surreal-constructivism-perception": "assets/entries/uid-enm-522.json",
     "digital/generative/constructivist-profiles": "assets/entries/uid-evn-680.json",
+    "digital/generative/pie-claesz-modern-vibes": "assets/entries/uid-fan-459.json",
+    "digital/generative/gradient-bauhaus": "assets/entries/uid-fen-036.json",
     "web/webflow/animated-cms-weekly-blogs": "assets/entries/uid-fth-565.json",
+    "video/generative/fashion-ai-video": "assets/entries/uid-gcp-491.json",
+    "digital/generative/minimalism-bauhaus": "assets/entries/uid-hdp-267.json",
     "web/html-css-js/personalized-fashion-magazine": "assets/entries/uid-hwi-844.json",
+    "digital/generative/bau-noir-haus": "assets/entries/uid-hxp-812.json",
+    "digital/generative/surreal-constructivism": "assets/entries/uid-iir-099.json",
+    "digital/generative/bohemian-abstractions": "assets/entries/uid-kts-582.json",
+    "digital/generative/flowering-symmetric-asymmetry": "assets/entries/uid-kvs-366.json",
+    "digital/generative/pie-claesz": "assets/entries/uid-lrt-041.json",
     "web/html-css-js/ai-meditation-mobile-app": "assets/entries/uid-lul-419.json",
     "web/html-css-js/css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
     "web/html-css-js/saas-product-sale-features": "assets/entries/uid-rfr-187.json",
@@ -22,7 +31,15 @@
     "digital": [
       "uid-bsj-738",
       "uid-enm-522",
-      "uid-evn-680"
+      "uid-evn-680",
+      "uid-fan-459",
+      "uid-fen-036",
+      "uid-hdp-267",
+      "uid-hxp-812",
+      "uid-iir-099",
+      "uid-kts-582",
+      "uid-kvs-366",
+      "uid-lrt-041"
     ],
     "web": [
       "uid-dff-987",
@@ -39,11 +56,14 @@
       "uid-wgw-370",
       "uid-wnw-867",
       "uid-wty-542"
+    ],
+    "video": [
+      "uid-gcp-491"
     ]
   },
   "_metadata": {
     "generated": "auto",
     "description": "Maps URLs to JSON file paths for dynamic loading",
-    "entry_count": 17
+    "entry_count": 26
   }
 }
