@@ -18,7 +18,12 @@
         "technology": [
             "AI",
             "Generative",
-            "Adobe Firefly"
+            "Adobe Firefly",
+            "Canva", 
+            "Dia AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Behance"
         ],
         "media": [
             "Baroque",
@@ -26,9 +31,7 @@
             "Still Life",
             "Digital Art",
             "Print",
-            "Social Media",
-            "Digital Product",
-            "NFT"
+            "Digital Product"
         ],
         "role": "Graphic Designer",
         "skill": [

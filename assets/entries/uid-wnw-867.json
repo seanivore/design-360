@@ -15,10 +15,32 @@
         "slug": "minimalist-web-store-product"
     },
     "tagging":{
-        "technology": ["Git", "HTML", "CSS", "JavaScript", "Agentic", "GitHub Pages", "Jekyll", "Responsive"],
-        "media": ["E-Commerce", "Digital Product", "Website"],
+        "technology": 
+        [
+            "Git", 
+            "HTML", 
+            "CSS", 
+            "JavaScript", 
+            "Agentic", 
+            "GitHub Pages", 
+            "Jekyll", 
+            "Responsive"
+        ],
+        "media": 
+        [
+            "E-Commerce", 
+            "Digital Product", 
+            "Website"
+        ],
         "role": "Web Developer", 
-        "skill": ["Product Staging", "Marketing", "Typography", "Art History", "Web Design"]
+        "skill": 
+        [
+            "Product Staging", 
+            "Marketing", 
+            "Typography", 
+            "Art History", 
+            "Web Design"
+        ]
     }
 },
 

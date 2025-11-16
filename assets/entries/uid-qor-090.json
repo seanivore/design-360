@@ -15,10 +15,42 @@
         "slug": "css-animated-micro-interactions"
     },
     "tagging":{
-        "technology": ["Git","HTML", "CSS", "Markdown", "Jekyll", "GitHub Pages", "Agentic", "AI", "Generative", "Responsive"],
-        "media": ["Landing Page", "Website", "Template", "Presentation Deck"],
+        "technology": 
+        [
+            "Git",
+            "HTML", 
+            "CSS", 
+            "Markdown", 
+            "Jekyll", 
+            "GitHub Pages", 
+            "Agentic", 
+            "AI", 
+            "Generative", 
+            "Responsive"
+        ],
+        "media": 
+        [
+            "Landing Page", 
+            "Website", 
+            "Template", 
+            "Presentation Deck"
+        ],
         "role": "Web Developer", 
-        "skill": ["Animation", "Content Production", "Publishing", "System Design", "Copywriting", "SaaS", "Automation", "Scaling System", "UX/UI Writing", "User Design", "Product", "Web Design"]
+        "skill": 
+        [
+            "Animation", 
+            "Content Production", 
+            "Publishing", 
+            "System Design", 
+            "Copywriting", 
+            "SaaS", 
+            "Automation", 
+            "Scaling System", 
+            "UX/UI Writing", 
+            "User Design", 
+            "Product", 
+            "Web Design"
+        ]
     }
 },
 

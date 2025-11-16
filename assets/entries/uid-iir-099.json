@@ -7,10 +7,39 @@
         "slug": "surreal-constructivism"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
-        "media": ["Constructivism, Surrealism, Landscape, Waves, Clouds, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Canva", 
+            "Dia AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Behance", 
+            "Lightroom"
+        ],
+        "media": [
+            "Constructivism", 
+            "Surrealism", 
+            "Landscape", 
+            "Waves", 
+            "Clouds", 
+            "Digital Art", 
+            "Print", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 "content": {

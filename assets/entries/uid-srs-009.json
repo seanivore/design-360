@@ -15,10 +15,33 @@
         "slug": "data-visualization-dashboard"
     },
     "tagging":{
-        "technology": ["Git","HTML", "CSS", "JavaScript", "Agentic", "GitHub Pages", "Jekyll", "Responsive"],
-        "media": ["Analytics Dashboard", "SaaS", "Digital Product"],
+        "technology": 
+        [
+            "Git",
+            "HTML", 
+            "CSS", 
+            "JavaScript", 
+            "Agentic", 
+            "GitHub Pages", 
+            "Jekyll", 
+            "Responsive"
+        ],
+        "media": 
+        [
+            "Analytics Dashboard", 
+            "SaaS", 
+            "Digital Product"
+        ],
         "role": "Web Developer", 
-        "skill": ["User Design", "Product", "System Design", "Scaling System", "Automation", "Web Design"]
+        "skill": 
+        [
+            "User Design", 
+            "Product", 
+            "System Design", 
+            "Scaling System", 
+            "Automation", 
+            "Web Design"
+        ]
     }
 },
 

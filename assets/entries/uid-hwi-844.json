@@ -15,10 +15,34 @@
         "slug": "personalized-fashion-magazine"
     },
     "tagging":{
-        "technology": ["Git","HTML", "CSS", "JavaScript", "GitHub Pages", "AI", "Generative", "Responsive"],
-        "media": ["Digital Product", "Website"],
+        "technology": [
+            "Git", 
+            "HTML", 
+            "CSS", 
+            "JavaScript", 
+            "GitHub Pages", 
+            "AI", 
+            "Generative", 
+            "Responsive"
+        ],
+        "media": [
+            "Digital Product", 
+            "Website"
+        ],
         "role": "Web Developer", 
-        "skill": ["Typography", "Content Production", "Copywriting", "Graphic Design", "Publishing", "Art History", "Fashion Photography", "Product Staging", "Automation", "Scaling System", "Branding"]
+        "skill": [
+            "Typography", 
+            "Content Production", 
+            "Copywriting", 
+            "Graphic Design", 
+            "Publishing", 
+            "Art History", 
+            "Fashion Photography", 
+            "Product Staging", 
+            "Automation", 
+            "Scaling System", 
+            "Branding"
+        ]
     }
 },
 

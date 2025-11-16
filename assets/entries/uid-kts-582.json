@@ -7,10 +7,37 @@
         "slug": "bohemian-abstractions"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Canva, Arc AI, Cursor, Claude AI, Lightroom"],
-        "media": ["Bohemian, Abstract, Geometric, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Canva", 
+            "Arc AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Lightroom"
+        ],
+        "media": [
+            "Bohemian", 
+            "Abstract", 
+            "Geometric", 
+            "Digital Art", 
+            "Print", 
+            "Social Media", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 "content": {

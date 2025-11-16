@@ -7,10 +7,46 @@
         "slug": "neo-expresi-cyber"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Canva, Dia AI, Cursor, Claude AI, Behance, Lightroom, Illustrator"],
-        "media": ["Neo-Expressionism, Surrealism, Cyberpunk, Industrial, Glitch Art, Portrait, Editorial, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": 
+        [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Canva", 
+            "Dia AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Behance", 
+            "Lightroom", 
+            "Illustrator"
+        ],
+        "media": 
+        [
+            "Neo-Expressionism", 
+            "Surrealism", 
+            "Cyberpunk", 
+            "Industrial", 
+            "Glitch Art", 
+            "Portrait", 
+            "Editorial", 
+            "Digital Art", 
+            "Print", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Editorial Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": 
+        [
+            "Content Production", 
+            "Graphic Design", 
+            "Editorial Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 "content": {

@@ -15,10 +15,33 @@
         "slug": "training-yoga-sales"
     },
     "tagging":{
-        "technology": ["Webflow", "CMS", "HTML", "Responsive", "Adobe Creative Cloud Apps"],
-        "media": ["Landing Page", "Digital Product", "Website"],
+        "technology": 
+        [
+            "Webflow", 
+            "CMS", 
+            "HTML", 
+            "Responsive", 
+            "Creative Cloud"
+        ],
+        "media": 
+        [
+            "Landing Page", 
+            "Digital Product", 
+            "Website"
+        ],
         "role": "Digital Consultant", 
-        "skill": ["Graphic Design", "Illustration", "Branding", "Account Management", "User Design", "Optimization", "No-Code Development", "Product", "Web Design"]
+        "skill": 
+        [
+            "Graphic Design", 
+            "Illustration", 
+            "Branding", 
+            "Account Management", 
+            "User Design", 
+            "Optimization", 
+            "No-Code Development", 
+            "Product", 
+            "Web Design"
+        ]
     }
 },
 

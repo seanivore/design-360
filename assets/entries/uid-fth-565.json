@@ -15,10 +15,38 @@
         "slug": "animated-cms-weekly-blogs"
     },
     "tagging":{
-        "technology": ["Git", "Webflow", "CMS", "Lottie", "AI", "Generative", "Make.com", "Python Script", "Adobe Creative Cloud Apps", "Responsive"],
-        "media": ["Digital Product", "Blog", "Website"],
+        "technology": [
+            "Git", 
+            "Webflow", 
+            "CMS",
+            "Lottie", 
+            "AI", 
+            "Generative", 
+            "Make.com", 
+            "Python Script", 
+            "Creative Cloud", 
+            "Responsive"
+        ],
+        "media": [
+            "Digital Product", 
+            "Blog", 
+            "Website"
+        ],
         "role": "Web Developer", 
-        "skill": ["Animation", "Illustration", "Automation", "Content Production", "Publishing", "Full-Stack", "Graphic Design", "Copywriting", "System Design", "Branding", "No-Code Development", "Web Design"]
+        "skill": [
+            "Animation", 
+            "Illustration", 
+            "Automation", 
+            "Content Production", 
+            "Publishing", 
+            "Full-Stack", 
+            "Graphic Design", 
+            "Copywriting", 
+            "System Design", 
+            "Branding", 
+            "No-Code Development", 
+            "Web Design"
+        ]
     }
 },
 

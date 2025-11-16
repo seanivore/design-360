@@ -7,10 +7,39 @@
         "slug": "flowering-symmetric-asymmetry"
     },
     "tagging":{
-        "technology": ["AI, Generative, Adobe Firefly, Canva, Cursor Dia AI, Claude AI, Lightroom"],
-        "media": ["Art Nouveau, Floral, Abstract, Digital Art, Print, Digital Product"],
+        "technology": 
+        [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Canva", 
+            "Cursor", 
+            "Dia AI", 
+            "Claude AI", 
+            "Lightroom"
+        ],
+        "media": 
+        [
+            "Art Nouveau", 
+            "Floral", 
+            "Abstract", 
+            "Digital Art", 
+            "Print", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": 
+        [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 

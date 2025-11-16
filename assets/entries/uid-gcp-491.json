@@ -7,10 +7,39 @@
         "slug": "fashion-ai-video"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom, After Effects, DaVinci Resolve, CapCut"],
-        "media": ["Fashion, Editorial, Lookbook, Video, Motion, Digital Art, Social Media, Digital Product, NFT"],
+        "technology": [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Photoshop In-Painting", 
+            "Lightroom", 
+            "After Effects", 
+            "DaVinci Resolve", 
+            "CapCut"
+        ],
+        "media": [
+            "Fashion", 
+            "Editorial", 
+            "Lookbook", 
+            "Video", 
+            "Motion", 
+            "Digital Art",
+            "Digital Product"
+        ],
         "role": "Social Media Producer",
-        "skill": ["Content Production, Graphic Design, Fashion Photography, Editorial Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": [
+            "Content Production", 
+            "Graphic Design", 
+            "Fashion Photography", 
+            "Editorial Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 "content": {

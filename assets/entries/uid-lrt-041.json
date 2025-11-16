@@ -7,10 +7,40 @@
         "slug": "pie-claesz"
     },
     "tagging":{
-        "technology": ["AI, Generative, Adobe Firefly, Canva, Cursor, Dia AI, Claude AI"],
-        "media": ["Baroque, Painting, Still Life, Digital Art, Print, Digital Product"],
+        "technology": 
+        [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Canva", 
+            "Cursor", 
+            "Dia AI", 
+            "Claude AI"
+        ],
+        "media": 
+        [
+            "Baroque", 
+            "Painting", 
+            "Still Life", 
+            "Digital Art", 
+            "Print", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Fashion Photography, Product Staging, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": 
+        [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Fashion Photography", 
+            "Product Staging", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 

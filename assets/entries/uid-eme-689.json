@@ -15,10 +15,28 @@
         "slug": "modular-portfolio-build"
     },
     "tagging":{
-        "technology": ["Git","HTML", "CSS", "JavaScript", "GitHub Pages", "Jekyll"],
-        "media": ["Website", "Template", "Portfolio"],
+        "technology": [
+            "Git",
+            "HTML", 
+            "CSS", 
+            "JavaScript", 
+            "GitHub Pages", 
+            "Jekyll"
+        ],
+        "media": [
+            "Website", 
+            "Template", 
+            "Portfolio"
+        ],
         "role": "Web Developer", 
-        "skill": ["System Design", "Publishing", "Modularity", "DRY Principles", "Typography", "Web Design"]
+        "skill": [
+            "System Design", 
+            "Publishing", 
+            "Modularity", 
+            "DRY Principles", 
+            "Typography", 
+            "Web Design"
+        ]
     }
 },
 

@@ -15,10 +15,29 @@
         "slug": "amorphous-gradient-css-animation"
     },
     "tagging":{
-        "technology": ["Git","HTML", "CSS", "Generative", "Responsive"],
-        "media": ["Landing Page", "Website", "Template", "Portfolio"],
+        "technology": 
+        [
+            "Git",
+            "HTML", 
+            "CSS", 
+            "Generative", 
+            "Responsive"
+        ],
+        "media": 
+        [
+            "Landing Page", 
+            "Website", 
+            "Template", 
+            "Portfolio"
+        ],
         "role": "Web Developer", 
-        "skill": ["Animation", "Typography", "Branding", "Web Design"]
+        "skill": 
+        [
+            "Animation", 
+            "Typography", 
+            "Branding", 
+            "Web Design"
+        ]
     }
 },
 

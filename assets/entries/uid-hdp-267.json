@@ -7,10 +7,37 @@
         "slug": "minimalism-bauhaus"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting, Lightroom"],
-        "media": ["Minimalism, Geometric, Bauhaus, Abstract, Digital Art, Digital Product"],
+        "technology": [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Lightroom", 
+            "Canva", 
+            "Dia AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Behance"
+        ],
+        "media": [
+            "Minimalism", 
+            "Geometric", 
+            "Bauhaus", 
+            "Abstract", 
+            "Digital Art", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 "content": {

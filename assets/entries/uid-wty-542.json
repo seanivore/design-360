@@ -15,10 +15,32 @@
         "slug": "visual-artist-process-portfolio"
     },
     "tagging":{
-        "technology": ["Webflow", "CMS", "Python Script", "HTML", "Responsive", "Adobe Creative Cloud Apps"],
-        "media": ["Digital Product", "NFT", "Portfolio", "Website"],
+        "technology": 
+        [
+            "Webflow", 
+            "CMS", 
+            "Python Script", 
+            "HTML", 
+            "Responsive", 
+            "Creative Cloud"
+        ],
+        "media": 
+        [
+            "Digital Product", 
+            "NFT", 
+            "Portfolio", 
+            "Website"
+        ],
         "role": "Creative Director", 
-        "skill": ["Illustration", "Graphic Design", "Branding", "Publishing", "Web Design", "No-Code Development"]
+        "skill": 
+        [
+            "Illustration", 
+            "Graphic Design", 
+            "Branding", 
+            "Publishing", 
+            "Web Design", 
+            "No-Code Development"
+        ]
     }
 },
 

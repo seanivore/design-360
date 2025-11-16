@@ -15,10 +15,37 @@
         "slug": "blog-lookbook-print-gallery"
     },
     "tagging":{
-        "technology": ["Git","Framer", "CMS", "Notion API", "AI", "Generative", "Make.com"],
-        "media": ["Digital Product", "Blog", "Website", "E-Commerce"],
+        "technology": 
+        [
+            "Git",
+            "Framer", 
+            "CMS", 
+            "Notion API", 
+            "AI", 
+            "Generative", 
+            "Make.com"
+        ],
+        "media": 
+        [
+            "Digital Product", 
+            "Blog", 
+            "Website", 
+            "E-Commerce"
+        ],
         "role": "Web Developer", 
-        "skill": ["Automation", "No-Code Development", "Content Production", "Graphic Design", "Fashion Photography", "Product Staging", "Scaling System", "Art History", "Web Design", "Copywriting"]
+        "skill": 
+        [
+            "Automation", 
+            "No-Code Development", 
+            "Content Production", 
+            "Graphic Design", 
+            "Fashion Photography", 
+            "Product Staging", 
+            "Scaling System", 
+            "Art History", 
+            "Web Design", 
+            "Copywriting"
+        ]
     }
 },
 

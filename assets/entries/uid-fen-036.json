@@ -7,10 +7,35 @@
         "slug": "gradient-bauhaus"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Lightroom, Canva"],
-        "media": ["Gradient, Minimalism, Bauhaus, Abstract, Digital Art, Print, Digital Product"],
+        "technology": [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Lightroom", 
+            "Canva", 
+            "Dia AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Behance"
+        ],
+        "media": [
+            "Gradient", 
+            "Minimalism", 
+            "Bauhaus", 
+            "Abstract", 
+            "Digital Art", 
+            "Print", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Art History, Product"]
+        "skill": [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Art History", 
+            "Product"
+        ]
     }
 },
 "content": {

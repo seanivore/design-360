@@ -7,10 +7,38 @@
         "slug": "pie-claesz-modern-vibes"
     },
     "tagging":{
-        "technology": ["AI, Generative, Adobe Firefly, Photoshop In-Painting"],
-        "media": ["Baroque, Painting, Still Life, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Canva", 
+            "Dia AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Behance"
+        ],
+        "media": [
+            "Baroque", 
+            "Painting", 
+            "Still Life", 
+            "Digital Art", 
+            "Print", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Fashion Photography, Product Staging, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Fashion Photography", 
+            "Product Staging", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 

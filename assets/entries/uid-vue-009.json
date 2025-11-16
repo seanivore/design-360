@@ -7,10 +7,42 @@
         "slug": "ethereal-amalgamations"
     },
     "tagging": {
-        "technology": ["AI, Generative, Adobe Firefly, Canva, Dia AI, Cursor, Claude AI, Behance, Lightroom"],
-        "media": ["Surrealism, Otherworldly, Landscape, Flora, Fantasy, Digital Art, Print, Social Media, Digital Product, NFT"],
+        "technology": 
+        [
+            "AI", 
+            "Generative", 
+            "Adobe Firefly", 
+            "Canva", 
+            "Dia AI", 
+            "Cursor", 
+            "Claude AI", 
+            "Behance", 
+            "Lightroom"
+        ],
+        "media": 
+        [
+            "Surrealism", 
+            "Otherworldly", 
+            "Landscape", 
+            "Flora", 
+            "Fantasy", 
+            "Digital Art", 
+            "Print", 
+            "Digital Product"
+        ],
         "role": "Graphic Designer",
-        "skill": ["Content Production, Graphic Design, Illustration, Scaling System, Publishing, Marketing, Art History, Branding, Product"]
+        "skill": 
+        [
+            "Content Production", 
+            "Graphic Design", 
+            "Illustration", 
+            "Scaling System", 
+            "Publishing", 
+            "Marketing", 
+            "Art History", 
+            "Branding", 
+            "Product"
+        ]
     }
 },
 "content": {

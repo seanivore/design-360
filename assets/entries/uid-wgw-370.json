@@ -15,10 +15,32 @@
         "slug": "ai-design-fashion-lookbook"
     },
     "tagging":{
-        "technology": ["Git", "HTML", "CSS", "JavaScript", "Generative", "Responsive"],
-        "media": ["Digital Product", "E-Commerce", "Website"],
+        "technology": 
+        [
+            "Git", 
+            "HTML", 
+            "CSS", 
+            "JavaScript", 
+            "Generative", 
+            "Responsive"
+        ],
+        "media": 
+        [
+            "Digital Product", 
+            "E-Commerce", 
+            "Website"
+        ],
         "role": "Web Developer", 
-        "skill": ["Fashion Photography", "Product", "Marketing", "Art History", "Copywriting", "Scaling System", "Web Design"]
+        "skill": 
+        [
+            "Fashion Photography", 
+            "Product", 
+            "Marketing", 
+            "Art History", 
+            "Copywriting", 
+            "Scaling System", 
+            "Web Design"
+        ]
     }
 },
 
