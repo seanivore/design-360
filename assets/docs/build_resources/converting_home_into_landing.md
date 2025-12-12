@@ -132,3 +132,4 @@
 
   + "Include logo, links, newsletter/email sign-up" 
   + "Copyright, privacy policy/legal, social media icons" 
+  + *Maybe our "email sign up" could actually just be a "say hello" stacked two small input fields with one that requires their email and the other requiring their message*
