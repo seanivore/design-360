@@ -10,48 +10,48 @@
 "categorization": {
     "entry_id": "uid-abd-123", 
     "placement": {
-        "section": "Web | Print | Digital | Video",
-        "sub_section": "See placement.json for current options; new sub_section tag additions should ideally represent more than one project entry", 
-        "slug": "page-slug-would-be-html-file-name"
+        "section": "Choose one: Web, Print, Digital, or Video",
+        "sub_section": "Chose one; use an already used sub_section tag if possible, otherwise create one: HTML/CSS/JS, Webflow, Framer, Application", 
+        "slug": "html-file-name"
     },
     "tagging":{
-        "technology": ["See placement.json > active_tags > contextual_tags > technology", "For any desired tag that would help tell the story of the project entry, try first to create it with a combination of tags across the groups", "If the desired tag cannot be expressed with a combination of tags from across the groups, then add it as a single new tag to one of the three main contextual tag groups, or, in specific cases, to the role tag value"],
-        "media": ["See placement.json > active_tags > contextual_tags > media", "For any desired tag that would help tell the story of the project entry, try first to create it with a combination of tags across the groups", "If the desired tag cannot be expressed with a combination of tags from across the groups, then add it as a single new tag to one of the three main contextual tag groups, or, in specific cases, to the role tag value"],
-        "role": "SINGLE VALUE - Choose ONE from placement.json > contextual_tags > role; there will be instances where the appropriate tag does not yet exist and a new one should only be created when it is the absolute most appropriate, encompassing role for that specific project entry; This value will be used as the first element of four sections on every project entry page", 
-        "skill": ["See placement.json > active_tags > contextual_tags > skill", "For any desired tag that would help tell the story of the project entry, try first to create it with a combination of tags across the groups", "If the desired tag cannot be expressed with a combination of tags from across the groups, then add it as a single new tag to one of the three main contextual tag groups, or, in specific cases, to the role tag value"]
+        "technology": ["ARRAY; each tag should be in its own set of quotes; Choose as many as are needed; only create new tags when absolutely necessary: Webflow, CMS, Framer, JavaScript, Python Script, CSS, HTML, JSON, Markdown, Agentic, AI, Generative, Make.com, Notion API, GitHub Pages, Jekyll, Responsive, Mobile-First, Creative Cloud, Adobe Firefly, Photoshop In-painting, Lottie, Git"],
+        "media": ["ARRAY; each tag should be in its own set of quotes; Choose as many as are needed; only create new tags when absolutely necessary: Progressive Web App,Single Page Application,Analytics Dashboard,SaaS,Landing Page,Digital Product,Mobile App,SMS,Social Media,Email,NFT,Voice Interface,Blog,Website,Template,Portfolio,E-Commerce,Podcast,Web App,Deck Presentation,Digital Art,Print,Baroque"],
+        "role": "STRING; Choose ONE; there will be instances where the appropriate tag does not yet exist and a new one should only be created when it is the absolute most appropriate, encompassing role for that specific project entry; This value will be used as the first element of four sections on every project entry page; choose from: Web Developer, App Developer, Creative Director, Digital Consultant, Graphic Designer",
+        "skill": ["ARRAY; each tag should be in its own set of quotes; Choose as many as are needed; only create new tags when absolutely necessary: Animation, Content Production, Typography, Graphic Design, Publishing, Illustration, Copywriting, Fashion Photography, Product Staging, Optimization, Automation, Scaling System, Publishing, System Design, Conversation Design, UX/UI Writing, User Design, Advertising, Marketing, Art History, Branding, Account Management, No-Code Development, Front-End, Back-End, Full-Stack, DRY Principles, Modularity, Product, Web Design"]
     }
 },
 
 "content": {
     "media": {
-        "video_filename": "If applicable, this is just for reference if needed in the future",
-        "video_url": "If a video embed is provided, the URL should be used somewhere on the page entry's text as a hyperlink paired with the actual video embedded on the page, if there is one",
-        "video_embed": "If provided, to be embedded on the project entry page prominently", 
-        "video_alt_text": "One alt text value that is present to describe the video if a video embed was provided to be placed on the project entry page",
-        "thumbnail_images": ["An array of images provided to be placed as a slideshow for the project's content tiles both on the Homepage and on any Section Page, this slideshow will also be placed on the project entry page to enforce the visual first storytelling"], 
-        "thumb_slideshow_alt_text": "One alt text value that is present to describe the slideshow as displayed on the content's homepage/section page, and as displayed on the actual project entry's page",
-        "page_imagery": ["An array of images provided that, if provided, are to be placed on the project entry page as a slideshow"],
-        "page_image_group_alt_text": "One alt text value that is present to describe the group of additional on-project-page images when they have been provided; leave empty if there are no page images provided for a project"
+        "video_filename": "OPTIONAL; add only if there is a video embed",
+        "video_url": "OPTIONAL; if the project has a video on YouTube, use this type of URL https://youtu.be/lnoKsXWa584",
+        "video_embed": "OPTIONAL; provide if the project has a YouTube video; adjust the embed code provided here by changing the 'src' URL, and the 'TITLE' value; change nothing else: <iframe width='560' height='315' src='https://www.youtube.com/embed/lnoKsXWa584?si=1bdNy9s8d65d5Kme&amp;controls=0' title='Automated Webflow CMS Shop and Fashion Gallery' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
+        "video_alt_text": "Provide if you provided a video embed",
+        "thumbnail_images": ["REQUIRED: ARRAY of > 2 and < 9 compressed .webp image files that have all been cropped and sized to 1920px X 1080px at 73 resolution; filename and relative URL should resemble: assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp"], 
+        "thumb_slideshow_alt_text": "REQUIRED",
+        "page_imagery": ["IGNORE"],
+        "page_image_group_alt_text": "IGNORE"
         },
     "assets": {
-        "project_url_text": "",
-        "project_url": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed",
-        "github_repository": "To be displayed on the project's entry page as it would be seen when shared on most media or messages or in search engine results, with the SEO Thumbnail and SEO Title forming the link embed"
+        "project_url_text": "If you have a project URL, create a simple, easy-to-read version of the URL, as in the example, for `content.assets.project_url_text`",
+        "project_url": "If available, provide a URL to any detailed post about the project",
+        "github_repository": "If available, provide a URL to the GitHub repository for the project"
     },
     "teaser_copy":{
-        "seo_title": "Used only for meta data",
-        "seo_description": "Used only for meta data", 
-        "page_title": "On entry page only", 
-        "page_subtitle": "On entry page only", 
-        "breadcrumb": "Super simple and short so that it can come after the section, sub_section, on every entry page",
-        "tile_text": ["About four different lines of text that are teasers to the content helping to tell as much of the story of the project entry as possible from right on the Content Tile; these will cycle when the content tile thumb is swiped to the next"]
+        "seo_title": "REQUIRED; proper SEO title",
+        "seo_description": "REQUIRED; proper SEO description", 
+        "page_title": "REQUIRED; short, simple version of the SEO title", 
+        "page_subtitle": "REQUIRED; space for the extra context that needed to be pulled to shorten the title", 
+        "breadcrumb": "REQUIRED; super simple and short so that it can come after the section, sub_section, on every entry page",
+        "tile_text": ["REQUIRED; ARRAY of ~4 lines of text, each ~7 words long; these are teasers displayed below the thumbnail images"]
     },
     "page_copy":{
-        "pattern": "Second section on every project entry page",
-        "action": "Third section on every project entry page", 
-        "measured": "Fourth section on every project entry page" 
+        "pattern": "REQUIRED; one small paragraph; concise and get to the point; it will be the second section on every project entry page; maximum of 500 words",
+        "action": "REQUIRED; one small paragraph; concise and get to the point; it will be the third section on every project entry page; maximum of 500 words", 
+        "measured": "REQUIRED; one small paragraph; concise and get to the point; it will be the fourth section on every project entry page; maximum of 500 words" 
     }
 }, 
 
-"notes": []
+"notes": ["IGNORE"]
 }
