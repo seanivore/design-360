@@ -2,7 +2,7 @@
 
 ## Overview 
 
-  * **Resources are provided that describe each project we'd like an entry for in the portfolio**
+  * **Use the project resources provided to produce a project JSON** 
     
     1. Review all the resources 
     2. Fill in the values of our JSON project entry schema 

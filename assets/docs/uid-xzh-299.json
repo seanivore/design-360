@@ -1,0 +1,68 @@
+{
+    "_metadata": {
+        "last_updated": "2026-02-02T17:00:29.287159Z",
+        "required_fields": true,
+        "template_type": "portfolio_entry",
+        "schema_version": "3.2",
+        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
+    },
+    "categorization": {
+        "entry_id": "uid-xzh-299",
+        "placement": {
+            "section": "Choose one: Web, Print, Digital, or Video",
+            "sub_section": "Chose one; use an already used sub_section tag if possible, otherwise create one: HTML/CSS/JS, Webflow, Framer, Application",
+            "slug": "html-file-name"
+        },
+        "tagging": {
+            "technology": [
+                "ARRAY; each tag should be in its own set of quotes; Choose as many as are needed; only create new tags when absolutely necessary: Webflow, CMS, Framer, JavaScript, Python Script, CSS, HTML, JSON, Markdown, Agentic, AI, Generative, Make.com, Notion API, GitHub Pages, Jekyll, Responsive, Mobile-First, Creative Cloud, Adobe Firefly, Photoshop In-painting, Lottie, Git"
+            ],
+            "media": [
+                "ARRAY; each tag should be in its own set of quotes; Choose as many as are needed; only create new tags when absolutely necessary: Progressive Web App,Single Page Application,Analytics Dashboard,SaaS,Landing Page,Digital Product,Mobile App,SMS,Social Media,Email,NFT,Voice Interface,Blog,Website,Template,Portfolio,E-Commerce,Podcast,Web App,Deck Presentation,Digital Art,Print,Baroque"
+            ],
+            "role": "STRING; Choose ONE; there will be instances where the appropriate tag does not yet exist and a new one should only be created when it is the absolute most appropriate, encompassing role for that specific project entry; This value will be used as the first element of four sections on every project entry page; choose from: Web Developer, App Developer, Creative Director, Digital Consultant, Graphic Designer",
+            "skill": [
+                "ARRAY; each tag should be in its own set of quotes; Choose as many as are needed; only create new tags when absolutely necessary: Animation, Content Production, Typography, Graphic Design, Publishing, Illustration, Copywriting, Fashion Photography, Product Staging, Optimization, Automation, Scaling System, Publishing, System Design, Conversation Design, UX/UI Writing, User Design, Advertising, Marketing, Art History, Branding, Account Management, No-Code Development, Front-End, Back-End, Full-Stack, DRY Principles, Modularity, Product, Web Design"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "OPTIONAL; add only if there is a video embed",
+            "video_url": "OPTIONAL; if the project has a video on YouTube, use this type of URL https://youtu.be/lnoKsXWa584",
+            "video_embed": "OPTIONAL; provide if the project has a YouTube video; adjust the embed code provided here by changing the 'src' URL, and the 'TITLE' value; change nothing else: <iframe width='560' height='315' src='https://www.youtube.com/embed/lnoKsXWa584?si=1bdNy9s8d65d5Kme&amp;controls=0' title='Automated Webflow CMS Shop and Fashion Gallery' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "video_alt_text": "Provide if you provided a video embed",
+            "thumbnail_images": [
+                "REQUIRED: ARRAY of > 2 and < 9 compressed .webp image files that have all been cropped and sized to 1920px X 1080px at 73 resolution; filename and relative URL should resemble: assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp"
+            ],
+            "thumb_slideshow_alt_text": "REQUIRED",
+            "page_imagery": [
+                "IGNORE"
+            ],
+            "page_image_group_alt_text": "IGNORE"
+        },
+        "assets": {
+            "project_url_text": "If you have a project URL, create a simple, easy-to-read version of the URL, as in the example, for `content.assets.project_url_text`",
+            "project_url": "If available, provide a URL to any detailed post about the project",
+            "github_repository": "If available, provide a URL to the GitHub repository for the project"
+        },
+        "teaser_copy": {
+            "seo_title": "REQUIRED; proper SEO title",
+            "seo_description": "REQUIRED; proper SEO description",
+            "page_title": "REQUIRED; short, simple version of the SEO title",
+            "page_subtitle": "REQUIRED; space for the extra context that needed to be pulled to shorten the title",
+            "breadcrumb": "REQUIRED; super simple and short so that it can come after the section, sub_section, on every entry page",
+            "tile_text": [
+                "REQUIRED; ARRAY of ~4 lines of text, each ~7 words long; these are teasers displayed below the thumbnail images"
+            ]
+        },
+        "page_copy": {
+            "pattern": "REQUIRED; one small paragraph; concise and get to the point; it will be the second section on every project entry page; maximum of 500 words",
+            "action": "REQUIRED; one small paragraph; concise and get to the point; it will be the third section on every project entry page; maximum of 500 words",
+            "measured": "REQUIRED; one small paragraph; concise and get to the point; it will be the fourth section on every project entry page; maximum of 500 words"
+        }
+    },
+    "notes": [
+        "IGNORE"
+    ]
+}

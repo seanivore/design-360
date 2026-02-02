@@ -326,10 +326,14 @@ if (!pathParam) {
 │   ├── media/
 │   │   └── [project-folders]/       # Images, videos
 │   │
-│   └── docs/
-│       ├── _entry_template.json     # Template for new projects
-│       ├── ADD_NEW_PROJECT.md       # How to add projects
-│       └── AI_CONTEXT_PRIMER.md     # This file
+│   ├── docs/
+│   │   ├── _entry_template.json     # Template for new projects
+│   │   ├── JSON_ARCHITECTURE.md     # Architecture documentation
+│   │   └── ADD_NEW_PROJECT.md       # How to add projects
+│   │
+│   └── scripts/
+│       ├── project.sh               # CLI command wrapper
+│       └── new_project.py           # Project JSON generator
 ```
 
 ### Key JavaScript Modules
@@ -526,9 +530,32 @@ if (!pathParam) {
 
 ## Adding New Projects
 
-### Quick Reference
+### Quick Start: The `project` Command
 
-  1. **Generate entry_id:** Run `uid` command, add underscore prefix
+The fastest way to create a new project entry is using the `project` CLI command:
+
+```bash
+project
+```
+
+This automatically:
+- Generates a unique ID (e.g., `uid-xzh-299`)
+- Creates a new JSON file in `assets/docs/` with that ID
+- Pre-fills `_metadata` with current timestamp and schema version
+- Sets `entry_id` to the generated UID
+- Keeps all other fields with helpful instruction text
+
+**One-time setup** (creates symlink so you can run `project` from anywhere):
+
+```bash
+ln -s /Users/seanivore/Development/360-design/assets/scripts/project.sh ~/bin/project
+```
+
+After running `project`, edit the generated JSON file to fill in your project details, then move it to `assets/entries/` when ready.
+
+### Manual Reference
+
+  1. **Generate entry_id:** Run `uid` command
   2. **Choose section:** Web, Print, Digital, or Video
   3. **Create subsection** (if needed) - check existing ones first
   4. **Write slug:** Clean, no extension (e.g., `project-name`)
