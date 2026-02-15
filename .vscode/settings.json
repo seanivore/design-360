@@ -1,0 +1,5 @@
+{
+  "markdown.validate.ignoredLinks": [
+    "/assets/entries/<data.categorization.entry_id>.json"
+  ]
+}
