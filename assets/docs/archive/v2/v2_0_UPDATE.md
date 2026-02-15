@@ -17,7 +17,7 @@
 ### New Page Structure 
 
   + Diagram showing the "Anatomy" of a high-converting SaaS landing page to use as a template to follow: 
-  `/Users/seanivore/Development/360-design/assets/docs/build_resources/anatomy-high-converting-saas-landing-page.jpg` 
+  `assets/docs/archive/v2/anatomy-high-converting-saas-landing-page.jpg` 
 
   + Each section should convey: 
 
@@ -40,20 +40,20 @@
   * **Consider provided resources before laying out sections** 
 
     + About Me from Read Me for this website project to help build out that section 
-    `/Users/seanivore/Development/360-design/assets/docs/build_resources/about-me-details-from-readme.md` 
+    `assets/docs/archive/v2/ABOUT_CREATOR_AND_PROJECT.md` 
 
     + Might be interesting to have section about generalists 
-    `/Users/seanivore/Development/360-design/assets/docs/build_resources/generalist-archetype.md` 
+    `assets/docs/archive/v2/MY-GENERALIST_ARCHETYPE_QUIZ.md` 
 
     + A lot of good one-liners and other sound bites for about me / generalists details 
-    `/Users/seanivore/Development/360-design/assets/docs/build_resources/generalist-360-degree-playbook.md` 
+    `assets/docs/archive/v2/GENERALIST-360-DEGREE-PLAYBOOK.md` 
 
     + Resume versions 
-    `/Users/seanivore/Development/360-design/assets/docs/build_resources/RESUME_OLDER.md` 
-    `/Users/seanivore/Development/360-design/assets/docs/build_resources/RESUME_NEWER.md` 
+    `assets/docs/archive/v2/RESUME_OLDER.md` 
+    `assets/docs/archive/v2/RESUME_NEWER.md` 
 
-    + Alternative style job hunt details about m e 
-    `/Users/seanivore/Development/360-design/assets/docs/build_resources/alt_job_hunt_ideas_about_me.md` 
+    + Alternative style job hunt details about me 
+    `assets/docs/archive/v2/ALTERNATIVE_JOB_HUNTING.md` 
 
 ---
 

@@ -1,5 +1,7 @@
 # Comprehensive Portfolio of Projects
 
+`https://developer-technologist.august.style/`
+
 # coding-visual-preview-tool.html
 https://seanivore.github.io/portfolio/pages/coding-visual-preview-tool
 >>position 40

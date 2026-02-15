@@ -1,13 +1,10 @@
-# Gathering Post Information Procedure 
+# Behance Entry Procedure 
 
 ## Overview 
 
-  - Please follow these steps and then provide a completed JSON with objects formatted like the example below 
-  - You'll be tagged with a website page that will include the necessary information  
+How to create a JSON from a Behance project URL. The primary need-to-know information is regarding the specific embed code for the project. 
 
 ### Resources Provided 
-
-  + TAGGED BEHANCE GALLERY PAGE 
 
   + UNALTERED EMBED FOR PATTERN 
 
@@ -15,8 +12,20 @@
 <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 78.2178%;"><iframe src="https://www.behance.net/embed/project/226118003?ilo0=1" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen allow="clipboard-write *; fullscreen *;"></iframe></div>
 ```
 
-  + RAW PROJECT URL 
-    `https://www.behance.net/gallery/226118003/Still-Life-Baroque-Fruit-Jan-Davidsz-de-Heem-Inspired`
+  + RAW PROJECT URL **Behance Projects to Add**
+
+    + `https://www.behance.net/gallery/189957541/Designing-contemporary-art-nouveau-for-a-brand` 
+    + `https://www.behance.net/gallery/191705387/Burning-desire-to-distain-back`
+    + `https://www.behance.net/gallery/193452985/Mid-Century-Modern-Art-Deco-Geometric-Abstract` 
+    + `https://www.behance.net/gallery/215001851/Instagram-Superbloom-Photoshoot-Male-Models`
+    + `https://www.behance.net/gallery/215001693/Tripping-Animated-AI-Generated-Artwork`
+    + `https://www.behance.net/gallery/215001371/Neo-Expressionism-Oil-Painting-Abstract-Cyberpunk`
+    + `https://www.behance.net/gallery/215001149/Art-Nouveau-Female-Model-Iconic-Camera-Pose-Make-up` 
+    + `https://www.behance.net/gallery/215000891/Psychedelic-Desert-Drive-to-Alien-Vegas` 
+    + `https://www.behance.net/gallery/184561511/Degradation-of-pride` 
+    + `https://www.behance.net/gallery/184259979/Transmutations-of-a-Conscious-Hyperobject`
+    + `https://www.behance.net/gallery/183958871/All-that-glitters-might-be-dangerous-aliens` 
+    + `https://www.behance.net/gallery/183961255/My-robot-commune-life` 
 
 ### Procedure 
 
