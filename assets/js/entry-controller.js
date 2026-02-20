@@ -109,7 +109,7 @@ const EntryController = (() => {
             if (roles.length > 0) {
                 html += '<div class="tag-pill-group tag-pill-group-role">';
                 html += roles.map(tag => {
-                    const tagURL = `/section.html?tags=${encodeURIComponent(tag)}`;
+                    const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
                     return `<a href="${tagURL}" class="entry-tag entry-tag-role">${tag}</a>`;
                 }).join('');
                 html += '</div>';
@@ -119,7 +119,7 @@ const EntryController = (() => {
             if (skills.length > 0) {
                 html += '<div class="tag-pill-group tag-pill-group-skill">';
                 html += skills.map(tag => {
-                    const tagURL = `/section.html?tags=${encodeURIComponent(tag)}`;
+                    const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
                     return `<a href="${tagURL}" class="entry-tag entry-tag-skill">${tag}</a>`;
                 }).join('');
                 html += '</div>';

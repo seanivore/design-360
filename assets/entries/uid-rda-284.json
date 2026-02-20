@@ -32,12 +32,12 @@
             "video_embed": "<iframe src='https://www.behance.net/embed/project/216060793?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
             "video_alt_text": "Surreal landscapes with giant human heads integrated into terrain: foliage crowned forms, floating orbs, and pastel atmospheres.",
             "thumbnail_images": [
-                "assets/media/digital/surreal-heads/thumb-surreal-heads-1.webp",
-                "assets/media/digital/surreal-heads/thumb-surreal-heads-2.webp",
-                "assets/media/digital/surreal-heads/thumb-surreal-heads-3.webp",
-                "assets/media/digital/surreal-heads/thumb-surreal-heads-4.webp",
-                "assets/media/digital/surreal-heads/thumb-surreal-heads-5.webp",
-                "assets/media/digital/surreal-heads/thumb-surreal-heads-6.webp"
+                "assets/media/surreal-heads/thumb-surreal-heads-1.webp",
+                "assets/media/surreal-heads/thumb-surreal-heads-2.webp",
+                "assets/media/surreal-heads/thumb-surreal-heads-3.webp",
+                "assets/media/surreal-heads/thumb-surreal-heads-4.webp",
+                "assets/media/surreal-heads/thumb-surreal-heads-5.webp",
+                "assets/media/surreal-heads/thumb-surreal-heads-6.webp"
             ],
             "thumb_slideshow_alt_text": "Towering head forms across whimsical terrains, floating spheres, and soft pastel skies.",
             "page_imagery": [],

@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean August Horvath — Multidisciplinary Creative</title>
+  <meta name="description"
+    content="Web Developer, Graphic Designer, Automation Engineer, and Creative Director with 36+ projects spanning full-stack builds, brand systems, and automated workflows.">
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+
+  <style>
+    /* ============================================
+       INLINE BASE STYLES (for file:// fallback)
+       These duplicate key vars from styles.css
+       so the prototype is viewable standalone.
+       ============================================ */
+    :root {
+      --color-bg-primary: #1f1f1f;
+      --color-bg-secondary: #363635;
+      --color-bg-tile: #1a1a1a;
+      --color-bg-dark: #0f0f0f;
+      --color-text-primary: #EBEBEB;
+      --color-text-secondary: #D7CDCC;
+      --color-accent: #9C528B;
+      --color-accent-active: #7d4070;
+      --color-border: #474545;
+      --color-accent-mauve: #C99CAD;
+      --color-accent-blue: #8FA9B3;
+      --color-accent-terracotta: #C9A68A;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-xxl: 4rem;
+      --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      --font-size-xs: 0.75rem;
+      --font-size-sm: 0.875rem;
+      --font-size-base: 1rem;
+      --font-size-md: 1.125rem;
+      --font-size-lg: 1.5rem;
+      --font-size-xl: 2rem;
+      --font-size-xxl: 2.5rem;
+      --font-size-xxxl: 3rem;
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      --font-weight-heavy: 800;
+      --line-height-tight: 1.2;
+      --line-height-normal: 1.5;
+      --line-height-relaxed: 1.75;
+      --duration-fast: 200ms;
+      --duration-normal: 300ms;
+      --duration-slow: 400ms;
+      --easing: cubic-bezier(0.4, 0.0, 0.2, 1);
+      --max-content-width: 75rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-family-base);
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-normal);
+      color: var(--color-text-primary);
+      background-color: var(--color-bg-primary);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    @media (min-width: 48rem) {
+      .container {
+        padding: 0 var(--space-lg);
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-tight);
+    }
+
+    /* Sticky header fallback */
+    .site-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: linear-gradient(to right, #4c748a 0%, #42222f 100%);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-sm) 0;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-logo {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+    }
+
+    .site-nav {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+
+    .site-nav a {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .site-footer {
+      padding: var(--space-lg) 0;
+      background: linear-gradient(to right, #4c748a 0%, #42222f 100%);
+      border-top: 1px solid var(--color-border);
+      margin-top: var(--space-xxl);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      text-align: center;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-secondary {
+      color: var(--color-text-secondary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: inline-flex;
+      width: 3.5rem;
+      height: 3.5rem;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-primary);
+      background: rgba(156, 82, 139, 0.05);
+      border-radius: 50%;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: transform var(--duration-normal) var(--easing), color var(--duration-fast) var(--easing);
+    }
+
+    .social-link:hover {
+      transform: translateY(-0.25rem);
+      color: var(--color-accent-terracotta);
+      border-color: var(--color-accent-terracotta);
+    }
+
+    .social-link svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    /* ============================================
+       SECTION DIVIDERS
+       ============================================ */
+    .section-divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right,
+          transparent 0%,
+          var(--color-border) 20%,
+          var(--color-accent) 50%,
+          var(--color-border) 80%,
+          transparent 100%);
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+
+    /* ============================================
+       LANDING PAGE PROTOTYPE STYLES
+       These will move to styles.css in Phase 3
+       ============================================ */
+
+    /* --- HERO --- */
+    .hero {
+      padding: var(--space-xxl) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-number {
+      font-size: 3.5rem;
+      font-weight: var(--font-weight-heavy);
+      line-height: 1;
+      background: linear-gradient(135deg, var(--color-accent-terracotta), var(--color-accent-mauve));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-stat-label {
+      font-size: var(--font-size-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: var(--font-weight-bold);
+      line-height: 1.15;
+      margin-bottom: var(--space-sm);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-secondary);
+      max-width: 40rem;
+      margin: 0 auto var(--space-lg);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-xxl);
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 2rem;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      border-radius: 0.375rem;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-semibold);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background var(--duration-fast) var(--easing),
+        transform var(--duration-fast) var(--easing);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-active);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      padding: 0.75rem 2rem;
+      background: transparent;
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+      border-radius: 0.375rem;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color var(--duration-fast) var(--easing),
+        color var(--duration-fast) var(--easing);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    /* Thumbnail strip */
+    .hero-thumbnail-strip {
+      display: flex;
+      gap: var(--space-sm);
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: var(--space-xs) 0;
+      mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    }
+
+    .hero-thumbnail-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hero-thumb {
+      flex-shrink: 0;
+      width: 16rem;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+      transition: opacity var(--duration-fast) var(--easing);
+    }
+
+    .hero-thumb:hover {
+      opacity: 1;
+    }
+
+    /* --- SHOWCASE (Tabbed grids) --- */
+    .showcase {
+      padding: var(--space-xxl) 0;
+    }
+
+    .showcase-tabs {
+      display: flex;
+      gap: var(--space-xs);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-xl);
+    }
+
+    .showcase-tab {
+      padding: 0.5rem 1.25rem;
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      font-family: var(--font-family-base);
+      transition: all var(--duration-fast) var(--easing);
+    }
+
+    .showcase-tab:hover {
+      border-color: var(--color-accent);
+      color: var(--color-text-primary);
+    }
+
+    .showcase-tab.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    .showcase-panel {
+      display: none;
+    }
+
+    .showcase-panel.active {
+      display: block;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+      gap: var(--space-md);
+    }
+
+    .showcase-card {
+      background: var(--color-bg-tile);
+      border: 1px solid var(--color-border);
+      border-radius: 0.375rem;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--color-text-primary);
+      transition: transform var(--duration-fast) var(--easing),
+        border-color var(--duration-fast) var(--easing);
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--color-accent);
+      color: var(--color-text-primary);
+    }
+
+    .showcase-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .showcase-card-body {
+      padding: var(--space-sm);
+    }
+
+    .showcase-card-title {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+
+    .showcase-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .showcase-card-tag {
+      font-size: 0.625rem;
+      padding: 0.125rem 0.375rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 0.125rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* --- CREDENTIALS --- */
+    .credentials {
+      padding: var(--space-xxl) 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      gap: var(--space-md);
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+
+    .credential-card {
+      padding: var(--space-md);
+      border-left: 3px solid var(--color-accent-terracotta);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .credential-org {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: 0.25rem;
+    }
+
+    .credential-role {
+      font-size: var(--font-size-sm);
+      color: var(--color-accent-mauve);
+    }
+
+    .credential-period {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* --- PROCESS --- */
+    .process {
+      padding: var(--space-xxl) 0;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 47.9375rem) {
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .process-step {
+      text-align: center;
+      padding: var(--space-lg);
+      position: relative;
+    }
+
+    .process-step-number {
+      font-size: 4rem;
+      font-weight: var(--font-weight-heavy);
+      color: rgba(156, 82, 139, 0.15);
+      line-height: 1;
+      margin-bottom: var(--space-xs);
+    }
+
+    .process-step-verb {
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .process-step-desc {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+
+    /* --- CAREER TIMELINE --- */
+    .career-timeline {
+      padding: var(--space-xxl) 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.15) 50%, transparent 100%);
+    }
+
+    .career-eras {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 47.9375rem) {
+      .career-eras {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .career-era {
+      border: 1px solid var(--color-border);
+      border-radius: 0.375rem;
+      overflow: hidden;
+      transition: border-color var(--duration-fast) var(--easing);
+    }
+
+    .career-era:hover {
+      border-color: var(--color-accent);
+    }
+
+    .career-era-header {
+      padding: var(--space-md);
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .career-era-period {
+      font-size: var(--font-size-xs);
+      color: var(--color-accent-mauve);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .career-era-title {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-bold);
+      margin-top: 0.25rem;
+    }
+
+    .career-era-body {
+      padding: var(--space-md);
+    }
+
+    .career-era-body ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .career-era-body li {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      padding: 0.375rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .career-era-body li::before {
+      content: '→ ';
+      color: var(--color-accent-terracotta);
+    }
+
+    /* --- METRICS --- */
+    .metrics {
+      padding: var(--space-xxl) 0;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+      gap: var(--space-md);
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+
+    .metric-card {
+      text-align: center;
+      padding: var(--space-lg);
+      border: 1px solid var(--color-border);
+      border-radius: 0.375rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: var(--font-weight-heavy);
+      background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-mauve));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+
+    .metric-label {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    .metric-source {
+      font-size: var(--font-size-xs);
+      color: var(--color-accent-terracotta);
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    /* --- FAQ --- */
+    .faq {
+      padding: var(--space-xxl) 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.15) 50%, transparent 100%);
+    }
+
+    .faq-list {
+      max-width: 45rem;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-md) 0;
+    }
+
+    .faq-question {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-xs);
+      color: var(--color-text-primary);
+    }
+
+    .faq-answer {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--line-height-relaxed);
+    }
+
+    /* --- CTA --- */
+    .cta-section {
+      padding: var(--space-xxl) 0;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: var(--font-size-xxl);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-sm);
+    }
+
+    .cta-subtitle {
+      font-size: var(--font-size-md);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-lg);
+      max-width: 35rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* --- Section divider override --- */
+    .landing-heading {
+      font-size: var(--font-size-xxl);
+      font-weight: var(--font-weight-bold);
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      letter-spacing: -0.02em;
+    }
+
+    .landing-heading::after {
+      content: '';
+      display: block;
+      width: 4rem;
+      height: 3px;
+      background: var(--color-accent);
+      margin: var(--space-sm) auto 0;
+    }
+
+    .landing-subhead {
+      text-align: center;
+      color: var(--color-text-secondary);
+      max-width: 35rem;
+      margin: calc(-1 * var(--space-md)) auto var(--space-xl);
+      font-size: var(--font-size-sm);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================
+       1. NAVBAR
+       ============================ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">Sean August Horvath</a>
+      <nav class="site-nav">
+        <a href="#showcase">Work</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a class="btn-primary" href="/assets/docs/resume.pdf"
+          style="padding: 0.375rem 1rem; font-size: 0.8125rem;">Resume ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================
+       2. HERO
+       ============================ -->
+  <section class="hero container">
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number">36</div>
+        <div class="hero-stat-label">Projects</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">11</div>
+        <div class="hero-stat-label">Roles</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">50+</div>
+        <div class="hero-stat-label">Skills</div>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="hero-title">I build things that <em>work</em> and look like they shouldn't be free.</h1>
+    <p class="hero-subtitle">Full-stack developer, designer, and automation engineer who ships production systems — from
+      SaaS conversion flows to 800-product e-commerce stores.</p>
+
+    <!-- CTAs -->
+    <div class="hero-cta-row">
+      <a href="#showcase" class="btn-primary">See the Work</a>
+      <a href="/assets/docs/resume.pdf" class="btn-secondary">Download Resume</a>
+    </div>
+
+    <!-- Auto-scrolling thumbnail strip -->
+    <div class="hero-thumbnail-strip" id="hero-strip">
+      <img src="assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"
+        alt="SaaS Conversion Flow" class="hero-thumb">
+      <img src="assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp"
+        alt="Automated E-Commerce" class="hero-thumb">
+      <img src="assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp"
+        alt="CSS Micro-Interactions" class="hero-thumb">
+      <img src="assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-1.webp"
+        alt="AI Meditation App" class="hero-thumb">
+      <img src="assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp"
+        alt="Analytics Dashboard" class="hero-thumb">
+      <img src="assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp"
+        alt="Modular Portfolio" class="hero-thumb">
+      <img src="assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp"
+        alt="Framer CMS Site" class="hero-thumb">
+      <img src="assets/media/animated-cms-weekly-blogs/thumb-slides-animated-cms-weekly-blogs-1.webp"
+        alt="Animated CMS Blogs" class="hero-thumb">
+      <img src="assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp"
+        alt="Fashion Lookbook" class="hero-thumb">
+      <img src="assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-1.webp" alt="Wellness Platform"
+        class="hero-thumb">
+      <img src="assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp"
+        alt="Artist Portfolio" class="hero-thumb">
+      <img src="assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp"
+        alt="E-Commerce Gallery" class="hero-thumb">
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ============================
+       3. SHOWCASE (Tabbed role grids)
+       ============================ -->
+  <section class="showcase container" id="showcase">
+    <h2 class="landing-heading">Selected Work</h2>
+    <p class="landing-subhead">Filter by the hat I was wearing</p>
+
+    <!-- Tabs -->
+    <div class="showcase-tabs">
+      <button class="showcase-tab active" data-tab="web-dev">Web Developer</button>
+      <button class="showcase-tab" data-tab="designer">Graphic Designer</button>
+      <button class="showcase-tab" data-tab="automation">Automation Engineer</button>
+      <button class="showcase-tab" data-tab="video">Video & Creative</button>
+    </div>
+
+    <!-- Panel: Web Developer -->
+    <div class="showcase-panel active" id="panel-web-dev">
+      <div class="showcase-grid">
+        <a href="/saas-product-sale-features" class="showcase-card">
+          <img src="assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"
+            alt="SaaS Conversion Flow">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Complete SaaS Conversion Flow with CSS Animation</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">HTML/CSS/JS</span>
+              <span class="showcase-card-tag">CSS Animation</span>
+              <span class="showcase-card-tag">Responsive Design</span>
+            </div>
+          </div>
+        </a>
+        <a href="/css-animated-micro-interactions" class="showcase-card">
+          <img src="assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp"
+            alt="Research Platform">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">AI Agent Research Presentation Platform</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">JavaScript</span>
+              <span class="showcase-card-tag">CSS Animation</span>
+              <span class="showcase-card-tag">GitHub Pages</span>
+            </div>
+          </div>
+        </a>
+        <a href="/modular-portfolio-build" class="showcase-card">
+          <img src="assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp"
+            alt="Modular Portfolio">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Modular Portfolio System for AI-Assisted Development</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">HTML/CSS/JS</span>
+              <span class="showcase-card-tag">GitHub Pages</span>
+              <span class="showcase-card-tag">Git</span>
+            </div>
+          </div>
+        </a>
+        <a href="/blog-lookbook-print-gallery" class="showcase-card">
+          <img src="assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp"
+            alt="Framer CMS">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Framer CMS Site Built Using AI & Notion</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Framer</span>
+              <span class="showcase-card-tag">Notion</span>
+              <span class="showcase-card-tag">CMS Management</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Panel: Graphic Designer -->
+    <div class="showcase-panel" id="panel-designer">
+      <div class="showcase-grid">
+        <a href="/surreal-constructivism" class="showcase-card">
+          <img src="assets/media/surreal-constructivism/thumb-surreal-constructivism-1.webp" alt="Sublime Convergence">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Sublime Convergence</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Illustration</span>
+              <span class="showcase-card-tag">Midjourney</span>
+              <span class="showcase-card-tag">Art Direction</span>
+            </div>
+          </div>
+        </a>
+        <a href="/baroque-de-heem-still-life" class="showcase-card">
+          <img src="assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-1.webp"
+            alt="Baroque Still Life">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Baroque Fruit Still Life (De Heem Study)</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Generative AI</span>
+              <span class="showcase-card-tag">Photography</span>
+              <span class="showcase-card-tag">Art Direction</span>
+            </div>
+          </div>
+        </a>
+        <a href="/gradient-bauhaus" class="showcase-card">
+          <img src="assets/media/gradient-bauhaus/thumb-gradient-bauhaus-1.webp" alt="Gradient Depths">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Gradient Depths</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Typography</span>
+              <span class="showcase-card-tag">Illustration</span>
+              <span class="showcase-card-tag">Midjourney</span>
+            </div>
+          </div>
+        </a>
+        <a href="/constructi-haus" class="showcase-card">
+          <img src="assets/media/constructi-haus/thumb-constructi-haus-1.webp" alt="Constructivism Haus">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Constructivism Haus</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Illustration</span>
+              <span class="showcase-card-tag">Art Direction</span>
+              <span class="showcase-card-tag">Editorial Design</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Panel: Automation Engineer -->
+    <div class="showcase-panel" id="panel-automation">
+      <div class="showcase-grid">
+        <a href="/automated-e-commerce-shop-lookbook" class="showcase-card">
+          <img
+            src="assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp"
+            alt="Automated E-Commerce">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">800+ Product Store with Automated CMS Management</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Make.com</span>
+              <span class="showcase-card-tag">Webflow</span>
+              <span class="showcase-card-tag">API Integration</span>
+            </div>
+          </div>
+        </a>
+        <a href="/animated-cms-weekly-blogs" class="showcase-card">
+          <img src="assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp"
+            alt="Animated CMS Blogs">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">200+ Weekly Blogs with Custom Hand-Drawn Animation</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Automation</span>
+              <span class="showcase-card-tag">Lottie</span>
+              <span class="showcase-card-tag">CMS Management</span>
+            </div>
+          </div>
+        </a>
+        <a href="/data-visualization-dashboard" class="showcase-card">
+          <img src="assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp"
+            alt="Analytics Dashboard">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">AI Application Analytics Dashboard Interface</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Data Visualization</span>
+              <span class="showcase-card-tag">Dashboard Design</span>
+              <span class="showcase-card-tag">Python</span>
+            </div>
+          </div>
+        </a>
+        <a href="/minimalist-web-store-product" class="showcase-card">
+          <img src="assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp"
+            alt="E-Commerce Gallery">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Timeless E-Commerce Gallery for Art Prints</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">E-Commerce</span>
+              <span class="showcase-card-tag">Webflow</span>
+              <span class="showcase-card-tag">Product Staging</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Panel: Video & Creative -->
+    <div class="showcase-panel" id="panel-video">
+      <div class="showcase-grid">
+        <a href="/fashion-ai-video" class="showcase-card">
+          <img src="assets/media/fashion-ai-video/thumb-fashion-ai-video-1.webp" alt="Fashion Video">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Curated Avant Garde Fashion Lookbook</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Video Production</span>
+              <span class="showcase-card-tag">After Effects</span>
+              <span class="showcase-card-tag">Art Direction</span>
+            </div>
+          </div>
+        </a>
+        <a href="/visual-artist-process-portfolio" class="showcase-card">
+          <img src="assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp"
+            alt="Artist Portfolio">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Hand-Illustrated Portfolio Showcasing Creative Process</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">Illustration</span>
+              <span class="showcase-card-tag">Art Direction</span>
+              <span class="showcase-card-tag">Publishing</span>
+            </div>
+          </div>
+        </a>
+        <a href="/amorphous-gradient-css-animation" class="showcase-card">
+          <img src="assets/media/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-1.webp"
+            alt="Morphing Gradients">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Casual Projects Overview with Morphing Gradients</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">CSS Animation</span>
+              <span class="showcase-card-tag">Motion Graphics</span>
+              <span class="showcase-card-tag">GitHub Pages</span>
+            </div>
+          </div>
+        </a>
+        <a href="/ai-design-fashion-lookbook" class="showcase-card">
+          <img src="assets/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp"
+            alt="Shoppable Lookbook">
+          <div class="showcase-card-body">
+            <div class="showcase-card-title">Shoppable Fashion Lookbook with Google Lens API</div>
+            <div class="showcase-card-tags">
+              <span class="showcase-card-tag">API Integration</span>
+              <span class="showcase-card-tag">Lookbook Design</span>
+              <span class="showcase-card-tag">E-Commerce</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- View all link -->
+    <div style="text-align: center; margin-top: var(--space-xl);">
+      <a href="/section.html" class="btn-secondary">View All 36 Projects →</a>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ============================
+       4. CREDENTIALS
+       ============================ -->
+  <section class="credentials container" id="credentials">
+    <h2 class="landing-heading">Where I've Worked</h2>
+
+    <div class="credentials-grid">
+      <div class="credential-card">
+        <div class="credential-org">Self-Directed Studio</div>
+        <div class="credential-role">Full-Stack Developer & Designer</div>
+        <div class="credential-period">2023 – Present</div>
+      </div>
+      <div class="credential-card">
+        <div class="credential-org">Freelance Clients</div>
+        <div class="credential-role">Web Developer & Automation Consultant</div>
+        <div class="credential-period">2021 – Present</div>
+      </div>
+      <div class="credential-card">
+        <div class="credential-org">YogaSix / Club Pilates</div>
+        <div class="credential-role">Brand Designer & Digital Marketing</div>
+        <div class="credential-period">2019 – 2022</div>
+      </div>
+      <div class="credential-card">
+        <div class="credential-org">Agency & In-House</div>
+        <div class="credential-role">Creative Director & Art Director</div>
+        <div class="credential-period">2015 – 2019</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ============================
+       5. PROCESS
+       ============================ -->
+  <section class="process container" id="process">
+    <h2 class="landing-heading">How I Work</h2>
+    <p class="landing-subhead">Every project follows the same three-act structure</p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-step-number">01</div>
+        <div class="process-step-verb">Diagnose</div>
+        <p class="process-step-desc">Understand the real problem — not just the brief. Map stakeholders, constraints,
+          and the gap between where things are and where they need to be.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-number">02</div>
+        <div class="process-step-verb">Build</div>
+        <p class="process-step-desc">Ship working prototypes fast. Whether it's code, design, or automation — the goal
+          is a functional system, not a polished deck.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-number">03</div>
+        <div class="process-step-verb">Measure</div>
+        <p class="process-step-desc">Quantify what happened. Did conversion go up? Did the workflow save hours? If it
+          can't be measured, it didn't matter.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ============================
+       6. CAREER TIMELINE
+       ============================ -->
+  <section class="career-timeline container" id="timeline">
+    <h2 class="landing-heading">Career Arc</h2>
+
+    <div class="career-eras">
+      <!-- Era 1 -->
+      <div class="career-era">
+        <div class="career-era-header">
+          <div class="career-era-period">2015 – 2019</div>
+          <div class="career-era-title">The Design Foundation</div>
+        </div>
+        <div class="career-era-body">
+          <ul>
+            <li>Brand identity systems for agency clients</li>
+            <li>Print layout & editorial design</li>
+            <li>Art direction for photo + video shoots</li>
+            <li>Creative team leadership</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Era 2 -->
+      <div class="career-era">
+        <div class="career-era-header">
+          <div class="career-era-period">2019 – 2022</div>
+          <div class="career-era-title">The Digital Shift</div>
+        </div>
+        <div class="career-era-body">
+          <ul>
+            <li>Webflow + Framer production builds</li>
+            <li>Social media campaigns at scale</li>
+            <li>Marketing automation with Make.com</li>
+            <li>CMS management for 800+ products</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Era 3 -->
+      <div class="career-era">
+        <div class="career-era-header">
+          <div class="career-era-period">2023 – Present</div>
+          <div class="career-era-title">The Full Stack</div>
+        </div>
+        <div class="career-era-body">
+          <ul>
+            <li>Production JavaScript & Python systems</li>
+            <li>AI-augmented development workflows</li>
+            <li>SPA architecture & modular design systems</li>
+            <li>Generative design & automation engineering</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ============================
+       7. METRICS
+       ============================ -->
+  <section class="metrics container" id="metrics">
+    <h2 class="landing-heading">By the Numbers</h2>
+    <p class="landing-subhead">Real outcomes from real projects</p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">800+</div>
+        <div class="metric-label">Products managed via automated CMS</div>
+        <div class="metric-source">→ E-Commerce Store</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">200+</div>
+        <div class="metric-label">Weekly blogs with custom animation</div>
+        <div class="metric-source">→ Animated CMS Blogs</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">36</div>
+        <div class="metric-label">Production projects in portfolio</div>
+        <div class="metric-source">→ This Site</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">11</div>
+        <div class="metric-label">Distinct professional roles</div>
+        <div class="metric-source">→ Web Dev to Art Direction</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">0</div>
+        <div class="metric-label">Frameworks used (pure vanilla JS)</div>
+        <div class="metric-source">→ Modular Portfolio</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">100%</div>
+        <div class="metric-label">AI-assisted development workflow</div>
+        <div class="metric-source">→ Claude + Cursor</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ============================
+       8. FAQ
+       ============================ -->
+  <section class="faq container" id="faq">
+    <h2 class="landing-heading">Frequently Asked</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">"You do... everything?"</div>
+        <div class="faq-answer">Not everything — but I've shipped production work as a web developer, graphic designer,
+          video editor, and automation engineer. The common thread is systems thinking: I see how pieces connect and
+          build the connective tissue between them. Most "generalists" are actually specialists who got bored.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"Can a generalist go deep enough?"</div>
+        <div class="faq-answer">Look at the SaaS conversion flow — that's production JavaScript with custom CSS
+          animation, responsive design, and conversion optimization. Look at the 800-product store — that's Make.com,
+          Notion, Webflow CMS, and Python all integrated. These aren't surface-level.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"What's your tech stack?"</div>
+        <div class="faq-answer">For web: vanilla HTML/CSS/JS, no frameworks. For automation: Python + Make.com + Notion.
+          For design: Figma, Photoshop, Illustrator, After Effects. For AI: Claude/Cursor for development, Midjourney
+          for generative design. I pick the tool that fits, not the one I'm most comfortable with.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"Why no React / Next.js / Tailwind?"</div>
+        <div class="faq-answer">Because I don't need them for what I build. This portfolio runs on GitHub Pages with
+          zero build steps — pure HTML, CSS, JS, and JSON. No bundler, no node_modules, no deploy pipeline. Sometimes
+          the best engineering decision is choosing not to over-engineer.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">"How do you use AI in your work?"</div>
+        <div class="faq-answer">AI is a power tool, not a replacement. I pair-program with Claude/Cursor for
+          development, use Midjourney for generative design exploration, and build automation workflows that leverage AI
+          for content processing. The key is knowing when AI accelerates and when it gets in the way.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ============================
+       9. CTA + CONTACT
+       ============================ -->
+  <section class="cta-section container" id="contact">
+    <h2 class="cta-title">Let's build something.</h2>
+    <p class="cta-subtitle">Whether you need a developer, a designer, or someone who can do both — I'm ready to ship.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="mailto:horvathaugust@gmail.com" class="btn-primary">Get in Touch</a>
+      <a href="/assets/docs/resume.pdf" class="btn-secondary">Download Resume</a>
+    </div>
+
+    <!-- Social links -->
+    <div class="social-links" style="margin-top: var(--space-lg);">
+      <a href="https://github.com/seanivore" aria-label="GitHub" title="GitHub" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/seanivore/" aria-label="LinkedIn" title="LinkedIn" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+      </a>
+      <a href="https://instagram.com/seanivore/" aria-label="Instagram" title="Instagram" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg>
+      </a>
+      <a href="mailto:horvathaugust@gmail.com" aria-label="Email" title="Email" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer mt-lg">
+    <div class="container">
+      <p class="text-center text-secondary">
+        &copy; 2025 Sean August Horvath. Built with vanilla HTML, CSS, JS &mdash; zero frameworks, zero build steps.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Showcase Tab Switching -->
+  <script>
+    // Simple tab switching for prototype
+    document.querySelectorAll('.showcase-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Deactivate all
+        document.querySelectorAll('.showcase-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.showcase-panel').forEach(p => p.classList.remove('active'));
+        // Activate clicked
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Auto-scroll hero thumbnail strip
+    const strip = document.getElementById('hero-strip');
+    if (strip) {
+      let scrollPos = 0;
+      const scrollSpeed = 0.5;
+      function autoScroll() {
+        scrollPos += scrollSpeed;
+        if (scrollPos >= strip.scrollWidth - strip.clientWidth) {
+          scrollPos = 0;
+        }
+        strip.scrollLeft = scrollPos;
+        requestAnimationFrame(autoScroll);
+      }
+      // Start after a brief pause
+      setTimeout(autoScroll, 2000);
+    }
+  </script>
+
+</body>
+
+</html>

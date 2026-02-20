@@ -30,12 +30,12 @@
             "video_embed": "<iframe src='https://www.behance.net/embed/project/217385795?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
             "video_alt_text": "A generative gradient study exploring depth through layered color transitions, soft edges, and controlled value steps.",
             "thumbnail_images": [
-                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
-                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
-                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
-                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
-                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
-                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
+                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
+                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
+                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
+                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
+                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
+                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
             ],
             "thumb_slideshow_alt_text": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
             "page_imagery": [],

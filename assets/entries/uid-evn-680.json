@@ -36,12 +36,12 @@
             "video_embed": "<iframe src='https://www.behance.net/embed/project/216060889?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
             "video_alt_text": "Geometric profile portraits of head and shoulders with constructivist, cubist inspired sharp angles and vibrant color fields",
             "thumbnail_images": [
-                "assets/media/digital/constructivist-portraits/thumb-constructivist-portraits-1.webp",
-                "assets/media/digital/constructivist-portraits/thumb-constructivist-portraits-2.webp",
-                "assets/media/digital/constructivist-portraits/thumb-constructivist-portraits-3.webp",
-                "assets/media/digital/constructivist-portraits/thumb-constructivist-portraits-4.webp",
-                "assets/media/digital/constructivist-portraits/thumb-constructivist-portraits-5.webp",
-                "assets/media/digital/constructivist-portraits/thumb-constructivist-portraits-6.webp"
+                "assets/media/constructivist-portraits/thumb-constructivist-portraits-1.webp",
+                "assets/media/constructivist-portraits/thumb-constructivist-portraits-2.webp",
+                "assets/media/constructivist-portraits/thumb-constructivist-portraits-3.webp",
+                "assets/media/constructivist-portraits/thumb-constructivist-portraits-4.webp",
+                "assets/media/constructivist-portraits/thumb-constructivist-portraits-5.webp",
+                "assets/media/constructivist-portraits/thumb-constructivist-portraits-6.webp"
             ],
             "thumb_slideshow_alt_text": "Angular geometric portraits with bold color blocks and sharp constructivist forms",
             "page_imagery": [],

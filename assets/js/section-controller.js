@@ -23,13 +23,14 @@
     function parseURL() {
         const tags = [];
 
-        // Check URL params first (for local testing)
-        const urlParams = new URLSearchParams(window.location.search);
-        const tagsParam = urlParams.get('tags');
+        // Manually parse query string to preserve + as delimiter
+        // (URLSearchParams decodes + as space, breaking multi-tag URLs)
+        const search = window.location.search.slice(1); // remove ?
+        const tagsMatch = search.match(/tags?=([^&]+)/);
 
-        if (tagsParam) {
-            // ?tags=Web+Developer+Graphic+Designer
-            tagsParam.split('+').forEach(tag => {
+        if (tagsMatch) {
+            // ?tags=web-developer+graphic-designer
+            tagsMatch[1].split('+').forEach(tag => {
                 const decoded = decodeURIComponent(tag.replace(/-/g, ' '));
                 if (decoded) tags.push(decoded);
             });

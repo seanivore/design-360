@@ -32,12 +32,12 @@
             "video_embed": "<iframe src='https://www.behance.net/embed/project/217386149?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
             "video_alt_text": "A generative collection of dragon portrait studies with art nouveau and art deco cues, crisp silhouettes, and ornamental line work.",
             "thumbnail_images": [
-                "assets/media/digital/dragon-headshots/thumb-dragon-headshots-1.webp",
-                "assets/media/digital/dragon-headshots/thumb-dragon-headshots-2.webp",
-                "assets/media/digital/dragon-headshots/thumb-dragon-headshots-3.webp",
-                "assets/media/digital/dragon-headshots/thumb-dragon-headshots-4.webp",
-                "assets/media/digital/dragon-headshots/thumb-dragon-headshots-5.webp",
-                "assets/media/digital/dragon-headshots/thumb-dragon-headshots-6.webp"
+                "assets/media/dragon-headshots/thumb-dragon-headshots-1.webp",
+                "assets/media/dragon-headshots/thumb-dragon-headshots-2.webp",
+                "assets/media/dragon-headshots/thumb-dragon-headshots-3.webp",
+                "assets/media/dragon-headshots/thumb-dragon-headshots-4.webp",
+                "assets/media/dragon-headshots/thumb-dragon-headshots-5.webp",
+                "assets/media/dragon-headshots/thumb-dragon-headshots-6.webp"
             ],
             "thumb_slideshow_alt_text": "Dragon head portraits rendered with decorative line work, geometric ornament, and balanced highlights.",
             "page_imagery": [],

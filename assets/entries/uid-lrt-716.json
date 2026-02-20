@@ -32,12 +32,12 @@
             "video_embed": "<iframe src='https://www.behance.net/embed/project/217385873?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
             "video_alt_text": "A constructivist inspired generative set with bold geometry, directional cues, and disciplined compositional grids.",
             "thumbnail_images": [
-                "assets/media/digital/constructi-haus/thumb-constructi-haus-1.webp",
-                "assets/media/digital/constructi-haus/thumb-constructi-haus-2.webp",
-                "assets/media/digital/constructi-haus/thumb-constructi-haus-3.webp",
-                "assets/media/digital/constructi-haus/thumb-constructi-haus-4.webp",
-                "assets/media/digital/constructi-haus/thumb-constructi-haus-5.webp",
-                "assets/media/digital/constructi-haus/thumb-constructi-haus-6.webp"
+                "assets/media/constructi-haus/thumb-constructi-haus-1.webp",
+                "assets/media/constructi-haus/thumb-constructi-haus-2.webp",
+                "assets/media/constructi-haus/thumb-constructi-haus-3.webp",
+                "assets/media/constructi-haus/thumb-constructi-haus-4.webp",
+                "assets/media/constructi-haus/thumb-constructi-haus-5.webp",
+                "assets/media/constructi-haus/thumb-constructi-haus-6.webp"
             ],
             "thumb_slideshow_alt_text": "Constructivist panels with strong geometry, directional balance, and grid discipline.",
             "page_imagery": [],

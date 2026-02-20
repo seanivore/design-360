@@ -32,12 +32,12 @@
             "video_embed": "<iframe src='https://www.behance.net/embed/project/216060847?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
             "video_alt_text": "Steampunk cityscapes blending Victorian architecture with exposed gears, domes, airships, and soft golden light.",
             "thumbnail_images": [
-                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-1.webp",
-                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-2.webp",
-                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-3.webp",
-                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-4.webp",
-                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-5.webp",
-                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-6.webp"
+                "assets/media/clockwork-splendor/thumb-clockwork-splendor-1.webp",
+                "assets/media/clockwork-splendor/thumb-clockwork-splendor-2.webp",
+                "assets/media/clockwork-splendor/thumb-clockwork-splendor-3.webp",
+                "assets/media/clockwork-splendor/thumb-clockwork-splendor-4.webp",
+                "assets/media/clockwork-splendor/thumb-clockwork-splendor-5.webp",
+                "assets/media/clockwork-splendor/thumb-clockwork-splendor-6.webp"
             ],
             "thumb_slideshow_alt_text": "Victorian inspired city scenes with gears, cogs, airships, and warm sunset tones.",
             "page_imagery": [],
