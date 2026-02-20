@@ -1,86 +1,68 @@
 {
-"categorization": {
-    "entry_id": "uid-iir-099",
-    "placement": {
-        "section": "Digital",
-        "sub_section": "Generative",
-        "slug": "surreal-constructivism"
+    "_metadata": {
+        "schema_version": "4.0"
     },
-    "tagging": {
-        "technology": [
-            "AI", 
-            "Generative", 
-            "Adobe Firefly", 
-            "Canva", 
-            "Dia AI", 
-            "Cursor", 
-            "Claude AI", 
-            "Behance", 
-            "Lightroom"
-        ],
-        "media": [
-            "Constructivism", 
-            "Surrealism", 
-            "Landscape", 
-            "Waves", 
-            "Clouds", 
-            "Digital Art", 
-            "Print", 
-            "Digital Product"
-        ],
-        "role": "Graphic Designer",
-        "skill": [
-            "Content Production", 
-            "Graphic Design", 
-            "Illustration", 
-            "Scaling System", 
-            "Publishing", 
-            "Marketing", 
-            "Art History", 
-            "Branding", 
-            "Product"
-        ]
+    "categorization": {
+        "entry_id": "uid-iir-099",
+        "slug": "surreal-constructivism",
+        "tags": {
+            "role": [
+                "Brand Designer",
+                "Content Strategist",
+                "Graphic Designer"
+            ],
+            "skill": [
+                "Adobe Firefly",
+                "Art Direction",
+                "Claude/Cursor",
+                "Content Production",
+                "Generative AI",
+                "Illustration",
+                "Lightroom",
+                "Print Layout",
+                "Publishing",
+                "Scaling Systems"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "",
+            "video_url": "",
+            "video_embed": "<iframe src='https://www.behance.net/embed/project/216060815?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+            "video_alt_text": "Surreal constructivist landscapes where mountains curl into waves and technicolor clouds swirl under radiant skies.",
+            "thumbnail_images": [
+                "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-1.webp",
+                "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-2.webp",
+                "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-3.webp",
+                "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-4.webp",
+                "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-5.webp",
+                "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-6.webp"
+            ],
+            "thumb_slideshow_alt_text": "Swirling clouds, rolling mountains, reflective lakes, and crashing waves in vivid color.",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
+        },
+        "assets": {
+            "project_url_text": "behance.net/gallery/Sublime-Convergence",
+            "project_url": "https://www.behance.net/gallery/216060815/Sublime-Convergence",
+            "github_repository": ""
+        },
+        "teaser_copy": {
+            "seo_title": "Constructivism Surrealism: Sublime Convergence of Mountains, Waves, and Technicolor Skies",
+            "seo_description": "A generative series blending constructivist structure with surreal motion: curling mountains, crashing waves, and technicolor cloud fields illuminated by radiant light.",
+            "page_title": "Sublime Convergence",
+            "page_subtitle": "Constructivist surreal landscapes with waves, mountains, and technicolor skies.",
+            "tile_text": [
+                "Mountains curl into waves under radiant skies",
+                "Technicolor cloud fields with disciplined motion",
+                "Constructivist structure meets surreal atmosphere"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Constructivist surrealism balances strong geometric frameworks with dreamlike motion cues and radiant color fields that stay legible across scales.",
+            "action": "A generative pass laid axes and gradient rhythms, then in painting refined edge control, value pacing, and cloud wave transitions for cinematic flow.",
+            "measured": "Creates vivid panels that read instantly in grids and sustain layered depth for print, social showcases, and provenance linked digital editions."
+        }
     }
-},
-"content": {
-    "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "<iframe src='https://www.behance.net/embed/project/216060815?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-        "video_alt_text": "Surreal constructivist landscapes where mountains curl into waves and technicolor clouds swirl under radiant skies.",
-        "thumbnail_images": [
-            "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-1.webp",
-            "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-2.webp",
-            "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-3.webp",
-            "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-4.webp",
-            "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-5.webp",
-            "assets/media/digital/surreal-constructivism/thumb-surreal-constructivism-6.webp"
-        ],
-        "thumb_slideshow_alt_text": "Swirling clouds, rolling mountains, reflective lakes, and crashing waves in vivid color.",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
-    },
-    "assets": {
-        "project_url_text": "behance.net/gallery/Sublime-Convergence",
-        "project_url": "https://www.behance.net/gallery/216060815/Sublime-Convergence",
-        "github_repository": ""
-    },
-    "teaser_copy": {
-        "seo_title": "Constructivism Surrealism: Sublime Convergence of Mountains, Waves, and Technicolor Skies",
-        "seo_description": "A generative series blending constructivist structure with surreal motion: curling mountains, crashing waves, and technicolor cloud fields illuminated by radiant light.",
-        "page_title": "Sublime Convergence",
-        "page_subtitle": "Constructivist surreal landscapes with waves, mountains, and technicolor skies.",
-        "breadcrumb": "Constructivism Surrealism Landscapes",
-        "tile_text": [
-            "Mountains curl into waves under radiant skies",
-            "Technicolor cloud fields with disciplined motion",
-            "Constructivist structure meets surreal atmosphere"
-        ]
-    },
-    "page_copy": {
-        "pattern": "Constructivist surrealism balances strong geometric frameworks with dreamlike motion cues and radiant color fields that stay legible across scales.",
-        "action": "A generative pass laid axes and gradient rhythms, then in painting refined edge control, value pacing, and cloud wave transitions for cinematic flow.",
-        "measured": "Creates vivid panels that read instantly in grids and sustain layered depth for print, social showcases, and provenance linked digital editions."
-    }
-}
 }

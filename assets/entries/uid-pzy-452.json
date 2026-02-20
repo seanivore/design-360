@@ -1,90 +1,68 @@
 {
-"categorization": {
-    "entry_id": "uid-pzy-452",
-    "placement": {
-        "section": "Digital",
-        "sub_section": "Generative",
-        "slug": "clockwork-splendor"
+    "_metadata": {
+        "schema_version": "4.0"
     },
-    "tagging": {
-        "technology": 
-        [
-            "AI", 
-            "Generative", 
-            "Adobe Firefly", 
-            "Canva", 
-            "Dia AI", 
-            "Cursor", 
-            "Claude AI", 
-            "Behance", 
-            "Lightroom"
-        ],
-        "media": 
-        [
-            "Steampunk", 
-            "Victorian", 
-            "Industrial", 
-            "Cityscape", 
-            "Architecture", 
-            "Digital Art", 
-            "Print", 
-            "Digital Product", 
-            "NFT"
-        ],
-        "role": "Graphic Designer",
-        "skill": 
-        [
-            "Content Production", 
-            "Graphic Design", 
-            "Illustration", 
-            "Scaling System", 
-            "Publishing", 
-            "Marketing", 
-            "Art History", 
-            "Branding", 
-            "Product"
-        ]
+    "categorization": {
+        "entry_id": "uid-pzy-452",
+        "slug": "clockwork-splendor",
+        "tags": {
+            "role": [
+                "Brand Designer",
+                "Content Strategist",
+                "Graphic Designer"
+            ],
+            "skill": [
+                "Adobe Firefly",
+                "Art Direction",
+                "Claude/Cursor",
+                "Content Production",
+                "Generative AI",
+                "Illustration",
+                "Lightroom",
+                "Print Layout",
+                "Publishing",
+                "Scaling Systems"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "",
+            "video_url": "",
+            "video_embed": "<iframe src='https://www.behance.net/embed/project/216060847?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+            "video_alt_text": "Steampunk cityscapes blending Victorian architecture with exposed gears, domes, airships, and soft golden light.",
+            "thumbnail_images": [
+                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-1.webp",
+                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-2.webp",
+                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-3.webp",
+                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-4.webp",
+                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-5.webp",
+                "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-6.webp"
+            ],
+            "thumb_slideshow_alt_text": "Victorian inspired city scenes with gears, cogs, airships, and warm sunset tones.",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
+        },
+        "assets": {
+            "project_url_text": "behance.net/gallery/Clockwork-Splendor",
+            "project_url": "https://www.behance.net/gallery/216060847/Clockwork-Splendor",
+            "github_repository": ""
+        },
+        "teaser_copy": {
+            "seo_title": "Steampunk Clockwork Splendor: Generative Victorian Industrial Cityscapes",
+            "seo_description": "A steampunk collection merging Victorian architecture with gears, domes, bridges, and airships in soft golden light, executed with a generative pipeline and careful finishing.",
+            "page_title": "Clockwork Splendor",
+            "page_subtitle": "Victorian industrial cityscapes with gears, domes, and airships.",
+            "tile_text": [
+                "Victorian forms meet exposed clockwork",
+                "Airships, domes, and golden hour atmosphere",
+                "Generative layouts refined for architectural clarity"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Steampunk architecture mixes ornate Victorian forms with visible mechanics, warm light, and layered depth that reads both elegant and industrial.",
+            "action": "A generative pass set city grids, verticals, and mechanical motifs, then in painting refined edge integrity, light pacing, and focal hierarchy across gears and domes.",
+            "measured": "Creates coherent city panels that pop at tile scale and sustain intricate detail for print, social showcases, and provenance linked digital editions."
+        }
     }
-},
-"content": {
-    "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "<iframe src='https://www.behance.net/embed/project/216060847?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-        "video_alt_text": "Steampunk cityscapes blending Victorian architecture with exposed gears, domes, airships, and soft golden light.",
-        "thumbnail_images": [
-            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-1.webp",
-            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-2.webp",
-            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-3.webp",
-            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-4.webp",
-            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-5.webp",
-            "assets/media/digital/clockwork-splendor/thumb-clockwork-splendor-6.webp"
-        ],
-        "thumb_slideshow_alt_text": "Victorian inspired city scenes with gears, cogs, airships, and warm sunset tones.",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
-    },
-    "assets": {
-        "project_url_text": "behance.net/gallery/Clockwork-Splendor",
-        "project_url": "https://www.behance.net/gallery/216060847/Clockwork-Splendor",
-        "github_repository": ""
-    },
-    "teaser_copy": {
-        "seo_title": "Steampunk Clockwork Splendor: Generative Victorian Industrial Cityscapes",
-        "seo_description": "A steampunk collection merging Victorian architecture with gears, domes, bridges, and airships in soft golden light, executed with a generative pipeline and careful finishing.",
-        "page_title": "Clockwork Splendor",
-        "page_subtitle": "Victorian industrial cityscapes with gears, domes, and airships.",
-        "breadcrumb": "Steampunk Cityscapes",
-        "tile_text": [
-            "Victorian forms meet exposed clockwork",
-            "Airships, domes, and golden hour atmosphere",
-            "Generative layouts refined for architectural clarity"
-        ]
-    },
-    "page_copy": {
-        "pattern": "Steampunk architecture mixes ornate Victorian forms with visible mechanics, warm light, and layered depth that reads both elegant and industrial.",
-        "action": "A generative pass set city grids, verticals, and mechanical motifs, then in painting refined edge integrity, light pacing, and focal hierarchy across gears and domes.",
-        "measured": "Creates coherent city panels that pop at tile scale and sustain intricate detail for print, social showcases, and provenance linked digital editions."
-    }
-}
 }

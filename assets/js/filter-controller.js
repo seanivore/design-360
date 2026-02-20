@@ -1,7 +1,7 @@
 /**
- * FILTER CONTROLLER
+ * FILTER CONTROLLER (v4.0)
  * Manages tag filtering and URL hash state
- * Handles sticky filters, DOM reordering, and tag type differentiation
+ * Handles sticky filters, DOM reordering, and role/skill differentiation
  */
 
 const FilterController = (() => {
@@ -230,10 +230,10 @@ const FilterController = (() => {
     }
 
     /**
-     * Sort tags by type: subsection, role, then contextual
+     * Sort tags by type: role first, then skill
      */
     function sortTagsByType(tagsWithTypes) {
-        const order = { subsection: 1, role: 2, contextual: 3 };
+        const order = { role: 1, skill: 2 };
 
         return tagsWithTypes.sort((a, b) => {
             const orderA = order[a.type] || 999;

@@ -1,84 +1,68 @@
 {
-"categorization": {
-    "entry_id": "uid-kts-582",
-    "placement": {
-        "section": "Digital",
-        "sub_section": "Generative",
-        "slug": "bohemian-abstractions"
+    "_metadata": {
+        "schema_version": "4.0"
     },
-    "tagging": {
-        "technology": [
-            "AI", 
-            "Generative", 
-            "Adobe Firefly", 
-            "Canva", 
-            "Arc AI", 
-            "Cursor", 
-            "Claude AI", 
-            "Lightroom"
-        ],
-        "media": [
-            "Bohemian", 
-            "Abstract", 
-            "Geometric", 
-            "Digital Art", 
-            "Print", 
-            "Social Media", 
-            "Digital Product"
-        ],
-        "role": "Graphic Designer",
-        "skill": [
-            "Content Production", 
-            "Graphic Design", 
-            "Illustration", 
-            "Scaling System", 
-            "Publishing", 
-            "Marketing", 
-            "Art History", 
-            "Branding", 
-            "Product"
-        ]
+    "categorization": {
+        "entry_id": "uid-kts-582",
+        "slug": "bohemian-abstractions",
+        "tags": {
+            "role": [
+                "Brand Designer",
+                "Content Strategist",
+                "Graphic Designer"
+            ],
+            "skill": [
+                "Adobe Firefly",
+                "Art Direction",
+                "Claude/Cursor",
+                "Content Production",
+                "Generative AI",
+                "Illustration",
+                "Lightroom",
+                "Print Layout",
+                "Publishing",
+                "Scaling Systems"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "",
+            "video_url": "",
+            "video_embed": "<iframe src='https://www.behance.net/embed/project/217385899?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+            "video_alt_text": "A generative bohemian abstract series with geometric rhythm, layered color, and relaxed decorative balance.",
+            "thumbnail_images": [
+                "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-1.webp",
+                "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-2.webp",
+                "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-3.webp",
+                "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-4.webp",
+                "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-5.webp",
+                "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-6.webp"
+            ],
+            "thumb_slideshow_alt_text": "Bohemian inspired abstractions: geometric motifs, layered color fields, and easy balance.",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
+        },
+        "assets": {
+            "project_url_text": "behance.net/gallery/Bohemian-Abstractions",
+            "project_url": "https://www.behance.net/gallery/217385899/Bohemian-Abstractions",
+            "github_repository": ""
+        },
+        "teaser_copy": {
+            "seo_title": "Bohemian Abstractions: Generative Geometric Rhythm and Layered Color",
+            "seo_description": "A bohemian abstract collection exploring geometric rhythm, relaxed symmetry, and layered color fields, built with a generative pipeline and disciplined finishing.",
+            "page_title": "Bohemian Abstractions",
+            "page_subtitle": "Geometric rhythm and layered color in a relaxed abstract series.",
+            "tile_text": [
+                "Bohemian geometric rhythm and layered color",
+                "Relaxed symmetry with decorative balance",
+                "Generative workflow with clean finishing"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Bohemian abstraction favors easy balance, repeated motifs, and layered color fields that feel lived in and approachable.",
+            "action": "A generative first pass established motif rhythm and palette, then in painting refined edges, micro contrast, and spatial pacing.",
+            "measured": "Produces cohesive panels that read clearly on tiles and hold stacked color detail for print, social, and provenance linked digital editions."
+        }
     }
-},
-"content": {
-    "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "<iframe src='https://www.behance.net/embed/project/217385899?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-        "video_alt_text": "A generative bohemian abstract series with geometric rhythm, layered color, and relaxed decorative balance.",
-        "thumbnail_images": [
-            "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-1.webp",
-            "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-2.webp",
-            "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-3.webp",
-            "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-4.webp",
-            "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-5.webp",
-            "assets/media/digital/bohemian-abstractions/thumb-bohemian-abstractions-6.webp"
-        ],
-        "thumb_slideshow_alt_text": "Bohemian inspired abstractions: geometric motifs, layered color fields, and easy balance.",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
-    },
-    "assets": {
-        "project_url_text": "behance.net/gallery/Bohemian-Abstractions",
-        "project_url": "https://www.behance.net/gallery/217385899/Bohemian-Abstractions",
-        "github_repository": ""
-    },
-    "teaser_copy": {
-        "seo_title": "Bohemian Abstractions: Generative Geometric Rhythm and Layered Color",
-        "seo_description": "A bohemian abstract collection exploring geometric rhythm, relaxed symmetry, and layered color fields, built with a generative pipeline and disciplined finishing.",
-        "page_title": "Bohemian Abstractions",
-        "page_subtitle": "Geometric rhythm and layered color in a relaxed abstract series.",
-        "breadcrumb": "Bohemian Abstracts",
-        "tile_text": [
-            "Bohemian geometric rhythm and layered color",
-            "Relaxed symmetry with decorative balance",
-            "Generative workflow with clean finishing"
-        ]
-    },
-    "page_copy": {
-        "pattern": "Bohemian abstraction favors easy balance, repeated motifs, and layered color fields that feel lived in and approachable.",
-        "action": "A generative first pass established motif rhythm and palette, then in painting refined edges, micro contrast, and spatial pacing.",
-        "measured": "Produces cohesive panels that read clearly on tiles and hold stacked color detail for print, social, and provenance linked digital editions."
-    }
-}
 }

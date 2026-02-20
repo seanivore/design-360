@@ -1,87 +1,67 @@
 {
-"_metadata": {
-    "last_updated": "2025-10-18T21:23:00.000000Z",
-    "required_fields": true,
-    "template_type": "portfolio_entry",
-    "schema_version": "3.2",
-    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
-},
-
-"categorization": {
-    "entry_id": "uid-lul-419", 
-    "placement": {
-        "section": "Web",
-        "sub_section": "HTML/CSS/JS", 
-        "slug": "ai-meditation-mobile-app"
+    "_metadata": {
+        "last_updated": "2025-10-18T21:23:00.000000Z",
+        "required_fields": true,
+        "template_type": "portfolio_entry",
+        "schema_version": "4.0",
+        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
     },
-    "tagging":{
-        "technology": 
-        [
-            "Git",
-            "HTML", 
-            "CSS", 
-            "JavaScript", 
-            "AI"
-        ],
-        "media": 
-        [
-            "Progressive Web App", 
-            "Mobile App", 
-            "Voice Interface"
-        ],
-        "role": "App Developer", 
-        "skill": 
-        [
-            "Conversation Design", 
-            "UI/UI Writing", 
-            "User Design", 
-            "Product"
-        ]
-    }
-},
-
-"content": {
-    "media": {
-        "video_filename": "ai-ui-meditation-journal-app.mp4",
-        "video_url": "https://youtu.be/OHJgYA2I2pQ",
-        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OHJgYA2I2pQ?si=hNMnYEAoL2zM2f0u&amp;controls=0' title='Yoga Journal Mobile App with AI-Led User-Interface' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "Mobile-first progressive web app interface showcasing AI chat-driven meditation sessions, voice journaling, and gesture-based controls replacing traditional button-heavy wellness app navigation",
-        "thumbnail_images": [
-            "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-1.webp",
-            "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-2.webp",
-            "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-3.webp",
-            "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-4.webp",
-            "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-5.webp",
-            "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-6.webp"
-        ], 
-        "thumb_slideshow_alt_text": "Mobile-first progressive web app interface showcasing AI chat-driven meditation sessions, voice journaling, and gesture-based controls replacing traditional button-heavy wellness app navigation",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
+    "categorization": {
+        "entry_id": "uid-lul-419",
+        "slug": "ai-meditation-mobile-app",
+        "tags": {
+            "role": [
+                "UX/UI Designer"
+            ],
+            "skill": [
+                "Copywriting",
+                "Generative AI",
+                "Git",
+                "HTML/CSS/JS",
+                "Voice Interface"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "ai-ui-meditation-journal-app.mp4",
+            "video_url": "https://youtu.be/OHJgYA2I2pQ",
+            "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/OHJgYA2I2pQ?si=hNMnYEAoL2zM2f0u&amp;controls=0' title='Yoga Journal Mobile App with AI-Led User-Interface' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "video_alt_text": "Mobile-first progressive web app interface showcasing AI chat-driven meditation sessions, voice journaling, and gesture-based controls replacing traditional button-heavy wellness app navigation",
+            "thumbnail_images": [
+                "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-1.webp",
+                "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-2.webp",
+                "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-3.webp",
+                "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-4.webp",
+                "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-5.webp",
+                "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-6.webp"
+            ],
+            "thumb_slideshow_alt_text": "Mobile-first progressive web app interface showcasing AI chat-driven meditation sessions, voice journaling, and gesture-based controls replacing traditional button-heavy wellness app navigation",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
         },
-    "assets": {
-        "project_url_text": "august.style/mindflow-ai-app",
-        "project_url": "https://design.august.style/projects/mindflow-app",
-        "github_repository": "https://github.com/seanivore/design-site"
+        "assets": {
+            "project_url_text": "august.style/mindflow-ai-app",
+            "project_url": "https://design.august.style/projects/mindflow-app",
+            "github_repository": "https://github.com/seanivore/design-site"
+        },
+        "teaser_copy": {
+            "seo_title": "Yoga Journal Mobile App with AI-Led User-Interface",
+            "seo_description": "What happens when AI can just about replace most of the UI buttons and menus apps used to need? Lots of chat interaction!",
+            "page_title": "AI-Managed Wellness App Replacing Traditional Menus",
+            "page_subtitle": "Conversational interface for voice journaling without typing",
+            "tile_text": [
+                "AI conversation replaces button-heavy interfaces",
+                "Voice-to-text journaling with sentiment analysis",
+                "Intuitive gesture-based meditation controls",
+                "24/7 mindfulness companion in your pocket"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Traditional wellness apps overwhelm users with buttons, menus, and navigation complexity—the opposite of the calm experience they promise. AI's conversational capabilities offered an opportunity to strip away UI clutter entirely, letting users interact naturally through chat rather than hunting through menus. The challenge was designing an interface that feels intuitive and calming while handling complex functionality like session recommendations, progress tracking, and voice journaling through conversation alone.",
+            "action": "Designed a mobile-first progressive web app centered on an AI chat interface that guides users through their entire wellness journey. The conversational UI handles session selection, duration preferences, and reflection journaling through natural dialogue rather than forms and buttons. Developed intuitive gesture controls for meditation sessions—swipe gestures for navigation, hold-to-record for voice journaling, and simple taps for emotional check-ins. The visual design uses soft gradients and minimal elements to maintain focus on the meditative experience rather than the interface itself.",
+            "measured": "Successfully reduced cognitive load by eliminating traditional menu navigation—users complete entire meditation sessions through conversational prompts and gesture controls. The voice-to-text journaling removes typing friction, making reflection more accessible during calm states. The AI-driven interface adapts recommendations based on user patterns and emotional states, creating a personalized wellness experience that feels more like talking to a mindfulness coach than using an app."
+        }
     },
-    "teaser_copy":{
-        "seo_title": "Yoga Journal Mobile App with AI-Led User-Interface",
-        "seo_description": "What happens when AI can just about replace most of the UI buttons and menus apps used to need? Lots of chat interaction!", 
-        "page_title": "AI-Managed Wellness App Replacing Traditional Menus", 
-        "page_subtitle": "Conversational interface for voice journaling without typing", 
-        "breadcrumb": "Chat-First Mobile App UI",
-        "tile_text": [
-            "AI conversation replaces button-heavy interfaces",
-            "Voice-to-text journaling with sentiment analysis",
-            "Intuitive gesture-based meditation controls",
-            "24/7 mindfulness companion in your pocket"
-        ]
-    },
-    "page_copy":{
-        "pattern": "Traditional wellness apps overwhelm users with buttons, menus, and navigation complexity—the opposite of the calm experience they promise. AI's conversational capabilities offered an opportunity to strip away UI clutter entirely, letting users interact naturally through chat rather than hunting through menus. The challenge was designing an interface that feels intuitive and calming while handling complex functionality like session recommendations, progress tracking, and voice journaling through conversation alone.",
-        "action": "Designed a mobile-first progressive web app centered on an AI chat interface that guides users through their entire wellness journey. The conversational UI handles session selection, duration preferences, and reflection journaling through natural dialogue rather than forms and buttons. Developed intuitive gesture controls for meditation sessions—swipe gestures for navigation, hold-to-record for voice journaling, and simple taps for emotional check-ins. The visual design uses soft gradients and minimal elements to maintain focus on the meditative experience rather than the interface itself.", 
-        "measured": "Successfully reduced cognitive load by eliminating traditional menu navigation—users complete entire meditation sessions through conversational prompts and gesture controls. The voice-to-text journaling removes typing friction, making reflection more accessible during calm states. The AI-driven interface adapts recommendations based on user patterns and emotional states, creating a personalized wellness experience that feels more like talking to a mindfulness coach than using an app."
-    }
-},
-
-"notes": []
+    "notes": []
 }

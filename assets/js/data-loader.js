@@ -1,7 +1,7 @@
 /**
- * DATA LOADER
+ * DATA LOADER (v4.0)
  * Fetches and caches JSON project data
- * Provides helper functions for filtering and searching
+ * Provides helper functions for filtering by role/skill tags
  */
 
 const DataLoader = (() => {
@@ -40,8 +40,7 @@ const DataLoader = (() => {
       return cache.manifest;
     } catch (error) {
       console.error('Error loading manifest:', error);
-      // Return empty manifest structure if file doesn't exist yet
-      return { entries: {}, sections: {} };
+      return { entries: {} };
     }
   }
 
@@ -73,13 +72,11 @@ const DataLoader = (() => {
 
   /**
    * Load all projects dynamically from manifest
-   * Supports optional section filtering
    */
-  async function loadAllProjects(section = null) {
+  async function loadAllProjects() {
     const projects = [];
 
     try {
-      // Load manifest to get all project paths
       const manifest = await loadManifest();
 
       if (!manifest.entries || Object.keys(manifest.entries).length === 0) {
@@ -96,20 +93,15 @@ const DataLoader = (() => {
       const loadPromises = allProjectPaths.map(path => loadProject(path));
       const results = await Promise.all(loadPromises);
 
-      // Filter out any failed loads and apply section filter if provided
       let successCount = 0;
       results.forEach(project => {
         if (project) {
           successCount++;
-          // Apply section filter if specified
-          if (!section || normalizeForURL(project.categorization.placement.section) === section) {
-            projects.push(project);
-          }
+          projects.push(project);
         }
       });
 
       console.log(`✅ Successfully loaded ${successCount}/${allProjectPaths.length} projects`);
-      console.log(`📊 After filtering: ${projects.length} projects${section ? ` (section: ${section})` : ''}`);
 
     } catch (error) {
       console.error('Error in loadAllProjects:', error);
@@ -119,86 +111,100 @@ const DataLoader = (() => {
   }
 
   /**
-   * Filter projects by section
+   * Get all tags from a project (both role and skill combined)
    */
-  function filterBySection(projects, section) {
-    const normalized = normalizeForURL(section);
-    return projects.filter(p =>
-      normalizeForURL(p.categorization.placement.section) === normalized
-    );
+  function getProjectTags(project) {
+    const tags = project.categorization?.tags || {};
+    return [
+      ...(tags.role || []),
+      ...(tags.skill || [])
+    ];
   }
 
   /**
-   * Filter projects by subsection
+   * Filter projects that have ANY of the given tags
+   * Matches against both role and skill arrays
    */
-  function filterBySubsection(projects, section, subsection) {
-    const normalizedSection = normalizeForURL(section);
-    const normalizedSubsection = normalizeForURL(subsection);
+  function filterByAnyTag(projects, tagNames) {
+    if (!tagNames || tagNames.length === 0) {
+      return projects;
+    }
 
-    return projects.filter(p => {
-      const pSection = normalizeForURL(p.categorization.placement.section);
-      const pSubsection = normalizeForURL(p.categorization.placement.sub_section);
-      return pSection === normalizedSection && pSubsection === normalizedSubsection;
+    const normalizedSearch = tagNames.map(t => normalizeForURL(t));
+
+    return projects.filter(project => {
+      const allTags = getProjectTags(project).map(t => normalizeForURL(t));
+      return normalizedSearch.some(tag => allTags.includes(tag));
     });
   }
 
   /**
-   * Filter projects by tags
-   * Tags can come from placement (section, sub_section) OR tagging categories
-   * Note: In schema v3.1, role is a STRING (not array)
+   * Filter projects that have ALL of the given tags
+   * Matches against both role and skill arrays
    */
-  function filterByTags(projects, tags) {
-    if (!tags || tags.length === 0) {
+  function filterByAllTags(projects, tagNames) {
+    if (!tagNames || tagNames.length === 0) {
       return projects;
     }
 
-    const normalizedTags = tags.map(t => normalizeForURL(t));
+    const normalizedSearch = tagNames.map(t => normalizeForURL(t));
 
     return projects.filter(project => {
-      const tagging = project.categorization.tagging;
-      const placement = project.categorization.placement;
-
-      // Build array of all tags including placement AND tagging
-      const allTags = [
-        // Placement tags
-        placement.section,
-        placement.sub_section,
-        // Tagging tags (role is STRING in v3.1, others are arrays)
-        ...tagging.technology,
-        ...tagging.media,
-        ...(tagging.role ? [tagging.role] : []), // Wrap string role in array
-        ...tagging.skill
-      ].map(t => normalizeForURL(t));
-
-      // Project must have ALL selected tags
-      return normalizedTags.every(tag => allTags.includes(tag));
+      const allTags = getProjectTags(project).map(t => normalizeForURL(t));
+      return normalizedSearch.every(tag => allTags.includes(tag));
     });
   }
 
   /**
    * Get all unique tags from a list of projects
-   * Returns object with tags categorized
-   * Note: In schema v3.1, role is a STRING (not array)
+   * Returns flat sorted array of all tags (role + skill combined)
    */
   function getAllTags(projects) {
     const tagSet = new Set();
 
     projects.forEach(project => {
-      const tagging = project.categorization.tagging;
-      [
-        ...tagging.technology,
-        ...tagging.media,
-        ...(tagging.role ? [tagging.role] : []), // Wrap string role in array
-        ...tagging.skill
-      ].forEach(tag => tagSet.add(tag));
+      getProjectTags(project).forEach(tag => tagSet.add(tag));
     });
 
     return Array.from(tagSet).sort();
   }
 
   /**
+   * Get tags grouped by type from a list of projects
+   * Returns { role: [...], skill: [...] }
+   */
+  function getTagsByType(projects) {
+    const roles = new Set();
+    const skills = new Set();
+
+    projects.forEach(project => {
+      const tags = project.categorization?.tags || {};
+      (tags.role || []).forEach(t => roles.add(t));
+      (tags.skill || []).forEach(t => skills.add(t));
+    });
+
+    return {
+      role: Array.from(roles).sort(),
+      skill: Array.from(skills).sort()
+    };
+  }
+
+  /**
+   * Determine tag type for a given tag name across projects
+   * Returns 'role' or 'skill'
+   */
+  function getTagType(projects, tagName) {
+    const normalized = normalizeForURL(tagName);
+    for (const project of projects) {
+      const tags = project.categorization?.tags || {};
+      if ((tags.role || []).some(t => normalizeForURL(t) === normalized)) return 'role';
+      if ((tags.skill || []).some(t => normalizeForURL(t) === normalized)) return 'skill';
+    }
+    return 'skill'; // default
+  }
+
+  /**
    * Shuffle array (Fisher-Yates algorithm)
-   * Used for random tile ordering
    */
   function shuffleArray(array) {
     const shuffled = [...array];
@@ -214,10 +220,12 @@ const DataLoader = (() => {
     loadManifest,
     loadProject,
     loadAllProjects,
-    filterBySection,
-    filterBySubsection,
-    filterByTags,
+    filterByAnyTag,
+    filterByAllTags,
     getAllTags,
+    getTagsByType,
+    getTagType,
+    getProjectTags,
     shuffleArray,
     normalizeForURL
   };

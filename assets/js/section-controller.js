@@ -1,8 +1,7 @@
 /**
- * SECTION CONTROLLER
- * Main orchestrator for section.html
- * Determines view type from URL, loads data, manages filtering
- * Handles sophisticated filter display: section pages vs click-through pages
+ * SECTION CONTROLLER (v4.0)
+ * Universal tag page — works for any tag or combination of tags
+ * URL: section.html?tags=Web+Developer or #tags=Web+Developer
  */
 
 (async () => {
@@ -14,243 +13,117 @@
 
     // State
     let allProjects = [];
-    let currentProjects = [];
-    let shuffledProjects = []; // Store initial shuffle to maintain order during filtering
-    let viewType = null;
-    let featuredTags = [];
+    let shuffledProjects = [];
+    let activeTags = [];
 
     /**
-     * Parse URL path to determine view type and parameters
-     * Returns: { type: 'all'|'section'|'subsection', section, subsection }
+     * Parse tags from URL parameters or hash
+     * Supports: ?tags=Web+Developer or #tags=Web+Developer
      */
     function parseURL() {
-        // LOCALHOST TESTING: Check for URL parameters first
-        const urlParams = new URLSearchParams(window.location.search);
-        const sectionParam = urlParams.get('section');
-        const subsectionParam = urlParams.get('subsection');
+        const tags = [];
 
-        if (sectionParam) {
-            if (subsectionParam) {
-                // ?section=web&subsection=html-css-js
-                console.log(`🔍 URL params: section=${sectionParam}, subsection=${subsectionParam}`);
-                return {
-                    type: 'subsection',
-                    section: sectionParam,
-                    subsection: subsectionParam
-                };
-            } else {
-                // ?section=web
-                console.log(`🔍 URL params: section=${sectionParam}`);
-                return {
-                    type: 'section',
-                    section: sectionParam
-                };
+        // Check URL params first (for local testing)
+        const urlParams = new URLSearchParams(window.location.search);
+        const tagsParam = urlParams.get('tags');
+
+        if (tagsParam) {
+            // ?tags=Web+Developer+Graphic+Designer
+            tagsParam.split('+').forEach(tag => {
+                const decoded = decodeURIComponent(tag.replace(/-/g, ' '));
+                if (decoded) tags.push(decoded);
+            });
+        }
+
+        // Check hash for additional/alternative tags
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+            const tagMatch = hash.match(/tags?=([^&]+)/);
+            if (tagMatch) {
+                tagMatch[1].split('+').forEach(tag => {
+                    const decoded = decodeURIComponent(tag.replace(/-/g, ' '));
+                    if (decoded && !tags.some(t => 
+                        DataLoader.normalizeForURL(t) === DataLoader.normalizeForURL(decoded)
+                    )) {
+                        tags.push(decoded);
+                    }
+                });
             }
         }
 
         // Check for redirected path from 404.html
         const redirectPath = sessionStorage.getItem('sectionPath');
-        const path = redirectPath || window.location.pathname;
-
-        // Clear session storage after reading
-        if (redirectPath) {
+        if (redirectPath && tags.length === 0) {
             sessionStorage.removeItem('sectionPath');
-        }
-
-        // Remove leading/trailing slashes and split
-        const segments = path.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
-
-        if (segments.length === 0 || segments[0] === 'projects' || segments[0] === 'section.html') {
-            // /projects or / or /section.html -> Show all projects
-            return { type: 'all' };
-        } else if (segments.length === 1) {
-            // /web -> Section view
-            return {
-                type: 'section',
-                section: segments[0]
-            };
-        } else if (segments.length === 2) {
-            // /web/html-css-js -> Subsection view
-            return {
-                type: 'subsection',
-                section: segments[0],
-                subsection: segments[1]
-            };
-        }
-
-        // Default to all
-        return { type: 'all' };
-    }
-
-    /**
-     * Load featured tags from configuration
-     */
-    async function loadFeaturedTags() {
-        try {
-            const response = await fetch('/assets/js/placement.json');
-            if (!response.ok) {
-                console.warn('Featured tags not found, using all tags');
-                return [];
+            // Path like /web-developer → treat as tag "Web Developer"
+            const cleanPath = redirectPath.replace(/^\/|\/$/g, '');
+            if (cleanPath && cleanPath !== 'section.html' && cleanPath !== 'projects') {
+                // Convert URL-normalized path back to display name
+                // We'll match against actual tags from loaded projects
+                tags.push(cleanPath);
             }
-            const data = await response.json();
-            return data.active_tags?.toggle_tags || [];
-        } catch (error) {
-            console.warn('Error loading featured tags:', error);
-            return [];
         }
+
+        return tags;
     }
 
     /**
-     * Update page title and main filter heading
-     * @param {number} filteredCount - Number of projects after filtering (defaults to total)
+     * Find the display name for a URL-normalized tag
      */
-    function updatePageHeader(filteredCount = shuffledProjects.length) {
-        let mainFilterHeading = null;
-        let docTitle = '';
-        const projectCountText = `${filteredCount} ${filteredCount === 1 ? 'project' : 'projects'}`;
+    function resolveTagDisplayName(normalizedTag, projects) {
+        const allTags = DataLoader.getAllTags(projects);
+        const match = allTags.find(t => DataLoader.normalizeForURL(t) === normalizedTag);
+        return match || normalizedTag;
+    }
 
-        switch (viewType.type) {
-            case 'all':
-                // Check if this is site-wide tag filtering
-                if (viewType.siteWideTag) {
-                    // Find the original tag name (not normalized)
-                    let tagDisplayName = viewType.siteWideTag;
+    /**
+     * Update page header
+     */
+    function updatePageHeader(filteredCount) {
+        const count = filteredCount || shuffledProjects.length;
 
-                    // Try to find the original casing from the projects
-                    if (shuffledProjects.length > 0) {
-                        const allTags = [];
-                        shuffledProjects.forEach(p => {
-                            const tagging = p.categorization.tagging;
-                            allTags.push(...tagging.technology, ...tagging.media, ...tagging.skill);
-                        });
-                        const matchingTag = allTags.find(t =>
-                            DataLoader.normalizeForURL(t) === viewType.siteWideTag
-                        );
-                        if (matchingTag) {
-                            tagDisplayName = matchingTag;
-                        }
-                    }
-
-                    mainFilterHeading = tagDisplayName;
-                    pageTitle.textContent = 'Projects';
-                    pageSubtitle.textContent = projectCountText;
-                    docTitle = `${tagDisplayName} Projects | Sean August Horvath`;
-                } else {
-                    pageTitle.textContent = 'All Projects';
-                    pageSubtitle.textContent = `${projectCountText} across all categories`;
-                    docTitle = 'All Projects | Sean August Horvath';
-                }
-                break;
-
-            case 'section':
-                // Capitalize section name
-                const sectionName = viewType.section.charAt(0).toUpperCase() + viewType.section.slice(1);
-
-                // Format: "Web Projects" with count in smaller, colored text
-                pageTitle.innerHTML = `${sectionName} Projects <span style="font-size: 0.8125rem; font-weight: 400; color: var(--color-text-secondary); margin-left: 0.5rem;">(${filteredCount})</span>`;
-                pageSubtitle.textContent = '';
-                docTitle = `${sectionName} Projects | Sean August Horvath`;
-                mainFilterHeading = null; // Don't show separate heading for section pages
-                break;
-
-            case 'subsection':
-                // Find a project to get the formatted subsection name
-                if (shuffledProjects.length > 0) {
-                    const firstProject = shuffledProjects[0];
-                    const sectionName = firstProject.categorization.placement.section;
-                    const subsectionName = firstProject.categorization.placement.sub_section;
-
-                    // Show subsection as main heading
-                    mainFilterHeading = `${sectionName} › ${subsectionName}`;
-
-                    pageTitle.textContent = subsectionName;
-                    pageSubtitle.textContent = projectCountText;
-                    docTitle = `${subsectionName} | ${sectionName} | Sean August Horvath`;
-                }
-                break;
+        if (activeTags.length > 0) {
+            // Show primary tag as title
+            const primaryTag = activeTags[0];
+            const displayName = resolveTagDisplayName(primaryTag, allProjects);
+            
+            pageTitle.innerHTML = `${displayName} <span style="font-size: 0.8125rem; font-weight: 400; color: var(--color-text-secondary); margin-left: 0.5rem;">(${count})</span>`;
+            pageSubtitle.textContent = '';
+            document.title = `${displayName} Projects | Sean August Horvath`;
+        } else {
+            pageTitle.textContent = 'All Projects';
+            pageSubtitle.textContent = `${count} projects`;
+            document.title = 'All Projects | Sean August Horvath';
         }
-
-        // Update document title
-        document.title = docTitle;
 
         // Update meta tags
-        const description = `Portfolio showcasing ${shuffledProjects.length} ${viewType.section || 'creative'} projects by Sean August Horvath, spanning web development, print design, digital products, and video production.`;
-
-        let metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', description);
-        }
-
-        let ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle) {
-            ogTitle.setAttribute('content', docTitle);
-        }
-
-        let ogDesc = document.querySelector('meta[property="og:description"]');
-        if (ogDesc) {
-            ogDesc.setAttribute('content', description);
-        }
-
-        // Display main filter heading if present
-        displayMainFilterHeading(mainFilterHeading);
+        const description = `Portfolio showcasing ${count} projects by Sean August Horvath.`;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', description);
     }
 
     /**
-     * Display main filter heading above filters
-     */
-    function displayMainFilterHeading(heading) {
-        // Remove existing heading if present
-        const existing = document.querySelector('.main-filter-heading');
-        if (existing) {
-            existing.remove();
-        }
-
-        if (!heading) return;
-
-        // Create and insert heading
-        const headingElement = document.createElement('div');
-        headingElement.className = 'main-filter-heading';
-        headingElement.textContent = heading;
-
-        // Insert before tag filters
-        const container = document.querySelector('.tag-filters-container');
-        if (container) {
-            container.insertBefore(headingElement, container.firstChild);
-        }
-    }
-
-    /**
-     * Load projects based on view type
+     * Load and filter projects
      */
     async function loadProjects() {
         TileRenderer.showLoading(tileGrid);
 
         try {
-            // Load all projects
             allProjects = await DataLoader.loadAllProjects();
 
-            // Filter based on view type
-            switch (viewType.type) {
-                case 'all':
-                    currentProjects = allProjects;
-                    break;
-
-                case 'section':
-                    currentProjects = DataLoader.filterBySection(allProjects, viewType.section);
-                    break;
-
-                case 'subsection':
-                    currentProjects = DataLoader.filterBySubsection(
-                        allProjects,
-                        viewType.section,
-                        viewType.subsection
-                    );
-                    break;
+            // Filter by active tags if any
+            let filtered = allProjects;
+            if (activeTags.length > 0) {
+                // Resolve URL-normalized tags to actual tag values
+                const resolvedTags = activeTags.map(tag => 
+                    resolveTagDisplayName(tag, allProjects)
+                );
+                // Update active tags with resolved names
+                activeTags = resolvedTags.map(t => DataLoader.normalizeForURL(t));
+                filtered = DataLoader.filterByAllTags(allProjects, resolvedTags);
             }
 
-            // Shuffle projects ONCE for random ordering
-            shuffledProjects = DataLoader.shuffleArray(currentProjects);
-
+            shuffledProjects = DataLoader.shuffleArray(filtered);
             return shuffledProjects;
 
         } catch (error) {
@@ -261,244 +134,77 @@
     }
 
     /**
-     * Render the current view
+     * Render tiles
      */
-    function renderView() {
-        // Get active tags from filter controller
-        const activeTags = FilterController.getActiveTags();
-
-        // Apply tag filtering if any tags are active (beyond sticky filter)
-        let projectsToRender = shuffledProjects;
-
-        // Filter out sticky filter for tag filtering logic
-        // EXCEPT for site-wide tag filtering (when we're on /projects with a tag)
-        const stickyFilter = FilterController.getStickyFilter();
-        let filterTags;
-        
-        if (viewType.type === 'all' && viewType.siteWideTag) {
-            // Site-wide tag filtering: use all active tags including sticky filter
-            filterTags = activeTags;
-        } else {
-            // Section/subsection pages: exclude sticky filter (section/subsection)
-            filterTags = activeTags.filter(tag => tag !== stickyFilter);
-        }
-
-        if (filterTags.length > 0) {
-            projectsToRender = DataLoader.filterByTags(shuffledProjects, filterTags);
-        }
-
-        // Render tiles (maintains shuffle order, just hides non-matching)
-        TileRenderer.renderSectionTiles(projectsToRender, tileGrid);
-
-        // Update page header with filtered count
-        updatePageHeader(projectsToRender.length);
+    function renderView(filteredProjects) {
+        const projects = filteredProjects || shuffledProjects;
+        TileRenderer.renderSectionTiles(projects, tileGrid);
+        updatePageHeader(projects.length);
     }
 
     /**
-     * Get tags to display based on page type
-     * Section pages: subsection + role + featured tags
-     * Click-through pages: section + subsection + role + all contextual tags
+     * Get filter pills to display
+     * Shows all tags present on the currently displayed projects
      */
     function getTagsForDisplay() {
         const tagsWithTypes = [];
         const seenTags = new Set();
 
-        // Helper to add unique tags (only if they have matching projects)
-        function addTag(tag, type) {
+        // Skip tags that are already active (they'll be shown as sticky)
+        const activeNormalized = new Set(activeTags.map(t => DataLoader.normalizeForURL(t)));
+
+        const tagsByType = DataLoader.getTagsByType(shuffledProjects);
+
+        // Add role tags first
+        tagsByType.role.forEach(tag => {
             const normalized = DataLoader.normalizeForURL(tag);
-            if (!seenTags.has(normalized)) {
-                // Check if this tag has any matching projects
-                const matchingProjects = DataLoader.filterByTags(shuffledProjects, [normalized]);
-
-                // Only add tag if it has at least one matching project
-                if (matchingProjects.length > 0) {
-                    seenTags.add(normalized);
-                    tagsWithTypes.push({ tag, type });
-                }
+            if (!seenTags.has(normalized) && !activeNormalized.has(normalized)) {
+                seenTags.add(normalized);
+                tagsWithTypes.push({ tag, type: 'role' });
             }
-        }
+        });
 
-        if (viewType.type === 'section' || viewType.type === 'subsection') {
-            // SECTION-TYPE PAGE: Show subsection, toggle_tags, then role
-            // Order: subsection → toggle_tag keywords → role tags
-
-            // 1. Add subsections from current projects
-            const subsections = new Set();
-            shuffledProjects.forEach(project => {
-                subsections.add(project.categorization.placement.sub_section);
-            });
-            subsections.forEach(sub => addTag(sub, 'subsection'));
-
-            // 2. Add featured toggle_tag keywords (if they exist in current projects)
-            // Featured tags are KEYWORDS that match any tag containing that word
-            if (featuredTags.length > 0) {
-                const allProjectTags = new Set();
-                shuffledProjects.forEach(project => {
-                    const tagging = project.categorization.tagging;
-                    ['technology', 'media', 'skill'].forEach(category => {
-                        if (Array.isArray(tagging[category])) {
-                            tagging[category].forEach(tag => allProjectTags.add(tag));
-                        }
-                    });
-                });
-
-                // For each toggle tag keyword, find all matching tags with partial word match
-                featuredTags.forEach(toggleTag => {
-                    const toggleLower = toggleTag.toLowerCase();
-
-                    // Find all project tags that contain this toggle tag as a word
-                    const matchingTags = Array.from(allProjectTags).filter(projectTag => {
-                        const tagLower = projectTag.toLowerCase();
-
-                        // Split tag into words (by spaces and hyphens)
-                        const words = tagLower.split(/[\s\-\/]+/);
-
-                        // Check if toggle tag matches any word or is contained in the tag
-                        return words.some(word =>
-                            word === toggleLower ||
-                            word.includes(toggleLower) ||
-                            tagLower.includes(toggleLower)
-                        );
-                    });
-
-                    // Add each matching tag
-                    matchingTags.forEach(tag => addTag(tag, 'contextual'));
-                });
+        // Then skill tags
+        tagsByType.skill.forEach(tag => {
+            const normalized = DataLoader.normalizeForURL(tag);
+            if (!seenTags.has(normalized) && !activeNormalized.has(normalized)) {
+                seenTags.add(normalized);
+                tagsWithTypes.push({ tag, type: 'skill' });
             }
-
-            // 3. Add roles from current projects (role is now STRING in schema v3.1)
-            const roles = new Set();
-            shuffledProjects.forEach(project => {
-                const role = project.categorization.tagging.role;
-                if (role && typeof role === 'string') {
-                    roles.add(role);
-                }
-            });
-            roles.forEach(role => addTag(role, 'role'));
-
-        } else if (viewType.type === 'all' && viewType.siteWideTag) {
-            // SITE-WIDE TAG FILTERING: Show all tags EXCEPT sections
-            // This allows users to see projects from ALL sections with a specific tag
-
-            // 1. Add subsections (from all matching projects)
-            const subsections = new Set();
-            shuffledProjects.forEach(project => {
-                subsections.add(project.categorization.placement.sub_section);
-            });
-            subsections.forEach(sub => addTag(sub, 'subsection'));
-
-            // 2. Add roles (role is now STRING in schema v3.1)
-            const roles = new Set();
-            shuffledProjects.forEach(project => {
-                const role = project.categorization.tagging.role;
-                if (role && typeof role === 'string') {
-                    roles.add(role);
-                }
-            });
-            roles.forEach(role => addTag(role, 'role'));
-
-            // 3. Add all contextual tags (technology, media, skill)
-            const contextualTags = new Set();
-            shuffledProjects.forEach(project => {
-                const tagging = project.categorization.tagging;
-                ['technology', 'media', 'skill'].forEach(category => {
-                    if (Array.isArray(tagging[category])) {
-                        tagging[category].forEach(tag => contextualTags.add(tag));
-                    }
-                });
-            });
-            contextualTags.forEach(tag => addTag(tag, 'contextual'));
-
-        } else {
-            // CLICK-THROUGH PAGE (legacy): Show all tags including sections
-
-            // 1. Add sections
-            const sections = new Set();
-            shuffledProjects.forEach(project => {
-                sections.add(project.categorization.placement.section);
-            });
-            sections.forEach(section => addTag(section, 'subsection')); // Use subsection color
-
-            // 2. Add subsections
-            const subsections = new Set();
-            shuffledProjects.forEach(project => {
-                subsections.add(project.categorization.placement.sub_section);
-            });
-            subsections.forEach(sub => addTag(sub, 'subsection'));
-
-            // 3. Add roles (role is now STRING in schema v3.1)
-            const roles = new Set();
-            shuffledProjects.forEach(project => {
-                const role = project.categorization.tagging.role;
-                if (role && typeof role === 'string') {
-                    roles.add(role);
-                }
-            });
-            roles.forEach(role => addTag(role, 'role'));
-
-            // 4. Add all contextual tags
-            const contextualTags = new Set();
-            shuffledProjects.forEach(project => {
-                const tagging = project.categorization.tagging;
-                ['technology', 'media', 'skill'].forEach(category => {
-                    if (Array.isArray(tagging[category])) {
-                        tagging[category].forEach(tag => contextualTags.add(tag));
-                    }
-                });
-            });
-            contextualTags.forEach(tag => addTag(tag, 'contextual'));
-        }
+        });
 
         return tagsWithTypes;
     }
 
     /**
-     * Setup filter pills
+     * Setup filters
      */
     function setupFilters() {
-        // Determine sticky filter based on view type
-        let stickyFilter = null;
-
-        if (viewType.type === 'section') {
-            // Sticky filter is the section
-            stickyFilter = viewType.section;
-        } else if (viewType.type === 'subsection') {
-            // Sticky filter is the subsection
-            stickyFilter = viewType.subsection;
-        } else if (viewType.type === 'all') {
-            // For 'all' view, check if there's a tag in the hash (site-wide tag filtering)
-            const hash = window.location.hash.slice(1);
-            const tagMatch = hash.match(/tags?=([^&]+)/);
-            if (tagMatch) {
-                // Site-wide tag filtering: use the first tag as sticky filter
-                const tags = tagMatch[1].split('+');
-                if (tags.length > 0) {
-                    stickyFilter = tags[0];
-                    // Store the site-wide tag for later use in page header
-                    viewType.siteWideTag = stickyFilter;
-                }
-            }
-        }
-
-        // Get tags to display (based on page type)
         const tagsWithTypes = getTagsForDisplay();
 
-        // Render filter pills
         FilterController.renderFilterPills(tagsWithTypes, tagFiltersContainer);
-
-        // Setup scroll shadows for tag filters
         setupScrollShadows();
 
-        // Initialize filter controller with callback and sticky filter
-        FilterController.init((activeTags) => {
-            // Re-render when filters change
-            renderView();
+        // Set up sticky filter (the primary tag)
+        const stickyFilter = activeTags.length > 0 ? activeTags[0] : null;
+
+        FilterController.init((newActiveTags) => {
+            // Re-filter and re-render
+            let filtered = allProjects;
+            if (newActiveTags.length > 0) {
+                const resolvedTags = newActiveTags.map(t => 
+                    resolveTagDisplayName(t, allProjects)
+                );
+                filtered = DataLoader.filterByAllTags(allProjects, resolvedTags);
+            }
+
+            const reshuffled = DataLoader.shuffleArray(filtered);
+            renderView(reshuffled);
         }, stickyFilter);
     }
 
     /**
      * Setup scroll shadows for tag filters
-     * Adds/removes classes based on scroll position
      */
     function setupScrollShadows() {
         const wrapper = document.querySelector('.tag-filters-wrapper');
@@ -510,14 +216,12 @@
             const scrollLeft = scroller.scrollLeft;
             const maxScroll = scroller.scrollWidth - scroller.clientWidth;
 
-            // Show left shadow if scrolled from start
             if (scrollLeft > 10) {
                 wrapper.classList.add('scrolled-left');
             } else {
                 wrapper.classList.remove('scrolled-left');
             }
 
-            // Hide right shadow if at end
             if (scrollLeft >= maxScroll - 10) {
                 wrapper.classList.add('scrolled-right');
             } else {
@@ -525,34 +229,21 @@
             }
         }
 
-        // Update on scroll
         scroller.addEventListener('scroll', updateShadows);
-
-        // Initial update
         setTimeout(updateShadows, 100);
     }
 
     /**
-     * Initialize the page
+     * Initialize
      */
     async function init() {
-        // Parse URL to determine view
-        viewType = parseURL();
+        activeTags = parseURL();
 
-        // Load featured tags
-        featuredTags = await loadFeaturedTags();
-
-        // Load projects
         await loadProjects();
-
-        // Setup filters
         setupFilters();
-
-        // Initial render
         renderView();
     }
 
-    // Start the app
     init().catch(error => {
         console.error('Failed to initialize:', error);
         TileRenderer.hideLoading();

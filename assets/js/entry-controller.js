@@ -1,5 +1,5 @@
 /**
- * ENTRY CONTROLLER
+ * ENTRY CONTROLLER (v4.0)
  * Manages individual project entry pages
  * Loads data from manifest, populates content, generates related posts
  */
@@ -8,7 +8,7 @@ const EntryController = (() => {
 
     /**
      * Get entry path from URL or sessionStorage
-     * @returns {String} - Entry path like "web/html-css-js/project-slug"
+     * @returns {String} - Entry slug like "saas-product-sale-features"
      */
     function getEntryPath() {
         // LOCALHOST TESTING: Check for URL parameter first
@@ -33,7 +33,7 @@ const EntryController = (() => {
 
     /**
      * Load entry data from manifest
-     * @param {String} entryPath - Path like "web/html-css-js/project-slug"
+     * @param {String} entryPath - Slug like "saas-product-sale-features"
      * @returns {Object} - Project JSON data
      */
     async function loadEntryData(entryPath) {
@@ -91,60 +91,41 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate breadcrumbs
-     * Sub_section links use hash filtering (not special pages)
-     */
-    function populateBreadcrumbs(project) {
-        const { categorization, content } = project;
-        const { placement } = categorization;
-        const { teaser_copy } = content;
-
-        const breadcrumbContainers = document.querySelectorAll('.entry-breadcrumbs');
-
-        breadcrumbContainers.forEach(container => {
-            const sectionURL = `/${DataLoader.normalizeForURL(placement.section)}`;
-
-            // Sub_section uses hash filtering, not a special page
-            const normalizedSection = DataLoader.normalizeForURL(placement.section);
-            const normalizedSubsection = DataLoader.normalizeForURL(placement.sub_section);
-            const subsectionURL = `/${normalizedSection}#tags=${normalizedSection}+${normalizedSubsection}`;
-
-            container.innerHTML = `
-                <a href="/">Home</a>
-                <span class="breadcrumb-separator">›</span>
-                <a href="${sectionURL}">${placement.section}</a>
-                <span class="breadcrumb-separator">›</span>
-                <a href="${subsectionURL}">${placement.sub_section}</a>
-                <span class="breadcrumb-separator">›</span>
-                <span class="breadcrumb-current">${teaser_copy.breadcrumb}</span>
-            `;
-        });
-    }
-
-    /**
-     * Populate tags hover cards (top-right and bottom-right)
-     * ONLY includes technology/media/skill tags (NOT section/subsection/role)
-     * Links go to site-wide tag filtering (shows ALL projects with that tag)
+     * Populate tag pills grouped by type (role and skill)
+     * Each pill links to tag page for filtering
      */
     function populateTagsCards(project) {
         const { categorization } = project;
-        const { tagging } = categorization;
-
-        // Combine technology, media, and skill tags
-        const allTags = [
-            ...tagging.technology,
-            ...tagging.media,
-            ...tagging.skill
-        ];
+        const tags = categorization.tags || {};
+        const roles = tags.role || [];
+        const skills = tags.skill || [];
 
         const tagsCardContainers = document.querySelectorAll('.entry-tags-card');
 
         tagsCardContainers.forEach(container => {
-            container.innerHTML = allTags.map(tag => {
-                // Site-wide tag filtering: shows ALL projects with this tag (not just current section)
-                const tagURL = `/projects#tag=${DataLoader.normalizeForURL(tag)}`;
-                return `<a href="${tagURL}" class="entry-tag">${tag}</a>`;
-            }).join(' • ');
+            let html = '';
+
+            // Role pills (accent color)
+            if (roles.length > 0) {
+                html += '<div class="tag-pill-group tag-pill-group-role">';
+                html += roles.map(tag => {
+                    const tagURL = `/section.html?tags=${encodeURIComponent(tag)}`;
+                    return `<a href="${tagURL}" class="entry-tag entry-tag-role">${tag}</a>`;
+                }).join('');
+                html += '</div>';
+            }
+
+            // Skill pills (neutral color)
+            if (skills.length > 0) {
+                html += '<div class="tag-pill-group tag-pill-group-skill">';
+                html += skills.map(tag => {
+                    const tagURL = `/section.html?tags=${encodeURIComponent(tag)}`;
+                    return `<a href="${tagURL}" class="entry-tag entry-tag-skill">${tag}</a>`;
+                }).join('');
+                html += '</div>';
+            }
+
+            container.innerHTML = html;
         });
     }
 
@@ -153,7 +134,7 @@ const EntryController = (() => {
      */
     function populateContent(project) {
         const { categorization, content } = project;
-        const { tagging } = categorization;
+        const tags = categorization.tags || {};
         const { media, assets, teaser_copy, page_copy } = content;
 
         // Page title and subtitle
@@ -164,8 +145,9 @@ const EntryController = (() => {
         if (subtitleEl) subtitleEl.textContent = teaser_copy.page_subtitle;
 
         // Role (H3 heading)
+        // Role: show first role tag
         const roleEl = document.getElementById('entry-role');
-        if (roleEl) roleEl.textContent = tagging.role;
+        if (roleEl) roleEl.textContent = (tags.role && tags.role[0]) || '';
 
         // Page copy sections (pattern, action, measured)
         const patternEl = document.getElementById('entry-pattern');
@@ -456,7 +438,6 @@ const EntryController = (() => {
 
             // Populate all sections
             populateMetadata(project);
-            populateBreadcrumbs(project);
             populateTagsCards(project);
             populateContent(project);
             await populateRelatedPosts(project);

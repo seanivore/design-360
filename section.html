@@ -2,98 +2,98 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Meta Tags (dynamically populated by section-controller.js) -->
-    <title><!-- Populated by JS from placement.json --></title>
-    <meta name="description" content="">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
-    <meta property="og:image:alt" content="">
+  <!-- SEO Meta Tags (dynamically populated by section-controller.js) -->
+  <title><!-- Populated by JS from placement.json --></title>
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="seanivore" />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="seanivore" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <a href="/" class="site-logo">Sean August Horvath</a>
-            <nav class="site-nav">
-                <a href="/#projects">Projects</a>
-                <a href="/#about">About</a>
-                <a href="/#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">Sean August Horvath</a>
+      <nav class="site-nav">
+        <a href="/#projects">Projects</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main class="container">
+  <!-- Main Content -->
+  <main class="container">
 
-        <!-- Page Title (dynamically populated) -->
-        <section class="page-header mt-lg">
-            <h1 id="page-title">Projects</h1>
-            <p id="page-subtitle" class="text-secondary"></p>
-        </section>
+    <!-- Page Title (dynamically populated) -->
+    <section class="page-header mt-lg">
+      <h1 id="page-title">Projects</h1>
+      <p id="page-subtitle" class="text-secondary"></p>
+    </section>
 
-        <!-- Tag Filters (horizontal scroll) -->
-        <section class="tag-filters-container">
-            <div class="tag-filters-wrapper">
-                <div id="tag-filters" class="tag-filters" role="tablist">
-                    <!-- Dynamically populated tag filter pills -->
-                    <!-- Example structure:
+    <!-- Tag Filters (horizontal scroll) -->
+    <section class="tag-filters-container">
+      <div class="tag-filters-wrapper">
+        <div id="tag-filters" class="tag-filters" role="tablist">
+          <!-- Dynamically populated tag filter pills -->
+          <!-- Example structure:
             <button class="tag-filter" role="tab" data-tag="responsive-design">
               Responsive Design
             </button>
             -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Tile Grid -->
-        <section id="tile-grid" class="grid-section">
-            <!-- Dynamically populated tiles -->
-            <!-- Will use .tile-section class for section page tiles -->
-        </section>
-
-        <!-- Loading State -->
-        <div id="loading" class="loading" style="display: none;">
-            Loading projects...
         </div>
+      </div>
+    </section>
 
-        <!-- Empty State -->
-        <div id="empty-state" class="text-center mt-lg" style="display: none;">
-            <p>No projects match the selected filters.</p>
-        </div>
+    <!-- Tile Grid -->
+    <section id="tile-grid" class="grid-section">
+      <!-- Dynamically populated tiles -->
+      <!-- Will use .tile-section class for section page tiles -->
+    </section>
 
-    </main>
+    <!-- Loading State -->
+    <div id="loading" class="loading" style="display: none;">
+      Loading projects...
+    </div>
 
-    <!-- Footer -->
-    <footer class="site-footer mt-lg">
-        <div class="container">
-            <p class="text-center text-secondary">
-                &copy; 2025 Sean August Horvath. Single-JSON Portfolio Architecture.
-            </p>
-        </div>
-    </footer>
+    <!-- Empty State -->
+    <div id="empty-state" class="text-center mt-lg" style="display: none;">
+      <p>No projects match the selected filters.</p>
+    </div>
 
-    <!-- JavaScript Modules -->
-    <script src="/assets/js/data-loader.js"></script>
-    <script src="/assets/js/section-controller.js"></script>
-    <script src="/assets/js/filter-controller.js"></script>
-    <script src="/assets/js/tile-renderer.js"></script>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer mt-lg">
+    <div class="container">
+      <p class="text-center text-secondary">
+        &copy; 2025 Sean August Horvath. Single-JSON Portfolio Architecture.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Modules -->
+  <script src="/assets/js/data-loader.js"></script>
+  <script src="/assets/js/tile-renderer.js"></script>
+  <script src="/assets/js/filter-controller.js"></script>
+  <script src="/assets/js/section-controller.js"></script>
 
 </body>
 

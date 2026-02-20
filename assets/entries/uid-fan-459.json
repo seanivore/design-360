@@ -1,86 +1,69 @@
 {
-"categorization": {
-    "entry_id": "uid-fan-459",
-    "placement": {
-        "section": "Digital",
-        "sub_section": "Generative",
-        "slug": "pie-claesz-modern-vibes"
+    "_metadata": {
+        "schema_version": "4.0"
     },
-    "tagging":{
-        "technology": [
-            "AI", 
-            "Generative", 
-            "Adobe Firefly", 
-            "Canva", 
-            "Dia AI", 
-            "Cursor", 
-            "Claude AI", 
-            "Behance"
-        ],
-        "media": [
-            "Baroque", 
-            "Painting", 
-            "Still Life", 
-            "Digital Art", 
-            "Print", 
-            "Digital Product"
-        ],
-        "role": "Graphic Designer",
-        "skill": [
-            "Content Production", 
-            "Graphic Design", 
-            "Illustration", 
-            "Fashion Photography", 
-            "Product Staging", 
-            "Scaling System", 
-            "Publishing", 
-            "Marketing", 
-            "Art History", 
-            "Branding", 
-            "Product"
-        ]
-    }
-},
-
-"content": {
-    "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "<iframe src='https://www.behance.net/embed/project/226117973?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-        "video_alt_text": "Generative still life study with modern Claesz vibes: cleaner palette, sharper edges, and contemporary staging cues.",
-        "thumbnail_images": [
-            "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-1.webp",
-            "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-2.webp",
-            "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-3.webp",
-            "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-4.webp",
-            "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-5.webp",
-            "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-6.webp"
-        ],
-        "thumb_slideshow_alt_text": "Rotating still life images with modernized Claesz cues: simplified palette, crisp highlights, and balanced tabletop composition.",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
+    "categorization": {
+        "entry_id": "uid-fan-459",
+        "slug": "pie-claesz-modern-vibes",
+        "tags": {
+            "role": [
+                "Brand Designer",
+                "Content Strategist",
+                "Graphic Designer"
+            ],
+            "skill": [
+                "Adobe Firefly",
+                "Art Direction",
+                "Claude/Cursor",
+                "Content Production",
+                "Generative AI",
+                "Illustration",
+                "Photography",
+                "Print Layout",
+                "Product Staging",
+                "Publishing",
+                "Scaling Systems"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "",
+            "video_url": "",
+            "video_embed": "<iframe src='https://www.behance.net/embed/project/226117973?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+            "video_alt_text": "Generative still life study with modern Claesz vibes: cleaner palette, sharper edges, and contemporary staging cues.",
+            "thumbnail_images": [
+                "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-1.webp",
+                "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-2.webp",
+                "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-3.webp",
+                "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-4.webp",
+                "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-5.webp",
+                "assets/media/digital/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-6.webp"
+            ],
+            "thumb_slideshow_alt_text": "Rotating still life images with modernized Claesz cues: simplified palette, crisp highlights, and balanced tabletop composition.",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
         },
-    "assets": {
-        "project_url_text": "behance.net/gallery/MOdern-Claesz",
-        "project_url": "https://www.behance.net/gallery/226117973/Pie-Claesz-Modern-Vibes",
-        "github_repository": ""
-    },
-    "teaser_copy":{
-        "seo_title": "Pie Claesz Modern Vibes: Generative Still Life with Contemporary Restraint",
-        "seo_description": "A modern take on Pieter Claesz inspired still life: cleaner palette, crisp edges, and disciplined light, executed with a generative pipeline and minimal post polish.",
-        "page_title": "Pie Claesz Modern Vibes",
-        "page_subtitle": "Modernized Claesz study with simplified palette and crisp light.",
-        "breadcrumb": "Modern Claesz Still Life",
-        "tile_text": [
-            "Contemporary still life in the spirit of Pieter Claesz",
-            "Simplified palette and crisp highlight control",
-            "Generative workflow with restrained post finishing"
-        ]
-    },
-    "page_copy":{
-        "pattern": "Modern Claesz interpretation favors restraint: simplified tones, calm balance, and crisp light on familiar objects.",
-        "action": "A generative first pass set composition and palette, then targeted in painting refined edge quality, micro highlights, and surface realism.",
-        "measured": "Produces clean, contemporary still lifes that read well at thumbnail and hold detail for print, social, and provenance linked digital editions."
+        "assets": {
+            "project_url_text": "behance.net/gallery/MOdern-Claesz",
+            "project_url": "https://www.behance.net/gallery/226117973/Pie-Claesz-Modern-Vibes",
+            "github_repository": ""
+        },
+        "teaser_copy": {
+            "seo_title": "Pie Claesz Modern Vibes: Generative Still Life with Contemporary Restraint",
+            "seo_description": "A modern take on Pieter Claesz inspired still life: cleaner palette, crisp edges, and disciplined light, executed with a generative pipeline and minimal post polish.",
+            "page_title": "Pie Claesz Modern Vibes",
+            "page_subtitle": "Modernized Claesz study with simplified palette and crisp light.",
+            "tile_text": [
+                "Contemporary still life in the spirit of Pieter Claesz",
+                "Simplified palette and crisp highlight control",
+                "Generative workflow with restrained post finishing"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Modern Claesz interpretation favors restraint: simplified tones, calm balance, and crisp light on familiar objects.",
+            "action": "A generative first pass set composition and palette, then targeted in painting refined edge quality, micro highlights, and surface realism.",
+            "measured": "Produces clean, contemporary still lifes that read well at thumbnail and hold detail for print, social, and provenance linked digital editions."
+        }
     }
-}
 }

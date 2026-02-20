@@ -1,90 +1,72 @@
 {
-"_metadata": {
-    "last_updated": "2025-10-18T21:23:00.000000Z",
-    "required_fields": true,
-    "template_type": "portfolio_entry",
-    "schema_version": "3.2",
-    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
-},
-
-"categorization": {
-    "entry_id": "uid-wnw-867", 
-    "placement": {
-        "section": "Web",
-        "sub_section": "HTML/CSS/JS", 
-        "slug": "minimalist-web-store-product"
+    "_metadata": {
+        "last_updated": "2025-10-18T21:23:00.000000Z",
+        "required_fields": true,
+        "template_type": "portfolio_entry",
+        "schema_version": "4.0",
+        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
     },
-    "tagging":{
-        "technology": 
-        [
-            "Git", 
-            "HTML", 
-            "CSS", 
-            "JavaScript", 
-            "Agentic", 
-            "GitHub Pages", 
-            "Jekyll", 
-            "Responsive"
-        ],
-        "media": 
-        [
-            "E-Commerce", 
-            "Digital Product", 
-            "Website"
-        ],
-        "role": "Web Developer", 
-        "skill": 
-        [
-            "Product Staging", 
-            "Marketing", 
-            "Typography", 
-            "Art History", 
-            "Web Design"
-        ]
-    }
-},
-
-"content": {
-    "media": {
-        "video_filename": "framed-staged-art-history-print-shop.mp4",
-        "video_url": "https://youtu.be/9qVi5_zoNaM",
-        "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/9qVi5_zoNaM?si=D-oRb-tYkO1dEq3m&amp;controls=0' title='Minimalist Web Store Product Gallery and Pages' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>", 
-        "video_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
-        "thumbnail_images": [
-            "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp",
-            "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-2.webp",
-            "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-3.webp",
-            "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-4.webp",
-            "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-5.webp"
-        ], 
-        "thumb_slideshow_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
+    "categorization": {
+        "entry_id": "uid-wnw-867",
+        "slug": "minimalist-web-store-product",
+        "tags": {
+            "role": [
+                "Automation Engineer",
+                "Web Developer"
+            ],
+            "skill": [
+                "Art Direction",
+                "Automation",
+                "E-Commerce",
+                "Git",
+                "GitHub Pages",
+                "HTML/CSS/JS",
+                "Jekyll",
+                "Product Staging",
+                "Responsive Design",
+                "Typography"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "framed-staged-art-history-print-shop.mp4",
+            "video_url": "https://youtu.be/9qVi5_zoNaM",
+            "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/9qVi5_zoNaM?si=D-oRb-tYkO1dEq3m&amp;controls=0' title='Minimalist Web Store Product Gallery and Pages' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "video_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
+            "thumbnail_images": [
+                "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp",
+                "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-2.webp",
+                "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-3.webp",
+                "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-4.webp",
+                "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-5.webp"
+            ],
+            "thumb_slideshow_alt_text": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
         },
-    "assets": {
-        "project_url_text": "august.style/sell-art-online",
-        "project_url": "https://design.august.style/projects/webflow-print-series",
-        "github_repository": "https://github.com/seanivore/design-site"
+        "assets": {
+            "project_url_text": "august.style/sell-art-online",
+            "project_url": "https://design.august.style/projects/webflow-print-series",
+            "github_repository": "https://github.com/seanivore/design-site"
+        },
+        "teaser_copy": {
+            "seo_title": "Minimalist Web Store Product Gallery & Pages",
+            "seo_description": "Classic, simple website design, developed to showcase a web store's collection of products",
+            "page_title": "Timeless E-Commerce Gallery for Art Prints",
+            "page_subtitle": "Clean product showcase emphasizing photography and details",
+            "tile_text": [
+                "Classic design letting products speak for themselves",
+                "500+ item catalog with intuitive navigation",
+                "Historically accurate descriptions with AI optimization",
+                "Clean conversion-focused product pages"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Art print e-commerce requires design restraint—the products themselves are visual art, so the website interface needs to support rather than compete with the imagery. With 500+ products in the catalog, the challenge was creating a gallery system that makes browsing intuitive while maintaining the clean aesthetic. Product photography needed to show prints in context without cluttering pages with excessive staging, and the information architecture had to balance comprehensive details with visual simplicity.",
+            "action": "Built a minimalist e-commerce gallery that prioritizes product photography through generous white space and restrained typography. Developed a clean navigation system that handles the large catalog without overwhelming users—category filtering feels effortless rather than complex. Product pages use a simple two-column layout: large product imagery on one side, essential details and purchase options on the other. The staging photography shows prints in realistic home settings that help customers visualize scale and context without dominating the product itself. All design decisions support the conversion goal while respecting the timeless aesthetic appropriate for art sales.",
+            "measured": "Successfully designed an e-commerce experience that lets art prints remain the focus while providing all functionality needed for confident purchasing decisions. The clean interface proved its effectiveness by keeping users engaged through large catalog browsing without the fatigue that cluttered galleries create. The minimalist approach demonstrates design maturity—knowing when to add elements and when restraint serves the project better. The timeless aesthetic ensures the site won't feel dated, which is essential for art commerce where trust and perceived quality directly impact conversion."
+        }
     },
-    "teaser_copy":{
-        "seo_title": "Minimalist Web Store Product Gallery & Pages",
-        "seo_description": "Classic, simple website design, developed to showcase a web store's collection of products", 
-        "page_title": "Timeless E-Commerce Gallery for Art Prints", 
-        "page_subtitle": "Clean product showcase emphasizing photography and details", 
-        "breadcrumb": "Minimalist Product Gallery",
-        "tile_text": [
-            "Classic design letting products speak for themselves",
-            "500+ item catalog with intuitive navigation",
-            "Historically accurate descriptions with AI optimization",
-            "Clean conversion-focused product pages"
-        ]
-    },
-    "page_copy":{
-        "pattern": "Art print e-commerce requires design restraint—the products themselves are visual art, so the website interface needs to support rather than compete with the imagery. With 500+ products in the catalog, the challenge was creating a gallery system that makes browsing intuitive while maintaining the clean aesthetic. Product photography needed to show prints in context without cluttering pages with excessive staging, and the information architecture had to balance comprehensive details with visual simplicity.",
-        "action": "Built a minimalist e-commerce gallery that prioritizes product photography through generous white space and restrained typography. Developed a clean navigation system that handles the large catalog without overwhelming users—category filtering feels effortless rather than complex. Product pages use a simple two-column layout: large product imagery on one side, essential details and purchase options on the other. The staging photography shows prints in realistic home settings that help customers visualize scale and context without dominating the product itself. All design decisions support the conversion goal while respecting the timeless aesthetic appropriate for art sales.", 
-        "measured": "Successfully designed an e-commerce experience that lets art prints remain the focus while providing all functionality needed for confident purchasing decisions. The clean interface proved its effectiveness by keeping users engaged through large catalog browsing without the fatigue that cluttered galleries create. The minimalist approach demonstrates design maturity—knowing when to add elements and when restraint serves the project better. The timeless aesthetic ensures the site won't feel dated, which is essential for art commerce where trust and perceived quality directly impact conversion."
-    }
-},
-
-"notes": []
+    "notes": []
 }

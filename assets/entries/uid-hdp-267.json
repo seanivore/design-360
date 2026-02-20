@@ -1,84 +1,67 @@
 {
-"categorization": {
-    "entry_id": "uid-hdp-267",
-    "placement": {
-        "section": "Digital",
-        "sub_section": "Generative",
-        "slug": "minimalism-bauhaus"
+    "_metadata": {
+        "schema_version": "4.0"
     },
-    "tagging": {
-        "technology": [
-            "AI", 
-            "Generative", 
-            "Adobe Firefly", 
-            "Lightroom", 
-            "Canva", 
-            "Dia AI", 
-            "Cursor", 
-            "Claude AI", 
-            "Behance"
-        ],
-        "media": [
-            "Minimalism", 
-            "Geometric", 
-            "Bauhaus", 
-            "Abstract", 
-            "Digital Art", 
-            "Digital Product"
-        ],
-        "role": "Graphic Designer",
-        "skill": [
-            "Content Production", 
-            "Graphic Design", 
-            "Illustration", 
-            "Scaling System", 
-            "Publishing", 
-            "Marketing", 
-            "Art History", 
-            "Branding", 
-            "Product"
-        ]
+    "categorization": {
+        "entry_id": "uid-hdp-267",
+        "slug": "minimalism-bauhaus",
+        "tags": {
+            "role": [
+                "Brand Designer",
+                "Content Strategist",
+                "Graphic Designer"
+            ],
+            "skill": [
+                "Adobe Firefly",
+                "Art Direction",
+                "Claude/Cursor",
+                "Content Production",
+                "Generative AI",
+                "Illustration",
+                "Lightroom",
+                "Publishing",
+                "Scaling Systems"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "",
+            "video_url": "",
+            "video_embed": "<iframe src='https://www.behance.net/embed/project/217385779?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+            "video_alt_text": "A minimal generative set with restrained geometry, ample negative space, and clear color relationships.",
+            "thumbnail_images": [
+                "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-1.webp",
+                "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-2.webp",
+                "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-3.webp",
+                "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-4.webp",
+                "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-5.webp",
+                "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-6.webp"
+            ],
+            "thumb_slideshow_alt_text": "Minimal geometric panels with clean edges, negative space, and simple color steps.",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
+        },
+        "assets": {
+            "project_url_text": "behance.net/gallery/Minimal-Maybes",
+            "project_url": "https://www.behance.net/gallery/217385779/Minimal-Maybes",
+            "github_repository": ""
+        },
+        "teaser_copy": {
+            "seo_title": "Minimal Maybes: Generative Restraint with Clean Geometry and Space",
+            "seo_description": "A minimal abstract series balancing clean geometry, negative space, and simple color relationships, built with a generative pipeline and precise finishing.",
+            "page_title": "Minimal Maybes",
+            "page_subtitle": "Clean geometry and negative space in a minimal generative study.",
+            "tile_text": [
+                "Clean geometry with ample negative space",
+                "Simple color steps and crisp edges",
+                "Generative panels with precise restraint"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Minimalism depends on restraint: clear shapes, honest space, and simple color that stays legible across scales.",
+            "action": "A generative pass set base forms and spacing, then in painting refined edge integrity, color pacing, and micro contrast.",
+            "measured": "Delivers quiet panels that present clearly in grids and carry enough structure for print, social showcases, and provenance linked digital editions."
+        }
     }
-},
-"content": {
-    "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "<iframe src='https://www.behance.net/embed/project/217385779?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-        "video_alt_text": "A minimal generative set with restrained geometry, ample negative space, and clear color relationships.",
-        "thumbnail_images": [
-            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-1.webp",
-            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-2.webp",
-            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-3.webp",
-            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-4.webp",
-            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-5.webp",
-            "assets/media/digital/minimalism-bauhaus/thumb-minimalism-bauhaus-6.webp"
-        ],
-        "thumb_slideshow_alt_text": "Minimal geometric panels with clean edges, negative space, and simple color steps.",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
-    },
-    "assets": {
-        "project_url_text": "behance.net/gallery/Minimal-Maybes",
-        "project_url": "https://www.behance.net/gallery/217385779/Minimal-Maybes",
-        "github_repository": ""
-    },
-    "teaser_copy": {
-        "seo_title": "Minimal Maybes: Generative Restraint with Clean Geometry and Space",
-        "seo_description": "A minimal abstract series balancing clean geometry, negative space, and simple color relationships, built with a generative pipeline and precise finishing.",
-        "page_title": "Minimal Maybes",
-        "page_subtitle": "Clean geometry and negative space in a minimal generative study.",
-        "breadcrumb": "Minimal Abstracts",
-        "tile_text": [
-            "Clean geometry with ample negative space",
-            "Simple color steps and crisp edges",
-            "Generative panels with precise restraint"
-        ]
-    },
-    "page_copy": {
-        "pattern": "Minimalism depends on restraint: clear shapes, honest space, and simple color that stays legible across scales.",
-        "action": "A generative pass set base forms and spacing, then in painting refined edge integrity, color pacing, and micro contrast.",
-        "measured": "Delivers quiet panels that present clearly in grids and carry enough structure for print, social showcases, and provenance linked digital editions."
-    }
-}
 }

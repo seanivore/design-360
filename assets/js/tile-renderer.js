@@ -1,5 +1,5 @@
 /**
- * TILE RENDERER
+ * TILE RENDERER (v4.0)
  * Clean, simple tile structure - no absolute positioning
  */
 
@@ -10,13 +10,10 @@ const TileRenderer = (() => {
      */
     function renderSectionTile(project) {
         const { categorization, content } = project;
-        const { placement } = categorization;
         const { media = {}, teaser_copy = {} } = content;
 
-        const section = DataLoader.normalizeForURL(placement.section);
-        const subsection = DataLoader.normalizeForURL(placement.sub_section);
-        const slug = placement.slug;
-        const entryURL = `/${section}/${subsection}/${slug}`;
+        const slug = categorization.slug;
+        const entryURL = `/${slug}`;
 
         const thumbnails = media.thumbnail_images || [];
         const tileTexts = teaser_copy?.tile_text || [];

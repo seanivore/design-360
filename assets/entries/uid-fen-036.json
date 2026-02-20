@@ -1,82 +1,66 @@
 {
-"categorization": {
-    "entry_id": "uid-fen-036",
-    "placement": {
-        "section": "Digital",
-        "sub_section": "Generative",
-        "slug": "gradient-bauhaus"
+    "_metadata": {
+        "schema_version": "4.0"
     },
-    "tagging": {
-        "technology": [
-            "AI", 
-            "Generative", 
-            "Adobe Firefly", 
-            "Lightroom", 
-            "Canva", 
-            "Dia AI", 
-            "Cursor", 
-            "Claude AI", 
-            "Behance"
-        ],
-        "media": [
-            "Gradient", 
-            "Minimalism", 
-            "Bauhaus", 
-            "Abstract", 
-            "Digital Art", 
-            "Print", 
-            "Digital Product"
-        ],
-        "role": "Graphic Designer",
-        "skill": [
-            "Content Production", 
-            "Graphic Design", 
-            "Illustration", 
-            "Scaling System", 
-            "Art History", 
-            "Product"
-        ]
+    "categorization": {
+        "entry_id": "uid-fen-036",
+        "slug": "gradient-bauhaus",
+        "tags": {
+            "role": [
+                "Content Strategist",
+                "Graphic Designer"
+            ],
+            "skill": [
+                "Adobe Firefly",
+                "Art Direction",
+                "Claude/Cursor",
+                "Content Production",
+                "Generative AI",
+                "Illustration",
+                "Lightroom",
+                "Print Layout",
+                "Scaling Systems"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "",
+            "video_url": "",
+            "video_embed": "<iframe src='https://www.behance.net/embed/project/217385795?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+            "video_alt_text": "A generative gradient study exploring depth through layered color transitions, soft edges, and controlled value steps.",
+            "thumbnail_images": [
+                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
+                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
+                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
+                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
+                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
+                "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
+            ],
+            "thumb_slideshow_alt_text": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
+        },
+        "assets": {
+            "project_url_text": "behance.net/gallery/Gradient-Depths",
+            "project_url": "https://www.behance.net/gallery/217385795/Gradient-Depths",
+            "github_repository": ""
+        },
+        "teaser_copy": {
+            "seo_title": "Gradient Depths: Generative Layered Color and Controlled Value",
+            "seo_description": "A minimal abstract collection exploring gradient depth via layered color transitions, soft edges, and disciplined value pacing for clean modern panels.",
+            "page_title": "Gradient Depths",
+            "page_subtitle": "Layered color transitions and controlled value for clean panels.",
+            "tile_text": [
+                "Layered gradients with soft edge control",
+                "Disciplined value steps for spatial depth",
+                "Generative panels with minimal polish"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Minimal gradient work relies on clean color transitions, soft falloff, and value control that suggests depth without hard edges.",
+            "action": "A generative layout defined base gradients and axes, then in painting refined edge softness, micro contrast, and hue relationships.",
+            "measured": "Produces calm, modern panels that read clearly at tile scale and hold subtle depth for print, social showcases, and provenance linked digital editions."
+        }
     }
-},
-"content": {
-    "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "<iframe src='https://www.behance.net/embed/project/217385795?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-        "video_alt_text": "A generative gradient study exploring depth through layered color transitions, soft edges, and controlled value steps.",
-        "thumbnail_images": [
-            "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
-            "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
-            "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
-            "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
-            "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
-            "assets/media/digital/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
-        ],
-        "thumb_slideshow_alt_text": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
-    },
-    "assets": {
-        "project_url_text": "behance.net/gallery/Gradient-Depths",
-        "project_url": "https://www.behance.net/gallery/217385795/Gradient-Depths",
-        "github_repository": ""
-    },
-    "teaser_copy": {
-        "seo_title": "Gradient Depths: Generative Layered Color and Controlled Value",
-        "seo_description": "A minimal abstract collection exploring gradient depth via layered color transitions, soft edges, and disciplined value pacing for clean modern panels.",
-        "page_title": "Gradient Depths",
-        "page_subtitle": "Layered color transitions and controlled value for clean panels.",
-        "breadcrumb": "Gradient Abstracts",
-        "tile_text": [
-            "Layered gradients with soft edge control",
-            "Disciplined value steps for spatial depth",
-            "Generative panels with minimal polish"
-        ]
-    },
-    "page_copy": {
-        "pattern": "Minimal gradient work relies on clean color transitions, soft falloff, and value control that suggests depth without hard edges.",
-        "action": "A generative layout defined base gradients and axes, then in painting refined edge softness, micro contrast, and hue relationships.",
-        "measured": "Produces calm, modern panels that read clearly at tile scale and hold subtle depth for print, social showcases, and provenance linked digital editions."
-    }
-}
 }

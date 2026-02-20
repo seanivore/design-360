@@ -1,87 +1,68 @@
 {
-"categorization": {
-    "entry_id": "uid-lrt-041",
-    "placement": {
-        "section": "Digital",
-        "sub_section": "Generative",
-        "slug": "pie-claesz"
+    "_metadata": {
+        "schema_version": "4.0"
     },
-    "tagging":{
-        "technology": 
-        [
-            "AI", 
-            "Generative", 
-            "Adobe Firefly", 
-            "Canva", 
-            "Cursor", 
-            "Dia AI", 
-            "Claude AI"
-        ],
-        "media": 
-        [
-            "Baroque", 
-            "Painting", 
-            "Still Life", 
-            "Digital Art", 
-            "Print", 
-            "Digital Product"
-        ],
-        "role": "Graphic Designer",
-        "skill": 
-        [
-            "Content Production", 
-            "Graphic Design", 
-            "Illustration", 
-            "Fashion Photography", 
-            "Product Staging", 
-            "Scaling System", 
-            "Publishing", 
-            "Marketing", 
-            "Art History", 
-            "Branding", 
-            "Product"
-        ]
-    }
-},
-
-"content": {
-    "media": {
-        "video_filename": "",
-        "video_url": "",
-        "video_embed": "<iframe src='https://www.behance.net/embed/project/226117987?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-        "video_alt_text": "Generative still life study channeling Pieter Claesz: restrained palette, tabletop composition, and quiet, balanced light.",
-        "thumbnail_images": [
-            "assets/media/digital/pie-claesz/thumb-pie-claesz-1.webp",
-            "assets/media/digital/pie-claesz/thumb-pie-claesz-2.webp",
-            "assets/media/digital/pie-claesz/thumb-pie-claesz-3.webp",
-            "assets/media/digital/pie-claesz/thumb-pie-claesz-4.webp",
-            "assets/media/digital/pie-claesz/thumb-pie-claesz-5.webp"
-        ],
-        "thumb_slideshow_alt_text": "A series of still life images with muted tones, balanced arrangement, and understated highlights in the manner of Pieter Claesz.",
-        "page_imagery": [],
-        "page_image_group_alt_text": ""
+    "categorization": {
+        "entry_id": "uid-lrt-041",
+        "slug": "pie-claesz",
+        "tags": {
+            "role": [
+                "Brand Designer",
+                "Content Strategist",
+                "Graphic Designer"
+            ],
+            "skill": [
+                "Adobe Firefly",
+                "Art Direction",
+                "Claude/Cursor",
+                "Content Production",
+                "Generative AI",
+                "Illustration",
+                "Photography",
+                "Print Layout",
+                "Product Staging",
+                "Publishing",
+                "Scaling Systems"
+            ]
+        }
+    },
+    "content": {
+        "media": {
+            "video_filename": "",
+            "video_url": "",
+            "video_embed": "<iframe src='https://www.behance.net/embed/project/226117987?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+            "video_alt_text": "Generative still life study channeling Pieter Claesz: restrained palette, tabletop composition, and quiet, balanced light.",
+            "thumbnail_images": [
+                "assets/media/digital/pie-claesz/thumb-pie-claesz-1.webp",
+                "assets/media/digital/pie-claesz/thumb-pie-claesz-2.webp",
+                "assets/media/digital/pie-claesz/thumb-pie-claesz-3.webp",
+                "assets/media/digital/pie-claesz/thumb-pie-claesz-4.webp",
+                "assets/media/digital/pie-claesz/thumb-pie-claesz-5.webp"
+            ],
+            "thumb_slideshow_alt_text": "A series of still life images with muted tones, balanced arrangement, and understated highlights in the manner of Pieter Claesz.",
+            "page_imagery": [],
+            "page_image_group_alt_text": ""
         },
-    "assets": {
-        "project_url_text": "behance.net/gallery/Pie-Claesz-Vibes",
-        "project_url": "https://www.behance.net/gallery/226117987/Pie-Claesz-Vibes",
-        "github_repository": ""
-    },
-    "teaser_copy":{
-        "seo_title": "Pie Claesz Vibes: Generative Still Life Study with Subtle Baroque Restraint",
-        "seo_description": "A generative exploration of Pieter Claesz inspired still life: muted palette, careful balance, and gentle light shaping on familiar tabletop objects.",
-        "page_title": "Pie Claesz Vibes",
-        "page_subtitle": "Muted palette, balanced still life, and quiet light in a generative study.",
-        "breadcrumb": "Claesz Still Life",
-        "tile_text": [
-            "Still life study in the spirit of Pieter Claesz",
-            "Muted tones and balanced tabletop composition",
-            "Gentle light shaping with generative tooling"
-        ]
-    },
-    "page_copy":{
-        "pattern": "Claesz style favors quiet balance, muted palette, and disciplined light on ordinary objects arranged with careful restraint.",
-        "action": "A generative first pass set composition and tone, then targeted in painting and value control refined edges, highlights, and surface textures.",
-        "measured": "Results read as calm, historically grounded still lifes suitable for print, social showcases, and provenance linked digital editions."
+        "assets": {
+            "project_url_text": "behance.net/gallery/Pie-Claesz-Vibes",
+            "project_url": "https://www.behance.net/gallery/226117987/Pie-Claesz-Vibes",
+            "github_repository": ""
+        },
+        "teaser_copy": {
+            "seo_title": "Pie Claesz Vibes: Generative Still Life Study with Subtle Baroque Restraint",
+            "seo_description": "A generative exploration of Pieter Claesz inspired still life: muted palette, careful balance, and gentle light shaping on familiar tabletop objects.",
+            "page_title": "Pie Claesz Vibes",
+            "page_subtitle": "Muted palette, balanced still life, and quiet light in a generative study.",
+            "tile_text": [
+                "Still life study in the spirit of Pieter Claesz",
+                "Muted tones and balanced tabletop composition",
+                "Gentle light shaping with generative tooling"
+            ]
+        },
+        "page_copy": {
+            "pattern": "Claesz style favors quiet balance, muted palette, and disciplined light on ordinary objects arranged with careful restraint.",
+            "action": "A generative first pass set composition and tone, then targeted in painting and value control refined edges, highlights, and surface textures.",
+            "measured": "Results read as calm, historically grounded still lifes suitable for print, social showcases, and provenance linked digital editions."
+        }
     }
-}
 }
