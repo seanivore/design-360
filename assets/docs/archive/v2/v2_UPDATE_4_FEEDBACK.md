@@ -1,8 +1,12 @@
-# Portfolio Landing Page Strategy 
+# Portfolio Landing Page  
 
-## Overview 
+## Overview & Strategy 
 
-Overhaul to create landing-page style sections that instead of a SaaS, sell my experience. First use will be mom's friends. Second will be job applications. 
+The overhaul simplifies the tags and is meant to create the look and feel of a high converting SaaS landing page that is completely dynamic; any copy on the page should be pulled from the JSON entries. This is the challenging part of the system design and we've created an HTML mock-up to work from. The current content is very specific and needs to be generalized. 
+
+### Strategy
+
+We are recreating the . Each section 
 
 ### Process 
 
