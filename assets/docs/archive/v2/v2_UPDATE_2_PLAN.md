@@ -10,7 +10,7 @@
 - **No industry tags** — avoids pigeonholing
 - **Flat URLs**: `/{slug}` instead of `/{section}/{sub_section}/{slug}` — breaks old URLs
 - **`homepage-content.json`**: tags only — each key is a component, each value is tag array(s)
-- **Landing page layout**: hardcoded in HTML (like [section.html](file:///Users/seanivore/Development/360-design/section.html)), populated dynamically by tags
+- **Landing page layout**: hardcoded in HTML (like [section.html](/section.html)), populated dynamically by tags
 - **Entry schema**: extended with new copy fields discovered through prototyping (see Phase 2)
 - **Prototype-first**: build a standalone wireframe HTML with real data, iterate, then template-ize
 
@@ -30,7 +30,7 @@ Everything depends on the new tag structure. Do this first.
 | Graphic Designer          | Digital art, print, brand assets, generative     |
 | Social Media Manager      | Campaigns, content calendars, paid social        |
 | Video Editor              | Production, editing, motion, viral content       |
-| Creative Director         | Vision, team leadership, multi-channel           |
+| Art Director              | Vision, team leadership, multi-channel           |
 | Content Strategist        | Editorial, copywriting, SEO, content systems     |
 | UX/UI Designer            | App design, wireframes, prototyping, flows       |
 | Brand Designer            | Identity systems, style guides, brand voice      |
@@ -60,22 +60,22 @@ Techniques: Illustration, Animation, Motion Graphics, Typography, Print Layout, 
 
 ### Files Changed in Phase 1
 
-| Action | File                                                                                                    | What                                |
-| ------ | ------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| MODIFY | All 36 `assets/entries/uid-*.json`                                                                      | Migrate tags via Python script      |
-| MODIFY | [_entry_template.json](file:///Users/seanivore/Development/360-design/assets/docs/_entry_template.json) | New v4.0 schema                     |
-| MODIFY | [data-loader.js](file:///Users/seanivore/Development/360-design/assets/js/data-loader.js)               | New filtering functions             |
-| MODIFY | [generate_manifest.py](file:///Users/seanivore/Development/360-design/generate_manifest.py)             | Flat slug keys                      |
-| MODIFY | [manifest.json](file:///Users/seanivore/Development/360-design/assets/js/manifest.json)                 | Regenerate with flat slugs          |
-| MODIFY | [404.html](file:///Users/seanivore/Development/360-design/404.html)                                     | New routing for flat URLs           |
-| MODIFY | [section.html](file:///Users/seanivore/Development/360-design/section.html)                             | Universal tag page                  |
-| MODIFY | [section-controller.js](file:///Users/seanivore/Development/360-design/assets/js/section-controller.js) | Remove section/subsection logic     |
-| MODIFY | [filter-controller.js](file:///Users/seanivore/Development/360-design/assets/js/filter-controller.js)   | Simplified tag toggling             |
-| MODIFY | [entry.html](file:///Users/seanivore/Development/360-design/entry.html)                                 | Remove breadcrumbs, add tag pills   |
-| MODIFY | [entry-controller.js](file:///Users/seanivore/Development/360-design/assets/js/entry-controller.js)     | New tag display, flat path handling |
-| MODIFY | [tile-renderer.js](file:///Users/seanivore/Development/360-design/assets/js/tile-renderer.js)           | Flat slug URLs                      |
-| MODIFY | [styles.css](file:///Users/seanivore/Development/360-design/styles.css)                                 | Tag pill styles, remove breadcrumbs |
-| DELETE | [placement.json](file:///Users/seanivore/Development/360-design/assets/js/placement.json)               | Replaced by tags-only system        |
+| Action | File                                                      | What                                |
+| ------ | --------------------------------------------------------- | ----------------------------------- |
+| MODIFY | All 36 `assets/entries/uid-*.json`                        | Migrate tags via Python script      |
+| MODIFY | [_entry_template.json](/assets/docs/_entry_template.json) | New v4.0 schema                     |
+| MODIFY | [data-loader.js](/assets/js/data-loader.js)               | New filtering functions             |
+| MODIFY | [generate_manifest.py](/generate_manifest.py)             | Flat slug keys                      |
+| MODIFY | [manifest.json](/assets/js/manifest.json)                 | Regenerate with flat slugs          |
+| MODIFY | [404.html](/404.html)                                     | New routing for flat URLs           |
+| MODIFY | [section.html](/section.html)                             | Universal tag page                  |
+| MODIFY | [section-controller.js](/assets/js/section-controller.js) | Remove section/subsection logic     |
+| MODIFY | [filter-controller.js](/assets/js/filter-controller.js)   | Simplified tag toggling             |
+| MODIFY | [entry.html](/entry.html)                                 | Remove breadcrumbs, add tag pills   |
+| MODIFY | [entry-controller.js](/assets/js/entry-controller.js)     | New tag display, flat path handling |
+| MODIFY | [tile-renderer.js](/assets/js/tile-renderer.js)           | Flat slug URLs                      |
+| MODIFY | [styles.css](/styles.css)                                 | Tag pill styles, remove breadcrumbs |
+| DELETE | [placement.json](/assets/js/placement.json)               | Replaced by tags-only system        |
 
 ---
 
@@ -127,9 +127,9 @@ Three acts × three zoom levels. The prototype will validate whether this covers
 
 After prototype approval:
 
-1. **Finalize entry schema** — add discovered copy fields to [_entry_template.json](file:///Users/seanivore/Development/360-design/assets/docs/_entry_template.json)
+1. **Finalize entry schema** — add discovered copy fields to [_entry_template.json](/assets/docs/_entry_template.json)
 2. **Update all 36 entries** — fill in new copy fields
-3. **Create [homepage-content.json](file:///Users/seanivore/Development/360-design/assets/js/homepage-content.json)** — tags only:
+3. **Create [homepage-content.json](/assets/js/homepage-content.json)** — tags only:
    ```json
    {
      "hero": ["Web Developer", "Graphic Designer", "Video Editor"],
@@ -143,10 +143,10 @@ After prototype approval:
      "approach_cards": ["Web Developer"]
    }
    ```
-4. **Convert prototype → [index.html](file:///Users/seanivore/Development/360-design/index.html)** — replace hardcoded data with JS that reads `homepage-content.json` tags and pulls from entry JSONs
-5. **Create [landing-controller.js](file:///Users/seanivore/Development/360-design/assets/js/landing-controller.js)** — drives all landing page components
-6. **Delete [homepage-controller.js](file:///Users/seanivore/Development/360-design/assets/js/homepage-controller.js)**
-7. **Update [styles.css](file:///Users/seanivore/Development/360-design/styles.css)** — landing page component styles
+4. **Convert prototype → [index.html](/index.html)** — replace hardcoded data with JS that reads `homepage-content.json` tags and pulls from entry JSONs
+5. **Create [landing-controller.js](/assets/js/landing-controller.js)** — drives all landing page components
+6. **Delete [homepage-controller.js](/assets/js/homepage-controller.js)**
+7. **Update [styles.css](/styles.css)** — landing page component styles
 8. **Delete prototype** — `landing-prototype.html` no longer needed
 
 ---
