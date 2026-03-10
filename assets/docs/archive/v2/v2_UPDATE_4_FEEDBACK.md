@@ -1,50 +1,46 @@
 # Portfolio Landing Page Mock-Up 
 
-## Overview 
+**Created**: 2026-03-10 
+**Version**: v0.1 
 
-The overhaul simplifies the website structure by removing special tags that created hard sectioning and sub-sectioning. In the update, all tags are created equal so that we have complete dynamic flexibility to populate front page components with whatever tag or combination of tags we choose. Now, the `section.html` template will simply populate with any tag selected by the user. 
+## Feedback Overview
 
-### Strategy 
+Anything on the homepage, particularly text, must either be general enough to apply to any project or be dynamic from a value added to every JSON. 
 
-We're looking to create the feeling of SaaS landing pages that people know so well, using the layout and structure to instead display whatever content is needed for my job searching needs at the time. 
+Right now there are too many sections that are implied to be hardcoded but are specific, and focus too heavily on my entire career or selling myself as a generalist, when the intention of this dynamic redesign is to allow us to specifically focus on the roles and skills that are most relevant to the job we're applying for — this is why it can update dynamically. 
 
-### Planning 
+Though we are looking to create the feeling of a SaaS landing page, the current version is far too literal. We need to think more abstractly and focus more on the goal of showcasing exactly the projects we want, and think less about trying to be selling a SaaS. 
 
-The final website architecture does not allow us to preview changes using a local host because of the 404-redirect. As a workaround, we've created a homepage prototype to perfect our planned changes before implementation. 
+### Intended Changes 
 
-Using the prototype, we need define exactly what the components in each section of the homepage will look like. 
-
-Every part of the homepage should be dynamic, pulling from whatever JSON files are defined by tags defined in `assets/js/homepage-content.json` to populate that section. This means we need to carefully plan out what type of copy should display where so that we can place the exact same prompt on every single project JSON. 
-
-Once we have that planned, we'll have an updated `assets/docs/_entry_template.json` schema. The final phase will require recreating all the current `assets/entries/...` with the new tag collection, any new JSON values, and then implementing the changes to the homepage to work dynamically. 
+  + Removing special tags that created hardcoded sectioning and sub-sectioning 
+  + Making all tags created equal 
+    - Any tag can populate the `section.html` template
+    - Any tag or group of tags will populate the homepage components 
+  + Homepage components are populated dynamically based on the tags defined in `assets/js/homepage-content.json` 
+  + There will be new values to add to `assets/docs/_entry_template.json` 
+    - Every current `assets/entries/...` will need to be updated 
+    - Code will need to be updated to handle the new values 
 
 ### Documentation 
 
 This process is carefully defined in the **Agent development plan** and where we left off is easily identified by the **Agent task list**: 
 
-| Document                                         | Purpose                    |
-| ------------------------------------------------ | -------------------------- |
-| `assets/docs/archive/v2/v2_UPDATE_1_PITCH.md`    | Landing page pitch         |
-| `assets/docs/archive/v2/v2_UPDATE_2_PLAN.md`     | **Agent dev plan**         |
-| `assets/docs/archive/v2/v2_UPDATE_3_TASKS.md`    | **Agent task list**        |
-| `assets/docs/archive/v2/v2_UPDATE_4_FEEDBACK.md` | Mockup feedback (this doc) |
+| Purpose                    | Document                                         |
+| -------------------------- | ------------------------------------------------ |
+| Landing page pitch         | `assets/docs/archive/v2/v2_UPDATE_1_PITCH.md`    |
+| **Agent dev plan**         | `assets/docs/archive/v2/v2_UPDATE_2_PLAN.md`     |
+| **Agent task list**        | `assets/docs/archive/v2/v2_UPDATE_3_TASKS.md`    |
+| Mockup feedback (this doc) | `assets/docs/archive/v2/v2_UPDATE_4_FEEDBACK.md` |
 
 ---
 
-## Status 
-
-The current build is far too heavily about my roles as a whole. Wording like "You do... everything?" in the FAQs is inappropriate and frankly kind of condescending. As pretty as sections like "By the numbers" is, I think we need to be more specifically speaking to groupings of roles. 
-
-We need to be more abstract and less literal — we don't need actual FAQs to use the format of an FAQ section to convey information in a valuable way. 
-
-There is also a need for some visual differentiation in imagery so I've created 3 square 1080px images for every single current `assets/entries/...` JSON in the directory. The file names all start with "img-sq-..." and are located in the `assets/media/...` directory beside each JSON entry's thumbnail slide images. 
-
-### Tag Categories 
+## Tag Categories 
 
 We should expand one additional tag group so that things like "website" or "video short" can be easily located and grouped if needed for freelance work or where a job title is less essential. 
 
-  1. Roles — identified based on targets and FastCompany article advice 
-  2. Skills — skills that make up various roles with necessary crossover 
+  1. Roles — identified based on targets and FastCompany article advice 
+  2. Skills — skills that make up various roles with necessary crossover 
   3. Products — categorical grouping of work I've done 
 
   + Looking at "Phase 1: Tag System & Foundation" > "New Tag Groups"
@@ -92,72 +88,58 @@ Coming up with better job titles should provide deliberate answer to the questio
   - Conducting research, synthesizing behavioral insights, and informing product strategy = *UX Researcher or UX Strategist*
   - Architect interaction systems and design component libraries at scale = *Design Systems Lead*
 
-### My Core Roles 
-
-We need to identify the initial roles that will be displayed to figure out how to create the homepage content sections. I'm going to outline what I most need to have displayed for applying to jobs and getting freelance work, but we should research to find what the actual most commonly used job title terms for right now in time. 
-
-├── Website (product tag)
-│   ├── Webflow (skill tag tabs that filter projects)
-│   ├── Framer 
-│   ├── React/TypeScript 
-│   └── HTML/CSS/JS 
-├── Graphic Designer (role tag)
-│   ├── Digital art  
-│   ├── Brand assets
-│   ├── Motion graphics 
-│   └── Typography  
-├── assets
-│   ├── docs
-│   └── scripts
-│       ├── migrate_tags_v4.py
-│       ├── new_project.py
-│       └── project.sh
-├── CNAME
-├── entry.html
-├── generate_manifest.py
-├── index.html
-
-
-  - Website design and development
-  - Digital storefront automations
-  - Social media advertising
-  - Graphic design solutions 
-
-
-
-+ 3 `img-sq-<slug>.webp` 1:1 @ 1080px required, used for front page component display 
-+ ~3-7 `img-mobile-<slug>.webp` no required and not all the exact same size or ratio; need new on-page space for them
-+ Optional space for any number of any aspect ratio images; space on page needed 
+  > We should apply this mentality to the job titles we use. 
 
 ---
 
-+ brand assets, memes, illustration, digital art 
+## Landing Page Content 
 
+Homepage components can be modified by applying tags on `assets/js/homepage-content.json` that populate: 
+
+  1. All entries that have a **SINGLE TAG**
+  2. All entries that have **EITHER TAG-A *OR* TAG-B**
+  3. All entries that have **BOTH TAG-A *AND* TAG-B** 
+
+Or any combination thereof. This functionality is to be the same on the our `section.html` pages, where we'll need to modernize the UI for filtering. Ideas for how to present content in components will be included in the [Landing Page Sections](#landing-page-sections) below. 
+
+### What To Showcase 
+
+  1. Building Websites
+     - Webflow 
+     - Framer 
+     - React/TypeScript 
+     - HTML/CSS/JS 
+  2. Social Media Designer 
+     - Digital Art 
+     - Brand Assets 
+     - Motion Graphics 
+     - Typography 
+  3. Advertising Impact
+     - Lead with metrics we have 
+     - Perhaps graphs of them 
+  4. AI & Automation Implementation
+     - Storefront 
+     - Store backend 
+     - Content production 
+     - Engagement helper 
+  5. Marketing Manager 
+     - Press hits 
+     - Background and experience 
+     - Viral deets 
+
+### New JSON Values 
+
+  + 3 `img-sq-<slug>.webp` 1:1 @ 1080px required, used for front page component display 
+  + ~3-7 `img-mobile-<slug>.webp` no required and not all the exact same size or ratio; need new on-page space for them
+  + Optional space for any number of any aspect ratio images; space on page needed 
 
 ---
-
-### Process 
-
-  1. Identify exactly what to showcase for mom's friends
-  2. Identify exactly what jobs I'll be applying for
-
-**Nuance is in the job title, work is in identifying and then gather what best projects to showcase are** 
-
-  3. Write new copy and sections for homepage mockup accordingly
-     - These should consist of modular copywriting values
-     - Every single project JSON entry should be able to have the same value that the copy comes from
-
-
-
----
-
-
 
 ## Landing Page Sections 
 
-### 0. `.site-header` — Update nav on **Homepage only**
+### 0. `.site-header`: Update nav on **Homepage only**
 
-I want to clean this up so that we can use my name as the title. 
+Clean this up so that we can use my name as the title. 
 
   + Move the hyperlinks for "Work", "Process", and "About" to the left, replacing "Sean August Horvath" 
   + Remove the name completely only on the homepage navigation 
@@ -190,6 +172,10 @@ And the pacing can be slow, as in, let them stay put for a while since there are
 ### 4. `.hero-cta-row`
 
 These can be targeted by categories on JSON. 
+
+  + For `.btn-primary` 
+    - Define what tag(s) to pull from 
+  + For `.btn-secondary`
 
   + Projects
   + Resume 
