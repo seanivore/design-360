@@ -95,17 +95,17 @@ Build a standalone wireframe with real project data to **discover the exact entr
 
 Each maps to the *psychological purpose* from the SaaS anatomy:
 
-| #   | Component           | SaaS Equivalent | Purpose                                                      |
-| --- | ------------------- | --------------- | ------------------------------------------------------------ |
-| 1   | **Navbar**          | Navbar          | Navigation, resume CTA                                       |
-| 2   | **Hero**            | Hero            | Instant credibility — stats + auto-scrolling thumbnail strip |
-| 3   | **Showcase**        | Benefits        | Core content — tabbed grids filtered by role tags            |
-| 4   | **Credentials**     | Partners/Trust  | Where you've worked — org names + roles                      |
-| 5   | **Process**         | How It Works    | 3-step "how I work" — verbs discovered from data             |
-| 6   | **Career Timeline** | Pricing Tiers   | 3 era cards in pricing-column visual layout                  |
-| 7   | **Metrics**         | Testimonials    | Quantified results — stats pulled from project outcomes      |
-| 8   | **FAQ**             | FAQ             | Kill objections — "why a generalist?"                        |
-| 9   | **CTA + Contact**   | CTA + Footer    | Close the deal                                               |
+| #   | Component           | SaaS Equivalent & Purpose                              |
+| --- | ------------------- | ------------------------------------------------------ |
+| 1   | **Navbar**          | Navbar, to navigate and CTA a button                   |
+| 2   | **Hero**            | Hero; for instant credibility of stats and visuals     |
+| 3   | **Showcase**        | Benefits; core content with tabbed grids, tag filtered |
+| 4   | **Credentials**     | Partners/Trust; work history, org names and roles      |
+| 5   | **Process**         | How It Works; 3-step 'how I work' verbs tag discovered |
+| 6   | **Career Timeline** | Pricing Tiers; 3 era cards in price-column visual      |
+| 7   | **Metrics**         | Testimonials; quantified project outcome stats         |
+| 8   | **FAQ**             | FAQ; kill objections like why a generalist             |
+| 9   | **CTA + Contact**   | CTA + Footer to close the deal                         |
 
 ### What the Prototype Discovers
 
