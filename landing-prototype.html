@@ -1,1335 +1,1466 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sean August Horvath — Multidisciplinary Creative</title>
-  <meta name="description"
-    content="Web Developer, Graphic Designer, Automation Engineer, and Creative Director with 36+ projects spanning full-stack builds, brand systems, and automated workflows.">
-
-  <!-- Base styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+  <title>Sean August Horvath — Design, Development & Automation</title>
+  <meta name="description" content="Portfolio of Sean August Horvath. Web development, graphic design, automation engineering, and creative direction across 36+ projects.">
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96">
 
   <style>
     /* ============================================
-       INLINE BASE STYLES (for file:// fallback)
-       These duplicate key vars from styles.css
-       so the prototype is viewable standalone.
+       DESIGN SYSTEM — Mobile-First
+       Base viewport: 393×852 CSS px
        ============================================ */
+
+    /* --- Reset --- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* --- Palette --- */
     :root {
-      --color-bg-primary: #1f1f1f;
-      --color-bg-secondary: #363635;
-      --color-bg-tile: #1a1a1a;
-      --color-bg-dark: #0f0f0f;
-      --color-text-primary: #EBEBEB;
-      --color-text-secondary: #D7CDCC;
-      --color-accent: #9C528B;
-      --color-accent-active: #7d4070;
-      --color-border: #474545;
-      --color-accent-mauve: #C99CAD;
-      --color-accent-blue: #8FA9B3;
-      --color-accent-terracotta: #C9A68A;
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 1.5rem;
-      --space-lg: 2rem;
-      --space-xl: 3rem;
-      --space-xxl: 4rem;
-      --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      --font-size-xs: 0.75rem;
-      --font-size-sm: 0.875rem;
-      --font-size-base: 1rem;
-      --font-size-md: 1.125rem;
-      --font-size-lg: 1.5rem;
-      --font-size-xl: 2rem;
-      --font-size-xxl: 2.5rem;
-      --font-size-xxxl: 3rem;
-      --font-weight-normal: 400;
-      --font-weight-medium: 500;
-      --font-weight-semibold: 600;
-      --font-weight-bold: 700;
-      --font-weight-heavy: 800;
-      --line-height-tight: 1.2;
-      --line-height-normal: 1.5;
-      --line-height-relaxed: 1.75;
-      --duration-fast: 200ms;
-      --duration-normal: 300ms;
-      --duration-slow: 400ms;
-      --easing: cubic-bezier(0.4, 0.0, 0.2, 1);
-      --max-content-width: 75rem;
+      /* Backgrounds */
+      --bg-primary: #1f1f1f;
+      --bg-secondary: #2a2a2a;
+      --bg-card: #303030;
+      --bg-elevated: #383838;
+
+      /* Text */
+      --text-primary: #EBEBEB;
+      --text-secondary: #D7CDCC;
+      --text-muted: #9a9590;
+
+      /* Cereal accents — always used in balanced groups */
+      --accent-terracotta: #C9A68A;
+      --accent-blue: #8FA9B3;
+      --accent-mauve: #C99CAD;
+
+      /* Functional */
+      --border-subtle: #444;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+
+      /* Spacing (mobile base) */
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+
+      /* Typography */
+      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'SF Mono', 'Fira Code', monospace;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
     body {
-      font-family: var(--font-family-base);
-      font-size: var(--font-size-base);
-      line-height: var(--line-height-normal);
-      color: var(--color-text-primary);
-      background-color: var(--color-bg-primary);
+      font-family: var(--font-base);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    a {
-      color: var(--color-accent);
-      text-decoration: none;
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* --- Stacked Trio (signature divider) --- */
+    .stacked-trio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      padding: var(--space-2xl) 0;
+    }
+    .stacked-trio span {
+      display: block;
+      height: 3px;
+      border-radius: 1.5px;
+    }
+    .stacked-trio span:nth-child(1) {
+      width: 72px;
+      background: var(--accent-terracotta);
+    }
+    .stacked-trio span:nth-child(2) {
+      width: 54px;
+      background: var(--accent-blue);
+    }
+    .stacked-trio span:nth-child(3) {
+      width: 36px;
+      background: var(--accent-mauve);
+    }
+    /* Draw-in animation */
+    .stacked-trio.animate span {
+      animation: trio-draw 0.6s ease-out both;
+    }
+    .stacked-trio.animate span:nth-child(2) { animation-delay: 0.1s; }
+    .stacked-trio.animate span:nth-child(3) { animation-delay: 0.2s; }
+    @keyframes trio-draw {
+      from { width: 0; opacity: 0; }
+      to { opacity: 1; }
     }
 
+    /* --- Section scroll-in animation --- */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Container --- */
     .container {
-      max-width: var(--max-content-width);
+      width: 100%;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 var(--space-md);
     }
 
-    @media (min-width: 48rem) {
-      .container {
-        padding: 0 var(--space-lg);
-      }
-    }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-weight: var(--font-weight-bold);
-      line-height: var(--line-height-tight);
-    }
-
-    /* Sticky header fallback */
-    .site-header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      background: linear-gradient(to right, #4c748a 0%, #42222f 100%);
-      border-bottom: 1px solid var(--color-border);
-      padding: var(--space-sm) 0;
-      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
-    }
-
-    .site-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .site-logo {
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-bold);
-      color: var(--color-text-primary);
-    }
-
+    /* ============================================
+       §1 — NAVBAR
+       ============================================ */
     .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: transform 0.4s ease, opacity 0.4s ease, background 0.4s ease;
+    }
+    .site-nav .container {
       display: flex;
-      gap: var(--space-sm);
       align-items: center;
+      justify-content: space-between;
+      height: 56px;
     }
-
-    .site-nav a {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-    }
-
-    .site-footer {
-      padding: var(--space-lg) 0;
-      background: linear-gradient(to right, #4c748a 0%, #42222f 100%);
-      border-top: 1px solid var(--color-border);
-      margin-top: var(--space-xxl);
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-      text-align: center;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .text-secondary {
-      color: var(--color-text-secondary);
-    }
-
-    .social-links {
+    .nav-links {
       display: flex;
       gap: var(--space-lg);
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
+      list-style: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .btn-contact {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 8px 20px;
+      background: transparent;
+      border: 1.5px solid var(--accent-mauve);
+      color: var(--accent-mauve);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      letter-spacing: 0.02em;
     }
 
-    .social-link {
-      display: inline-flex;
-      width: 3.5rem;
-      height: 3.5rem;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-text-primary);
-      background: rgba(156, 82, 139, 0.05);
+    /* --- Navbar collapsed state --- */
+    .site-nav.collapsed {
+      background: rgba(31, 31, 31, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: transparent;
+      transform: translateY(-100%);
+    }
+    .site-nav.collapsed.show-mini {
+      transform: translateY(0);
+    }
+    /* On mobile collapsed: shrink to pill */
+    .nav-pill {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 101;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 1px solid transparent;
-      text-decoration: none;
-      transition: transform var(--duration-normal) var(--easing), color var(--duration-fast) var(--easing);
+      background: rgba(31, 31, 31, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .nav-pill.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .nav-pill svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--text-primary);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
     }
 
-    .social-link:hover {
-      transform: translateY(-0.25rem);
-      color: var(--color-accent-terracotta);
-      border-color: var(--color-accent-terracotta);
-    }
-
-    .social-link svg {
-      width: 2rem;
-      height: 2rem;
-    }
 
     /* ============================================
-       SECTION DIVIDERS
+       §2 — HERO
        ============================================ */
-    .section-divider {
-      border: none;
-      height: 1px;
-      background: linear-gradient(to right,
-          transparent 0%,
-          var(--color-border) 20%,
-          var(--color-accent) 50%,
-          var(--color-border) 80%,
-          transparent 100%);
-      max-width: 60rem;
-      margin: 0 auto;
-    }
-
-    /* ============================================
-       LANDING PAGE PROTOTYPE STYLES
-       These will move to styles.css in Phase 3
-       ============================================ */
-
-    /* --- HERO --- */
     .hero {
-      padding: var(--space-xxl) 0;
-      text-align: center;
+      padding-top: calc(56px + var(--space-xl));
+      min-height: 100svh;
       position: relative;
       overflow: hidden;
     }
 
+    /* §2.5 Hero images — background layer */
+    .hero-img-strip {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 4px;
+      opacity: 0.2;
+    }
+    .hero-img-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.3) contrast(0.85);
+    }
+    .hero-img-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        var(--bg-primary) 0%,
+        rgba(31,31,31,0.6) 40%,
+        rgba(31,31,31,0.85) 70%,
+        var(--bg-primary) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    /* §2.1 Stats */
     .hero-stats {
       display: flex;
-      justify-content: center;
-      gap: var(--space-xl);
+      gap: var(--space-sm);
       margin-bottom: var(--space-xl);
-      flex-wrap: wrap;
     }
-
-    .hero-stat {
+    .stat-tile {
+      flex: 1;
       text-align: center;
+      padding: var(--space-md) var(--space-sm);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      position: relative;
+      /* Neumorphic shadows on dark bg */
+      box-shadow:
+        4px 4px 8px rgba(0,0,0,0.4),
+        -2px -2px 6px rgba(60,60,60,0.15);
+      transition: transform 0.2s ease;
     }
-
-    .hero-stat-number {
-      font-size: 3.5rem;
-      font-weight: var(--font-weight-heavy);
+    .stat-tile:active {
+      transform: scale(0.96);
+    }
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 800;
       line-height: 1;
-      background: linear-gradient(135deg, var(--color-accent-terracotta), var(--color-accent-mauve));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      margin-bottom: var(--space-xs);
     }
-
-    .hero-stat-label {
-      font-size: var(--font-size-xs);
+    .stat-tile:nth-child(1) .stat-number { color: var(--accent-terracotta); }
+    .stat-tile:nth-child(2) .stat-number { color: var(--accent-blue); }
+    .stat-tile:nth-child(3) .stat-number { color: var(--accent-mauve); }
+    .stat-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-text-secondary);
-      margin-top: 0.25rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
     }
 
+    /* §2.2 Title */
     .hero-title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: var(--font-weight-bold);
-      line-height: 1.15;
-      margin-bottom: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+    .hero-title h1 {
+      font-size: clamp(3rem, 12vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
       letter-spacing: -0.03em;
     }
-
-    .hero-subtitle {
-      font-size: var(--font-size-lg);
-      color: var(--color-text-secondary);
-      max-width: 40rem;
-      margin: 0 auto var(--space-lg);
-      line-height: var(--line-height-relaxed);
+    .hero-title h1 span {
+      display: block;
+    }
+    .hero-title h1 span:nth-child(2) {
+      color: var(--accent-blue);
     }
 
-    .hero-cta-row {
+    /* §2.3 Subtitle — flip-clock */
+    .hero-subtitle {
+      font-size: 1.0625rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      height: 1.6em;
+      overflow: hidden;
+      margin-bottom: var(--space-xl);
+      position: relative;
+    }
+    .subtitle-track {
       display: flex;
-      justify-content: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-xxl);
+      flex-direction: column;
+    }
+    .subtitle-item {
+      height: 1.6em;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    /* Flip animation */
+    .subtitle-track {
+      animation: subtitle-cycle 100s steps(1) infinite;
+    }
+    @keyframes subtitle-cycle {
+      0%   { transform: translateY(0); }
+      20%  { transform: translateY(-1.6em); }
+      40%  { transform: translateY(-3.2em); }
+      60%  { transform: translateY(-4.8em); }
+      80%  { transform: translateY(-6.4em); }
+      100% { transform: translateY(0); }
+    }
+    /* Dip + flip per item transition */
+    .subtitle-item {
+      animation: subtitle-dip 20s ease-in-out infinite;
+    }
+    @keyframes subtitle-dip {
+      0%, 90% { transform: translateY(0); }
+      95% { transform: translateY(4px); }
+      97% { transform: translateY(4px); opacity: 1; }
+      98% { opacity: 0; transform: translateY(4px); }
+      99% { opacity: 0; transform: translateY(-4px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* §2.4 CTA */
+    .hero-cta {
+      display: flex;
+      gap: var(--space-md);
       flex-wrap: wrap;
     }
-
-    .btn-primary {
-      padding: 0.75rem 2rem;
-      background: var(--color-accent);
-      color: #fff;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
       border: none;
-      border-radius: 0.375rem;
-      font-size: var(--font-size-base);
-      font-weight: var(--font-weight-semibold);
       cursor: pointer;
-      text-decoration: none;
-      transition: background var(--duration-fast) var(--easing),
-        transform var(--duration-fast) var(--easing);
+      letter-spacing: 0.01em;
+      transition: transform 0.15s ease;
     }
-
-    .btn-primary:hover {
-      background: var(--color-accent-active);
-      transform: translateY(-1px);
-      color: #fff;
+    .btn:active { transform: scale(0.96); }
+    .btn-primary {
+      background: var(--accent-terracotta);
+      color: var(--bg-primary);
     }
-
-    .btn-secondary {
-      padding: 0.75rem 2rem;
+    .btn-secondary-outline {
       background: transparent;
-      color: var(--color-text-primary);
-      border: 1px solid var(--color-border);
-      border-radius: 0.375rem;
-      font-size: var(--font-size-base);
-      font-weight: var(--font-weight-medium);
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color var(--duration-fast) var(--easing),
-        color var(--duration-fast) var(--easing);
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-subtle);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--color-accent);
-      color: var(--color-accent);
+
+    /* ============================================
+       §3 — SHOWCASE
+       ============================================ */
+    .showcase {
+      padding: var(--space-3xl) 0;
+    }
+    .section-heading {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: var(--space-xs);
+    }
+    .section-subtext {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: var(--space-lg);
     }
 
-    /* Thumbnail strip */
-    .hero-thumbnail-strip {
+    /* Tabs */
+    .showcase-tabs {
       display: flex;
       gap: var(--space-sm);
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: var(--space-xs) 0;
-      mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+      padding-bottom: var(--space-md);
+      margin-bottom: var(--space-lg);
     }
-
-    .hero-thumbnail-strip::-webkit-scrollbar {
-      display: none;
-    }
-
-    .hero-thumb {
-      flex-shrink: 0;
-      width: 16rem;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      opacity: 0.7;
-      transition: opacity var(--duration-fast) var(--easing);
-    }
-
-    .hero-thumb:hover {
-      opacity: 1;
-    }
-
-    /* --- SHOWCASE (Tabbed grids) --- */
-    .showcase {
-      padding: var(--space-xxl) 0;
-    }
-
-    .showcase-tabs {
-      display: flex;
-      gap: var(--space-xs);
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: var(--space-xl);
-    }
-
-    .showcase-tab {
-      padding: 0.5rem 1.25rem;
-      background: transparent;
-      border: 1px solid var(--color-border);
-      color: var(--color-text-secondary);
-      border-radius: 0.25rem;
+    .showcase-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      padding: 8px 18px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
       cursor: pointer;
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-medium);
-      font-family: var(--font-family-base);
-      transition: all var(--duration-fast) var(--easing);
+      flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+    .tab-btn:active { transform: scale(0.95); }
+    .tab-btn.active {
+      background: var(--accent-blue);
+      color: var(--bg-primary);
+      border-color: var(--accent-blue);
     }
 
-    .showcase-tab:hover {
-      border-color: var(--color-accent);
-      color: var(--color-text-primary);
-    }
-
-    .showcase-tab.active {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
-      color: #fff;
-    }
-
-    .showcase-panel {
-      display: none;
-    }
-
-    .showcase-panel.active {
-      display: block;
-    }
-
+    /* Project cards */
     .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+      grid-template-columns: 1fr;
       gap: var(--space-md);
     }
-
-    .showcase-card {
-      background: var(--color-bg-tile);
-      border: 1px solid var(--color-border);
-      border-radius: 0.375rem;
+    .project-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
       overflow: hidden;
-      text-decoration: none;
-      color: var(--color-text-primary);
-      transition: transform var(--duration-fast) var(--easing),
-        border-color var(--duration-fast) var(--easing);
+      border: 1px solid var(--border-subtle);
+      transition: transform 0.15s;
     }
-
-    .showcase-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--color-accent);
-      color: var(--color-text-primary);
-    }
-
-    .showcase-card img {
+    .project-card:active { transform: scale(0.98); }
+    .project-card img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16/10;
       object-fit: cover;
     }
-
-    .showcase-card-body {
-      padding: var(--space-sm);
+    .project-card-body {
+      padding: var(--space-md);
     }
-
-    .showcase-card-title {
-      font-size: var(--font-size-sm);
-      font-weight: var(--font-weight-semibold);
-      margin-bottom: 0.25rem;
-      line-height: 1.3;
+    .project-card-title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
     }
-
-    .showcase-card-tags {
+    .project-card-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.25rem;
+      gap: 6px;
+    }
+    .tag-pill {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      border-radius: 2px;
+      letter-spacing: 0.02em;
     }
 
-    .showcase-card-tag {
-      font-size: 0.625rem;
-      padding: 0.125rem 0.375rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 0.125rem;
-      color: var(--color-text-secondary);
-    }
+    /* Tab panels — show/hide */
+    .showcase-panel { display: none; }
+    .showcase-panel.active { display: block; }
 
-    /* --- CREDENTIALS --- */
+
+    /* ============================================
+       §4 — CREDENTIALS
+       ============================================ */
     .credentials {
-      padding: var(--space-xxl) 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+      padding: var(--space-3xl) 0;
     }
-
-    .credentials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-      gap: var(--space-md);
-      max-width: 50rem;
-      margin: 0 auto;
-    }
-
     .credential-card {
-      padding: var(--space-md);
-      border-left: 3px solid var(--color-accent-terracotta);
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin-bottom: var(--space-md);
+      border: 1px solid var(--border-subtle);
     }
-
-    .credential-org {
-      font-size: var(--font-size-md);
-      font-weight: var(--font-weight-semibold);
-      margin-bottom: 0.25rem;
+    .credential-company {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-terracotta);
+      margin-bottom: var(--space-xs);
     }
-
     .credential-role {
-      font-size: var(--font-size-sm);
-      color: var(--color-accent-mauve);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .credential-dates {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-md);
+    }
+    .credential-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
-    .credential-period {
-      font-size: var(--font-size-xs);
-      color: var(--color-text-secondary);
-      margin-top: 0.25rem;
-    }
 
-    /* --- PROCESS --- */
+    /* ============================================
+       §5 — PROCESS
+       ============================================ */
     .process {
-      padding: var(--space-xxl) 0;
+      padding: var(--space-3xl) 0;
     }
-
     .process-steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
       gap: var(--space-lg);
-      max-width: 60rem;
-      margin: 0 auto;
+      counter-reset: step;
     }
-
-    @media (max-width: 47.9375rem) {
-      .process-steps {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .process-step {
-      text-align: center;
-      padding: var(--space-lg);
       position: relative;
+      padding: var(--space-lg);
+      padding-top: var(--space-2xl);
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      counter-increment: step;
+    }
+    .process-step::before {
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      top: var(--space-md);
+      left: var(--space-lg);
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+    }
+    .process-step:nth-child(1)::before { color: var(--accent-terracotta); }
+    .process-step:nth-child(2)::before { color: var(--accent-blue); }
+    .process-step:nth-child(3)::before { color: var(--accent-mauve); }
+    .process-step-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+    .process-step-body {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .process-step-source {
+      display: inline-block;
+      margin-top: var(--space-md);
+      font-size: 0.75rem;
+      color: var(--accent-blue);
+      font-weight: 500;
     }
 
-    .process-step-number {
-      font-size: 4rem;
-      font-weight: var(--font-weight-heavy);
-      color: rgba(156, 82, 139, 0.15);
+
+    /* ============================================
+       §6 — CREATIVE PRODUCTION
+       ============================================ */
+    .creative {
+      padding: var(--space-3xl) 0;
+    }
+    .creative-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    .creative-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .creative-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.7);
+      transition: transform 0.3s ease;
+    }
+    .creative-card:active img { transform: scale(1.03); }
+    .creative-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-lg) var(--space-md);
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+    .creative-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-xs);
+    }
+    .creative-card:nth-child(1) .creative-card-label { color: var(--accent-terracotta); }
+    .creative-card:nth-child(2) .creative-card-label { color: var(--accent-blue); }
+    .creative-card:nth-child(3) .creative-card-label { color: var(--accent-mauve); }
+    .creative-card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+
+    /* ============================================
+       §7 — ADVERTISING IMPACT
+       ============================================ */
+    .impact {
+      padding: var(--space-3xl) 0;
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    .impact-stat {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      border: 1px solid var(--border-subtle);
+    }
+    .impact-number {
+      font-size: 2rem;
+      font-weight: 900;
       line-height: 1;
       margin-bottom: var(--space-xs);
     }
-
-    .process-step-verb {
-      font-size: var(--font-size-xl);
-      font-weight: var(--font-weight-bold);
+    .impact-stat:nth-child(1) .impact-number { color: var(--accent-terracotta); }
+    .impact-stat:nth-child(2) .impact-number { color: var(--accent-blue); }
+    .impact-stat:nth-child(3) .impact-number { color: var(--accent-mauve); }
+    .impact-stat:nth-child(4) .impact-number { color: var(--accent-terracotta); }
+    .impact-context {
+      font-size: 0.875rem;
+      font-weight: 600;
       margin-bottom: var(--space-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
-
-    .process-step-desc {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--line-height-relaxed);
+    .impact-detail {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
-
-    /* --- CAREER TIMELINE --- */
-    .career-timeline {
-      padding: var(--space-xxl) 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.15) 50%, transparent 100%);
+    /* Simple CSS bar chart */
+    .impact-bar-chart {
+      margin-top: var(--space-md);
     }
-
-    .career-eras {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
-      max-width: 60rem;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 47.9375rem) {
-      .career-eras {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .career-era {
-      border: 1px solid var(--color-border);
-      border-radius: 0.375rem;
-      overflow: hidden;
-      transition: border-color var(--duration-fast) var(--easing);
-    }
-
-    .career-era:hover {
-      border-color: var(--color-accent);
-    }
-
-    .career-era-header {
-      padding: var(--space-md);
-      background: rgba(255, 255, 255, 0.03);
-      border-bottom: 1px solid var(--color-border);
-      text-align: center;
-    }
-
-    .career-era-period {
-      font-size: var(--font-size-xs);
-      color: var(--color-accent-mauve);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .career-era-title {
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-bold);
-      margin-top: 0.25rem;
-    }
-
-    .career-era-body {
-      padding: var(--space-md);
-    }
-
-    .career-era-body ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .career-era-body li {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      padding: 0.375rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    }
-
-    .career-era-body li::before {
-      content: '→ ';
-      color: var(--color-accent-terracotta);
-    }
-
-    /* --- METRICS --- */
-    .metrics {
-      padding: var(--space-xxl) 0;
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-      gap: var(--space-md);
-      max-width: 60rem;
-      margin: 0 auto;
-    }
-
-    .metric-card {
-      text-align: center;
-      padding: var(--space-lg);
-      border: 1px solid var(--color-border);
-      border-radius: 0.375rem;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .metric-value {
-      font-size: 2.5rem;
-      font-weight: var(--font-weight-heavy);
-      background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-mauve));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.1;
-    }
-
-    .metric-label {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      margin-top: 0.5rem;
-    }
-
-    .metric-source {
-      font-size: var(--font-size-xs);
-      color: var(--color-accent-terracotta);
-      margin-top: 0.25rem;
-      font-style: italic;
-    }
-
-    /* --- FAQ --- */
-    .faq {
-      padding: var(--space-xxl) 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.15) 50%, transparent 100%);
-    }
-
-    .faq-list {
-      max-width: 45rem;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--color-border);
-      padding: var(--space-md) 0;
-    }
-
-    .faq-question {
-      font-size: var(--font-size-md);
-      font-weight: var(--font-weight-semibold);
-      margin-bottom: var(--space-xs);
-      color: var(--color-text-primary);
-    }
-
-    .faq-answer {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--line-height-relaxed);
-    }
-
-    /* --- CTA --- */
-    .cta-section {
-      padding: var(--space-xxl) 0;
-      text-align: center;
-    }
-
-    .cta-title {
-      font-size: var(--font-size-xxl);
-      font-weight: var(--font-weight-bold);
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
       margin-bottom: var(--space-sm);
     }
-
-    .cta-subtitle {
-      font-size: var(--font-size-md);
-      color: var(--color-text-secondary);
-      margin-bottom: var(--space-lg);
-      max-width: 35rem;
-      margin-left: auto;
-      margin-right: auto;
+    .bar-label {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      width: 80px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .bar-track {
+      flex: 1;
+      height: 6px;
+      background: var(--bg-elevated);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 1s ease-out;
     }
 
-    /* --- Section divider override --- */
-    .landing-heading {
-      font-size: var(--font-size-xxl);
-      font-weight: var(--font-weight-bold);
+
+    /* ============================================
+       §8 — ACHIEVEMENTS
+       ============================================ */
+    .achievements {
+      padding: var(--space-3xl) 0;
+    }
+    .accordion-item {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: var(--space-lg) 0;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      color: var(--text-primary);
+      font-family: var(--font-base);
+    }
+    .accordion-title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .accordion-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .accordion-item.open .accordion-icon {
+      transform: rotate(45deg);
+    }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+    }
+    .accordion-item.open .accordion-body {
+      max-height: 200px;
+    }
+    .accordion-body-inner {
+      padding: 0 0 var(--space-lg);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+
+    /* ============================================
+       §9 — CTA + CONTACT
+       ============================================ */
+    .cta-section {
+      padding: var(--space-3xl) 0;
       text-align: center;
+    }
+    .cta-heading {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: var(--space-sm);
+    }
+    .cta-subtext {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
       margin-bottom: var(--space-xl);
-      letter-spacing: -0.02em;
     }
-
-    .landing-heading::after {
-      content: '';
-      display: block;
-      width: 4rem;
-      height: 3px;
-      background: var(--color-accent);
-      margin: var(--space-sm) auto 0;
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      align-items: center;
     }
+    .cta-buttons .btn { width: 100%; max-width: 320px; }
 
-    .landing-subhead {
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .site-footer {
+      padding: var(--space-2xl) 0;
       text-align: center;
-      color: var(--color-text-secondary);
-      max-width: 35rem;
-      margin: calc(-1 * var(--space-md)) auto var(--space-xl);
-      font-size: var(--font-size-sm);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-md);
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+
+    /* ============================================
+       TABLET+ BREAKPOINTS
+       ============================================ */
+    @media (min-width: 768px) {
+      .hero-stats { gap: var(--space-md); }
+      .stat-tile { padding: var(--space-lg); }
+      .stat-number { font-size: 2.25rem; }
+
+      .showcase-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); }
+      .creative-grid { grid-template-columns: repeat(3, 1fr); }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+      .cta-buttons .btn { width: auto; }
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+      .hero-img-strip {
+        position: relative;
+        width: 100%;
+        opacity: 0.85;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .hero-img-overlay {
+        background: linear-gradient(
+          to right,
+          var(--bg-primary) 0%,
+          rgba(31,31,31,0.3) 30%,
+          rgba(31,31,31,0.1) 100%
+        );
+      }
+      .hero-content {
+        padding: var(--space-3xl) var(--space-xl) var(--space-3xl) 0;
+      }
+
+      .showcase-grid { grid-template-columns: repeat(3, 1fr); }
+      .impact-grid { grid-template-columns: repeat(4, 1fr); }
+
+      .section-heading { font-size: 2.25rem; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ============================
-       1. NAVBAR
-       ============================ -->
-  <header class="site-header">
+  <!-- ============================================
+       §1 — NAVBAR
+       ============================================ -->
+  <nav class="site-nav" id="siteNav">
     <div class="container">
-      <a href="/" class="site-logo">Sean August Horvath</a>
-      <nav class="site-nav">
-        <a href="#showcase">Work</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a class="btn-primary" href="/assets/docs/resume.pdf"
-          style="padding: 0.375rem 1rem; font-size: 0.8125rem;">Resume ↗</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="#showcase">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#credentials">About</a></li>
+      </ul>
+      <button class="btn-contact">Contact</button>
     </div>
-  </header>
+  </nav>
 
-  <!-- ============================
-       2. HERO
-       ============================ -->
-  <section class="hero container">
-    <!-- Stats bar -->
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-number">36</div>
-        <div class="hero-stat-label">Projects</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">11</div>
-        <div class="hero-stat-label">Roles</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">50+</div>
-        <div class="hero-stat-label">Skills</div>
-      </div>
-    </div>
+  <!-- Nav pill (appears when navbar collapses on scroll) -->
+  <button class="nav-pill" id="navPill" aria-label="Open navigation">
+    <svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  </button>
 
-    <!-- Title -->
-    <h1 class="hero-title">I build things that <em>work</em> and look like they shouldn't be free.</h1>
-    <p class="hero-subtitle">Full-stack developer, designer, and automation engineer who ships production systems — from
-      SaaS conversion flows to 800-product e-commerce stores.</p>
 
-    <!-- CTAs -->
-    <div class="hero-cta-row">
-      <a href="#showcase" class="btn-primary">See the Work</a>
-      <a href="/assets/docs/resume.pdf" class="btn-secondary">Download Resume</a>
+  <!-- ============================================
+       §2 — HERO
+       ============================================ -->
+  <section class="hero">
+    <!-- §2.5 Background image grid -->
+    <div class="hero-img-strip">
+      <img src="assets/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-1.webp" alt="" loading="eager">
+      <img src="assets/media/data-visualization-dashboard/img-sq-slides-data-visualization-dashboard-1.webp" alt="" loading="eager">
+      <img src="assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-1.webp" alt="" loading="eager">
+      <img src="assets/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-1.webp" alt="" loading="eager">
+      <img src="assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-1.webp" alt="" loading="eager">
+      <img src="assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp" alt="" loading="eager">
+      <img src="assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp" alt="" loading="eager">
+      <img src="assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp" alt="" loading="eager">
+      <img src="assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp" alt="" loading="eager">
+      <div class="hero-img-overlay"></div>
     </div>
 
-    <!-- Auto-scrolling thumbnail strip -->
-    <div class="hero-thumbnail-strip" id="hero-strip">
-      <img src="assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"
-        alt="SaaS Conversion Flow" class="hero-thumb">
-      <img src="assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp"
-        alt="Automated E-Commerce" class="hero-thumb">
-      <img src="assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp"
-        alt="CSS Micro-Interactions" class="hero-thumb">
-      <img src="assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-1.webp"
-        alt="AI Meditation App" class="hero-thumb">
-      <img src="assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp"
-        alt="Analytics Dashboard" class="hero-thumb">
-      <img src="assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp"
-        alt="Modular Portfolio" class="hero-thumb">
-      <img src="assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp"
-        alt="Framer CMS Site" class="hero-thumb">
-      <img src="assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp"
-        alt="Animated CMS Blogs" class="hero-thumb">
-      <img src="assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp"
-        alt="Fashion Lookbook" class="hero-thumb">
-      <img src="assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-1.webp" alt="Wellness Platform"
-        class="hero-thumb">
-      <img src="assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp"
-        alt="Artist Portfolio" class="hero-thumb">
-      <img src="assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp"
-        alt="E-Commerce Gallery" class="hero-thumb">
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============================
-       3. SHOWCASE (Tabbed role grids)
-       ============================ -->
-  <section class="showcase container" id="showcase">
-    <h2 class="landing-heading">Selected Work</h2>
-    <p class="landing-subhead">Filter by the hat I was wearing</p>
-
-    <!-- Tabs -->
-    <div class="showcase-tabs">
-      <button class="showcase-tab active" data-tab="web-dev">Web Developer</button>
-      <button class="showcase-tab" data-tab="designer">Graphic Designer</button>
-      <button class="showcase-tab" data-tab="automation">Automation Engineer</button>
-      <button class="showcase-tab" data-tab="video">Video & Creative</button>
-    </div>
-
-    <!-- Panel: Web Developer -->
-    <div class="showcase-panel active" id="panel-web-dev">
-      <div class="showcase-grid">
-        <a href="/saas-product-sale-features" class="showcase-card">
-          <img src="assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"
-            alt="SaaS Conversion Flow">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Complete SaaS Conversion Flow with CSS Animation</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">HTML/CSS/JS</span>
-              <span class="showcase-card-tag">CSS Animation</span>
-              <span class="showcase-card-tag">Responsive Design</span>
-            </div>
-          </div>
-        </a>
-        <a href="/css-animated-micro-interactions" class="showcase-card">
-          <img src="assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp"
-            alt="Research Platform">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">AI Agent Research Presentation Platform</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">JavaScript</span>
-              <span class="showcase-card-tag">CSS Animation</span>
-              <span class="showcase-card-tag">GitHub Pages</span>
-            </div>
-          </div>
-        </a>
-        <a href="/modular-portfolio-build" class="showcase-card">
-          <img src="assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp"
-            alt="Modular Portfolio">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Modular Portfolio System for AI-Assisted Development</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">HTML/CSS/JS</span>
-              <span class="showcase-card-tag">GitHub Pages</span>
-              <span class="showcase-card-tag">Git</span>
-            </div>
-          </div>
-        </a>
-        <a href="/blog-lookbook-print-gallery" class="showcase-card">
-          <img src="assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp"
-            alt="Framer CMS">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Framer CMS Site Built Using AI & Notion</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Framer</span>
-              <span class="showcase-card-tag">Notion</span>
-              <span class="showcase-card-tag">CMS Management</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Panel: Graphic Designer -->
-    <div class="showcase-panel" id="panel-designer">
-      <div class="showcase-grid">
-        <a href="/surreal-constructivism" class="showcase-card">
-          <img src="assets/media/surreal-constructivism/thumb-surreal-constructivism-1.webp" alt="Sublime Convergence">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Sublime Convergence</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Illustration</span>
-              <span class="showcase-card-tag">Midjourney</span>
-              <span class="showcase-card-tag">Art Direction</span>
-            </div>
-          </div>
-        </a>
-        <a href="/baroque-de-heem-still-life" class="showcase-card">
-          <img src="assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-1.webp"
-            alt="Baroque Still Life">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Baroque Fruit Still Life (De Heem Study)</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Generative AI</span>
-              <span class="showcase-card-tag">Photography</span>
-              <span class="showcase-card-tag">Art Direction</span>
-            </div>
-          </div>
-        </a>
-        <a href="/gradient-bauhaus" class="showcase-card">
-          <img src="assets/media/gradient-bauhaus/thumb-gradient-bauhaus-1.webp" alt="Gradient Depths">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Gradient Depths</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Typography</span>
-              <span class="showcase-card-tag">Illustration</span>
-              <span class="showcase-card-tag">Midjourney</span>
-            </div>
-          </div>
-        </a>
-        <a href="/constructi-haus" class="showcase-card">
-          <img src="assets/media/constructi-haus/thumb-constructi-haus-1.webp" alt="Constructivism Haus">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Constructivism Haus</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Illustration</span>
-              <span class="showcase-card-tag">Art Direction</span>
-              <span class="showcase-card-tag">Editorial Design</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Panel: Automation Engineer -->
-    <div class="showcase-panel" id="panel-automation">
-      <div class="showcase-grid">
-        <a href="/automated-e-commerce-shop-lookbook" class="showcase-card">
-          <img
-            src="assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp"
-            alt="Automated E-Commerce">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">800+ Product Store with Automated CMS Management</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Make.com</span>
-              <span class="showcase-card-tag">Webflow</span>
-              <span class="showcase-card-tag">API Integration</span>
-            </div>
-          </div>
-        </a>
-        <a href="/animated-cms-weekly-blogs" class="showcase-card">
-          <img src="assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp"
-            alt="Animated CMS Blogs">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">200+ Weekly Blogs with Custom Hand-Drawn Animation</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Automation</span>
-              <span class="showcase-card-tag">Lottie</span>
-              <span class="showcase-card-tag">CMS Management</span>
-            </div>
-          </div>
-        </a>
-        <a href="/data-visualization-dashboard" class="showcase-card">
-          <img src="assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp"
-            alt="Analytics Dashboard">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">AI Application Analytics Dashboard Interface</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Data Visualization</span>
-              <span class="showcase-card-tag">Dashboard Design</span>
-              <span class="showcase-card-tag">Python</span>
-            </div>
-          </div>
-        </a>
-        <a href="/minimalist-web-store-product" class="showcase-card">
-          <img src="assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp"
-            alt="E-Commerce Gallery">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Timeless E-Commerce Gallery for Art Prints</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">E-Commerce</span>
-              <span class="showcase-card-tag">Webflow</span>
-              <span class="showcase-card-tag">Product Staging</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Panel: Video & Creative -->
-    <div class="showcase-panel" id="panel-video">
-      <div class="showcase-grid">
-        <a href="/fashion-ai-video" class="showcase-card">
-          <img src="assets/media/fashion-ai-video/thumb-fashion-ai-video-1.webp" alt="Fashion Video">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Curated Avant Garde Fashion Lookbook</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Video Production</span>
-              <span class="showcase-card-tag">After Effects</span>
-              <span class="showcase-card-tag">Art Direction</span>
-            </div>
-          </div>
-        </a>
-        <a href="/visual-artist-process-portfolio" class="showcase-card">
-          <img src="assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp"
-            alt="Artist Portfolio">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Hand-Illustrated Portfolio Showcasing Creative Process</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">Illustration</span>
-              <span class="showcase-card-tag">Art Direction</span>
-              <span class="showcase-card-tag">Publishing</span>
-            </div>
-          </div>
-        </a>
-        <a href="/amorphous-gradient-css-animation" class="showcase-card">
-          <img src="assets/media/amorphous-gradient-css-animation/thumb-slide-amorphous-gradient-css-animation-1.webp"
-            alt="Morphing Gradients">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Casual Projects Overview with Morphing Gradients</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">CSS Animation</span>
-              <span class="showcase-card-tag">Motion Graphics</span>
-              <span class="showcase-card-tag">GitHub Pages</span>
-            </div>
-          </div>
-        </a>
-        <a href="/ai-design-fashion-lookbook" class="showcase-card">
-          <img src="assets/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp"
-            alt="Shoppable Lookbook">
-          <div class="showcase-card-body">
-            <div class="showcase-card-title">Shoppable Fashion Lookbook with Google Lens API</div>
-            <div class="showcase-card-tags">
-              <span class="showcase-card-tag">API Integration</span>
-              <span class="showcase-card-tag">Lookbook Design</span>
-              <span class="showcase-card-tag">E-Commerce</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- View all link -->
-    <div style="text-align: center; margin-top: var(--space-xl);">
-      <a href="/section.html" class="btn-secondary">View All 36 Projects →</a>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============================
-       4. CREDENTIALS
-       ============================ -->
-  <section class="credentials container" id="credentials">
-    <h2 class="landing-heading">Where I've Worked</h2>
-
-    <div class="credentials-grid">
-      <div class="credential-card">
-        <div class="credential-org">Self-Directed Studio</div>
-        <div class="credential-role">Full-Stack Developer & Designer</div>
-        <div class="credential-period">2023 – Present</div>
-      </div>
-      <div class="credential-card">
-        <div class="credential-org">Freelance Clients</div>
-        <div class="credential-role">Web Developer & Automation Consultant</div>
-        <div class="credential-period">2021 – Present</div>
-      </div>
-      <div class="credential-card">
-        <div class="credential-org">YogaSix / Club Pilates</div>
-        <div class="credential-role">Brand Designer & Digital Marketing</div>
-        <div class="credential-period">2019 – 2022</div>
-      </div>
-      <div class="credential-card">
-        <div class="credential-org">Agency & In-House</div>
-        <div class="credential-role">Creative Director & Art Director</div>
-        <div class="credential-period">2015 – 2019</div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============================
-       5. PROCESS
-       ============================ -->
-  <section class="process container" id="process">
-    <h2 class="landing-heading">How I Work</h2>
-    <p class="landing-subhead">Every project follows the same three-act structure</p>
-
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="process-step-number">01</div>
-        <div class="process-step-verb">Diagnose</div>
-        <p class="process-step-desc">Understand the real problem — not just the brief. Map stakeholders, constraints,
-          and the gap between where things are and where they need to be.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-number">02</div>
-        <div class="process-step-verb">Build</div>
-        <p class="process-step-desc">Ship working prototypes fast. Whether it's code, design, or automation — the goal
-          is a functional system, not a polished deck.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-step-number">03</div>
-        <div class="process-step-verb">Measure</div>
-        <p class="process-step-desc">Quantify what happened. Did conversion go up? Did the workflow save hours? If it
-          can't be measured, it didn't matter.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============================
-       6. CAREER TIMELINE
-       ============================ -->
-  <section class="career-timeline container" id="timeline">
-    <h2 class="landing-heading">Career Arc</h2>
-
-    <div class="career-eras">
-      <!-- Era 1 -->
-      <div class="career-era">
-        <div class="career-era-header">
-          <div class="career-era-period">2015 – 2019</div>
-          <div class="career-era-title">The Design Foundation</div>
+    <!-- Hero content -->
+    <div class="hero-content container">
+      <!-- §2.1 Stats -->
+      <div class="hero-stats">
+        <div class="stat-tile">
+          <div class="stat-number">36</div>
+          <div class="stat-label">Projects</div>
         </div>
-        <div class="career-era-body">
-          <ul>
-            <li>Brand identity systems for agency clients</li>
-            <li>Print layout & editorial design</li>
-            <li>Art direction for photo + video shoots</li>
-            <li>Creative team leadership</li>
-          </ul>
+        <div class="stat-tile">
+          <div class="stat-number">11</div>
+          <div class="stat-label">Roles</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-number">~50</div>
+          <div class="stat-label">Skills</div>
         </div>
       </div>
 
-      <!-- Era 2 -->
-      <div class="career-era">
-        <div class="career-era-header">
-          <div class="career-era-period">2019 – 2022</div>
-          <div class="career-era-title">The Digital Shift</div>
-        </div>
-        <div class="career-era-body">
-          <ul>
-            <li>Webflow + Framer production builds</li>
-            <li>Social media campaigns at scale</li>
-            <li>Marketing automation with Make.com</li>
-            <li>CMS management for 800+ products</li>
-          </ul>
+      <!-- §2.2 Title -->
+      <div class="hero-title">
+        <h1>
+          <span>Sean</span>
+          <span>August</span>
+          <span>Horvath</span>
+        </h1>
+      </div>
+
+      <!-- §2.3 Subtitle — flip-clock rotation -->
+      <div class="hero-subtitle">
+        <div class="subtitle-track">
+          <div class="subtitle-item">Full-stack developer shipping SaaS conversion flows</div>
+          <div class="subtitle-item">Automation engineer scaling 800-product storefronts</div>
+          <div class="subtitle-item">Design strategist building brand systems from scratch</div>
+          <div class="subtitle-item">Creative director producing viral social campaigns</div>
+          <div class="subtitle-item">AI implementation consultant optimizing workflows</div>
         </div>
       </div>
 
-      <!-- Era 3 -->
-      <div class="career-era">
-        <div class="career-era-header">
-          <div class="career-era-period">2023 – Present</div>
-          <div class="career-era-title">The Full Stack</div>
-        </div>
-        <div class="career-era-body">
-          <ul>
-            <li>Production JavaScript & Python systems</li>
-            <li>AI-augmented development workflows</li>
-            <li>SPA architecture & modular design systems</li>
-            <li>Generative design & automation engineering</li>
-          </ul>
-        </div>
+      <!-- §2.4 CTA -->
+      <div class="hero-cta">
+        <button class="btn btn-primary">See Web Projects</button>
+        <button class="btn btn-secondary-outline">All Projects</button>
       </div>
     </div>
   </section>
 
-  <hr class="section-divider">
 
-  <!-- ============================
-       7. METRICS
-       ============================ -->
-  <section class="metrics container" id="metrics">
-    <h2 class="landing-heading">By the Numbers</h2>
-    <p class="landing-subhead">Real outcomes from real projects</p>
+  <!-- ============================================
+       DIVIDER
+       ============================================ -->
+  <div class="stacked-trio scroll-reveal">
+    <span></span><span></span><span></span>
+  </div>
 
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-value">800+</div>
-        <div class="metric-label">Products managed via automated CMS</div>
-        <div class="metric-source">→ E-Commerce Store</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">200+</div>
-        <div class="metric-label">Weekly blogs with custom animation</div>
-        <div class="metric-source">→ Animated CMS Blogs</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">36</div>
-        <div class="metric-label">Production projects in portfolio</div>
-        <div class="metric-source">→ This Site</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">11</div>
-        <div class="metric-label">Distinct professional roles</div>
-        <div class="metric-source">→ Web Dev to Art Direction</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">0</div>
-        <div class="metric-label">Frameworks used (pure vanilla JS)</div>
-        <div class="metric-source">→ Modular Portfolio</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">100%</div>
-        <div class="metric-label">AI-assisted development workflow</div>
-        <div class="metric-source">→ Claude + Cursor</div>
-      </div>
-    </div>
-  </section>
 
-  <hr class="section-divider">
-
-  <!-- ============================
-       8. FAQ
-       ============================ -->
-  <section class="faq container" id="faq">
-    <h2 class="landing-heading">Frequently Asked</h2>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-question">"You do... everything?"</div>
-        <div class="faq-answer">Not everything — but I've shipped production work as a web developer, graphic designer,
-          video editor, and automation engineer. The common thread is systems thinking: I see how pieces connect and
-          build the connective tissue between them. Most "generalists" are actually specialists who got bored.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">"Can a generalist go deep enough?"</div>
-        <div class="faq-answer">Look at the SaaS conversion flow — that's production JavaScript with custom CSS
-          animation, responsive design, and conversion optimization. Look at the 800-product store — that's Make.com,
-          Notion, Webflow CMS, and Python all integrated. These aren't surface-level.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">"What's your tech stack?"</div>
-        <div class="faq-answer">For web: vanilla HTML/CSS/JS, no frameworks. For automation: Python + Make.com + Notion.
-          For design: Figma, Photoshop, Illustrator, After Effects. For AI: Claude/Cursor for development, Midjourney
-          for generative design. I pick the tool that fits, not the one I'm most comfortable with.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">"Why no React / Next.js / Tailwind?"</div>
-        <div class="faq-answer">Because I don't need them for what I build. This portfolio runs on GitHub Pages with
-          zero build steps — pure HTML, CSS, JS, and JSON. No bundler, no node_modules, no deploy pipeline. Sometimes
-          the best engineering decision is choosing not to over-engineer.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">"How do you use AI in your work?"</div>
-        <div class="faq-answer">AI is a power tool, not a replacement. I pair-program with Claude/Cursor for
-          development, use Midjourney for generative design exploration, and build automation workflows that leverage AI
-          for content processing. The key is knowing when AI accelerates and when it gets in the way.</div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============================
-       9. CTA + CONTACT
-       ============================ -->
-  <section class="cta-section container" id="contact">
-    <h2 class="cta-title">Let's build something.</h2>
-    <p class="cta-subtitle">Whether you need a developer, a designer, or someone who can do both — I'm ready to ship.
-    </p>
-
-    <div class="hero-cta-row">
-      <a href="mailto:horvathaugust@gmail.com" class="btn-primary">Get in Touch</a>
-      <a href="/assets/docs/resume.pdf" class="btn-secondary">Download Resume</a>
-    </div>
-
-    <!-- Social links -->
-    <div class="social-links" style="margin-top: var(--space-lg);">
-      <a href="https://github.com/seanivore" aria-label="GitHub" title="GitHub" class="social-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-        </svg>
-      </a>
-      <a href="https://linkedin.com/in/seanivore/" aria-label="LinkedIn" title="LinkedIn" class="social-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-        </svg>
-      </a>
-      <a href="https://instagram.com/seanivore/" aria-label="Instagram" title="Instagram" class="social-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-        </svg>
-      </a>
-      <a href="mailto:horvathaugust@gmail.com" aria-label="Email" title="Email" class="social-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer mt-lg">
+  <!-- ============================================
+       §3 — SHOWCASE
+       ============================================ -->
+  <section class="showcase scroll-reveal" id="showcase">
     <div class="container">
-      <p class="text-center text-secondary">
-        &copy; 2025 Sean August Horvath. Built with vanilla HTML, CSS, JS &mdash; zero frameworks, zero build steps.
-      </p>
+      <h2 class="section-heading">Web Development</h2>
+      <p class="section-subtext">Filter by the hat I was wearing</p>
+
+      <div class="showcase-tabs" role="tablist">
+        <button class="tab-btn active" data-tab="webflow">Webflow</button>
+        <button class="tab-btn" data-tab="framer">Framer</button>
+        <button class="tab-btn" data-tab="react">React / TypeScript</button>
+        <button class="tab-btn" data-tab="htmlcssjs">HTML/CSS/JS</button>
+      </div>
+
+      <!-- Webflow panel -->
+      <div class="showcase-panel active" id="panel-webflow">
+        <div class="showcase-grid">
+          <a href="/automated-e-commerce-shop-lookbook" class="project-card">
+            <img src="assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp" alt="Automated E-Commerce">
+            <div class="project-card-body">
+              <div class="project-card-title">800-Product AI-Automated Fashion Storefront</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">Webflow</span>
+                <span class="tag-pill">E-Commerce</span>
+                <span class="tag-pill">Automation</span>
+              </div>
+            </div>
+          </a>
+          <a href="/training-yoga-sales" class="project-card">
+            <img src="assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-1.webp" alt="Yoga Training">
+            <div class="project-card-body">
+              <div class="project-card-title">Personal Training & Yoga Sales Platform</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">Webflow</span>
+                <span class="tag-pill">Landing Page</span>
+                <span class="tag-pill">CMS</span>
+              </div>
+            </div>
+          </a>
+          <a href="/blog-lookbook-print-gallery" class="project-card">
+            <img src="assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp" alt="Blog Gallery">
+            <div class="project-card-body">
+              <div class="project-card-title">Editorial Blog & Print Gallery Lookbook</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">Webflow</span>
+                <span class="tag-pill">CMS</span>
+                <span class="tag-pill">Editorial</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- HTML/CSS/JS panel -->
+      <div class="showcase-panel" id="panel-htmlcssjs">
+        <div class="showcase-grid">
+          <a href="/saas-product-sale-features" class="project-card">
+            <img src="assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp" alt="SaaS Product">
+            <div class="project-card-body">
+              <div class="project-card-title">Complete SaaS Conversion Flow with CSS Animation</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">HTML/CSS/JS</span>
+                <span class="tag-pill">CSS Animation</span>
+              </div>
+            </div>
+          </a>
+          <a href="/css-animated-micro-interactions" class="project-card">
+            <img src="assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp" alt="CSS Micro-Interactions">
+            <div class="project-card-body">
+              <div class="project-card-title">CSS Animated Micro-Interactions Collection</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">HTML/CSS/JS</span>
+                <span class="tag-pill">Animation</span>
+              </div>
+            </div>
+          </a>
+          <a href="/modular-portfolio-build" class="project-card">
+            <img src="assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp" alt="This Portfolio">
+            <div class="project-card-body">
+              <div class="project-card-title">Modular Portfolio System for AI-Assisted Development</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">HTML/CSS/JS</span>
+                <span class="tag-pill">GitHub Pages</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Framer / React panels (placeholder) -->
+      <div class="showcase-panel" id="panel-framer">
+        <div class="showcase-grid">
+          <a href="/personalized-fashion-magazine" class="project-card">
+            <img src="assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp" alt="Fashion Magazine">
+            <div class="project-card-body">
+              <div class="project-card-title">AI-Personalized Fashion Magazine</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">Framer</span>
+                <span class="tag-pill">AI</span>
+                <span class="tag-pill">E-Commerce</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="showcase-panel" id="panel-react">
+        <div class="showcase-grid">
+          <a href="/data-visualization-dashboard" class="project-card">
+            <img src="assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp" alt="Data Dashboard">
+            <div class="project-card-body">
+              <div class="project-card-title">Real-Time Data Visualization Dashboard</div>
+              <div class="project-card-tags">
+                <span class="tag-pill">React</span>
+                <span class="tag-pill">Data Viz</span>
+                <span class="tag-pill">Dashboard</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
+
+
+  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
+
+
+  <!-- ============================================
+       §4 — CREDENTIALS
+       ============================================ -->
+  <section class="credentials scroll-reveal" id="credentials">
+    <div class="container">
+      <h2 class="section-heading">Experience</h2>
+      <p class="section-subtext">14 years of design and digital marketing</p>
+
+      <div class="credential-card">
+        <div class="credential-company">Freelance — Boston, MA</div>
+        <div class="credential-role">Creative Consultant & Digital Contractor</div>
+        <div class="credential-dates">2024 – Present</div>
+        <div class="credential-tags">
+          <span class="tag-pill">Webflow</span>
+          <span class="tag-pill">E-Commerce</span>
+          <span class="tag-pill">AI Integration</span>
+          <span class="tag-pill">Automation</span>
+          <span class="tag-pill">Generative AI</span>
+        </div>
+      </div>
+
+      <div class="credential-card">
+        <div class="credential-company">Silent Labs — Austin, TX</div>
+        <div class="credential-role">Art Director</div>
+        <div class="credential-dates">2020 – 2023</div>
+        <div class="credential-tags">
+          <span class="tag-pill">Brand Identity</span>
+          <span class="tag-pill">Motion Graphics</span>
+          <span class="tag-pill">Illustration</span>
+          <span class="tag-pill">Web3</span>
+          <span class="tag-pill">Print</span>
+        </div>
+      </div>
+
+      <div class="credential-card">
+        <div class="credential-company">Seanivore Group & August House — Los Angeles, CA</div>
+        <div class="credential-role">Managing Owner, SBO Digital Business Consultant</div>
+        <div class="credential-dates">2019 – 2020</div>
+        <div class="credential-tags">
+          <span class="tag-pill">Copywriting</span>
+          <span class="tag-pill">Social Media</span>
+          <span class="tag-pill">Marketing</span>
+          <span class="tag-pill">Kajabi</span>
+        </div>
+      </div>
+
+      <div class="credential-card">
+        <div class="credential-company">PETA — Los Angeles, CA</div>
+        <div class="credential-role">Marketing Innovations Asst. Manager → Senior Social Strategist</div>
+        <div class="credential-dates">2011 – 2018</div>
+        <div class="credential-tags">
+          <span class="tag-pill">Viral Content</span>
+          <span class="tag-pill">Analytics</span>
+          <span class="tag-pill">3.2B Impressions</span>
+          <span class="tag-pill">App UI/UX</span>
+          <span class="tag-pill">Global Teams</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
+
+
+  <!-- ============================================
+       §5 — PROCESS
+       ============================================ -->
+  <section class="process scroll-reveal" id="process">
+    <div class="container">
+      <h2 class="section-heading">AI & Automation Process</h2>
+      <p class="section-subtext">How I approach system building</p>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-title">Assess</div>
+          <div class="process-step-body">
+            Audit existing workflows, identify manual bottlenecks, and map where AI tooling or custom 
+            automation will deliver the highest leverage — whether that's content production, 
+            inventory management, or customer engagement.
+          </div>
+          <a href="/automated-e-commerce-shop-lookbook" class="process-step-source">→ 800-Product AI Storefront</a>
+        </div>
+        <div class="process-step">
+          <div class="process-step-title">Implement</div>
+          <div class="process-step-body">
+            Build the system iteratively — custom scripts for backend automation, AI-generated 
+            SERP-optimized descriptions, Webflow storefronts connected to inventory APIs. 
+            Ship working pieces early, validate with real traffic.
+          </div>
+          <a href="/saas-product-sale-features" class="process-step-source">→ SaaS Conversion Flow</a>
+        </div>
+        <div class="process-step">
+          <div class="process-step-title">Iterate</div>
+          <div class="process-step-body">
+            Monitor performance metrics, A/B test conversion paths, and continuously refine. 
+            The goal is a system that runs autonomously and improves — not a one-time build 
+            that needs constant babysitting.
+          </div>
+          <a href="/data-visualization-dashboard" class="process-step-source">→ Data Visualization Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
+
+
+  <!-- ============================================
+       §6 — CREATIVE PRODUCTION
+       ============================================ -->
+  <section class="creative scroll-reveal">
+    <div class="container">
+      <h2 class="section-heading">Creative Production</h2>
+      <p class="section-subtext">Visual work across digital, motion, and brand</p>
+
+      <div class="creative-grid">
+        <a href="/section.html?tags=Graphic+Designer" class="creative-card">
+          <img src="assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp" alt="Digital Art">
+          <div class="creative-card-overlay">
+            <div class="creative-card-label">Digital Art & Illustration</div>
+            <div class="creative-card-title">15+ Collections</div>
+          </div>
+        </a>
+        <a href="/section.html?tags=Motion+Graphics" class="creative-card">
+          <img src="assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp" alt="Motion & Video">
+          <div class="creative-card-overlay">
+            <div class="creative-card-label">Motion & Video</div>
+            <div class="creative-card-title">Social, Web3 & Brand</div>
+          </div>
+        </a>
+        <a href="/section.html?tags=Brand+Designer" class="creative-card">
+          <img src="assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp" alt="Brand Assets">
+          <div class="creative-card-overlay">
+            <div class="creative-card-label">Brand Assets</div>
+            <div class="creative-card-title">Identity Systems & Print</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
+
+
+  <!-- ============================================
+       §7 — ADVERTISING IMPACT
+       ============================================ -->
+  <section class="impact scroll-reveal">
+    <div class="container">
+      <h2 class="section-heading">Advertising Impact</h2>
+      <p class="section-subtext">Measurable results from campaigns I've run</p>
+
+      <div class="impact-grid">
+        <div class="impact-stat">
+          <div class="impact-number">3.2B</div>
+          <div class="impact-context">Page Impressions</div>
+          <div class="impact-detail">Facebook profile page impressions in final year at PETA, 2016</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">$0.003</div>
+          <div class="impact-context">Cost Per Engagement</div>
+          <div class="impact-detail">Targeted social media ad campaign with custom art</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">$0.31</div>
+          <div class="impact-context">Cost Per Follow</div>
+          <div class="impact-detail">Instagram Shop ads and brand recognition campaigns</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">500+</div>
+          <div class="impact-context">Product Designs</div>
+          <div class="impact-detail">AI-generated, textbook-accurate art prints across 30+ art movements</div>
+
+          <div class="impact-bar-chart">
+            <div class="bar-row">
+              <span class="bar-label">Impressions</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 95%; background: var(--accent-terracotta);"></div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Engagement</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 82%; background: var(--accent-blue);"></div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Conversion</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 67%; background: var(--accent-mauve);"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
+
+
+  <!-- ============================================
+       §8 — ACHIEVEMENTS
+       ============================================ -->
+  <section class="achievements scroll-reveal">
+    <div class="container">
+      <h2 class="section-heading">Achievements & Recognition</h2>
+      <p class="section-subtext">Press, awards, and milestones</p>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="accordion-title">PR News Pro — Instagram Engagement Feature</span>
+          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Featured by PR News Pro for innovative Instagram engagement strategy. Built custom visual content 
+            playbook combining data-driven posting schedules with high-quality designed assets, resulting in 
+            significantly above-industry-average engagement rates.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="accordion-title">DoGooders Award — "Funny For Good" Viral Video</span>
+          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Restructured viral video content strategy that won the DoGooders "Funny For Good" award. 
+            Made the detailed logic arguments with stakeholders to shift content direction, resulting in 
+            multi-million organic views across platforms.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="accordion-title">3,000 Printed Comics — Zero-Knowledge Proof Education</span>
+          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Illustrated and printed 3,000 copies of an informative comic book educating conference attendees 
+            on zero-knowledge proof protocols. Meme-based storytelling approach made complex cryptography 
+            accessible.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="accordion-title">Global Team Training — Philippines, India & UK</span>
+          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            Led content production strategy training for newly established social media teams across 
+            three countries. Designed Photoshop workflows, social strategy playbooks, and content 
+            calendars adapted to each region's audience and platform preferences.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
+
+
+  <!-- ============================================
+       §9 — CTA + CONTACT
+       ============================================ -->
+  <section class="cta-section scroll-reveal">
+    <div class="container">
+      <h2 class="cta-heading">Interested in web development projects?</h2>
+      <p class="cta-subtext">Or explore my entire portfolio</p>
+
+      <div class="cta-buttons">
+        <button class="btn btn-primary">See Web Projects</button>
+        <button class="btn btn-secondary-outline">All Projects</button>
+      </div>
+
+      <!-- Stacked trio as final accent -->
+      <div class="stacked-trio" style="padding-top: var(--space-2xl); padding-bottom: 0;">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="https://github.com/seanivore" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/seanivore/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/seanivore" target="_blank">Behance</a></li>
+      <li><a href="mailto:horvathaugust@gmail.com">Email</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Sean August Horvath. All rights reserved.</p>
   </footer>
 
-  <!-- Showcase Tab Switching -->
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
   <script>
-    // Simple tab switching for prototype
-    document.querySelectorAll('.showcase-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Deactivate all
-        document.querySelectorAll('.showcase-tab').forEach(t => t.classList.remove('active'));
+    // --- Navbar collapse on scroll ---
+    const nav = document.getElementById('siteNav');
+    const pill = document.getElementById('navPill');
+    let lastScroll = 0;
+    let navHidden = false;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > 200 && currentScroll > lastScroll) {
+        // Scrolling down past hero — collapse
+        if (!navHidden) {
+          nav.classList.add('collapsed');
+          pill.classList.add('visible');
+          navHidden = true;
+        }
+      } else if (currentScroll < lastScroll) {
+        // Scrolling up — show
+        nav.classList.remove('collapsed');
+        pill.classList.remove('visible');
+        navHidden = false;
+      }
+
+      lastScroll = currentScroll;
+    }, { passive: true });
+
+    // Pill click re-expands nav
+    pill.addEventListener('click', () => {
+      nav.classList.remove('collapsed');
+      pill.classList.remove('visible');
+      navHidden = false;
+    });
+
+
+    // --- Showcase tabs ---
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+
+        // Update active tab
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Show matching panel
         document.querySelectorAll('.showcase-panel').forEach(p => p.classList.remove('active'));
-        // Activate clicked
-        tab.classList.add('active');
-        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+        document.getElementById('panel-' + tab).classList.add('active');
       });
     });
 
-    // Auto-scroll hero thumbnail strip
-    const strip = document.getElementById('hero-strip');
-    if (strip) {
-      let scrollPos = 0;
-      const scrollSpeed = 0.5;
-      function autoScroll() {
-        scrollPos += scrollSpeed;
-        if (scrollPos >= strip.scrollWidth - strip.clientWidth) {
-          scrollPos = 0;
+
+    // --- Accordion ---
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+
+
+    // --- Scroll reveal + trio animation ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.classList.contains('stacked-trio')) {
+            entry.target.classList.add('animate');
+          }
+          observer.unobserve(entry.target);
         }
-        strip.scrollLeft = scrollPos;
-        requestAnimationFrame(autoScroll);
-      }
-      // Start after a brief pause
-      setTimeout(autoScroll, 2000);
-    }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.scroll-reveal, .stacked-trio').forEach(el => {
+      observer.observe(el);
+    });
   </script>
 
 </body>
-
 </html>
