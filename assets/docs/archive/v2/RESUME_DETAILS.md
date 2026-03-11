@@ -87,6 +87,10 @@ Brand Identity
   2. Handled detailed logic arguments with stakeholders; viral video restructuring won DoGooders ‘Funny For Good’ awards 
   3. Collaborated closely with game development agency and two iPhone direct action app developers on UI/UX 
 
+```
+I drive advocacy through integrated marketing strategies that combine creative content with data-driven digital optimization. By leveraging emerging technologies and strategic planning, I translate organizational goals into impactful brand narratives and measurable outreach across diverse platforms.
+```
+
 ## EDUCATION
 
 ### PRYOR LEARNING PROFESSIONAL DEVELOPMENT — *Los Angeles, CA*

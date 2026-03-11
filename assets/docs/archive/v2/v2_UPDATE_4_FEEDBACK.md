@@ -1,4 +1,4 @@
-# Creating Portfolio Landing Page Prototype 
+# Portfolio Landing Page Prototype Review
 
 **Created**: 2026-03-10 
 **Version**: v2.0 
@@ -28,14 +28,18 @@ Though we are looking to create the feeling of a SaaS landing page, the current 
 
 This process is carefully defined in the **Agent development plan** and where we left off is easily identified by the **Agent task list**: 
 
-| Purpose                         | Document                                         |
-| ------------------------------- | ------------------------------------------------ |
-| Landing page pitch              | `assets/docs/archive/v2/v2_UPDATE_1_PITCH.md`    |
-| **Agent dev plan**              | `assets/docs/archive/v2/v2_UPDATE_2_PLAN.md`     |
-| **Agent task list**             | `assets/docs/archive/v2/v2_UPDATE_3_TASKS.md`    |
-| Mockup feedback (this doc)      | `assets/docs/archive/v2/v2_UPDATE_4_FEEDBACK.md` |
-| Portfolio summaries for content | `assets/docs/archive/v2/PORTFOLIO_DETAILS.md`    |
-| Resumes details for content     | `assets/docs/archive/v2/RESUME_DETAILS.md`       |
+| Purpose                         | Document                                          |
+| ------------------------------- | ------------------------------------------------- |
+| Landing page pitch              | `assets/docs/archive/v2/v2_UPDATE_1_PITCH.md`     |
+| **Agent dev plan**              | `assets/docs/archive/v2/v2_UPDATE_2_PLAN.md`      |
+| **Agent task list**             | `assets/docs/archive/v2/v2_UPDATE_3_TASKS.md`     |
+| Mockup feedback (this doc)      | `assets/docs/archive/v2/v2_UPDATE_4_FEEDBACK.md`  |
+| Portfolio summaries for content | `assets/docs/archive/v2/PORTFOLIO_DETAILS.md`     |
+| Resumes details for content     | `assets/docs/archive/v2/RESUME_DETAILS.md`        |
+| Q2 2026 Resume                  | `assets/docs/archive/v2/RESUME_Q2_2026.md`        |
+| **CAREER DREAMER OUTPUT**       | `assets/docs/archive/v2/CAREER_DREAMER_OUTPUT.md` |
+
+The Career Dreamer Output is from a Google Platform that has invaluable details on exactly WHY my background fits for different roles, as well as different titles to search for and even some agencies. Let's pull SEO from here. 
 
 ---
 
@@ -372,7 +376,9 @@ I'd like this one to be crafted, at least initially
 
 ---
 
-## New JSON Values 
+## Updating Assets
+
+### v4 Schema New JSON Values
 
 **I only started this list, it is not complete**
 
@@ -397,18 +403,50 @@ I'd like this one to be crafted, at least initially
   8. Hero Image 3 
      - Find first at `img-sq-<slug>-3.webp`
   9. Hero Image 3 Alt Text 
+  10. Mobile View Images 
+     - ~3-7 screen shots, not required field so space can disappear if 'null'
+     - Current JSON that have them use naming structure: `img-mobile-<slug>.webp`
+     - Most are 887 × 1920px but all around the same aspect ratio 
 
+### Various Resume Versions 
 
-  + ~3-7 `img-mobile-<slug>.webp` no required and not all the exact same size or ratio; need new on-page space for them
-  + Optional space for any number of any aspect ratio images; space on page needed 
+  + This document from Google Dreamer `assets/docs/archive/v2/CAREER_DREAMER_OUTPUT.md` has great details for a handful of roles 
+    1. Digital Transformation Strategist (Digital Strategy Manager,Business Transformation Consultant, Operational Excellence Lead, Director of Strategic Initiatives) 
+    2. Marketing Manager 
+    3. Digital Content Producer / Manager 
+    4. User Experience Engineer (Design Engineer, Front-end Engineer (Design Systems), UX Developer, Product Engineer) 
+    5. Graphic Designer 
+  + Using my most recent resume structure and formatting could you please create a version that is catered to each of those 5 roles? 
+    - Use this resume format: `assets/docs/archive/v2/RESUME_Q2_2026.md` 
+    - Pull from any other resources like `assets/docs/archive/v2/RESUME_DETAILS.md` and `assets/docs/archive/v2/PORTFOLIO_DETAILS.md` 
 
----
+### New LinkedIn Experience Details 
 
-## Testing & Validation 
+**EXPERIENCE ENTRY DETAILS**: 
+  + Then could you please also create for me new LinkedIn Experience written details? 
+  + This is basically the same as resume, except that we have no reason not to BEEF up the SEO for each one 
+
+**SUBTITLE**: I need to replace "Designer, creative generalist, system thinker" 
+
+**ABOUT SECTION**: I would also like to replace this text for something way heftier with SEO given we have so much from the Career Dreamer Output. 
+```
+My digital work garners recognition for its strong emotional intelligence brining a human element to the forefront, quickly making connections or conversions. 
+Colleagues value me for quickly providing concrete creative solutions and helping them to see from novel perspective. 
+I make the strongest impact when leading, sharing process, and working autonomously finding opportunities to innovate and optimize. 
+Teammates see me as the cheerleads for elevating success and proactively discussing other's work. 
+Others expect that I take the lead in any communications of lengthy, technical information with logic and data backed rationale. 
+I'm known producing polished work that is reliably classic and timeless, with just enough of novel stylistic edge. 
+Departments valued me for writing reports that blend data with psychological thought, always attaching actionable insights. 
+My work history is largely high-growth campaigns, viral messaging strategy, collaborative development projects, and elegant system design solutions. 
+I bring notably strong passion to my work, thriving in high-pressure and urgent environments. 
+www.august.style | g.dev/seanivore
+```
 
 ### Adding More Projects 
 
-  + To really be able to test that all of these new tags work, we need to expand the content. The first and primary collection already entered is web dev projects and then I added all of my Behance entries. 
+  + To really be able to **TEST AND VALIDATE** all of these new tags work, we need to expand the content. The first and primary collection already entered is web dev projects and then I added all of my Behance entries. 
   + I prepared a guide for having an agent work through a bulk of them. Check it out and let me know if you think it is doable for me to be able to delegate this off: `assets/docs/entries-prep/AGENT_CREATING_ENTRIES.md` 
+  + Though I'd like ot make sure we're getting lots of SEO from the Career Dreamer document on these as well (and obviously they should help us make tags)
 
 ---
+*Completed by Sean. This document got length and I really needed to get started on things, so please excuse and help fill in any missing information when we're planning.*
