@@ -28,12 +28,14 @@ Though we are looking to create the feeling of a SaaS landing page, the current 
 
 This process is carefully defined in the **Agent development plan** and where we left off is easily identified by the **Agent task list**: 
 
-| Purpose                    | Document                                         |
-| -------------------------- | ------------------------------------------------ |
-| Landing page pitch         | `assets/docs/archive/v2/v2_UPDATE_1_PITCH.md`    |
-| **Agent dev plan**         | `assets/docs/archive/v2/v2_UPDATE_2_PLAN.md`     |
-| **Agent task list**        | `assets/docs/archive/v2/v2_UPDATE_3_TASKS.md`    |
-| Mockup feedback (this doc) | `assets/docs/archive/v2/v2_UPDATE_4_FEEDBACK.md` |
+| Purpose                         | Document                                         |
+| ------------------------------- | ------------------------------------------------ |
+| Landing page pitch              | `assets/docs/archive/v2/v2_UPDATE_1_PITCH.md`    |
+| **Agent dev plan**              | `assets/docs/archive/v2/v2_UPDATE_2_PLAN.md`     |
+| **Agent task list**             | `assets/docs/archive/v2/v2_UPDATE_3_TASKS.md`    |
+| Mockup feedback (this doc)      | `assets/docs/archive/v2/v2_UPDATE_4_FEEDBACK.md` |
+| Portfolio summaries for content | `assets/docs/archive/v2/PORTFOLIO_DETAILS.md`    |
+| Resumes details for content     | `assets/docs/archive/v2/RESUME_DETAILS.md`       |
 
 ---
 
@@ -202,6 +204,8 @@ When creating the v2 prototype, we lost my favorite part of the aesthetic: The f
 
 ## Section Feedback 
 
+Numbering corresponds with the component numbering in the "Component Sections (hardcoded layout, dynamic content)" section of the [Update Plan](/assets/docs/archive/v2/v2_UPDATE_2_PLAN.md) document. 
+
 ### 1.1-Navbar: `.site-header` Update On **Homepage only**
 
 Clean this up so that we can use my name as the title. 
@@ -296,7 +300,7 @@ I've added a set of 3 new .webp image files for every single current project ent
 
 I think we want it to feel more immersive and engaging. Please see the screenshot of it now. It is important you see the current state to understand why it is a drab problem so that you can help me formulate a new layout. 
 
-  + Current state: `assets/docs/archive/v2/IMG/IMG-HERO-STRIP.jpg` 
+  + Current state: `assets/docs/archive/v2/IMG/2.5-SECTION-HERO-IMG-STRIP.jpg` 
 
 I'm imagining tha now they can be large, and take up more than half of the hero. We could add a filter to tone down the fact that they're all different colors — since the users don't click these, it means they are purely for aesthetics, meaning it just needs to give the top of the page a FEELING a MOOD, rather than be functional. 
 
@@ -313,6 +317,8 @@ Set what tag(s) should populate the slides on the `assets/js/homepage-content.js
 
 I'd like this one to be crafted, at least initially 
 
+**CURRENT STATE**: `assets/docs/archive/v2/IMG/3.1-SECTION-SHOWCASE-FEATURED-PRODUCT.jpg`
+
   + First tag selection for `.showcase .container .landing-heading` can display the tag text, e.g. Web Developer or Website Development 
   + Then now where we have "Web Developer, Graphic Designer, Automation Engineer, Video & Creative" — we'll instead have something like "Webflow, Framer, React/TypeScript, HTML/CSS/JS" so that they toggle through those type of web dev projects 
 
@@ -320,7 +326,12 @@ I'd like this one to be crafted, at least initially
   + Jobs from Resume
   + But list tags that fit under each 
 
+**CURRENT STATE**: `assets/docs/archive/v2/IMG/4.1-SECTION-CREDENTIALS.jpg`
+
 ### 5.1-Process:
+
+**CURRENT STATE**: `assets/docs/archive/v2/IMG/5.1-SECTION-PROCESS.jpg` 
+
   + I do love the visual that we currently have 
   + I'm struggling to think of how to make dynamic for all JSON projects 
   + But I sort of think we just do it and then in the future when I change it to different tags, I'll just have to make sure whatever those JSON values are that dynamically show in this section are updated to work 
@@ -332,24 +343,38 @@ I'd like this one to be crafted, at least initially
   + And again, just like almost all the other sections, we'll want to make sure that the blurbs are hyperlinked from the project they came from; so not tags for this one but the actual content going to the actual entry page 
 
 ### 6.1-Career Timeline:
+
+**CURRENT STATE**: `assets/docs/archive/v2/IMG/6.1-SECTION-CURRENTLY-CAREER-THREE-PARTER.jpg`
+
   + Let's keep the "three sections" layout but not do career timeline 
   + Instead, is there a way we can group creative production work into three categories so that I can be showing off lots of social media design, and motion graphics, videos, etc. 
   + And like other sections, we will want to use the actual tags so that each one can be hyperlinked to the section page with that tag applied  
 
 ### 7.1-Metrics: 
+
+**CURRENT STATE**: `assets/docs/archive/v2/IMG/7.1-SECTION-METRICS.jpg`
+
   + Advertising projects 
   + Use metrics, graphs, and charts to show 
 
 ### 8.1-FAQ:
+
+**CURRENT STATE**: `assets/docs/archive/v2/IMG/8.1-SECTION-CURRENTLY-FAQ-ACCORDION-DETAILS.jpg`
+
   + An accomplishment, press hit, or impressive metric instead of a question 
   + Expand the accordion to get the details; context and how it was accomplished 
 
 ### 9.1-CTA & Contact: 
 
+  + Probably should add a "Primary CTA Text" on JSON and value for adding tags 
+  + And then the second one can be general to all projects 
+  + So it could end up something like, "Interested in the projects discussed above?" "Or check out my entire portfolio" 
 
 ---
 
 ## New JSON Values 
+
+**I only started this list, it is not complete**
 
   1. Hero Subtitles 
      - This is #3 above 
@@ -379,3 +404,11 @@ I'd like this one to be crafted, at least initially
 
 ---
 
+## Testing & Validation 
+
+### Adding More Projects 
+
+  + To really be able to test that all of these new tags work, we need to expand the content. The first and primary collection already entered is web dev projects and then I added all of my Behance entries. 
+  + I prepared a guide for having an agent work through a bulk of them. Check it out and let me know if you think it is doable for me to be able to delegate this off: `assets/docs/entries-prep/AGENT_CREATING_ENTRIES.md` 
+
+---
