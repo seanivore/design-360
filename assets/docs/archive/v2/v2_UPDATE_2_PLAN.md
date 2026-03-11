@@ -38,7 +38,7 @@ Everything depends on the new tag structure. Do this first.
 | Account Manager           | Client relations, project coordination           |
 | Automation Engineer       | APIs, workflows, agentic systems, scripting      |
 
-**Skills** (never restate a role name):
+**Skills** ~~(never restate a role name)~~:
 
 Tools: HTML/CSS/JS, Python, JavaScript, React, Webflow, Framer, Figma, After Effects, Photoshop, Illustrator, Lightroom, Creative Cloud, DaVinci Resolve, CapCut, Lottie, Make.com, Notion, GitHub Pages, Jekyll, Git, Midjourney, Claude/Cursor, Generative AI, Adobe Firefly
 

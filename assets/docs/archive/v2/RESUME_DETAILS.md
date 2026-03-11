@@ -51,7 +51,7 @@ Brand Identity
   4. Ran case studies on agentic workflows researching, analyzing, and producing tangible user guides for AI Voice Marketing 
 
 ### SILENT LABS — *Austin, TX*
-**Creative Consultant, Digital Contractor** — 2020–2023
+**Art Director** — 2020–2023
 + Autonomous, self-directed role producing treasure trove of graphic design images and animated video 
 + Collaborated on designing the brands online visual identity and strategy building web3 privacy-focused audiences
 + Illustrated, printed 3k copies of informative comic book educating event attendees on zero-knowledge proof protocols

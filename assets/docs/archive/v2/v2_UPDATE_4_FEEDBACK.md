@@ -98,9 +98,11 @@ Homepage components can be modified by applying tags on `assets/js/homepage-cont
   2. Entries that have **EITHER TAG-A *OR* TAG-B**
   3. Only entries that have **BOTH TAG-A *AND* TAG-B** 
 
-Or any combination thereof. This functionality is to be the same on the our `section.html` pages, where we'll need to modernize the UI for filtering. Ideas for how to present content in components will be included in the [Landing Page Sections](#section-feedback) below. 
+Or any combination thereof. This functionality is to be the same on the our `section.html` pages, where we'll need to modernize the UI for filtering.  
 
 ### What To Showcase 
+
+Some combination of these items are both the strongest of the experience I can illustrate and talk about from my work history, and the most relevant for my two immediate use cases (which are that my mom, who is a SBO who connected me to other SBO to build websites for them, wants to post something about what I can offer; and that I want to be able to apply to jobs using this). You'll see ideas for how to group and present this content in components in the [Landing Page Section Feedback](#section-feedback) section below. Consider this list very loose — I put more thought into what will actually work in the actual landing page section details. 
 
   1. Web Development
      - Webflow 
@@ -137,7 +139,7 @@ Or any combination thereof. This functionality is to be the same on the our `sec
 To do this well, I want you to start from the ground up so that you're only thinking mobile-first. This will be easier than trying to pick and choose what needs to be adjusted. Instead, every component and the layout will be optimized for mobile first 
   
   + Things like "hover" are pretty, but we are only speaking to a small percent of viewers 
-    - The current prototype isn't responsive *AT ALL* 
+    - The current prototype isn't responsive  
     - In this day and age, it needs to be even smarter than the desktop design, because desktop is easy 
 
   + As I go through the sections in the second half of this document, I'll be sure to describe things in a mobile first way 
@@ -309,17 +311,39 @@ Set what tag(s) should populate the slides on the `assets/js/homepage-content.js
 
 ### 3.1-Showcase: `.showcase .container` Dynamic Featured Product
 
-I'd like this one to be crafted, at least initialy 
+I'd like this one to be crafted, at least initially 
 
   + First tag selection for `.showcase .container .landing-heading` can display the tag text, e.g. Web Developer or Website Development 
-  + 
-
+  + Then now where we have "Web Developer, Graphic Designer, Automation Engineer, Video & Creative" — we'll instead have something like "Webflow, Framer, React/TypeScript, HTML/CSS/JS" so that they toggle through those type of web dev projects 
 
 ### 4.1-Credentials:
+  + Jobs from Resume
+  + But list tags that fit under each 
+
 ### 5.1-Process:
+  + I do love the visual that we currently have 
+  + I'm struggling to think of how to make dynamic for all JSON projects 
+  + But I sort of think we just do it and then in the future when I change it to different tags, I'll just have to make sure whatever those JSON values are that dynamically show in this section are updated to work 
+  + What if for now we zoomed in on AI and Automation Implementation, and broke down the process of like assessing needs and creating a plan, implementing it, iterating, etc. 
+  + The key being that we'll just have to identify the project JSON entries that are AI and automation related, and then create three copy values on the JSON, and answer all of them different but very similar 
+  + This way it can change on every refresh still, but we'll fill things in so that it always works 
+  + Actually, ideally it would be cool if, say the first section is idk "assess needs" — and it showed the answer from a handful of different project JSON entries that have AI and automation type tags 
+  + The challenge would just be making sure it isn't repetitive by accident 
+  + And again, just like almost all the other sections, we'll want to make sure that the blurbs are hyperlinked from the project they came from; so not tags for this one but the actual content going to the actual entry page 
+
 ### 6.1-Career Timeline:
+  + Let's keep the "three sections" layout but not do career timeline 
+  + Instead, is there a way we can group creative production work into three categories so that I can be showing off lots of social media design, and motion graphics, videos, etc. 
+  + And like other sections, we will want to use the actual tags so that each one can be hyperlinked to the section page with that tag applied  
+
 ### 7.1-Metrics: 
+  + Advertising projects 
+  + Use metrics, graphs, and charts to show 
+
 ### 8.1-FAQ:
+  + An accomplishment, press hit, or impressive metric instead of a question 
+  + Expand the accordion to get the details; context and how it was accomplished 
+
 ### 9.1-CTA & Contact: 
 
 
@@ -352,3 +376,6 @@ I'd like this one to be crafted, at least initialy
 
   + ~3-7 `img-mobile-<slug>.webp` no required and not all the exact same size or ratio; need new on-page space for them
   + Optional space for any number of any aspect ratio images; space on page needed 
+
+---
+
