@@ -56,14 +56,15 @@ Change the tags listed for each component based on the job opening the same way 
 The prototype is built and has gone through a few rounds of revisions. The current version requires some fixes with the animation and timing that will best be addressed during this assessment planning session.
 
   + [Land page prototype file](/landing-prototype.html)
-  + Browser View: file:///Users/seanivore/Development/360-design/landing-prototype.html
+  + Browser View: `file:///Users/seanivore/Development/360-design/landing-prototype.html`
 
 ### Basic Next Steps
 
   1. Review previous planning session and feedback files  
   2. Create consolidated implementation guide `v2_4_IMPL_GUIDE.md`
   3. Ensure implementation guide is exclusively executable 
-  4. Handoff guide to agent for implementation 
+  4. Update `assets/docs/JSON_ARCHITECTURE.md` for this update 
+  5. Handoff guide to agent for implementation 
 
 | Purpose               | File                                         |
 | --------------------- | -------------------------------------------- |
@@ -168,37 +169,300 @@ I added in the sub-bullet points, things to check or changes that have yet to be
        ["Video Editor"],
        ["Content Strategist"]
      ],
-     "outcome_grid": ["Web Developer"],
-     "approach_cards": ["Web Developer"]
+     "credentials": ["Web Developer"],
+     "creative": ["Web Developer"],
+     "impact": ["Web Developer"]
    }
 
 + Convert prototype to index: `index.html`
   - Replace hardcoded data with JS that reads `homepage-content.json` tags and pulls from entry JSONs
 
-### Verification After Update
+--- 
 
-#### Automated
+## New Field Usage
+
+**Prototype Discovery**: As prototype was built with real data, it has identified exactly what our JSON entry schema needs. The following are the endpoints for the new values being added. I've included an image of that part of the home landing page for reference so that we can create a really strong SOP for future agents filling out the schema. 
+
+  `data.role_headline`: this is the main homepage rotating title
+  `data.hero_button_cta`: hero CTA button text 
+
+  `data.skill_summary`: not currently used, but 15-25 words on how skills were used in this project is smart to collect now
+  `data.workplace`: only four accurate values: "Freelance", "Silent Labs", "SEANIVORE GROUP", "PETA"
+  `data.workplace_title`: irrespective of role tags, this is formal title when employed 
+  `data.workplace_dates`: YYYY–YYYY
+
+  `data.process.1_word`: these next few are in the 3-step process section 
+  `data.process.1_summary`
+  `data.process.1_click`
+  `data.process.2_word`
+  `data.process.2_summary`
+  `data.process.2_click`
+  `data.process.3_word`
+  `data.process.3_summary`
+  `data.process.3_click`
+
+  `data.metric.value`
+  `data.metric.kpi`
+  `data.metric.context`
+
+  `data.achievement.headline`
+  `data.achievement.details`
+  
+  `data.final_cta_text`: final CTA text 
+  `data.final_button_cta`: final CTA button text 
+
+### Field Intelligence 
+
+I was just adding the `data.achievement.headline` and `data.achievement.details` and was going to include it with the handful that aren't required. If we did, but then say someday that project entry's tag was used to populate the "Achievement Section" on the homepage, we can just setup fallbacks right? Like, skip any that are empty or null. And then if there aren't any at all, well we'd want to know so that we can change what tags are used for that section, or maybe less tags need to be used. 
+
+If that makes sense, we might want to do the same for the metrics. That way it is like we're cutting out noise for more signal. Everything will look better because there isn't anything added just to fill in gaps. 
+
+Seems like we should be okay with the `data.process` values but hey, maybe all of them it would be smart to have a fallback setup for — CTA button text included. 
+
+### Fields Needing Update
+
+See how I have simplified the tags: `assets/entries/uid-gcp-491.json` 
+
+I've also flattened and shortened a lot of the keys. In every case I listed the old mapped key value in the comments with an arrow to what it has been changed to. Then pasted directly below this schema is the previous version. If this is over-complicating things then NBD we can just add the new values. I just remember when putting this together the agent very frequently assumes things are at the base when they weren't, and they had quite a few levels before, but since we know the use purpose it is probably fine not to do that if we don't want to — correct me if I'm wrong! 
+
+I also left off the "required" value, but these are the only values that can be skipped, and only out of necessity: 
+
+| Not *Required* JSON Value   | Why can it be skipped?                          |
+| --------------------------- | ----------------------------------------------- |
+| `data.media_url`            | Video or other URL; maybe NFT for example       |
+| `data.media_embed`          | Any URL inclusion should always have an embed   |
+| `data.media_alt`            | We have alt text for every media type           |
+| `data.mobile_img`           | Only apps or websites with strong mobile images |
+| `data.mobile_img_alt`       | Skipped if there are no mobile images           |
+| `data.origin_url`           | Should ALMOST ALWAYS find SOMETHING to link to  |
+| `data.origin_url_text`      | Pretty URL instead of scrambled characters      |
+| `data.repository`           | Link to a repository if it exists               |
+| `data.achievement.headline` | Only the best for good noise to signal ratio    |
+| `data.achievement.details`  | Must be included with headline                  |
+
+#### New Schema
+
+```json 
+{
+  "_metadata": {
+    "template": "project_entry",
+    "version": "v5.0",
+    "changed": "2026-03-15T16:18:00.000000Z",
+    "update": "landing page update, added values, updated tags and grouping, removed sectioning"
+  },
+  "id": "uid-gcp-491", # `data.categorization.entry_id` -> `data.id`
+  "slug": "fashion-ai-video", # `data.categorization.slug` -> `data.slug`
+  "hero_button_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_button_cta": "See All Web Projects",
+  "role_headline": "", # new field -> `data.role_headline`
+  "role": [
+    "Brand Designer",
+    "Content Strategist",
+    "Social Media Manager",
+    "Video Editor"
+  ], # `data.categorization.tags.role` -> `data.role`
+  "skill": [
+    "Adobe",
+    "After Effects",
+    "Art Direction",
+    "Content Production",
+    "DaVinci Resolve",
+    "Editorial Design",
+    "Generative AI",
+    "Illustration",
+    "Layout Design",
+    "Motion Graphics",
+    "System Design",
+    "Scaling",
+    "Video Production"
+  ], # `data.categorization.tags.skill` -> `data.skill`
+  "skill_summary": "", # new field -> `data.skill_summary`
+  "product": [
+    "Video Short",
+    "Digital Art",
+    "Social Content"
+  ], # new value -> `data.product`
+  "workplace": "Freelance", # new value -> `data.workplace`
+  "workplace_title": "", # new value -> `data.workplace_title`
+  "workplace_dates": "", # new value -> `data.workplace_dates`
+  "media_url": "", # `data.content.media.video_url` -> `data.media_url`
+  "media_embed": "", # `data.content.media.video_embed` -> `data.media_embed`
+  "media_alt": "", # `data.content.media.video_alt_text` -> `data.media_alt`
+  "thumbnails": [], # `data.content.media.thumbnail_images` -> `data.thumbnails`
+  "thumb_alt": "", # `data.content.media.thumb_slideshow_alt_text` -> `data.thumb_alt`
+  "img": [], # `data.content.media.page_imagery` -> `data.img`
+  "img_alt": "", # `data.content.media.page_image_group_alt_text` -> `data.img_alt`
+  "mobile_img": [], # new field -> `data.mobile_img`
+  "mobile_img_alt": "", # new field -> `data.mobile_img_alt`
+  "origin_url": "", # `data.content.assets.project_url` -> `data.origin_url`
+  "origin_url_text": "", # `data.content.assets.project_url_text` -> `data.origin_url_text`
+  "repository": "", # `data.content.assets.github_repository` -> `data.repository`
+  "seo_title":, # `data.content.teaser_copy.seo_title` -> `data.seo_title`
+  "seo_description":, # `data.content.teaser_copy.seo_description` -> `data.seo_description`
+  "title":, # `data.content.teaser_copy.page_title` -> `data.title`
+  "subtitle":, # `data.content.teaser_copy.page_subtitle` -> `data.subtitle`
+  "tiles": [], # `data.content.teaser_copy.tile_text` -> `data.tiles`
+  "pattern":, # `data.content.page_copy.pattern` -> `data.pattern` ... this feels like it should be rewritten as problem [statement]
+  "action":, # `data.content.page_copy.action` -> `data.action` ... solution or action I don't mind here, but content of pattern needs rewriting 
+  "result":, # `data.content.page_copy.measured` -> `data.result` ... measured was just confusing 
+  "process": {
+    "1_word": "access",
+    "1_summary": "Audit existing workflows, identify manual bottlenecks, and map where AI tooling or custom automation will deliver the highest leverage.",
+    "1_click": "→ 800-Product AI Storefront",
+    "2_word": "implement",
+    "2_summary": "Build iteratively — custom scripts, AI-generated SERP descriptions, Webflow storefronts connected to inventory APIs. Ship early, validate with real traffic.",
+    "2_click": "→ SaaS Conversion Flow",
+    "3_word": "iterate",
+    "3_summary": "Monitor performance, A/B test conversion paths, continuously refine. The goal: a system that runs autonomously, not a one-time build.",
+    "3_click": "→ Data Dashboard"
+  },
+  "metric": {
+    "value": "$0.003",
+    "kpi": "Cost Per Engagement",
+    "context": "Social ad campaign with custom art"
+  },
+  "achievement": {
+    "headline": "What What It — What Was Impressive",
+    "details": "It was this because this. We did created a thing by combining these two smart things."
+  }
+}
+```
+
+#### Old Schema
+
+Please see the actual template here for directions and explanation on all the original values: `assets/docs/_entry_template.json`
+
+```json
+{
+  "_metadata": {
+    "last_updated": "2026-03-15T16:18:00.000000Z",
+    "required_fields": true,
+    "template_type": "portfolio_entry",
+    "schema_version": "5.0",
+    "schema_update": "Revamp for landing page update, added values, updated tags and grouping, removed sectioning"
+  },
+  "categorization": {
+    "entry_id": "uid-gcp-491",
+    "slug": "fashion-ai-video",
+    "tags": {
+      "role": [
+        "Brand Designer",
+        "Content Strategist",
+        "Social Media Manager",
+        "Video Editor"
+      ],
+      "skill": [
+        "Adobe Firefly",
+        "After Effects",
+        "Art Direction",
+        "CapCut",
+        "Content Production",
+        "DaVinci Resolve",
+        "Editorial Design",
+        "Generative AI",
+        "Illustration",
+        "Lightroom",
+        "Lookbook Design",
+        "Motion Graphics",
+        "Photography",
+        "Photoshop",
+        "Publishing",
+        "Scaling Systems",
+        "Video Production"
+      ]
+    }
+  },
+  "content": {
+    "media": {
+      "video_filename": "",
+      "video_url": "",
+      "video_embed": "<iframe src='https://www.behance.net/embed/project/215002031?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+      "video_alt_text": "Avant garde fashion lookbook clips where still images are transformed into moving sequences: editorial poses, surreal desert palettes, and animated camera moves.",
+      "thumbnail_images": [
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-1.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-2.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-3.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-4.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-5.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-6.webp"
+      ],
+      "thumb_slideshow_alt_text": "Editorial fashion stills with surreal desert vibes, animated into motion with parallax, camera moves, and subtle effects.",
+      "page_imagery": [],
+      "page_image_group_alt_text": ""
+    },
+    "assets": {
+      "project_url_text": "behance.net/gallery/Video-Fashion",
+      "project_url": "https://www.behance.net/gallery/215002031/Curated-Avant-Garde-Fashion-Lookbook",
+      "github_repository": ""
+    },
+    "teaser_copy": {
+      "seo_title": "Surrealism Avant Garde Fashion Lookbook: Editorial Stills Transformed Into Motion",
+      "seo_description": "A generative fashion lookbook that turns editorial stills into moving images with surreal desert palettes, parallax, and cinematic camera moves for platform ready clips.",
+      "page_title": "Curated Avant Garde Fashion Lookbook",
+      "page_subtitle": "Editorial fashion stills animated into motion with surreal desert vibes.",
+      "tile_text": [
+        "Editorial stills reimagined as motion",
+        "Surreal desert palettes and cinematic flow",
+        "Platform ready clips for social and launch"
+      ]
+    },
+    "page_copy": {
+      "pattern": "Surreal fashion editorial embraces bold styling, color forward palettes, and atmospheric settings that carry through both still and motion formats.",
+      "action": "Selected hero stills were animated into motion with parallax, camera moves, and subtle effect passes, then cut to platform native formats with clean pacing and rhythm.",
+      "measured": "Delivers scroll stopping clips and cohesive lookbook sequences suitable for social, launch campaigns, and provenance linked digital editions."
+    }
+  }
+}
+```
+
+---
+
+## Setup Process 
+
+Because so much time has passed and agents have gotten much better at writing, I think the cleanest way for us to do this would be to just have an agent create new files for all the currently existing JSON project entries. They could then continue on the list of other projects to create entries for. 
+  
+  1. Keep us consistent 
+  2. Create a collection of used tags as they go to avoid plural duplicates
+  3. Use the same simplicity and logic when creating tags 
+
+I don't think we did amazingly with the tag creation in the original entries so this would give us the opportunity to not only improve on that, but make sure that at least these initial entries will all perfectly fit all the necessary placements. 
+
+### 1. Create New Entry File
+
+```bash
+project
+# Created project file: assets/docs/uid-jcw-174.json
+# Entry ID: uid-jcw-174
+```
+
+There are full directions here as well, but I just checked and it works on my system: `assets/docs/JSON_ARCHITECTURE.md`
+
+It might need to be installed again because it is supposed to pull directly from `assets/docs/_entry_template.json` but I just used the command and it says the wrong version schema at the top. 
+
+### 2. Create New JSON Entry 
+
+Pull the next of the 36 current project entry JSON files. Write it in the new schema by creating an entirely new JSON document and filling in the schema. 
+
+---
+
+## Verification After Update
+
+### Automated
 
   - JSON validation script (all entries have slug, role[], skill[], no old keys)
   - Manifest regeneration check (all slugs unique, flat)
 
-#### Manual (Local)
+### Manual (Local)
 
   - Landing page: all components render, tabs switch, responsive at 375px
   - Tag page: `?tags=Web+Developer` shows correct projects, pills filter
   - Entry page: tag pills render, no breadcrumbs, content loads
 
-#### Live (GitHub Pages)
+### Live (GitHub Pages)
 
   - `august.style/slug` → entry loads via 404 routing
   - Old URLs → graceful fallback
   - All device tests
 
---- 
-
-## Prototype Discovery 
-
-As prototype was built with real data, it has identified exactly what our JSON entry schema needs. 
-
-### New Fields Discovered
-
+---

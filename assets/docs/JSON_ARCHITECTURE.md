@@ -321,7 +321,7 @@ if (!pathParam) {
 │   │   └── placement.json           # Config (toggle tags, SEO)
 │   │
 │   ├── entries/
-│   │   └── uid-*.json               # 15+ project entries
+│   │   └── uid-*.json               # Project entries
 │   │
 │   ├── media/
 │   │   └── [project-folders]/       # Images, videos

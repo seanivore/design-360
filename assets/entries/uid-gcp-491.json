@@ -1,76 +1,76 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-gcp-491",
-        "slug": "fashion-ai-video",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Social Media Manager",
-                "Video Editor"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "After Effects",
-                "Art Direction",
-                "CapCut",
-                "Content Production",
-                "DaVinci Resolve",
-                "Editorial Design",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Lookbook Design",
-                "Motion Graphics",
-                "Photography",
-                "Photoshop",
-                "Publishing",
-                "Scaling Systems",
-                "Video Production"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/215002031?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Avant garde fashion lookbook clips where still images are transformed into moving sequences: editorial poses, surreal desert palettes, and animated camera moves.",
-            "thumbnail_images": [
-                "assets/media/fashion-ai-video/thumb-fashion-ai-video-1.webp",
-                "assets/media/fashion-ai-video/thumb-fashion-ai-video-2.webp",
-                "assets/media/fashion-ai-video/thumb-fashion-ai-video-3.webp",
-                "assets/media/fashion-ai-video/thumb-fashion-ai-video-4.webp",
-                "assets/media/fashion-ai-video/thumb-fashion-ai-video-5.webp",
-                "assets/media/fashion-ai-video/thumb-fashion-ai-video-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Editorial fashion stills with surreal desert vibes, animated into motion with parallax, camera moves, and subtle effects.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.net/gallery/Video-Fashion",
-            "project_url": "https://www.behance.net/gallery/215002031/Curated-Avant-Garde-Fashion-Lookbook",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Surrealism Avant Garde Fashion Lookbook: Editorial Stills Transformed Into Motion",
-            "seo_description": "A generative fashion lookbook that turns editorial stills into moving images with surreal desert palettes, parallax, and cinematic camera moves for platform ready clips.",
-            "page_title": "Curated Avant Garde Fashion Lookbook",
-            "page_subtitle": "Editorial fashion stills animated into motion with surreal desert vibes.",
-            "tile_text": [
-                "Editorial stills reimagined as motion",
-                "Surreal desert palettes and cinematic flow",
-                "Platform ready clips for social and launch"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Surreal fashion editorial embraces bold styling, color forward palettes, and atmospheric settings that carry through both still and motion formats.",
-            "action": "Selected hero stills were animated into motion with parallax, camera moves, and subtle effect passes, then cut to platform native formats with clean pacing and rhythm.",
-            "measured": "Delivers scroll stopping clips and cohesive lookbook sequences suitable for social, launch campaigns, and provenance linked digital editions."
-        }
+  "_metadata": {
+    "schema_version": "4.0"
+  },
+  "categorization": {
+    "entry_id": "uid-gcp-491",
+    "slug": "fashion-ai-video",
+    "tags": {
+      "role": [
+        "Brand Designer",
+        "Content Strategist",
+        "Social Media Manager",
+        "Video Editor"
+      ],
+      "skill": [
+        "Adobe Firefly",
+        "After Effects",
+        "Art Direction",
+        "CapCut",
+        "Content Production",
+        "DaVinci Resolve",
+        "Editorial Design",
+        "Generative AI",
+        "Illustration",
+        "Lightroom",
+        "Lookbook Design",
+        "Motion Graphics",
+        "Photography",
+        "Photoshop",
+        "Publishing",
+        "Scaling Systems",
+        "Video Production"
+      ]
     }
+  },
+  "content": {
+    "media": {
+      "video_filename": "",
+      "video_url": "",
+      "video_embed": "<iframe src='https://www.behance.net/embed/project/215002031?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+      "video_alt_text": "Avant garde fashion lookbook clips where still images are transformed into moving sequences: editorial poses, surreal desert palettes, and animated camera moves.",
+      "thumbnail_images": [
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-1.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-2.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-3.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-4.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-5.webp",
+        "assets/media/fashion-ai-video/thumb-fashion-ai-video-6.webp"
+      ],
+      "thumb_slideshow_alt_text": "Editorial fashion stills with surreal desert vibes, animated into motion with parallax, camera moves, and subtle effects.",
+      "page_imagery": [],
+      "page_image_group_alt_text": ""
+    },
+    "assets": {
+      "project_url_text": "behance.net/gallery/Video-Fashion",
+      "project_url": "https://www.behance.net/gallery/215002031/Curated-Avant-Garde-Fashion-Lookbook",
+      "github_repository": ""
+    },
+    "teaser_copy": {
+      "seo_title": "Surrealism Avant Garde Fashion Lookbook: Editorial Stills Transformed Into Motion",
+      "seo_description": "A generative fashion lookbook that turns editorial stills into moving images with surreal desert palettes, parallax, and cinematic camera moves for platform ready clips.",
+      "page_title": "Curated Avant Garde Fashion Lookbook",
+      "page_subtitle": "Editorial fashion stills animated into motion with surreal desert vibes.",
+      "tile_text": [
+        "Editorial stills reimagined as motion",
+        "Surreal desert palettes and cinematic flow",
+        "Platform ready clips for social and launch"
+      ]
+    },
+    "page_copy": {
+      "pattern": "Surreal fashion editorial embraces bold styling, color forward palettes, and atmospheric settings that carry through both still and motion formats.",
+      "action": "Selected hero stills were animated into motion with parallax, camera moves, and subtle effect passes, then cut to platform native formats with clean pacing and rhythm.",
+      "measured": "Delivers scroll stopping clips and cohesive lookbook sequences suitable for social, launch campaigns, and provenance linked digital editions."
+    }
+  }
 }
