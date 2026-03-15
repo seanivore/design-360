@@ -32,18 +32,18 @@ v2 animations were too subtle and fast. In flat design, **motion IS the visual r
 
 **Amplification plan**:
 
-| Element | v2 | v2.2 |
-|---|---|---|
-| Scroll reveal | 0.6s fade+slide, barely noticeable | 0.8s with staggered children, visible slide distance (40px) |
-| Stacked trio | 0.6s draw, too fast | 1.2s draw with easing, staggered 0.2s per line |
-| Subtitle rotation | CSS keyframe, no dip visible | JS-driven letter-by-letter cascade with visible 6px dip |
-| Hero images | Static grid | CSS parallax scroll, images shift at different rates |
-| Showcase cards | opacity reveal | Slide up from below with stagger per card (0.15s delay each) |
-| Process steps | No animation | Horizontal scroll snap with momentum, step counter ticks up |
-| Stat tiles | Scale on :active only | Number count-up animation on first view (0→36 etc.) |
-| Credentials tags | Static | Horizontal auto-scroll marquee per card |
-| Accordion | max-height toggle | Smooth expand with content fade-in |
-| Nav collapse | translateY | Scale+blur transition, more organic feel |
+| Element           | v2                                 | v2.2                                                         |
+| ----------------- | ---------------------------------- | ------------------------------------------------------------ |
+| Scroll reveal     | 0.6s fade+slide, barely noticeable | 0.8s with staggered children, visible slide distance (40px)  |
+| Stacked trio      | 0.6s draw, too fast                | 1.2s draw with easing, staggered 0.2s per line               |
+| Subtitle rotation | CSS keyframe, no dip visible       | JS-driven letter-by-letter cascade with visible 6px dip      |
+| Hero images       | Static grid                        | CSS parallax scroll, images shift at different rates         |
+| Showcase cards    | opacity reveal                     | Slide up from below with stagger per card (0.15s delay each) |
+| Process steps     | No animation                       | Horizontal scroll snap with momentum, step counter ticks up  |
+| Stat tiles        | Scale on :active only              | Number count-up animation on first view (0→36 etc.)          |
+| Credentials tags  | Static                             | Horizontal auto-scroll marquee per card                      |
+| Accordion         | max-height toggle                  | Smooth expand with content fade-in                           |
+| Nav collapse      | translateY                         | Scale+blur transition, more organic feel                     |
 
 ### Width Handling
 
@@ -139,11 +139,11 @@ Per mobile design specs §3: *"do not use 'below the fold' principle and instead
 
 Instead of between every section (currently 6+ instances), use purposefully:
 
-| Location | Purpose | Style |
-|---|---|---|
-| Between Hero and Showcase | One major section break | Full width inverted pyramid, slow draw animation |
-| Achievements items | Emphasis accent beside each item | Small horizontal variant, left-aligned |
-| Above footer CTA | Final cap before closing | Centered, medium width |
+| Location                  | Purpose                          | Style                                            |
+| ------------------------- | -------------------------------- | ------------------------------------------------ |
+| Between Hero and Showcase | One major section break          | Full width inverted pyramid, slow draw animation |
+| Achievements items        | Emphasis accent beside each item | Small horizontal variant, left-aligned           |
+| Above footer CTA          | Final cap before closing         | Centered, medium width                           |
 
 All other section transitions: use **whitespace + scroll animation** to differentiate, not dividers.
 

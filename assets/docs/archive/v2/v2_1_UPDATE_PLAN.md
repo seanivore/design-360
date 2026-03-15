@@ -37,13 +37,13 @@ Inverted pyramid of three lines (longest on top, shortest on bottom), one per ce
 
 ### Style Rules
 
-| | Do | Don't |
-|---|---|---|
-| **Primary** | Flat surfaces, solid fills, sharp edges | Gradients of any kind |
-| **Neumorphism** | ONLY on hero stat tiles — super simplified, subtle shadows | Rounded puffy buttons or heavy depth |
-| **Glass** | ONLY on collapsed navbar — minimal frosted, no gradient behind | Frosted cards, glass everywhere |
-| **Motion** | CSS animations for mobile-first (flip-clock, scroll transitions, expand-to-page) | ~~Hover states~~ — removed entirely |
-| **Colors** | Groups of all 3 cereal colors together | Monochrome mauve dominance |
+|                 | Do                                                                               | Don't                                |
+| --------------- | -------------------------------------------------------------------------------- | ------------------------------------ |
+| **Primary**     | Flat surfaces, solid fills, sharp edges                                          | Gradients of any kind                |
+| **Neumorphism** | ONLY on hero stat tiles — super simplified, subtle shadows                       | Rounded puffy buttons or heavy depth |
+| **Glass**       | ONLY on collapsed navbar — minimal frosted, no gradient behind                   | Frosted cards, glass everywhere      |
+| **Motion**      | CSS animations for mobile-first (flip-clock, scroll transitions, expand-to-page) | ~~Hover states~~ — removed entirely  |
+| **Colors**      | Groups of all 3 cereal colors together                                           | Monochrome mauve dominance           |
 
 *Ref: AESTHETIC-FLAT-UI.jpg, AESTHETIC-SUBTLE-NEUMORPHISM-1/2, AESTHETIC-FLAT-MINIMAL-GLASS-1/2.jpg*
 
