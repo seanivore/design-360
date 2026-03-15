@@ -56,7 +56,7 @@
       - Height, almost completely subjective, wholely depending on the content; do not use "below the fold" principle and instead create a vertical scrollable experience 
 
     + Example of vertical scrollable experience **ANIMATIONS** to apply:
-      - Content dipping just a bit below fold? Make it smaller, and then add an animation so that as you scroll down the padding above the content expands MUCH slower than the scroll so that you end with a layout with nice whitespace expanded padding 
+      - Content dipping just a bit below fold or near it depending on viewport? Make it smaller, and then add an animation so that as you scroll down the padding above the content expands MUCH slower than the scroll so that you end with a layout with nice whitespace expanded padding 
       - Then the next animation phase, as you add details below the subject, the subject now slowly shrinks as you scroll down so that it can stay in the frame with the content even longer than it otherwise would 
 
   4. Use proper format of images 
