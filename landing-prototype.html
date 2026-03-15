@@ -6,858 +6,221 @@
   <title>Sean August Horvath — Design, Development & Automation</title>
   <meta name="description" content="Portfolio of Sean August Horvath. Web development, graphic design, automation engineering, and creative direction across 36+ projects.">
   <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    /* ============================================
-       DESIGN SYSTEM — Mobile-First
-       Base viewport: 393×852 CSS px
-       ============================================ */
-
-    /* --- Reset --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* --- Palette --- */
     :root {
-      /* Backgrounds */
-      --bg-primary: #1f1f1f;
-      --bg-secondary: #2a2a2a;
-      --bg-card: #303030;
-      --bg-elevated: #383838;
-
-      /* Text */
+      --bg-base: #1f1f1f;
+      --bg-raised: #272727;
+      --bg-elevated: #2f2f2f;
       --text-primary: #EBEBEB;
       --text-secondary: #D7CDCC;
       --text-muted: #9a9590;
-
-      /* Cereal accents — always used in balanced groups */
-      --accent-terracotta: #C9A68A;
+      --accent-terra: #C9A68A;
       --accent-blue: #8FA9B3;
       --accent-mauve: #C99CAD;
-
-      /* Functional */
-      --border-subtle: #444;
-      --radius-sm: 4px;
-      --radius-md: 8px;
-
-      /* Spacing (mobile base) */
-      --space-xs: 4px;
-      --space-sm: 8px;
-      --space-md: 16px;
-      --space-lg: 24px;
-      --space-xl: 32px;
-      --space-2xl: 48px;
-      --space-3xl: 64px;
-
-      /* Typography */
-      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-mono: 'SF Mono', 'Fira Code', monospace;
+      --radius: 6px;
+      --gap: 16px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
-
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-    body {
-      font-family: var(--font-base);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
+    body { font-family: var(--font); background: var(--bg-base); color: var(--text-primary); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--gap); }
 
-    /* --- Stacked Trio (signature divider) --- */
-    .stacked-trio {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-      padding: var(--space-2xl) 0;
-    }
-    .stacked-trio span {
-      display: block;
-      height: 3px;
-      border-radius: 1.5px;
-    }
-    .stacked-trio span:nth-child(1) {
-      width: 72px;
-      background: var(--accent-terracotta);
-    }
-    .stacked-trio span:nth-child(2) {
-      width: 54px;
-      background: var(--accent-blue);
-    }
-    .stacked-trio span:nth-child(3) {
-      width: 36px;
-      background: var(--accent-mauve);
-    }
-    /* Draw-in animation */
-    .stacked-trio.animate span {
-      animation: trio-draw 0.6s ease-out both;
-    }
-    .stacked-trio.animate span:nth-child(2) { animation-delay: 0.1s; }
-    .stacked-trio.animate span:nth-child(3) { animation-delay: 0.2s; }
-    @keyframes trio-draw {
-      from { width: 0; opacity: 0; }
-      to { opacity: 1; }
-    }
+    /* === SCROLL REVEAL === */
+    .sr { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .sr.vis { opacity: 1; transform: translateY(0); }
+    .sr-delay-1 { transition-delay: 0.15s; }
+    .sr-delay-2 { transition-delay: 0.3s; }
+    .sr-delay-3 { transition-delay: 0.45s; }
+    .sr-delay-4 { transition-delay: 0.6s; }
 
-    /* --- Section scroll-in animation --- */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .scroll-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* === STACKED TRIO === */
+    .trio { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 40px 0; }
+    .trio span { display: block; height: 3px; border-radius: 1.5px; transform: scaleX(0); transition: transform 1.2s cubic-bezier(0.22,1,0.36,1); }
+    .trio span:nth-child(1) { width: 45%; background: var(--accent-terra); }
+    .trio span:nth-child(2) { width: 35%; background: var(--accent-blue); transition-delay: 0.2s; }
+    .trio span:nth-child(3) { width: 25%; background: var(--accent-mauve); transition-delay: 0.4s; }
+    .trio.vis span { transform: scaleX(1); }
+    /* Small accent variant */
+    .trio-sm { padding: 0; gap: 4px; align-items: flex-start; }
+    .trio-sm span { height: 2px; }
+    .trio-sm span:nth-child(1) { width: 40px; }
+    .trio-sm span:nth-child(2) { width: 30px; }
+    .trio-sm span:nth-child(3) { width: 20px; }
 
-    /* --- Container --- */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-    }
+    /* === §1 NAVBAR === */
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg-base); border-bottom: 1px solid rgba(255,255,255,0.06); transition: transform 0.4s ease, opacity 0.4s ease; }
+    .site-nav .container { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-links { display: flex; gap: 24px; list-style: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; }
+    .nav-links a { color: var(--text-secondary); }
+    .btn-contact { font-size: 0.8125rem; font-weight: 600; padding: 8px 20px; background: transparent; border: 1.5px solid var(--accent-mauve); color: var(--accent-mauve); border-radius: var(--radius); cursor: pointer; }
+    .site-nav.hide { transform: translateY(-100%); }
 
+    /* Nav pill — custom trio icon, not hamburger */
+    .nav-pill { position: fixed; top: 12px; right: 12px; z-index: 101; width: 44px; height: 44px; border-radius: 50%; background: rgba(31,31,31,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .nav-pill.vis { opacity: 1; pointer-events: auto; }
+    .nav-pill span { display: block; height: 2px; border-radius: 1px; }
+    .nav-pill span:nth-child(1) { width: 16px; background: var(--accent-terra); }
+    .nav-pill span:nth-child(2) { width: 12px; background: var(--accent-blue); }
+    .nav-pill span:nth-child(3) { width: 8px; background: var(--accent-mauve); }
 
-    /* ============================================
-       §1 — NAVBAR
-       ============================================ */
-    .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: var(--bg-primary);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: transform 0.4s ease, opacity 0.4s ease, background 0.4s ease;
-    }
-    .site-nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-    }
-    .nav-links {
-      display: flex;
-      gap: var(--space-lg);
-      list-style: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-    }
-    .nav-links a {
-      color: var(--text-secondary);
-      transition: color 0.2s;
-    }
-    .btn-contact {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      padding: 8px 20px;
-      background: transparent;
-      border: 1.5px solid var(--accent-mauve);
-      color: var(--accent-mauve);
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      letter-spacing: 0.02em;
-    }
+    /* === §2 HERO === */
+    .hero { padding-top: 56px; position: relative; }
 
-    /* --- Navbar collapsed state --- */
-    .site-nav.collapsed {
-      background: rgba(31, 31, 31, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom-color: transparent;
-      transform: translateY(-100%);
-    }
-    .site-nav.collapsed.show-mini {
-      transform: translateY(0);
-    }
-    /* On mobile collapsed: shrink to pill */
-    .nav-pill {
-      position: fixed;
-      top: 12px;
-      right: 12px;
-      z-index: 101;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(31, 31, 31, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-subtle);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .nav-pill.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .nav-pill svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--text-primary);
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-    }
-
-
-    /* ============================================
-       §2 — HERO
-       ============================================ */
-    .hero {
-      padding-top: calc(56px + var(--space-xl));
-      min-height: 100svh;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* §2.5 Hero images — background layer */
-    .hero-img-strip {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      z-index: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 4px;
-      opacity: 0.2;
-    }
-    .hero-img-strip img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.3) contrast(0.85);
-    }
-    .hero-img-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(
-        to bottom,
-        var(--bg-primary) 0%,
-        rgba(31,31,31,0.6) 40%,
-        rgba(31,31,31,0.85) 70%,
-        var(--bg-primary) 100%
-      );
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: var(--space-2xl) 0 var(--space-xl);
-    }
-
-    /* §2.1 Stats */
-    .hero-stats {
-      display: flex;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-xl);
-    }
-    .stat-tile {
-      flex: 1;
-      text-align: center;
-      padding: var(--space-md) var(--space-sm);
-      background: var(--bg-secondary);
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      position: relative;
-      /* Neumorphic shadows on dark bg */
-      box-shadow:
-        4px 4px 8px rgba(0,0,0,0.4),
-        -2px -2px 6px rgba(60,60,60,0.15);
-      transition: transform 0.2s ease;
-    }
-    .stat-tile:active {
-      transform: scale(0.96);
-    }
-    .stat-number {
-      font-size: 1.75rem;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: var(--space-xs);
-    }
-    .stat-tile:nth-child(1) .stat-number { color: var(--accent-terracotta); }
+    /* §2.1 Stats — above hero, separate, pure flat */
+    .hero-stats { display: flex; gap: 8px; padding: 20px var(--gap); }
+    .stat-tile { flex: 1; text-align: center; padding: 14px 8px; background: var(--bg-raised); border-radius: var(--radius); cursor: pointer; transition: background 0.15s, transform 0.15s; }
+    .stat-tile:active { transform: scale(0.96); background: var(--bg-elevated); }
+    .stat-number { font-size: 1.75rem; font-weight: 800; line-height: 1; margin-bottom: 2px; }
+    .stat-tile:nth-child(1) .stat-number { color: var(--accent-terra); }
     .stat-tile:nth-child(2) .stat-number { color: var(--accent-blue); }
     .stat-tile:nth-child(3) .stat-number { color: var(--accent-mauve); }
-    .stat-label {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-    }
+    .stat-label { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
 
-    /* §2.2 Title */
-    .hero-title {
-      margin-bottom: var(--space-lg);
-    }
-    .hero-title h1 {
-      font-size: clamp(3rem, 12vw, 5.5rem);
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-    }
-    .hero-title h1 span {
-      display: block;
-    }
-    .hero-title h1 span:nth-child(2) {
-      color: var(--accent-blue);
-    }
+    /* §2.2 Hero visual — immersive image strip */
+    .hero-visual { position: relative; width: 100%; height: 70svh; overflow: hidden; }
+    .hero-img-scroll { display: flex; width: max-content; height: 100%; gap: 6px; animation: hero-drift 30s linear infinite; }
+    .hero-img-scroll img { height: 100%; width: auto; aspect-ratio: 1; object-fit: cover; filter: saturate(0.5) contrast(0.9); border-radius: var(--radius); }
+    @keyframes hero-drift { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .hero-visual-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--bg-base) 0%, transparent 15%, transparent 60%, var(--bg-base) 100%); pointer-events: none; z-index: 1; }
 
-    /* §2.3 Subtitle — flip-clock */
-    .hero-subtitle {
-      font-size: 1.0625rem;
-      font-weight: 400;
-      color: var(--text-secondary);
-      height: 1.6em;
-      overflow: hidden;
-      margin-bottom: var(--space-xl);
-      position: relative;
-    }
-    .subtitle-track {
-      display: flex;
-      flex-direction: column;
-    }
-    .subtitle-item {
-      height: 1.6em;
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-    /* Flip animation */
-    .subtitle-track {
-      animation: subtitle-cycle 100s steps(1) infinite;
-    }
-    @keyframes subtitle-cycle {
-      0%   { transform: translateY(0); }
-      20%  { transform: translateY(-1.6em); }
-      40%  { transform: translateY(-3.2em); }
-      60%  { transform: translateY(-4.8em); }
-      80%  { transform: translateY(-6.4em); }
-      100% { transform: translateY(0); }
-    }
-    /* Dip + flip per item transition */
-    .subtitle-item {
-      animation: subtitle-dip 20s ease-in-out infinite;
-    }
-    @keyframes subtitle-dip {
-      0%, 90% { transform: translateY(0); }
-      95% { transform: translateY(4px); }
-      97% { transform: translateY(4px); opacity: 1; }
-      98% { opacity: 0; transform: translateY(4px); }
-      99% { opacity: 0; transform: translateY(-4px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    /* §2.3 Title + §2.4 Subtitle — overlaid on visual */
+    .hero-text { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 0 var(--gap) 24px; }
+    .hero-title h1 { font-size: clamp(2.75rem, 11vw, 5.5rem); font-weight: 900; line-height: 0.92; letter-spacing: -0.03em; }
+    .hero-title h1 span { display: block; }
+    .hero-title h1 span:nth-child(2) { color: var(--accent-blue); }
 
-    /* §2.4 CTA */
-    .hero-cta {
-      display: flex;
-      gap: var(--space-md);
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      border-radius: var(--radius-sm);
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.01em;
-      transition: transform 0.15s ease;
-    }
+    .hero-subtitle { font-size: clamp(0.9375rem, 3.5vw, 1.125rem); font-weight: 400; color: var(--text-secondary); height: 1.5em; overflow: hidden; margin-top: 12px; white-space: nowrap; text-overflow: ellipsis; }
+    .subtitle-track { display: flex; flex-direction: column; animation: sub-cycle 100s steps(1) infinite; }
+    .subtitle-item { height: 1.5em; display: flex; align-items: center; flex-shrink: 0; animation: sub-dip 20s ease-in-out infinite; }
+    @keyframes sub-cycle { 0%{transform:translateY(0)} 20%{transform:translateY(-1.5em)} 40%{transform:translateY(-3em)} 60%{transform:translateY(-4.5em)} 80%{transform:translateY(-6em)} 100%{transform:translateY(0)} }
+    @keyframes sub-dip { 0%,88%{transform:translateY(0)} 92%{transform:translateY(6px)} 95%{transform:translateY(6px);opacity:1} 96%{opacity:0;transform:translateY(6px)} 97%{opacity:0;transform:translateY(-6px)} 100%{opacity:1;transform:translateY(0)} }
+
+    /* §2.5 CTA */
+    .hero-cta { display: flex; gap: var(--gap); padding: 24px var(--gap) 0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; font-size: 0.9375rem; font-weight: 600; border-radius: var(--radius); border: none; cursor: pointer; letter-spacing: 0.01em; transition: transform 0.15s, background 0.15s; font-family: var(--font); }
     .btn:active { transform: scale(0.96); }
-    .btn-primary {
-      background: var(--accent-terracotta);
-      color: var(--bg-primary);
-    }
-    .btn-secondary-outline {
-      background: transparent;
-      color: var(--text-primary);
-      border: 1.5px solid var(--border-subtle);
-    }
+    .btn-primary { background: var(--accent-terra); color: var(--bg-base); }
+    .btn-ghost { background: transparent; color: var(--text-primary); border: 1.5px solid rgba(255,255,255,0.12); }
 
-
-    /* ============================================
-       §3 — SHOWCASE
-       ============================================ */
-    .showcase {
-      padding: var(--space-3xl) 0;
-    }
-    .section-heading {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: var(--space-xs);
-    }
-    .section-subtext {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      margin-bottom: var(--space-lg);
-    }
-
-    /* Tabs */
-    .showcase-tabs {
-      display: flex;
-      gap: var(--space-sm);
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-bottom: var(--space-md);
-      margin-bottom: var(--space-lg);
-    }
-    .showcase-tabs::-webkit-scrollbar { display: none; }
-    .tab-btn {
-      padding: 8px 18px;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      background: var(--bg-card);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      white-space: nowrap;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: transform 0.15s;
-    }
+    /* === §3 SHOWCASE === */
+    .showcase { padding: 64px 0; }
+    .section-heading { font-size: 1.75rem; font-weight: 800; margin-bottom: 20px; }
+    .showcase-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .tab-btn { padding: 8px 16px; font-size: 0.8125rem; font-weight: 600; background: var(--bg-raised); color: var(--text-secondary); border: none; border-radius: var(--radius); cursor: pointer; font-family: var(--font); transition: background 0.15s, transform 0.15s; }
     .tab-btn:active { transform: scale(0.95); }
-    .tab-btn.active {
-      background: var(--accent-blue);
-      color: var(--bg-primary);
-      border-color: var(--accent-blue);
-    }
-
-    /* Project cards */
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-md);
-    }
-    .project-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--border-subtle);
-      transition: transform 0.15s;
-    }
+    .tab-btn.active { background: var(--accent-blue); color: var(--bg-base); }
+    .showcase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .project-card { background: var(--bg-raised); border-radius: var(--radius); overflow: hidden; transition: transform 0.15s; }
     .project-card:active { transform: scale(0.98); }
-    .project-card img {
-      width: 100%;
-      aspect-ratio: 16/10;
-      object-fit: cover;
-    }
-    .project-card-body {
-      padding: var(--space-md);
-    }
-    .project-card-title {
-      font-size: 0.9375rem;
-      font-weight: 700;
-      margin-bottom: var(--space-xs);
-    }
-    .project-card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .tag-pill {
-      font-size: 0.6875rem;
-      font-weight: 500;
-      padding: 3px 10px;
-      background: var(--bg-elevated);
-      color: var(--text-muted);
-      border-radius: 2px;
-      letter-spacing: 0.02em;
-    }
-
-    /* Tab panels — show/hide */
+    .project-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .project-card-body { padding: 12px; }
+    .project-card-title { font-size: 0.8125rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .project-card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag { font-size: 0.625rem; font-weight: 500; padding: 2px 8px; background: var(--bg-elevated); color: var(--text-muted); border-radius: 2px; }
     .showcase-panel { display: none; }
     .showcase-panel.active { display: block; }
 
+    /* === §4 CREDENTIALS === */
+    .credentials { padding: 48px 0; }
+    .cred-list { display: flex; flex-direction: column; gap: 12px; max-width: 340px; }
+    .cred-item { background: var(--bg-raised); border-radius: var(--radius); padding: 14px 16px; }
+    .cred-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .cred-company { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-terra); }
+    .cred-dates { font-size: 0.6875rem; color: var(--text-muted); }
+    .cred-role { font-size: 0.9375rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .cred-tags { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
+    .cred-tags::-webkit-scrollbar { display: none; }
 
-    /* ============================================
-       §4 — CREDENTIALS
-       ============================================ */
-    .credentials {
-      padding: var(--space-3xl) 0;
-    }
-    .credential-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      padding: var(--space-lg);
-      margin-bottom: var(--space-md);
-      border: 1px solid var(--border-subtle);
-    }
-    .credential-company {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent-terracotta);
-      margin-bottom: var(--space-xs);
-    }
-    .credential-role {
-      font-size: 1.0625rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-    .credential-dates {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      margin-bottom: var(--space-md);
-    }
-    .credential-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    /* === §5 PROCESS === */
+    .process { padding: 48px 0; }
+    .process-scroll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 var(--gap) 8px; margin: 0 calc(var(--gap) * -1); }
+    .process-scroll::-webkit-scrollbar { display: none; }
+    .process-card { min-width: 280px; max-width: 320px; flex-shrink: 0; scroll-snap-align: center; padding: 24px; position: relative; }
+    .process-num { font-size: 3rem; font-weight: 900; line-height: 1; margin-bottom: 8px; }
+    .process-card:nth-child(1) .process-num { color: var(--accent-terra); }
+    .process-card:nth-child(2) .process-num { color: var(--accent-blue); }
+    .process-card:nth-child(3) .process-num { color: var(--accent-mauve); }
+    .process-card-title { font-size: 1.125rem; font-weight: 700; margin-bottom: 8px; }
+    .process-card-body { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+    .process-source { display: inline-block; margin-top: 12px; font-size: 0.75rem; color: var(--accent-blue); font-weight: 500; }
 
-
-    /* ============================================
-       §5 — PROCESS
-       ============================================ */
-    .process {
-      padding: var(--space-3xl) 0;
-    }
-    .process-steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-lg);
-      counter-reset: step;
-    }
-    .process-step {
-      position: relative;
-      padding: var(--space-lg);
-      padding-top: var(--space-2xl);
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-      counter-increment: step;
-    }
-    .process-step::before {
-      content: counter(step, decimal-leading-zero);
-      position: absolute;
-      top: var(--space-md);
-      left: var(--space-lg);
-      font-size: 0.75rem;
-      font-weight: 700;
-      font-family: var(--font-mono);
-      letter-spacing: 0.1em;
-    }
-    .process-step:nth-child(1)::before { color: var(--accent-terracotta); }
-    .process-step:nth-child(2)::before { color: var(--accent-blue); }
-    .process-step:nth-child(3)::before { color: var(--accent-mauve); }
-    .process-step-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-      margin-bottom: var(--space-sm);
-    }
-    .process-step-body {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    .process-step-source {
-      display: inline-block;
-      margin-top: var(--space-md);
-      font-size: 0.75rem;
-      color: var(--accent-blue);
-      font-weight: 500;
-    }
-
-
-    /* ============================================
-       §6 — CREATIVE PRODUCTION
-       ============================================ */
-    .creative {
-      padding: var(--space-3xl) 0;
-    }
-    .creative-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-md);
-    }
-    .creative-card {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      cursor: pointer;
-    }
-    .creative-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.7);
-      transition: transform 0.3s ease;
-    }
+    /* === §6 CREATIVE === */
+    .creative { padding: 48px 0; }
+    .creative-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .creative-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
+    .creative-card:nth-child(3) { grid-column: span 2; aspect-ratio: 16/9; }
+    .creative-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.7); transition: transform 0.4s ease; }
     .creative-card:active img { transform: scale(1.03); }
-    .creative-card-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: var(--space-lg) var(--space-md);
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    }
-    .creative-card-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: var(--space-xs);
-    }
-    .creative-card:nth-child(1) .creative-card-label { color: var(--accent-terracotta); }
-    .creative-card:nth-child(2) .creative-card-label { color: var(--accent-blue); }
-    .creative-card:nth-child(3) .creative-card-label { color: var(--accent-mauve); }
-    .creative-card-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-    }
+    .creative-card-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 14px; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); }
+    .creative-label { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+    .creative-card:nth-child(1) .creative-label { color: var(--accent-terra); }
+    .creative-card:nth-child(2) .creative-label { color: var(--accent-blue); }
+    .creative-card:nth-child(3) .creative-label { color: var(--accent-mauve); }
+    .creative-card-title { font-size: 1rem; font-weight: 700; }
 
+    /* === §7 IMPACT === */
+    .impact { padding: 48px 0; }
+    .impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .impact-stat { background: var(--bg-raised); border-radius: var(--radius); padding: 20px 16px; }
+    .impact-num { font-size: 1.75rem; font-weight: 900; line-height: 1; margin-bottom: 4px; }
+    .impact-stat:nth-child(1) .impact-num { color: var(--accent-terra); }
+    .impact-stat:nth-child(2) .impact-num { color: var(--accent-blue); }
+    .impact-stat:nth-child(3) .impact-num { color: var(--accent-mauve); }
+    .impact-stat:nth-child(4) .impact-num { color: var(--accent-terra); }
+    .impact-label { font-size: 0.8125rem; font-weight: 600; margin-bottom: 4px; }
+    .impact-detail { font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; }
 
-    /* ============================================
-       §7 — ADVERTISING IMPACT
-       ============================================ */
-    .impact {
-      padding: var(--space-3xl) 0;
-    }
-    .impact-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-md);
-    }
-    .impact-stat {
-      background: var(--bg-card);
-      border-radius: var(--radius-md);
-      padding: var(--space-lg);
-      border: 1px solid var(--border-subtle);
-    }
-    .impact-number {
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: var(--space-xs);
-    }
-    .impact-stat:nth-child(1) .impact-number { color: var(--accent-terracotta); }
-    .impact-stat:nth-child(2) .impact-number { color: var(--accent-blue); }
-    .impact-stat:nth-child(3) .impact-number { color: var(--accent-mauve); }
-    .impact-stat:nth-child(4) .impact-number { color: var(--accent-terracotta); }
-    .impact-context {
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: var(--space-xs);
-    }
-    .impact-detail {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-    /* Simple CSS bar chart */
-    .impact-bar-chart {
-      margin-top: var(--space-md);
-    }
-    .bar-row {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-sm);
-    }
-    .bar-label {
-      font-size: 0.6875rem;
-      color: var(--text-muted);
-      width: 80px;
-      flex-shrink: 0;
-      text-align: right;
-    }
-    .bar-track {
-      flex: 1;
-      height: 6px;
-      background: var(--bg-elevated);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      transition: width 1s ease-out;
-    }
+    /* === §8 ACHIEVEMENTS === */
+    .achievements { padding: 48px 0; }
+    .ach-item { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .ach-header { width: 100%; background: none; border: none; padding: 0; text-align: left; cursor: pointer; display: flex; align-items: flex-start; gap: 16px; color: var(--text-primary); font-family: var(--font); }
+    .ach-accent { flex-shrink: 0; padding-top: 6px; }
+    .ach-title { font-size: 1rem; font-weight: 700; flex: 1; }
+    .ach-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; transition: transform 0.3s ease; stroke: var(--text-muted); fill: none; stroke-width: 2; }
+    .ach-item.open .ach-icon { transform: rotate(45deg); }
+    .ach-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, opacity 0.4s ease; opacity: 0; }
+    .ach-item.open .ach-body { max-height: 200px; opacity: 1; }
+    .ach-body-inner { padding: 12px 0 0 56px; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
 
+    /* === §9 CTA === */
+    .cta-section { padding: 48px 0; text-align: center; }
+    .cta-heading { font-size: 1.375rem; font-weight: 800; margin-bottom: 8px; }
+    .cta-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 24px; }
+    .cta-buttons .btn { width: 100%; max-width: 300px; }
 
-    /* ============================================
-       §8 — ACHIEVEMENTS
-       ============================================ */
-    .achievements {
-      padding: var(--space-3xl) 0;
-    }
-    .accordion-item {
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .accordion-header {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: var(--space-lg) 0;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-md);
-      color: var(--text-primary);
-      font-family: var(--font-base);
-    }
-    .accordion-title {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-    .accordion-icon {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-      transition: transform 0.3s ease;
-    }
-    .accordion-item.open .accordion-icon {
-      transform: rotate(45deg);
-    }
-    .accordion-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-    }
-    .accordion-item.open .accordion-body {
-      max-height: 200px;
-    }
-    .accordion-body-inner {
-      padding: 0 0 var(--space-lg);
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+    /* === FOOTER === */
+    .site-footer { padding: 32px 0; text-align: center; }
+    .footer-icons { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; }
+    .footer-icons a { display: flex; width: 36px; height: 36px; align-items: center; justify-content: center; color: var(--text-muted); transition: color 0.2s; }
+    .footer-icons svg { width: 20px; height: 20px; fill: currentColor; }
+    .footer-copy { font-size: 0.75rem; color: var(--text-muted); }
 
-
-    /* ============================================
-       §9 — CTA + CONTACT
-       ============================================ */
-    .cta-section {
-      padding: var(--space-3xl) 0;
-      text-align: center;
+    /* === BREAKPOINTS === */
+    @media (max-width: 340px) {
+      .hero-stats { flex-direction: column; }
+      .nav-links { gap: 12px; font-size: 0.75rem; }
     }
-    .cta-heading {
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin-bottom: var(--space-sm);
-    }
-    .cta-subtext {
-      color: var(--text-secondary);
-      font-size: 0.9375rem;
-      margin-bottom: var(--space-xl);
-    }
-    .cta-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      align-items: center;
-    }
-    .cta-buttons .btn { width: 100%; max-width: 320px; }
-
-
-    /* ============================================
-       FOOTER
-       ============================================ */
-    .site-footer {
-      padding: var(--space-2xl) 0;
-      text-align: center;
-      border-top: 1px solid var(--border-subtle);
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-lg);
-      margin-bottom: var(--space-md);
-      list-style: none;
-    }
-    .footer-links a {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-    }
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-
-    /* ============================================
-       TABLET+ BREAKPOINTS
-       ============================================ */
     @media (min-width: 768px) {
-      .hero-stats { gap: var(--space-md); }
-      .stat-tile { padding: var(--space-lg); }
-      .stat-number { font-size: 2.25rem; }
-
-      .showcase-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-steps { grid-template-columns: repeat(3, 1fr); }
+      .showcase-grid { grid-template-columns: repeat(3, 1fr); }
       .creative-grid { grid-template-columns: repeat(3, 1fr); }
-      .impact-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .cta-buttons {
-        flex-direction: row;
-        justify-content: center;
-      }
+      .creative-card:nth-child(3) { grid-column: auto; aspect-ratio: 3/4; }
+      .impact-grid { grid-template-columns: repeat(4, 1fr); }
+      .cred-list { max-width: 480px; }
+      .cta-buttons { flex-direction: row; justify-content: center; }
       .cta-buttons .btn { width: auto; }
     }
-
     @media (min-width: 1024px) {
-      .hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-      }
-      .hero-img-strip {
-        position: relative;
-        width: 100%;
-        opacity: 0.85;
-        border-radius: var(--radius-md);
-        overflow: hidden;
-      }
-      .hero-img-overlay {
-        background: linear-gradient(
-          to right,
-          var(--bg-primary) 0%,
-          rgba(31,31,31,0.3) 30%,
-          rgba(31,31,31,0.1) 100%
-        );
-      }
-      .hero-content {
-        padding: var(--space-3xl) var(--space-xl) var(--space-3xl) 0;
-      }
-
-      .showcase-grid { grid-template-columns: repeat(3, 1fr); }
-      .impact-grid { grid-template-columns: repeat(4, 1fr); }
-
       .section-heading { font-size: 2.25rem; }
+      .hero-visual { height: 75svh; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ============================================
-       §1 — NAVBAR
-       ============================================ -->
+  <!-- §1 NAVBAR -->
   <nav class="site-nav" id="siteNav">
     <div class="container">
       <ul class="nav-links">
@@ -868,599 +231,246 @@
       <button class="btn-contact">Contact</button>
     </div>
   </nav>
-
-  <!-- Nav pill (appears when navbar collapses on scroll) -->
   <button class="nav-pill" id="navPill" aria-label="Open navigation">
-    <svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    <span></span><span></span><span></span>
   </button>
 
-
-  <!-- ============================================
-       §2 — HERO
-       ============================================ -->
+  <!-- §2 HERO -->
   <section class="hero">
-    <!-- §2.5 Background image grid -->
-    <div class="hero-img-strip">
-      <img src="assets/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-1.webp" alt="" loading="eager">
-      <img src="assets/media/data-visualization-dashboard/img-sq-slides-data-visualization-dashboard-1.webp" alt="" loading="eager">
-      <img src="assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-1.webp" alt="" loading="eager">
-      <img src="assets/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-1.webp" alt="" loading="eager">
-      <img src="assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-1.webp" alt="" loading="eager">
-      <img src="assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp" alt="" loading="eager">
-      <img src="assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp" alt="" loading="eager">
-      <img src="assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp" alt="" loading="eager">
-      <img src="assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp" alt="" loading="eager">
-      <div class="hero-img-overlay"></div>
+    <div class="hero-stats sr">
+      <div class="stat-tile sr-delay-1"><div class="stat-number" data-count="36">0</div><div class="stat-label">Projects</div></div>
+      <div class="stat-tile sr-delay-2"><div class="stat-number" data-count="11">0</div><div class="stat-label">Roles</div></div>
+      <div class="stat-tile sr-delay-3"><div class="stat-number" data-count="50" data-suffix="+">0</div><div class="stat-label">Skills</div></div>
     </div>
 
-    <!-- Hero content -->
-    <div class="hero-content container">
-      <!-- §2.1 Stats -->
-      <div class="hero-stats">
-        <div class="stat-tile">
-          <div class="stat-number">36</div>
-          <div class="stat-label">Projects</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-number">11</div>
-          <div class="stat-label">Roles</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-number">~50</div>
-          <div class="stat-label">Skills</div>
+    <div class="hero-visual">
+      <div class="hero-img-scroll">
+        <img src="assets/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-1.webp" alt="">
+        <img src="assets/media/data-visualization-dashboard/img-sq-slides-data-visualization-dashboard-1.webp" alt="">
+        <img src="assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-1.webp" alt="">
+        <img src="assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp" alt="">
+        <img src="assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-1.webp" alt="">
+        <img src="assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp" alt="">
+        <img src="assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp" alt="">
+        <img src="assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp" alt="">
+        <img src="assets/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-1.webp" alt="">
+        <!-- duplicate set for seamless loop -->
+        <img src="assets/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-1.webp" alt="">
+        <img src="assets/media/data-visualization-dashboard/img-sq-slides-data-visualization-dashboard-1.webp" alt="">
+        <img src="assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-1.webp" alt="">
+        <img src="assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp" alt="">
+        <img src="assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-1.webp" alt="">
+        <img src="assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp" alt="">
+        <img src="assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp" alt="">
+        <img src="assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp" alt="">
+        <img src="assets/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-1.webp" alt="">
+      </div>
+      <div class="hero-visual-overlay"></div>
+      <div class="hero-text">
+        <div class="hero-title"><h1><span>Sean</span><span>August</span><span>Horvath</span></h1></div>
+        <div class="hero-subtitle">
+          <div class="subtitle-track">
+            <div class="subtitle-item">Full-stack developer shipping SaaS conversion flows</div>
+            <div class="subtitle-item">Automation engineer scaling 800-product storefronts</div>
+            <div class="subtitle-item">Design strategist building brand systems from scratch</div>
+            <div class="subtitle-item">Creative director producing viral social campaigns</div>
+            <div class="subtitle-item">AI implementation consultant optimizing workflows</div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- §2.2 Title -->
-      <div class="hero-title">
-        <h1>
-          <span>Sean</span>
-          <span>August</span>
-          <span>Horvath</span>
-        </h1>
-      </div>
-
-      <!-- §2.3 Subtitle — flip-clock rotation -->
-      <div class="hero-subtitle">
-        <div class="subtitle-track">
-          <div class="subtitle-item">Full-stack developer shipping SaaS conversion flows</div>
-          <div class="subtitle-item">Automation engineer scaling 800-product storefronts</div>
-          <div class="subtitle-item">Design strategist building brand systems from scratch</div>
-          <div class="subtitle-item">Creative director producing viral social campaigns</div>
-          <div class="subtitle-item">AI implementation consultant optimizing workflows</div>
-        </div>
-      </div>
-
-      <!-- §2.4 CTA -->
-      <div class="hero-cta">
-        <button class="btn btn-primary">See Web Projects</button>
-        <button class="btn btn-secondary-outline">All Projects</button>
-      </div>
+    <div class="hero-cta sr">
+      <button class="btn btn-primary">See Web Projects</button>
+      <button class="btn btn-ghost">All Projects</button>
     </div>
   </section>
 
+  <!-- DIVIDER — 1 of 3 -->
+  <div class="trio sr"><span></span><span></span><span></span></div>
 
-  <!-- ============================================
-       DIVIDER
-       ============================================ -->
-  <div class="stacked-trio scroll-reveal">
-    <span></span><span></span><span></span>
-  </div>
-
-
-  <!-- ============================================
-       §3 — SHOWCASE
-       ============================================ -->
-  <section class="showcase scroll-reveal" id="showcase">
+  <!-- §3 SHOWCASE -->
+  <section class="showcase sr" id="showcase">
     <div class="container">
       <h2 class="section-heading">Web Development</h2>
-      <p class="section-subtext">Filter by the hat I was wearing</p>
-
       <div class="showcase-tabs" role="tablist">
         <button class="tab-btn active" data-tab="webflow">Webflow</button>
         <button class="tab-btn" data-tab="framer">Framer</button>
-        <button class="tab-btn" data-tab="react">React / TypeScript</button>
+        <button class="tab-btn" data-tab="react">React</button>
         <button class="tab-btn" data-tab="htmlcssjs">HTML/CSS/JS</button>
       </div>
-
-      <!-- Webflow panel -->
       <div class="showcase-panel active" id="panel-webflow">
         <div class="showcase-grid">
-          <a href="/automated-e-commerce-shop-lookbook" class="project-card">
+          <a href="/automated-e-commerce-shop-lookbook" class="project-card sr sr-delay-1">
             <img src="assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp" alt="Automated E-Commerce">
-            <div class="project-card-body">
-              <div class="project-card-title">800-Product AI-Automated Fashion Storefront</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">Webflow</span>
-                <span class="tag-pill">E-Commerce</span>
-                <span class="tag-pill">Automation</span>
-              </div>
-            </div>
+            <div class="project-card-body"><div class="project-card-title">800-Product AI-Automated Fashion Storefront</div><div class="project-card-tags"><span class="tag">Webflow</span><span class="tag">E-Commerce</span><span class="tag">Automation</span></div></div>
           </a>
-          <a href="/training-yoga-sales" class="project-card">
+          <a href="/training-yoga-sales" class="project-card sr sr-delay-2">
             <img src="assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-1.webp" alt="Yoga Training">
-            <div class="project-card-body">
-              <div class="project-card-title">Personal Training & Yoga Sales Platform</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">Webflow</span>
-                <span class="tag-pill">Landing Page</span>
-                <span class="tag-pill">CMS</span>
-              </div>
-            </div>
+            <div class="project-card-body"><div class="project-card-title">Personal Training & Yoga Sales Platform</div><div class="project-card-tags"><span class="tag">Webflow</span><span class="tag">Landing Page</span></div></div>
           </a>
-          <a href="/blog-lookbook-print-gallery" class="project-card">
+          <a href="/blog-lookbook-print-gallery" class="project-card sr sr-delay-3">
             <img src="assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp" alt="Blog Gallery">
-            <div class="project-card-body">
-              <div class="project-card-title">Editorial Blog & Print Gallery Lookbook</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">Webflow</span>
-                <span class="tag-pill">CMS</span>
-                <span class="tag-pill">Editorial</span>
-              </div>
-            </div>
+            <div class="project-card-body"><div class="project-card-title">Editorial Blog & Print Gallery Lookbook</div><div class="project-card-tags"><span class="tag">Webflow</span><span class="tag">CMS</span><span class="tag">Editorial</span></div></div>
           </a>
         </div>
       </div>
-
-      <!-- HTML/CSS/JS panel -->
       <div class="showcase-panel" id="panel-htmlcssjs">
         <div class="showcase-grid">
-          <a href="/saas-product-sale-features" class="project-card">
-            <img src="assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp" alt="SaaS Product">
-            <div class="project-card-body">
-              <div class="project-card-title">Complete SaaS Conversion Flow with CSS Animation</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">HTML/CSS/JS</span>
-                <span class="tag-pill">CSS Animation</span>
-              </div>
-            </div>
-          </a>
-          <a href="/css-animated-micro-interactions" class="project-card">
-            <img src="assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp" alt="CSS Micro-Interactions">
-            <div class="project-card-body">
-              <div class="project-card-title">CSS Animated Micro-Interactions Collection</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">HTML/CSS/JS</span>
-                <span class="tag-pill">Animation</span>
-              </div>
-            </div>
-          </a>
-          <a href="/modular-portfolio-build" class="project-card">
-            <img src="assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp" alt="This Portfolio">
-            <div class="project-card-body">
-              <div class="project-card-title">Modular Portfolio System for AI-Assisted Development</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">HTML/CSS/JS</span>
-                <span class="tag-pill">GitHub Pages</span>
-              </div>
-            </div>
-          </a>
+          <a href="/saas-product-sale-features" class="project-card"><img src="assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp" alt="SaaS"><div class="project-card-body"><div class="project-card-title">SaaS Conversion Flow with CSS Animation</div><div class="project-card-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Animation</span></div></div></a>
+          <a href="/css-animated-micro-interactions" class="project-card"><img src="assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp" alt="Micro-Interactions"><div class="project-card-body"><div class="project-card-title">CSS Animated Micro-Interactions</div><div class="project-card-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Animation</span></div></div></a>
+          <a href="/modular-portfolio-build" class="project-card"><img src="assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp" alt="Portfolio"><div class="project-card-body"><div class="project-card-title">Modular Portfolio System</div><div class="project-card-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">GitHub Pages</span></div></div></a>
         </div>
       </div>
-
-      <!-- Framer / React panels (placeholder) -->
       <div class="showcase-panel" id="panel-framer">
         <div class="showcase-grid">
-          <a href="/personalized-fashion-magazine" class="project-card">
-            <img src="assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp" alt="Fashion Magazine">
-            <div class="project-card-body">
-              <div class="project-card-title">AI-Personalized Fashion Magazine</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">Framer</span>
-                <span class="tag-pill">AI</span>
-                <span class="tag-pill">E-Commerce</span>
-              </div>
-            </div>
-          </a>
+          <a href="/personalized-fashion-magazine" class="project-card"><img src="assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp" alt="Fashion Magazine"><div class="project-card-body"><div class="project-card-title">AI-Personalized Fashion Magazine</div><div class="project-card-tags"><span class="tag">Framer</span><span class="tag">AI</span></div></div></a>
         </div>
       </div>
-
       <div class="showcase-panel" id="panel-react">
         <div class="showcase-grid">
-          <a href="/data-visualization-dashboard" class="project-card">
-            <img src="assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp" alt="Data Dashboard">
-            <div class="project-card-body">
-              <div class="project-card-title">Real-Time Data Visualization Dashboard</div>
-              <div class="project-card-tags">
-                <span class="tag-pill">React</span>
-                <span class="tag-pill">Data Viz</span>
-                <span class="tag-pill">Dashboard</span>
-              </div>
-            </div>
-          </a>
+          <a href="/data-visualization-dashboard" class="project-card"><img src="assets/media/data-visualization-dashboard/thumb-slides-data-visualization-dashboard-1.webp" alt="Data Dashboard"><div class="project-card-body"><div class="project-card-title">Real-Time Data Visualization Dashboard</div><div class="project-card-tags"><span class="tag">React</span><span class="tag">Data Viz</span></div></div></a>
         </div>
       </div>
     </div>
   </section>
 
-
-  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
-
-
-  <!-- ============================================
-       §4 — CREDENTIALS
-       ============================================ -->
-  <section class="credentials scroll-reveal" id="credentials">
+  <!-- §4 CREDENTIALS -->
+  <section class="credentials sr" id="credentials">
     <div class="container">
       <h2 class="section-heading">Experience</h2>
-      <p class="section-subtext">14 years of design and digital marketing</p>
-
-      <div class="credential-card">
-        <div class="credential-company">Freelance — Boston, MA</div>
-        <div class="credential-role">Creative Consultant & Digital Contractor</div>
-        <div class="credential-dates">2024 – Present</div>
-        <div class="credential-tags">
-          <span class="tag-pill">Webflow</span>
-          <span class="tag-pill">E-Commerce</span>
-          <span class="tag-pill">AI Integration</span>
-          <span class="tag-pill">Automation</span>
-          <span class="tag-pill">Generative AI</span>
-        </div>
-      </div>
-
-      <div class="credential-card">
-        <div class="credential-company">Silent Labs — Austin, TX</div>
-        <div class="credential-role">Art Director</div>
-        <div class="credential-dates">2020 – 2023</div>
-        <div class="credential-tags">
-          <span class="tag-pill">Brand Identity</span>
-          <span class="tag-pill">Motion Graphics</span>
-          <span class="tag-pill">Illustration</span>
-          <span class="tag-pill">Web3</span>
-          <span class="tag-pill">Print</span>
-        </div>
-      </div>
-
-      <div class="credential-card">
-        <div class="credential-company">Seanivore Group & August House — Los Angeles, CA</div>
-        <div class="credential-role">Managing Owner, SBO Digital Business Consultant</div>
-        <div class="credential-dates">2019 – 2020</div>
-        <div class="credential-tags">
-          <span class="tag-pill">Copywriting</span>
-          <span class="tag-pill">Social Media</span>
-          <span class="tag-pill">Marketing</span>
-          <span class="tag-pill">Kajabi</span>
-        </div>
-      </div>
-
-      <div class="credential-card">
-        <div class="credential-company">PETA — Los Angeles, CA</div>
-        <div class="credential-role">Marketing Innovations Asst. Manager → Senior Social Strategist</div>
-        <div class="credential-dates">2011 – 2018</div>
-        <div class="credential-tags">
-          <span class="tag-pill">Viral Content</span>
-          <span class="tag-pill">Analytics</span>
-          <span class="tag-pill">3.2B Impressions</span>
-          <span class="tag-pill">App UI/UX</span>
-          <span class="tag-pill">Global Teams</span>
-        </div>
+      <div class="cred-list">
+        <div class="cred-item sr sr-delay-1"><div class="cred-top"><span class="cred-company">Freelance</span><span class="cred-dates">2024–Present</span></div><div class="cred-role">Creative Consultant & Digital Contractor</div><div class="cred-tags"><span class="tag">Webflow</span><span class="tag">E-Commerce</span><span class="tag">AI Integration</span><span class="tag">Automation</span><span class="tag">Generative AI</span></div></div>
+        <div class="cred-item sr sr-delay-2"><div class="cred-top"><span class="cred-company">Silent Labs</span><span class="cred-dates">2020–2023</span></div><div class="cred-role">Art Director</div><div class="cred-tags"><span class="tag">Brand Identity</span><span class="tag">Motion Graphics</span><span class="tag">Illustration</span><span class="tag">Web3</span><span class="tag">Print</span></div></div>
+        <div class="cred-item sr sr-delay-3"><div class="cred-top"><span class="cred-company">Seanivore Group</span><span class="cred-dates">2019–2020</span></div><div class="cred-role">SBO Digital Consultant</div><div class="cred-tags"><span class="tag">Copywriting</span><span class="tag">Social Media</span><span class="tag">Marketing</span><span class="tag">Kajabi</span></div></div>
+        <div class="cred-item sr sr-delay-4"><div class="cred-top"><span class="cred-company">PETA</span><span class="cred-dates">2011–2018</span></div><div class="cred-role">Marketing Innovations → Senior Strategist</div><div class="cred-tags"><span class="tag">Viral Content</span><span class="tag">3.2B Impressions</span><span class="tag">App UI/UX</span><span class="tag">Global Teams</span></div></div>
       </div>
     </div>
   </section>
 
-
-  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
-
-
-  <!-- ============================================
-       §5 — PROCESS
-       ============================================ -->
-  <section class="process scroll-reveal" id="process">
-    <div class="container">
-      <h2 class="section-heading">AI & Automation Process</h2>
-      <p class="section-subtext">How I approach system building</p>
-
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="process-step-title">Assess</div>
-          <div class="process-step-body">
-            Audit existing workflows, identify manual bottlenecks, and map where AI tooling or custom 
-            automation will deliver the highest leverage — whether that's content production, 
-            inventory management, or customer engagement.
-          </div>
-          <a href="/automated-e-commerce-shop-lookbook" class="process-step-source">→ 800-Product AI Storefront</a>
-        </div>
-        <div class="process-step">
-          <div class="process-step-title">Implement</div>
-          <div class="process-step-body">
-            Build the system iteratively — custom scripts for backend automation, AI-generated 
-            SERP-optimized descriptions, Webflow storefronts connected to inventory APIs. 
-            Ship working pieces early, validate with real traffic.
-          </div>
-          <a href="/saas-product-sale-features" class="process-step-source">→ SaaS Conversion Flow</a>
-        </div>
-        <div class="process-step">
-          <div class="process-step-title">Iterate</div>
-          <div class="process-step-body">
-            Monitor performance metrics, A/B test conversion paths, and continuously refine. 
-            The goal is a system that runs autonomously and improves — not a one-time build 
-            that needs constant babysitting.
-          </div>
-          <a href="/data-visualization-dashboard" class="process-step-source">→ Data Visualization Dashboard</a>
-        </div>
-      </div>
+  <!-- §5 PROCESS -->
+  <section class="process sr" id="process">
+    <div class="container"><h2 class="section-heading">AI & Automation Process</h2></div>
+    <div class="process-scroll">
+      <div class="process-card"><div class="process-num">01</div><div class="process-card-title">Assess</div><div class="process-card-body">Audit existing workflows, identify manual bottlenecks, and map where AI tooling or custom automation will deliver the highest leverage.</div><a href="/automated-e-commerce-shop-lookbook" class="process-source">→ 800-Product AI Storefront</a></div>
+      <div class="process-card"><div class="process-num">02</div><div class="process-card-title">Implement</div><div class="process-card-body">Build iteratively — custom scripts, AI-generated SERP descriptions, Webflow storefronts connected to inventory APIs. Ship early, validate with real traffic.</div><a href="/saas-product-sale-features" class="process-source">→ SaaS Conversion Flow</a></div>
+      <div class="process-card"><div class="process-num">03</div><div class="process-card-title">Iterate</div><div class="process-card-body">Monitor performance, A/B test conversion paths, continuously refine. The goal: a system that runs autonomously, not a one-time build.</div><a href="/data-visualization-dashboard" class="process-source">→ Data Dashboard</a></div>
     </div>
   </section>
 
-
-  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
-
-
-  <!-- ============================================
-       §6 — CREATIVE PRODUCTION
-       ============================================ -->
-  <section class="creative scroll-reveal">
+  <!-- §6 CREATIVE -->
+  <section class="creative sr">
     <div class="container">
       <h2 class="section-heading">Creative Production</h2>
-      <p class="section-subtext">Visual work across digital, motion, and brand</p>
-
       <div class="creative-grid">
-        <a href="/section.html?tags=Graphic+Designer" class="creative-card">
-          <img src="assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp" alt="Digital Art">
-          <div class="creative-card-overlay">
-            <div class="creative-card-label">Digital Art & Illustration</div>
-            <div class="creative-card-title">15+ Collections</div>
-          </div>
-        </a>
-        <a href="/section.html?tags=Motion+Graphics" class="creative-card">
-          <img src="assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp" alt="Motion & Video">
-          <div class="creative-card-overlay">
-            <div class="creative-card-label">Motion & Video</div>
-            <div class="creative-card-title">Social, Web3 & Brand</div>
-          </div>
-        </a>
-        <a href="/section.html?tags=Brand+Designer" class="creative-card">
-          <img src="assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp" alt="Brand Assets">
-          <div class="creative-card-overlay">
-            <div class="creative-card-label">Brand Assets</div>
-            <div class="creative-card-title">Identity Systems & Print</div>
-          </div>
-        </a>
+        <a href="/section.html?tags=Graphic+Designer" class="creative-card sr sr-delay-1"><img src="assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp" alt="Digital Art"><div class="creative-card-overlay"><div class="creative-label">Digital Art</div><div class="creative-card-title">15+ Collections</div></div></a>
+        <a href="/section.html?tags=Motion+Graphics" class="creative-card sr sr-delay-2"><img src="assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp" alt="Motion"><div class="creative-card-overlay"><div class="creative-label">Motion & Video</div><div class="creative-card-title">Social & Brand</div></div></a>
+        <a href="/section.html?tags=Brand+Designer" class="creative-card sr sr-delay-3"><img src="assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp" alt="Brand"><div class="creative-card-overlay"><div class="creative-label">Brand Assets</div><div class="creative-card-title">Identity & Print</div></div></a>
       </div>
     </div>
   </section>
 
-
-  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
-
-
-  <!-- ============================================
-       §7 — ADVERTISING IMPACT
-       ============================================ -->
-  <section class="impact scroll-reveal">
+  <!-- §7 IMPACT -->
+  <section class="impact sr">
     <div class="container">
       <h2 class="section-heading">Advertising Impact</h2>
-      <p class="section-subtext">Measurable results from campaigns I've run</p>
-
       <div class="impact-grid">
-        <div class="impact-stat">
-          <div class="impact-number">3.2B</div>
-          <div class="impact-context">Page Impressions</div>
-          <div class="impact-detail">Facebook profile page impressions in final year at PETA, 2016</div>
-        </div>
-        <div class="impact-stat">
-          <div class="impact-number">$0.003</div>
-          <div class="impact-context">Cost Per Engagement</div>
-          <div class="impact-detail">Targeted social media ad campaign with custom art</div>
-        </div>
-        <div class="impact-stat">
-          <div class="impact-number">$0.31</div>
-          <div class="impact-context">Cost Per Follow</div>
-          <div class="impact-detail">Instagram Shop ads and brand recognition campaigns</div>
-        </div>
-        <div class="impact-stat">
-          <div class="impact-number">500+</div>
-          <div class="impact-context">Product Designs</div>
-          <div class="impact-detail">AI-generated, textbook-accurate art prints across 30+ art movements</div>
-
-          <div class="impact-bar-chart">
-            <div class="bar-row">
-              <span class="bar-label">Impressions</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 95%; background: var(--accent-terracotta);"></div></div>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">Engagement</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 82%; background: var(--accent-blue);"></div></div>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">Conversion</span>
-              <div class="bar-track"><div class="bar-fill" style="width: 67%; background: var(--accent-mauve);"></div></div>
-            </div>
-          </div>
-        </div>
+        <div class="impact-stat sr sr-delay-1"><div class="impact-num">3.2B</div><div class="impact-label">Page Impressions</div><div class="impact-detail">Facebook page impressions, 2016</div></div>
+        <div class="impact-stat sr sr-delay-2"><div class="impact-num">$0.003</div><div class="impact-label">Cost Per Engagement</div><div class="impact-detail">Social ad campaign with custom art</div></div>
+        <div class="impact-stat sr sr-delay-3"><div class="impact-num">$0.31</div><div class="impact-label">Cost Per Follow</div><div class="impact-detail">Instagram Shop & brand campaigns</div></div>
+        <div class="impact-stat sr sr-delay-4"><div class="impact-num">500+</div><div class="impact-label">Product Designs</div><div class="impact-detail">AI-generated prints, 30+ art movements</div></div>
       </div>
     </div>
   </section>
 
-
-  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
-
-
-  <!-- ============================================
-       §8 — ACHIEVEMENTS
-       ============================================ -->
-  <section class="achievements scroll-reveal">
+  <!-- §8 ACHIEVEMENTS -->
+  <section class="achievements sr">
     <div class="container">
-      <h2 class="section-heading">Achievements & Recognition</h2>
-      <p class="section-subtext">Press, awards, and milestones</p>
-
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span class="accordion-title">PR News Pro — Instagram Engagement Feature</span>
-          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">
-            Featured by PR News Pro for innovative Instagram engagement strategy. Built custom visual content 
-            playbook combining data-driven posting schedules with high-quality designed assets, resulting in 
-            significantly above-industry-average engagement rates.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span class="accordion-title">DoGooders Award — "Funny For Good" Viral Video</span>
-          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">
-            Restructured viral video content strategy that won the DoGooders "Funny For Good" award. 
-            Made the detailed logic arguments with stakeholders to shift content direction, resulting in 
-            multi-million organic views across platforms.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span class="accordion-title">3,000 Printed Comics — Zero-Knowledge Proof Education</span>
-          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">
-            Illustrated and printed 3,000 copies of an informative comic book educating conference attendees 
-            on zero-knowledge proof protocols. Meme-based storytelling approach made complex cryptography 
-            accessible.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span class="accordion-title">Global Team Training — Philippines, India & UK</span>
-          <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="accordion-body">
-          <div class="accordion-body-inner">
-            Led content production strategy training for newly established social media teams across 
-            three countries. Designed Photoshop workflows, social strategy playbooks, and content 
-            calendars adapted to each region's audience and platform preferences.
-          </div>
-        </div>
-      </div>
+      <h2 class="section-heading">Achievements</h2>
+      <div class="ach-item"><button class="ach-header"><div class="ach-accent trio-sm"><span></span><span></span><span></span></div><span class="ach-title">PR News Pro — Instagram Engagement Feature</span><svg class="ach-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="ach-body"><div class="ach-body-inner">Featured for innovative engagement strategy. Built visual content playbook combining data-driven posting schedules with designed assets, achieving above-industry-average engagement rates.</div></div></div>
+      <div class="ach-item"><button class="ach-header"><div class="ach-accent trio-sm"><span></span><span></span><span></span></div><span class="ach-title">DoGooders Award — "Funny For Good" Viral Video</span><svg class="ach-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="ach-body"><div class="ach-body-inner">Restructured viral video strategy winning the DoGooders award. Made detailed logic arguments with stakeholders to shift content direction, resulting in multi-million organic views.</div></div></div>
+      <div class="ach-item"><button class="ach-header"><div class="ach-accent trio-sm"><span></span><span></span><span></span></div><span class="ach-title">3,000 Printed Comics — Zero-Knowledge Proof Education</span><svg class="ach-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="ach-body"><div class="ach-body-inner">Illustrated and printed 3,000 informative comic books educating conference attendees on cryptographic protocols. Meme-based storytelling made complex cryptography accessible.</div></div></div>
+      <div class="ach-item"><button class="ach-header"><div class="ach-accent trio-sm"><span></span><span></span><span></span></div><span class="ach-title">Global Team Training — Philippines, India & UK</span><svg class="ach-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="ach-body"><div class="ach-body-inner">Led content production training for social media teams across three countries. Designed Photoshop workflows and strategy playbooks adapted to each region.</div></div></div>
     </div>
   </section>
 
+  <!-- DIVIDER — 2 of 3 -->
+  <div class="trio sr"><span></span><span></span><span></span></div>
 
-  <div class="stacked-trio scroll-reveal"><span></span><span></span><span></span></div>
-
-
-  <!-- ============================================
-       §9 — CTA + CONTACT
-       ============================================ -->
-  <section class="cta-section scroll-reveal">
+  <!-- §9 CTA -->
+  <section class="cta-section sr">
     <div class="container">
-      <h2 class="cta-heading">Interested in web development projects?</h2>
-      <p class="cta-subtext">Or explore my entire portfolio</p>
-
+      <h2 class="cta-heading">Interested in web development?</h2>
       <div class="cta-buttons">
-        <button class="btn btn-primary">See Web Projects</button>
-        <button class="btn btn-secondary-outline">All Projects</button>
-      </div>
-
-      <!-- Stacked trio as final accent -->
-      <div class="stacked-trio" style="padding-top: var(--space-2xl); padding-bottom: 0;">
-        <span></span><span></span><span></span>
+        <button class="btn btn-primary">See All Web Projects</button>
+        <button class="btn btn-ghost">Explore Full Portfolio</button>
       </div>
     </div>
   </section>
 
-
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <ul class="footer-links">
-      <li><a href="https://github.com/seanivore" target="_blank">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/seanivore/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://www.behance.net/seanivore" target="_blank">Behance</a></li>
-      <li><a href="mailto:horvathaugust@gmail.com">Email</a></li>
-    </ul>
-    <p class="footer-copy">© 2026 Sean August Horvath. All rights reserved.</p>
+    <div class="footer-icons">
+      <a href="https://github.com/seanivore" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      <a href="https://www.linkedin.com/in/seanivore/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.behance.net/seanivore" target="_blank" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.348-1.05.6-1.67.767-.63.165-1.29.248-1.99.248H0V4.51h6.938v-.007zM6.545 10.16c.6 0 1.1-.15 1.47-.45.37-.3.555-.73.555-1.3 0-.325-.06-.6-.18-.82-.12-.22-.29-.4-.5-.52a2.07 2.07 0 00-.735-.27 4.159 4.159 0 00-.878-.08H3.287v3.44h3.258zm.21 5.67c.32 0 .63-.03.93-.09.3-.06.56-.16.78-.31s.4-.35.53-.6c.13-.25.19-.57.19-.96 0-.75-.22-1.29-.64-1.62-.43-.33-.99-.49-1.67-.49H3.287v4.07h3.468zM21.792 18.04c-.66.87-1.65 1.3-2.97 1.3-.6 0-1.14-.1-1.63-.31-.49-.2-.9-.49-1.25-.86-.34-.37-.6-.82-.78-1.35-.18-.53-.27-1.12-.27-1.76 0-.62.09-1.19.28-1.72.19-.53.46-.98.81-1.37.35-.38.78-.68 1.27-.9.5-.22 1.06-.33 1.67-.33.71 0 1.32.14 1.83.42.51.28.93.66 1.26 1.14.33.48.57 1.04.71 1.67.14.63.18 1.29.13 2h-6.35c.03.73.28 1.3.76 1.7.48.4 1.07.6 1.76.6.53 0 .98-.14 1.36-.41.38-.28.64-.6.78-.97h2.58zM19.33 13.14c-.04-.32-.12-.61-.24-.88-.12-.27-.29-.5-.5-.68-.2-.19-.44-.33-.72-.43-.28-.1-.59-.15-.94-.15-.36 0-.68.05-.96.16-.28.1-.52.25-.71.44-.2.19-.35.42-.47.68-.11.26-.18.55-.2.86h4.74zm-3.64-4.43h5.68V10h-5.68V8.71z"/></svg></a>
+      <a href="mailto:horvathaugust@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+    </div>
+    <p class="footer-copy">© 2026 Sean August Horvath</p>
   </footer>
 
-
-  <!-- ============================================
-       JAVASCRIPT
-       ============================================ -->
   <script>
-    // --- Navbar collapse on scroll ---
+    // Navbar collapse
     const nav = document.getElementById('siteNav');
     const pill = document.getElementById('navPill');
     let lastScroll = 0;
-    let navHidden = false;
-
     window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > 200 && currentScroll > lastScroll) {
-        // Scrolling down past hero — collapse
-        if (!navHidden) {
-          nav.classList.add('collapsed');
-          pill.classList.add('visible');
-          navHidden = true;
-        }
-      } else if (currentScroll < lastScroll) {
-        // Scrolling up — show
-        nav.classList.remove('collapsed');
-        pill.classList.remove('visible');
-        navHidden = false;
-      }
-
-      lastScroll = currentScroll;
+      const cur = window.scrollY;
+      if (cur > 200 && cur > lastScroll) { nav.classList.add('hide'); pill.classList.add('vis'); }
+      else if (cur < lastScroll) { nav.classList.remove('hide'); pill.classList.remove('vis'); }
+      lastScroll = cur;
     }, { passive: true });
+    pill.addEventListener('click', () => { nav.classList.remove('hide'); pill.classList.remove('vis'); });
 
-    // Pill click re-expands nav
-    pill.addEventListener('click', () => {
-      nav.classList.remove('collapsed');
-      pill.classList.remove('visible');
-      navHidden = false;
-    });
-
-
-    // --- Showcase tabs ---
+    // Tabs
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const tab = btn.dataset.tab;
-
-        // Update active tab
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        // Show matching panel
         document.querySelectorAll('.showcase-panel').forEach(p => p.classList.remove('active'));
-        document.getElementById('panel-' + tab).classList.add('active');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
       });
     });
 
-
-    // --- Accordion ---
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
-        item.classList.toggle('open');
-      });
+    // Accordion
+    document.querySelectorAll('.ach-header').forEach(h => {
+      h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
     });
 
+    // Scroll reveal + trio animation
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.sr, .trio').forEach(el => obs.observe(el));
 
-    // --- Scroll reveal + trio animation ---
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          if (entry.target.classList.contains('stacked-trio')) {
-            entry.target.classList.add('animate');
-          }
-          observer.unobserve(entry.target);
-        }
+    // Stat count-up
+    const countObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        let current = 0;
+        const step = Math.ceil(target / 30);
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = current + suffix;
+          if (current >= target) clearInterval(timer);
+        }, 40);
+        countObs.unobserve(el);
       });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.scroll-reveal, .stacked-trio').forEach(el => {
-      observer.observe(el);
-    });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
   </script>
-
 </body>
 </html>
