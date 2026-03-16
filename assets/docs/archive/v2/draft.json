@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "all": [],
+    "any": [],
+    "exactly": []
+  },
+  "showcase": {
+    "section": {
+      "all": [],
+      "any": [],
+      "exactly": []
+    },
+    "and_tabs": {
+      "all": [],
+      "any": [],
+      "exactly": []
+    }
+  },
+  "credentials": {
+    "all": [],
+    "any": [],
+    "exactly": [],
+    "sort": "most recent `data.workplace_dates` to oldest `data.workplace_dates`"
+  },
+  "process": {
+    "all": [],
+    "any": [],
+    "exactly": []
+  },
+  "creative": {
+    "section": {
+      "all": [
+        "production"
+      ],
+      "any": [],
+      "exactly": []
+    },
+    "and_cards": {
+      "all": [],
+      "any": [],
+      "exactly": []
+    }
+  },
+  "impact": {
+    "all": [
+      "advertising"
+    ],
+    "any": [],
+    "exactly": []
+  },
+  "achievements": {
+    "all": [],
+    "any": [],
+    "exactly": []
+  },
+  "cta-section": {
+    "all": [],
+    "any": [],
+    "exactly": []
+  }
+}

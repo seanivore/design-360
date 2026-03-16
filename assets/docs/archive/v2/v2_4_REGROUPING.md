@@ -1,7 +1,7 @@
 # Update v2.x Landing Page Style Portfolio 
 *https://august.style* 
 
-**Created**: 2026-03-15
+**Created**: 2026-03-16
 **Version**: v2.4
 **Status**: Prototype Complete
 
@@ -219,6 +219,12 @@ If that makes sense, we might want to do the same for the metrics. That way it i
 
 Seems like we should be okay with the `data.process` values but hey, maybe all of them it would be smart to have a fallback setup for — CTA button text included. 
 
+### Tagging Intelligence 
+
+When applying tags to populate landing page components, default to the value accepting **ANY PART** of the tag. For example, if we have a tag of "Web Developer" and we want to populate the "Web" section, we should be able to use "Web" as the value. 
+
+However, we should be able to indicate if we want **EXACTLY** a tag by including that "exactly" modifier. Taking into account the formatting of the JSON text and how it needs to be rendered for the frontend, of course. 
+
 ### Fields Needing Update
 
 See how I have simplified the tags: `assets/entries/uid-gcp-491.json` 
@@ -252,9 +258,9 @@ I also left off the "required" value, but these are the only values that can be 
   },
   "id": "uid-gcp-491", # `data.categorization.entry_id` -> `data.id`
   "slug": "fashion-ai-video", # `data.categorization.slug` -> `data.slug`
-  "hero_button_cta": "See Web Projects",
+  "hero_btn_cta": "See Web Projects", # new field -> `data.hero_btn_cta`
   "final_cta_text": "Interested in web development?",
-  "final_button_cta": "See All Web Projects",
+  "final_btn_cta": "See All Web Projects", # new field -> `data.final_btn_cta`
   "role_headline": "", # new field -> `data.role_headline`
   "role": [
     "Brand Designer",
@@ -283,13 +289,15 @@ I also left off the "required" value, but these are the only values that can be 
     "Digital Art",
     "Social Content"
   ], # new value -> `data.product`
-  "workplace": "Freelance", # new value -> `data.workplace`
-  "workplace_title": "", # new value -> `data.workplace_title`
-  "workplace_dates": "", # new value -> `data.workplace_dates`
+  "workplace": {
+    "company": "Freelance", # new value -> `data.workplace.company`
+    "title": "", # new value -> `data.workplace.title`
+    "dates": "" # new value -> `data.workplace.dates`
+  },
   "media_url": "", # `data.content.media.video_url` -> `data.media_url`
   "media_embed": "", # `data.content.media.video_embed` -> `data.media_embed`
   "media_alt": "", # `data.content.media.video_alt_text` -> `data.media_alt`
-  "thumbnails": [], # `data.content.media.thumbnail_images` -> `data.thumbnails`
+  "thumb": [], # `data.content.media.thumbnail_images` -> `data.thumb`
   "thumb_alt": "", # `data.content.media.thumb_slideshow_alt_text` -> `data.thumb_alt`
   "img": [], # `data.content.media.page_imagery` -> `data.img`
   "img_alt": "", # `data.content.media.page_image_group_alt_text` -> `data.img_alt`
@@ -416,9 +424,94 @@ Please see the actual template here for directions and explanation on all the or
 }
 ```
 
+### Mapping Fields
+
+Well, the chart below started out making sense. I think it still does, it is just excessively granular, covering classes that you would obviously know which JSON entry to pull from because of the initial component tag filtering (if applicable), though in some cases you would need to know exactly which text or image to pull off of the JSON entry. So perhaps it is just the "Tag Filtering" column that makes it seem more confusing than it actually is — but I guess you'll just have to pause if it doesn't make any sense. We do need ot take it from here and simplify for the [homepage content identifier file](/assets/js/homepage-content.json). 
+
+#### JSON Value Per Component Class 
+
+| Component Class                                | Mapped JSON Value                         | Tag Filtering                                   |
+| ---------------------------------------------- | ----------------------------------------- | ----------------------------------------------- |
+| `.hero-stats .stat-number` above "Projects"    | Count `data.id` values                    | None                                            |
+| `.hero-stats .stat-number` above "Roles"       | Count `data.role` values                  | None                                            |
+| `.hero-stats .stat-number` above "Skills"      | Count `data.skill` values                 | None                                            |
+| Top-level of `.hero-scroll-wrapper` section    | `data.x` filtered by tag                  | Yes, user identified X tag                      |
+| `.hero-visual .hero-img-scroll` image sources  | `data.img` value                          | Yes, one value of `.hero-scroll-wrapper` filter |
+| `.hero-img-scroll alt` text                    | `data.img_alt` value                      | Yes, sync with `.hero-visual`                   |
+| `.flip-headline .flip-item` text value         | `data.role_headline` values               | Yes, sync with `.hero-visual`                   |
+| `.hero-cta .btn-primary` text value            | `data.hero_btn_cta` value                 | Yes, sync with `.hero-visual`                   |
+| Top-level of `.showcase` section               | `data.x` filtered by value                | Yes, user identified X tag                      |
+| `.showcase .section-heading` H2 text           | `data.x` value of tag                     | Yes, sync with `.showcase`                      |
+| `.showcase-tabs tablist` `.tab-btn data-tab`   | `data.x` value of tag(s)                  | Yes, applied 'AND' `.showcase`                  |
+| `.project-card img` image sources              | `data.thumb` values                       | Yes, one value of `.showcase-tabs` filter       |
+| `.project-card img alt` text                   | `data.thumb_alt` values                   | Yes, sync with `.project-card` results          |
+| `.project-card-title` text value               | `data.title` values                       | Yes, sync with `.project-card` results          |
+| `.project-card-tags tag` text values           | `data.x` value of tag(s)                  | Yes, identify beside `.project-card`            |
+| Top-level of `.credentials` section            | No filter, show all                       | None                                            |
+| `.credentials .cred-company` text value        | `data.workplace.company` value            | Yes, one value of `.credentials` filter         |
+| `.credentials .cred-dates` text value          | `data.workplace.dates` value              | Yes, sync with `.cred-company`                  |
+| `.credentials .cred-role` text value           | `data.workplace.title` value              | Yes, sync with `.cred-company`                  |
+| `.credentials .cred-tags tag` text value       | `data.x` value of tag(s)                  | Yes, identify beside `.cred-company`            |
+| Top-level of `.process` section                | `data.x` filtered by value                | Yes, user identified X tag                      |
+| `.process .section-heading` H2 text            | `data.x` value of tag                     | Yes, one value of `.process` filter             |
+| `.process-num` "01" `.process-card-title` text | `data.process.1_word` value               | Yes, sync with `.process .section-heading`      |
+| `.process-num` "01" `.process-card-body` text  | `data.process.1_summary` value            | Yes, sync with `.process .section-heading`      |
+| `.process-num` "01" `.process-source` text     | `data.process.1_click` value              | Yes, sync with `.process .section-heading`      |
+| `.process-num` "02" `.process-card-title` text | `data.process.2_word` value               | Yes, sync with `.process .section-heading`      |
+| `.process-num` "02" `.process-card-body` text  | `data.process.2_summary` value            | Yes, sync with `.process .section-heading`      |
+| `.process-num` "02" `.process-source` text     | `data.process.2_click` value              | Yes, sync with `.process .section-heading`      |
+| `.process-num` "03" `.process-card-title` text | `data.process.3_word` value               | Yes, sync with `.process .section-heading`      |
+| `.process-num` "03" `.process-card-body` text  | `data.process.3_summary` value            | Yes, sync with `.process .section-heading`      |
+| `.process-num` "03" `.process-source` text     | `data.process.3_click` value              | Yes, sync with `.process .section-heading`      |
+| Top-level of `.creative` section               | `data.product` filtered by value          | Yes, `production`                               |
+| `.creative .section-heading` H2 text           | `data.product` `production` value         | Yes, sync with `.creative`                      |
+| `.creative-card .sr-d1` href                   | `/section.html?tags=` `data.x` tag        | Yes, identify beside `.creative`                |
+| `creative-card sr sr-d1 vis` image source      | `data.img` value                          | Yes, sync with `.creative-card .sr-d1`          |
+| `creative-card sr sr-d1 vis alt` text          | `data.img_alt` value                      | Yes, sync with `.creative-card .sr-d1`          |
+| `.creative-card .sr-d2` href                   | `/section.html?tags=` `data.x` tag        | Yes, identify beside `.creative`                |
+| `creative-card sr sr-d2 vis` image source      | `data.img` value                          | Yes, sync with `.creative-card .sr-d2`          |
+| `creative-card sr sr-d2 vis alt` text          | `data.img_alt` value                      | Yes, sync with `.creative-card .sr-d2`          |
+| `.creative-card .sr-d3` href                   | `/section.html?tags=` `data.x` tag        | Yes, identify beside `.creative`                |
+| `creative-card sr sr-d3 vis` image source      | `data.img` value                          | Yes, sync with `.creative-card .sr-d3`          |
+| `creative-card sr sr-d3 vis alt` text          | `data.img_alt` value                      | Yes, sync with `.creative-card .sr-d3`          |
+| `.creative-card .sr-d(n)` href                 | `/section.html?tags=` `data.x` tag        | Yes, identify beside `.creative`                |
+| `creative-card sr sr-d(n) vis` image source    | `data.img` value                          | Yes, sync with `.creative-card .sr-d(n)`        |
+| `creative-card sr sr-d(n) vis alt` text        | `data.img_alt` value                      | Yes, sync with `.creative-card .sr-d(n)`        |
+| `.creative-label` text                         | `data.product` value                      | Yes, sync with `.creative-card .sr-d(n)`        |
+| `.creative-card-title` text                    | `data.skill` value                        | Yes, sync with `.creative-card .sr-d(n)`        |
+| Top-level of `.impact` section                 | `data.skill` filtered by value            | Yes, `advertising`                              |
+| `.impact .section-heading` H2 text             | `data.skill` `advertising` "Impact" value | Yes, sync with `.impact`                        |
+| `impact-stat sr sr-d(n) vis` values            | `data.skill` `advertising` values         | Yes, sync with `.impact`                        |
+| `.impact-num` text value                       | `data.metric.value` value                 | Yes, sync with `.impact-stat sr sr-d(n) vis`    |
+| `.impact-label` text value                     | `data.metric.kpi` value                   | Yes, sync with `.impact-stat sr sr-d(n) vis`    |
+| `.impact-detail` text value                    | `data.metric.context` value               | Yes, sync with `.impact-stat sr sr-d(n) vis`    |
+| Top-level of `.achievements` section           | `data.skill` filtered by value            | Yes                                             |
+| `.achievements .section-heading` H2 text       | `data.skill` `data.x` text "Achievements" | Yes, sync with `.achievements`                  |
+| `.ach-title` text value                        | `data.achievement.headline` text          | Yes, one value after `.achievements` filter     |
+| `.ach-body` text value                         | `data.achievement.details` text           | Yes, sync with `.ach-title`                     |
+| Top-level of `.cta-section` section            | `data.x` filtered by tag                  | Yes                                             |
+| `.cta-heading` text                            | `data.final_cta_text` value               | Yes, sync with `.cta-section`                   |
+| `.cta-btns .btn-primary` text                  | `data.final_button_cta` value             | Yes, sync with `.cta-section`                   |
+
+#### Homepage Content By Tag
+
+**Tag controller `assets/js/homepage-content.json` document** 
+
+I didn't finish thinking though mine. I think that this is the kind of task that would make sense for you to share yours before seeing mind so that we can better evaluate the best system. Mine is sort of clunky but direct. Only after providing yours, then you may read the following path. 
+
+Then whichever we choose, or combination we create, we'll have to make sure that it is not missing anything, and then is perfectly implemented in the homepage controller. 
+
+MINE: `assets/docs/archive/v2/draft.json`
+
 ---
 
-## Setup Process 
+## Project Entry JSON Files
+
+Updating the old and creating new portfolio entries. 
+
+### Update Process 
+
+**There are already ~35 entries in the directory: `assets/entries/...`**
 
 Because so much time has passed and agents have gotten much better at writing, I think the cleanest way for us to do this would be to just have an agent create new files for all the currently existing JSON project entries. They could then continue on the list of other projects to create entries for. 
   
@@ -444,6 +537,26 @@ It might need to be installed again because it is supposed to pull directly from
 
 Pull the next of the 36 current project entry JSON files. Write it in the new schema by creating an entirely new JSON document and filling in the schema. 
 
+### 3. Record Tag Usage 
+
+As you go, keep a running list of all tags used in the `assets/docs/tags.json` file. This will help us keep track of all the tags that are being used and make sure that we are not using the same conceptual tag but differently worded tag. No additional "company" tags may be created. 
+
+```json 
+{
+  "role": [],
+  "skill": [], 
+  "product": [], 
+  "company": [
+    "Freelance", 
+    "Silent Labs",
+    "SEANIVORE GROUP LLC",
+    "PETA, Inc."
+  ]
+}
+```
+
+### 4. **SEAN DID NOT COMPLETE**
+
 ---
 
 ## Verification After Update
@@ -466,3 +579,4 @@ Pull the next of the 36 current project entry JSON files. Write it in the new sc
   - All device tests
 
 ---
+*This document is intended to provide a starting place for many of the specifics. Be sure that we address every specific and push our thinking far enough to create our 'exclusively executable implementation guide' by creating plans for me to review thoroughly before proceeding. 2026-03-15*
