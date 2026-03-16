@@ -186,10 +186,14 @@ I added in the sub-bullet points, things to check or changes that have yet to be
   `data.role_headline`: this is the main homepage rotating title
   `data.hero_button_cta`: hero CTA button text 
 
+  IMAGE: `assets/docs/archive/v2/IMG/new-field-usage-annotated-1.jpg`
+
   `data.skill_summary`: not currently used, but 15-25 words on how skills were used in this project is smart to collect now
   `data.workplace`: only four accurate values: "Freelance", "Silent Labs", "SEANIVORE GROUP", "PETA"
   `data.workplace_title`: irrespective of role tags, this is formal title when employed 
   `data.workplace_dates`: YYYY–YYYY
+
+  IMAGE: `assets/docs/archive/v2/IMG/new-field-usage-annotated-2.jpg`
 
   `data.process.1_word`: these next few are in the 3-step process section 
   `data.process.1_summary`
@@ -201,15 +205,26 @@ I added in the sub-bullet points, things to check or changes that have yet to be
   `data.process.3_summary`
   `data.process.3_click`
 
+  IMAGES: `assets/docs/archive/v2/IMG/new-field-usage-annotated-3.jpg`
+          `assets/docs/archive/v2/IMG/new-field-usage-annotated-4.jpg`
+
   `data.metric.value`
   `data.metric.kpi`
   `data.metric.context`
 
+  IMAGE: `assets/docs/archive/v2/IMG/new-field-usage-annotated-5.jpg`
+
   `data.achievement.headline`
   `data.achievement.details`
+
+  IMAGE: `assets/docs/archive/v2/IMG/new-field-usage-annotated-6.jpg`
   
   `data.final_cta_text`: final CTA text 
   `data.final_button_cta`: final CTA button text 
+
+  IMAGE: `assets/docs/archive/v2/IMG/new-field-usage-annotated-7.jpg`
+
+**VERY IMPORTANT: You must see the images. If you were not able to view them at the path, please tell Sean so that he can drop them into the chat now.**
 
 ### Field Intelligence 
 
