@@ -1,81 +1,108 @@
 {
-    "_metadata": {
-        "last_updated": "2025-10-18T21:23:00.000000Z",
-        "required_fields": true,
-        "template_type": "portfolio_entry",
-        "schema_version": "4.0",
-        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
+  "id": "uid-dff-987",
+  "slug": "automated-e-commerce-shop-lookbook",
+  "title": "800+ Product Store with Automated CMS Management",
+  "subtitle": "Full-stack automation from Notion to checkout integration",
+  "seo_title": "Automated Webflow CMS Shop & Fashion Gallery",
+  "seo_description": "Custom developed and designed, engaging, interactive from the navigation to the 800+ product web store & fashion lookbook",
+  "role": [
+    "AI & Automation Strategist",
+    "Brand Designer",
+    "Content Strategist",
+    "Web Developer"
+  ],
+  "skill": [
+    "Automation",
+    "CMS Management",
+    "Content Production",
+    "Creative Cloud",
+    "E-Commerce",
+    "Generative AI",
+    "Git",
+    "HTML/CSS/JS",
+    "Landing Page Design",
+    "Make.com",
+    "Notion",
+    "Publishing",
+    "Python",
+    "Scaling Systems",
+    "Typography",
+    "Webflow"
+  ],
+  "product": [
+    "E-Commerce Store",
+    "CMS Site"
+  ],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-2.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-3.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-4.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-5.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-6.webp"
+  ],
+  "thumb_alt": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
+  "img": [
+    "assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-1.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-2.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-3.webp"
+  ],
+  "img_alt": "Automated e-commerce storefront screenshots showing product catalog, fashion lookbook, and custom navigation",
+  "mobile_img": [
+    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-1.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-2.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-3.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-4.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-5.webp",
+    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-6.webp"
+  ],
+  "mobile_img_alt": "Mobile views of the automated e-commerce shop and fashion lookbook",
+  "media_url": "https://youtu.be/lnoKsXWa584",
+  "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/lnoKsXWa584?si=1bdNy9s8d65d5Kme&amp;controls=0' title='Automated Webflow CMS Shop and Fashion Gallery' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+  "media_alt": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
+  "origin_url": "https://print-shop-fashion.august.style",
+  "origin_url_text": "fashion-art.august.style",
+  "repository": "https://github.com/seanivore/webflow-store",
+  "tiles": [
+    "Make.com workflows automate entire pipeline",
+    "Notion databases sync to CMS and inventory",
+    "Custom navigation handles complex multi-section site",
+    "Python scripts rebuilt Webflow export for GitHub Pages"
+  ],
+  "challenge": "Managing 800+ products across an e-commerce store and fashion lookbook manually would be unsustainable. The site required three distinct sections — e-commerce store, fashion lookbook magazine, and editorial content — all pulling from interconnected databases while maintaining separate navigation patterns and checkout integration. Webflow's CMS capabilities combined with Notion and Make.com offered the foundation for a fully automated content and inventory management system.",
+  "approach": "Architected a fully automated Webflow e-commerce system with custom backend integration. Connected Make.com automation workflows to Notion databases containing product information, fashion imagery, and editorial content, which automatically populate Webflow CMS collections and sync inventory across all storefronts. Designed custom navigation that handles the site's complexity, allowing users to flow between shopping, lookbook, and editorial sections without losing context. When the site was later deployed to GitHub Pages, developed Python utility scripts to correct image paths, navigation links, nested directory handling, and lookbook navigation issues.",
+  "result": "The automation eliminated manual data entry for 800+ products and reduced inventory update time from hours to minutes. The Make.com integration enabled real-time synchronization between Notion databases, Webflow CMS, and checkout systems. The custom navigation architecture proved robust enough for the multi-section site while remaining intuitive. The Python migration scripts demonstrated full-stack problem-solving beyond Webflow design, addressing real technical challenges in deeply nested directory structures.",
+  "role_headline": "Automation engineer scaling 800-product storefronts",
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "Full-stack automation, Webflow CMS, Make.com workflows, Notion database management, Python scripting, and e-commerce architecture.",
+  "process": [
+    {
+      "word": "Assess",
+      "summary": "Audit existing workflows, identify manual bottlenecks, and map where AI tooling or custom automation will deliver the highest leverage.",
+      "link_text": "800-Product AI Storefront",
+      "link_slug": "automated-e-commerce-shop-lookbook"
     },
-    "categorization": {
-        "entry_id": "uid-dff-987",
-        "slug": "automated-e-commerce-shop-lookbook",
-        "tags": {
-            "role": [
-                "Automation Engineer",
-                "Brand Designer",
-                "Content Strategist",
-                "Web Developer"
-            ],
-            "skill": [
-                "Automation",
-                "CMS Management",
-                "Content Production",
-                "Creative Cloud",
-                "E-Commerce",
-                "Generative AI",
-                "Git",
-                "HTML/CSS/JS",
-                "Landing Page Design",
-                "Make.com",
-                "Notion",
-                "Publishing",
-                "Python",
-                "Scaling Systems",
-                "Typography",
-                "Webflow"
-            ]
-        }
+    {
+      "word": "Implement",
+      "summary": "Build iteratively — custom scripts, AI-generated SERP descriptions, Webflow storefronts connected to inventory APIs. Ship early, validate with real traffic.",
+      "link_text": "SaaS Conversion Flow",
+      "link_slug": "saas-product-sale-features"
     },
-    "content": {
-        "media": {
-            "video_filename": "custom-nav-cms-store-magazine.mp4",
-            "video_url": "https://youtu.be/lnoKsXWa584",
-            "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/lnoKsXWa584?si=1bdNy9s8d65d5Kme&amp;controls=0' title='Automated Webflow CMS Shop and Fashion Gallery' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-            "video_alt_text": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
-            "thumbnail_images": [
-                "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp",
-                "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-2.webp",
-                "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-3.webp",
-                "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-4.webp",
-                "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-5.webp",
-                "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "fashion-art.august.style",
-            "project_url": "https://print-shop-fashion.august.style",
-            "github_repository": "https://github.com/seanivore/webflow-store"
-        },
-        "teaser_copy": {
-            "seo_title": "Automated Webflow CMS Shop & Fashion Gallery",
-            "seo_description": "Custom developed and designed, engaging, interactive from the navigation to the 800+ product web store & fashion lookbook",
-            "page_title": "800+ Product Store with Automated CMS Management",
-            "page_subtitle": "Full-stack automation from Notion to checkout integration",
-            "tile_text": [
-                "Make.com workflows automate entire pipeline",
-                "Notion databases sync to CMS and inventory",
-                "Custom navigation handles complex multi-section site",
-                "Python scripts rebuilt Webflow export for GitHub Pages"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Managing 800+ products across an e-commerce store and fashion lookbook manually would be unsustainable. Webflow's CMS capabilities combined with Notion's database flexibility and Make.com's automation workflows created an opportunity for a completely automated content and inventory management system. The complexity came from needing three distinct sections e-commerce store, fashion lookbook magazine, and editorial content all pulling from interconnected databases while maintaining separate navigation patterns and checkout integration.",
-            "action": "Architected and built a fully automated Webflow e-commerce system with custom backend integration. Connected Make.com automation workflows to Notion databases containing product information, fashion imagery, and editorial content, which automatically populate Webflow CMS collections and sync inventory across all storefronts. Designed custom navigation that elegantly handles the site's complexity users can flow between shopping, lookbook inspiration, and editorial content without losing context. When the site was later pulled from Webflow for GitHub Pages deployment, developed comprehensive Python utility scripts to fix common path issues: image path corrections, navigation link repairs, nested directory handling, and specialized lookbook navigation fixes. The scripts demonstrate full-stack problem-solving by addressing the technical challenges of moving a complex automated system between platforms.",
-            "measured": "Successfully automated management of 800+ products across multiple site sections, eliminating manual data entry and dramatically reducing time spent on inventory updates. The Make.com integration enabled real-time synchronization between Notion databases, Webflow CMS, and checkout systems adding a new product takes minutes instead of hours. The custom navigation architecture proved robust enough to handle the site's complexity while remaining intuitive for users. The Python scripts that enabled GitHub Pages deployment showcase full-stack capabilities beyond just Webflow design, solving real technical challenges around path management in deeply nested directory structures."
-        }
-    },
-    "notes": []
+    {
+      "word": "Iterate",
+      "summary": "Monitor performance, A/B test conversion paths, continuously refine. The goal: a system that runs autonomously, not a one-time build.",
+      "link_text": "Data Dashboard",
+      "link_slug": "data-visualization-dashboard"
+    }
+  ],
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

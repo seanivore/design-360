@@ -1,70 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-vlf-055",
-        "slug": "psychedelic-impressi",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Editorial Design",
-                "Generative AI",
-                "Illustration",
-                "Illustrator",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/191719407?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Psychedelic portraits with eyes closed, radiant color auras, and surreal atmospheres referencing synthetism, fauvism, and impressionist maximalism.",
-            "thumbnail_images": [
-                "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-1.webp",
-                "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-2.webp",
-                "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-3.webp",
-                "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-4.webp",
-                "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-5.webp",
-                "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Vivid, euphoric portrait studies with radiant color fields, closed-eye serenity, and bold stylistic blends.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.gallery/One-too-far",
-            "project_url": "https://www.behance.net/gallery/191719407/One-astral-projection-too-far",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Psychedelic Surrealism Synthetism: Fauvism Impression Maximalism Portrait Studies",
-            "seo_description": "A euphoric portrait series blending psychedelic color, surreal quiet, synthetist simplification, and fauvist impression maximalism into radiant, closed-eye studies.",
-            "page_title": "One astral projection too far",
-            "page_subtitle": "Radiant portraits in psychedelic, surrealist, synthetist, fauvist impression maximalism.",
-            "tile_text": [
-                "Radiant closed-eye portraits with euphoric color",
-                "Synthetist simplification meets fauvist energy",
-                "Surreal calm rendered in impression maximalism"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Psychedelic surreal portrait language leans on radiant palettes, simplified forms, and emotive atmosphere that reads vividly at any scale.",
-            "action": "A generative pipeline set base color fields and form simplification, then in painting refined edge flow, hue relationships, and glow discipline for euphoric calm.",
-            "measured": "Delivers striking tiles and cohesive panels suited for editorial, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-vlf-055",
+  "slug": "psychedelic-impressi",
+  "title": "One astral projection too far",
+  "subtitle": "Radiant portraits in psychedelic, surrealist, synthetist, fauvist impression maximalism.",
+  "seo_title": "Psychedelic Surrealism Synthetism: Fauvism Impression Maximalism Portrait Studies",
+  "seo_description": "A euphoric portrait series blending psychedelic color, surreal quiet, synthetist simplification, and fauvist impression maximalism into radiant, closed-eye studies.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-1.webp",
+    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-2.webp",
+    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-3.webp",
+    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-4.webp",
+    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-5.webp",
+    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-6.webp"
+  ],
+  "thumb_alt": "Vivid, euphoric portrait studies with radiant color fields, closed-eye serenity, and bold stylistic blends.",
+  "img": [
+    "assets/media/psychedelic-impressi/img-sq-psychedelic-impressi-1.webp",
+    "assets/media/psychedelic-impressi/img-sq-psychedelic-impressi-2.webp",
+    "assets/media/psychedelic-impressi/img-sq-psychedelic-impressi-3.webp"
+  ],
+  "img_alt": "Psychedelic portrait studies featuring closed-eye serenity, radiant color auras, and surreal atmospheres blending synthetism, fauvism, and impressionist maximalism.",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/191719407?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Psychedelic portraits with eyes closed, radiant color auras, and surreal atmospheres referencing synthetism, fauvism, and impressionist maximalism.",
+  "origin_url": "https://www.behance.net/gallery/191719407/One-astral-projection-too-far",
+  "origin_url_text": "behance.gallery/One-too-far",
+  "repository": "",
+  "tiles": [
+    "Radiant closed-eye portraits with euphoric color",
+    "Synthetist simplification meets fauvist energy",
+    "Surreal calm rendered in impression maximalism"
+  ],
+  "challenge": "Blending multiple art-historical traditions, psychedelic color, synthetist simplification, fauvist energy, and impressionist maximalism, into a unified portrait series requires precise creative direction. Each piece needed to convey euphoric calm through radiant palettes and simplified forms while maintaining enough visual complexity to reward sustained viewing. The closed-eye motif demanded compositions that communicate emotional depth without the anchor of eye contact.",
+  "approach": "Used a generative pipeline to establish base color fields and form simplification for each portrait, then refined edge flow, hue relationships, and glow discipline through in-painting. The series draws on synthetist flattening of form, fauvist liberation of color from representation, and psychedelic radiance to create portraits that feel simultaneously serene and visually intense. Each composition balances simplified facial forms against richly layered atmospheric backgrounds.",
+  "result": "Delivered a cohesive collection of radiant portrait studies that work effectively as editorial content, social media visuals, and large-format prints. The series demonstrates the ability to synthesize multiple art-historical influences into a distinctive visual language using generative tools, showcasing both creative direction depth and technical finishing discipline.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

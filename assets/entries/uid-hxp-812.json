@@ -1,67 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-hxp-812",
-        "slug": "bau-noir-haus",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/217385911?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "A monochrome generative study channeling Bauhaus geometry: stark contrast, precise forms, and disciplined composition.",
-            "thumbnail_images": [
-                "assets/media/bau-noir-haus/thumb-bau-noir-haus-1.webp",
-                "assets/media/bau-noir-haus/thumb-bau-noir-haus-2.webp",
-                "assets/media/bau-noir-haus/thumb-bau-noir-haus-3.webp",
-                "assets/media/bau-noir-haus/thumb-bau-noir-haus-4.webp",
-                "assets/media/bau-noir-haus/thumb-bau-noir-haus-5.webp",
-                "assets/media/bau-noir-haus/thumb-bau-noir-haus-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Black and white geometric abstractions with Bauhaus inspired forms and strong contrast.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.net/gallery/Bau-Noir",
-            "project_url": "https://www.behance.net/gallery/217385911/Bau-Noir-Haus",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Bau Noir Haus: Monochrome Bauhaus Geometry in Generative Abstraction",
-            "seo_description": "A monochrome generative collection exploring Bauhaus inspired geometry, stark contrast, and disciplined balance for modern graphic panels.",
-            "page_title": "Bau Noir Haus",
-            "page_subtitle": "Monochrome Bauhaus geometry with disciplined balance and contrast.",
-            "tile_text": [
-                "Monochrome geometric Bauhaus study",
-                "Stark contrast and precise forms",
-                "Generative panels for modern display"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Bauhaus geometry favors clarity: precise shapes, high contrast, and balanced grids that read instantly and scale cleanly.",
-            "action": "A generative pipeline produced core forms and layout, then in painting refined edge quality, contrast discipline, and spatial balance.",
-            "measured": "Yields crisp panels that perform at tile scale and hold integrity for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-hxp-812",
+  "slug": "bau-noir-haus",
+  "title": "Bau Noir Haus",
+  "subtitle": "Monochrome Bauhaus geometry with disciplined balance and contrast.",
+  "seo_title": "Bau Noir Haus: Monochrome Bauhaus Geometry in Generative Abstraction",
+  "seo_description": "A monochrome generative collection exploring Bauhaus inspired geometry, stark contrast, and disciplined balance for modern graphic panels.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/bau-noir-haus/thumb-bau-noir-haus-1.webp",
+    "assets/media/bau-noir-haus/thumb-bau-noir-haus-2.webp",
+    "assets/media/bau-noir-haus/thumb-bau-noir-haus-3.webp",
+    "assets/media/bau-noir-haus/thumb-bau-noir-haus-4.webp",
+    "assets/media/bau-noir-haus/thumb-bau-noir-haus-5.webp",
+    "assets/media/bau-noir-haus/thumb-bau-noir-haus-6.webp"
+  ],
+  "thumb_alt": "Black and white geometric abstractions with Bauhaus inspired forms and strong contrast.",
+  "img": [
+    "assets/media/bau-noir-haus/img-sq-bau-noir-haus-1.webp",
+    "assets/media/bau-noir-haus/img-sq-bau-noir-haus-2.webp",
+    "assets/media/bau-noir-haus/img-sq-bau-noir-haus-3.webp"
+  ],
+  "img_alt": "Monochrome Bauhaus geometric abstractions with stark black and white contrast, precise forms, and balanced compositional grids",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/217385911?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "A monochrome generative study channeling Bauhaus geometry: stark contrast, precise forms, and disciplined composition.",
+  "origin_url": "https://www.behance.net/gallery/217385911/Bau-Noir-Haus",
+  "origin_url_text": "behance.net/gallery/Bau-Noir",
+  "repository": "",
+  "tiles": [
+    "Monochrome geometric Bauhaus study",
+    "Stark contrast and precise forms",
+    "Generative panels for modern display"
+  ],
+  "challenge": "Stripping Bauhaus-inspired geometry down to its purest expression through a monochrome palette. The challenge was to create compositions where shape, contrast, and spatial balance carry the entire visual weight without relying on color, demanding precision in every edge and proportion.",
+  "approach": "Used Adobe Firefly to generate core geometric forms and compositional layouts, then refined each piece for edge quality, contrast discipline, and spatial balance. The monochrome constraint required particular attention to tonal range and form clarity throughout the finishing process.",
+  "result": "Delivered a six-piece monochrome Bauhaus collection with crisp, high-contrast panels that perform equally well at small tile scale and large print format. The series demonstrates disciplined restraint and clean geometric thinking suited for gallery walls and design portfolios.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

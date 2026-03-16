@@ -1,14 +1,15 @@
 /**
- * DATA LOADER (v4.0)
+ * DATA LOADER (v5.0)
  * Fetches and caches JSON project data
- * Provides helper functions for filtering by role/skill tags
+ * Provides helper functions for filtering by role/skill/product/company tags
  */
 
 const DataLoader = (() => {
   // Cache for loaded data
   const cache = {
     manifest: null,
-    projects: new Map()
+    projects: new Map(),
+    homepageContent: null
   };
 
   /**
@@ -54,18 +55,15 @@ const DataLoader = (() => {
 
     try {
       const fullPath = '/' + jsonPath;
-      console.log(`🔍 Fetching: ${fullPath}`);
       const response = await fetch(fullPath);
       if (!response.ok) {
-        console.error(`❌ Failed to fetch ${fullPath}: ${response.status}`);
         throw new Error(`Failed to load project: ${response.status}`);
       }
       const project = await response.json();
-      console.log(`✅ Loaded: ${jsonPath}`);
       cache.projects.set(jsonPath, project);
       return project;
     } catch (error) {
-      console.error(`❌ Error loading project from ${jsonPath}:`, error);
+      console.error(`Error loading project from ${jsonPath}:`, error);
       return null;
     }
   }
@@ -84,24 +82,13 @@ const DataLoader = (() => {
         return projects;
       }
 
-      // Get unique JSON file paths from manifest
       const allProjectPaths = [...new Set(Object.values(manifest.entries))];
-
-      console.log(`📂 Loading ${allProjectPaths.length} projects from manifest`);
-
-      // Load all projects in parallel
       const loadPromises = allProjectPaths.map(path => loadProject(path));
       const results = await Promise.all(loadPromises);
 
-      let successCount = 0;
       results.forEach(project => {
-        if (project) {
-          successCount++;
-          projects.push(project);
-        }
+        if (project) projects.push(project);
       });
-
-      console.log(`✅ Successfully loaded ${successCount}/${allProjectPaths.length} projects`);
 
     } catch (error) {
       console.error('Error in loadAllProjects:', error);
@@ -111,19 +98,19 @@ const DataLoader = (() => {
   }
 
   /**
-   * Get all tags from a project (both role and skill combined)
+   * Get all tags from a project (role + skill + product + company combined)
    */
   function getProjectTags(project) {
-    const tags = project.categorization?.tags || {};
     return [
-      ...(tags.role || []),
-      ...(tags.skill || [])
+      ...(project.role || []),
+      ...(project.skill || []),
+      ...(project.product || []),
+      ...(project.company ? [project.company] : [])
     ];
   }
 
   /**
    * Filter projects that have ANY of the given tags
-   * Matches against both role and skill arrays
    */
   function filterByAnyTag(projects, tagNames) {
     if (!tagNames || tagNames.length === 0) {
@@ -140,7 +127,6 @@ const DataLoader = (() => {
 
   /**
    * Filter projects that have ALL of the given tags
-   * Matches against both role and skill arrays
    */
   function filterByAllTags(projects, tagNames) {
     if (!tagNames || tagNames.length === 0) {
@@ -157,7 +143,7 @@ const DataLoader = (() => {
 
   /**
    * Get all unique tags from a list of projects
-   * Returns flat sorted array of all tags (role + skill combined)
+   * Returns flat sorted array of all tags
    */
   function getAllTags(projects) {
     const tagSet = new Set();
@@ -171,36 +157,83 @@ const DataLoader = (() => {
 
   /**
    * Get tags grouped by type from a list of projects
-   * Returns { role: [...], skill: [...] }
+   * Returns { role: [...], skill: [...], product: [...], company: [...] }
    */
   function getTagsByType(projects) {
     const roles = new Set();
     const skills = new Set();
+    const products = new Set();
+    const companies = new Set();
 
     projects.forEach(project => {
-      const tags = project.categorization?.tags || {};
-      (tags.role || []).forEach(t => roles.add(t));
-      (tags.skill || []).forEach(t => skills.add(t));
+      (project.role || []).forEach(t => roles.add(t));
+      (project.skill || []).forEach(t => skills.add(t));
+      (project.product || []).forEach(t => products.add(t));
+      if (project.company) companies.add(project.company);
     });
 
     return {
       role: Array.from(roles).sort(),
-      skill: Array.from(skills).sort()
+      skill: Array.from(skills).sort(),
+      product: Array.from(products).sort(),
+      company: Array.from(companies).sort()
     };
   }
 
   /**
    * Determine tag type for a given tag name across projects
-   * Returns 'role' or 'skill'
+   * Returns 'role', 'skill', 'product', or 'company'
    */
   function getTagType(projects, tagName) {
     const normalized = normalizeForURL(tagName);
     for (const project of projects) {
-      const tags = project.categorization?.tags || {};
-      if ((tags.role || []).some(t => normalizeForURL(t) === normalized)) return 'role';
-      if ((tags.skill || []).some(t => normalizeForURL(t) === normalized)) return 'skill';
+      if ((project.role || []).some(t => normalizeForURL(t) === normalized)) return 'role';
+      if ((project.skill || []).some(t => normalizeForURL(t) === normalized)) return 'skill';
+      if ((project.product || []).some(t => normalizeForURL(t) === normalized)) return 'product';
+      if (project.company && normalizeForURL(project.company) === normalized) return 'company';
     }
     return 'skill'; // default
+  }
+
+  /**
+   * Universal resolver for filter objects from homepage-content.json
+   * Handles { all: [...], any: [...] } filter configurations
+   */
+  function resolveFilter(projects, filterObj) {
+    if (!filterObj) return projects;
+
+    const hasAll = filterObj.all && filterObj.all.length > 0;
+    const hasAny = filterObj.any && filterObj.any.length > 0;
+
+    if (!hasAll && !hasAny) return projects;
+
+    let result = projects;
+
+    if (hasAll) {
+      result = filterByAllTags(result, filterObj.all);
+    }
+
+    if (hasAny) {
+      result = filterByAnyTag(result, filterObj.any);
+    }
+
+    return result;
+  }
+
+  /**
+   * Load and cache homepage content configuration
+   */
+  async function loadHomepageContent() {
+    if (cache.homepageContent) return cache.homepageContent;
+    try {
+      const response = await fetch('/assets/js/homepage-content.json');
+      if (!response.ok) throw new Error(`Failed to load homepage content: ${response.status}`);
+      cache.homepageContent = await response.json();
+      return cache.homepageContent;
+    } catch (error) {
+      console.error('Error loading homepage content:', error);
+      return null;
+    }
   }
 
   /**
@@ -227,6 +260,8 @@ const DataLoader = (() => {
     getTagType,
     getProjectTags,
     shuffleArray,
-    normalizeForURL
+    normalizeForURL,
+    resolveFilter,
+    loadHomepageContent
   };
 })();

@@ -1,5 +1,5 @@
 /**
- * ENTRY CONTROLLER (v4.0)
+ * ENTRY CONTROLLER (v5.0)
  * Manages individual project entry pages
  * Loads data from manifest, populates content, generates related posts
  */
@@ -16,7 +16,6 @@ const EntryController = (() => {
         const pathParam = urlParams.get('path');
 
         if (pathParam) {
-            console.log(`🔍 Entry URL param: path=${pathParam}`);
             return pathParam;
         }
 
@@ -43,7 +42,7 @@ const EntryController = (() => {
         const jsonPath = manifest.entries[entryPath];
 
         if (!jsonPath) {
-            console.error(`❌ Entry not found in manifest: ${entryPath}`);
+            console.error('Entry not found in manifest:', entryPath);
             return null;
         }
 
@@ -56,49 +55,45 @@ const EntryController = (() => {
      * Populate page metadata (SEO tags)
      */
     function populateMetadata(project) {
-        const { content } = project;
-        const { media, teaser_copy } = content;
-
         // Update page title
-        document.title = teaser_copy.seo_title || teaser_copy.page_title;
+        document.title = project.seo_title || project.title;
 
         // Update meta description
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
-            metaDesc.setAttribute('content', teaser_copy.seo_description || '');
+            metaDesc.setAttribute('content', project.seo_description || '');
         }
 
         // Update Open Graph tags
         const ogTitle = document.querySelector('meta[property="og:title"]');
         if (ogTitle) {
-            ogTitle.setAttribute('content', teaser_copy.seo_title || teaser_copy.page_title);
+            ogTitle.setAttribute('content', project.seo_title || project.title);
         }
 
         const ogDesc = document.querySelector('meta[property="og:description"]');
         if (ogDesc) {
-            ogDesc.setAttribute('content', teaser_copy.seo_description || '');
+            ogDesc.setAttribute('content', project.seo_description || '');
         }
 
         const ogImage = document.querySelector('meta[property="og:image"]');
-        if (ogImage && media.thumbnail_images && media.thumbnail_images[0]) {
-            ogImage.setAttribute('content', `/${media.thumbnail_images[0]}`);
+        if (ogImage && project.thumb && project.thumb[0]) {
+            ogImage.setAttribute('content', `/${project.thumb[0]}`);
         }
 
         const ogImageAlt = document.querySelector('meta[property="og:image:alt"]');
         if (ogImageAlt) {
-            ogImageAlt.setAttribute('content', media.thumb_slideshow_alt_text || teaser_copy.page_title);
+            ogImageAlt.setAttribute('content', project.thumb_alt || project.title);
         }
     }
 
     /**
-     * Populate tag pills grouped by type (role and skill)
+     * Populate tag pills grouped by type (role, skill, product)
      * Each pill links to tag page for filtering
      */
     function populateTagsCards(project) {
-        const { categorization } = project;
-        const tags = categorization.tags || {};
-        const roles = tags.role || [];
-        const skills = tags.skill || [];
+        const roles = project.role || [];
+        const skills = project.skill || [];
+        const products = project.product || [];
 
         const tagsCardContainers = document.querySelectorAll('.entry-tags-card');
 
@@ -125,6 +120,16 @@ const EntryController = (() => {
                 html += '</div>';
             }
 
+            // Product pills
+            if (products.length > 0) {
+                html += '<div class="tag-pill-group tag-pill-group-product">';
+                html += products.map(tag => {
+                    const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
+                    return `<a href="${tagURL}" class="entry-tag entry-tag-product">${tag}</a>`;
+                }).join('');
+                html += '</div>';
+            }
+
             container.innerHTML = html;
         });
     }
@@ -133,53 +138,48 @@ const EntryController = (() => {
      * Populate main content sections
      */
     function populateContent(project) {
-        const { categorization, content } = project;
-        const tags = categorization.tags || {};
-        const { media, assets, teaser_copy, page_copy } = content;
-
         // Page title and subtitle
         const titleEl = document.getElementById('entry-title');
-        if (titleEl) titleEl.textContent = teaser_copy.page_title;
+        if (titleEl) titleEl.textContent = project.title;
 
         const subtitleEl = document.getElementById('entry-subtitle');
-        if (subtitleEl) subtitleEl.textContent = teaser_copy.page_subtitle;
+        if (subtitleEl) subtitleEl.textContent = project.subtitle;
 
-        // Role (H3 heading)
-        // Role: show first role tag
+        // Role (H3 heading) — show first role tag
         const roleEl = document.getElementById('entry-role');
-        if (roleEl) roleEl.textContent = (tags.role && tags.role[0]) || '';
+        if (roleEl) roleEl.textContent = (project.role && project.role[0]) || '';
 
-        // Page copy sections (pattern, action, measured)
-        const patternEl = document.getElementById('entry-pattern');
-        if (patternEl) patternEl.textContent = page_copy.pattern;
+        // Page copy sections (challenge, approach, result)
+        const challengeEl = document.getElementById('entry-challenge');
+        if (challengeEl) challengeEl.textContent = project.challenge;
 
-        const actionEl = document.getElementById('entry-action');
-        if (actionEl) actionEl.textContent = page_copy.action;
+        const approachEl = document.getElementById('entry-approach');
+        if (approachEl) approachEl.textContent = project.approach;
 
-        const measuredEl = document.getElementById('entry-measured');
-        if (measuredEl) measuredEl.textContent = page_copy.measured;
+        const resultEl = document.getElementById('entry-result');
+        if (resultEl) resultEl.textContent = project.result;
 
         // Thumbnail images (shuffled and split between column and grid)
-        populateThumbnailImages(media);
+        populateThumbnailImages(project);
 
         // Optional: Video embed
-        if (media.video_embed) {
-            populateVideoEmbed(media);
+        if (project.media_embed) {
+            populateVideoEmbed(project);
         }
 
         // Optional: Page imagery
-        if (media.page_imagery && media.page_imagery.length > 0) {
-            populatePageImagery(media);
+        if (project.img && project.img.length > 0) {
+            populatePageImagery(project);
         }
 
         // Optional: Project URL
-        if (assets && assets.project_url) {
-            populateProjectURL(assets);
+        if (project.origin_url) {
+            populateProjectURL(project);
         }
 
         // Optional: GitHub repository
-        if (assets && assets.github_repository) {
-            populateGitHubRepo(assets.github_repository);
+        if (project.repository) {
+            populateGitHubRepo(project.repository);
         }
     }
 
@@ -189,15 +189,15 @@ const EntryController = (() => {
      * - Desktop: First 3 in column, rest in grid
      * - Mobile: All images in grid (column hidden via CSS)
      */
-    function populateThumbnailImages(media) {
+    function populateThumbnailImages(project) {
         const columnContainer = document.getElementById('entry-thumbnail-images-column');
         const gridContainer = document.getElementById('entry-thumbnail-images-grid');
 
-        if (!media.thumbnail_images || media.thumbnail_images.length === 0) return;
+        if (!project.thumb || project.thumb.length === 0) return;
 
         // Shuffle images for variety on each reload
-        const shuffledImages = DataLoader.shuffleArray([...media.thumbnail_images]);
-        const altText = media.thumb_slideshow_alt_text || 'Project image';
+        const shuffledImages = DataLoader.shuffleArray([...project.thumb]);
+        const altText = project.thumb_alt || 'Project image';
 
         // Split images: first 3 for column (desktop), rest for grid
         const columnImages = shuffledImages.slice(0, 3);
@@ -239,13 +239,13 @@ const EntryController = (() => {
     /**
      * Populate video embed
      */
-    function populateVideoEmbed(media) {
+    function populateVideoEmbed(project) {
         const container = document.getElementById('entry-video');
         if (!container) return;
 
         container.innerHTML = `
             <div class="video-container">
-                ${media.video_embed}
+                ${project.media_embed}
             </div>
         `;
         container.style.display = 'block';
@@ -254,14 +254,14 @@ const EntryController = (() => {
     /**
      * Populate page imagery section
      */
-    function populatePageImagery(media) {
+    function populatePageImagery(project) {
         const container = document.getElementById('entry-page-imagery');
         if (!container) return;
 
-        container.innerHTML = media.page_imagery.map((img, index) => `
+        container.innerHTML = project.img.map((img, index) => `
             <img
                 src="/${img}"
-                alt="${media.page_image_group_alt_text || 'Additional project image'}"
+                alt="${project.img_alt || 'Additional project image'}"
                 class="entry-page-image ${index === 0 ? 'active' : ''}"
                 loading="lazy"
             />
@@ -269,8 +269,8 @@ const EntryController = (() => {
         container.style.display = 'block';
 
         // Add swipe if multiple images
-        if (media.page_imagery.length > 1) {
-            addPageImagerySwipe(container, media.page_imagery.length);
+        if (project.img.length > 1) {
+            addPageImagerySwipe(container, project.img.length);
         }
     }
 
@@ -307,16 +307,15 @@ const EntryController = (() => {
     /**
      * Populate project URL embed
      */
-    function populateProjectURL(assets) {
+    function populateProjectURL(project) {
         const container = document.getElementById('entry-project-url');
-        if (!container || !assets.project_url) return;
+        if (!container || !project.origin_url) return;
 
-        // Use project_url_text if available, otherwise show full URL
-        const displayText = assets.project_url_text || assets.project_url;
+        const displayText = project.origin_url_text || project.origin_url;
 
         container.innerHTML = `
-            <a href="${assets.project_url}" target="_blank" rel="noopener noreferrer" class="project-link-card">
-                <span class="link-icon">🔗</span>
+            <a href="${project.origin_url}" target="_blank" rel="noopener noreferrer" class="project-link-card">
+                <span class="link-icon">&#128279;</span>
                 <span class="link-url">${displayText}</span>
             </a>
         `;
@@ -352,12 +351,10 @@ const EntryController = (() => {
      * @returns {Array} - Array of 5 related projects
      */
     function generateRelatedPosts(currentProject, allProjects) {
-        const currentEntryId = currentProject.categorization.entry_id;
+        const currentId = currentProject.id;
 
         // Filter out current project
-        const otherProjects = allProjects.filter(p =>
-            p.categorization.entry_id !== currentEntryId
-        );
+        const otherProjects = allProjects.filter(p => p.id !== currentId);
 
         if (otherProjects.length === 0) {
             return [];
@@ -417,24 +414,18 @@ const EntryController = (() => {
      * Initialize entry page
      */
     async function init() {
-        console.log('🚀 Initializing entry page...');
-
         try {
             // Get entry path
             const entryPath = getEntryPath();
-            console.log(`📍 Entry path: ${entryPath}`);
 
             // Load entry data
             const project = await loadEntryData(entryPath);
 
             if (!project) {
-                console.error('❌ Failed to load project data');
-                // Show error state
+                console.error('Failed to load project data');
                 document.body.innerHTML = '<div class="container"><h1>Entry not found</h1></div>';
                 return;
             }
-
-            console.log('✅ Project loaded:', project.categorization.entry_id);
 
             // Populate all sections
             populateMetadata(project);
@@ -442,10 +433,8 @@ const EntryController = (() => {
             populateContent(project);
             await populateRelatedPosts(project);
 
-            console.log('✅ Entry page initialized');
-
         } catch (error) {
-            console.error('❌ Error initializing entry page:', error);
+            console.error('Error initializing entry page:', error);
         }
     }
 

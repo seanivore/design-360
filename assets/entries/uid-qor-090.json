@@ -1,77 +1,78 @@
 {
-    "_metadata": {
-        "last_updated": "2025-10-18T21:23:00.000000Z",
-        "required_fields": true,
-        "template_type": "portfolio_entry",
-        "schema_version": "4.0",
-        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
-    },
-    "categorization": {
-        "entry_id": "uid-qor-090",
-        "slug": "css-animated-micro-interactions",
-        "tags": {
-            "role": [
-                "Automation Engineer",
-                "Content Strategist",
-                "Web Developer"
-            ],
-            "skill": [
-                "Animation",
-                "Automation",
-                "Content Production",
-                "Copywriting",
-                "Generative AI",
-                "Git",
-                "GitHub Pages",
-                "HTML/CSS/JS",
-                "Jekyll",
-                "Landing Page Design",
-                "Publishing",
-                "Responsive Design",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "landing-page-research-presentations-data.mp4",
-            "video_url": "https://youtu.be/hNdy_KW1w8U",
-            "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections and Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-            "video_alt_text": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
-            "thumbnail_images": [
-                "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
-                "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
-                "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-3.webp",
-                "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-4.webp",
-                "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-5.webp",
-                "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "presenting.august.style",
-            "project_url": "https://presenting.august.style",
-            "github_repository": "https://github.com/seanivore/presentation-decks"
-        },
-        "teaser_copy": {
-            "seo_title": "Two Presentation Deck Sections & Markdown-Based Index",
-            "seo_description": "Versatile website features two presentation sections, a CSS-animated homepage with glassmorphic tiles, and a markdown-based index section",
-            "page_title": "AI Agent Research Presentation Platform",
-            "page_subtitle": "CSS-animated interface showcasing agentic workflow case studies",
-            "tile_text": [
-                "Glassmorphic tiles with smooth CSS animations",
-                "Two distinct presentation formats in one site",
-                "Markdown-to-HTML automation for documentation",
-                "Showcasing practical agentic AI implementations"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Complex AI research and case studies need presentation formats that adapt to different content types—some material works best as traditional slide decks, while other content requires indexed documentation. The challenge was creating a unified platform that could house both presentation styles with an engaging entry point that makes technical content approachable. The CSS-animated homepage needed to feel modern and interactive without JavaScript dependencies that could bloat load times.",
-            "action": "Built a versatile platform with three distinct sections: a CSS-animated homepage featuring glassmorphic tiles with micro-interactions, two full presentation deck areas for AI voice marketing research and agentic workflow implementations, and a markdown-based index system that auto-converts documentation to clean HTML. The homepage animations use pure CSS for buttery-smooth performance, with hover and focus states that guide users naturally to different content areas. Integrated Jekyll for markdown processing, allowing rapid updates to documentation sections without touching HTML.",
-            "measured": "Successfully delivered comprehensive AI research across multiple formats while maintaining visual cohesion and fast load times. The CSS-only animation approach keeps the homepage performant even with complex visual effects. The dual presentation system accommodates both slide-deck-style research summaries and detailed indexed documentation, making technical concepts accessible to different learning styles. The markdown integration enables quick content updates—new research findings can be added and published in minutes rather than hours of HTML work."
-        }
-    },
-    "notes": []
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
+  "id": "uid-qor-090",
+  "slug": "css-animated-micro-interactions",
+  "title": "AI Agent Research Presentation Platform",
+  "subtitle": "CSS-animated interface showcasing agentic workflow case studies",
+  "seo_title": "Presentation Deck Sections & Markdown-Based Index",
+  "seo_description": "Versatile website features two presentation sections, a CSS-animated homepage with glassmorphic tiles, and a markdown-based index section",
+  "role": [
+    "AI & Automation Strategist",
+    "Content Strategist",
+    "Web Developer"
+  ],
+  "skill": [
+    "Animation",
+    "Automation",
+    "Content Production",
+    "Copywriting",
+    "Generative AI",
+    "Git",
+    "GitHub Pages",
+    "HTML/CSS/JS",
+    "Jekyll",
+    "Landing Page Design",
+    "Publishing",
+    "Responsive Design",
+    "Scaling Systems"
+  ],
+  "product": [
+    "Presentation Platform",
+    "Website"
+  ],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
+    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
+    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-3.webp",
+    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-4.webp",
+    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-5.webp",
+    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-6.webp"
+  ],
+  "thumb_alt": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
+  "img": [
+    "assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-1.webp",
+    "assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-2.webp",
+    "assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-3.webp"
+  ],
+  "img_alt": "Presentation platform screenshots showing glassmorphic homepage tiles, slide deck layouts, and markdown-based documentation",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "https://youtu.be/hNdy_KW1w8U",
+  "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections and Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+  "media_alt": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
+  "origin_url": "https://presenting.august.style",
+  "origin_url_text": "presenting.august.style",
+  "repository": "https://github.com/seanivore/presentation-decks",
+  "tiles": [
+    "Glassmorphic tiles with smooth CSS animations",
+    "Two distinct presentation formats in one site",
+    "Markdown-to-HTML automation for documentation",
+    "Showcasing practical agentic AI implementations"
+  ],
+  "challenge": "Complex AI research and case studies need presentation formats that adapt to different content types. Some material works best as traditional slide decks, while other content requires indexed documentation. The challenge was creating a unified platform that could house both presentation styles with an engaging entry point that makes technical content approachable, all without relying on JavaScript for animations.",
+  "approach": "Built a versatile platform with three distinct sections: a CSS-animated homepage featuring glassmorphic tiles with micro-interactions, two presentation deck areas for AI voice marketing research and agentic workflow implementations, and a markdown-based index system that auto-converts documentation to clean HTML. The homepage animations use pure CSS for smooth performance, with hover and focus states guiding users naturally to different content areas. Integrated Jekyll for markdown processing, enabling rapid documentation updates without touching HTML.",
+  "result": "The platform delivers comprehensive AI research across multiple formats while maintaining visual cohesion and fast load times. The CSS-only animation approach keeps the homepage performant even with complex visual effects. The dual presentation system accommodates both slide-deck-style summaries and detailed indexed documentation, making technical concepts accessible to different audiences. The markdown integration enables publishing new research findings in minutes rather than hours.",
+  "role_headline": "Design strategist building brand systems from scratch",
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "CSS micro-interactions, glassmorphism, Jekyll static site generation, markdown automation, and multi-format content architecture.",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

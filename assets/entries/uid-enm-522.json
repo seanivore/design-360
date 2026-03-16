@@ -1,71 +1,51 @@
 {
-    "_metadata": {
-        "last_updated": "2025-10-18T13:31:00.000000Z",
-        "required_fields": true,
-        "template_type": "portfolio_entry",
-        "schema_version": "4.0",
-        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
-    },
-    "categorization": {
-        "entry_id": "uid-enm-522",
-        "slug": "surreal-constructivism-perception",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/223404499?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
-            "thumbnail_images": [
-                "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-1.webp",
-                "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-2.webp",
-                "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-3.webp",
-                "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-4.webp"
-            ],
-            "thumb_slideshow_alt_text": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.net/gallery/Currents-of-Perception",
-            "project_url": "https://www.behance.net/gallery/223404499/Currents-of-Perception",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Currents of Perception: Generative Geometric Constructivist Abstraction Landscapes",
-            "seo_description": "An abstract generative series exploring perception through geometric currents, constructivist colored landscapes, and emergent figures that suggest a psychic motion.",
-            "page_title": "Currents of Perception",
-            "page_subtitle": "Generative geometric abstractions create constructivism landscapes",
-            "tile_text": [
-                "Geometric mountains tower over brightly colored figures",
-                "Figures emerging from psychic landscape",
-                "Generative process refined with disciplined finishing"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Abstract landscape work thrives on motion cues, color harmonies, and geometric repetition that guide the eye through space without fixed boundaries.",
-            "action": "A generative pipeline sketched core geometry and palette, then in painting and value control established edge discipline, focal emergence, and layered color depth.",
-            "measured": "Delivers cohesive series pieces that read clearly at grid scale and reward close inspection for print, social showcases, and provenance linked digital editions."
-        }
-    },
-    "notes": []
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-enm-522",
+  "slug": "surreal-constructivism-perception",
+  "title": "Currents of Perception",
+  "subtitle": "Generative geometric abstractions create constructivism landscapes",
+  "seo_title": "Currents of Perception: Generative Geometric Constructivist Abstraction Landscapes",
+  "seo_description": "An abstract generative series exploring perception through geometric currents, constructivist colored landscapes, and emergent figures that suggest a psychic motion.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-1.webp",
+    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-2.webp",
+    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-3.webp",
+    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-4.webp"
+  ],
+  "thumb_alt": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
+  "img": [
+    "assets/media/surreal-constructivism-perception-currents/img-sq-surreal-constructivism-perception-currents-1.webp",
+    "assets/media/surreal-constructivism-perception-currents/img-sq-surreal-constructivism-perception-currents-2.webp",
+    "assets/media/surreal-constructivism-perception-currents/img-sq-surreal-constructivism-perception-currents-3.webp"
+  ],
+  "img_alt": "Geometric constructivist landscape abstractions with vivid color fields and emergent figures",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/223404499?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
+  "origin_url": "https://www.behance.net/gallery/223404499/Currents-of-Perception",
+  "origin_url_text": "behance.net/gallery/Currents-of-Perception",
+  "repository": "",
+  "tiles": [
+    "Geometric mountains tower over brightly colored figures",
+    "Figures emerging from psychic landscape",
+    "Generative process refined with disciplined finishing"
+  ],
+  "challenge": "Exploring how geometric abstraction can convey motion and psychological depth within a landscape format. The goal was to create compositions where constructivist forms suggest emergent figures and shifting perception, blending structured geometry with an almost psychic spatial energy.",
+  "approach": "Used Adobe Firefly to generate base compositions built around layered geometric mountains and color fields. Each piece was refined in Lightroom for color grading and value control, then prepared in Illustrator for print-ready output with disciplined edge work and focal hierarchy.",
+  "result": "Produced a cohesive series of abstract landscape prints that read clearly at grid scale and reward close inspection at full resolution. The collection is suitable for gallery display, high-quality art prints, and digital provenance editions.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

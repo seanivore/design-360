@@ -39,19 +39,12 @@ def _write_project(output_path: Path, data: dict) -> None:
 
 def _apply_uid_and_metadata(data: dict, uid: str) -> dict:
     """Apply the UID and update metadata with actual values."""
-    # Update metadata with actual values (not instruction text)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
     data["_metadata"] = {
-        "last_updated": now,
-        "required_fields": True,
-        "template_type": "portfolio_entry",
-        "schema_version": "3.2",
-        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
+        "schema_version": "5.0",
+        "template_type": "project_entry"
     }
-
-    # Set the entry_id to the generated UID
-    data["categorization"]["entry_id"] = uid
-
+    data["id"] = uid
     return data
 
 

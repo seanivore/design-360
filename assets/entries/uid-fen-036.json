@@ -1,66 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-fen-036",
-        "slug": "gradient-bauhaus",
-        "tags": {
-            "role": [
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Print Layout",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/217385795?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "A generative gradient study exploring depth through layered color transitions, soft edges, and controlled value steps.",
-            "thumbnail_images": [
-                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
-                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
-                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
-                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
-                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
-                "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.net/gallery/Gradient-Depths",
-            "project_url": "https://www.behance.net/gallery/217385795/Gradient-Depths",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Gradient Depths: Generative Layered Color and Controlled Value",
-            "seo_description": "A minimal abstract collection exploring gradient depth via layered color transitions, soft edges, and disciplined value pacing for clean modern panels.",
-            "page_title": "Gradient Depths",
-            "page_subtitle": "Layered color transitions and controlled value for clean panels.",
-            "tile_text": [
-                "Layered gradients with soft edge control",
-                "Disciplined value steps for spatial depth",
-                "Generative panels with minimal polish"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Minimal gradient work relies on clean color transitions, soft falloff, and value control that suggests depth without hard edges.",
-            "action": "A generative layout defined base gradients and axes, then in painting refined edge softness, micro contrast, and hue relationships.",
-            "measured": "Produces calm, modern panels that read clearly at tile scale and hold subtle depth for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-fen-036",
+  "slug": "gradient-bauhaus",
+  "title": "Gradient Depths",
+  "subtitle": "Layered color transitions and controlled value for clean panels.",
+  "seo_title": "Gradient Depths: Generative Layered Color and Controlled Value",
+  "seo_description": "A minimal abstract collection exploring gradient depth via layered color transitions, soft edges, and disciplined value pacing for clean modern panels.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
+    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
+    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
+    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
+    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
+    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
+  ],
+  "thumb_alt": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
+  "img": [
+    "assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp",
+    "assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-2.webp",
+    "assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-3.webp"
+  ],
+  "img_alt": "Bauhaus-influenced gradient abstractions with smooth layered color transitions, geometric forms emerging from soft depth, and controlled value pacing",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/217385795?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "A generative gradient study exploring depth through layered color transitions, soft edges, and controlled value steps.",
+  "origin_url": "https://www.behance.net/gallery/217385795/Gradient-Depths",
+  "origin_url_text": "behance.net/gallery/Gradient-Depths",
+  "repository": "",
+  "tiles": [
+    "Layered gradients with soft edge control",
+    "Disciplined value steps for spatial depth",
+    "Generative panels with minimal polish"
+  ],
+  "challenge": "Using gradients as the primary compositional tool to suggest depth, atmosphere, and spatial structure without relying on hard edges or defined shapes. The brief called for compositions where color transitions alone create a sense of three-dimensional space and quiet visual movement.",
+  "approach": "Used Adobe Firefly to define base gradient fields and compositional axes, then refined edge softness, micro-contrast, and hue relationships in Lightroom. The finishing process prioritized smooth tonal transitions and eliminated any artifacts that disrupted the gradient flow.",
+  "result": "Produced a six-piece gradient abstraction series with calm, modern panels that read clearly at tile scale and reveal subtle depth at full resolution. The collection demonstrates controlled color mastery suitable for contemporary art prints and portfolio presentation.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

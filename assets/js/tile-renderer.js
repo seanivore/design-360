@@ -1,5 +1,5 @@
 /**
- * TILE RENDERER (v4.0)
+ * TILE RENDERER (v5.0)
  * Clean, simple tile structure - no absolute positioning
  */
 
@@ -9,21 +9,18 @@ const TileRenderer = (() => {
      * Render a section tile
      */
     function renderSectionTile(project) {
-        const { categorization, content } = project;
-        const { media = {}, teaser_copy = {} } = content;
-
-        const slug = categorization.slug;
+        const slug = project.slug;
         const entryURL = `/${slug}`;
 
-        const thumbnails = media.thumbnail_images || [];
-        const tileTexts = teaser_copy?.tile_text || [];
-        const displayText = tileTexts[0] || teaser_copy?.page_subtitle || teaser_copy?.page_title || 'View Project';
-        const altText = media.thumb_slideshow_alt_text || teaser_copy?.page_title || 'Project image';
+        const thumbnails = project.thumb || [];
+        const tileTexts = project.tiles || [];
+        const displayText = tileTexts[0] || project.subtitle || project.title || 'View Project';
+        const altText = project.thumb_alt || project.title || 'Project image';
 
         // Wrapper
         const tile = document.createElement('div');
         tile.className = 'tile fade-in-item';
-        tile.setAttribute('data-entry-id', categorization.entry_id);
+        tile.setAttribute('data-entry-id', project.id);
 
         // Gallery (scroll container)
         const gallery = document.createElement('div');
@@ -40,7 +37,7 @@ const TileRenderer = (() => {
             image.alt = altText;
             image.className = 'tile-image';
             image.loading = 'lazy';
-            
+
             imageLink.appendChild(image);
             gallery.appendChild(imageLink);
         });
@@ -104,7 +101,7 @@ const TileRenderer = (() => {
             image.alt = altText;
             image.className = 'tile-homepage-image';
             image.loading = 'lazy';
-            
+
             imageLink.appendChild(image);
             topRow.appendChild(imageLink);
         });
@@ -123,7 +120,7 @@ const TileRenderer = (() => {
             image.alt = altText;
             image.className = 'tile-homepage-image';
             image.loading = 'lazy';
-            
+
             imageLink.appendChild(image);
             bottomRow.appendChild(imageLink);
         });
@@ -199,7 +196,7 @@ const TileRenderer = (() => {
                     tile.style.animationDelay = `${index * 100}ms`;
                     container.appendChild(tile);
                 } catch (error) {
-                    console.error(`❌ Failed to render tile:`, project.categorization?.entry_id, error);
+                    console.error('Failed to render tile:', project?.id, error);
                 }
             });
 

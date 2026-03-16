@@ -1,68 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-mnu-667",
-        "slug": "flat-bauhaus",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/217385831?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "A retro flat Bauhaus inspired generative set with simple geometry, clean color blocks, and balanced grids.",
-            "thumbnail_images": [
-                "assets/media/flat-bauhaus/thumb-flat-bauhaus-1.webp",
-                "assets/media/flat-bauhaus/thumb-flat-bauhaus-2.webp",
-                "assets/media/flat-bauhaus/thumb-flat-bauhaus-3.webp",
-                "assets/media/flat-bauhaus/thumb-flat-bauhaus-4.webp",
-                "assets/media/flat-bauhaus/thumb-flat-bauhaus-5.webp",
-                "assets/media/flat-bauhaus/thumb-flat-bauhaus-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Flat geometric panels with Bauhaus inspired forms, clean color blocks, and balanced grids.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.gallery/Retro-Flat-Bauhaus",
-            "project_url": "https://www.behance.net/gallery/217385831/Retro-Flat-Bauhaus",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Retro Flat Bauhaus: Generative Geometry with Clean Color Blocks",
-            "seo_description": "A Bauhaus inspired collection exploring flat geometry, modular grids, and clean color blocks with a generative pipeline and restrained finishing.",
-            "page_title": "Retro Flat Bauhaus",
-            "page_subtitle": "Flat geometry, modular grids, and clean color blocks.",
-            "tile_text": [
-                "Flat Bauhaus geometry with clean color blocks",
-                "Modular grids and balanced composition",
-                "Generative panels with restrained finishing"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Bauhaus flat work emphasizes simple forms, modular grids, and clear color relationships that remain legible at any scale.",
-            "action": "A generative layout established primary shapes and grid rhythm, then in painting refined edge quality, color steps, and spatial balance.",
-            "measured": "Delivers crisp panels that pop at tile scale and hold integrity for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-mnu-667",
+  "slug": "flat-bauhaus",
+  "title": "Retro Flat Bauhaus",
+  "subtitle": "Flat geometry, modular grids, and clean color blocks.",
+  "seo_title": "Retro Flat Bauhaus: Generative Geometry with Clean Color Blocks",
+  "seo_description": "A Bauhaus inspired collection exploring flat geometry, modular grids, and clean color blocks with a generative pipeline and restrained finishing.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/flat-bauhaus/thumb-flat-bauhaus-1.webp",
+    "assets/media/flat-bauhaus/thumb-flat-bauhaus-2.webp",
+    "assets/media/flat-bauhaus/thumb-flat-bauhaus-3.webp",
+    "assets/media/flat-bauhaus/thumb-flat-bauhaus-4.webp",
+    "assets/media/flat-bauhaus/thumb-flat-bauhaus-5.webp",
+    "assets/media/flat-bauhaus/thumb-flat-bauhaus-6.webp"
+  ],
+  "thumb_alt": "Flat geometric panels with Bauhaus inspired forms, clean color blocks, and balanced grids.",
+  "img": [
+    "assets/media/flat-bauhaus/img-sq-flat-bauhaus-1.webp",
+    "assets/media/flat-bauhaus/img-sq-flat-bauhaus-2.webp",
+    "assets/media/flat-bauhaus/img-sq-flat-bauhaus-3.webp"
+  ],
+  "img_alt": "Retro Bauhaus-inspired flat geometric compositions with bold primary color blocks and modular grid structures",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/217385831?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "A retro flat Bauhaus inspired generative set with simple geometry, clean color blocks, and balanced grids.",
+  "origin_url": "https://www.behance.net/gallery/217385831/Retro-Flat-Bauhaus",
+  "origin_url_text": "behance.gallery/Retro-Flat-Bauhaus",
+  "repository": "",
+  "tiles": [
+    "Flat Bauhaus geometry with clean color blocks",
+    "Modular grids and balanced composition",
+    "Generative panels with restrained finishing"
+  ],
+  "challenge": "Channeling the flat, poster-ready aesthetic of early Bauhaus design through a modern generative lens. The goal was to create compositions that honor the movement's commitment to simple forms, modular grids, and bold color blocking while maintaining a retro warmth that feels accessible and contemporary.",
+  "approach": "Used Adobe Firefly to establish primary shapes and grid rhythms, then refined edge quality, color steps, and spatial balance in Lightroom and Illustrator. Each panel was treated as a modular unit, ensuring the series maintains visual consistency across the full collection.",
+  "result": "Delivered a six-piece retro Bauhaus collection with crisp, flat compositions that pop at tile scale and hold their graphic integrity at print resolution. The series bridges mid-century design sensibility with contemporary generative process.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

@@ -1,67 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-hdp-267",
-        "slug": "minimalism-bauhaus",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/217385779?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "A minimal generative set with restrained geometry, ample negative space, and clear color relationships.",
-            "thumbnail_images": [
-                "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-1.webp",
-                "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-2.webp",
-                "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-3.webp",
-                "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-4.webp",
-                "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-5.webp",
-                "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Minimal geometric panels with clean edges, negative space, and simple color steps.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.net/gallery/Minimal-Maybes",
-            "project_url": "https://www.behance.net/gallery/217385779/Minimal-Maybes",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Minimal Maybes: Generative Restraint with Clean Geometry and Space",
-            "seo_description": "A minimal abstract series balancing clean geometry, negative space, and simple color relationships, built with a generative pipeline and precise finishing.",
-            "page_title": "Minimal Maybes",
-            "page_subtitle": "Clean geometry and negative space in a minimal generative study.",
-            "tile_text": [
-                "Clean geometry with ample negative space",
-                "Simple color steps and crisp edges",
-                "Generative panels with precise restraint"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Minimalism depends on restraint: clear shapes, honest space, and simple color that stays legible across scales.",
-            "action": "A generative pass set base forms and spacing, then in painting refined edge integrity, color pacing, and micro contrast.",
-            "measured": "Delivers quiet panels that present clearly in grids and carry enough structure for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-hdp-267",
+  "slug": "minimalism-bauhaus",
+  "title": "Minimal Maybes",
+  "subtitle": "Clean geometry and negative space in a minimal generative study.",
+  "seo_title": "Minimal Maybes: Generative Restraint with Clean Geometry and Space",
+  "seo_description": "A minimal abstract series balancing clean geometry, negative space, and simple color relationships, built with a generative pipeline and precise finishing.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-1.webp",
+    "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-2.webp",
+    "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-3.webp",
+    "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-4.webp",
+    "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-5.webp",
+    "assets/media/minimalism-bauhaus/thumb-minimalism-bauhaus-6.webp"
+  ],
+  "thumb_alt": "Minimal geometric panels with clean edges, negative space, and simple color steps.",
+  "img": [
+    "assets/media/minimalism-bauhaus/img-sq-minimalism-bauhaus-1.webp",
+    "assets/media/minimalism-bauhaus/img-sq-minimalism-bauhaus-2.webp",
+    "assets/media/minimalism-bauhaus/img-sq-minimalism-bauhaus-3.webp"
+  ],
+  "img_alt": "Minimal Bauhaus-inspired geometric panels with restrained color, ample negative space, and crisp clean edges",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/217385779?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "A minimal generative set with restrained geometry, ample negative space, and clear color relationships.",
+  "origin_url": "https://www.behance.net/gallery/217385779/Minimal-Maybes",
+  "origin_url_text": "behance.net/gallery/Minimal-Maybes",
+  "repository": "",
+  "tiles": [
+    "Clean geometry with ample negative space",
+    "Simple color steps and crisp edges",
+    "Generative panels with precise restraint"
+  ],
+  "challenge": "Pursuing maximum visual impact through maximum restraint. The creative brief was to produce Bauhaus-influenced compositions where every shape earns its place, negative space does as much work as positive form, and a limited color palette creates quiet harmony across the series.",
+  "approach": "Used Adobe Firefly to generate base geometric forms with careful spacing, then refined edge integrity, color pacing, and micro-contrast relationships in Lightroom. The finishing process focused on eliminating excess rather than adding complexity.",
+  "result": "Produced a six-piece minimal abstraction series with quiet, confident compositions that present cleanly in portfolio grids and carry enough structural integrity for high-quality art prints and gallery-scale display.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

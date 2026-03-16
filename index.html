@@ -1,111 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Tags -->
-    <title>Sean August Horvath | Creative Innovations Generalist</title>
-    <meta name="description" content="Creative generalist portfolio spanning web development, print design, digital products, and video production. 14 years bridging art, product, and growth.">
-    <meta property="og:title" content="Sean August Horvath | Creative Innovations Generalist">
-    <meta property="og:description" content="Portfolio showcasing expertise across web, print, digital, and video projects.">
-    <meta property="og:image" content="/assets/media/og-homepage.jpg">
-    <meta property="og:image:alt" content="Sean August Horvath creative portfolio homepage">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/styles.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="seanivore" />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean August Horvath — Design, Development & Automation</title>
+  <meta name="description" content="Portfolio of Sean August Horvath. Web development, graphic design, automation engineering, and creative direction across 36+ projects.">
+  <meta property="og:title" content="Sean August Horvath — Design, Development & Automation">
+  <meta property="og:description" content="Portfolio showcasing expertise across web, design, automation, and creative projects.">
+  <meta property="og:image" content="/assets/media/og-homepage.jpg">
+  <meta property="og:image:alt" content="Sean August Horvath creative portfolio homepage">
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="seanivore">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/landing.css">
 </head>
-
 <body>
+  <!-- NAV -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="#showcase">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#credentials">About</a></li>
+      </ul>
+      <button class="btn-contact" onclick="window.location.href='mailto:horvathaugust@gmail.com'">Contact</button>
+    </div>
+  </nav>
+  <button class="nav-pill" id="navPill" aria-label="Open navigation"><span></span><span></span><span></span></button>
 
-    <!-- Header (matches section.html) -->
-    <header class="site-header">
-        <div class="container">
-            <a href="/" class="site-logo">Sean August Horvath</a>
-            <nav class="site-nav">
-                <a href="/#projects">Projects</a>
-                <a href="/#about">About</a>
-                <a href="/#contact">Contact</a>
-            </nav>
+  <!-- HERO -->
+  <div class="hero-scroll-wrapper" id="heroWrapper">
+    <div class="hero-sticky" id="heroSticky">
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-item">
+          <div class="stat-number" data-count="0">0</div>
+          <div class="stat-label">Projects</div>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container">
-
-        <!-- Projects Section -->
-        <section id="projects" class="homepage-section">
-            <h1 class="section-heading">Creative Works</h1>
-            <div id="homepage-tile-grid" class="grid-homepage">
-                <!-- 4 section tiles inserted by homepage-controller.js -->
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="homepage-section about-section">
-            <h2 class="visually-hidden">About</h2>
-            <div class="about-container">
-                <img src="/assets/media/profile-picture-horvath.webp" alt="Sean August Horvath" class="profile-pic">
-                <div class="about-content">
-                    <h3 class="about-title">Sean August Horvath</h3>
-                    <h4 class="about-subtitle">Creative Generalist, Innovations & Design</h4>
-                    <p>14 years hopping borders between art, product, and growth. Clean lines, maximal ideas. Sketches brands by hand, ships AI pipelines by night. Connecting patterns across disciplines is my superpower; making it teachable is my craft.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="homepage-section contact-section">
-            <h2 class="section-heading">Say hello!</h2>
-            <div class="social-links">
-                <a href="https://github.com/seanivore" aria-label="GitHub Profile" title="GitHub" class="social-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/seanivore/" aria-label="LinkedIn Profile" title="LinkedIn" class="social-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                </a>
-                <a href="https://instagram.com/seanivore/" aria-label="Instagram Profile" title="Instagram" class="social-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                </a>
-                <a href="mailto:horvathaugust@gmail.com" aria-label="Email" title="Email" class="social-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
-                    </svg>
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer mt-lg">
-        <div class="container">
-            <p class="text-center text-secondary">
-                &copy; 2025 Sean August Horvath. Single-JSON Portfolio Architecture.
-            </p>
+        <div class="stat-item">
+          <div class="stat-number" data-count="0">0</div>
+          <div class="stat-label">Roles</div>
         </div>
-    </footer>
+        <div class="stat-item">
+          <div class="stat-number" data-count="0" data-suffix="+">0</div>
+          <div class="stat-label">Skills</div>
+        </div>
+      </div>
+      <div class="hero-visual" id="heroVisual">
+        <div class="hero-img-scroll" id="heroImgScroll">
+          <!-- Populated by landing-controller.js -->
+        </div>
+        <div class="hero-visual-overlay" id="heroOverlay"></div>
+      </div>
+      <div class="hero-content" id="heroContent">
+        <div class="flip-headline" id="flipHeadline">
+          <div class="flip-track" id="flipTrack">
+            <!-- Populated by landing-controller.js -->
+          </div>
+        </div>
+        <div class="hero-byline">by <strong>Sean August Horvath</strong></div>
+        <div class="hero-cta" id="heroCTA">
+          <button class="btn btn-primary">See Web Projects</button>
+          <button class="btn btn-ghost">All Projects</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- JavaScript Modules -->
-    <script src="/assets/js/data-loader.js"></script>
-    <script src="/assets/js/tile-renderer.js"></script>
-    <script src="/assets/js/homepage-controller.js"></script>
+  <!-- Trio bridge -->
+  <div class="hero-trio-bridge" id="trioBridge"><span></span><span></span><span></span></div>
 
+  <!-- SHOWCASE -->
+  <section class="showcase sr" id="showcase">
+    <div class="container">
+      <h2 class="section-heading" id="showcaseHeading"><!-- JS --></h2>
+      <div class="showcase-tabs" id="showcaseTabs" role="tablist">
+        <!-- Populated by landing-controller.js -->
+      </div>
+      <div id="showcasePanels">
+        <!-- Populated by landing-controller.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials sr" id="credentials">
+    <div class="container">
+      <h2 class="section-heading" id="credentialsHeading"><!-- JS --></h2>
+      <div class="cred-list" id="credList">
+        <!-- Populated by landing-controller.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process sr" id="process">
+    <div class="container">
+      <h2 class="section-heading" id="processHeading"><!-- JS --></h2>
+    </div>
+    <div class="process-scroll" id="processScroll">
+      <!-- Populated by landing-controller.js -->
+    </div>
+    <div class="process-indicator"><span></span><span></span><span></span></div>
+  </section>
+
+  <!-- CREATIVE -->
+  <section class="creative sr" id="creative">
+    <div class="container">
+      <h2 class="section-heading" id="creativeHeading"><!-- JS --></h2>
+      <div class="creative-grid" id="creativeGrid">
+        <!-- Populated by landing-controller.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="impact sr" id="impact">
+    <div class="container">
+      <h2 class="section-heading" id="impactHeading"><!-- JS --></h2>
+      <div class="impact-grid" id="impactGrid">
+        <!-- Populated by landing-controller.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements sr" id="achievements">
+    <div class="container">
+      <h2 class="section-heading" id="achievementsHeading"><!-- JS --></h2>
+      <div id="achievementsList">
+        <!-- Populated by landing-controller.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA TRIO -->
+  <div class="cta-trio sr"><span></span><span></span><span></span></div>
+
+  <!-- CTA -->
+  <section class="cta-section sr" id="ctaSection">
+    <div class="container">
+      <h2 class="cta-heading" id="ctaHeading"><!-- JS --></h2>
+      <div class="cta-buttons" id="ctaButtons">
+        <!-- Populated by landing-controller.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-icons">
+      <a href="https://github.com/seanivore" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      <a href="https://www.linkedin.com/in/seanivore/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.behance.net/seanivore" target="_blank" aria-label="Behance"><svg viewBox="0 0 24 24"><path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-.16 1.35-.48.348-1.05.6-1.67.767-.63.165-1.29.248-1.99.248H0V4.51h6.938v-.007zM6.545 10.16c.6 0 1.1-.15 1.47-.45.37-.3.555-.73.555-1.3 0-.325-.06-.6-.18-.82-.12-.22-.29-.4-.5-.52a2.07 2.07 0 00-.735-.27 4.159 4.159 0 00-.878-.08H3.287v3.44h3.258zm.21 5.67c.32 0 .63-.03.93-.09.3-.06.56-.16.78-.31s.4-.35.53-.6c.13-.25.19-.57.19-.96 0-.75-.22-1.29-.64-1.62-.43-.33-.99-.49-1.67-.49H3.287v4.07h3.468zM21.792 18.04c-.66.87-1.65 1.3-2.97 1.3-.6 0-1.14-.1-1.63-.31-.49-.2-.9-.49-1.25-.86-.34-.37-.6-.82-.78-1.35-.18-.53-.27-1.12-.27-1.76 0-.62.09-1.19.28-1.72.19-.53.46-.98.81-1.37.35-.38.78-.68 1.27-.9.5-.22 1.06-.33 1.67-.33.71 0 1.32.14 1.83.42.51.28.93.66 1.26 1.14.33.48.57 1.04.71 1.67.14.63.18 1.29.13 2h-6.35c.03.73.28 1.3.76 1.7.48.4 1.07.6 1.76.6.53 0 .98-.14 1.36-.41.38-.28.64-.6.78-.97h2.58zM19.33 13.14c-.04-.32-.12-.61-.24-.88-.12-.27-.29-.5-.5-.68-.2-.19-.44-.33-.72-.43-.28-.1-.59-.15-.94-.15-.36 0-.68.05-.96.16-.28.1-.52.25-.71.44-.2.19-.35.42-.47.68-.11.26-.18.55-.2.86h4.74zm-3.64-4.43h5.68V10h-5.68V8.71z"/></svg></a>
+      <a href="mailto:horvathaugust@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Sean August Horvath</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/data-loader.js"></script>
+  <script src="/assets/js/landing-controller.js"></script>
 </body>
-
 </html>

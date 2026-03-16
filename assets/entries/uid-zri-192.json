@@ -1,68 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-zri-192",
-        "slug": "constructi-landscapes",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/216060883?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Constructivist leaning abstract landscapes with geometric structure, flowing forms, and vibrant color fields suggesting mountains and water.",
-            "thumbnail_images": [
-                "assets/media/constructi-landscapes/thumb-constructi-landscapes-1.webp",
-                "assets/media/constructi-landscapes/thumb-constructi-landscapes-2.webp",
-                "assets/media/constructi-landscapes/thumb-constructi-landscapes-3.webp",
-                "assets/media/constructi-landscapes/thumb-constructi-landscapes-4.webp",
-                "assets/media/constructi-landscapes/thumb-constructi-landscapes-5.webp",
-                "assets/media/constructi-landscapes/thumb-constructi-landscapes-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Stylized mountain and water scenes with geometric structure, sweeping curves, and warm to cool color transitions.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.gallery/Art-Plus-Industry",
-            "project_url": "https://www.behance.net/gallery/216060883/Art-Plus-Industry",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Constructivism Landscapes: Generative Abstract Mountains and Color Fields",
-            "seo_description": "A generative landscape study blending constructivist geometry with flowing forms and vibrant gradients across mountain and water compositions.",
-            "page_title": "Constructivism Landscapes",
-            "page_subtitle": "Abstract mountains and water scenes with geometric structure and vibrant color.",
-            "tile_text": [
-                "Geometric structure meets flowing landscape forms",
-                "Vibrant gradients across mountains and calm water",
-                "Generative compositions with disciplined color pacing"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Constructivist landscapes balance strong geometric frameworks with clear color relationships, letting structure guide motion across terrain and water.",
-            "action": "A generative pass established compositional axes and gradient fields, then in painting refined edge control, value steps, and spatial rhythm.",
-            "measured": "Produces cohesive panels that read clearly at tile scale and hold layered depth for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-zri-192",
+  "slug": "constructi-landscapes",
+  "title": "Constructivism Landscapes",
+  "subtitle": "Abstract mountains and water scenes with geometric structure and vibrant color.",
+  "seo_title": "Constructivism Landscapes: Generative Abstract Mountains and Color Fields",
+  "seo_description": "A generative landscape study blending constructivist geometry with flowing forms and vibrant gradients across mountain and water compositions.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/constructi-landscapes/thumb-constructi-landscapes-1.webp",
+    "assets/media/constructi-landscapes/thumb-constructi-landscapes-2.webp",
+    "assets/media/constructi-landscapes/thumb-constructi-landscapes-3.webp",
+    "assets/media/constructi-landscapes/thumb-constructi-landscapes-4.webp",
+    "assets/media/constructi-landscapes/thumb-constructi-landscapes-5.webp",
+    "assets/media/constructi-landscapes/thumb-constructi-landscapes-6.webp"
+  ],
+  "thumb_alt": "Stylized mountain and water scenes with geometric structure, sweeping curves, and warm to cool color transitions.",
+  "img": [
+    "assets/media/constructi-landscapes/img-sq-constructi-landscapes-1.webp",
+    "assets/media/constructi-landscapes/img-sq-constructi-landscapes-2.webp",
+    "assets/media/constructi-landscapes/img-sq-constructi-landscapes-3.webp"
+  ],
+  "img_alt": "Constructivist abstract landscapes with geometric mountain forms, flowing water elements, and vibrant warm-to-cool gradient color fields",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/216060883?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Constructivist leaning abstract landscapes with geometric structure, flowing forms, and vibrant color fields suggesting mountains and water.",
+  "origin_url": "https://www.behance.net/gallery/216060883/Art-Plus-Industry",
+  "origin_url_text": "behance.gallery/Art-Plus-Industry",
+  "repository": "",
+  "tiles": [
+    "Geometric structure meets flowing landscape forms",
+    "Vibrant gradients across mountains and calm water",
+    "Generative compositions with disciplined color pacing"
+  ],
+  "challenge": "Applying constructivist geometric frameworks to natural landscape subjects, finding the balance between structural rigor and the organic flow of mountains, water, and sky. The series needed to feel both architecturally precise and naturally evocative across varied terrain compositions.",
+  "approach": "Used Adobe Firefly to establish compositional axes and gradient fields across mountain and water scenes. Lightroom handled color pacing and warm-to-cool transitions, while in-painting refined edge control, value steps, and spatial rhythm within each landscape panel.",
+  "result": "Produced a six-piece landscape series that merges constructivist discipline with natural terrain beauty. The cohesive panels read clearly at tile scale and hold layered depth for large-format art prints and digital portfolio display.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

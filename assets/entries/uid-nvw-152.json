@@ -1,68 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-nvw-152",
-        "slug": "humanistic-exploration",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/216060867?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Constructivist forms in vibrant abstract scenes: interiors, flowing landscapes, and geometric arrangements with warm and cool palettes.",
-            "thumbnail_images": [
-                "assets/media/humanistic-exploration/thumb-humanistic-exploration-1.webp",
-                "assets/media/humanistic-exploration/thumb-humanistic-exploration-2.webp",
-                "assets/media/humanistic-exploration/thumb-humanistic-exploration-3.webp",
-                "assets/media/humanistic-exploration/thumb-humanistic-exploration-4.webp",
-                "assets/media/humanistic-exploration/thumb-humanistic-exploration-5.webp",
-                "assets/media/humanistic-exploration/thumb-humanistic-exploration-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Abstract forms and landscapes with geometric rhythm, interior vistas, and bold color fields.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.net/gallery/Humanistic-Exploration",
-            "project_url": "https://www.behance.net/gallery/216060867/Humanistic-Exploration",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Constructivism Forms: Humanistic Exploration of Interiors and Abstract Landscapes",
-            "seo_description": "A generative collection exploring constructivist forms across interiors and stylized landscapes with flowing curves, geometric rhythm, and vibrant color fields.",
-            "page_title": "Humanistic Exploration",
-            "page_subtitle": "Constructivist forms in interiors and abstract landscape compositions.",
-            "tile_text": [
-                "Constructivist forms shaping interiors and landscapes",
-                "Flowing curves meet geometric rhythm and bold color",
-                "Generative compositions refined with disciplined finishing"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Constructivist form language emphasizes geometric clarity, directional flow, and color relationships that structure space and guide motion.",
-            "action": "A generative pass established core forms and axes across interiors and landscapes, then in painting refined edge discipline, value steps, and spatial pacing.",
-            "measured": "Produces cohesive panels that read clearly at tile scale and sustain layered structure for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-nvw-152",
+  "slug": "humanistic-exploration",
+  "title": "Humanistic Exploration",
+  "subtitle": "Constructivist forms in interiors and abstract landscape compositions.",
+  "seo_title": "Constructivism Forms: Humanistic Exploration of Interiors and Abstract Landscapes",
+  "seo_description": "A generative collection exploring constructivist forms across interiors and stylized landscapes with flowing curves, geometric rhythm, and vibrant color fields.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/humanistic-exploration/thumb-humanistic-exploration-1.webp",
+    "assets/media/humanistic-exploration/thumb-humanistic-exploration-2.webp",
+    "assets/media/humanistic-exploration/thumb-humanistic-exploration-3.webp",
+    "assets/media/humanistic-exploration/thumb-humanistic-exploration-4.webp",
+    "assets/media/humanistic-exploration/thumb-humanistic-exploration-5.webp",
+    "assets/media/humanistic-exploration/thumb-humanistic-exploration-6.webp"
+  ],
+  "thumb_alt": "Abstract forms and landscapes with geometric rhythm, interior vistas, and bold color fields.",
+  "img": [
+    "assets/media/humanistic-exploration/img-sq-humanistic-exploration-1.webp",
+    "assets/media/humanistic-exploration/img-sq-humanistic-exploration-2.webp",
+    "assets/media/humanistic-exploration/img-sq-humanistic-exploration-3.webp"
+  ],
+  "img_alt": "Constructivist interiors and abstract landscapes with flowing curves, geometric structure, and vibrant warm and cool palettes",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/216060867?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Constructivist forms in vibrant abstract scenes: interiors, flowing landscapes, and geometric arrangements with warm and cool palettes.",
+  "origin_url": "https://www.behance.net/gallery/216060867/Humanistic-Exploration",
+  "origin_url_text": "behance.net/gallery/Humanistic-Exploration",
+  "repository": "",
+  "tiles": [
+    "Constructivist forms shaping interiors and landscapes",
+    "Flowing curves meet geometric rhythm and bold color",
+    "Generative compositions refined with disciplined finishing"
+  ],
+  "challenge": "Applying constructivist form language to both interior spaces and open landscapes, creating compositions that feel human-centered despite their abstraction. The challenge was maintaining geometric clarity and directional flow while evoking warmth and lived-in atmosphere across a variety of settings.",
+  "approach": "Used Adobe Firefly to establish core compositional forms and spatial axes across interior and landscape scenes. Lightroom refined color relationships and value steps, while targeted in-painting sharpened edge discipline and spatial pacing to unify the series.",
+  "result": "Produced a cohesive six-piece collection that bridges architectural interiors and natural landscapes through consistent constructivist structure. The panels read clearly at tile scale and sustain layered detail for art prints and portfolio presentation.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

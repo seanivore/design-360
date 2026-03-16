@@ -1,68 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-rda-284",
-        "slug": "surreal-heads",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/216060793?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Surreal landscapes with giant human heads integrated into terrain: foliage crowned forms, floating orbs, and pastel atmospheres.",
-            "thumbnail_images": [
-                "assets/media/surreal-heads/thumb-surreal-heads-1.webp",
-                "assets/media/surreal-heads/thumb-surreal-heads-2.webp",
-                "assets/media/surreal-heads/thumb-surreal-heads-3.webp",
-                "assets/media/surreal-heads/thumb-surreal-heads-4.webp",
-                "assets/media/surreal-heads/thumb-surreal-heads-5.webp",
-                "assets/media/surreal-heads/thumb-surreal-heads-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Towering head forms across whimsical terrains, floating spheres, and soft pastel skies.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.gallery/Great-Figure-Heads",
-            "project_url": "https://www.behance.net/gallery/216060793/Great-Figure-Heads",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Surrealism Great Figure Heads: Monumental Portrait Forms in Whimsical Landscapes",
-            "seo_description": "A surreal series merging monumental head forms with lush terrains, floating spheres, and pastel atmospheres to explore scale, identity, and place.",
-            "page_title": "Great Figure Heads",
-            "page_subtitle": "Surreal portrait landscapes with monumental head forms and pastel atmospheres.",
-            "tile_text": [
-                "Monumental head forms embedded in terrain",
-                "Floating spheres and pastel atmospheric light",
-                "Exploratory figures give scale and narrative"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Surreal portrait landscapes play with scale, merging human forms and terrain under soft, luminous atmospheres that invite quiet exploration.",
-            "action": "A generative pass established head geometry and terrain flow, then in painting refined color pacing, edge softness, and focal pathways with floating elements.",
-            "measured": "Results read as calm, immersive scenes that present clearly in tiles and sustain layered depth for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-rda-284",
+  "slug": "surreal-heads",
+  "title": "Great Figure Heads",
+  "subtitle": "Surreal portrait landscapes with monumental head forms and pastel atmospheres.",
+  "seo_title": "Surrealism Great Figure Heads: Monumental Portrait Forms in Whimsical Landscapes",
+  "seo_description": "A surreal series merging monumental head forms with lush terrains, floating spheres, and pastel atmospheres to explore scale, identity, and place.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/surreal-heads/thumb-surreal-heads-1.webp",
+    "assets/media/surreal-heads/thumb-surreal-heads-2.webp",
+    "assets/media/surreal-heads/thumb-surreal-heads-3.webp",
+    "assets/media/surreal-heads/thumb-surreal-heads-4.webp",
+    "assets/media/surreal-heads/thumb-surreal-heads-5.webp",
+    "assets/media/surreal-heads/thumb-surreal-heads-6.webp"
+  ],
+  "thumb_alt": "Towering head forms across whimsical terrains, floating spheres, and soft pastel skies.",
+  "img": [
+    "assets/media/surreal-heads/img-sq-surreal-heads-1.webp",
+    "assets/media/surreal-heads/img-sq-surreal-heads-2.webp",
+    "assets/media/surreal-heads/img-sq-surreal-heads-3.webp"
+  ],
+  "img_alt": "Surreal landscape compositions featuring monumental human head forms integrated into terrain with foliage crowns, floating orbs, and pastel atmospheric light.",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/216060793?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Surreal landscapes with giant human heads integrated into terrain: foliage crowned forms, floating orbs, and pastel atmospheres.",
+  "origin_url": "https://www.behance.net/gallery/216060793/Great-Figure-Heads",
+  "origin_url_text": "behance.gallery/Great-Figure-Heads",
+  "repository": "",
+  "tiles": [
+    "Monumental head forms embedded in terrain",
+    "Floating spheres and pastel atmospheric light",
+    "Exploratory figures give scale and narrative"
+  ],
+  "challenge": "Surrealist portraiture that merges human forms with landscape at monumental scale presents unique compositional challenges. Each piece must balance the head as both figure and terrain feature while maintaining a cohesive atmospheric mood. The series needed to evoke quiet wonder and exploration through deliberate use of scale, color pacing, and spatial depth rather than relying on shock or visual noise.",
+  "approach": "Used a generative pipeline to establish head geometry and terrain flow for each composition, then applied in-painting to refine color pacing, edge softness, and focal pathways. Floating elements such as spheres and foliage crowns add secondary visual rhythm and narrative depth. The pastel atmospheric palette was carefully controlled to ensure luminous, immersive environments that invite contemplation rather than overwhelm.",
+  "result": "Delivered a series of calm, immersive scenes that present clearly as tiles at small scale and reveal layered depth at print resolution. The collection demonstrates command of surrealist visual language translated through generative tools, balancing compositional ambition with atmospheric restraint. The work is suited for large-format print, editorial use, and digital gallery presentation.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

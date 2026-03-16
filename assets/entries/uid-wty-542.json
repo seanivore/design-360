@@ -1,71 +1,53 @@
 {
-    "_metadata": {
-        "last_updated": "2025-10-18T21:23:00.000000Z",
-        "required_fields": true,
-        "template_type": "portfolio_entry",
-        "schema_version": "4.0",
-        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
-    },
-    "categorization": {
-        "entry_id": "uid-wty-542",
-        "slug": "visual-artist-process-portfolio",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Creative Director"
-            ],
-            "skill": [
-                "CMS Management",
-                "Creative Cloud",
-                "HTML/CSS/JS",
-                "Illustration",
-                "No-Code",
-                "Publishing",
-                "Python",
-                "Responsive Design",
-                "Webflow"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "custom-designed-illustrator-site.mp4",
-            "video_url": "https://youtu.be/m0sUd-oWFqQ",
-            "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/m0sUd-oWFqQ?si=VuUDHTQceqpCHKWL&amp;controls=0' title='Digital Illustrated Bold Iconic Webflow Designed Portfolio' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-            "video_alt_text": "Webflow portfolio featuring hundreds of hand-drawn iPad Pro illustrations with bold gold frames and impactful typography, documenting artistic process from sketches to 10+ hour detailed pieces including Web3 DAO brand assets",
-            "thumbnail_images": [
-                "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp",
-                "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-2.webp",
-                "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-3.webp",
-                "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-4.webp",
-                "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-5.webp"
-            ],
-            "thumb_slideshow_alt_text": "Webflow portfolio featuring hundreds of hand-drawn iPad Pro illustrations with bold gold frames and impactful typography, documenting artistic process from sketches to 10+ hour detailed pieces including Web3 DAO brand assets",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "august.style/design-portfolio",
-            "project_url": "https://visual-producer.august.style",
-            "github_repository": "https://github.com/seanivore/webflow-2023"
-        },
-        "teaser_copy": {
-            "seo_title": "Digital Illustrated, Bold, Iconic Webflow Designed Portfolio",
-            "seo_description": "Bold gold frames and impactful typography pull together this Webflow portfolio showing digital process",
-            "page_title": "Hand-Illustrated Portfolio Showcasing Creative Process",
-            "page_subtitle": "Hundreds of 10+ hour illustrations document artistic journey",
-            "tile_text": [
-                "Bold gold frames create iconic visual identity",
-                "Hundreds of hand-drawn illustrations on iPad Pro",
-                "Many pieces took 10+ hours to complete",
-                "Includes Web3 DAO brand assets and minted NFTs"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Visual artists need portfolios that showcase not just finished work but creative process and artistic evolution. The challenge was designing a platform that could handle hundreds of detailed illustrations while maintaining visual impact and usability. The artwork itself—ranging from quick sketches to 10+ hour detailed pieces—needed a presentation system that respected the time investment and craftsmanship while making the collection browseable. The bold, iconic aesthetic needed to complement rather than compete with the highly detailed illustration work.",
-            "action": "Designed a Webflow portfolio with distinctive visual identity: bold gold frames and impactful typography that create gallery-like presentation for digital illustration work. The site architecture organizes hundreds of hand-drawn pieces created with iPad Pro and Apple Pencil, documenting artistic process across multiple styles and purposes—from personal creative exploration to brand assets for Web3 DAO projects to pieces minted as NFTs on various platforms. The design uses strategic white space and clear hierarchy to prevent visual overwhelm despite the massive collection. When migrating from Webflow to GitHub Pages, developed Python scripts to handle path verification and correction across the complex directory structure, ensuring all images, GIFs, CSS references, and portfolio section links remained functional.",
-            "measured": "Successfully created portfolio platform that showcases extensive illustration work while maintaining usability and visual impact. The bold framing device provides consistent identity across varied illustration styles, from quick sketches to finished detailed pieces. The site effectively documents artistic process and range—personal creative work, commercial brand assets, and blockchain-minted art—demonstrating versatility and dedication to craft. The GitHub Pages migration scripts solved real technical challenges around maintaining hundreds of image paths across nested directories, showing full-stack problem-solving beyond just Webflow design capabilities."
-        }
-    },
-    "notes": []
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-wty-542",
+  "slug": "visual-artist-process-portfolio",
+  "title": "Hand-Illustrated Portfolio Showcasing Creative Process",
+  "subtitle": "Hundreds of 10+ hour illustrations document artistic journey",
+  "seo_title": "Digital Illustrated, Bold, Iconic Webflow Designed Portfolio",
+  "seo_description": "Bold gold frames and impactful typography pull together this Webflow portfolio showing digital process",
+  "role": ["Brand Designer", "Creative Director"],
+  "skill": ["CMS Management", "Adobe Creative Cloud", "HTML/CSS/JS", "Illustration", "No-Code", "Publishing", "Python", "Responsive Design", "Webflow"],
+  "product": ["Portfolio", "Website"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-1.webp",
+    "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-2.webp",
+    "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-3.webp",
+    "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-4.webp",
+    "assets/media/visual-artist-process-portfolio/thumb-slides-visual-artist-process-portfolio-5.webp"
+  ],
+  "thumb_alt": "Webflow portfolio featuring hundreds of hand-drawn iPad Pro illustrations with bold gold frames and impactful typography, documenting artistic process from sketches to 10+ hour detailed pieces including Web3 DAO brand assets",
+  "img": [
+    "assets/media/visual-artist-process-portfolio/img-sq-slides-visual-artist-process-portfolio-1.webp",
+    "assets/media/visual-artist-process-portfolio/img-sq-slides-visual-artist-process-portfolio-2.webp",
+    "assets/media/visual-artist-process-portfolio/img-sq-slides-visual-artist-process-portfolio-3.webp"
+  ],
+  "img_alt": "Webflow portfolio with bold gold frames showcasing hundreds of hand-drawn iPad Pro illustrations and creative process documentation.",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "https://youtu.be/m0sUd-oWFqQ",
+  "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/m0sUd-oWFqQ?si=VuUDHTQceqpCHKWL&amp;controls=0' title='Digital Illustrated Bold Iconic Webflow Designed Portfolio' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+  "media_alt": "Webflow portfolio featuring hundreds of hand-drawn iPad Pro illustrations with bold gold frames and impactful typography, documenting artistic process from sketches to 10+ hour detailed pieces including Web3 DAO brand assets",
+  "origin_url": "https://visual-producer.august.style",
+  "origin_url_text": "august.style/design-portfolio",
+  "repository": "https://github.com/seanivore/webflow-2023",
+  "tiles": [
+    "Bold gold frames create iconic visual identity",
+    "Hundreds of hand-drawn illustrations on iPad Pro",
+    "Many pieces took 10+ hours to complete",
+    "Includes Web3 DAO brand assets and minted NFTs"
+  ],
+  "challenge": "Visual artists need portfolios that showcase not just finished work but creative process and artistic evolution. The challenge was designing a platform capable of handling hundreds of detailed illustrations while maintaining visual impact and usability. The artwork ranges from quick sketches to 10+ hour detailed pieces, all requiring a presentation system that respects the time investment and craftsmanship while keeping the collection browseable.",
+  "approach": "Designed a Webflow portfolio with a distinctive visual identity built on bold gold frames and impactful typography that create a gallery-like presentation for digital illustration work. The site architecture organizes hundreds of hand-drawn pieces created with iPad Pro and Apple Pencil, documenting artistic process across multiple styles and purposes, from personal creative exploration to commercial brand assets for Web3 DAO projects. When migrating from Webflow to GitHub Pages, developed Python scripts to handle path verification and correction across the complex directory structure, ensuring all images, GIFs, CSS references, and portfolio section links remained functional.",
+  "result": "Created a portfolio platform that showcases extensive illustration work while maintaining usability and visual impact. The bold framing device provides consistent identity across varied illustration styles, from quick sketches to finished detailed pieces. The site effectively documents artistic range and process, spanning personal creative work, commercial brand assets, and blockchain-minted art. The GitHub Pages migration scripts solved technical challenges around maintaining hundreds of image paths across nested directories, demonstrating full-stack problem-solving beyond visual design.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

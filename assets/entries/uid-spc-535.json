@@ -1,70 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-spc-535",
-        "slug": "neo-expresi-cyber",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Editorial Design",
-                "Generative AI",
-                "Illustration",
-                "Illustrator",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/191706757?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Neo-expressionist portraits with surreal overtones and cyberpunk industrial cues: glowing eyes, glitch textures, and high contrast color fields.",
-            "thumbnail_images": [
-                "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-1.webp",
-                "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-2.webp",
-                "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-3.webp",
-                "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-4.webp",
-                "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-5.webp",
-                "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Angular portraits with glitch artifacts, industrial palettes, and charged expressionist marks.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.gallery/foreboding-feelings",
-            "project_url": "https://www.behance.net/gallery/191706757/False-promises-leaving-foreboding-feelings",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Neo-Expressionism Cyberpunk: False Promises and Foreboding Feelings",
-            "seo_description": "A charged portrait series blending neo-expressionist marks with surreal atmosphere and cyberpunk industrial textures—glow, glitch, and high contrast emotion.",
-            "page_title": "False promises leaving foreboding feelings",
-            "page_subtitle": "Neo-expressionist portraits with surreal, cyberpunk industrial edge.",
-            "tile_text": [
-                "Expressionist marks meet cyberpunk glow and glitch",
-                "Surreal atmospheres with industrial texture",
-                "High contrast palettes for charged emotion"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Neo-expressionism thrives on raw gesture, high contrast, and emotional immediacy; cyberpunk adds industrial grit and luminous tech artifacts.",
-            "action": "A generative pass set base forms and palette, then in painting layered mark making, glow discipline, and glitch texture to heighten tension and mood.",
-            "measured": "Produces striking tiles and cohesive panels that read viscerally in grids and hold depth for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-spc-535",
+  "slug": "neo-expresi-cyber",
+  "title": "False promises leaving foreboding feelings",
+  "subtitle": "Neo-expressionist portraits with surreal, cyberpunk industrial edge.",
+  "seo_title": "Neo-Expressionism Cyberpunk: False Promises and Foreboding Feelings",
+  "seo_description": "A charged portrait series blending neo-expressionist marks with surreal atmosphere and cyberpunk industrial textures—glow, glitch, and high contrast emotion.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-1.webp",
+    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-2.webp",
+    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-3.webp",
+    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-4.webp",
+    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-5.webp",
+    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-6.webp"
+  ],
+  "thumb_alt": "Angular portraits with glitch artifacts, industrial palettes, and charged expressionist marks.",
+  "img": [
+    "assets/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-1.webp",
+    "assets/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-2.webp",
+    "assets/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-3.webp"
+  ],
+  "img_alt": "Neo-expressionist portrait studies with cyberpunk industrial textures, glowing eyes, glitch artifacts, and high-contrast color fields conveying raw emotional tension.",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/191706757?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Neo-expressionist portraits with surreal overtones and cyberpunk industrial cues: glowing eyes, glitch textures, and high contrast color fields.",
+  "origin_url": "https://www.behance.net/gallery/191706757/False-promises-leaving-foreboding-feelings",
+  "origin_url_text": "behance.gallery/foreboding-feelings",
+  "repository": "",
+  "tiles": [
+    "Expressionist marks meet cyberpunk glow and glitch",
+    "Surreal atmospheres with industrial texture",
+    "High contrast palettes for charged emotion"
+  ],
+  "challenge": "Neo-expressionism thrives on raw gesture, high contrast, and emotional immediacy, while cyberpunk visual language adds industrial grit and luminous technological artifacts. Merging these two distinct aesthetic traditions into a cohesive portrait series required balancing visceral mark-making with controlled digital texture, ensuring each piece conveys charged emotion without descending into visual chaos.",
+  "approach": "Used a generative pipeline to establish base forms and palette direction, then layered in neo-expressionist mark-making, glow discipline, and glitch texture through targeted in-painting. Each portrait balances raw gestural energy against controlled cyberpunk elements like luminous eyes, digital artifacts, and industrial surface treatments. The high-contrast color fields were carefully calibrated to heighten emotional tension while maintaining compositional coherence.",
+  "result": "Produced a series of striking portraits that read viscerally in grid layouts and hold substantial depth at print scale. The collection successfully bridges two art-historical traditions through contemporary generative tools, demonstrating the ability to direct complex aesthetic intersections. The work is suited for editorial placement, gallery exhibition, and large-format print production.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

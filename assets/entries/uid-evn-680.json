@@ -1,73 +1,53 @@
 {
-  "_metadata": {
-    "last_updated": "2025-10-18T13:31:00.000000Z",
-    "required_fields": true,
-    "template_type": "portfolio_entry",
-    "schema_version": "4.0",
-    "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
-  },
-  "categorization": {
-    "entry_id": "uid-evn-680",
-    "slug": "constructivist-profiles",
-    "tags": {
-      "role": [
-        "Brand Designer",
-        "Content Strategist",
-        "Graphic Designer"
-      ],
-      "skill": [
-        "Adobe Firefly",
-        "Art Direction",
-        "Claude/Cursor",
-        "Content Production",
-        "Generative AI",
-        "Illustration",
-        "Lightroom",
-        "Print Layout",
-        "Publishing",
-        "Scaling Systems"
-      ]
-    }
-  },
-  "content": {
-    "media": {
-      "video_filename": "",
-      "video_url": "",
-      "video_embed": "<iframe src='https://www.behance.net/embed/project/216060889?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-      "video_alt_text": "Geometric profile portraits of head and shoulders with constructivist, cubist inspired sharp angles and vibrant color fields",
-      "thumbnail_images": [
-        "assets/media/constructivist-portraits/thumb-constructivist-portraits-1.webp",
-        "assets/media/constructivist-portraits/thumb-constructivist-portraits-2.webp",
-        "assets/media/constructivist-portraits/thumb-constructivist-portraits-3.webp",
-        "assets/media/constructivist-portraits/thumb-constructivist-portraits-4.webp",
-        "assets/media/constructivist-portraits/thumb-constructivist-portraits-5.webp",
-        "assets/media/constructivist-portraits/thumb-constructivist-portraits-6.webp"
-      ],
-      "thumb_slideshow_alt_text": "Angular geometric portraits with bold color blocks and sharp constructivist forms",
-      "page_imagery": [],
-      "page_image_group_alt_text": ""
-    },
-    "assets": {
-      "project_url_text": "behance.net/gallery/Constructivist-Profiles",
-      "project_url": "https://www.behance.net/gallery/216060889/Profile-People",
-      "github_repository": ""
-    },
-    "teaser_copy": {
-      "seo_title": "Profile People: Constructivist Geometric Portraits with Sharp Angles",
-      "seo_description": "A generative portrait series focusing on geometric head and shoulder profiles with constructivist and cubist cues, sharp angles, and vibrant color fields",
-      "page_title": "Profile People",
-      "page_subtitle": "Geometric portraits in constructivist, cubist inspired angular forms.",
-      "tile_text": [
-        "Angular constructivist head and shoulder profiles",
-        "Sharp geometry and vibrant color fields",
-        "Generative portraits with disciplined finishing"
-      ]
-    },
-    "page_copy": {
-      "pattern": "Constructivist portrait language uses sharp angles, clear silhouettes, and bold color fields that stay legible across scales.",
-      "action": "A generative pass established profile geometry and axis lines, then in painting refined edge discipline, color relationships, and highlight placement.",
-      "measured": "Delivers cohesive geometric portraits that read instantly in tiles and carry enough structure for print, social showcases, and provenance linked digital editions."
-    }
-  },
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-evn-680",
+  "slug": "constructivist-profiles",
+  "title": "Profile People",
+  "subtitle": "Geometric portraits in constructivist, cubist inspired angular forms.",
+  "seo_title": "Profile People: Constructivist Geometric Portraits with Sharp Angles",
+  "seo_description": "A generative portrait series focusing on geometric head and shoulder profiles with constructivist and cubist cues, sharp angles, and vibrant color fields",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/constructivist-portraits/thumb-constructivist-portraits-1.webp",
+    "assets/media/constructivist-portraits/thumb-constructivist-portraits-2.webp",
+    "assets/media/constructivist-portraits/thumb-constructivist-portraits-3.webp",
+    "assets/media/constructivist-portraits/thumb-constructivist-portraits-4.webp",
+    "assets/media/constructivist-portraits/thumb-constructivist-portraits-5.webp",
+    "assets/media/constructivist-portraits/thumb-constructivist-portraits-6.webp"
+  ],
+  "thumb_alt": "Angular geometric portraits with bold color blocks and sharp constructivist forms",
+  "img": [
+    "assets/media/constructivist-portraits/img-sq-constructivist-portraits-1.webp",
+    "assets/media/constructivist-portraits/img-sq-constructivist-portraits-2.webp",
+    "assets/media/constructivist-portraits/img-sq-constructivist-portraits-3.webp"
+  ],
+  "img_alt": "Geometric head and shoulder profile portraits rendered with constructivist sharp angles, cubist fragmentation, and vibrant color fields.",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/216060889?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Geometric profile portraits of head and shoulders with constructivist, cubist inspired sharp angles and vibrant color fields",
+  "origin_url": "https://www.behance.net/gallery/216060889/Profile-People",
+  "origin_url_text": "behance.net/gallery/Constructivist-Profiles",
+  "repository": "",
+  "tiles": [
+    "Angular constructivist head and shoulder profiles",
+    "Sharp geometry and vibrant color fields",
+    "Generative portraits with disciplined finishing"
+  ],
+  "challenge": "Constructivist and cubist visual languages offer a rich formal vocabulary for portraiture, but translating those art-historical references into a cohesive generative series requires careful control over geometry, color relationships, and compositional legibility. The goal was to produce a collection of head-and-shoulder profile portraits that maintain sharp angular discipline and bold color blocking while remaining recognizable and visually compelling at every scale.",
+  "approach": "Used a generative pipeline to establish profile geometry and axis lines for each portrait, then applied disciplined in-painting to refine edge quality, color relationships, and highlight placement. Each piece balances constructivist angularity with cubist fragmentation, using vibrant flat color fields to define form rather than gradients or photorealistic rendering. The finishing process ensured consistent silhouette clarity and visual cohesion across the series.",
+  "result": "Produced a cohesive collection of geometric portraits that read instantly as thumbnail tiles and carry sufficient structural detail for large-format print. The series demonstrates fluency in art-historical visual languages translated through contemporary generative tools, showcasing both creative direction and technical execution in AI-assisted art production.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
   "notes": []
 }

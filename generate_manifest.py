@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MANIFEST GENERATOR (v4.0)
+MANIFEST GENERATOR (v5.0)
 Scans portfolio entry JSON files and builds slug → file path mapping
 Run this script after adding/updating/removing any JSON entries
 
@@ -27,15 +27,10 @@ def read_json_entry(file_path: Path) -> Tuple[Dict, str]:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             
-        if 'categorization' not in data:
-            return None, f"Missing 'categorization' field in {file_path.name}"
-            
-        cat = data['categorization']
-        
-        if 'slug' not in cat or not cat['slug']:
+        if 'slug' not in data or not data['slug']:
             return None, f"Missing 'slug' in {file_path.name}"
-                
-        return cat, None
+
+        return data, None
         
     except json.JSONDecodeError as e:
         return None, f"Invalid JSON in {file_path.name}: {e}"
@@ -69,13 +64,13 @@ def build_manifest(entries_dir: Path) -> Dict:
     print()
     
     for json_file in sorted(json_files):
-        cat, error = read_json_entry(json_file)
-        
+        data, error = read_json_entry(json_file)
+
         if error:
             errors.append(error)
             continue
-            
-        slug = cat['slug']
+
+        slug = data['slug']
         file_path = f"assets/entries/{json_file.name}"
         
         # Check for duplicate slugs
@@ -85,7 +80,7 @@ def build_manifest(entries_dir: Path) -> Dict:
         
         manifest['entries'][slug] = file_path
         
-        roles = ', '.join(cat.get('tags', {}).get('role', []))
+        roles = ', '.join(data.get('role', []))
         print(f"✅ {json_file.name} → /{slug}")
         print(f"   roles: [{roles}]")
         
@@ -121,7 +116,7 @@ def write_manifest(manifest: Dict, output_path: Path):
 
 def main():
     print("=" * 60)
-    print("MANIFEST GENERATOR v4.0")
+    print("MANIFEST GENERATOR v5.0")
     print("Flat slug → JSON path mapping")
     print("=" * 60)
     print()

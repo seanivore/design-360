@@ -1,68 +1,52 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-lrt-041",
-        "slug": "pie-claesz",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Photography",
-                "Print Layout",
-                "Product Staging",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/226117987?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Generative still life study channeling Pieter Claesz: restrained palette, tabletop composition, and quiet, balanced light.",
-            "thumbnail_images": [
-                "assets/media/pie-claesz/thumb-pie-claesz-1.webp",
-                "assets/media/pie-claesz/thumb-pie-claesz-2.webp",
-                "assets/media/pie-claesz/thumb-pie-claesz-3.webp",
-                "assets/media/pie-claesz/thumb-pie-claesz-4.webp",
-                "assets/media/pie-claesz/thumb-pie-claesz-5.webp"
-            ],
-            "thumb_slideshow_alt_text": "A series of still life images with muted tones, balanced arrangement, and understated highlights in the manner of Pieter Claesz.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.net/gallery/Pie-Claesz-Vibes",
-            "project_url": "https://www.behance.net/gallery/226117987/Pie-Claesz-Vibes",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Pie Claesz Vibes: Generative Still Life Study with Subtle Baroque Restraint",
-            "seo_description": "A generative exploration of Pieter Claesz inspired still life: muted palette, careful balance, and gentle light shaping on familiar tabletop objects.",
-            "page_title": "Pie Claesz Vibes",
-            "page_subtitle": "Muted palette, balanced still life, and quiet light in a generative study.",
-            "tile_text": [
-                "Still life study in the spirit of Pieter Claesz",
-                "Muted tones and balanced tabletop composition",
-                "Gentle light shaping with generative tooling"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Claesz style favors quiet balance, muted palette, and disciplined light on ordinary objects arranged with careful restraint.",
-            "action": "A generative first pass set composition and tone, then targeted in painting and value control refined edges, highlights, and surface textures.",
-            "measured": "Results read as calm, historically grounded still lifes suitable for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-lrt-041",
+  "slug": "pie-claesz",
+  "title": "Pie Claesz Vibes",
+  "subtitle": "Muted palette, balanced still life, and quiet light in a generative study.",
+  "seo_title": "Pie Claesz Vibes: Generative Still Life Study with Subtle Baroque Restraint",
+  "seo_description": "A generative exploration of Pieter Claesz inspired still life: muted palette, careful balance, and gentle light shaping on familiar tabletop objects.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud", "Photography"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/pie-claesz/thumb-pie-claesz-1.webp",
+    "assets/media/pie-claesz/thumb-pie-claesz-2.webp",
+    "assets/media/pie-claesz/thumb-pie-claesz-3.webp",
+    "assets/media/pie-claesz/thumb-pie-claesz-4.webp",
+    "assets/media/pie-claesz/thumb-pie-claesz-5.webp"
+  ],
+  "thumb_alt": "A series of still life images with muted tones, balanced arrangement, and understated highlights in the manner of Pieter Claesz.",
+  "img": [
+    "assets/media/pie-claesz/img-sq-pie-claesz-1.webp",
+    "assets/media/pie-claesz/img-sq-pie-claesz-2.webp",
+    "assets/media/pie-claesz/img-sq-pie-claesz-3.webp"
+  ],
+  "img_alt": "Pieter Claesz inspired still life compositions with muted tones, quiet balanced light, and carefully arranged tabletop objects",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/226117987?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Generative still life study channeling Pieter Claesz: restrained palette, tabletop composition, and quiet, balanced light.",
+  "origin_url": "https://www.behance.net/gallery/226117987/Pie-Claesz-Vibes",
+  "origin_url_text": "behance.net/gallery/Pie-Claesz-Vibes",
+  "repository": "",
+  "tiles": [
+    "Still life study in the spirit of Pieter Claesz",
+    "Muted tones and balanced tabletop composition",
+    "Gentle light shaping with generative tooling"
+  ],
+  "challenge": "Channeling the understated mastery of Pieter Claesz's still life paintings, where restraint and quiet observation replace the Baroque's abundance. The goal was to capture Claesz's signature muted palette, careful object placement, and gentle light shaping on everyday tabletop objects using generative tools.",
+  "approach": "Used Adobe Firefly to generate base compositions with Claesz-inspired tone and arrangement. Targeted in-painting and value control refined edges, highlights, and surface textures, while Lightroom handled the muted color grading essential to achieving the painter's characteristic quiet atmosphere.",
+  "result": "Delivered a five-piece still life collection that reads as calm and historically grounded, with the restrained elegance of Dutch Golden Age painting. The series is suitable for fine art prints, gallery presentation, and demonstrates sophisticated AI art direction rooted in art historical study.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

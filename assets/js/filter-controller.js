@@ -1,41 +1,52 @@
 /**
- * FILTER CONTROLLER (v4.0)
- * Manages tag filtering and URL hash state
- * Handles sticky filters, DOM reordering, and role/skill differentiation
+ * FILTER CONTROLLER (v5.0)
+ * Shadcn-style multi-select dropdown for tag filtering
+ * Supports true multi-select with URL hash state
  */
 
 const FilterController = (() => {
     let activeTags = [];
-    let stickyFilter = null; // Main filter that cannot be removed
+    let stickyFilter = null;
     let onFilterChange = null;
-    let tagTypesMap = new Map(); // Maps tag names to their types
+    let filterContainer = null;
+
+    /**
+     * Inject CSS styles for the filter UI (once)
+     */
+    function injectStyles() {
+        if (document.getElementById('filter-controller-styles')) return;
+
+        const style = document.createElement('style');
+        style.id = 'filter-controller-styles';
+        style.textContent = `
+.filter-selected { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.filter-selected:empty { display: none; }
+.filter-pill { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; font-size: .75rem; font-weight: 500; background: var(--color-accent-terracotta, #C9A68A); color: var(--color-bg-primary, #1f1f1f); border-radius: 4px; border: none; cursor: pointer; font-family: inherit; }
+.filter-pill .pill-x { font-size: .625rem; opacity: .7; }
+.filter-trigger { display: flex; align-items: center; gap: 8px; padding: 8px 16px; font-size: .8125rem; font-weight: 500; background: var(--color-bg-secondary, #272727); color: var(--color-text-primary, #EBEBEB); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; cursor: pointer; font-family: inherit; }
+.filter-panel { position: absolute; top: 100%; left: 0; right: 0; max-height: 400px; overflow-y: auto; background: var(--color-bg-secondary, #272727); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; margin-top: 4px; z-index: 50; padding: 8px; }
+.filter-search { width: 100%; padding: 8px 12px; font-size: .8125rem; background: var(--color-bg-primary, #1f1f1f); color: var(--color-text-primary, #EBEBEB); border: 1px solid rgba(255,255,255,.06); border-radius: 4px; margin-bottom: 8px; font-family: inherit; outline: none; box-sizing: border-box; }
+.filter-group-header { font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-muted, #9a9590); padding: 8px 4px 4px; }
+.filter-item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 4px; cursor: pointer; font-size: .8125rem; }
+.filter-item:hover { background: rgba(255,255,255,.04); }
+.filter-checkbox { accent-color: var(--color-accent-terracotta, #C9A68A); }
+.filter-item-count { margin-left: auto; font-size: .75rem; color: var(--color-text-muted, #9a9590); }
+.filter-clear { display: block; width: 100%; padding: 8px; font-size: .75rem; color: var(--color-text-muted, #9a9590); background: none; border: none; border-top: 1px solid rgba(255,255,255,.06); cursor: pointer; text-align: center; font-family: inherit; margin-top: 4px; }
+`;
+        document.head.appendChild(style);
+    }
 
     /**
      * Parse tags from URL hash
-     * Supports both singular and plural: #tag=value or #tags=value+value2
-     * Example: #tags=copywriting+illustration -> ['copywriting', 'illustration']
-     * Example: #tag=cms -> ['cms']
-     *
-     * NOTE: Cannot use URLSearchParams because it decodes + as space!
-     * Must manually parse the hash to preserve + as a delimiter.
      */
     function parseHashTags() {
-        const hash = window.location.hash.slice(1); // Remove #
+        const hash = window.location.hash.slice(1);
+        if (!hash) return [];
 
-        if (!hash) {
-            return [];
-        }
-
-        // Manually parse to avoid URLSearchParams decoding + as space
-        // Look for either tags= or tag=
         const tagsMatch = hash.match(/tags?=([^&]+)/);
+        if (!tagsMatch) return [];
 
-        if (!tagsMatch) {
-            return [];
-        }
-
-        const tagsParam = tagsMatch[1];
-        return tagsParam.split('+').map(t => t.trim()).filter(Boolean);
+        return tagsMatch[1].split('+').map(t => t.trim()).filter(Boolean);
     }
 
     /**
@@ -43,7 +54,6 @@ const FilterController = (() => {
      */
     function updateHash() {
         if (activeTags.length === 0) {
-            // Remove hash if no tags active
             history.replaceState(null, '', window.location.pathname);
         } else {
             const tagsParam = activeTags.join('+');
@@ -53,13 +63,10 @@ const FilterController = (() => {
 
     /**
      * Set sticky filter (cannot be removed by user)
-     * This is the main filter for the page (e.g., "web" on /web page)
      */
     function setStickyFilter(filter) {
         if (filter) {
             stickyFilter = DataLoader.normalizeForURL(filter);
-
-            // Add to active tags if not already present
             if (!activeTags.includes(stickyFilter)) {
                 activeTags.push(stickyFilter);
             }
@@ -67,202 +74,249 @@ const FilterController = (() => {
     }
 
     /**
-     * Toggle a tag (activate if inactive, deactivate if active)
-     * SINGLE-SELECT: Only one tag (besides sticky filter) can be active
-     * Sticky filters cannot be toggled off
+     * Toggle a tag — TRUE multi-select (multiple tags can be active simultaneously)
      */
     function toggleTag(tag) {
         const normalized = DataLoader.normalizeForURL(tag);
 
         // Prevent removing sticky filter
-        if (normalized === stickyFilter) {
-            console.log('Cannot remove sticky filter:', tag);
-            return;
-        }
+        if (normalized === stickyFilter) return;
 
         const index = activeTags.indexOf(normalized);
 
         if (index === -1) {
-            // Activate tag - CLEAR all other non-sticky tags first
-            activeTags = stickyFilter ? [stickyFilter, normalized] : [normalized];
+            // Activate tag — add alongside existing active tags
+            activeTags.push(normalized);
         } else {
-            // Deactivate tag - remove it
+            // Deactivate tag — remove it
             activeTags.splice(index, 1);
         }
 
         updateHash();
-        updateFilterPills();
-        // DISABLED: Tag reordering causes confusion with single-select
-        // reorderActiveTags();
+        updateFilterUI();
 
-        // Trigger callback if set
         if (onFilterChange) {
             onFilterChange(activeTags);
         }
     }
 
     /**
-     * Update visual state of filter pills
+     * Update the visual state of the filter UI (selected pills + checkbox states)
      */
-    function updateFilterPills() {
-        const pills = document.querySelectorAll('.tag-filter');
+    function updateFilterUI() {
+        if (!filterContainer) return;
 
-        pills.forEach(pill => {
-            const tag = pill.getAttribute('data-tag');
-            const isActive = activeTags.includes(tag);
-            const isSticky = tag === stickyFilter;
+        // Update selected pills row
+        const selectedRow = filterContainer.querySelector('#filter-selected');
+        if (selectedRow) {
+            selectedRow.innerHTML = '';
 
-            pill.classList.toggle('active', isActive);
+            activeTags.forEach(normalized => {
+                const isSticky = normalized === stickyFilter;
+                const pill = document.createElement('button');
+                pill.className = 'filter-pill';
+                pill.textContent = normalized.replace(/-/g, ' ');
 
-            // Add sticky indicator (optional - can style differently)
-            if (isSticky) {
-                pill.setAttribute('data-sticky', 'true');
+                if (!isSticky) {
+                    const x = document.createElement('span');
+                    x.className = 'pill-x';
+                    x.textContent = ' x';
+                    pill.appendChild(x);
+                    pill.addEventListener('click', () => toggleTag(normalized));
+                }
+
+                selectedRow.appendChild(pill);
+            });
+        }
+
+        // Update trigger text
+        const triggerText = filterContainer.querySelector('.filter-trigger-text');
+        if (triggerText) {
+            if (activeTags.length > 0) {
+                triggerText.textContent = `Filter by tag (${activeTags.length})`;
+            } else {
+                triggerText.textContent = 'Filter by tag';
             }
+        }
+
+        // Update checkbox states
+        const checkboxes = filterContainer.querySelectorAll('.filter-checkbox');
+        checkboxes.forEach(cb => {
+            const tag = cb.dataset.tag;
+            cb.checked = activeTags.includes(tag);
         });
     }
 
     /**
-     * Reorder DOM elements to move active tags to front
-     * This is done in the DOM, not via CSS order property
+     * Render the complete filter UI (dropdown + selected pills)
      */
-    function reorderActiveTags() {
-        const container = document.getElementById('tag-filters');
+    function renderFilters(tagsWithTypes, container, allProjects) {
         if (!container) return;
 
-        const pills = Array.from(container.querySelectorAll('.tag-filter'));
-
-        // Separate active and inactive pills
-        const activePills = [];
-        const inactivePills = [];
-
-        pills.forEach(pill => {
-            const tag = pill.getAttribute('data-tag');
-            if (activeTags.includes(tag)) {
-                activePills.push(pill);
-            } else {
-                inactivePills.push(pill);
-            }
-        });
-
-        // Clear container
+        injectStyles();
+        filterContainer = container;
         container.innerHTML = '';
 
-        // Add active pills first (in order they were activated)
-        activeTags.forEach(activeTag => {
-            const pill = activePills.find(p => p.getAttribute('data-tag') === activeTag);
-            if (pill) {
-                container.appendChild(pill);
+        // Selected pills row (shown above dropdown when tags are active)
+        const selectedRow = document.createElement('div');
+        selectedRow.className = 'filter-selected';
+        selectedRow.id = 'filter-selected';
+
+        // Dropdown trigger
+        const trigger = document.createElement('button');
+        trigger.className = 'filter-trigger';
+        trigger.innerHTML = '<span class="filter-trigger-text">Filter by tag</span>';
+
+        // Dropdown panel
+        const panel = document.createElement('div');
+        panel.className = 'filter-panel';
+        panel.style.display = 'none';
+
+        // Search input
+        const search = document.createElement('input');
+        search.className = 'filter-search';
+        search.placeholder = 'Search tags...';
+        search.type = 'text';
+
+        // Tag groups
+        const groups = document.createElement('div');
+        groups.className = 'filter-groups';
+
+        // Group tags by type
+        const grouped = {};
+        tagsWithTypes.forEach(({ tag, type }) => {
+            if (!grouped[type]) grouped[type] = [];
+            // Count projects with this tag
+            const count = allProjects.filter(p => {
+                const allTags = DataLoader.getProjectTags(p);
+                return allTags.some(t => DataLoader.normalizeForURL(t) === DataLoader.normalizeForURL(tag));
+            }).length;
+            grouped[type].push({ tag, count });
+        });
+
+        // Also add currently active tags into their groups so they appear as checked
+        activeTags.forEach(normalized => {
+            // Skip if already in tagsWithTypes
+            const alreadyPresent = tagsWithTypes.some(({ tag }) =>
+                DataLoader.normalizeForURL(tag) === normalized
+            );
+            if (alreadyPresent || normalized === stickyFilter) return;
+
+            // Determine type from all projects
+            const type = DataLoader.getTagType(allProjects, normalized);
+            if (!grouped[type]) grouped[type] = [];
+
+            const displayName = normalized.replace(/-/g, ' ');
+            const count = allProjects.filter(p => {
+                const allTags = DataLoader.getProjectTags(p);
+                return allTags.some(t => DataLoader.normalizeForURL(t) === normalized);
+            }).length;
+            grouped[type].push({ tag: displayName, count });
+        });
+
+        // Render groups
+        ['role', 'skill', 'product'].forEach(type => {
+            if (!grouped[type] || grouped[type].length === 0) return;
+            const groupEl = document.createElement('div');
+            groupEl.className = 'filter-group';
+
+            const header = document.createElement('div');
+            header.className = 'filter-group-header';
+            header.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+            groupEl.appendChild(header);
+
+            grouped[type].forEach(({ tag, count }) => {
+                const item = document.createElement('label');
+                item.className = 'filter-item';
+                const normalized = DataLoader.normalizeForURL(tag);
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'filter-checkbox';
+                checkbox.dataset.tag = normalized;
+                checkbox.dataset.display = tag;
+                checkbox.checked = activeTags.includes(normalized);
+
+                const label = document.createElement('span');
+                label.className = 'filter-item-label';
+                label.textContent = tag;
+
+                const countEl = document.createElement('span');
+                countEl.className = 'filter-item-count';
+                countEl.textContent = `(${count})`;
+
+                item.appendChild(checkbox);
+                item.appendChild(label);
+                item.appendChild(countEl);
+                groupEl.appendChild(item);
+
+                checkbox.addEventListener('change', () => toggleTag(tag));
+            });
+
+            groups.appendChild(groupEl);
+        });
+
+        // Clear all link
+        const clearBtn = document.createElement('button');
+        clearBtn.className = 'filter-clear';
+        clearBtn.textContent = 'Clear all';
+        clearBtn.addEventListener('click', () => clearTags());
+
+        panel.appendChild(search);
+        panel.appendChild(groups);
+        panel.appendChild(clearBtn);
+
+        container.appendChild(selectedRow);
+        container.appendChild(trigger);
+        container.appendChild(panel);
+
+        // Toggle dropdown
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = panel.style.display !== 'none';
+            panel.style.display = isOpen ? 'none' : 'block';
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!container.contains(e.target)) {
+                panel.style.display = 'none';
             }
         });
 
-        // Add inactive pills
-        inactivePills.forEach(pill => {
-            container.appendChild(pill);
-        });
-
-        // Re-attach event listeners (they're lost after moving DOM elements)
-        attachPillListeners();
-    }
-
-    /**
-     * Attach click event listeners to pills
-     */
-    function attachPillListeners() {
-        const pills = document.querySelectorAll('.tag-filter');
-
-        pills.forEach(pill => {
-            // Remove old listeners by cloning node
-            const newPill = pill.cloneNode(true);
-            pill.parentNode.replaceChild(newPill, pill);
-
-            // Add new listener
-            newPill.addEventListener('click', (e) => {
-                e.preventDefault();
-                const tag = newPill.getAttribute('data-tag');
-                const displayName = newPill.textContent;
-                toggleTag(displayName);
+        // Search filter
+        search.addEventListener('input', () => {
+            const query = search.value.toLowerCase();
+            panel.querySelectorAll('.filter-item').forEach(item => {
+                const labelText = item.querySelector('.filter-item-label').textContent.toLowerCase();
+                item.style.display = labelText.includes(query) ? '' : 'none';
+            });
+            // Hide group headers if all items in group are hidden
+            panel.querySelectorAll('.filter-group').forEach(group => {
+                const visibleItems = group.querySelectorAll('.filter-item[style=""], .filter-item:not([style])');
+                const header = group.querySelector('.filter-group-header');
+                if (header) {
+                    header.style.display = visibleItems.length > 0 ? '' : 'none';
+                }
             });
         });
-    }
 
-    /**
-     * Render filter pills from available tags
-     * Tags are grouped and colored by type
-     */
-    function renderFilterPills(tagsWithTypes, container) {
-        if (!container) return;
-
-        container.innerHTML = '';
-        tagTypesMap.clear();
-
-        // Sort tags: subsection, role, then others
-        const sortedTags = sortTagsByType(tagsWithTypes);
-
-        sortedTags.forEach(({ tag, type }) => {
-            const normalized = DataLoader.normalizeForURL(tag);
-            tagTypesMap.set(normalized, type);
-
-            const pill = document.createElement('button');
-            pill.className = 'tag-filter';
-            pill.setAttribute('role', 'tab');
-            pill.setAttribute('data-tag', normalized);
-            pill.setAttribute('data-tag-type', type);
-            pill.textContent = tag;
-
-            // Check if this is the sticky filter
-            if (normalized === stickyFilter) {
-                pill.setAttribute('data-sticky', 'true');
-            }
-
-            container.appendChild(pill);
-        });
-
-        // Attach event listeners
-        attachPillListeners();
-
-        // Update active states
-        updateFilterPills();
-
-        // Reorder if any tags are active
-        if (activeTags.length > 0) {
-            reorderActiveTags();
-        }
-    }
-
-    /**
-     * Sort tags by type: role first, then skill
-     */
-    function sortTagsByType(tagsWithTypes) {
-        const order = { role: 1, skill: 2 };
-
-        return tagsWithTypes.sort((a, b) => {
-            const orderA = order[a.type] || 999;
-            const orderB = order[b.type] || 999;
-
-            if (orderA !== orderB) {
-                return orderA - orderB;
-            }
-
-            // Same type - sort alphabetically
-            return a.tag.localeCompare(b.tag);
-        });
+        updateFilterUI();
     }
 
     /**
      * Initialize filter controller
-     * Set up hash change listener and parse initial state
      */
-    function init(callback, initialStickyFilter = null) {
+    function init(callback, initialStickyFilter) {
         onFilterChange = callback;
 
-        // Set sticky filter if provided
         if (initialStickyFilter) {
             setStickyFilter(initialStickyFilter);
         }
 
         // Parse initial tags from hash
         const hashTags = parseHashTags();
-        const hasHashTags = hashTags.length > 0; // Check BEFORE adding sticky filter
+        const hasHashTags = hashTags.length > 0;
 
         // Merge sticky filter with hash tags
         if (stickyFilter && !hashTags.includes(stickyFilter)) {
@@ -275,28 +329,22 @@ const FilterController = (() => {
         window.addEventListener('hashchange', () => {
             const newHashTags = parseHashTags();
 
-            // Always include sticky filter
             if (stickyFilter && !newHashTags.includes(stickyFilter)) {
                 newHashTags.unshift(stickyFilter);
             }
 
             activeTags = newHashTags;
-            updateFilterPills();
-            reorderActiveTags();
+            updateFilterUI();
 
             if (onFilterChange) {
                 onFilterChange(activeTags);
             }
         });
 
-        // CRITICAL: If page loaded with hash tags (non-sticky), trigger initial render
-        // This handles back button navigation where URL already has hash filtering
-        // Only fire if there were ACTUAL hash tags in URL, not just the sticky filter
+        // If page loaded with hash tags, trigger initial render
         if (hasHashTags && onFilterChange) {
-            // Defer to ensure DOM is ready and pills are rendered
             setTimeout(() => {
-                updateFilterPills();
-                reorderActiveTags();
+                updateFilterUI();
                 onFilterChange(activeTags);
             }, 0);
         }
@@ -322,8 +370,7 @@ const FilterController = (() => {
         }
 
         updateHash();
-        updateFilterPills();
-        reorderActiveTags();
+        updateFilterUI();
 
         if (onFilterChange) {
             onFilterChange(activeTags);
@@ -336,36 +383,25 @@ const FilterController = (() => {
     function setTags(tags) {
         activeTags = tags.map(t => DataLoader.normalizeForURL(t));
 
-        // Always include sticky filter
         if (stickyFilter && !activeTags.includes(stickyFilter)) {
             activeTags.unshift(stickyFilter);
         }
 
         updateHash();
-        updateFilterPills();
-        reorderActiveTags();
+        updateFilterUI();
 
         if (onFilterChange) {
             onFilterChange(activeTags);
         }
     }
 
-    /**
-     * Get sticky filter
-     */
-    function getStickyFilter() {
-        return stickyFilter;
-    }
-
     // Public API
     return {
         init,
-        renderFilterPills,
+        renderFilters,
         toggleTag,
         getActiveTags,
         clearTags,
-        setTags,
-        setStickyFilter,
-        getStickyFilter
+        setTags
     };
 })();

@@ -1,68 +1,53 @@
 {
-    "_metadata": {
-        "schema_version": "4.0"
-    },
-    "categorization": {
-        "entry_id": "uid-vue-009",
-        "slug": "ethereal-amalgamations",
-        "tags": {
-            "role": [
-                "Brand Designer",
-                "Content Strategist",
-                "Graphic Designer"
-            ],
-            "skill": [
-                "Adobe Firefly",
-                "Art Direction",
-                "Claude/Cursor",
-                "Content Production",
-                "Generative AI",
-                "Illustration",
-                "Lightroom",
-                "Print Layout",
-                "Publishing",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "",
-            "video_url": "",
-            "video_embed": "<iframe src='https://www.behance.net/embed/project/216060829?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
-            "video_alt_text": "Surreal otherworldly landscapes with oversized mushroom forms, whimsical flora, vibrant color fields, and exploratory figures.",
-            "thumbnail_images": [
-                "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-1.webp",
-                "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-2.webp",
-                "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-3.webp",
-                "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-4.webp",
-                "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-5.webp",
-                "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-6.webp"
-            ],
-            "thumb_slideshow_alt_text": "Dreamy terrains with giant mushrooms, flowing rivers, luminous skies, and wandering figures.",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "behance.gallery/Ethereal-Amalgamations",
-            "project_url": "https://www.behance.net/gallery/216060829/Ethereal-Amalgamations",
-            "github_repository": ""
-        },
-        "teaser_copy": {
-            "seo_title": "Surrealism Ethereal Amalgamations: Dreamlike Landscapes with Whimsical Flora",
-            "seo_description": "A generative surrealist journey through vibrant, otherworldly landscapes featuring oversized mushroom forms, luminous skies, and exploratory figures in motion.",
-            "page_title": "Ethereal Amalgamations",
-            "page_subtitle": "Surreal, otherworldly landscapes with whimsical flora and vibrant color.",
-            "tile_text": [
-                "Oversized mushrooms and fantastical flora",
-                "Luminous skies with planets and balloons",
-                "Flowing rivers and rolling hills in dreamy color"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Surreal landscapes embrace scale shifts, whimsical flora, and luminous atmospheres that invite exploration beyond ordinary space.",
-            "action": "A generative pass established terrain curves and heroic flora, then in painting refined color pacing, edge softness, and focal pathways for figures.",
-            "measured": "Delivers immersive panels that read magically at tile scale and sustain layered wonder for print, social showcases, and provenance linked digital editions."
-        }
-    }
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-vue-009",
+  "slug": "ethereal-amalgamations",
+  "title": "Ethereal Amalgamations",
+  "subtitle": "Surreal, otherworldly landscapes with whimsical flora and vibrant color.",
+  "seo_title": "Surrealism Ethereal Amalgamations: Dreamlike Landscapes with Whimsical Flora",
+  "seo_description": "A generative surrealist journey through vibrant, otherworldly landscapes featuring oversized mushroom forms, luminous skies, and exploratory figures in motion.",
+  "role": ["Graphic Designer", "Creative Director"],
+  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+  "product": ["Digital Art Collection", "Art Print"],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-1.webp",
+    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-2.webp",
+    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-3.webp",
+    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-4.webp",
+    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-5.webp",
+    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-6.webp"
+  ],
+  "thumb_alt": "Dreamy terrains with giant mushrooms, flowing rivers, luminous skies, and wandering figures.",
+  "img": [
+    "assets/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-1.webp",
+    "assets/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-2.webp",
+    "assets/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-3.webp"
+  ],
+  "img_alt": "Surreal otherworldly landscapes with oversized mushrooms, whimsical flora, vibrant color fields, and exploratory figures",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "<iframe src='https://www.behance.net/embed/project/216060829?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
+  "media_alt": "Surreal otherworldly landscapes with oversized mushroom forms, whimsical flora, vibrant color fields, and exploratory figures.",
+  "origin_url": "https://www.behance.net/gallery/216060829/Ethereal-Amalgamations",
+  "origin_url_text": "behance.gallery/Ethereal-Amalgamations",
+  "repository": "",
+  "tiles": [
+    "Oversized mushrooms and fantastical flora",
+    "Luminous skies with planets and balloons",
+    "Flowing rivers and rolling hills in dreamy color"
+  ],
+  "challenge": "Building immersive surrealist landscapes that embrace dramatic scale shifts and fantastical flora. The creative goal was to craft otherworldly terrains where oversized mushrooms, luminous skies, and flowing rivers invite the viewer into a space beyond ordinary perception.",
+  "approach": "Used Adobe Firefly to generate terrain curves and heroic flora compositions with vibrant, layered color palettes. Lightroom handled color pacing and atmospheric grading, while in-painting refined edge softness and established focal pathways for the small exploratory figures within each scene.",
+  "result": "Produced a six-piece surrealist landscape series that reads as magical and inviting at tile scale while sustaining rich detail at full resolution. The collection is suitable for large-format art prints, gallery exhibition, and digital portfolio showcase.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }

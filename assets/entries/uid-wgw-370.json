@@ -1,72 +1,73 @@
 {
-    "_metadata": {
-        "last_updated": "2025-10-18T21:24:00.000000Z",
-        "required_fields": true,
-        "template_type": "portfolio_entry",
-        "schema_version": "4.0",
-        "schema_update": "Added a field for Project URL text to display as hyperlinked on the page"
-    },
-    "categorization": {
-        "entry_id": "uid-wgw-370",
-        "slug": "ai-design-fashion-lookbook",
-        "tags": {
-            "role": [
-                "Content Strategist",
-                "Web Developer"
-            ],
-            "skill": [
-                "Art Direction",
-                "Copywriting",
-                "E-Commerce",
-                "Generative AI",
-                "Git",
-                "HTML/CSS/JS",
-                "Photography",
-                "Responsive Design",
-                "Scaling Systems"
-            ]
-        }
-    },
-    "content": {
-        "media": {
-            "video_filename": "fashion-generative-in-painted-looks.mp4",
-            "video_url": "https://youtu.be/JFg2fXPmuhw",
-            "video_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JFg2fXPmuhw?si=A-3vL7RMlVcafMa0&amp;controls=0' title='AI In-Painted Fashion Lookbook Website Development' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-            "video_alt_text": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
-            "thumbnail_images": [
-                "assets/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp",
-                "assets/media/ai-design-fashion-lookbook/thumb-slides-2-ai-design-fashion-lookbook.webp",
-                "assets/media/ai-design-fashion-lookbook/thumb-slides-3-ai-design-fashion-lookbook.webp",
-                "assets/media/ai-design-fashion-lookbook/thumb-slides-4-ai-design-fashion-lookbook.webp",
-                "assets/media/ai-design-fashion-lookbook/thumb-slides-5-ai-design-fashion-lookbook.webp",
-                "assets/media/ai-design-fashion-lookbook/thumb-slides-6-ai-design-fashion-lookbook.webp"
-            ],
-            "thumb_slideshow_alt_text": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
-            "page_imagery": [],
-            "page_image_group_alt_text": ""
-        },
-        "assets": {
-            "project_url_text": "august.style/summer-fashion-guide",
-            "project_url": "https://design.august.style/projects/summer-lookbook-part-1",
-            "github_repository": "https://github.com/seanivore/design-site"
-        },
-        "teaser_copy": {
-            "seo_title": "AI In-Painted Fashion Lookbook Website Development",
-            "seo_description": "Custom HTML/CSS/JS built magazine-style style-guide, designed to fit the archetypal, Art History inspired wardrobe looks",
-            "page_title": "Shoppable Fashion Lookbook with Google Lens API",
-            "page_subtitle": "Computer vision integration enabling buy-the-look functionality",
-            "tile_text": [
-                "Google Lens API powers shoppable fashion content",
-                "Visual search matches outfits to product catalog",
-                "Progressive disclosure UX guides users through looks",
-                "Direct-to-purchase pathways reduce conversion friction"
-            ]
-        },
-        "page_copy": {
-            "pattern": "Fashion lookbooks create desire but traditional formats create friction between inspiration and purchase—users see outfits they love but must manually search for similar items across multiple retailers. Google Lens API offered an opportunity to bridge this gap through computer vision, automatically matching fashion photography to shoppable products. The challenge was integrating this technology into a magazine-style editorial layout without disrupting the visual experience or making the commerce aspect feel transactional rather than inspirational.",
-            "action": "Developed a custom HTML/CSS/JS fashion lookbook that integrates Google Lens API for visual search functionality, enabling users to identify and purchase items directly from editorial photography. The magazine-style layout uses progressive disclosure patterns—users can enjoy the editorial experience first, then reveal shoppable product matches through intuitive interactions. Built a multi-section architecture that handles complex navigation between different archetypal character journeys and art historical movements while maintaining conversion-focused pathways to product pages. The integration balances editorial storytelling with e-commerce functionality, keeping the primary experience inspirational while making purchase options readily accessible.",
-            "measured": "Successfully merged editorial fashion content with e-commerce functionality through computer vision technology, demonstrating capability to integrate advanced APIs into consumer-facing interfaces. The Google Lens integration reduces friction in the inspiration-to-purchase journey by automatically matching outfits to products, eliminating manual search steps. The progressive disclosure UX maintains the magazine experience while providing clear pathways to conversion when users are ready to purchase. The project showcases both technical integration skills and understanding of fashion e-commerce conversion psychology."
-        }
-    },
-    "notes": []
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
+  "id": "uid-wgw-370",
+  "slug": "ai-design-fashion-lookbook",
+  "title": "Shoppable Fashion Lookbook with Google Lens API",
+  "subtitle": "Computer vision integration enabling buy-the-look functionality",
+  "seo_title": "AI In-Painted Fashion Lookbook Website Development",
+  "seo_description": "Custom HTML/CSS/JS built magazine-style style-guide, designed to fit the archetypal, Art History inspired wardrobe looks",
+  "role": [
+    "Content Strategist",
+    "Web Developer"
+  ],
+  "skill": [
+    "Art Direction",
+    "Copywriting",
+    "E-Commerce",
+    "Generative AI",
+    "Git",
+    "HTML/CSS/JS",
+    "Photography",
+    "Responsive Design",
+    "Scaling Systems"
+  ],
+  "product": [
+    "Website",
+    "E-Commerce Store"
+  ],
+  "company": "Freelance",
+  "thumb": [
+    "assets/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp",
+    "assets/media/ai-design-fashion-lookbook/thumb-slides-2-ai-design-fashion-lookbook.webp",
+    "assets/media/ai-design-fashion-lookbook/thumb-slides-3-ai-design-fashion-lookbook.webp",
+    "assets/media/ai-design-fashion-lookbook/thumb-slides-4-ai-design-fashion-lookbook.webp",
+    "assets/media/ai-design-fashion-lookbook/thumb-slides-5-ai-design-fashion-lookbook.webp",
+    "assets/media/ai-design-fashion-lookbook/thumb-slides-6-ai-design-fashion-lookbook.webp"
+  ],
+  "thumb_alt": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
+  "img": [
+    "assets/media/ai-design-fashion-lookbook/img-sq-slides-1-ai-design-fashion-lookbook.webp",
+    "assets/media/ai-design-fashion-lookbook/img-sq-slides-2-ai-design-fashion-lookbook.webp",
+    "assets/media/ai-design-fashion-lookbook/img-sq-slides-3-ai-design-fashion-lookbook.webp"
+  ],
+  "img_alt": "Shoppable fashion lookbook screenshots showing editorial photography with Google Lens visual search integration and product matching",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "https://youtu.be/JFg2fXPmuhw",
+  "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JFg2fXPmuhw?si=A-3vL7RMlVcafMa0&amp;controls=0' title='AI In-Painted Fashion Lookbook Website Development' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+  "media_alt": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
+  "origin_url": "https://design.august.style/projects/summer-lookbook-part-1",
+  "origin_url_text": "august.style/summer-fashion-guide",
+  "repository": "https://github.com/seanivore/design-site",
+  "tiles": [
+    "Google Lens API powers shoppable fashion content",
+    "Visual search matches outfits to product catalog",
+    "Progressive disclosure UX guides users through looks",
+    "Direct-to-purchase pathways reduce conversion friction"
+  ],
+  "challenge": "Fashion lookbooks create desire but traditional formats produce friction between inspiration and purchase. Users see outfits they love but must manually search for similar items across multiple retailers. Google Lens API offered an opportunity to bridge this gap through computer vision, automatically matching fashion photography to shoppable products. The challenge was integrating this technology into a magazine-style editorial layout without disrupting the visual experience.",
+  "approach": "Developed a custom HTML/CSS/JS fashion lookbook that integrates Google Lens API for visual search functionality, enabling users to identify and purchase items directly from editorial photography. The magazine-style layout uses progressive disclosure patterns so users can enjoy the editorial experience first, then reveal shoppable product matches through intuitive interactions. Built a multi-section architecture handling navigation between different archetypal character journeys and art historical movements while maintaining conversion-focused pathways to product pages.",
+  "result": "The Google Lens integration reduces friction in the inspiration-to-purchase journey by automatically matching outfits to products, eliminating manual search steps. The progressive disclosure UX maintains the magazine experience while providing clear pathways to conversion. The project demonstrates capability in advanced API integration, fashion e-commerce conversion psychology, and consumer-facing interface design that balances editorial storytelling with commerce functionality.",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
 }
