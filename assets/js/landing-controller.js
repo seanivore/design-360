@@ -402,7 +402,6 @@ const LandingController = (() => {
     const trioSpans = trioBridge ? Array.from(trioBridge.querySelectorAll('span')) : [];
     if (!wrapper || !heroVisual || !heroContent) return;
 
-    // Easing curves — each element gets its own personality
     function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
     function easeInOutQuad(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
     function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
@@ -413,6 +412,9 @@ const LandingController = (() => {
       const viewH = window.innerHeight;
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / (wrapH - viewH)));
+
+      // Phase 1 end height — the full visual height before it starts receding
+      const fullVisualH = viewH - 170;
 
       // Phase 1 (0–0.25): Stats scroll off, image grows from 50vh to fill viewport
       if (progress < 0.25) {
@@ -425,67 +427,63 @@ const LandingController = (() => {
           heroStats.style.overflow = 'hidden';
         }
         const startH = viewH * 0.5;
-        const endH = viewH - 170;
-        heroVisual.style.height = (startH + (endH - startH) * ep1) + 'px';
+        heroVisual.style.height = (startH + (fullVisualH - startH) * ep1) + 'px';
         if (heroOverlay) heroOverlay.style.opacity = String(1 - ep1 * 0.6);
 
-        // Content pinned at bottom
         heroContent.style.opacity = '1';
         heroContent.style.transform = 'translateY(0)';
         if (flipHeadline) flipHeadline.style.marginBottom = '';
         if (heroByline) heroByline.style.marginBottom = '';
-        heroVisual.style.clipPath = '';
 
-        // Trio hidden
         if (trioBridge) {
           trioBridge.style.opacity = '0';
-          trioBridge.classList.remove('vis');
           trioSpans.forEach(span => {
             span.style.transform = 'scaleX(0)';
             span.style.opacity = '0';
+            span.style.transition = 'none';
           });
         }
       }
-      // Phase 2 (0.25–0.55): Image recedes from bottom; content stays, expands spacing, then lifts with condense
+      // Phase 2 (0.25–0.55): Image shrinks height (recedes upward in flex),
+      // content rides up naturally, spacing expands then condenses, then content fades
       else if (progress < 0.55) {
         const p2 = (progress - 0.25) / 0.3;
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
 
-        // Image recedes from bottom throughout
-        heroVisual.style.clipPath = `inset(0 0 ${easeInOutQuad(p2) * 100}% 0)`;
-        if (heroOverlay) heroOverlay.style.opacity = '0.4';
+        // Shrink visual height from full to 0 — this is what makes content move up
+        const shrinkEased = easeInOutQuad(p2);
+        heroVisual.style.height = (fullVisualH * (1 - shrinkEased)) + 'px';
+        if (heroOverlay) heroOverlay.style.opacity = String(0.4 + shrinkEased * 0.6);
 
-        if (p2 < 0.45) {
-          // Sub-phase A: Content stays pinned, spacing between elements EXPANDS
-          const expandProgress = p2 / 0.45;
-          const expandAmount = easeOutCubic(expandProgress) * 28;
+        if (p2 < 0.5) {
+          // Sub-phase A: Content visible, spacing EXPANDS between elements
+          const expandProgress = p2 / 0.5;
+          const expandAmount = easeOutCubic(expandProgress) * 24;
 
           heroContent.style.opacity = '1';
           heroContent.style.transform = 'translateY(0)';
           if (flipHeadline) flipHeadline.style.marginBottom = (12 + expandAmount) + 'px';
           if (heroByline) heroByline.style.marginBottom = (16 + expandAmount) + 'px';
         } else {
-          // Sub-phase B: Content lifts up, spacing CONDENSES back to normal, opacity fades
-          const liftProgress = (p2 - 0.45) / 0.55;
-          const easedLift = easeOutQuart(liftProgress);
+          // Sub-phase B: Spacing CONDENSES back, content fades out
+          const fadeProgress = (p2 - 0.5) / 0.5;
+          const easedFade = easeOutQuart(fadeProgress);
 
-          heroContent.style.transform = `translateY(-${easedLift * 160}px)`;
-          heroContent.style.opacity = String(Math.max(0, 1 - easedLift * 1.8));
+          heroContent.style.opacity = String(Math.max(0, 1 - easedFade * 2));
+          heroContent.style.transform = `translateY(-${easedFade * 40}px)`;
 
-          // Condense back: 28px extra → 0
-          const condenseAmount = (1 - easeOutCubic(liftProgress)) * 28;
+          const condenseAmount = (1 - easeOutCubic(fadeProgress)) * 24;
           if (flipHeadline) flipHeadline.style.marginBottom = (12 + condenseAmount) + 'px';
           if (heroByline) heroByline.style.marginBottom = (16 + condenseAmount) + 'px';
         }
 
-        // Trio hidden
         if (trioBridge) {
           trioBridge.style.opacity = '0';
-          trioBridge.classList.remove('vis');
           trioSpans.forEach(span => {
             span.style.transform = 'scaleX(0)';
             span.style.opacity = '0';
+            span.style.transition = 'none';
           });
         }
       }
@@ -494,49 +492,42 @@ const LandingController = (() => {
         const p3 = (progress - 0.55) / 0.25;
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
-        heroVisual.style.clipPath = 'inset(0 0 100% 0)';
+        heroVisual.style.height = '0px';
         heroContent.style.opacity = '0';
-        heroContent.style.transform = 'translateY(-160px)';
+        heroContent.style.transform = 'translateY(-40px)';
         if (flipHeadline) flipHeadline.style.marginBottom = '';
         if (heroByline) heroByline.style.marginBottom = '';
 
         if (trioBridge) {
           trioBridge.style.opacity = '1';
 
-          // Each bar enters at staggered start times, overlapping
-          // Bar 1 (top, longest): starts at p3=0
-          // Bar 2 (middle): starts at p3=0.15
-          // Bar 3 (bottom, shortest): starts at p3=0.30
           const barStarts = [0, 0.15, 0.30];
           const barDuration = 0.50;
 
           trioSpans.forEach((span, i) => {
             const barProgress = Math.max(0, Math.min(1, (p3 - barStarts[i]) / barDuration));
             const easedBar = easeOutCubic(barProgress);
-
             span.style.transform = `scaleX(${easedBar})`;
             span.style.opacity = String(Math.min(1, easedBar * 1.3));
-            span.style.transition = 'none'; // JS-driven, no CSS transition conflict
+            span.style.transition = 'none';
           });
 
-          // Gap: starts expanded (36px), condenses to 12px — mirrors Phase 2 rhythm
           const gapStart = 36;
           const gapEnd = 12;
           const gapProgress = easeInOutQuad(Math.min(p3 * 1.4, 1));
           trioBridge.style.gap = (gapStart - (gapStart - gapEnd) * gapProgress) + 'px';
 
-          // Subtle entrance from below
           const trioEnterY = (1 - easeOutQuart(Math.min(p3 * 2, 1))) * 4;
           trioBridge.style.transform = `translateY(${trioEnterY}vh)`;
         }
       }
-      // Phase 4 (0.8–1.0): Trio slides up and fades; normal page content emerges below
+      // Phase 4 (0.8–1.0): Trio slides up and fades; normal page content emerges
       else {
         const p4 = (progress - 0.8) / 0.2;
         const easedP4 = easeOutCubic(p4);
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
-        heroVisual.style.clipPath = 'inset(0 0 100% 0)';
+        heroVisual.style.height = '0px';
         heroContent.style.opacity = '0';
 
         if (trioBridge) {
@@ -556,7 +547,6 @@ const LandingController = (() => {
     function resetHeroVisual() {
       const rect = wrapper.getBoundingClientRect();
       if (rect.top >= 0) {
-        heroVisual.style.clipPath = '';
         heroVisual.style.height = '50vh';
         heroContent.style.opacity = '';
         heroContent.style.transform = '';
@@ -572,7 +562,6 @@ const LandingController = (() => {
           trioBridge.style.opacity = '0';
           trioBridge.style.gap = '';
           trioBridge.style.transform = '';
-          trioBridge.classList.remove('vis');
           trioSpans.forEach(span => {
             span.style.transform = '';
             span.style.opacity = '';

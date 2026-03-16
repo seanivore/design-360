@@ -22,7 +22,8 @@
 }
 
 html {
-  scroll-behavior: auto
+  scroll-behavior: auto;
+  overflow-x: hidden
 }
 
 body {
@@ -196,10 +197,11 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(31, 31, 31, .8);
+  background: rgba(31, 31, 31, .95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, .08);
+  border: 1.5px solid rgba(255, 255, 255, .15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .5);
   cursor: pointer;
   display: flex;
   flex-direction: column;
