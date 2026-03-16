@@ -274,6 +274,14 @@ a {
   transition: transform .15s
 }
 
+.stat-item:hover .stat-number {
+  filter: brightness(1.2)
+}
+
+.stat-item:hover .stat-label {
+  color: var(--text2)
+}
+
 .stat-item:active {
   transform: scale(.96)
 }

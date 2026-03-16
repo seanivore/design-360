@@ -5,6 +5,7 @@
 *.jpg
 *.jpeg
 *.webm
+*.gif
 
 # Environment variables
 .env

@@ -92,6 +92,13 @@ const LandingController = (() => {
       statNumbers[2].setAttribute('data-count', String(tagsByType.skill.length));
       statNumbers[2].setAttribute('data-suffix', '+');
     }
+
+    // Stat links — Projects goes to all, Roles/Skills could deep-link
+    const statRoles = document.getElementById('statRoles');
+    const statSkills = document.getElementById('statSkills');
+    // Keep hrefs simple — all go to section page
+    if (statRoles) statRoles.href = '/section.html';
+    if (statSkills) statSkills.href = '/section.html';
   }
 
   function renderShowcase(config, projects) {
@@ -406,6 +413,13 @@ const LandingController = (() => {
     function easeInOutQuad(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
     function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
+    // Helper: reset individual element transforms
+    function resetElementTransforms() {
+      if (flipHeadline) flipHeadline.style.transform = '';
+      if (heroByline) heroByline.style.transform = '';
+      if (heroCTA) heroCTA.style.transform = '';
+    }
+
     function heroScroll() {
       const rect = wrapper.getBoundingClientRect();
       const wrapH = wrapper.offsetHeight;
@@ -413,8 +427,11 @@ const LandingController = (() => {
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / (wrapH - viewH)));
 
-      // Phase 1 end height — the full visual height before it starts receding
-      const fullVisualH = viewH - 170;
+      // Phase 1 end height — image fills viewport minus nav and content
+      // Must account for actual content height to prevent overflow clipping
+      const navH = 56;
+      const contentH = heroContent.offsetHeight;
+      const fullVisualH = viewH - navH - contentH;
 
       // Phase 1 (0–0.25): Stats scroll off, image grows from 50vh to fill viewport
       if (progress < 0.25) {
@@ -432,8 +449,7 @@ const LandingController = (() => {
 
         heroContent.style.opacity = '1';
         heroContent.style.transform = 'translateY(0)';
-        if (flipHeadline) flipHeadline.style.marginBottom = '';
-        if (heroByline) heroByline.style.marginBottom = '';
+        resetElementTransforms();
 
         if (trioBridge) {
           trioBridge.style.opacity = '0';
@@ -445,37 +461,40 @@ const LandingController = (() => {
         }
       }
       // Phase 2 (0.25–0.55): Image shrinks height (recedes upward in flex),
-      // content rides up naturally, spacing expands then condenses, then content fades
+      // content stays visible until image is ~halfway gone, then fades up.
+      // Expand→condense via transforms on individual elements (no margin changes).
       else if (progress < 0.55) {
         const p2 = (progress - 0.25) / 0.3;
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
 
-        // Shrink visual height from full to 0 — this is what makes content move up
+        // Shrink visual height from full to 0
         const shrinkEased = easeInOutQuad(p2);
         heroVisual.style.height = (fullVisualH * (1 - shrinkEased)) + 'px';
         if (heroOverlay) heroOverlay.style.opacity = String(0.4 + shrinkEased * 0.6);
 
         if (p2 < 0.5) {
-          // Sub-phase A: Content visible, spacing EXPANDS between elements
-          const expandProgress = p2 / 0.5;
-          const expandAmount = easeOutCubic(expandProgress) * 24;
-
+          // Sub-phase A: Content stays visible and in place while image recedes
           heroContent.style.opacity = '1';
           heroContent.style.transform = 'translateY(0)';
-          if (flipHeadline) flipHeadline.style.marginBottom = (12 + expandAmount) + 'px';
-          if (heroByline) heroByline.style.marginBottom = (16 + expandAmount) + 'px';
+          resetElementTransforms();
         } else {
-          // Sub-phase B: Spacing CONDENSES back, content fades out
-          const fadeProgress = (p2 - 0.5) / 0.5;
-          const easedFade = easeOutQuart(fadeProgress);
+          // Sub-phase B: Image mostly gone — content fades out and moves up
+          // Use transforms on individual children for expand→condense visual effect
+          const t = (p2 - 0.5) / 0.5; // 0→1
+          const easedT = easeOutCubic(t);
 
-          heroContent.style.opacity = String(Math.max(0, 1 - easedFade * 2));
-          heroContent.style.transform = `translateY(-${easedFade * 40}px)`;
+          // Container fades and moves up
+          heroContent.style.opacity = String(Math.max(0, 1 - easedT * 1.8));
+          heroContent.style.transform = `translateY(-${easedT * 50}px)`;
 
-          const condenseAmount = (1 - easeOutCubic(fadeProgress)) * 24;
-          if (flipHeadline) flipHeadline.style.marginBottom = (12 + condenseAmount) + 'px';
-          if (heroByline) heroByline.style.marginBottom = (16 + condenseAmount) + 'px';
+          // Expand→condense: sin curve goes 0→peak→0, creating visual spacing change
+          // Headline stays put (reference), byline/CTA drift down then back
+          const expandCondense = Math.sin(t * Math.PI) * 14;
+
+          if (flipHeadline) flipHeadline.style.transform = 'translateY(0)';
+          if (heroByline) heroByline.style.transform = `translateY(${expandCondense * 0.5}px)`;
+          if (heroCTA) heroCTA.style.transform = `translateY(${expandCondense}px)`;
         }
 
         if (trioBridge) {
@@ -494,9 +513,8 @@ const LandingController = (() => {
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
         heroVisual.style.height = '0px';
         heroContent.style.opacity = '0';
-        heroContent.style.transform = 'translateY(-40px)';
-        if (flipHeadline) flipHeadline.style.marginBottom = '';
-        if (heroByline) heroByline.style.marginBottom = '';
+        heroContent.style.transform = 'translateY(-50px)';
+        resetElementTransforms();
 
         if (trioBridge) {
           trioBridge.style.opacity = '1';
@@ -529,6 +547,7 @@ const LandingController = (() => {
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
         heroVisual.style.height = '0px';
         heroContent.style.opacity = '0';
+        resetElementTransforms();
 
         if (trioBridge) {
           trioBridge.style.transform = `translateY(${-easedP4 * 30}vh)`;
@@ -550,14 +569,13 @@ const LandingController = (() => {
         heroVisual.style.height = '50vh';
         heroContent.style.opacity = '';
         heroContent.style.transform = '';
+        resetElementTransforms();
         if (heroOverlay) heroOverlay.style.opacity = '';
         if (heroStats) {
           heroStats.style.height = '';
           heroStats.style.opacity = '';
           heroStats.style.overflow = '';
         }
-        if (flipHeadline) flipHeadline.style.marginBottom = '';
-        if (heroByline) heroByline.style.marginBottom = '';
         if (trioBridge) {
           trioBridge.style.opacity = '0';
           trioBridge.style.gap = '';

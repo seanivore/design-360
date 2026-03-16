@@ -6,7 +6,7 @@
 
 const FilterController = (() => {
     let activeTags = [];
-    let stickyFilter = null;
+    let matchMode = 'any'; // 'any' (OR) or 'all' (AND)
     let onFilterChange = null;
     let filterContainer = null;
 
@@ -19,11 +19,13 @@ const FilterController = (() => {
         const style = document.createElement('style');
         style.id = 'filter-controller-styles';
         style.textContent = `
-.filter-selected { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-.filter-selected:empty { display: none; }
-.filter-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: .75rem; font-weight: 600; background: rgba(201,166,138,.15); color: #C9A68A; border-radius: 4px; border: 1px solid rgba(201,166,138,.25); cursor: pointer; font-family: inherit; transition: background .15s, border-color .15s; }
-.filter-pill:hover { background: rgba(201,166,138,.25); border-color: rgba(201,166,138,.4); }
-.filter-pill .pill-x { font-size: .625rem; opacity: .6; }
+.filter-selected { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center; }
+.filter-selected:empty { display: none; margin-bottom: 0; }
+.filter-pill { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; font-size: .6875rem; font-weight: 600; background: rgba(201,166,138,.12); color: #C9A68A; border-radius: 3px; border: 1px solid rgba(201,166,138,.2); cursor: pointer; font-family: inherit; transition: background .15s, border-color .15s; white-space: nowrap; }
+.filter-pill:hover { background: rgba(201,166,138,.22); border-color: rgba(201,166,138,.35); }
+.filter-pill .pill-x { font-size: .5625rem; opacity: .5; margin-left: 2px; }
+.filter-clear-inline { display: inline-flex; align-items: center; padding: 4px 10px; font-size: .6875rem; font-weight: 500; color: #9a9590; background: none; border: 1px solid rgba(255,255,255,.06); border-radius: 3px; cursor: pointer; font-family: inherit; transition: color .15s, border-color .15s; white-space: nowrap; }
+.filter-clear-inline:hover { color: #C9A68A; border-color: rgba(201,166,138,.2); }
 .filter-trigger { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; font-size: .8125rem; font-weight: 600; background: rgba(255,255,255,.04); color: #D7CDCC; border: 1px solid rgba(255,255,255,.1); border-radius: 6px; cursor: pointer; font-family: inherit; transition: background .15s, border-color .15s; }
 .filter-trigger:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); }
 .filter-trigger::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #9a9590; margin-left: 4px; }
@@ -35,6 +37,12 @@ const FilterController = (() => {
 .filter-item:hover { background: rgba(255,255,255,.05); }
 .filter-checkbox { accent-color: #C9A68A; width: 14px; height: 14px; }
 .filter-item-count { margin-left: auto; font-size: .6875rem; color: #9a9590; }
+.filter-mode { display: flex; align-items: center; justify-content: space-between; padding: 8px 4px 10px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.filter-mode-label { font-size: .6875rem; color: #9a9590; font-weight: 500; }
+.filter-mode-toggle { display: flex; background: #1f1f1f; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
+.filter-mode-btn { padding: 4px 12px; font-size: .6875rem; font-weight: 600; background: none; border: none; color: #9a9590; cursor: pointer; font-family: inherit; transition: background .15s, color .15s; }
+.filter-mode-btn.active { background: rgba(201,166,138,.2); color: #C9A68A; }
+.filter-mode-btn:hover:not(.active) { color: #D7CDCC; }
 .filter-clear { display: block; width: 100%; padding: 10px; font-size: .75rem; font-weight: 500; color: #9a9590; background: none; border: none; border-top: 1px solid rgba(255,255,255,.06); cursor: pointer; text-align: center; font-family: inherit; margin-top: 6px; transition: color .15s; }
 .filter-clear:hover { color: #C9A68A; }
 `;
@@ -42,16 +50,39 @@ const FilterController = (() => {
     }
 
     /**
-     * Parse tags from URL hash
+     * Parse tags from URL query string or hash
      */
     function parseHashTags() {
+        const tags = [];
+
+        // Check query string first
+        const search = window.location.search.slice(1);
+        if (search) {
+            const qMatch = search.match(/tags?=([^&]+)/);
+            if (qMatch) {
+                qMatch[1].split('+').forEach(t => {
+                    const decoded = decodeURIComponent(t.replace(/-/g, ' ')).trim();
+                    if (decoded) {
+                        const normalized = DataLoader.normalizeForURL(decoded);
+                        if (!tags.includes(normalized)) tags.push(normalized);
+                    }
+                });
+            }
+        }
+
+        // Check hash
         const hash = window.location.hash.slice(1);
-        if (!hash) return [];
+        if (hash) {
+            const hMatch = hash.match(/tags?=([^&]+)/);
+            if (hMatch) {
+                hMatch[1].split('+').forEach(t => {
+                    const decoded = t.trim();
+                    if (decoded && !tags.includes(decoded)) tags.push(decoded);
+                });
+            }
+        }
 
-        const tagsMatch = hash.match(/tags?=([^&]+)/);
-        if (!tagsMatch) return [];
-
-        return tagsMatch[1].split('+').map(t => t.trim()).filter(Boolean);
+        return tags;
     }
 
     /**
@@ -67,14 +98,15 @@ const FilterController = (() => {
     }
 
     /**
-     * Set sticky filter (cannot be removed by user)
+     * Set match mode (any/all) and re-trigger filter
      */
-    function setStickyFilter(filter) {
-        if (filter) {
-            stickyFilter = DataLoader.normalizeForURL(filter);
-            if (!activeTags.includes(stickyFilter)) {
-                activeTags.push(stickyFilter);
-            }
+    function setMatchMode(mode, btnAny, btnAll) {
+        matchMode = mode;
+        btnAny.classList.toggle('active', mode === 'any');
+        btnAll.classList.toggle('active', mode === 'all');
+
+        if (onFilterChange && activeTags.length > 0) {
+            onFilterChange(activeTags, matchMode);
         }
     }
 
@@ -83,10 +115,6 @@ const FilterController = (() => {
      */
     function toggleTag(tag) {
         const normalized = DataLoader.normalizeForURL(tag);
-
-        // Prevent removing sticky filter
-        if (normalized === stickyFilter) return;
-
         const index = activeTags.indexOf(normalized);
 
         if (index === -1) {
@@ -101,7 +129,7 @@ const FilterController = (() => {
         updateFilterUI();
 
         if (onFilterChange) {
-            onFilterChange(activeTags);
+            onFilterChange(activeTags, matchMode);
         }
     }
 
@@ -117,21 +145,27 @@ const FilterController = (() => {
             selectedRow.innerHTML = '';
 
             activeTags.forEach(normalized => {
-                const isSticky = normalized === stickyFilter;
                 const pill = document.createElement('button');
                 pill.className = 'filter-pill';
                 pill.textContent = normalized.replace(/-/g, ' ');
 
-                if (!isSticky) {
-                    const x = document.createElement('span');
-                    x.className = 'pill-x';
-                    x.textContent = ' x';
-                    pill.appendChild(x);
-                    pill.addEventListener('click', () => toggleTag(normalized));
-                }
+                const x = document.createElement('span');
+                x.className = 'pill-x';
+                x.textContent = '×';
+                pill.appendChild(x);
+                pill.addEventListener('click', () => toggleTag(normalized));
 
                 selectedRow.appendChild(pill);
             });
+
+            // Add inline clear button when multiple tags are active
+            if (activeTags.length > 1) {
+                const clearInline = document.createElement('button');
+                clearInline.className = 'filter-clear-inline';
+                clearInline.textContent = 'Clear all';
+                clearInline.addEventListener('click', () => clearTags());
+                selectedRow.appendChild(clearInline);
+            }
         }
 
         // Update trigger text
@@ -205,7 +239,7 @@ const FilterController = (() => {
             const alreadyPresent = tagsWithTypes.some(({ tag }) =>
                 DataLoader.normalizeForURL(tag) === normalized
             );
-            if (alreadyPresent || normalized === stickyFilter) return;
+            if (alreadyPresent) return;
 
             // Determine type from all projects
             const type = DataLoader.getTagType(allProjects, normalized);
@@ -267,7 +301,34 @@ const FilterController = (() => {
         clearBtn.textContent = 'Clear all';
         clearBtn.addEventListener('click', () => clearTags());
 
+        // Match mode toggle (any/all)
+        const modeRow = document.createElement('div');
+        modeRow.className = 'filter-mode';
+
+        const modeLabel = document.createElement('span');
+        modeLabel.className = 'filter-mode-label';
+        modeLabel.textContent = 'Matching';
+
+        const modeToggle = document.createElement('div');
+        modeToggle.className = 'filter-mode-toggle';
+
+        const btnAny = document.createElement('button');
+        btnAny.className = 'filter-mode-btn' + (matchMode === 'any' ? ' active' : '');
+        btnAny.textContent = 'any';
+        btnAny.addEventListener('click', () => setMatchMode('any', btnAny, btnAll));
+
+        const btnAll = document.createElement('button');
+        btnAll.className = 'filter-mode-btn' + (matchMode === 'all' ? ' active' : '');
+        btnAll.textContent = 'all';
+        btnAll.addEventListener('click', () => setMatchMode('all', btnAny, btnAll));
+
+        modeToggle.appendChild(btnAny);
+        modeToggle.appendChild(btnAll);
+        modeRow.appendChild(modeLabel);
+        modeRow.appendChild(modeToggle);
+
         panel.appendChild(search);
+        panel.appendChild(modeRow);
         panel.appendChild(groups);
         panel.appendChild(clearBtn);
 
@@ -312,37 +373,22 @@ const FilterController = (() => {
     /**
      * Initialize filter controller
      */
-    function init(callback, initialStickyFilter) {
+    function init(callback) {
         onFilterChange = callback;
-
-        if (initialStickyFilter) {
-            setStickyFilter(initialStickyFilter);
-        }
 
         // Parse initial tags from hash
         const hashTags = parseHashTags();
         const hasHashTags = hashTags.length > 0;
 
-        // Merge sticky filter with hash tags
-        if (stickyFilter && !hashTags.includes(stickyFilter)) {
-            hashTags.unshift(stickyFilter);
-        }
-
         activeTags = hashTags;
 
         // Listen for hash changes (back/forward navigation)
         window.addEventListener('hashchange', () => {
-            const newHashTags = parseHashTags();
-
-            if (stickyFilter && !newHashTags.includes(stickyFilter)) {
-                newHashTags.unshift(stickyFilter);
-            }
-
-            activeTags = newHashTags;
+            activeTags = parseHashTags();
             updateFilterUI();
 
             if (onFilterChange) {
-                onFilterChange(activeTags);
+                onFilterChange(activeTags, matchMode);
             }
         });
 
@@ -350,7 +396,7 @@ const FilterController = (() => {
         if (hasHashTags && onFilterChange) {
             setTimeout(() => {
                 updateFilterUI();
-                onFilterChange(activeTags);
+                onFilterChange(activeTags, matchMode);
             }, 0);
         }
 
@@ -365,20 +411,16 @@ const FilterController = (() => {
     }
 
     /**
-     * Clear all active tags (except sticky filter)
+     * Clear all active tags
      */
     function clearTags() {
-        if (stickyFilter) {
-            activeTags = [stickyFilter];
-        } else {
-            activeTags = [];
-        }
+        activeTags = [];
 
         updateHash();
         updateFilterUI();
 
         if (onFilterChange) {
-            onFilterChange(activeTags);
+            onFilterChange(activeTags, matchMode);
         }
     }
 
@@ -388,16 +430,19 @@ const FilterController = (() => {
     function setTags(tags) {
         activeTags = tags.map(t => DataLoader.normalizeForURL(t));
 
-        if (stickyFilter && !activeTags.includes(stickyFilter)) {
-            activeTags.unshift(stickyFilter);
-        }
-
         updateHash();
         updateFilterUI();
 
         if (onFilterChange) {
-            onFilterChange(activeTags);
+            onFilterChange(activeTags, matchMode);
         }
+    }
+
+    /**
+     * Get current match mode
+     */
+    function getMatchMode() {
+        return matchMode;
     }
 
     // Public API
@@ -406,6 +451,7 @@ const FilterController = (() => {
         renderFilters,
         toggleTag,
         getActiveTags,
+        getMatchMode,
         clearTags,
         setTags
     };

@@ -669,41 +669,31 @@ li a:hover {
 
 .section-toolbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-md);
-  padding: var(--space-lg) 0;
+  gap: 0;
+  padding: var(--space-lg) 0 var(--space-sm);
   margin-bottom: var(--space-sm);
   border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.06);
 }
 
-.section-toolbar-header h1 {
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin-bottom: 0.125rem;
-  letter-spacing: -0.02em;
+.section-toolbar h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+  color: var(--color-text-secondary);
 }
 
-.section-toolbar-header p {
+.section-toolbar p {
   font-size: 0.8125rem;
   color: var(--color-text-secondary);
   margin-bottom: 0;
 }
 
 .section-toolbar-filter {
-  flex-shrink: 0;
-  padding-top: 0.25rem;
-}
-
-@media (max-width: 47.9375rem) {
-  .section-toolbar {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-
-  .section-toolbar-header h1 {
-    font-size: 1.5rem;
-  }
+  width: 100%;
+  margin-top: var(--space-sm);
 }
 
 /* ============================================

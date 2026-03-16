@@ -79,20 +79,13 @@
     function updatePageHeader(filteredCount) {
         const count = filteredCount || shuffledProjects.length;
 
-        if (activeTags.length === 1) {
-            const primaryTag = activeTags[0];
-            const displayName = resolveTagDisplayName(primaryTag, allProjects);
+        pageTitle.textContent = `${count} Projects`;
+        pageSubtitle.textContent = '';
 
-            pageTitle.innerHTML = `${displayName} <span style="font-size: 0.8125rem; font-weight: 400; color: var(--color-text-secondary); margin-left: 0.5rem;">(${count})</span>`;
-            pageSubtitle.textContent = '';
-            document.title = `${displayName} Projects | Sean August Horvath`;
-        } else if (activeTags.length > 1) {
-            pageTitle.innerHTML = `Projects <span style="font-size: 0.8125rem; font-weight: 400; color: var(--color-text-secondary); margin-left: 0.5rem;">(${count})</span>`;
-            pageSubtitle.textContent = '';
-            document.title = 'Filtered Projects | Sean August Horvath';
+        if (activeTags.length > 0) {
+            const tagNames = activeTags.map(t => resolveTagDisplayName(t, allProjects));
+            document.title = `${tagNames.join(', ')} Projects | Sean August Horvath`;
         } else {
-            pageTitle.textContent = 'All Projects';
-            pageSubtitle.textContent = `${count} projects`;
             document.title = 'All Projects | Sean August Horvath';
         }
 
@@ -111,14 +104,14 @@
         try {
             allProjects = await DataLoader.loadAllProjects();
 
-            // Filter by active tags if any
+            // Filter by active tags if any (OR logic — show projects with ANY matching tag)
             let filtered = allProjects;
             if (activeTags.length > 0) {
                 const resolvedTags = activeTags.map(tag =>
                     resolveTagDisplayName(tag, allProjects)
                 );
                 activeTags = resolvedTags.map(t => DataLoader.normalizeForURL(t));
-                filtered = DataLoader.filterByAllTags(allProjects, resolvedTags);
+                filtered = DataLoader.filterByAnyTag(allProjects, resolvedTags);
             }
 
             shuffledProjects = DataLoader.shuffleArray(filtered);
@@ -149,7 +142,7 @@
         const tagsWithTypes = [];
         const seenTags = new Set();
         const activeNormalized = new Set(activeTags.map(t => DataLoader.normalizeForURL(t)));
-        const tagsByType = DataLoader.getTagsByType(shuffledProjects);
+        const tagsByType = DataLoader.getTagsByType(allProjects);
 
         // Add role tags first, then skill, then product (skip company)
         ['role', 'skill', 'product'].forEach(type => {
@@ -178,17 +171,16 @@
 
         FilterController.renderFilters(tagsWithTypes, tagFiltersContainer, allProjects);
 
-        // Set up sticky filter (the primary tag)
-        const stickyFilter = activeTags.length > 0 ? activeTags[0] : null;
-
-        FilterController.init((newActiveTags) => {
-            // Re-filter and re-render
+        FilterController.init((newActiveTags, mode) => {
+            // Re-filter using the selected match mode (any = OR, all = AND)
             let filtered = allProjects;
             if (newActiveTags.length > 0) {
                 const resolvedTags = newActiveTags.map(t =>
                     resolveTagDisplayName(t, allProjects)
                 );
-                filtered = DataLoader.filterByAllTags(allProjects, resolvedTags);
+                filtered = mode === 'all'
+                    ? DataLoader.filterByAllTags(allProjects, resolvedTags)
+                    : DataLoader.filterByAnyTag(allProjects, resolvedTags);
             }
 
             const reshuffled = DataLoader.shuffleArray(filtered);
@@ -199,7 +191,7 @@
             FilterController.renderFilters(updatedTags, tagFiltersContainer, allProjects);
 
             renderView(reshuffled);
-        }, stickyFilter);
+        });
     }
 
     /**
