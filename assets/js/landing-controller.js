@@ -420,6 +420,22 @@ const LandingController = (() => {
       if (heroCTA) heroCTA.style.transform = '';
     }
 
+    // Helper: pin content absolutely at bottom (floats on top of image)
+    function pinContent() {
+      heroContent.style.position = 'absolute';
+      heroContent.style.bottom = '0';
+      heroContent.style.left = '0';
+      heroContent.style.right = '0';
+    }
+
+    // Helper: unpin content (return to flex flow)
+    function unpinContent() {
+      heroContent.style.position = '';
+      heroContent.style.bottom = '';
+      heroContent.style.left = '';
+      heroContent.style.right = '';
+    }
+
     function heroScroll() {
       const rect = wrapper.getBoundingClientRect();
       const wrapH = wrapper.offsetHeight;
@@ -427,13 +443,12 @@ const LandingController = (() => {
       const scrolled = -rect.top;
       const progress = Math.max(0, Math.min(1, scrolled / (wrapH - viewH)));
 
-      // Phase 1 end height — image fills viewport minus nav and content
-      // Must account for actual content height to prevent overflow clipping
+      // Image fills viewport minus nav and content, content pinned at bottom
       const navH = 56;
       const contentH = heroContent.offsetHeight;
       const fullVisualH = viewH - navH - contentH;
 
-      // Phase 1 (0–0.25): Stats scroll off, image grows from 50vh to fill viewport
+      // Phase 1 (0–0.25): Stats exit, image grows to fill available space
       if (progress < 0.25) {
         const p1 = progress / 0.25;
         const ep1 = easeOutCubic(p1);
@@ -445,6 +460,7 @@ const LandingController = (() => {
         }
         const startH = viewH * 0.5;
         heroVisual.style.height = (startH + (fullVisualH - startH) * ep1) + 'px';
+        heroVisual.style.opacity = '1';
         if (heroOverlay) heroOverlay.style.opacity = String(1 - ep1 * 0.6);
 
         heroContent.style.opacity = '1';
@@ -460,38 +476,29 @@ const LandingController = (() => {
           });
         }
       }
-      // Phase 2 (0.25–0.55): Image shrinks height (recedes upward in flex),
-      // content stays visible until image is ~halfway gone, then fades up.
-      // Expand→condense via transforms on individual elements (no margin changes).
+      // Phase 2 (0.25–0.55): Image shrinks, content stays then fades
       else if (progress < 0.55) {
         const p2 = (progress - 0.25) / 0.3;
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
 
-        // Shrink visual height from full to 0
         const shrinkEased = easeInOutQuad(p2);
         heroVisual.style.height = (fullVisualH * (1 - shrinkEased)) + 'px';
+        heroVisual.style.opacity = '1';
         if (heroOverlay) heroOverlay.style.opacity = String(0.4 + shrinkEased * 0.6);
 
         if (p2 < 0.5) {
-          // Sub-phase A: Content stays visible and in place while image recedes
           heroContent.style.opacity = '1';
           heroContent.style.transform = 'translateY(0)';
           resetElementTransforms();
         } else {
-          // Sub-phase B: Image mostly gone — content fades out and moves up
-          // Use transforms on individual children for expand→condense visual effect
-          const t = (p2 - 0.5) / 0.5; // 0→1
+          const t = (p2 - 0.5) / 0.5;
           const easedT = easeOutCubic(t);
 
-          // Container fades and moves up
           heroContent.style.opacity = String(Math.max(0, 1 - easedT * 1.8));
           heroContent.style.transform = `translateY(-${easedT * 50}px)`;
 
-          // Expand→condense: sin curve goes 0→peak→0, creating visual spacing change
-          // Headline stays put (reference), byline/CTA drift down then back
           const expandCondense = Math.sin(t * Math.PI) * 14;
-
           if (flipHeadline) flipHeadline.style.transform = 'translateY(0)';
           if (heroByline) heroByline.style.transform = `translateY(${expandCondense * 0.5}px)`;
           if (heroCTA) heroCTA.style.transform = `translateY(${expandCondense}px)`;
@@ -506,12 +513,13 @@ const LandingController = (() => {
           });
         }
       }
-      // Phase 3 (0.55–0.8): Trio bars enter ONE AT A TIME, gap expand→condense
+      // Phase 3 (0.55–0.8): Trio bars enter
       else if (progress < 0.8) {
         const p3 = (progress - 0.55) / 0.25;
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
         heroVisual.style.height = '0px';
+        heroVisual.style.opacity = '1';
         heroContent.style.opacity = '0';
         heroContent.style.transform = 'translateY(-50px)';
         resetElementTransforms();
@@ -539,7 +547,7 @@ const LandingController = (() => {
           trioBridge.style.transform = `translateY(${trioEnterY}vh)`;
         }
       }
-      // Phase 4 (0.8–1.0): Trio slides up and fades; normal page content emerges
+      // Phase 4 (0.8–1.0): Trio exits
       else {
         const p4 = (progress - 0.8) / 0.2;
         const easedP4 = easeOutCubic(p4);
@@ -567,8 +575,10 @@ const LandingController = (() => {
       const rect = wrapper.getBoundingClientRect();
       if (rect.top >= 0) {
         heroVisual.style.height = '50vh';
+        heroVisual.style.opacity = '';
         heroContent.style.opacity = '';
         heroContent.style.transform = '';
+        unpinContent();
         resetElementTransforms();
         if (heroOverlay) heroOverlay.style.opacity = '';
         if (heroStats) {
