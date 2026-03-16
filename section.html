@@ -41,25 +41,16 @@
   <!-- Main Content -->
   <main class="container">
 
-    <!-- Page Title (dynamically populated) -->
-    <section class="page-header mt-lg">
-      <h1 id="page-title">Projects</h1>
-      <p id="page-subtitle" class="text-secondary"></p>
-    </section>
-
-    <!-- Tag Filters (horizontal scroll) -->
-    <section class="tag-filters-container" style="position: relative;">
-      <div class="tag-filters-wrapper">
-        <div id="tag-filters" class="tag-filters" role="tablist">
-          <!-- Dynamically populated tag filter pills -->
-          <!-- Example structure:
-            <button class="tag-filter" role="tab" data-tag="responsive-design">
-              Responsive Design
-            </button>
-            -->
-        </div>
+    <!-- Section toolbar: heading + filter -->
+    <div class="section-toolbar">
+      <div class="section-toolbar-header">
+        <h1 id="page-title">Projects</h1>
+        <p id="page-subtitle" class="text-secondary"></p>
       </div>
-    </section>
+      <div class="section-toolbar-filter" id="tag-filters" style="position: relative;">
+        <!-- Populated by FilterController -->
+      </div>
+    </div>
 
     <!-- Tile Grid -->
     <section id="tile-grid" class="grid-section">

@@ -664,25 +664,50 @@ li a:hover {
 }
 
 /* ============================================
-   TAG FILTERS (Shopify-style sorting)
+   SECTION TOOLBAR (heading + filter)
    ============================================ */
 
-.tag-filters-container {
-  margin-bottom: var(--space-lg);
-  position: relative;
+.section-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  margin-bottom: var(--space-sm);
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.06);
 }
 
-.tag-filters-wrapper {
-  position: relative;
+.section-toolbar-header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.125rem;
+  letter-spacing: -0.02em;
 }
 
-/* Hide old scrolling filter elements — replaced by FilterController dropdown */
-.tag-filters {
-  display: none;
+.section-toolbar-header p {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+.section-toolbar-filter {
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 47.9375rem) {
+  .section-toolbar {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .section-toolbar-header h1 {
+    font-size: 1.5rem;
+  }
 }
 
 /* ============================================
-   PAGE HEADER (Section Pages)
+   PAGE HEADER (legacy — kept for compatibility)
    ============================================ */
 
 .page-header {
@@ -694,7 +719,6 @@ li a:hover {
   font-weight: 800;
   margin-bottom: 0.25rem;
   letter-spacing: -0.02em;
-  display: inline-block;
 }
 
 .page-header p {
