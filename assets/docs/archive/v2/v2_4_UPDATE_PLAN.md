@@ -897,15 +897,24 @@ File: `assets/scripts/validate_v5.py`
           └── PHASE 8 (Portfolio-as-Product) ── optional final phase
   ```
 
-  * **Agent workstreams** (can run in parallel once Phase 0 locks):
+  * **Agent Workstreams** (can run in parallel once Phase 0 locks):
 
-| Agent                 | Scope              | Files                                                                                                                                 |
-| --------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **A: Entry Creation** | 1A-1G, 5A, 5B      | `validate_v5.py`, `_entry_template.json`, `generate_manifest.py`, `new_project.py`, all 36 `uid-*.json`, `tags.json`                  |
-| **B: Core JS**        | 2A, 2B             | `data-loader.js`, `landing-controller.js` (sequential: 2A then 2B)                                                                    |
-| **C: Secondary JS**   | 2C, 2D, 2E, 2F, 2G | `entry-controller.js`, `tile-renderer.js`, `section-controller.js`, `filter-controller.js` (rewrite), delete `homepage-controller.js` |
-| **D: HTML + CSS**     | 3A-3D, 4A-4B       | `index.html`, `section.html`, `entry.html`, `404.html`, `landing.css`                                                                 |
-| **E: Documentation**  | 6A-6D              | `JSON_ARCHITECTURE.md`, `ENTRY_SOP.md`, `README.md`, portfolio entry JSON                                                             |
+| Agent                 | Scope              | Files                                                               |
+| --------------------- | ------------------ | ------------------------------------------------------------------- |
+| **A: Entry Creation** | 1A-1G, 5A, 5B      | `validate_v5.py`, `_entry_template.json`, `generate_manifest.py`,   |
+|                       |                    | `new_project.py`, all 36 `uid-*.json`, `tags.json`                  |
+| --------------------- | ------------------ | ------------------------------------------------------------------- |
+| **B: Core JS**        | 2A, 2B             | `data-loader.js`, `landing-controller.js` (sequential: 2A then 2B)  |
+| --------------------- | ------------------ | ------------------------------------------------------------------- |
+| **C: Secondary JS**   | 2C, 2D, 2E, 2F, 2G | `entry-controller.js`, `tile-renderer.js`, `section-controller.js`, |
+|                       |                    | `filter-controller.js` (rewrite), delete `homepage-controller.js`   |
+| --------------------- | ------------------ | ------------------------------------------------------------------- |
+| **D: HTML + CSS**     | 3A-3D, 4A-4B       | `index.html`, `section.html`, `entry.html`,                         |
+|                       |                    | `404.html`, `landing.css`                                           |
+| --------------------- | ------------------ | ------------------------------------------------------------------- |
+| **E: Documentation**  | 6A-6D              | `JSON_ARCHITECTURE.md`, `ENTRY_SOP.md`,                             |
+|                       |                    | `README.md`, portfolio entry JSON                                   |
+| --------------------- | ------------------ | ------------------------------------------------------------------- |
 
   * **Phase 1A** (role tag research) should happen first so Agent A has the finalized tag list before creating entries. Sean reviews the proposed role list before Agent A begins writing entries.
 
