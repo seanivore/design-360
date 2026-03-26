@@ -74,6 +74,8 @@
 
   We should make sure that this is not happening for other components. It might be a logic issue for all the the tags pulled from `assets/js/homepage-content.json`. 
 
+  Actually it appears that the + and the - should determine the setting in the filter for `Matching: ANY | ALL` and does not appear to work. 
+
   * *CTA Buttons*
 
   We have the same issue with the `.cta-buttons` `.btn-primary`. Here is the components defined tags, followed by the current URL that the button takes the user to, and then the accurate URL that the button should be creating. 
