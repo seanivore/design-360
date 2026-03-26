@@ -30,7 +30,7 @@ You are creating v5.0 JSON entries for a portfolio site. 36 entries already exis
 10. Regenerate manifest: `python generate_manifest.py`
 11. Mark the project as complete in this document
 
-**Every 5-10 entries:** Run `git add` on the new files and push.
+**Every 5-10 entries:** Run `git add .` on the new files and push.
 
 ---
 

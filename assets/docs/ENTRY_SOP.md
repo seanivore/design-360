@@ -8,19 +8,31 @@ Schema version: 5.0
 
 **Option A (recommended):** Run the generator script from the project root:
 
-```
-python assets/scripts/new_project.py
-```
+  ```bash
+  python3 assets/scripts/new_project.py
+  ```
 
-This calls the `uid` CLI tool to generate a unique ID (format `uid-xxx-###`), stamps the v5.0 metadata, and writes a new file to `assets/docs/`. You then move the completed file to `assets/entries/`.
+  This calls the `uid` CLI tool to generate a unique ID (format `uid-xxx-###`), stamps the v5.0 metadata, and writes a new file to `assets/docs/`. You then move the completed file to `assets/entries/`. We also have created a custom command that runs `assets/scripts/project.sh`. 
+
+  ```bash
+  project
+  # Created project file: assets/docs/uid-std-018.json
+  # Entry ID: uid-std-018
+  ```
 
 **Option B:** Copy the template manually:
 
-```
-cp assets/docs/_entry_template.json assets/entries/uid-xxx-###.json
-```
+  ```bash
+  cp assets/docs/_entry_template.json assets/entries/uid-xxx-###.json
+  ```
 
-Replace `uid-xxx-###` with a unique ID. Update the `"id"` field inside the file to match the filename.
+  Replace `uid-xxx-###` with a unique ID. Update the `"id"` field inside the file to match the filename. We have created a custom command that provides a unique ID if you run the command `uid`. 
+
+  ```bash
+  uid
+  # Generated UID: uid-ccn-649
+  # Mathematical operations: c(52007)=51984 → c(51984)=51961 → n(51961)=649
+  ```
 
 ---
 
@@ -28,16 +40,16 @@ Replace `uid-xxx-###` with a unique ID. Update the `"id"` field inside the file 
 
 Before filling in `role`, `skill`, `product`, or `company`, open the tag registry:
 
-```
-assets/docs/tags.json
-```
+  ```
+  assets/docs/tags.json
+  ```
 
 **Rules:**
 
-- Use only tags that already exist in the registry. Do not invent new tags or create near-duplicates (e.g., do not add "Web Design" when "Web Developer" exists, or "Photoshop CC" when "Photoshop" exists).
-- If a genuinely new tag is needed, add it to `tags.json` first, then reference it in the entry.
-- Tags are case-sensitive and must match the registry exactly.
-- `role`, `skill`, and `product` are arrays -- include at least one value in each.
+  - Use only tags that already exist in the registry. Do not invent new tags or create near-duplicates (e.g., do not add "Web Design" when "Web Developer" exists, or "Photoshop CC" when "Photoshop" exists).
+  - If a genuinely new tag is needed, add it to `tags.json` first, then reference it in the entry.
+  - Tags are case-sensitive and must match the registry exactly.
+  - `role`, `skill`, and `product` are arrays -- include at least one value in each.
 
 ---
 
@@ -47,14 +59,14 @@ assets/docs/tags.json
 
 2-4 short lines displayed on the project tile/card. Each line should be a standalone point -- no full sentences needed. Think of these as scannable highlights.
 
-```json
-"tiles": [
-  "All custom artwork drawn by hand for client",
-  "Logo and brand elements reflect personal teaching style",
-  "No AI content maintains authentic human touch",
-  "Webflow platform enables client content management"
-]
-```
+  ```json
+  "tiles": [
+    "All custom artwork drawn by hand for client",
+    "Logo and brand elements reflect personal teaching style",
+    "No AI content maintains authentic human touch",
+    "Webflow platform enables client content management"
+  ]
+  ```
 
 ### `challenge` (required, string)
 
@@ -74,10 +86,10 @@ A short, impactful headline used in hero rotation on the homepage. Optional but 
 
 ### Other optional copy fields
 
-- `hero_btn_cta`: Custom CTA button text for hero display (string or null).
-- `final_cta_text`: Closing CTA paragraph on the project page (string or null).
-- `final_btn_cta`: Closing CTA button text (string or null).
-- `skill_summary`: Brief summary of skills applied (string, can be empty).
+  - `hero_btn_cta`: Custom CTA button text for hero display (string or null).
+  - `final_cta_text`: Closing CTA paragraph on the project page (string or null).
+  - `final_btn_cta`: Closing CTA button text (string or null).
+  - `skill_summary`: Brief summary of skills applied (string, can be empty).
 
 ---
 
@@ -85,26 +97,26 @@ A short, impactful headline used in hero rotation on the homepage. Optional but 
 
 Every entry must have all of the following fields populated (non-empty, non-null):
 
-| Field | Type | Notes |
-|---|---|---|
-| `id` | string | Format: `uid-xxx-###` |
-| `slug` | string | URL-safe, lowercase, hyphenated |
-| `title` | string | Display title for the project |
-| `subtitle` | string | One-line tagline |
-| `seo_title` | string | 50-60 characters |
-| `seo_description` | string | 150-160 characters |
-| `role` | array | At least one value from `tags.json` |
-| `skill` | array | At least one value from `tags.json` |
-| `product` | array | At least one value from `tags.json` |
-| `company` | string | One of the four locked values (see below) |
-| `thumb` | array | At least one thumbnail path |
-| `thumb_alt` | string | Alt text for thumbnail slideshow |
-| `img` | array | At least one image path |
-| `img_alt` | string | Alt text for square images |
-| `tiles` | array | 2-4 short display lines |
-| `challenge` | string | 2-4 sentences |
-| `approach` | string | 2-4 sentences |
-| `result` | string | 2-4 sentences |
+| Field             | Type   | Notes                                     |
+| ----------------- | ------ | ----------------------------------------- |
+| `id`              | string | Format: `uid-xxx-###`                     |
+| `slug`            | string | URL-safe, lowercase, hyphenated           |
+| `title`           | string | Display title for the project             |
+| `subtitle`        | string | One-line tagline                          |
+| `seo_title`       | string | 50-60 characters                          |
+| `seo_description` | string | 150-160 characters                        |
+| `role`            | array  | At least one value from `tags.json`       |
+| `skill`           | array  | At least one value from `tags.json`       |
+| `product`         | array  | At least one value from `tags.json`       |
+| `company`         | string | One of the four locked values (see below) |
+| `thumb`           | array  | At least one thumbnail path               |
+| `thumb_alt`       | string | Alt text for thumbnail slideshow          |
+| `img`             | array  | At least one image path                   |
+| `img_alt`         | string | Alt text for square images                |
+| `tiles`           | array  | 2-4 short display lines                   |
+| `challenge`       | string | 2-4 sentences                             |
+| `approach`        | string | 2-4 sentences                             |
+| `result`          | string | 2-4 sentences                             |
 
 ---
 
@@ -140,7 +152,7 @@ Optional media fields (`mobile_img`, `media_url`, `media_embed`) can be left emp
 
 These fields default to `null`. Only populate them when the project warrants it.
 
-**`process`** -- Array of exactly 3 steps. Each step requires:
+**`process`** -- Array of exactly 3 steps. Each step requires these 4 values:
 ```json
 { "word": "...", "summary": "...", "link_text": "...", "link_slug": "..." }
 ```

@@ -3,22 +3,62 @@
     "version": "1.0",
     "description": "Controls which entries appear in each homepage section. Change tags to reshape the entire homepage for a specific job target."
   },
-
   "hero": {
-    "filter": { "any": ["Web Developer"] },
-    "cta_secondary": { "text": "All Projects", "href": "/section.html" }
+    "filter": {
+      "any": [
+        "Web Developer"
+      ]
+    },
+    "cta_secondary": {
+      "text": "All Projects",
+      "href": "/section.html"
+    }
   },
-
   "showcase": {
     "heading": "Web Development",
     "tabs": [
-      { "id": "webflow", "label": "Webflow", "filter": { "all": ["Web Developer", "Webflow"] } },
-      { "id": "framer", "label": "Framer", "filter": { "all": ["Web Developer", "Framer"] } },
-      { "id": "react", "label": "React", "filter": { "all": ["Web Developer", "React"] } },
-      { "id": "htmlcssjs", "label": "HTML/CSS/JS", "filter": { "all": ["Web Developer", "HTML/CSS/JS"] } }
+      {
+        "id": "webflow",
+        "label": "Webflow",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "Webflow"
+          ]
+        }
+      },
+      {
+        "id": "framer",
+        "label": "Framer",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "Framer"
+          ]
+        }
+      },
+      {
+        "id": "react",
+        "label": "React",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "React"
+          ]
+        }
+      },
+      {
+        "id": "htmlcssjs",
+        "label": "HTML/CSS/JS",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "HTML/CSS/JS"
+          ]
+        }
+      }
     ]
   },
-
   "credentials": {
     "heading": "Experience",
     "items": [
@@ -27,59 +67,118 @@
         "company": "Freelance",
         "title": "Creative Consultant & Digital Contractor",
         "dates": "2024\u2013Present",
-        "tags": ["Webflow", "E-Commerce", "AI Integration", "Automation"]
+        "tags": [
+          "Webflow",
+          "E-Commerce",
+          "AI Integration",
+          "Automation"
+        ]
       },
       {
         "display_name": "SILENT LABS",
         "company": "Silent Labs",
         "title": "Art Director",
         "dates": "2020\u20132023",
-        "tags": ["Brand Identity", "Motion Graphics", "Illustration", "Web3"]
+        "tags": [
+          "Brand Identity",
+          "Motion Graphics",
+          "Illustration",
+          "Web3"
+        ]
       },
       {
         "display_name": "SEANIVORE GROUP",
         "company": "SEANIVORE GROUP LLC",
         "title": "SBO Digital Consultant",
         "dates": "2019\u20132020",
-        "tags": ["Copywriting", "Social Media", "Marketing", "Kajabi"]
+        "tags": [
+          "Copywriting",
+          "Social Media",
+          "Marketing",
+          "Kajabi"
+        ]
       },
       {
         "display_name": "PETA",
         "company": "PETA, Inc.",
         "title": "Marketing Innovations \u2192 Senior Strategist",
         "dates": "2011\u20132018",
-        "tags": ["Viral Content", "3.2B Impressions", "App UI/UX", "Global"]
+        "tags": [
+          "Viral Content",
+          "3.2B Impressions",
+          "App UI/UX",
+          "Global"
+        ]
       }
     ]
   },
-
   "process": {
     "heading": "AI & Automation Process",
-    "filter": { "any": ["Automation"] }
+    "filter": {
+      "any": [
+        "Automation"
+      ]
+    }
   },
-
   "creative": {
     "heading": "Creative Production",
     "cards": [
-      { "label": "Digital Art", "title": "15+ Collections", "filter": { "any": ["Graphic Designer"] }, "href": "/section.html?tags=Graphic+Designer" },
-      { "label": "Motion & Video", "title": "Social & Brand", "filter": { "any": ["Motion Graphics", "Video Production"] }, "href": "/section.html?tags=Motion+Graphics" },
-      { "label": "Brand Assets", "title": "Identity & Print", "filter": { "any": ["Brand Designer"] }, "href": "/section.html?tags=Brand+Designer" }
+      {
+        "label": "Digital Art",
+        "title": "15+ Collections",
+        "filter": {
+          "any": [
+            "Graphic Designer"
+          ]
+        },
+        "href": "/section.html?tags=Graphic+Designer"
+      },
+      {
+        "label": "Motion & Video",
+        "title": "Social & Brand",
+        "filter": {
+          "any": [
+            "Motion Graphics",
+            "Video Production"
+          ]
+        },
+        "href": "/section.html?tags=Motion+Graphics"
+      },
+      {
+        "label": "Brand Assets",
+        "title": "Identity & Print",
+        "filter": {
+          "any": [
+            "Brand Designer"
+          ]
+        },
+        "href": "/section.html?tags=Brand+Designer"
+      }
     ]
   },
-
   "impact": {
     "heading": "Advertising Impact",
-    "filter": { "any": ["Advertising"] }
+    "filter": {
+      "any": [
+        "Advertising"
+      ]
+    }
   },
-
   "achievements": {
     "heading": "Achievements",
-    "filter": { "any": [] }
+    "filter": {
+      "any": []
+    }
   },
-
   "cta_section": {
     "heading": "Interested in web development?",
-    "primary": { "text": "See All Web Projects", "href": "/section.html?tags=Web+Developer" },
-    "secondary": { "text": "Explore Full Portfolio", "href": "/section.html" }
+    "primary": {
+      "text": "See All Web Projects",
+      "href": "/section.html?tags=Web+Developer"
+    },
+    "secondary": {
+      "text": "Explore Full Portfolio",
+      "href": "/section.html"
+    }
   }
 }
