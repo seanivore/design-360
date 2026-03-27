@@ -50,10 +50,12 @@ const FilterController = (() => {
     }
 
     /**
-     * Parse tags from URL query string or hash
+     * Parse tags and mode from URL query string or hash
+     * Returns { tags: [...], mode: 'any'|'all'|null }
      */
     function parseHashTags() {
         const tags = [];
+        let mode = null;
 
         // Check query string first
         const search = window.location.search.slice(1);
@@ -68,6 +70,8 @@ const FilterController = (() => {
                     }
                 });
             }
+            const modeMatch = search.match(/mode=(any|all)/);
+            if (modeMatch) mode = modeMatch[1];
         }
 
         // Check hash
@@ -80,20 +84,25 @@ const FilterController = (() => {
                     if (decoded && !tags.includes(decoded)) tags.push(decoded);
                 });
             }
+            if (!mode) {
+                const hModeMatch = hash.match(/mode=(any|all)/);
+                if (hModeMatch) mode = hModeMatch[1];
+            }
         }
 
-        return tags;
+        return { tags, mode };
     }
 
     /**
-     * Update URL hash with current active tags
+     * Update URL hash with current active tags and mode
      */
     function updateHash() {
         if (activeTags.length === 0) {
             history.replaceState(null, '', window.location.pathname);
         } else {
             const tagsParam = activeTags.join('+');
-            history.replaceState(null, '', `${window.location.pathname}#tags=${tagsParam}`);
+            const modeParam = matchMode === 'all' ? '&mode=all' : '';
+            history.replaceState(null, '', `${window.location.pathname}#tags=${tagsParam}${modeParam}`);
         }
     }
 
@@ -376,15 +385,18 @@ const FilterController = (() => {
     function init(callback) {
         onFilterChange = callback;
 
-        // Parse initial tags from hash
-        const hashTags = parseHashTags();
-        const hasHashTags = hashTags.length > 0;
+        // Parse initial tags and mode from URL
+        const parsed = parseHashTags();
+        const hasHashTags = parsed.tags.length > 0;
 
-        activeTags = hashTags;
+        activeTags = parsed.tags;
+        if (parsed.mode) matchMode = parsed.mode;
 
         // Listen for hash changes (back/forward navigation)
         window.addEventListener('hashchange', () => {
-            activeTags = parseHashTags();
+            const reparsed = parseHashTags();
+            activeTags = reparsed.tags;
+            if (reparsed.mode) matchMode = reparsed.mode;
             updateFilterUI();
 
             if (onFilterChange) {

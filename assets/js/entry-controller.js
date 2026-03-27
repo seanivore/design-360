@@ -77,7 +77,8 @@ const EntryController = (() => {
 
         const ogImage = document.querySelector('meta[property="og:image"]');
         if (ogImage && project.thumb && project.thumb[0]) {
-            ogImage.setAttribute('content', `/${project.thumb[0]}`);
+            const thumbSrc = project.thumb[0].startsWith('http') ? project.thumb[0] : `/${project.thumb[0]}`;
+            ogImage.setAttribute('content', thumbSrc);
         }
 
         const ogImageAlt = document.querySelector('meta[property="og:image:alt"]');
@@ -207,7 +208,7 @@ const EntryController = (() => {
         if (columnContainer && columnImages.length > 0) {
             columnContainer.innerHTML = columnImages.map(img => `
                 <img
-                    src="/${img}"
+                    src="${img.startsWith('http') ? img : '/' + img}"
                     alt="${altText}"
                     class="entry-thumbnail-image"
                     loading="lazy"
@@ -225,7 +226,7 @@ const EntryController = (() => {
             if (imagesToShow.length > 0) {
                 gridContainer.innerHTML = imagesToShow.map(img => `
                     <img
-                        src="/${img}"
+                        src="${img.startsWith('http') ? img : '/' + img}"
                         alt="${altText}"
                         class="entry-thumbnail-image"
                         loading="lazy"

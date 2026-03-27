@@ -11,7 +11,7 @@
     },
     "cta_secondary": {
       "text": "All Projects",
-      "href": "/section.html"
+      "filter": { "any": [] }
     }
   },
   "showcase": {
@@ -130,8 +130,7 @@
           "any": [
             "Graphic Designer"
           ]
-        },
-        "href": "/section.html?tags=Graphic+Designer"
+        }
       },
       {
         "label": "Motion & Video",
@@ -141,8 +140,7 @@
             "Motion Graphics",
             "Video Production"
           ]
-        },
-        "href": "/section.html?tags=Motion+Graphics"
+        }
       },
       {
         "label": "Brand Assets",
@@ -151,8 +149,7 @@
           "any": [
             "Brand Designer"
           ]
-        },
-        "href": "/section.html?tags=Brand+Designer"
+        }
       }
     ]
   },
@@ -174,11 +171,11 @@
     "heading": "Interested in web development?",
     "primary": {
       "text": "See All Web Projects",
-      "href": "/section.html?tags=Web+Developer"
+      "filter": { "any": ["Web Developer"] }
     },
     "secondary": {
       "text": "Explore Full Portfolio",
-      "href": "/section.html"
+      "filter": { "any": [] }
     }
   }
 }

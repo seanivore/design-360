@@ -133,16 +133,135 @@ The validator will reject any other value.
 
 ---
 
-## 6. Image and Media File Paths
+## 6. Image Preparation & Delivery
 
-Thumbnail and image files go in a directory named after the slug:
+Each entry needs two types of images stored in a directory named after the slug.
+
+### File Naming Convention
 
 ```
-assets/media/{slug}/thumb-slides-{slug}-1.webp
-assets/media/{slug}/img-sq-slides-{slug}-1.webp
+assets/media/{slug}/thumb-slides-{slug}-1.webp   (thumbnail slides, 4-6 per entry)
+assets/media/{slug}/img-sq-{slug}-1.webp          (square images, 3 per entry)
 ```
 
-The validator checks that every path listed in `thumb` and `img` actually exists on disk. Make sure the files are in place before running validation.
+**Thumbnails**: Landscape orientation, consistent aspect ratio, used in tile galleries.
+**Square images**: Square crop, used in hero rotation, creative cards, entry page.
+
+### Image Paths in JSON
+
+Images can use **local paths** or **CDN URLs**:
+
+- Local: `assets/media/{slug}/thumb-slides-{slug}-1.webp`
+- CDN: `https://cdn.august.style/media/{slug}/thumb-slides-{slug}-1.webp`
+
+The JS renderers handle both formats automatically (CDN URLs starting with `https://` are used as-is; local paths get a `/` prefix).
+
+### Cloudinary Image Processing
+
+Cloud name: `dzrtucxh7`
+
+**Step 1 — Upload source image:**
+
+```bash
+curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/upload \
+  -F "file=@/path/to/source-image.png" \
+  -F "upload_preset=ml_default"
+```
+
+Or use the Cloudinary Media Library UI to upload.
+
+**Step 2 — Apply transformations via URL:**
+
+Build a delivery URL with transformations. Common patterns:
+
+```
+# Thumbnail (landscape, 1920x1080, .webp)
+https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1/{public_id}
+
+# Square image (1080x1080, .webp)
+https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1080,h_1080,q_auto,f_webp/v1/{public_id}
+
+# Crop with gravity (auto-detect subject)
+https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,g_auto,w_1920,h_1080,q_auto,f_webp/v1/{public_id}
+```
+
+Key transformation parameters:
+- `c_fill` — crop to fill exact dimensions
+- `c_fit` — resize to fit within dimensions
+- `g_auto` — auto-detect subject for crop gravity
+- `w_1920,h_1080` — thumbnail dimensions (landscape)
+- `w_1080,h_1080` — square image dimensions
+- `q_auto` — automatic quality optimization
+- `f_webp` — convert to .webp format
+
+**Step 3 — Download processed image:**
+
+```bash
+# Thumbnail
+curl -o "assets/media/{slug}/thumb-slides-{slug}-1.webp" \
+  "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1/{public_id}"
+
+# Square image
+curl -o "assets/media/{slug}/img-sq-slides-{slug}-1.webp" \
+  "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1080,h_1080,q_auto,f_webp/v1/{public_id}"
+```
+
+**Step 4 — Clean up Cloudinary library** after downloading (optional, keeps storage tidy).
+
+Full API reference: `assets/docs/entries-prep/CLOUDINARY_IMAGE_API.md`
+
+### Screenshots as Source Images
+
+For web apps, dashboards, and tools:
+- Use browser dev tools to set viewport (1440x900 for desktop, 390x844 for mobile)
+- Capture meaningful states (loaded data, active interactions, key features)
+- Process through Cloudinary for consistent sizing and .webp conversion
+
+### Cloudflare R2 CDN Upload (Optional)
+
+Bucket: `portfolio` | Endpoint: `https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com/portfolio`
+Custom domain: `cdn.august.style`
+
+**Upload via S3-compatible API** (requires R2 API token with Object Read & Write):
+
+```bash
+# Using AWS CLI with custom endpoint
+aws s3 cp assets/media/{slug}/thumb-slides-{slug}-1.webp \
+  s3://portfolio/media/{slug}/thumb-slides-{slug}-1.webp \
+  --endpoint-url https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com \
+  --content-type image/webp
+
+# Or upload entire slug directory
+aws s3 sync assets/media/{slug}/ \
+  s3://portfolio/media/{slug}/ \
+  --endpoint-url https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com \
+  --content-type image/webp
+```
+
+After upload, use CDN URL in the JSON entry:
+```json
+"thumb": ["https://cdn.august.style/media/{slug}/thumb-slides-{slug}-1.webp"]
+```
+
+### Behance Entry Pattern
+
+For generative art projects hosted on Behance, use this embed code template (replace `GALLERY_NUMBER` with the number from the Behance URL):
+
+```
+<iframe src='https://www.behance.net/embed/project/GALLERY_NUMBER?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>
+```
+
+Note: Use single quotes `'` (not double `"`) around attribute values so the embed works inside JSON strings.
+
+Standard v5.0 fields for Behance art entries:
+```json
+"role": ["Graphic Designer", "Creative Director"],
+"skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
+"product": ["Digital Art Collection", "Art Print"],
+"company": "Freelance"
+```
+
+The validator checks that every path listed in `thumb` and `img` actually exists on disk (for local paths). Make sure the files are in place before running validation.
 
 Optional media fields (`mobile_img`, `media_url`, `media_embed`) can be left empty if not applicable.
 
@@ -210,8 +329,13 @@ This scans `assets/entries/` and rebuilds `assets/js/manifest.json`, which maps 
 1. Run `python assets/scripts/new_project.py` (or copy template).
 2. Open `assets/docs/tags.json` and confirm all tags you plan to use exist.
 3. Fill in all required fields per the checklist above.
-4. Prepare media files in `assets/media/{slug}/`.
-5. Move the completed JSON file to `assets/entries/`.
-6. Run `python assets/scripts/validate_v5.py` -- fix any errors.
-7. Run `python generate_manifest.py` -- confirm the new slug appears.
-8. If needed, review `assets/js/homepage-content.json` to ensure tag filters will surface the entry in the right sections.
+4. Prepare source images (screenshots, Behance exports, etc.).
+5. Process through Cloudinary (crop, resize, .webp conversion).
+6. Save to `assets/media/{slug}/` and optionally upload to R2 CDN.
+7. Update `thumb` and `img` paths in the JSON entry.
+8. Move the completed JSON file to `assets/entries/`.
+9. Run `python assets/scripts/validate_v5.py` -- fix any errors.
+10. Run `python generate_manifest.py` -- confirm the new slug appears.
+11. If needed, review `assets/js/homepage-content.json` to ensure tag filters will surface the entry in the right sections.
+
+**Backlog**: See `assets/docs/entries-prep/ENTRY_BACKLOG.md` for projects awaiting entry creation.

@@ -33,7 +33,7 @@ const TileRenderer = (() => {
             imageLink.style.flexShrink = '0';
 
             const image = document.createElement('img');
-            image.src = `/${img}`;
+            image.src = img.startsWith('http') ? img : `/${img}`;
             image.alt = altText;
             image.className = 'tile-image';
             image.loading = 'lazy';
@@ -97,7 +97,7 @@ const TileRenderer = (() => {
             imageLink.style.flexShrink = '0';
 
             const image = document.createElement('img');
-            image.src = `/${img}`;
+            image.src = img.startsWith('http') ? img : `/${img}`;
             image.alt = altText;
             image.className = 'tile-homepage-image';
             image.loading = 'lazy';
@@ -116,7 +116,7 @@ const TileRenderer = (() => {
             imageLink.style.flexShrink = '0';
 
             const image = document.createElement('img');
-            image.src = `/${img}`;
+            image.src = img.startsWith('http') ? img : `/${img}`;
             image.alt = altText;
             image.className = 'tile-homepage-image';
             image.loading = 'lazy';

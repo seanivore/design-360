@@ -6,6 +6,9 @@
 
 const LandingController = (() => {
 
+  // Module-level: the random entry chosen for CTA text this page load
+  let selectedHeroEntry = null;
+
   async function init() {
     const [projects, config] = await Promise.all([
       DataLoader.loadAllProjects(),
@@ -28,6 +31,21 @@ const LandingController = (() => {
   }
 
   // ──────────────────────────────────────────────
+  // HELPERS
+  // ──────────────────────────────────────────────
+
+  function buildSectionURL(filter, mode) {
+    const tags = [];
+    if (filter && filter.all) tags.push(...filter.all);
+    if (filter && filter.any) tags.push(...filter.any);
+    if (!tags.length) return '/section.html';
+    const params = tags.map(t => DataLoader.normalizeForURL(t)).join('+');
+    let url = `/section.html?tags=${params}`;
+    if (mode) url += `&mode=${mode}`;
+    return url;
+  }
+
+  // ──────────────────────────────────────────────
   // RENDER FUNCTIONS
   // ──────────────────────────────────────────────
 
@@ -35,70 +53,96 @@ const LandingController = (() => {
     const filtered = DataLoader.resolveFilter(projects, config.hero.filter);
     if (!filtered.length) return;
 
-    // Entries with role_headline for the flip clock
-    const headlineEntries = filtered.filter(p => p.role_headline);
-    // Pick a random entry from those with headlines, or fall back to any filtered
-    const pool = headlineEntries.length ? headlineEntries : filtered;
-    const selected = pool[Math.floor(Math.random() * pool.length)];
+    // ── Pick 5 random headline entries (synced images + headlines) ──
+    const headlinePool = filtered.filter(p => p.role_headline && p.img && p.img.length >= 2);
+    const shuffledPool = DataLoader.shuffleArray([...headlinePool]);
+    const heroEntries = shuffledPool.slice(0, 5);
+    const heroCount = heroEntries.length || 1;
 
-    // Hero images: collect img[0] from filtered entries, duplicate for seamless drift
-    const heroImages = filtered
-      .filter(p => p.img && p.img.length)
-      .map(p => p.img[0]);
+    // Pick 1 random entry for CTA fields (persists until next refresh)
+    const ctaPool = filtered.filter(p => p.hero_btn_cta);
+    selectedHeroEntry = ctaPool.length
+      ? ctaPool[Math.floor(Math.random() * ctaPool.length)]
+      : heroEntries[0] || filtered[0];
+
+    // ── Hero images ──
     const imgScroll = document.querySelector('.hero-img-scroll');
-    if (imgScroll && heroImages.length) {
-      const doubled = [...heroImages, ...heroImages];
-      imgScroll.innerHTML = doubled
-        .map(src => `<img src="/${src}" alt="">`)
-        .join('');
+    if (imgScroll) {
+      let heroImages = [];
+
+      if (heroEntries.length) {
+        // Synced mode: 2 square images per entry, in entry order
+        heroEntries.forEach(entry => {
+          const imgs = entry.img.slice(0, 2);
+          imgs.forEach(src => heroImages.push(src));
+        });
+      } else {
+        // Fallback: no entries with role_headline+2 images — use any available images shuffled
+        heroImages = DataLoader.shuffleArray(
+          filtered.filter(p => p.img && p.img.length).map(p => p.img[0])
+        );
+      }
+
+      if (heroImages.length) {
+        // Duplicate for seamless CSS loop (translateX(-50%) resets)
+        const doubled = [...heroImages, ...heroImages];
+        imgScroll.innerHTML = doubled
+          .map(src => {
+            const resolved = src.startsWith('http') ? src : '/' + src;
+            return `<img src="${resolved}" alt="">`;
+          })
+          .join('');
+
+        // Set drift duration to match flip clock: heroCount × 5s
+        const cycleDuration = heroCount * 5;
+        imgScroll.style.animationDuration = cycleDuration + 's';
+      }
     }
 
-    // Flip headlines
+    // ── Flip headlines: same entries, same order ──
     const flipTrack = document.querySelector('.flip-track');
-    if (flipTrack && headlineEntries.length) {
-      flipTrack.innerHTML = headlineEntries
+    if (flipTrack && heroEntries.length) {
+      flipTrack.innerHTML = heroEntries
         .map((entry, i) =>
-          `<div class="flip-item ${i === 0 ? 'active' : 'below'}">${entry.role_headline}</div>`
+          `<div class="flip-item ${i === 0 ? 'active' : 'below'}" data-flip-index="${i}">${entry.role_headline}</div>`
         )
         .join('');
     }
 
-    // Primary CTA
+    // ── Primary CTA (from selectedHeroEntry) ──
     const primaryBtn = document.querySelector('.hero-cta .btn-primary');
     if (primaryBtn) {
-      const ctaText = selected.hero_btn_cta || 'See Web Projects';
+      const ctaText = (selectedHeroEntry && selectedHeroEntry.hero_btn_cta) || 'See Web Projects';
       primaryBtn.textContent = ctaText;
-      // Build href from hero filter tags
-      const filterTags = config.hero.filter.any || config.hero.filter.all || [];
-      if (filterTags.length) {
-        const tagParams = filterTags.map(t => encodeURIComponent(t)).join('+');
-        primaryBtn.setAttribute('onclick', `window.location.href='/section.html?tags=${tagParams}'`);
-      }
+      const primaryHref = buildSectionURL(config.hero.filter);
+      primaryBtn.setAttribute('onclick', `window.location.href='${primaryHref}'`);
     }
 
     // Secondary CTA
     const ghostBtn = document.querySelector('.hero-cta .btn-ghost');
     if (ghostBtn && config.hero.cta_secondary) {
       ghostBtn.textContent = config.hero.cta_secondary.text;
-      ghostBtn.setAttribute('onclick', `window.location.href='${config.hero.cta_secondary.href}'`);
+      const ghostHref = config.hero.cta_secondary.filter
+        ? buildSectionURL(config.hero.cta_secondary.filter)
+        : (config.hero.cta_secondary.href || '/section.html');
+      ghostBtn.setAttribute('onclick', `window.location.href='${ghostHref}'`);
     }
 
-    // Stat count-up values
+    // Stat count-up values and deep-links
+    const tagsByType = DataLoader.getTagsByType(projects);
     const statNumbers = document.querySelectorAll('.stat-number');
     if (statNumbers.length >= 3) {
-      const tagsByType = DataLoader.getTagsByType(projects);
       statNumbers[0].setAttribute('data-count', String(projects.length));
       statNumbers[1].setAttribute('data-count', String(tagsByType.role.length));
       statNumbers[2].setAttribute('data-count', String(tagsByType.skill.length));
       statNumbers[2].setAttribute('data-suffix', '+');
     }
 
-    // Stat links — Projects goes to all, Roles/Skills could deep-link
+    // Stat links — Roles/Skills deep-link with mode=all
     const statRoles = document.getElementById('statRoles');
     const statSkills = document.getElementById('statSkills');
-    // Keep hrefs simple — all go to section page
-    if (statRoles) statRoles.href = '/section.html';
-    if (statSkills) statSkills.href = '/section.html';
+    if (statRoles) statRoles.href = buildSectionURL({ all: tagsByType.role }, 'all');
+    if (statSkills) statSkills.href = buildSectionURL({ all: tagsByType.skill }, 'all');
   }
 
   function renderShowcase(config, projects) {
@@ -124,7 +168,7 @@ const LandingController = (() => {
     panelParent.innerHTML = '';
 
     config.showcase.tabs.forEach((tab, i) => {
-      const tabProjects = DataLoader.resolveFilter(projects, tab.filter);
+      const tabProjects = DataLoader.shuffleArray(DataLoader.resolveFilter(projects, tab.filter));
       const panel = document.createElement('div');
       panel.className = `showcase-panel${i === 0 ? ' active' : ''}`;
       panel.id = `panel-${tab.id}`;
@@ -141,7 +185,7 @@ const LandingController = (() => {
         card.href = `/${project.slug}`;
         card.className = `project-card sr${delay}`;
         card.innerHTML =
-          (thumb ? `<img src="/${thumb}" alt="${project.thumb_alt || project.title}">` : '') +
+          (thumb ? `<img src="${thumb.startsWith('http') ? thumb : '/' + thumb}" alt="${project.thumb_alt || project.title}">` : '') +
           `<div class="project-card-body">` +
             `<div class="project-card-title">${project.title}</div>` +
             `<div class="project-card-tags">${skills.map(s => `<span class="tag">${s}</span>`).join('')}</div>` +
@@ -174,7 +218,9 @@ const LandingController = (() => {
     list.innerHTML = config.credentials.items
       .map((item, i) => {
         const delay = i < 4 ? ` sr-d${i + 1}` : '';
-        const tags = (item.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+        const tags = (item.tags || []).map(t =>
+          `<a href="/section.html?tags=${DataLoader.normalizeForURL(t)}" class="tag">${t}</a>`
+        ).join('');
         return (
           `<div class="cred-item sr${delay}">` +
             `<div class="cred-top">` +
@@ -196,7 +242,7 @@ const LandingController = (() => {
     const heading = section.querySelector('.section-heading');
     if (heading && config.process.heading) heading.textContent = config.process.heading;
 
-    const filtered = DataLoader.resolveFilter(projects, config.process.filter);
+    const filtered = DataLoader.shuffleArray(DataLoader.resolveFilter(projects, config.process.filter));
     const processEntry = filtered.find(p => p.process && p.process.length);
 
     if (!processEntry || !processEntry.process.length) {
@@ -249,9 +295,10 @@ const LandingController = (() => {
         const bgImg = (entry.img && entry.img.length) ? entry.img[0] : '';
         const delay = i < 4 ? ` sr-d${i + 1}` : '';
 
+        const cardHref = card.filter ? buildSectionURL(card.filter) : (card.href || '/section.html');
         return (
-          `<a href="${card.href}" class="creative-card sr${delay}">` +
-            (bgImg ? `<img src="/${bgImg}" alt="${card.label}">` : '') +
+          `<a href="${cardHref}" class="creative-card sr${delay}">` +
+            (bgImg ? `<img src="${bgImg.startsWith('http') ? bgImg : '/' + bgImg}" alt="${card.label}">` : '') +
             `<div class="creative-card-overlay">` +
               `<div class="creative-label">${card.label}</div>` +
               `<div class="creative-card-title">${card.title}</div>` +
@@ -342,8 +389,12 @@ const LandingController = (() => {
     const section = document.querySelector('.cta-section');
     if (!section) return;
 
+    // Heading: use selectedHeroEntry.final_cta_text if available, else config
     const heading = section.querySelector('.cta-heading');
-    if (heading && config.cta_section.heading) heading.textContent = config.cta_section.heading;
+    if (heading) {
+      heading.textContent = (selectedHeroEntry && selectedHeroEntry.final_cta_text)
+        || config.cta_section.heading;
+    }
 
     const buttons = section.querySelector('.cta-buttons');
     if (!buttons) return;
@@ -352,15 +403,21 @@ const LandingController = (() => {
 
     if (config.cta_section.primary) {
       const btn = document.createElement('a');
-      btn.href = config.cta_section.primary.href;
+      btn.href = config.cta_section.primary.filter
+        ? buildSectionURL(config.cta_section.primary.filter)
+        : (config.cta_section.primary.href || '/section.html');
       btn.className = 'btn btn-primary';
-      btn.textContent = config.cta_section.primary.text;
+      // Use selectedHeroEntry.final_btn_cta if available, else config text
+      btn.textContent = (selectedHeroEntry && selectedHeroEntry.final_btn_cta)
+        || config.cta_section.primary.text;
       buttons.appendChild(btn);
     }
 
     if (config.cta_section.secondary) {
       const btn = document.createElement('a');
-      btn.href = config.cta_section.secondary.href;
+      btn.href = config.cta_section.secondary.filter
+        ? buildSectionURL(config.cta_section.secondary.filter)
+        : (config.cta_section.secondary.href || '/section.html');
       btn.className = 'btn btn-ghost';
       btn.textContent = config.cta_section.secondary.text;
       buttons.appendChild(btn);
@@ -448,9 +505,9 @@ const LandingController = (() => {
       const contentH = heroContent.offsetHeight;
       const fullVisualH = viewH - navH - contentH;
 
-      // Phase 1 (0–0.25): Stats exit, image grows to fill available space
-      if (progress < 0.25) {
-        const p1 = progress / 0.25;
+      // Phase 1 (0–0.30): Stats exit, image grows to fill available space
+      if (progress < 0.30) {
+        const p1 = progress / 0.30;
         const ep1 = easeOutCubic(p1);
 
         if (heroStats) {
@@ -476,9 +533,9 @@ const LandingController = (() => {
           });
         }
       }
-      // Phase 2 (0.25–0.55): Image shrinks, content stays then fades
-      else if (progress < 0.55) {
-        const p2 = (progress - 0.25) / 0.3;
+      // Phase 2 (0.30–0.60): Image shrinks, content stays then fades
+      else if (progress < 0.60) {
+        const p2 = (progress - 0.30) / 0.3;
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
 
@@ -513,9 +570,9 @@ const LandingController = (() => {
           });
         }
       }
-      // Phase 3 (0.55–0.8): Trio bars enter
-      else if (progress < 0.8) {
-        const p3 = (progress - 0.55) / 0.25;
+      // Phase 3 (0.60–0.85): Trio bars enter
+      else if (progress < 0.85) {
+        const p3 = (progress - 0.60) / 0.25;
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
         heroVisual.style.height = '0px';
@@ -547,9 +604,9 @@ const LandingController = (() => {
           trioBridge.style.transform = `translateY(${trioEnterY}vh)`;
         }
       }
-      // Phase 4 (0.8–1.0): Trio exits
+      // Phase 4 (0.85–1.0): Trio exits
       else {
-        const p4 = (progress - 0.8) / 0.2;
+        const p4 = (progress - 0.85) / 0.15;
         const easedP4 = easeOutCubic(p4);
 
         if (heroStats) { heroStats.style.height = '0px'; heroStats.style.opacity = '0'; }
@@ -612,7 +669,9 @@ const LandingController = (() => {
     const flipItems = document.querySelectorAll('.flip-item');
     if (!flipItems.length) return;
 
-    let flipIndex = 0;
+    // Start from whichever item is currently active
+    let flipIndex = Array.from(flipItems).findIndex(el => el.classList.contains('active'));
+    if (flipIndex === -1) flipIndex = 0;
     setInterval(() => {
       flipItems[flipIndex].classList.remove('active');
       flipItems[flipIndex].classList.add('above');

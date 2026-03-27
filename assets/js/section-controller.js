@@ -16,13 +16,15 @@
     let allProjects = [];
     let shuffledProjects = [];
     let activeTags = [];
+    let initialMode = 'any';
 
     /**
-     * Parse tags from URL parameters or hash
-     * Supports: ?tags=Web+Developer or #tags=Web+Developer
+     * Parse tags and mode from URL parameters or hash
+     * Supports: ?tags=Web+Developer&mode=all or #tags=Web+Developer
      */
     function parseURL() {
         const tags = [];
+        let mode = null;
 
         // Manually parse query string to preserve + as delimiter
         const search = window.location.search.slice(1); // remove ?
@@ -34,6 +36,9 @@
                 if (decoded) tags.push(decoded);
             });
         }
+
+        const modeMatch = search.match(/mode=(any|all)/);
+        if (modeMatch) mode = modeMatch[1];
 
         // Check hash for additional/alternative tags
         const hash = window.location.hash.slice(1);
@@ -49,6 +54,10 @@
                     }
                 });
             }
+            if (!mode) {
+                const hModeMatch = hash.match(/mode=(any|all)/);
+                if (hModeMatch) mode = hModeMatch[1];
+            }
         }
 
         // Check for redirected path from 404.html
@@ -61,7 +70,7 @@
             }
         }
 
-        return tags;
+        return { tags, mode };
     }
 
     /**
@@ -104,14 +113,16 @@
         try {
             allProjects = await DataLoader.loadAllProjects();
 
-            // Filter by active tags if any (OR logic — show projects with ANY matching tag)
+            // Filter by active tags using the initial mode (any=OR, all=AND)
             let filtered = allProjects;
             if (activeTags.length > 0) {
                 const resolvedTags = activeTags.map(tag =>
                     resolveTagDisplayName(tag, allProjects)
                 );
                 activeTags = resolvedTags.map(t => DataLoader.normalizeForURL(t));
-                filtered = DataLoader.filterByAnyTag(allProjects, resolvedTags);
+                filtered = initialMode === 'all'
+                    ? DataLoader.filterByAllTags(allProjects, resolvedTags)
+                    : DataLoader.filterByAnyTag(allProjects, resolvedTags);
             }
 
             shuffledProjects = DataLoader.shuffleArray(filtered);
@@ -169,8 +180,7 @@
             tagFiltersContainer.style.position = 'relative';
         }
 
-        FilterController.renderFilters(tagsWithTypes, tagFiltersContainer, allProjects);
-
+        // Init first so matchMode is set from URL before renderFilters builds the toggle
         FilterController.init((newActiveTags, mode) => {
             // Re-filter using the selected match mode (any = OR, all = AND)
             let filtered = allProjects;
@@ -192,13 +202,18 @@
 
             renderView(reshuffled);
         });
+
+        // Render filters after init so matchMode from URL is applied to the toggle
+        FilterController.renderFilters(tagsWithTypes, tagFiltersContainer, allProjects);
     }
 
     /**
      * Initialize
      */
     async function init() {
-        activeTags = parseURL();
+        const parsed = parseURL();
+        activeTags = parsed.tags;
+        if (parsed.mode) initialMode = parsed.mode;
 
         await loadProjects();
         setupFilters();
