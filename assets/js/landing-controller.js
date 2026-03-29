@@ -53,10 +53,10 @@ const LandingController = (() => {
     const filtered = DataLoader.resolveFilter(projects, config.hero.filter);
     if (!filtered.length) return;
 
-    // ── Pick 5 random entries with at least 2 images ──
-    const imagePool = filtered.filter(p => p.img && p.img.length >= 2);
-    const shuffledPool = DataLoader.shuffleArray([...imagePool]);
-    const heroEntries = shuffledPool.slice(0, 5);
+    // ── ALL matching entries, fully randomized order ──
+    const heroEntries = DataLoader.shuffleArray(
+      filtered.filter(p => p.img && p.img.length >= 2)
+    );
     const heroCount = heroEntries.length || 1;
 
     // Pick 1 random entry for CTA fields (persists until next refresh)
@@ -65,13 +65,13 @@ const LandingController = (() => {
       ? ctaPool[Math.floor(Math.random() * ctaPool.length)]
       : heroEntries[0] || filtered[0];
 
-    // ── Hero images: 2 from each of 5 entries, synced with headlines ──
+    // ── Hero images: all 3 per entry, each entry's images shuffled ──
     const imgScroll = document.querySelector('.hero-img-scroll');
     if (imgScroll && heroEntries.length) {
       const heroImages = [];
       heroEntries.forEach(entry => {
-        const imgs = entry.img.slice(0, 2);
-        imgs.forEach(src => heroImages.push(src));
+        const shuffledImgs = DataLoader.shuffleArray([...entry.img]);
+        shuffledImgs.forEach(src => heroImages.push(src));
       });
 
       const doubled = [...heroImages, ...heroImages];
@@ -82,7 +82,7 @@ const LandingController = (() => {
         })
         .join('');
 
-      // Drift duration matches flip clock: heroCount × 5s
+      // Each headline shows for 3 images; total = heroCount × 5s
       imgScroll.style.animationDuration = (heroCount * 5) + 's';
     }
 

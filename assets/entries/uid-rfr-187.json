@@ -64,7 +64,7 @@
   "challenge": "Modern SaaS products require conversion-optimized websites that guide users from initial interest through sign-up to profile setup. Each stage serves a distinct goal — landing pages build excitement, sign-up pages reduce friction, and profile pages encourage completion. The opportunity was building an entire multi-stage conversion flow using enterprise-grade CSS architecture that delivers polished interactions without JavaScript dependencies.",
   "approach": "Designed and developed a complete three-page SaaS conversion system: a landing page with animated feature cards and tiered pricing, a streamlined sign-up flow with progress indicators, and a guided profile setup with multi-step form states. All animations and micro-interactions use pure CSS — hover states, loading indicators, form validation feedback, and page transitions perform smoothly without JavaScript overhead. The modular component structure enables quick brand customization through CSS variable swaps.",
   "result": "The CSS-only animation approach maintains performance while delivering sophisticated interactions, with page load times under two seconds even on 3G connections. The modular architecture enables complete brand color changes in under ten minutes through CSS variable updates. The project demonstrates deep understanding of multi-step user journeys, conversion psychology, and modern web design execution at enterprise scale.",
-  "role_headline": "Full-stack developer shipping SaaS conversion flows",
+  "role_headline": "SaaS Conversion Flow, Pure CSS",
   "hero_btn_cta": "See Web Projects",
   "final_cta_text": "Interested in web development?",
   "final_btn_cta": "See All Web Projects",

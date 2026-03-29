@@ -69,7 +69,7 @@
   "challenge": "Managing three distinct content types on a single platform, AI-generated podcast analysis blogs, fashion lookbook spreads, and e-commerce product listings, demanded an architecture that could scale effortlessly while maintaining visual cohesion. The system needed to support automated daily publishing alongside manual editorial curation, all within a Bauhaus-inspired design framework.",
   "approach": "Developed a single reusable Framer component connected to a Notion database that dynamically populates content across all three sections. Integrated Notion-to-Framer automation for seamless publishing workflows, designed custom micro-interactions using geometric shapes that respond to user engagement, and built out a 500+ item print shop with automated inventory management. The design system uses bold geometric forms and a limited color palette to create visual hierarchy while keeping load times minimal.",
   "result": "Automated the publishing pipeline for 200+ weekly AI-generated blog posts analyzing podcast content. The single-component architecture reduced development time by 70% compared to traditional multi-page builds, while the Notion integration eliminated manual content entry entirely. The fashion lookbook section showcases 81 images through dynamic CMS population, and the print shop maintains real-time inventory across the automated system.",
-  "role_headline": "Web Developer",
+  "role_headline": "Framer CMS Built with AI & Notion",
   "hero_btn_cta": "See Web Projects",
   "final_cta_text": "Interested in web development?",
   "final_btn_cta": "See All Web Projects",
