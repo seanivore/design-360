@@ -25,18 +25,18 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-1.webp",
-    "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-2.webp",
-    "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-3.webp",
-    "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-4.webp",
-    "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-5.webp",
-    "assets/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-6.webp"
+    "https://cdn.august.style/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-1.webp",
+    "https://cdn.august.style/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-2.webp",
+    "https://cdn.august.style/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-3.webp",
+    "https://cdn.august.style/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-4.webp",
+    "https://cdn.august.style/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-5.webp",
+    "https://cdn.august.style/media/ai-meditation-mobile-app/thumb-slide-ai-ui-meditation-journal-app-6.webp"
   ],
   "thumb_alt": "Mobile-first progressive web app interface showcasing AI chat-driven meditation sessions, voice journaling, and gesture-based controls replacing traditional button-heavy wellness app navigation",
   "img": [
-    "assets/media/ai-meditation-mobile-app/img-sq-ai-ui-meditation-journal-app-1.webp",
-    "assets/media/ai-meditation-mobile-app/img-sq-ai-ui-meditation-journal-app-2.webp",
-    "assets/media/ai-meditation-mobile-app/img-sq-ai-ui-meditation-journal-app-3.webp"
+    "https://cdn.august.style/media/ai-meditation-mobile-app/img-sq-ai-ui-meditation-journal-app-1.webp",
+    "https://cdn.august.style/media/ai-meditation-mobile-app/img-sq-ai-ui-meditation-journal-app-2.webp",
+    "https://cdn.august.style/media/ai-meditation-mobile-app/img-sq-ai-ui-meditation-journal-app-3.webp"
   ],
   "img_alt": "Mobile app screens showing AI chat-driven meditation interface, voice journaling prompts, and gesture-based session controls",
   "mobile_img": [],
@@ -56,10 +56,10 @@
   "challenge": "Traditional wellness apps overwhelm users with buttons, menus, and navigation complexity — the opposite of the calm experience they promise. AI conversational capabilities offered an opportunity to strip away UI clutter entirely, letting users interact naturally through chat rather than hunting through menus. The challenge was designing an interface that feels intuitive and calming while handling complex functionality like session recommendations, progress tracking, and voice journaling through conversation alone.",
   "approach": "Designed a mobile-first progressive web app centered on an AI chat interface that guides users through their entire wellness journey. The conversational UI handles session selection, duration preferences, and reflection journaling through natural dialogue rather than forms and buttons. Developed intuitive gesture controls for meditation sessions — swipe gestures for navigation, hold-to-record for voice journaling, and simple taps for emotional check-ins. The visual design uses soft gradients and minimal elements to maintain focus on the meditative experience.",
   "result": "The design successfully reduces cognitive load by eliminating traditional menu navigation. Users complete entire meditation sessions through conversational prompts and gesture controls. Voice-to-text journaling removes typing friction, making reflection more accessible during calm states. The AI-driven interface adapts recommendations based on user patterns and emotional states, creating a personalized wellness experience that feels more like talking to a mindfulness coach than using an app.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Product Designer",
+  "hero_btn_cta": "See Product Design",
+  "final_cta_text": "Need product design?",
+  "final_btn_cta": "View Product Work",
   "skill_summary": "",
   "process": null,
   "metric": null,

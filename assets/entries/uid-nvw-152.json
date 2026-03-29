@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-nvw-152",
   "slug": "humanistic-exploration",
   "title": "Humanistic Exploration",
   "subtitle": "Constructivist forms in interiors and abstract landscape compositions.",
   "seo_title": "Constructivism Forms: Humanistic Exploration of Interiors and Abstract Landscapes",
   "seo_description": "A generative collection exploring constructivist forms across interiors and stylized landscapes with flowing curves, geometric rhythm, and vibrant color fields.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/humanistic-exploration/thumb-humanistic-exploration-1.webp",
-    "assets/media/humanistic-exploration/thumb-humanistic-exploration-2.webp",
-    "assets/media/humanistic-exploration/thumb-humanistic-exploration-3.webp",
-    "assets/media/humanistic-exploration/thumb-humanistic-exploration-4.webp",
-    "assets/media/humanistic-exploration/thumb-humanistic-exploration-5.webp",
-    "assets/media/humanistic-exploration/thumb-humanistic-exploration-6.webp"
+    "https://cdn.august.style/media/humanistic-exploration/thumb-humanistic-exploration-1.webp",
+    "https://cdn.august.style/media/humanistic-exploration/thumb-humanistic-exploration-2.webp",
+    "https://cdn.august.style/media/humanistic-exploration/thumb-humanistic-exploration-3.webp",
+    "https://cdn.august.style/media/humanistic-exploration/thumb-humanistic-exploration-4.webp",
+    "https://cdn.august.style/media/humanistic-exploration/thumb-humanistic-exploration-5.webp",
+    "https://cdn.august.style/media/humanistic-exploration/thumb-humanistic-exploration-6.webp"
   ],
   "thumb_alt": "Abstract forms and landscapes with geometric rhythm, interior vistas, and bold color fields.",
   "img": [
-    "assets/media/humanistic-exploration/img-sq-humanistic-exploration-1.webp",
-    "assets/media/humanistic-exploration/img-sq-humanistic-exploration-2.webp",
-    "assets/media/humanistic-exploration/img-sq-humanistic-exploration-3.webp"
+    "https://cdn.august.style/media/humanistic-exploration/img-sq-humanistic-exploration-1.webp",
+    "https://cdn.august.style/media/humanistic-exploration/img-sq-humanistic-exploration-2.webp",
+    "https://cdn.august.style/media/humanistic-exploration/img-sq-humanistic-exploration-3.webp"
   ],
   "img_alt": "Constructivist interiors and abstract landscapes with flowing curves, geometric structure, and vibrant warm and cool palettes",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Applying constructivist form language to both interior spaces and open landscapes, creating compositions that feel human-centered despite their abstraction. The challenge was maintaining geometric clarity and directional flow while evoking warmth and lived-in atmosphere across a variety of settings.",
   "approach": "Used Adobe Firefly to establish core compositional forms and spatial axes across interior and landscape scenes. Lightroom refined color relationships and value steps, while targeted in-painting sharpened edge discipline and spatial pacing to unify the series.",
   "result": "Produced a cohesive six-piece collection that bridges architectural interiors and natural landscapes through consistent constructivist structure. The panels read clearly at tile scale and sustain layered detail for art prints and portfolio presentation.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

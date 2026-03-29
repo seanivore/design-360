@@ -1,28 +1,55 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-tev-176",
   "slug": "blog-lookbook-print-gallery",
   "title": "Framer CMS Site Built Using AI & Notion",
   "subtitle": "With micro-interactive bauhaus-inspired design",
   "seo_title": "Framer CMS Shop Gallery, Lookbook, & AI Podcast Blog",
   "seo_description": "Bauhaus inspired custom Framer website design with engaging interactive component shapes.",
-  "role": ["AI & Automation Strategist", "Content Strategist", "Web Developer"],
-  "skill": ["Art Direction", "Automation", "CMS Management", "Content Production", "Copywriting", "E-Commerce", "Framer", "Generative AI", "Git", "Make.com", "No-Code", "Notion", "Photography", "Product Staging", "Scaling Systems"],
-  "product": ["CMS Site", "E-Commerce Store", "Lookbook"],
+  "role": [
+    "AI & Automation Strategist",
+    "Content Strategist",
+    "Web Developer"
+  ],
+  "skill": [
+    "Art Direction",
+    "Automation",
+    "CMS Management",
+    "Content Production",
+    "Copywriting",
+    "E-Commerce",
+    "Framer",
+    "Generative AI",
+    "Git",
+    "Make.com",
+    "No-Code",
+    "Notion",
+    "Photography",
+    "Product Staging",
+    "Scaling Systems"
+  ],
+  "product": [
+    "CMS Site",
+    "E-Commerce Store",
+    "Lookbook"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp",
-    "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-2.webp",
-    "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-3.webp",
-    "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-4.webp",
-    "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-5.webp",
-    "assets/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-6.webp"
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-1.webp",
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-2.webp",
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-3.webp",
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-4.webp",
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-5.webp",
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/thumb-slides-blog-lookbook-print-gallery-6.webp"
   ],
   "thumb_alt": "Screen captures navigating Framer CMS website showcasing AI-generated blogs for a multi-daily updated Podcast News Wrap series, fashion lookbook spreads that were carefully in-painted, an automated e-commerce print shop with single-edition Art History representative pieces, and a homepage with Bauhaus-inspired geometric, interactive design elements",
   "img": [
-    "assets/media/blog-lookbook-print-gallery/img-sq-slides-blog-lookbook-print-gallery-1.webp",
-    "assets/media/blog-lookbook-print-gallery/img-sq-slides-blog-lookbook-print-gallery-2.webp",
-    "assets/media/blog-lookbook-print-gallery/img-sq-slides-blog-lookbook-print-gallery-3.webp"
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/img-sq-slides-blog-lookbook-print-gallery-1.webp",
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/img-sq-slides-blog-lookbook-print-gallery-2.webp",
+    "https://cdn.august.style/media/blog-lookbook-print-gallery/img-sq-slides-blog-lookbook-print-gallery-3.webp"
   ],
   "img_alt": "Framer CMS website with Bauhaus-inspired interactive design, AI-generated blog content, fashion lookbook spreads, and automated e-commerce print shop.",
   "mobile_img": [],
@@ -42,10 +69,10 @@
   "challenge": "Managing three distinct content types on a single platform, AI-generated podcast analysis blogs, fashion lookbook spreads, and e-commerce product listings, demanded an architecture that could scale effortlessly while maintaining visual cohesion. The system needed to support automated daily publishing alongside manual editorial curation, all within a Bauhaus-inspired design framework.",
   "approach": "Developed a single reusable Framer component connected to a Notion database that dynamically populates content across all three sections. Integrated Notion-to-Framer automation for seamless publishing workflows, designed custom micro-interactions using geometric shapes that respond to user engagement, and built out a 500+ item print shop with automated inventory management. The design system uses bold geometric forms and a limited color palette to create visual hierarchy while keeping load times minimal.",
   "result": "Automated the publishing pipeline for 200+ weekly AI-generated blog posts analyzing podcast content. The single-component architecture reduced development time by 70% compared to traditional multi-page builds, while the Notion integration eliminated manual content entry entirely. The fashion lookbook section showcases 81 images through dynamic CMS population, and the print shop maintains real-time inventory across the automated system.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Web Developer",
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

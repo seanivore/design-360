@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-vlf-055",
   "slug": "psychedelic-impressi",
   "title": "One astral projection too far",
   "subtitle": "Radiant portraits in psychedelic, surrealist, synthetist, fauvist impression maximalism.",
   "seo_title": "Psychedelic Surrealism Synthetism: Fauvism Impression Maximalism Portrait Studies",
   "seo_description": "A euphoric portrait series blending psychedelic color, surreal quiet, synthetist simplification, and fauvist impression maximalism into radiant, closed-eye studies.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-1.webp",
-    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-2.webp",
-    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-3.webp",
-    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-4.webp",
-    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-5.webp",
-    "assets/media/psychedelic-impressi/thumb-psychedelic-impressi-6.webp"
+    "https://cdn.august.style/media/psychedelic-impressi/thumb-psychedelic-impressi-1.webp",
+    "https://cdn.august.style/media/psychedelic-impressi/thumb-psychedelic-impressi-2.webp",
+    "https://cdn.august.style/media/psychedelic-impressi/thumb-psychedelic-impressi-3.webp",
+    "https://cdn.august.style/media/psychedelic-impressi/thumb-psychedelic-impressi-4.webp",
+    "https://cdn.august.style/media/psychedelic-impressi/thumb-psychedelic-impressi-5.webp",
+    "https://cdn.august.style/media/psychedelic-impressi/thumb-psychedelic-impressi-6.webp"
   ],
   "thumb_alt": "Vivid, euphoric portrait studies with radiant color fields, closed-eye serenity, and bold stylistic blends.",
   "img": [
-    "assets/media/psychedelic-impressi/img-sq-psychedelic-impressi-1.webp",
-    "assets/media/psychedelic-impressi/img-sq-psychedelic-impressi-2.webp",
-    "assets/media/psychedelic-impressi/img-sq-psychedelic-impressi-3.webp"
+    "https://cdn.august.style/media/psychedelic-impressi/img-sq-psychedelic-impressi-1.webp",
+    "https://cdn.august.style/media/psychedelic-impressi/img-sq-psychedelic-impressi-2.webp",
+    "https://cdn.august.style/media/psychedelic-impressi/img-sq-psychedelic-impressi-3.webp"
   ],
   "img_alt": "Psychedelic portrait studies featuring closed-eye serenity, radiant color auras, and surreal atmospheres blending synthetism, fauvism, and impressionist maximalism.",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Blending multiple art-historical traditions, psychedelic color, synthetist simplification, fauvist energy, and impressionist maximalism, into a unified portrait series requires precise creative direction. Each piece needed to convey euphoric calm through radiant palettes and simplified forms while maintaining enough visual complexity to reward sustained viewing. The closed-eye motif demanded compositions that communicate emotional depth without the anchor of eye contact.",
   "approach": "Used a generative pipeline to establish base color fields and form simplification for each portrait, then refined edge flow, hue relationships, and glow discipline through in-painting. The series draws on synthetist flattening of form, fauvist liberation of color from representation, and psychedelic radiance to create portraits that feel simultaneously serene and visually intense. Each composition balances simplified facial forms against richly layered atmospheric backgrounds.",
   "result": "Delivered a cohesive collection of radiant portrait studies that work effectively as editorial content, social media visuals, and large-format prints. The series demonstrates the ability to synthesize multiple art-historical influences into a distinctive visual language using generative tools, showcasing both creative direction depth and technical finishing discipline.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

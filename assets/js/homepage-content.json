@@ -68,10 +68,10 @@
         "title": "Creative Consultant & Digital Contractor",
         "dates": "2024\u2013Present",
         "tags": [
-          "Webflow",
-          "E-Commerce",
-          "AI Integration",
-          "Automation"
+          { "label": "Webflow", "filter": { "all": ["Webflow", "Freelance"] } },
+          { "label": "E-Commerce", "filter": { "all": ["E-Commerce", "Freelance"] } },
+          { "label": "AI + Automation", "filter": { "all": ["Automation", "Freelance"] } },
+          { "label": "Generative AI", "filter": { "all": ["Generative AI", "Freelance"] } }
         ]
       },
       {
@@ -80,10 +80,10 @@
         "title": "Art Director",
         "dates": "2020\u20132023",
         "tags": [
-          "Brand Identity",
-          "Motion Graphics",
-          "Illustration",
-          "Web3"
+          { "label": "Brand Identity", "filter": { "all": ["Brand Identity", "Silent Labs"] } },
+          { "label": "Motion Graphics", "filter": { "all": ["Motion Graphics", "Silent Labs"] } },
+          { "label": "Illustration", "filter": { "all": ["Illustration", "Silent Labs"] } },
+          { "label": "Art Direction", "filter": { "all": ["Art Direction", "Silent Labs"] } }
         ]
       },
       {
@@ -92,10 +92,10 @@
         "title": "SBO Digital Consultant",
         "dates": "2019\u20132020",
         "tags": [
-          "Copywriting",
-          "Social Media",
-          "Marketing",
-          "Kajabi"
+          { "label": "Copywriting", "filter": { "all": ["Copywriting", "SEANIVORE GROUP LLC"] } },
+          { "label": "Content Strategy", "filter": { "all": ["Content Production", "SEANIVORE GROUP LLC"] } },
+          { "label": "Growth Strategy", "filter": { "all": ["Scaling Systems", "SEANIVORE GROUP LLC"] } },
+          { "label": "Landing Pages", "filter": { "all": ["Landing Page Design", "SEANIVORE GROUP LLC"] } }
         ]
       },
       {
@@ -104,10 +104,10 @@
         "title": "Marketing Innovations \u2192 Senior Strategist",
         "dates": "2011\u20132018",
         "tags": [
-          "Viral Content",
-          "3.2B Impressions",
-          "App UI/UX",
-          "Global"
+          { "label": "Content Production", "filter": { "all": ["Content Production", "PETA, Inc."] } },
+          { "label": "Video Production", "filter": { "all": ["Video Production", "PETA, Inc."] } },
+          { "label": "Analytics", "filter": { "all": ["Analytics", "PETA, Inc."] } },
+          { "label": "Art Direction", "filter": { "all": ["Art Direction", "PETA, Inc."] } }
         ]
       }
     ]
@@ -128,7 +128,7 @@
         "title": "15+ Collections",
         "filter": {
           "any": [
-            "Graphic Designer"
+            "Digital Art Collection"
           ]
         }
       },
@@ -137,8 +137,7 @@
         "title": "Social & Brand",
         "filter": {
           "any": [
-            "Motion Graphics",
-            "Video Production"
+            "Video"
           ]
         }
       },
@@ -147,7 +146,7 @@
         "title": "Identity & Print",
         "filter": {
           "any": [
-            "Brand Designer"
+            "Brand Identity"
           ]
         }
       }

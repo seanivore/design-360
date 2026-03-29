@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-spc-535",
   "slug": "neo-expresi-cyber",
   "title": "False promises leaving foreboding feelings",
   "subtitle": "Neo-expressionist portraits with surreal, cyberpunk industrial edge.",
   "seo_title": "Neo-Expressionism Cyberpunk: False Promises and Foreboding Feelings",
   "seo_description": "A charged portrait series blending neo-expressionist marks with surreal atmosphere and cyberpunk industrial textures—glow, glitch, and high contrast emotion.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-1.webp",
-    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-2.webp",
-    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-3.webp",
-    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-4.webp",
-    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-5.webp",
-    "assets/media/neo-expresi-cyber/thumb-neo-expresi-cyber-6.webp"
+    "https://cdn.august.style/media/neo-expresi-cyber/thumb-neo-expresi-cyber-1.webp",
+    "https://cdn.august.style/media/neo-expresi-cyber/thumb-neo-expresi-cyber-2.webp",
+    "https://cdn.august.style/media/neo-expresi-cyber/thumb-neo-expresi-cyber-3.webp",
+    "https://cdn.august.style/media/neo-expresi-cyber/thumb-neo-expresi-cyber-4.webp",
+    "https://cdn.august.style/media/neo-expresi-cyber/thumb-neo-expresi-cyber-5.webp",
+    "https://cdn.august.style/media/neo-expresi-cyber/thumb-neo-expresi-cyber-6.webp"
   ],
   "thumb_alt": "Angular portraits with glitch artifacts, industrial palettes, and charged expressionist marks.",
   "img": [
-    "assets/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-1.webp",
-    "assets/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-2.webp",
-    "assets/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-3.webp"
+    "https://cdn.august.style/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-1.webp",
+    "https://cdn.august.style/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-2.webp",
+    "https://cdn.august.style/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-3.webp"
   ],
   "img_alt": "Neo-expressionist portrait studies with cyberpunk industrial textures, glowing eyes, glitch artifacts, and high-contrast color fields conveying raw emotional tension.",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Neo-expressionism thrives on raw gesture, high contrast, and emotional immediacy, while cyberpunk visual language adds industrial grit and luminous technological artifacts. Merging these two distinct aesthetic traditions into a cohesive portrait series required balancing visceral mark-making with controlled digital texture, ensuring each piece conveys charged emotion without descending into visual chaos.",
   "approach": "Used a generative pipeline to establish base forms and palette direction, then layered in neo-expressionist mark-making, glow discipline, and glitch texture through targeted in-painting. Each portrait balances raw gestural energy against controlled cyberpunk elements like luminous eyes, digital artifacts, and industrial surface treatments. The high-contrast color fields were carefully calibrated to heighten emotional tension while maintaining compositional coherence.",
   "result": "Produced a series of striking portraits that read viscerally in grid layouts and hold substantial depth at print scale. The collection successfully bridges two art-historical traditions through contemporary generative tools, demonstrating the ability to direct complex aesthetic intersections. The work is suited for editorial placement, gallery exhibition, and large-format print production.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

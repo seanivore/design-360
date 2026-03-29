@@ -1,28 +1,44 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-lrt-716",
   "slug": "constructi-haus",
   "title": "Constructivism Haus",
   "subtitle": "Bold geometry and directional balance in disciplined grids.",
   "seo_title": "Constructivism Haus: Generative Geometry and Grid Discipline",
   "seo_description": "A constructivist study in bold geometry, directional balance, and clear grid systems executed with a generative pipeline and precise finishing.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud", "Typography"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud",
+    "Typography"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/constructi-haus/thumb-constructi-haus-1.webp",
-    "assets/media/constructi-haus/thumb-constructi-haus-2.webp",
-    "assets/media/constructi-haus/thumb-constructi-haus-3.webp",
-    "assets/media/constructi-haus/thumb-constructi-haus-4.webp",
-    "assets/media/constructi-haus/thumb-constructi-haus-5.webp",
-    "assets/media/constructi-haus/thumb-constructi-haus-6.webp"
+    "https://cdn.august.style/media/constructi-haus/thumb-constructi-haus-1.webp",
+    "https://cdn.august.style/media/constructi-haus/thumb-constructi-haus-2.webp",
+    "https://cdn.august.style/media/constructi-haus/thumb-constructi-haus-3.webp",
+    "https://cdn.august.style/media/constructi-haus/thumb-constructi-haus-4.webp",
+    "https://cdn.august.style/media/constructi-haus/thumb-constructi-haus-5.webp",
+    "https://cdn.august.style/media/constructi-haus/thumb-constructi-haus-6.webp"
   ],
   "thumb_alt": "Constructivist panels with strong geometry, directional balance, and grid discipline.",
   "img": [
-    "assets/media/constructi-haus/img-sq-constructi-haus-1.webp",
-    "assets/media/constructi-haus/img-sq-constructi-haus-2.webp",
-    "assets/media/constructi-haus/img-sq-constructi-haus-3.webp"
+    "https://cdn.august.style/media/constructi-haus/img-sq-constructi-haus-1.webp",
+    "https://cdn.august.style/media/constructi-haus/img-sq-constructi-haus-2.webp",
+    "https://cdn.august.style/media/constructi-haus/img-sq-constructi-haus-3.webp"
   ],
   "img_alt": "Bold constructivist geometric compositions with high-contrast forms, directional axis lines, and disciplined poster-ready grid systems",
   "mobile_img": [],
@@ -41,10 +57,10 @@
   "challenge": "Translating the visual language of Russian Constructivism into a modern generative art series. The goal was to create poster-ready compositions with bold geometric forms, strong directional cues, and high contrast that communicate purpose and movement through pure visual structure.",
   "approach": "Used Adobe Firefly to lay out core geometry and axis lines, then refined edges, contrast steps, and typographic rhythm cues through careful in-painting and value adjustment. Each panel was treated as a self-contained poster composition within the unified series.",
   "result": "Delivered a six-piece constructivist collection with crisp, poster-ready panels that read instantly in tile grids and retain sharp structural detail at print scale. The series demonstrates confident command of geometric composition rooted in art-historical precedent.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

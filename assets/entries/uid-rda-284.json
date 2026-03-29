@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-rda-284",
   "slug": "surreal-heads",
   "title": "Great Figure Heads",
   "subtitle": "Surreal portrait landscapes with monumental head forms and pastel atmospheres.",
   "seo_title": "Surrealism Great Figure Heads: Monumental Portrait Forms in Whimsical Landscapes",
   "seo_description": "A surreal series merging monumental head forms with lush terrains, floating spheres, and pastel atmospheres to explore scale, identity, and place.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/surreal-heads/thumb-surreal-heads-1.webp",
-    "assets/media/surreal-heads/thumb-surreal-heads-2.webp",
-    "assets/media/surreal-heads/thumb-surreal-heads-3.webp",
-    "assets/media/surreal-heads/thumb-surreal-heads-4.webp",
-    "assets/media/surreal-heads/thumb-surreal-heads-5.webp",
-    "assets/media/surreal-heads/thumb-surreal-heads-6.webp"
+    "https://cdn.august.style/media/surreal-heads/thumb-surreal-heads-1.webp",
+    "https://cdn.august.style/media/surreal-heads/thumb-surreal-heads-2.webp",
+    "https://cdn.august.style/media/surreal-heads/thumb-surreal-heads-3.webp",
+    "https://cdn.august.style/media/surreal-heads/thumb-surreal-heads-4.webp",
+    "https://cdn.august.style/media/surreal-heads/thumb-surreal-heads-5.webp",
+    "https://cdn.august.style/media/surreal-heads/thumb-surreal-heads-6.webp"
   ],
   "thumb_alt": "Towering head forms across whimsical terrains, floating spheres, and soft pastel skies.",
   "img": [
-    "assets/media/surreal-heads/img-sq-surreal-heads-1.webp",
-    "assets/media/surreal-heads/img-sq-surreal-heads-2.webp",
-    "assets/media/surreal-heads/img-sq-surreal-heads-3.webp"
+    "https://cdn.august.style/media/surreal-heads/img-sq-surreal-heads-1.webp",
+    "https://cdn.august.style/media/surreal-heads/img-sq-surreal-heads-2.webp",
+    "https://cdn.august.style/media/surreal-heads/img-sq-surreal-heads-3.webp"
   ],
   "img_alt": "Surreal landscape compositions featuring monumental human head forms integrated into terrain with foliage crowns, floating orbs, and pastel atmospheric light.",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Surrealist portraiture that merges human forms with landscape at monumental scale presents unique compositional challenges. Each piece must balance the head as both figure and terrain feature while maintaining a cohesive atmospheric mood. The series needed to evoke quiet wonder and exploration through deliberate use of scale, color pacing, and spatial depth rather than relying on shock or visual noise.",
   "approach": "Used a generative pipeline to establish head geometry and terrain flow for each composition, then applied in-painting to refine color pacing, edge softness, and focal pathways. Floating elements such as spheres and foliage crowns add secondary visual rhythm and narrative depth. The pastel atmospheric palette was carefully controlled to ensure luminous, immersive environments that invite contemplation rather than overwhelm.",
   "result": "Delivered a series of calm, immersive scenes that present clearly as tiles at small scale and reveal layered depth at print resolution. The collection demonstrates command of surrealist visual language translated through generative tools, balancing compositional ambition with atmospheric restraint. The work is suited for large-format print, editorial use, and digital gallery presentation.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-yvg-990",
   "slug": "dragon-headshots",
   "title": "Dragon Headshots",
   "subtitle": "Decorative dragon portraits with geometric ornament and crisp silhouettes.",
   "seo_title": "Dragon Headshots: Generative Portrait Studies with Art Nouveau and Art Deco Cues",
   "seo_description": "A decorative portrait series exploring dragon head silhouettes and geometric ornament with a generative pipeline and disciplined finishing.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/dragon-headshots/thumb-dragon-headshots-1.webp",
-    "assets/media/dragon-headshots/thumb-dragon-headshots-2.webp",
-    "assets/media/dragon-headshots/thumb-dragon-headshots-3.webp",
-    "assets/media/dragon-headshots/thumb-dragon-headshots-4.webp",
-    "assets/media/dragon-headshots/thumb-dragon-headshots-5.webp",
-    "assets/media/dragon-headshots/thumb-dragon-headshots-6.webp"
+    "https://cdn.august.style/media/dragon-headshots/thumb-dragon-headshots-1.webp",
+    "https://cdn.august.style/media/dragon-headshots/thumb-dragon-headshots-2.webp",
+    "https://cdn.august.style/media/dragon-headshots/thumb-dragon-headshots-3.webp",
+    "https://cdn.august.style/media/dragon-headshots/thumb-dragon-headshots-4.webp",
+    "https://cdn.august.style/media/dragon-headshots/thumb-dragon-headshots-5.webp",
+    "https://cdn.august.style/media/dragon-headshots/thumb-dragon-headshots-6.webp"
   ],
   "thumb_alt": "Dragon head portraits rendered with decorative line work, geometric ornament, and balanced highlights.",
   "img": [
-    "assets/media/dragon-headshots/img-sq-dragon-headshots-1.webp",
-    "assets/media/dragon-headshots/img-sq-dragon-headshots-2.webp",
-    "assets/media/dragon-headshots/img-sq-dragon-headshots-3.webp"
+    "https://cdn.august.style/media/dragon-headshots/img-sq-dragon-headshots-1.webp",
+    "https://cdn.august.style/media/dragon-headshots/img-sq-dragon-headshots-2.webp",
+    "https://cdn.august.style/media/dragon-headshots/img-sq-dragon-headshots-3.webp"
   ],
   "img_alt": "Dragon portrait studies featuring art nouveau and art deco decorative cues, crisp silhouettes, ornamental line work, and geometric patterning.",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Creating a decorative portrait series around non-human subjects requires establishing clear silhouette language and ornamental systems that maintain visual coherence across varied compositions. Dragon portraits drawing on art nouveau and art deco traditions demanded controlled line weight, repeatable motif structures, and highlight discipline to ensure each piece reads cleanly at tile scale while offering detailed ornamentation at larger sizes.",
   "approach": "Used a generative pipeline to define silhouette structure and motif rhythm for each dragon portrait, then applied in-painting to refine edge discipline, highlight placement, and line weight consistency. The decorative language draws from art nouveau organic curves and art deco geometric precision, creating portraits that balance ornamental richness with compositional clarity. Each piece maintains crisp silhouette legibility as the anchoring design principle.",
   "result": "Produced a cohesive portrait set that reads instantly in grid layouts and carries enough ornamental detail for large-format print. The series demonstrates the ability to direct generative tools toward specific art-historical decorative traditions while maintaining consistent quality and visual identity across a collection. The work is suited for print production, editorial illustration, and digital gallery presentation.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

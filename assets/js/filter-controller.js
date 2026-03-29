@@ -101,7 +101,7 @@ const FilterController = (() => {
             history.replaceState(null, '', window.location.pathname);
         } else {
             const tagsParam = activeTags.join('+');
-            const modeParam = matchMode === 'all' ? '&mode=all' : '';
+            const modeParam = `&mode=${matchMode}`;
             history.replaceState(null, '', `${window.location.pathname}#tags=${tagsParam}${modeParam}`);
         }
     }
@@ -113,6 +113,7 @@ const FilterController = (() => {
         matchMode = mode;
         btnAny.classList.toggle('active', mode === 'any');
         btnAll.classList.toggle('active', mode === 'all');
+        updateHash();
 
         if (onFilterChange && activeTags.length > 0) {
             onFilterChange(activeTags, matchMode);
@@ -167,11 +168,11 @@ const FilterController = (() => {
                 selectedRow.appendChild(pill);
             });
 
-            // Add inline clear button when multiple tags are active
-            if (activeTags.length > 1) {
+            // Add inline clear button when any tags are active
+            if (activeTags.length > 0) {
                 const clearInline = document.createElement('button');
                 clearInline.className = 'filter-clear-inline';
-                clearInline.textContent = 'Clear all';
+                clearInline.textContent = 'Clear';
                 clearInline.addEventListener('click', () => clearTags());
                 selectedRow.appendChild(clearInline);
             }

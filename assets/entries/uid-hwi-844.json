@@ -36,17 +36,17 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp",
-    "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-2.webp",
-    "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-3.webp",
-    "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-4.webp",
-    "assets/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-5.webp"
+    "https://cdn.august.style/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-1.webp",
+    "https://cdn.august.style/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-2.webp",
+    "https://cdn.august.style/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-3.webp",
+    "https://cdn.august.style/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-4.webp",
+    "https://cdn.august.style/media/personalized-fashion-magazine/thumb-slides-personalized-fashion-magazine-5.webp"
   ],
   "thumb_alt": "Walkthrough of editorial-style photo journal website featuring AI in-painted fashion photography inspired by art historical movements from Impressionism to Neo-Expressionism",
   "img": [
-    "assets/media/personalized-fashion-magazine/img-sq-slides-personalized-fashion-magazine-1.webp",
-    "assets/media/personalized-fashion-magazine/img-sq-slides-personalized-fashion-magazine-2.webp",
-    "assets/media/personalized-fashion-magazine/img-sq-slides-personalized-fashion-magazine-3.webp"
+    "https://cdn.august.style/media/personalized-fashion-magazine/img-sq-slides-personalized-fashion-magazine-1.webp",
+    "https://cdn.august.style/media/personalized-fashion-magazine/img-sq-slides-personalized-fashion-magazine-2.webp",
+    "https://cdn.august.style/media/personalized-fashion-magazine/img-sq-slides-personalized-fashion-magazine-3.webp"
   ],
   "img_alt": "Fashion lookbook spreads showing editorial photography layouts inspired by Impressionism, Surrealism, and Neo-Expressionism",
   "mobile_img": [],
@@ -66,10 +66,10 @@
   "challenge": "High-end fashion magazines translate poorly to the web — the visual impact gets lost in typical blog layouts. This project needed to capture the weight and sophistication of print editorial design while maintaining digital usability. The content follows archetypal character journeys through art historical movements, requiring a design that supports complex narrative flow across multiple sections while keeping each spread visually stunning.",
   "approach": "Built a custom HTML/CSS/JS photo journal that prioritizes large-format imagery with minimal interface elements. Developed a typography system using hierarchy and white space to create breathing room between sections, letting each fashion spread command attention. Structured the multi-part narrative with clear visual transitions between art movements — Impressionism to Surrealism to Neo-Expressionism — using subtle design cues rather than heavy-handed navigation. The layout adapts to showcase full-bleed images on desktop while maintaining editorial pacing on mobile.",
   "result": "The design successfully translates luxury print editorial aesthetics into a digital experience that maintains visual impact and narrative cohesion. The clean, timeless layout lets the fashion photography and art historical references take center stage without competing UI elements. The multi-section structure guides users through character arcs naturally, with the minimal interface encouraging full immersion in visual storytelling rather than typical web browsing behavior.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Web Developer",
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

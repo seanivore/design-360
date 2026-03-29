@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-vue-009",
   "slug": "ethereal-amalgamations",
   "title": "Ethereal Amalgamations",
   "subtitle": "Surreal, otherworldly landscapes with whimsical flora and vibrant color.",
   "seo_title": "Surrealism Ethereal Amalgamations: Dreamlike Landscapes with Whimsical Flora",
   "seo_description": "A generative surrealist journey through vibrant, otherworldly landscapes featuring oversized mushroom forms, luminous skies, and exploratory figures in motion.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-1.webp",
-    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-2.webp",
-    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-3.webp",
-    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-4.webp",
-    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-5.webp",
-    "assets/media/ethereal-amalgamations/thumb-ethereal-amalgamations-6.webp"
+    "https://cdn.august.style/media/ethereal-amalgamations/thumb-ethereal-amalgamations-1.webp",
+    "https://cdn.august.style/media/ethereal-amalgamations/thumb-ethereal-amalgamations-2.webp",
+    "https://cdn.august.style/media/ethereal-amalgamations/thumb-ethereal-amalgamations-3.webp",
+    "https://cdn.august.style/media/ethereal-amalgamations/thumb-ethereal-amalgamations-4.webp",
+    "https://cdn.august.style/media/ethereal-amalgamations/thumb-ethereal-amalgamations-5.webp",
+    "https://cdn.august.style/media/ethereal-amalgamations/thumb-ethereal-amalgamations-6.webp"
   ],
   "thumb_alt": "Dreamy terrains with giant mushrooms, flowing rivers, luminous skies, and wandering figures.",
   "img": [
-    "assets/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-1.webp",
-    "assets/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-2.webp",
-    "assets/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-3.webp"
+    "https://cdn.august.style/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-1.webp",
+    "https://cdn.august.style/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-2.webp",
+    "https://cdn.august.style/media/ethereal-amalgamations/img-sq-ethereal-amalgamations-3.webp"
   ],
   "img_alt": "Surreal otherworldly landscapes with oversized mushrooms, whimsical flora, vibrant color fields, and exploratory figures",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Building immersive surrealist landscapes that embrace dramatic scale shifts and fantastical flora. The creative goal was to craft otherworldly terrains where oversized mushrooms, luminous skies, and flowing rivers invite the viewer into a space beyond ordinary perception.",
   "approach": "Used Adobe Firefly to generate terrain curves and heroic flora compositions with vibrant, layered color palettes. Lightroom handled color pacing and atmospheric grading, while in-painting refined edge softness and established focal pathways for the small exploratory figures within each scene.",
   "result": "Produced a six-piece surrealist landscape series that reads as magical and inviting at tile scale while sustaining rich detail at full resolution. The collection is suitable for large-format art prints, gallery exhibition, and digital portfolio showcase.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

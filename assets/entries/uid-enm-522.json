@@ -1,26 +1,41 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-enm-522",
   "slug": "surreal-constructivism-perception",
   "title": "Currents of Perception",
   "subtitle": "Generative geometric abstractions create constructivism landscapes",
   "seo_title": "Currents of Perception: Generative Geometric Constructivist Abstraction Landscapes",
   "seo_description": "An abstract generative series exploring perception through geometric currents, constructivist colored landscapes, and emergent figures that suggest a psychic motion.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-1.webp",
-    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-2.webp",
-    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-3.webp",
-    "assets/media/surreal-constructivism-perception-currents/thumb-surreal-constructivism-perception-currents-4.webp"
+    "https://cdn.august.style/media/surreal-constructivism-perception/thumb-surreal-constructivism-perception-currents-1.webp",
+    "https://cdn.august.style/media/surreal-constructivism-perception/thumb-surreal-constructivism-perception-currents-2.webp",
+    "https://cdn.august.style/media/surreal-constructivism-perception/thumb-surreal-constructivism-perception-currents-3.webp",
+    "https://cdn.august.style/media/surreal-constructivism-perception/thumb-surreal-constructivism-perception-currents-4.webp"
   ],
   "thumb_alt": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
   "img": [
-    "assets/media/surreal-constructivism-perception-currents/img-sq-surreal-constructivism-perception-currents-1.webp",
-    "assets/media/surreal-constructivism-perception-currents/img-sq-surreal-constructivism-perception-currents-2.webp",
-    "assets/media/surreal-constructivism-perception-currents/img-sq-surreal-constructivism-perception-currents-3.webp"
+    "https://cdn.august.style/media/surreal-constructivism-perception/img-sq-surreal-constructivism-perception-currents-1.webp",
+    "https://cdn.august.style/media/surreal-constructivism-perception/img-sq-surreal-constructivism-perception-currents-2.webp",
+    "https://cdn.august.style/media/surreal-constructivism-perception/img-sq-surreal-constructivism-perception-currents-3.webp"
   ],
   "img_alt": "Geometric constructivist landscape abstractions with vivid color fields and emergent figures",
   "mobile_img": [],
@@ -39,10 +54,10 @@
   "challenge": "Exploring how geometric abstraction can convey motion and psychological depth within a landscape format. The goal was to create compositions where constructivist forms suggest emergent figures and shifting perception, blending structured geometry with an almost psychic spatial energy.",
   "approach": "Used Adobe Firefly to generate base compositions built around layered geometric mountains and color fields. Each piece was refined in Lightroom for color grading and value control, then prepared in Illustrator for print-ready output with disciplined edge work and focal hierarchy.",
   "result": "Produced a cohesive series of abstract landscape prints that read clearly at grid scale and reward close inspection at full resolution. The collection is suitable for gallery display, high-quality art prints, and digital provenance editions.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

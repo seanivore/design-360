@@ -35,18 +35,18 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
-    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
-    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-3.webp",
-    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-4.webp",
-    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-5.webp",
-    "assets/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-6.webp"
+    "https://cdn.august.style/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-1.webp",
+    "https://cdn.august.style/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-2.webp",
+    "https://cdn.august.style/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-3.webp",
+    "https://cdn.august.style/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-4.webp",
+    "https://cdn.august.style/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-5.webp",
+    "https://cdn.august.style/media/css-animated-micro-interactions/thumb-slides-css-animated-micro-interactions-6.webp"
   ],
   "thumb_alt": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
   "img": [
-    "assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-1.webp",
-    "assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-2.webp",
-    "assets/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-3.webp"
+    "https://cdn.august.style/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-1.webp",
+    "https://cdn.august.style/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-2.webp",
+    "https://cdn.august.style/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-3.webp"
   ],
   "img_alt": "Presentation platform screenshots showing glassmorphic homepage tiles, slide deck layouts, and markdown-based documentation",
   "mobile_img": [],
@@ -67,9 +67,9 @@
   "approach": "Built a versatile platform with three distinct sections: a CSS-animated homepage featuring glassmorphic tiles with micro-interactions, two presentation deck areas for AI voice marketing research and agentic workflow implementations, and a markdown-based index system that auto-converts documentation to clean HTML. The homepage animations use pure CSS for smooth performance, with hover and focus states guiding users naturally to different content areas. Integrated Jekyll for markdown processing, enabling rapid documentation updates without touching HTML.",
   "result": "The platform delivers comprehensive AI research across multiple formats while maintaining visual cohesion and fast load times. The CSS-only animation approach keeps the homepage performant even with complex visual effects. The dual presentation system accommodates both slide-deck-style summaries and detailed indexed documentation, making technical concepts accessible to different audiences. The markdown integration enables publishing new research findings in minutes rather than hours.",
   "role_headline": "Design strategist building brand systems from scratch",
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "CSS micro-interactions, glassmorphism, Jekyll static site generation, markdown automation, and multi-format content architecture.",
   "process": null,
   "metric": null,

@@ -58,19 +58,22 @@ def validate_entry(file_path: Path, tags_registry: dict) -> list:
     if company and company not in LOCKED_COMPANIES:
         errors.append(f"Invalid company '{company}'. Must be one of: {LOCKED_COMPANIES}")
 
-    # Check thumb paths exist on disk
+    # Check thumb paths exist on disk (skip CDN URLs)
     project_root = file_path.parents[2]  # assets/entries/file.json -> project root
     for thumb_path in data.get("thumb", []):
+        if thumb_path.startswith("http"):
+            continue
         full_path = project_root / thumb_path
         if not full_path.exists():
             errors.append(f"Thumbnail not found on disk: {thumb_path}")
 
-    # Check img paths exist on disk
+    # Check img paths exist on disk (skip CDN URLs)
     for img_path in data.get("img", []):
-        if img_path:  # skip empty strings
-            full_path = project_root / img_path
-            if not full_path.exists():
-                errors.append(f"Image not found on disk: {img_path}")
+        if not img_path or img_path.startswith("http"):
+            continue
+        full_path = project_root / img_path
+        if not full_path.exists():
+            errors.append(f"Image not found on disk: {img_path}")
 
     # Check process structure if present
     process = data.get("process")

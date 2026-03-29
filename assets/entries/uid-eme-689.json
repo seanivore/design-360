@@ -27,18 +27,18 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp",
-    "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-2.webp",
-    "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-3.webp",
-    "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-4.webp",
-    "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-5.webp",
-    "assets/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-6.webp"
+    "https://cdn.august.style/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-1.webp",
+    "https://cdn.august.style/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-2.webp",
+    "https://cdn.august.style/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-3.webp",
+    "https://cdn.august.style/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-4.webp",
+    "https://cdn.august.style/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-5.webp",
+    "https://cdn.august.style/media/modular-portfolio-build/thumb-slides-modular-portfolio-build-6.webp"
   ],
   "thumb_alt": "Screenshots of a website demonstrating tag-based navigation and modular component structure built using simple HTML/CSS/JS for a personal, comprehensive portfolio system designed for AI-assisted development workflows and then shared in a public template format for User to easily adapt for their own use and learn to code using AI on an easy project",
   "img": [
-    "assets/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-1.webp",
-    "assets/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-2.webp",
-    "assets/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-3.webp"
+    "https://cdn.august.style/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-1.webp",
+    "https://cdn.august.style/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-2.webp",
+    "https://cdn.august.style/media/modular-portfolio-build/img-sq-slides-modular-portfolio-build-3.webp"
   ],
   "img_alt": "Portfolio system screenshots showing tag-based navigation, modular component cards, and convention-documented code structure",
   "mobile_img": [],
@@ -58,10 +58,10 @@
   "challenge": "After years of no-code development, returning to HTML/CSS/JS required a system that could work seamlessly with AI assistance while maintaining code quality and consistency. The challenge was creating a portfolio architecture documented well enough for AI to replicate patterns accurately across multiple sessions, preventing the typical mess that emerges from AI-generated code without clear conventions.",
   "approach": "Developed a comprehensive modular system with extensively documented conventions in CONVENTIONS.md that serve as both human reference and AI training material. Created reusable component patterns for navigation, project cards, and content sections that maintain consistency across 50+ portfolio entries. Implemented a tag-based filtering system using vanilla JavaScript for lightweight performance. The architecture emphasizes simplicity and repeatability, with each pattern documented through examples so AI can generate new pages matching existing structure.",
   "result": "Successfully built and maintained a comprehensive portfolio spanning technical, creative, and strategic projects using a consistent system that works flawlessly with AI pair programming. The documented conventions enabled rapid page creation across multiple AI sessions without breaking patterns or introducing inconsistencies. The template has become a shareable resource for others building their first HTML/CSS/JS sites with AI assistance.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Web Developer",
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

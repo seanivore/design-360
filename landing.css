@@ -681,7 +681,13 @@ a.tag:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .06em;
-  color: var(--terra)
+  color: var(--terra);
+  text-decoration: none
+}
+
+a.cred-company:hover {
+  color: var(--text);
+  text-decoration: underline
 }
 
 .cred-dates {

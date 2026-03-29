@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-evn-680",
   "slug": "constructivist-profiles",
   "title": "Profile People",
   "subtitle": "Geometric portraits in constructivist, cubist inspired angular forms.",
   "seo_title": "Profile People: Constructivist Geometric Portraits with Sharp Angles",
   "seo_description": "A generative portrait series focusing on geometric head and shoulder profiles with constructivist and cubist cues, sharp angles, and vibrant color fields",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/constructivist-portraits/thumb-constructivist-portraits-1.webp",
-    "assets/media/constructivist-portraits/thumb-constructivist-portraits-2.webp",
-    "assets/media/constructivist-portraits/thumb-constructivist-portraits-3.webp",
-    "assets/media/constructivist-portraits/thumb-constructivist-portraits-4.webp",
-    "assets/media/constructivist-portraits/thumb-constructivist-portraits-5.webp",
-    "assets/media/constructivist-portraits/thumb-constructivist-portraits-6.webp"
+    "https://cdn.august.style/media/constructivist-profiles/thumb-constructivist-portraits-1.webp",
+    "https://cdn.august.style/media/constructivist-profiles/thumb-constructivist-portraits-2.webp",
+    "https://cdn.august.style/media/constructivist-profiles/thumb-constructivist-portraits-3.webp",
+    "https://cdn.august.style/media/constructivist-profiles/thumb-constructivist-portraits-4.webp",
+    "https://cdn.august.style/media/constructivist-profiles/thumb-constructivist-portraits-5.webp",
+    "https://cdn.august.style/media/constructivist-profiles/thumb-constructivist-portraits-6.webp"
   ],
   "thumb_alt": "Angular geometric portraits with bold color blocks and sharp constructivist forms",
   "img": [
-    "assets/media/constructivist-portraits/img-sq-constructivist-portraits-1.webp",
-    "assets/media/constructivist-portraits/img-sq-constructivist-portraits-2.webp",
-    "assets/media/constructivist-portraits/img-sq-constructivist-portraits-3.webp"
+    "https://cdn.august.style/media/constructivist-profiles/img-sq-constructivist-portraits-1.webp",
+    "https://cdn.august.style/media/constructivist-profiles/img-sq-constructivist-portraits-2.webp",
+    "https://cdn.august.style/media/constructivist-profiles/img-sq-constructivist-portraits-3.webp"
   ],
   "img_alt": "Geometric head and shoulder profile portraits rendered with constructivist sharp angles, cubist fragmentation, and vibrant color fields.",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Constructivist and cubist visual languages offer a rich formal vocabulary for portraiture, but translating those art-historical references into a cohesive generative series requires careful control over geometry, color relationships, and compositional legibility. The goal was to produce a collection of head-and-shoulder profile portraits that maintain sharp angular discipline and bold color blocking while remaining recognizable and visually compelling at every scale.",
   "approach": "Used a generative pipeline to establish profile geometry and axis lines for each portrait, then applied disciplined in-painting to refine edge quality, color relationships, and highlight placement. Each piece balances constructivist angularity with cubist fragmentation, using vibrant flat color fields to define form rather than gradients or photorealistic rendering. The finishing process ensured consistent silhouette clarity and visual cohesion across the series.",
   "result": "Produced a cohesive collection of geometric portraits that read instantly as thumbnail tiles and carry sufficient structural detail for large-format print. The series demonstrates fluency in art-historical visual languages translated through contemporary generative tools, showcasing both creative direction and technical execution in AI-assisted art production.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

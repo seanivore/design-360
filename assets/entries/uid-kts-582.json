@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-kts-582",
   "slug": "bohemian-abstractions",
   "title": "Bohemian Abstractions",
   "subtitle": "Geometric rhythm and layered color in a relaxed abstract series.",
   "seo_title": "Bohemian Abstractions: Generative Geometric Rhythm and Layered Color",
   "seo_description": "A bohemian abstract collection exploring geometric rhythm, relaxed symmetry, and layered color fields, built with a generative pipeline and disciplined finishing.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/bohemian-abstractions/thumb-bohemian-abstractions-1.webp",
-    "assets/media/bohemian-abstractions/thumb-bohemian-abstractions-2.webp",
-    "assets/media/bohemian-abstractions/thumb-bohemian-abstractions-3.webp",
-    "assets/media/bohemian-abstractions/thumb-bohemian-abstractions-4.webp",
-    "assets/media/bohemian-abstractions/thumb-bohemian-abstractions-5.webp",
-    "assets/media/bohemian-abstractions/thumb-bohemian-abstractions-6.webp"
+    "https://cdn.august.style/media/bohemian-abstractions/thumb-bohemian-abstractions-1.webp",
+    "https://cdn.august.style/media/bohemian-abstractions/thumb-bohemian-abstractions-2.webp",
+    "https://cdn.august.style/media/bohemian-abstractions/thumb-bohemian-abstractions-3.webp",
+    "https://cdn.august.style/media/bohemian-abstractions/thumb-bohemian-abstractions-4.webp",
+    "https://cdn.august.style/media/bohemian-abstractions/thumb-bohemian-abstractions-5.webp",
+    "https://cdn.august.style/media/bohemian-abstractions/thumb-bohemian-abstractions-6.webp"
   ],
   "thumb_alt": "Bohemian inspired abstractions: geometric motifs, layered color fields, and easy balance.",
   "img": [
-    "assets/media/bohemian-abstractions/img-sq-bohemian-abstractions-1.webp",
-    "assets/media/bohemian-abstractions/img-sq-bohemian-abstractions-2.webp",
-    "assets/media/bohemian-abstractions/img-sq-bohemian-abstractions-3.webp"
+    "https://cdn.august.style/media/bohemian-abstractions/img-sq-bohemian-abstractions-1.webp",
+    "https://cdn.august.style/media/bohemian-abstractions/img-sq-bohemian-abstractions-2.webp",
+    "https://cdn.august.style/media/bohemian-abstractions/img-sq-bohemian-abstractions-3.webp"
   ],
   "img_alt": "Bohemian geometric abstractions with relaxed symmetry, layered warm color fields, and repeating decorative motifs",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Creating abstract compositions that embrace the relaxed, decorative spirit of bohemian aesthetics while maintaining compositional rigor. The series needed to feel approachable and lived-in, with repeated motifs and layered color fields that invite extended viewing rather than demanding attention.",
   "approach": "Used Adobe Firefly to establish motif rhythm and palette across a series of warm, layered compositions. In-painting refined edges and micro-contrast relationships, while Lightroom handled color depth and spatial pacing to ensure each panel feels both casual and considered.",
   "result": "Produced a six-piece bohemian abstraction series with cohesive, approachable compositions that read clearly in tile grids and hold stacked color detail at full resolution. The collection works well for art prints, interior decor applications, and portfolio display.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

@@ -33,18 +33,18 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp",
-    "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-2.webp",
-    "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-3.webp",
-    "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-4.webp",
-    "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-5.webp",
-    "assets/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-6.webp"
+    "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp",
+    "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-2.webp",
+    "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-3.webp",
+    "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-4.webp",
+    "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-5.webp",
+    "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-6.webp"
   ],
   "thumb_alt": "Three-stage SaaS conversion funnel walkthrough showing landing page with tiered pricing, sign-up flow with progress indicators, and profile setup—all using enterprise-grade CSS architecture without JavaScript",
   "img": [
-    "assets/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-1.webp",
-    "assets/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-2.webp",
-    "assets/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-3.webp"
+    "https://cdn.august.style/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-1.webp",
+    "https://cdn.august.style/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-2.webp",
+    "https://cdn.august.style/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-3.webp"
   ],
   "img_alt": "SaaS conversion flow screenshots showing tiered pricing, sign-up form, and profile setup stages",
   "mobile_img": [],
@@ -66,8 +66,8 @@
   "result": "The CSS-only animation approach maintains performance while delivering sophisticated interactions, with page load times under two seconds even on 3G connections. The modular architecture enables complete brand color changes in under ten minutes through CSS variable updates. The project demonstrates deep understanding of multi-step user journeys, conversion psychology, and modern web design execution at enterprise scale.",
   "role_headline": "Full-stack developer shipping SaaS conversion flows",
   "hero_btn_cta": "See Web Projects",
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "CSS animation, conversion-focused UX, modular front-end architecture, and responsive design applied to a complete SaaS sales funnel.",
   "process": null,
   "metric": null,

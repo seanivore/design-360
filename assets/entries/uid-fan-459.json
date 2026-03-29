@@ -1,28 +1,44 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-fan-459",
   "slug": "pie-claesz-modern-vibes",
   "title": "Pie Claesz Modern Vibes",
   "subtitle": "Modernized Claesz study with simplified palette and crisp light.",
   "seo_title": "Pie Claesz Modern Vibes: Generative Still Life with Contemporary Restraint",
   "seo_description": "A modern take on Pieter Claesz inspired still life: cleaner palette, crisp edges, and disciplined light, executed with a generative pipeline and minimal post polish.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud", "Photography"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud",
+    "Photography"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-1.webp",
-    "assets/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-2.webp",
-    "assets/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-3.webp",
-    "assets/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-4.webp",
-    "assets/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-5.webp",
-    "assets/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-6.webp"
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-1.webp",
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-2.webp",
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-3.webp",
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-4.webp",
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-5.webp",
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-6.webp"
   ],
   "thumb_alt": "Rotating still life images with modernized Claesz cues: simplified palette, crisp highlights, and balanced tabletop composition.",
   "img": [
-    "assets/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-1.webp",
-    "assets/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-2.webp",
-    "assets/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-3.webp"
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-1.webp",
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-2.webp",
+    "https://cdn.august.style/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-3.webp"
   ],
   "img_alt": "Contemporary still life compositions with modernized Pieter Claesz influence, simplified tones, crisp highlight control, and clean tabletop staging",
   "mobile_img": [],
@@ -41,10 +57,10 @@
   "challenge": "Updating the Pieter Claesz still life tradition for a contemporary audience, pushing the muted tones toward a cleaner, more modern palette while preserving the painter's essential qualities of restraint, balance, and careful light. The compositions needed to feel current without abandoning their art-historical roots.",
   "approach": "Used Adobe Firefly to generate compositions with modernized staging cues and simplified color relationships. Targeted in-painting refined edge quality, micro highlights, and surface realism, while Lightroom established the cleaner, crisper palette that distinguishes this series from its more historically faithful companion collection.",
   "result": "Produced a six-piece contemporary still life collection that bridges Dutch Golden Age sensibility with modern visual taste. The clean compositions read well at thumbnail scale and hold refined detail for art prints, making them equally suited for portfolio presentation and gallery-quality output.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

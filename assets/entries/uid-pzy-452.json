@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-pzy-452",
   "slug": "clockwork-splendor",
   "title": "Clockwork Splendor",
   "subtitle": "Victorian industrial cityscapes with gears, domes, and airships.",
   "seo_title": "Steampunk Clockwork Splendor: Generative Victorian Industrial Cityscapes",
   "seo_description": "A steampunk collection merging Victorian architecture with gears, domes, bridges, and airships in soft golden light, executed with a generative pipeline and careful finishing.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/clockwork-splendor/thumb-clockwork-splendor-1.webp",
-    "assets/media/clockwork-splendor/thumb-clockwork-splendor-2.webp",
-    "assets/media/clockwork-splendor/thumb-clockwork-splendor-3.webp",
-    "assets/media/clockwork-splendor/thumb-clockwork-splendor-4.webp",
-    "assets/media/clockwork-splendor/thumb-clockwork-splendor-5.webp",
-    "assets/media/clockwork-splendor/thumb-clockwork-splendor-6.webp"
+    "https://cdn.august.style/media/clockwork-splendor/thumb-clockwork-splendor-1.webp",
+    "https://cdn.august.style/media/clockwork-splendor/thumb-clockwork-splendor-2.webp",
+    "https://cdn.august.style/media/clockwork-splendor/thumb-clockwork-splendor-3.webp",
+    "https://cdn.august.style/media/clockwork-splendor/thumb-clockwork-splendor-4.webp",
+    "https://cdn.august.style/media/clockwork-splendor/thumb-clockwork-splendor-5.webp",
+    "https://cdn.august.style/media/clockwork-splendor/thumb-clockwork-splendor-6.webp"
   ],
   "thumb_alt": "Victorian inspired city scenes with gears, cogs, airships, and warm sunset tones.",
   "img": [
-    "assets/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp",
-    "assets/media/clockwork-splendor/img-sq-clockwork-splendor-2.webp",
-    "assets/media/clockwork-splendor/img-sq-clockwork-splendor-3.webp"
+    "https://cdn.august.style/media/clockwork-splendor/img-sq-clockwork-splendor-1.webp",
+    "https://cdn.august.style/media/clockwork-splendor/img-sq-clockwork-splendor-2.webp",
+    "https://cdn.august.style/media/clockwork-splendor/img-sq-clockwork-splendor-3.webp"
   ],
   "img_alt": "Steampunk cityscapes blending ornate Victorian architecture with exposed clockwork gears, floating airships, and golden hour light",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Creating a steampunk cityscape series that balances ornate Victorian architecture with visible mechanical systems. The goal was to render intricate gear work, domed structures, and airships within cohesive compositions that feel both elegant and industrial, all bathed in warm golden-hour light.",
   "approach": "Used Adobe Firefly to generate city grid layouts with strong verticals and layered mechanical motifs. In-painting refined edge integrity around intricate gear and dome details, while Lightroom established the warm, cinematic light pacing and focal hierarchy across each panel.",
   "result": "Delivered a six-piece steampunk cityscape collection with consistent architectural detail and atmospheric warmth. The panels hold up at both thumbnail scale for portfolio grids and at full resolution for large-format art prints and exhibition display.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

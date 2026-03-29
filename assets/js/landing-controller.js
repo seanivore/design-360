@@ -53,9 +53,9 @@ const LandingController = (() => {
     const filtered = DataLoader.resolveFilter(projects, config.hero.filter);
     if (!filtered.length) return;
 
-    // ── Pick 5 random headline entries (synced images + headlines) ──
-    const headlinePool = filtered.filter(p => p.role_headline && p.img && p.img.length >= 2);
-    const shuffledPool = DataLoader.shuffleArray([...headlinePool]);
+    // ── Pick 5 random entries with at least 2 images ──
+    const imagePool = filtered.filter(p => p.img && p.img.length >= 2);
+    const shuffledPool = DataLoader.shuffleArray([...imagePool]);
     const heroEntries = shuffledPool.slice(0, 5);
     const heroCount = heroEntries.length || 1;
 
@@ -65,47 +65,35 @@ const LandingController = (() => {
       ? ctaPool[Math.floor(Math.random() * ctaPool.length)]
       : heroEntries[0] || filtered[0];
 
-    // ── Hero images ──
+    // ── Hero images: 2 from each of 5 entries, synced with headlines ──
     const imgScroll = document.querySelector('.hero-img-scroll');
-    if (imgScroll) {
-      let heroImages = [];
+    if (imgScroll && heroEntries.length) {
+      const heroImages = [];
+      heroEntries.forEach(entry => {
+        const imgs = entry.img.slice(0, 2);
+        imgs.forEach(src => heroImages.push(src));
+      });
 
-      if (heroEntries.length) {
-        // Synced mode: 2 square images per entry, in entry order
-        heroEntries.forEach(entry => {
-          const imgs = entry.img.slice(0, 2);
-          imgs.forEach(src => heroImages.push(src));
-        });
-      } else {
-        // Fallback: no entries with role_headline+2 images — use any available images shuffled
-        heroImages = DataLoader.shuffleArray(
-          filtered.filter(p => p.img && p.img.length).map(p => p.img[0])
-        );
-      }
+      const doubled = [...heroImages, ...heroImages];
+      imgScroll.innerHTML = doubled
+        .map(src => {
+          const resolved = src.startsWith('http') ? src : '/' + src;
+          return `<img src="${resolved}" alt="">`;
+        })
+        .join('');
 
-      if (heroImages.length) {
-        // Duplicate for seamless CSS loop (translateX(-50%) resets)
-        const doubled = [...heroImages, ...heroImages];
-        imgScroll.innerHTML = doubled
-          .map(src => {
-            const resolved = src.startsWith('http') ? src : '/' + src;
-            return `<img src="${resolved}" alt="">`;
-          })
-          .join('');
-
-        // Set drift duration to match flip clock: heroCount × 5s
-        const cycleDuration = heroCount * 5;
-        imgScroll.style.animationDuration = cycleDuration + 's';
-      }
+      // Drift duration matches flip clock: heroCount × 5s
+      imgScroll.style.animationDuration = (heroCount * 5) + 's';
     }
 
     // ── Flip headlines: same entries, same order ──
     const flipTrack = document.querySelector('.flip-track');
     if (flipTrack && heroEntries.length) {
       flipTrack.innerHTML = heroEntries
-        .map((entry, i) =>
-          `<div class="flip-item ${i === 0 ? 'active' : 'below'}" data-flip-index="${i}">${entry.role_headline}</div>`
-        )
+        .map((entry, i) => {
+          const headline = entry.role_headline || entry.title;
+          return `<div class="flip-item ${i === 0 ? 'active' : 'below'}" data-flip-index="${i}">${headline}</div>`;
+        })
         .join('');
     }
 
@@ -138,11 +126,11 @@ const LandingController = (() => {
       statNumbers[2].setAttribute('data-suffix', '+');
     }
 
-    // Stat links — Roles/Skills deep-link with mode=all
+    // Stat links — Roles/Skills deep-link with mode=any
     const statRoles = document.getElementById('statRoles');
     const statSkills = document.getElementById('statSkills');
-    if (statRoles) statRoles.href = buildSectionURL({ all: tagsByType.role }, 'all');
-    if (statSkills) statSkills.href = buildSectionURL({ all: tagsByType.skill }, 'all');
+    if (statRoles) statRoles.href = buildSectionURL({ any: tagsByType.role }, 'any');
+    if (statSkills) statSkills.href = buildSectionURL({ any: tagsByType.skill }, 'any');
   }
 
   function renderShowcase(config, projects) {
@@ -218,13 +206,17 @@ const LandingController = (() => {
     list.innerHTML = config.credentials.items
       .map((item, i) => {
         const delay = i < 4 ? ` sr-d${i + 1}` : '';
-        const tags = (item.tags || []).map(t =>
-          `<a href="/section.html?tags=${DataLoader.normalizeForURL(t)}" class="tag">${t}</a>`
-        ).join('');
+        const tags = (item.tags || []).map(t => {
+          if (typeof t === 'object' && t.filter) {
+            return `<a href="${buildSectionURL(t.filter, 'all')}" class="tag">${t.label}</a>`;
+          }
+          return `<a href="/section.html?tags=${DataLoader.normalizeForURL(t)}" class="tag">${t}</a>`;
+        }).join('');
+        const companyHref = buildSectionURL({ any: [item.company] });
         return (
           `<div class="cred-item sr${delay}">` +
             `<div class="cred-top">` +
-              `<span class="cred-company">${item.display_name}</span>` +
+              `<a href="${companyHref}" class="cred-company">${item.display_name}</a>` +
               `<span class="cred-dates">${item.dates}</span>` +
             `</div>` +
             `<div class="cred-role">${item.title}</div>` +

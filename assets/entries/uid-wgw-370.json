@@ -30,18 +30,18 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp",
-    "assets/media/ai-design-fashion-lookbook/thumb-slides-2-ai-design-fashion-lookbook.webp",
-    "assets/media/ai-design-fashion-lookbook/thumb-slides-3-ai-design-fashion-lookbook.webp",
-    "assets/media/ai-design-fashion-lookbook/thumb-slides-4-ai-design-fashion-lookbook.webp",
-    "assets/media/ai-design-fashion-lookbook/thumb-slides-5-ai-design-fashion-lookbook.webp",
-    "assets/media/ai-design-fashion-lookbook/thumb-slides-6-ai-design-fashion-lookbook.webp"
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/thumb-slides-1-ai-design-fashion-lookbook.webp",
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/thumb-slides-2-ai-design-fashion-lookbook.webp",
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/thumb-slides-3-ai-design-fashion-lookbook.webp",
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/thumb-slides-4-ai-design-fashion-lookbook.webp",
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/thumb-slides-5-ai-design-fashion-lookbook.webp",
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/thumb-slides-6-ai-design-fashion-lookbook.webp"
   ],
   "thumb_alt": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
   "img": [
-    "assets/media/ai-design-fashion-lookbook/img-sq-slides-1-ai-design-fashion-lookbook.webp",
-    "assets/media/ai-design-fashion-lookbook/img-sq-slides-2-ai-design-fashion-lookbook.webp",
-    "assets/media/ai-design-fashion-lookbook/img-sq-slides-3-ai-design-fashion-lookbook.webp"
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/img-sq-slides-1-ai-design-fashion-lookbook.webp",
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/img-sq-slides-2-ai-design-fashion-lookbook.webp",
+    "https://cdn.august.style/media/ai-design-fashion-lookbook/img-sq-slides-3-ai-design-fashion-lookbook.webp"
   ],
   "img_alt": "Shoppable fashion lookbook screenshots showing editorial photography with Google Lens visual search integration and product matching",
   "mobile_img": [],
@@ -61,10 +61,10 @@
   "challenge": "Fashion lookbooks create desire but traditional formats produce friction between inspiration and purchase. Users see outfits they love but must manually search for similar items across multiple retailers. Google Lens API offered an opportunity to bridge this gap through computer vision, automatically matching fashion photography to shoppable products. The challenge was integrating this technology into a magazine-style editorial layout without disrupting the visual experience.",
   "approach": "Developed a custom HTML/CSS/JS fashion lookbook that integrates Google Lens API for visual search functionality, enabling users to identify and purchase items directly from editorial photography. The magazine-style layout uses progressive disclosure patterns so users can enjoy the editorial experience first, then reveal shoppable product matches through intuitive interactions. Built a multi-section architecture handling navigation between different archetypal character journeys and art historical movements while maintaining conversion-focused pathways to product pages.",
   "result": "The Google Lens integration reduces friction in the inspiration-to-purchase journey by automatically matching outfits to products, eliminating manual search steps. The progressive disclosure UX maintains the magazine experience while providing clear pathways to conversion. The project demonstrates capability in advanced API integration, fashion e-commerce conversion psychology, and consumer-facing interface design that balances editorial storytelling with commerce functionality.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Web Developer",
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

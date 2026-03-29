@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-zri-192",
   "slug": "constructi-landscapes",
   "title": "Constructivism Landscapes",
   "subtitle": "Abstract mountains and water scenes with geometric structure and vibrant color.",
   "seo_title": "Constructivism Landscapes: Generative Abstract Mountains and Color Fields",
   "seo_description": "A generative landscape study blending constructivist geometry with flowing forms and vibrant gradients across mountain and water compositions.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/constructi-landscapes/thumb-constructi-landscapes-1.webp",
-    "assets/media/constructi-landscapes/thumb-constructi-landscapes-2.webp",
-    "assets/media/constructi-landscapes/thumb-constructi-landscapes-3.webp",
-    "assets/media/constructi-landscapes/thumb-constructi-landscapes-4.webp",
-    "assets/media/constructi-landscapes/thumb-constructi-landscapes-5.webp",
-    "assets/media/constructi-landscapes/thumb-constructi-landscapes-6.webp"
+    "https://cdn.august.style/media/constructi-landscapes/thumb-constructi-landscapes-1.webp",
+    "https://cdn.august.style/media/constructi-landscapes/thumb-constructi-landscapes-2.webp",
+    "https://cdn.august.style/media/constructi-landscapes/thumb-constructi-landscapes-3.webp",
+    "https://cdn.august.style/media/constructi-landscapes/thumb-constructi-landscapes-4.webp",
+    "https://cdn.august.style/media/constructi-landscapes/thumb-constructi-landscapes-5.webp",
+    "https://cdn.august.style/media/constructi-landscapes/thumb-constructi-landscapes-6.webp"
   ],
   "thumb_alt": "Stylized mountain and water scenes with geometric structure, sweeping curves, and warm to cool color transitions.",
   "img": [
-    "assets/media/constructi-landscapes/img-sq-constructi-landscapes-1.webp",
-    "assets/media/constructi-landscapes/img-sq-constructi-landscapes-2.webp",
-    "assets/media/constructi-landscapes/img-sq-constructi-landscapes-3.webp"
+    "https://cdn.august.style/media/constructi-landscapes/img-sq-constructi-landscapes-1.webp",
+    "https://cdn.august.style/media/constructi-landscapes/img-sq-constructi-landscapes-2.webp",
+    "https://cdn.august.style/media/constructi-landscapes/img-sq-constructi-landscapes-3.webp"
   ],
   "img_alt": "Constructivist abstract landscapes with geometric mountain forms, flowing water elements, and vibrant warm-to-cool gradient color fields",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Applying constructivist geometric frameworks to natural landscape subjects, finding the balance between structural rigor and the organic flow of mountains, water, and sky. The series needed to feel both architecturally precise and naturally evocative across varied terrain compositions.",
   "approach": "Used Adobe Firefly to establish compositional axes and gradient fields across mountain and water scenes. Lightroom handled color pacing and warm-to-cool transitions, while in-painting refined edge control, value steps, and spatial rhythm within each landscape panel.",
   "result": "Produced a six-piece landscape series that merges constructivist discipline with natural terrain beauty. The cohesive panels read clearly at tile scale and hold layered depth for large-format art prints and digital portfolio display.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

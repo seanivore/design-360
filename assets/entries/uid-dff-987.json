@@ -39,18 +39,18 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-2.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-3.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-4.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-5.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-6.webp"
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-1.webp",
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-2.webp",
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-3.webp",
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-4.webp",
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-5.webp",
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/thumb-slides-automated-e-commerce-shop-lookbook-6.webp"
   ],
   "thumb_alt": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",
   "img": [
-    "assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-1.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-2.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-3.webp"
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-1.webp",
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-2.webp",
+    "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-3.webp"
   ],
   "img_alt": "Automated e-commerce storefront screenshots showing product catalog, fashion lookbook, and custom navigation",
   "mobile_img": [
@@ -78,9 +78,9 @@
   "approach": "Architected a fully automated Webflow e-commerce system with custom backend integration. Connected Make.com automation workflows to Notion databases containing product information, fashion imagery, and editorial content, which automatically populate Webflow CMS collections and sync inventory across all storefronts. Designed custom navigation that handles the site's complexity, allowing users to flow between shopping, lookbook, and editorial sections without losing context. When the site was later deployed to GitHub Pages, developed Python utility scripts to correct image paths, navigation links, nested directory handling, and lookbook navigation issues.",
   "result": "The automation eliminated manual data entry for 800+ products and reduced inventory update time from hours to minutes. The Make.com integration enabled real-time synchronization between Notion databases, Webflow CMS, and checkout systems. The custom navigation architecture proved robust enough for the multi-section site while remaining intuitive. The Python migration scripts demonstrated full-stack problem-solving beyond Webflow design, addressing real technical challenges in deeply nested directory structures.",
   "role_headline": "Automation engineer scaling 800-product storefronts",
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "Full-stack automation, Webflow CMS, Make.com workflows, Notion database management, Python scripting, and e-commerce architecture.",
   "process": [
     {

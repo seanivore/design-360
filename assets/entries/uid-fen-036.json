@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-fen-036",
   "slug": "gradient-bauhaus",
   "title": "Gradient Depths",
   "subtitle": "Layered color transitions and controlled value for clean panels.",
   "seo_title": "Gradient Depths: Generative Layered Color and Controlled Value",
   "seo_description": "A minimal abstract collection exploring gradient depth via layered color transitions, soft edges, and disciplined value pacing for clean modern panels.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
-    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
-    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
-    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
-    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
-    "assets/media/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
+    "https://cdn.august.style/media/gradient-bauhaus/thumb-gradient-bauhaus-1.webp",
+    "https://cdn.august.style/media/gradient-bauhaus/thumb-gradient-bauhaus-2.webp",
+    "https://cdn.august.style/media/gradient-bauhaus/thumb-gradient-bauhaus-3.webp",
+    "https://cdn.august.style/media/gradient-bauhaus/thumb-gradient-bauhaus-4.webp",
+    "https://cdn.august.style/media/gradient-bauhaus/thumb-gradient-bauhaus-5.webp",
+    "https://cdn.august.style/media/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
   ],
   "thumb_alt": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
   "img": [
-    "assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp",
-    "assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-2.webp",
-    "assets/media/gradient-bauhaus/img-sq-gradient-bauhaus-3.webp"
+    "https://cdn.august.style/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp",
+    "https://cdn.august.style/media/gradient-bauhaus/img-sq-gradient-bauhaus-2.webp",
+    "https://cdn.august.style/media/gradient-bauhaus/img-sq-gradient-bauhaus-3.webp"
   ],
   "img_alt": "Bauhaus-influenced gradient abstractions with smooth layered color transitions, geometric forms emerging from soft depth, and controlled value pacing",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Using gradients as the primary compositional tool to suggest depth, atmosphere, and spatial structure without relying on hard edges or defined shapes. The brief called for compositions where color transitions alone create a sense of three-dimensional space and quiet visual movement.",
   "approach": "Used Adobe Firefly to define base gradient fields and compositional axes, then refined edge softness, micro-contrast, and hue relationships in Lightroom. The finishing process prioritized smooth tonal transitions and eliminated any artifacts that disrupted the gradient flow.",
   "result": "Produced a six-piece gradient abstraction series with calm, modern panels that read clearly at tile scale and reveal subtle depth at full resolution. The collection demonstrates controlled color mastery suitable for contemporary art prints and portfolio presentation.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

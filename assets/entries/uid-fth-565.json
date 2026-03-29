@@ -40,18 +40,18 @@
   ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp",
-    "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-2.webp",
-    "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-3.webp",
-    "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-4.webp",
-    "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-5.webp",
-    "assets/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-6.webp"
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-1.webp",
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-2.webp",
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-3.webp",
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-4.webp",
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-5.webp",
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/thumb-slide-animated-cms-weekly-blog-6.webp"
   ],
   "thumb_alt": "Webflow CMS blog platform publishing 200+ weekly AI-generated posts featuring custom hand-drawn Lottie animations created with iPad Pro, with line animations directing user navigation through automated content",
   "img": [
-    "assets/media/animated-cms-weekly-blogs/img-sq-slide-animated-cms-weekly-blog-1.webp",
-    "assets/media/animated-cms-weekly-blogs/img-sq-slide-animated-cms-weekly-blog-2.webp",
-    "assets/media/animated-cms-weekly-blogs/img-sq-slide-animated-cms-weekly-blog-3.webp"
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/img-sq-slide-animated-cms-weekly-blog-1.webp",
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/img-sq-slide-animated-cms-weekly-blog-2.webp",
+    "https://cdn.august.style/media/animated-cms-weekly-blogs/img-sq-slide-animated-cms-weekly-blog-3.webp"
   ],
   "img_alt": "Animated CMS blog screenshots showing hand-drawn Lottie illustrations, blog post layouts, and automated content sections",
   "mobile_img": [
@@ -74,10 +74,10 @@
   "challenge": "Publishing 200+ AI-generated blogs weekly requires automation, but automation often produces sterile, template-feeling sites. The opportunity was creating a unique visual identity through custom hand-drawn animations that would make high-volume automated content feel crafted and personal. The design needed enough varied artwork to keep the massive blog platform visually interesting while maintaining cohesive design language.",
   "approach": "Illustrated extensive custom artwork using iPad Pro and Apple Pencil, then converted hand-drawn backgrounds and illustrations to Lottie animations via After Effects and Adobe Illustrator. The animations serve dual purposes: adding visual interest and guiding user navigation through custom line animations that direct attention to different blog sections. Built the Webflow CMS architecture to support 200+ weekly AI-generated posts that publish automatically via Make.com automation. When migrating to GitHub Pages, developed Python utility scripts to handle conditional content visibility, external link conversion, image path corrections, and collection page generation.",
   "result": "The automated publishing system handles 200+ weekly posts while maintaining visual cohesion through a custom hand-drawn animation library. The Lottie approach keeps file sizes minimal despite the volume of animated elements. The hand-drawn illustrations transform what could feel like a content mill into a distinctive branded experience. The GitHub Pages migration scripts demonstrate full-stack problem-solving across content visibility, path management, and collection generation.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Web Developer",
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

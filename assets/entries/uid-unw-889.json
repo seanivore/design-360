@@ -1,28 +1,47 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-unw-889",
   "slug": "training-yoga-sales",
   "title": "Wellness Training Platform with Custom Brand Identity",
   "subtitle": "Hand-drawn illustrations expressing client personality",
   "seo_title": "Client Branded Webflow Online Training Platform",
   "seo_description": "Carefully hand-drawn background, logo, and other details pull together the branding of this client's Webflow site",
-  "role": ["Brand Designer", "Growth Strategist"],
-  "skill": ["A/B Testing", "CMS Management", "Adobe Creative Cloud", "HTML/CSS/JS", "Illustration", "Landing Page Design", "No-Code", "Responsive Design", "Webflow"],
-  "product": ["Landing Page", "Brand Identity"],
+  "role": [
+    "Brand Designer",
+    "Growth Strategist"
+  ],
+  "skill": [
+    "A/B Testing",
+    "CMS Management",
+    "Adobe Creative Cloud",
+    "HTML/CSS/JS",
+    "Illustration",
+    "Landing Page Design",
+    "No-Code",
+    "Responsive Design",
+    "Webflow"
+  ],
+  "product": [
+    "Landing Page",
+    "Brand Identity"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-1.webp",
-    "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-2.webp",
-    "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-3.webp",
-    "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-4.webp",
-    "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-5.webp",
-    "assets/media/training-yoga-sales/thumb-slides-training-yoga-sales-6.webp"
+    "https://cdn.august.style/media/training-yoga-sales/thumb-slides-training-yoga-sales-1.webp",
+    "https://cdn.august.style/media/training-yoga-sales/thumb-slides-training-yoga-sales-2.webp",
+    "https://cdn.august.style/media/training-yoga-sales/thumb-slides-training-yoga-sales-3.webp",
+    "https://cdn.august.style/media/training-yoga-sales/thumb-slides-training-yoga-sales-4.webp",
+    "https://cdn.august.style/media/training-yoga-sales/thumb-slides-training-yoga-sales-5.webp",
+    "https://cdn.august.style/media/training-yoga-sales/thumb-slides-training-yoga-sales-6.webp"
   ],
   "thumb_alt": "Custom-designed Webflow wellness training platform featuring hand-drawn brand identity elements including logo, background illustrations, and decorative details reflecting client's teaching philosophy.",
   "img": [
-    "assets/media/training-yoga-sales/img-sq-slides-training-yoga-sales-1.webp",
-    "assets/media/training-yoga-sales/img-sq-slides-training-yoga-sales-2.webp",
-    "assets/media/training-yoga-sales/img-sq-slides-training-yoga-sales-3.webp"
+    "https://cdn.august.style/media/training-yoga-sales/img-sq-slides-training-yoga-sales-1.webp",
+    "https://cdn.august.style/media/training-yoga-sales/img-sq-slides-training-yoga-sales-2.webp",
+    "https://cdn.august.style/media/training-yoga-sales/img-sq-slides-training-yoga-sales-3.webp"
   ],
   "img_alt": "Custom-designed Webflow wellness training platform with hand-drawn brand identity and illustration elements.",
   "mobile_img": [
@@ -46,10 +65,10 @@
   "challenge": "Wellness professionals need websites that genuinely reflect their personal approach and build trust with potential clients. Generic templates fall short in an industry where personality and authenticity drive client relationships. This project required developing a complete visual identity from scratch, including logo, brand elements, and background artwork, all grounded in the client's unique teaching philosophy and personal energy.",
   "approach": "Collaborated closely with the client to understand their teaching methodology, values, and vision for their online presence. Hand-drew all brand elements using iPad Pro and Apple Pencil, including custom logo, background illustrations, and decorative details, to create a cohesive visual identity expressing the client's personality and wellness philosophy. Built the Webflow platform to showcase training programs while enabling independent content management. The deliberate choice to hand-draw every element maintained the authentic human touch essential to wellness industry credibility.",
   "result": "Delivered a distinctive visual brand identity that differentiates the client in a crowded wellness market. The hand-drawn elements create warmth and personality impossible to achieve with stock imagery or AI-generated graphics. The Webflow platform empowers the client to maintain their site independently while preserving the custom design integrity. The project demonstrates end-to-end brand development alongside website design, a core capability for freelance and agency engagements.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Brand Designer",
+  "hero_btn_cta": "See Brand Work",
+  "final_cta_text": "Need brand design?",
+  "final_btn_cta": "View Brand Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

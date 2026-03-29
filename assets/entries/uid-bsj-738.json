@@ -1,28 +1,44 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-bsj-738",
   "slug": "baroque-de-heem-still-life",
   "title": "Baroque Fruit Still Life (De Heem Study)",
   "subtitle": "Generative painting study with baroque composition, chiaroscuro, and rich color.",
   "seo_title": "Baroque Fruit Still Life in the Style of Jan Davidsz de Heem | Generative Digital Art",
   "seo_description": "A generative art study channeling baroque still life aesthetics—luminous fruit, rich chiaroscuro, and balanced composition—produced with modern AI image workflows and finishing polish.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud", "Photography"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud",
+    "Photography"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-1.webp",
-    "assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-2.webp",
-    "assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-3.webp",
-    "assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-4.webp",
-    "assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-5.webp",
-    "assets/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-6.webp"
+    "https://cdn.august.style/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-1.webp",
+    "https://cdn.august.style/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-2.webp",
+    "https://cdn.august.style/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-3.webp",
+    "https://cdn.august.style/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-4.webp",
+    "https://cdn.august.style/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-5.webp",
+    "https://cdn.august.style/media/baroque-de-heem-still-life/thumb-baroque-de-heem-still-life-6.webp"
   ],
   "thumb_alt": "Rotating still life images evoking baroque painting: deep chiaroscuro, abundance of fruit and foliage, and balanced tabletop arrangements.",
   "img": [
-    "assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp",
-    "assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-2.webp",
-    "assets/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-3.webp"
+    "https://cdn.august.style/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-1.webp",
+    "https://cdn.august.style/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-2.webp",
+    "https://cdn.august.style/media/baroque-de-heem-still-life/img-sq-baroque-de-heem-still-life-3.webp"
   ],
   "img_alt": "Baroque fruit still life compositions inspired by Jan Davidsz de Heem with luminous fruit, rich chiaroscuro, draped foliage, and elegant tabletop arrangements",
   "mobile_img": [],
@@ -41,10 +57,10 @@
   "challenge": "Exploring the intersection of Baroque still life painting and contemporary AI-generated imagery. The challenge was to create compositions that honor the technical mastery and abundant detail of Jan Davidsz de Heem's fruit arrangements while leveraging modern generative tools to produce new interpretations with authentic chiaroscuro and color harmony.",
   "approach": "Used Adobe Firefly to generate base compositions inspired by De Heem's signature fruit-and-foliage arrangements. Each piece was refined through selective in-painting for highlight control, edge definition, and subtle texture, then graded in Lightroom for historically faithful color presence and dramatic lighting.",
   "result": "Produced a six-piece collection of high-resolution baroque still life prints that read as classically grounded at thumbnail scale and hold museum-grade detail at full resolution. The series demonstrates mastery of AI art direction while maintaining deep art historical knowledge.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

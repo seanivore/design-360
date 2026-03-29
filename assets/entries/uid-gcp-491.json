@@ -1,28 +1,57 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-gcp-491",
   "slug": "fashion-ai-video",
   "title": "Curated Avant Garde Fashion Lookbook",
   "subtitle": "Editorial fashion stills animated into motion with surreal desert vibes.",
   "seo_title": "Surrealism Avant Garde Fashion Lookbook: Editorial Stills Transformed Into Motion",
   "seo_description": "A generative fashion lookbook that turns editorial stills into moving images with surreal desert palettes, parallax, and cinematic camera moves for platform ready clips.",
-  "role": ["Brand Designer", "Content Strategist", "Social Media Manager", "Video Editor"],
-  "skill": ["Adobe Firefly", "After Effects", "Art Direction", "CapCut", "Content Production", "DaVinci Resolve", "Editorial Design", "Generative AI", "Illustration", "Lightroom", "Lookbook Design", "Motion Graphics", "Photography", "Photoshop", "Publishing", "Scaling Systems", "Video Production"],
-  "product": ["Video", "Lookbook"],
+  "role": [
+    "Brand Designer",
+    "Content Strategist",
+    "Social Media Manager",
+    "Video Editor"
+  ],
+  "skill": [
+    "Adobe Firefly",
+    "After Effects",
+    "Art Direction",
+    "CapCut",
+    "Content Production",
+    "DaVinci Resolve",
+    "Editorial Design",
+    "Generative AI",
+    "Illustration",
+    "Lightroom",
+    "Lookbook Design",
+    "Motion Graphics",
+    "Photography",
+    "Photoshop",
+    "Publishing",
+    "Scaling Systems",
+    "Video Production"
+  ],
+  "product": [
+    "Video",
+    "Lookbook"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/fashion-ai-video/thumb-fashion-ai-video-1.webp",
-    "assets/media/fashion-ai-video/thumb-fashion-ai-video-2.webp",
-    "assets/media/fashion-ai-video/thumb-fashion-ai-video-3.webp",
-    "assets/media/fashion-ai-video/thumb-fashion-ai-video-4.webp",
-    "assets/media/fashion-ai-video/thumb-fashion-ai-video-5.webp",
-    "assets/media/fashion-ai-video/thumb-fashion-ai-video-6.webp"
+    "https://cdn.august.style/media/fashion-ai-video/thumb-fashion-ai-video-1.webp",
+    "https://cdn.august.style/media/fashion-ai-video/thumb-fashion-ai-video-2.webp",
+    "https://cdn.august.style/media/fashion-ai-video/thumb-fashion-ai-video-3.webp",
+    "https://cdn.august.style/media/fashion-ai-video/thumb-fashion-ai-video-4.webp",
+    "https://cdn.august.style/media/fashion-ai-video/thumb-fashion-ai-video-5.webp",
+    "https://cdn.august.style/media/fashion-ai-video/thumb-fashion-ai-video-6.webp"
   ],
   "thumb_alt": "Editorial fashion stills with surreal desert vibes, animated into motion with parallax, camera moves, and subtle effects.",
   "img": [
-    "assets/media/fashion-ai-video/img-sq-fashion-ai-video-1.webp",
-    "assets/media/fashion-ai-video/img-sq-fashion-ai-video-2.webp",
-    "assets/media/fashion-ai-video/img-sq-fashion-ai-video-3.webp"
+    "https://cdn.august.style/media/fashion-ai-video/img-sq-fashion-ai-video-1.webp",
+    "https://cdn.august.style/media/fashion-ai-video/img-sq-fashion-ai-video-2.webp",
+    "https://cdn.august.style/media/fashion-ai-video/img-sq-fashion-ai-video-3.webp"
   ],
   "img_alt": "Avant garde fashion editorial stills featuring surreal desert palettes and bold styling transformed into cinematic motion sequences.",
   "mobile_img": [],
@@ -41,10 +70,10 @@
   "challenge": "Fashion editorial content traditionally relies on static photography, but social platforms and digital campaigns increasingly demand motion. The challenge was transforming curated editorial stills into compelling moving sequences that preserve the styling, composition, and surreal atmosphere of the original imagery while adding cinematic depth through animation.",
   "approach": "Selected hero stills were animated into motion using parallax, camera moves, and subtle effect passes. Each clip was crafted to maintain the editorial integrity of the original compositions while introducing cinematic rhythm and pacing. The sequences were then cut to platform-native formats optimized for social media and campaign launch contexts.",
   "result": "Produced a cohesive set of scroll-stopping clips and lookbook sequences suitable for social media, launch campaigns, and digital fashion editorial. The motion work demonstrates how generative and post-production techniques can extend the lifespan and reach of fashion photography, creating versatile content assets from a single editorial shoot.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Video Editor",
+  "hero_btn_cta": "See Video Work",
+  "final_cta_text": "Looking for video production?",
+  "final_btn_cta": "View Video Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

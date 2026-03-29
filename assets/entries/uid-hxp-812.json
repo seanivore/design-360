@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-hxp-812",
   "slug": "bau-noir-haus",
   "title": "Bau Noir Haus",
   "subtitle": "Monochrome Bauhaus geometry with disciplined balance and contrast.",
   "seo_title": "Bau Noir Haus: Monochrome Bauhaus Geometry in Generative Abstraction",
   "seo_description": "A monochrome generative collection exploring Bauhaus inspired geometry, stark contrast, and disciplined balance for modern graphic panels.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/bau-noir-haus/thumb-bau-noir-haus-1.webp",
-    "assets/media/bau-noir-haus/thumb-bau-noir-haus-2.webp",
-    "assets/media/bau-noir-haus/thumb-bau-noir-haus-3.webp",
-    "assets/media/bau-noir-haus/thumb-bau-noir-haus-4.webp",
-    "assets/media/bau-noir-haus/thumb-bau-noir-haus-5.webp",
-    "assets/media/bau-noir-haus/thumb-bau-noir-haus-6.webp"
+    "https://cdn.august.style/media/bau-noir-haus/thumb-bau-noir-haus-1.webp",
+    "https://cdn.august.style/media/bau-noir-haus/thumb-bau-noir-haus-2.webp",
+    "https://cdn.august.style/media/bau-noir-haus/thumb-bau-noir-haus-3.webp",
+    "https://cdn.august.style/media/bau-noir-haus/thumb-bau-noir-haus-4.webp",
+    "https://cdn.august.style/media/bau-noir-haus/thumb-bau-noir-haus-5.webp",
+    "https://cdn.august.style/media/bau-noir-haus/thumb-bau-noir-haus-6.webp"
   ],
   "thumb_alt": "Black and white geometric abstractions with Bauhaus inspired forms and strong contrast.",
   "img": [
-    "assets/media/bau-noir-haus/img-sq-bau-noir-haus-1.webp",
-    "assets/media/bau-noir-haus/img-sq-bau-noir-haus-2.webp",
-    "assets/media/bau-noir-haus/img-sq-bau-noir-haus-3.webp"
+    "https://cdn.august.style/media/bau-noir-haus/img-sq-bau-noir-haus-1.webp",
+    "https://cdn.august.style/media/bau-noir-haus/img-sq-bau-noir-haus-2.webp",
+    "https://cdn.august.style/media/bau-noir-haus/img-sq-bau-noir-haus-3.webp"
   ],
   "img_alt": "Monochrome Bauhaus geometric abstractions with stark black and white contrast, precise forms, and balanced compositional grids",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Stripping Bauhaus-inspired geometry down to its purest expression through a monochrome palette. The challenge was to create compositions where shape, contrast, and spatial balance carry the entire visual weight without relying on color, demanding precision in every edge and proportion.",
   "approach": "Used Adobe Firefly to generate core geometric forms and compositional layouts, then refined each piece for edge quality, contrast discipline, and spatial balance. The monochrome constraint required particular attention to tonal range and form clarity throughout the finishing process.",
   "result": "Delivered a six-piece monochrome Bauhaus collection with crisp, high-contrast panels that perform equally well at small tile scale and large print format. The series demonstrates disciplined restraint and clean geometric thinking suited for gallery walls and design portfolios.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,

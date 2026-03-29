@@ -1,27 +1,47 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-wnw-867",
   "slug": "minimalist-web-store-product",
   "title": "Timeless E-Commerce Gallery for Art Prints",
   "subtitle": "Clean product showcase emphasizing photography and details",
   "seo_title": "Minimalist Web Store Product Gallery & Pages",
   "seo_description": "Classic, simple website design, developed to showcase a web store's collection of products",
-  "role": ["AI & Automation Strategist", "Web Developer"],
-  "skill": ["Art Direction", "Automation", "E-Commerce", "Git", "GitHub Pages", "HTML/CSS/JS", "Jekyll", "Product Staging", "Responsive Design", "Typography"],
-  "product": ["E-Commerce Store", "Website"],
+  "role": [
+    "AI & Automation Strategist",
+    "Web Developer"
+  ],
+  "skill": [
+    "Art Direction",
+    "Automation",
+    "E-Commerce",
+    "Git",
+    "GitHub Pages",
+    "HTML/CSS/JS",
+    "Jekyll",
+    "Product Staging",
+    "Responsive Design",
+    "Typography"
+  ],
+  "product": [
+    "E-Commerce Store",
+    "Website"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp",
-    "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-2.webp",
-    "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-3.webp",
-    "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-4.webp",
-    "assets/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-5.webp"
+    "https://cdn.august.style/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-1.webp",
+    "https://cdn.august.style/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-2.webp",
+    "https://cdn.august.style/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-3.webp",
+    "https://cdn.august.style/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-4.webp",
+    "https://cdn.august.style/media/minimalist-web-store-product/thumb-slides-minimalist-web-store-product-5.webp"
   ],
   "thumb_alt": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
   "img": [
-    "assets/media/minimalist-web-store-product/img-sq-slides-minimalist-web-store-product-1.webp",
-    "assets/media/minimalist-web-store-product/img-sq-slides-minimalist-web-store-product-2.webp",
-    "assets/media/minimalist-web-store-product/img-sq-slides-minimalist-web-store-product-3.webp"
+    "https://cdn.august.style/media/minimalist-web-store-product/img-sq-slides-minimalist-web-store-product-1.webp",
+    "https://cdn.august.style/media/minimalist-web-store-product/img-sq-slides-minimalist-web-store-product-2.webp",
+    "https://cdn.august.style/media/minimalist-web-store-product/img-sq-slides-minimalist-web-store-product-3.webp"
   ],
   "img_alt": "Minimalist e-commerce gallery with clean white space, restrained typography, and product photography taking center stage.",
   "mobile_img": [],
@@ -41,10 +61,10 @@
   "challenge": "Art print e-commerce demands design restraint since the products themselves are visual art and the website interface must support rather than compete with the imagery. With over 500 products in the catalog, the challenge was building a gallery system that makes browsing intuitive while maintaining a clean aesthetic. Product photography needed to show prints in context without cluttering pages, and the information architecture had to balance comprehensive details with visual simplicity.",
   "approach": "Built a minimalist e-commerce gallery that prioritizes product photography through generous white space and restrained typography. Developed a clean navigation system that handles the large catalog without overwhelming users, with category filtering that feels effortless rather than complex. Product pages use a simple two-column layout with large imagery on one side and essential details with purchase options on the other. Staging photography shows prints in realistic home settings to help customers visualize scale and context without dominating the product itself.",
   "result": "Delivered an e-commerce experience that lets art prints remain the focus while providing all functionality needed for confident purchasing decisions. The clean interface keeps users engaged through large catalog browsing without the fatigue that cluttered galleries create. The minimalist approach demonstrates design maturity, knowing when restraint serves the project better. The timeless aesthetic ensures the site will not feel dated, which is essential for art commerce where trust and perceived quality directly impact conversion.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Web Developer",
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
   "skill_summary": "",
   "process": null,
   "metric": null,

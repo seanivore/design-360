@@ -1,28 +1,43 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-iir-099",
   "slug": "surreal-constructivism",
   "title": "Sublime Convergence",
   "subtitle": "Constructivist surreal landscapes with waves, mountains, and technicolor skies.",
   "seo_title": "Constructivism Surrealism: Sublime Convergence of Mountains, Waves, and Technicolor Skies",
   "seo_description": "A generative series blending constructivist structure with surreal motion: curling mountains, crashing waves, and technicolor cloud fields illuminated by radiant light.",
-  "role": ["Graphic Designer", "Creative Director"],
-  "skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-  "product": ["Digital Art Collection", "Art Print"],
+  "role": [
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Generative AI",
+    "Art Direction",
+    "Illustration",
+    "Print Design",
+    "Adobe Creative Cloud"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
   "thumb": [
-    "assets/media/surreal-constructivism/thumb-surreal-constructivism-1.webp",
-    "assets/media/surreal-constructivism/thumb-surreal-constructivism-2.webp",
-    "assets/media/surreal-constructivism/thumb-surreal-constructivism-3.webp",
-    "assets/media/surreal-constructivism/thumb-surreal-constructivism-4.webp",
-    "assets/media/surreal-constructivism/thumb-surreal-constructivism-5.webp",
-    "assets/media/surreal-constructivism/thumb-surreal-constructivism-6.webp"
+    "https://cdn.august.style/media/surreal-constructivism/thumb-surreal-constructivism-1.webp",
+    "https://cdn.august.style/media/surreal-constructivism/thumb-surreal-constructivism-2.webp",
+    "https://cdn.august.style/media/surreal-constructivism/thumb-surreal-constructivism-3.webp",
+    "https://cdn.august.style/media/surreal-constructivism/thumb-surreal-constructivism-4.webp",
+    "https://cdn.august.style/media/surreal-constructivism/thumb-surreal-constructivism-5.webp",
+    "https://cdn.august.style/media/surreal-constructivism/thumb-surreal-constructivism-6.webp"
   ],
   "thumb_alt": "Swirling clouds, rolling mountains, reflective lakes, and crashing waves in vivid color.",
   "img": [
-    "assets/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp",
-    "assets/media/surreal-constructivism/img-sq-surreal-constructivism-2.webp",
-    "assets/media/surreal-constructivism/img-sq-surreal-constructivism-3.webp"
+    "https://cdn.august.style/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp",
+    "https://cdn.august.style/media/surreal-constructivism/img-sq-surreal-constructivism-2.webp",
+    "https://cdn.august.style/media/surreal-constructivism/img-sq-surreal-constructivism-3.webp"
   ],
   "img_alt": "Surreal constructivist landscapes where mountains curl into waves beneath technicolor skies with radiant light and bold geometric forms",
   "mobile_img": [],
@@ -41,10 +56,10 @@
   "challenge": "Merging the rigid geometric vocabulary of constructivism with the fluid, dreamlike quality of surrealist landscapes. The creative brief called for compositions where mountains dissolve into ocean waves and technicolor cloud formations fill radiant skies, all held together by disciplined structural axes.",
   "approach": "Used Adobe Firefly to generate sweeping landscape compositions anchored by constructivist grid lines and gradient rhythms. Lightroom handled color grading to achieve cinematic warmth, while in-painting refined cloud-wave transitions, edge control, and value pacing for cohesive flow across each panel.",
   "result": "Delivered a vivid six-piece series of surreal landscape panels that read instantly at thumbnail scale and sustain layered depth at full resolution. The collection is ready for large-format art prints, gallery exhibition, and digital portfolio presentation.",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
+  "role_headline": "Creative Director",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Interested in creative direction?",
+  "final_btn_cta": "View Creative Portfolio",
   "skill_summary": "",
   "process": null,
   "metric": null,
