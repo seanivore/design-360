@@ -1,6 +1,8 @@
 # Standard Operating Procedure: Creating Project Entry JSON Files
+*Created for agentic entry creation*
 
-Schema version: 5.0
+**Updated**: 2026-03-29
+**JSON Schema**: v5.0
 
 ---
 
@@ -140,8 +142,8 @@ Each entry needs two types of images stored in a directory named after the slug.
 ### File Naming Convention
 
 ```
-assets/media/{slug}/thumb-slides-{slug}-1.webp   (thumbnail slides, 4-6 per entry)
-assets/media/{slug}/img-sq-{slug}-1.webp          (square images, 3 per entry)
+assets/media/{slug}/thumb-slides-{slug}-1.webp    (thumbnail slides, 4-6 per entry)
+assets/media/{slug}/img-sq-{slug}-1.webp          (square images, exactly 3 per entry)
 ```
 
 **Thumbnails**: Landscape orientation, consistent aspect ratio, used in tile galleries.
@@ -206,7 +208,7 @@ curl -o "assets/media/{slug}/img-sq-slides-{slug}-1.webp" \
   "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1080,h_1080,q_auto,f_webp/v1/{public_id}"
 ```
 
-**Step 4 — Clean up Cloudinary library** after downloading (optional, keeps storage tidy).
+**Step 4 — Clean up Cloudinary library** after downloading (not optional, need to keep storage empty to stay on free plan).
 
 Full API reference: `assets/docs/entries-prep/CLOUDINARY_IMAGE_API.md`
 
@@ -309,7 +311,7 @@ After creating or updating an entry, run both scripts from the project root:
 **Step 1: Validate the entry.**
 
 ```
-python assets/scripts/validate_v5.py
+python3 assets/scripts/validate_v5.py
 ```
 
 This checks all entries in `assets/entries/` against the v5.0 schema: required fields, tag registry membership, locked company values, image paths on disk, and structural integrity of optional fields. Fix any reported errors before proceeding.
@@ -317,7 +319,7 @@ This checks all entries in `assets/entries/` against the v5.0 schema: required f
 **Step 2: Regenerate the manifest.**
 
 ```
-python generate_manifest.py
+python3 generate_manifest.py
 ```
 
 This scans `assets/entries/` and rebuilds `assets/js/manifest.json`, which maps slugs to file paths for the frontend. The manifest must be regenerated any time an entry is added, removed, or has its slug changed.
@@ -326,16 +328,16 @@ This scans `assets/entries/` and rebuilds `assets/js/manifest.json`, which maps 
 
 ## Quick Reference: Full Workflow
 
-1. Run `python assets/scripts/new_project.py` (or copy template).
-2. Open `assets/docs/tags.json` and confirm all tags you plan to use exist.
-3. Fill in all required fields per the checklist above.
-4. Prepare source images (screenshots, Behance exports, etc.).
-5. Process through Cloudinary (crop, resize, .webp conversion).
-6. Save to `assets/media/{slug}/` and optionally upload to R2 CDN.
-7. Update `thumb` and `img` paths in the JSON entry.
-8. Move the completed JSON file to `assets/entries/`.
-9. Run `python assets/scripts/validate_v5.py` -- fix any errors.
-10. Run `python generate_manifest.py` -- confirm the new slug appears.
-11. If needed, review `assets/js/homepage-content.json` to ensure tag filters will surface the entry in the right sections.
+  1. Run `python3 assets/scripts/new_project.py` (or copy template).
+  2. Open `assets/docs/tags.json` and confirm all tags you plan to use exist.
+  3. Fill in all required fields per the checklist above.
+  4. Prepare source images (screenshots, Behance exports, etc.).
+  5. Process through Cloudinary (crop, resize, .webp conversion).
+  6. Save to `assets/media/{slug}/` and optionally upload to R2 CDN.
+  7. Update `thumb` and `img` paths in the JSON entry.
+  8. Move the completed JSON file to `assets/entries/`.
+  9. Run `python3 assets/scripts/validate_v5.py` -- fix any errors.
+  10. Run `python3 generate_manifest.py` -- confirm the new slug appears.
+  11. If needed, review `assets/js/homepage-content.json` to ensure tag filters will surface the entry in the right sections.
 
 **Backlog**: See `assets/docs/entries-prep/ENTRY_BACKLOG.md` for projects awaiting entry creation.

@@ -7,6 +7,12 @@
 *.webm
 *.gif
 
+# CDN Images 
+/assets/images/**
+/assets/images/
+/assets/.media/**
+/assets/.media/
+
 # Environment variables
 .env
 .env.local
