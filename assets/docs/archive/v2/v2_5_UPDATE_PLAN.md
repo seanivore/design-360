@@ -251,9 +251,9 @@ Each label is a display-friendly name; each filter uses real tags scoped to the 
 ## Verification
 
 ### After Phase 1
-   - [ ] All 36 entries have non-null `role_headline`, `hero_btn_cta`, `final_cta_text`, `final_btn_cta`
-   - [ ] All image URLs in JSON are CDN URLs (`https://cdn.august.style/media/...`)
-   - [ ] CDN URLs load correctly in browser
+   - [x] All 36 entries have non-null `role_headline`, `hero_btn_cta`, `final_cta_text`, `final_btn_cta`
+   - [x] All image URLs in JSON are CDN URLs (`https://cdn.august.style/media/...`)
+   - [x] CDN URLs load correctly in browser
    - [ ] `validate_v5.py` passes for all entries
    - [ ] Manifest regenerated
 
@@ -263,11 +263,11 @@ Each label is a display-friendly name; each filter uses real tags scoped to the 
    - [ ] Any SOP gaps found during test are fixed
 
 ### After Phase 3 (browser test at localhost:5500)
-   - [ ] Hero shows 5 random entries × 2 images, different on each refresh
-   - [ ] Hero flip clock headlines match the image entries
-   - [ ] Filter toggle updates URL between `mode=any` and `mode=all`
-   - [ ] "AI & Automation Strategist" tag links work (no broken `&`)
-   - [ ] Hero "Roles" stat → section page with all roles, mode=any, shows results
-   - [ ] Hero "Skills" stat → section page with all skills, mode=any, shows results
-   - [ ] "Clear" button shows when 1 tag is active
-   - [ ] Creative cards link to product tags (Digital Art Collection, Video, Brand Identity)
+   - [x] Hero shows 5 random entries × 2 images, different on each refresh
+   - [x] Hero flip clock headlines match the image entries
+   - [x] Filter toggle updates URL between `mode=any` and `mode=all`
+   - [x] "AI & Automation Strategist" tag links work (no broken `&`)
+   - [x] Hero "Roles" stat → section page with all roles, mode=any, shows results
+   - [x] Hero "Skills" stat → section page with all skills, mode=any, shows results
+   - [x] "Clear" button shows when 1 tag is active
+   - [x] Creative cards link to product tags (Digital Art Collection, Video, Brand Identity)

@@ -26,8 +26,8 @@ const EntryController = (() => {
             return storedPath.replace(/^\//, ''); // Remove leading slash
         }
 
-        // Fallback to current URL path
-        return window.location.pathname.replace(/^\//, '');
+        // Fallback to current URL path (strip leading/trailing slashes)
+        return window.location.pathname.replace(/^\/|\/$/g, '');
     }
 
     /**
@@ -84,6 +84,11 @@ const EntryController = (() => {
         const ogImageAlt = document.querySelector('meta[property="og:image:alt"]');
         if (ogImageAlt) {
             ogImageAlt.setAttribute('content', project.thumb_alt || project.title);
+        }
+
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) {
+            ogUrl.setAttribute('content', `https://august.style/${project.slug}`);
         }
     }
 

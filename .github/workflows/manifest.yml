@@ -46,7 +46,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add assets/js/manifest.json
-          git commit -m "🤖 Auto-generate manifest.json
+          git add */index.html
+          git commit -m "🤖 Auto-generate manifest.json + entry HTML files
 
           Co-Authored-By: GitHub Actions <action@github.com>"
 

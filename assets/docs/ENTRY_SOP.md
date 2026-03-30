@@ -49,10 +49,12 @@ Every entry needs:
 
 **From project pages**: Download screenshots or exports from the live project, Behance gallery, or other hosted location.
 
-**From screenshots**: Use browser dev tools to set viewport before capturing:
+**From screenshots**: Use browser dev tools or browser automation to set viewport before capturing:
 - Desktop: 1440x900
 - Mobile: 390x844
 - Capture meaningful states (loaded data, active interactions, key features)
+
+**Authenticated or gated apps**: If the project requires login (payment portals, admin dashboards, etc.), log in first or use demo/test credentials. Avoid capturing real PII — use test data or redact sensitive content. Note any access requirements in the entry's `notes` field.
 
 Save raw source images anywhere temporarily. They will be processed through Cloudinary in the next step.
 
@@ -62,12 +64,22 @@ Save raw source images anywhere temporarily. They will be processed through Clou
 
 Cloud name: `dzrtucxh7`
 
+### Authentication
+
+Cloudinary API calls require authentication. Credentials are in the project `.env` file as `CLOUDINARY_URL`:
+
+```
+CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@dzrtucxh7
+```
+
+Extract the API key and secret from this URL. All upload and destroy calls must use `-u "API_KEY:API_SECRET"` for HTTP basic auth.
+
 ### Step 1 — Upload source image
 
 ```bash
 curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/upload \
-  -F "file=@/path/to/source-image.png" \
-  -F "upload_preset=ml_default"
+  -u "API_KEY:API_SECRET" \
+  -F "file=@/path/to/source-image.png"
 ```
 
 The response JSON contains a `public_id` field. Use this in the next step.
@@ -101,8 +113,8 @@ After downloading all processed images, delete the source from Cloudinary. This 
 
 ```bash
 curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/destroy \
-  -F "public_id={public_id}" \
-  -F "upload_preset=ml_default"
+  -u "API_KEY:API_SECRET" \
+  -F "public_id={public_id}"
 ```
 
 Repeat steps 1-3 for every source image until all thumbnails and square images are ready.
@@ -224,9 +236,9 @@ The `company` field must be exactly one of:
 
 These default to `null`. Only populate when the project warrants it.
 
-**`process`** — Array of exactly 3 steps:
+**`process`** — Array of exactly 3 steps. `link_text` and `link_slug` are optional (use empty strings if no related entry exists):
 ```json
-{ "word": "...", "summary": "...", "link_text": "...", "link_slug": "..." }
+{ "word": "Research", "summary": "Analyzed competitor approaches...", "link_text": "See the analysis", "link_slug": "related-entry-slug" }
 ```
 
 **`metric`** — Single object:

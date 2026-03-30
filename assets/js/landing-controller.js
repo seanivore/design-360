@@ -100,20 +100,18 @@ const LandingController = (() => {
     // ── Primary CTA (from selectedHeroEntry) ──
     const primaryBtn = document.querySelector('.hero-cta .btn-primary');
     if (primaryBtn) {
-      const ctaText = (selectedHeroEntry && selectedHeroEntry.hero_btn_cta) || 'See Web Projects';
-      primaryBtn.textContent = ctaText;
-      const primaryHref = buildSectionURL(config.hero.filter);
-      primaryBtn.setAttribute('onclick', `window.location.href='${primaryHref}'`);
+      primaryBtn.textContent = (selectedHeroEntry && selectedHeroEntry.hero_btn_cta)
+        || config.hero.cta_primary_text || 'See Web Projects';
+      primaryBtn.href = buildSectionURL(config.hero.filter);
     }
 
     // Secondary CTA
     const ghostBtn = document.querySelector('.hero-cta .btn-ghost');
     if (ghostBtn && config.hero.cta_secondary) {
       ghostBtn.textContent = config.hero.cta_secondary.text;
-      const ghostHref = config.hero.cta_secondary.filter
+      ghostBtn.href = config.hero.cta_secondary.filter
         ? buildSectionURL(config.hero.cta_secondary.filter)
         : (config.hero.cta_secondary.href || '/section.html');
-      ghostBtn.setAttribute('onclick', `window.location.href='${ghostHref}'`);
     }
 
     // Stat count-up values and deep-links

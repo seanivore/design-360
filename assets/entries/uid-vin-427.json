@@ -1,0 +1,91 @@
+{
+    "_metadata": {
+        "schema_version": "5.0",
+        "template_type": "project_entry"
+    },
+    "id": "uid-vin-427",
+    "slug": "freelance-payments-platform",
+    "title": "Freelance Payments Platform",
+    "subtitle": "Full-stack payment portal with Stripe integration, automated contracts, and serverless backend",
+    "seo_title": "Freelance Payments Platform | React + Stripe + Vercel",
+    "seo_description": "A freelance payment collection micro-site built with React 18, TypeScript, and Vite. Features Stripe checkout, automated PDF contracts and invoices, and GitHub Actions workflows on Vercel serverless.",
+    "role": [
+        "Web Developer"
+    ],
+    "skill": [
+        "React",
+        "HTML/CSS/JS",
+        "Automation",
+        "Python",
+        "Git"
+    ],
+    "product": [
+        "Web Application"
+    ],
+    "company": "SEANIVORE GROUP LLC",
+    "thumb": [
+        "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-1.webp",
+        "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-2.webp",
+        "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-3.webp",
+        "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-4.webp"
+    ],
+    "thumb_alt": "Freelance payments platform showing login portal and invoice document views",
+    "img": [
+        "https://cdn.august.style/media/freelance-payments-platform/img-sq-slides-freelance-payments-platform-1.webp",
+        "https://cdn.august.style/media/freelance-payments-platform/img-sq-slides-freelance-payments-platform-2.webp",
+        "https://cdn.august.style/media/freelance-payments-platform/img-sq-slides-freelance-payments-platform-3.webp"
+    ],
+    "img_alt": "Payment portal interface with branded login screen and document management views",
+    "mobile_img": [],
+    "mobile_img_alt": "",
+    "media_url": "https://payments.august.style",
+    "media_embed": "",
+    "media_alt": "",
+    "origin_url": "",
+    "origin_url_text": "",
+    "repository": "",
+    "tiles": [
+        "React 18 + TypeScript + Vite with Stripe Elements checkout",
+        "State-driven gate system routes clients through contract, invoice, payment",
+        "GitHub Actions automate PDF generation and JSON state updates",
+        "Vercel serverless backend with zero-database JSON architecture"
+    ],
+    "challenge": "Freelance payment collection required juggling separate tools for contracts, invoices, and payment links. Each new client meant manually creating Stripe products, drafting PDFs, and tracking payment status across disconnected systems. The process needed a single, branded portal that handled the entire lifecycle from contract signing through final payment.",
+    "approach": "Built a React 18 + TypeScript single-page application deployed on Vercel with serverless API routes. Designed a state-driven FluxGate routing system that advances clients through contract signing, invoice review, and Stripe checkout based on JSON timestamps. GitHub Actions workflows automate PDF generation, Stripe product creation, and state synchronization without requiring a database.",
+    "result": "Delivered a fully automated payment portal at payments.august.style that handles end-to-end freelance transactions. Clients sign contracts, review invoices, and complete payments through Stripe in a single branded experience. The zero-database architecture keeps hosting free on Vercel while GitHub Actions handle all backend automation, eliminating manual invoicing and payment tracking entirely.",
+    "role_headline": "Full-Stack Payment Platform",
+    "hero_btn_cta": "See Web Projects",
+    "final_cta_text": "Interested in web development?",
+    "final_btn_cta": "See All Web Projects",
+    "skill_summary": "",
+    "process": [
+        {
+            "word": "Architect",
+            "summary": "Designed a stateless FluxGate routing system using JSON timestamps to drive client progression through contract, invoice, and payment gates without a database.",
+            "link_text": "",
+            "link_slug": ""
+        },
+        {
+            "word": "Build",
+            "summary": "Developed the React + TypeScript frontend with Stripe Elements integration and Vercel serverless API routes for secure checkout session creation.",
+            "link_text": "",
+            "link_slug": ""
+        },
+        {
+            "word": "Automate",
+            "summary": "Wired GitHub Actions to handle PDF generation, Stripe product setup, and JSON state updates triggered by client interactions and webhook events.",
+            "link_text": "",
+            "link_slug": ""
+        }
+    ],
+    "metric": {
+        "value": "0",
+        "kpi": "Database Dependencies",
+        "context": "Entire platform runs on JSON files as the single source of truth with no database required"
+    },
+    "achievement": {
+        "headline": "End-to-End Freelance Automation",
+        "details": "Single portal handles contract signing, invoice delivery, split payments, and document downloads with zero manual steps after initial job setup."
+    },
+    "notes": []
+}

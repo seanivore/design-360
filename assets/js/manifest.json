@@ -29,6 +29,7 @@
     "data-visualization-dashboard": "assets/entries/uid-srs-009.json",
     "blog-lookbook-print-gallery": "assets/entries/uid-tev-176.json",
     "training-yoga-sales": "assets/entries/uid-unw-889.json",
+    "freelance-payments-platform": "assets/entries/uid-vin-427.json",
     "psychedelic-impressi": "assets/entries/uid-vlf-055.json",
     "ethereal-amalgamations": "assets/entries/uid-vue-009.json",
     "ai-design-fashion-lookbook": "assets/entries/uid-wgw-370.json",
@@ -40,6 +41,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 36
+    "entry_count": 37
   }
 }

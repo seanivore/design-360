@@ -22,7 +22,7 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. T
 | `skill`           | `string[]` | Skill tags from the registry                          |
 | `product`         | `string[]` | Product tags from the registry                        |
 | `company`         | `string`   | Single company name from the registry                 |
-| `thumb`           | `string[]` | Thumbnail image paths (relative, no leading `/`)      |
+| `thumb`           | `string[]` | Thumbnail image CDN URLs (e.g. `https://cdn.august.style/media/{slug}/...`) |
 | `thumb_alt`       | `string`   | Alt text for thumbnail slideshow                      |
 | `tiles`           | `string[]` | Text lines that cycle on section tiles                |
 | `challenge`       | `string`   | Problem statement (2-4 sentences)                     |
@@ -43,10 +43,10 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. T
 | `origin_url`      | `string`       | `""`    | External live project URL                |
 | `origin_url_text` | `string`       | `""`    | Display text for origin URL              |
 | `repository`      | `string`       | `""`    | GitHub repo URL                          |
-| `role_headline`   | `string\|null` | `null`  | Headline for hero flip clock on homepage |
-| `hero_btn_cta`    | `string\|null` | `null`  | CTA button text when featured in hero    |
-| `final_cta_text`  | `string\|null` | `null`  | Final CTA paragraph text                 |
-| `final_btn_cta`   | `string\|null` | `null`  | Final CTA button text                    |
+| `role_headline`   | `string\|null` | `null`  | Headline for hero flip clock (e.g. "800+ Product Store, Fully Automated"). Lead with deliverable, not role title. |
+| `hero_btn_cta`    | `string\|null` | `null`  | CTA button text when this entry is randomly selected for hero (e.g. "See Web Projects") |
+| `final_cta_text`  | `string\|null` | `null`  | Bottom CTA section heading when this entry is selected (e.g. "Interested in web development?") |
+| `final_btn_cta`   | `string\|null` | `null`  | Bottom CTA primary button text (e.g. "See All Web Projects") |
 | `skill_summary`   | `string`       | `""`    | Brief summary of skills demonstrated     |
 | `process`         | `array\|null`  | `null`  | Process steps array (see below)          |
 | `metric`          | `object\|null` | `null`  | Impact metric (see below)                |
@@ -85,12 +85,14 @@ Every entry file includes a `_metadata` block. This is informational only and no
 
 ### Image Path Conventions
 
-All image paths are relative to the repository root, without a leading `/`. The controllers prepend `/` at render time.
+All images are hosted on the Cloudflare R2 CDN at `cdn.august.style`. Image URLs in entry JSON use full CDN URLs:
 
 ```
-assets/media/{slug}/thumb-slides-{slug}-1.webp    (thumbnail)
-assets/media/{slug}/img-sq-slides-{slug}-1.webp   (square page image)
+https://cdn.august.style/media/{slug}/thumb-slides-{slug}-1.webp    (thumbnail)
+https://cdn.august.style/media/{slug}/img-sq-slides-{slug}-1.webp   (square page image)
 ```
+
+The controllers detect CDN URLs (`src.startsWith('http')`) and use them directly, or prepend `/` for any legacy relative paths.
 
 ---
 
@@ -117,7 +119,15 @@ The file defines sections of the homepage. Each section references project data 
   "credentials": {
     "heading": "Experience",
     "items": [
-      { "display_name": "COMPANY", "company": "Company Name", "title": "Job Title", "dates": "2020-2023", "tags": ["Tag1"] }
+      {
+        "display_name": "COMPANY",
+        "company": "Company Name",
+        "title": "Job Title",
+        "dates": "2020–2023",
+        "tags": [
+          { "label": "Display Text", "filter": { "all": ["Tag1", "Tag2"] } }
+        ]
+      }
     ]
   },
   "process": {
@@ -218,36 +228,44 @@ Production:  august.style/saas-product-sale-features
 Local test:  localhost:5500/entry.html?path=saas-product-sale-features
 ```
 
-### 404.html Routing Flow
+### Entry Page Routing (Pre-rendered HTML)
 
-GitHub Pages serves `404.html` for any path that does not match a physical file. The 404 handler determines page type and loads the correct template:
+Entry pages have pre-generated HTML files at `/{slug}/index.html`, created by `generate_manifest.py`. Each file is a copy of `entry.html` with SEO meta tags (og:title, og:description, og:image, twitter:card) baked in from the entry JSON. This ensures social media crawlers always see correct meta tags.
 
 ```
 User visits: august.style/saas-product-sale-features
   |
   v
+GitHub Pages: finds /saas-product-sale-features/index.html -> serves it (HTTP 200)
+  |
+  v
+entry-controller.js hydrates the page with full project content
+```
+
+### 404.html Routing Flow (Section Pages Only)
+
+`404.html` now only handles section-style routes and true 404s. Entry pages no longer route through it.
+
+```
+User visits: august.style/some-unknown-path
+  |
+  v
 GitHub Pages: no file found -> serves 404.html
   |
   v
-404.html: fetches manifest.json, checks if path is in manifest.entries
-  |
-  +-- Found in entries -> sets sessionStorage('entryPath'), fetches entry.html
-  |
-  +-- Not found in entries -> sets sessionStorage('sectionPath'), fetches section.html
+404.html: assumes section page, sets sessionStorage('sectionPath'), fetches section.html
   |
   v
 404.html injects template body + executes controller scripts in-page (no redirect)
 ```
-
-Key detail: 404.html does NOT redirect. It fetches the template HTML, replaces its own body content, and executes the controller scripts. The browser URL stays unchanged.
 
 ### Entry Resolution (entry-controller.js)
 
 ```
 getEntryPath() checks in order:
   1. URL parameter: ?path=slug           (local testing)
-  2. sessionStorage: entryPath           (production, set by 404.html)
-  3. window.location.pathname            (fallback)
+  2. sessionStorage: entryPath           (legacy fallback from 404.html)
+  3. window.location.pathname            (production — /{slug}/ path)
 
 loadEntryData(slug):
   manifest.entries[slug] -> "assets/entries/uid-xxx-###.json" -> fetch + parse
@@ -279,7 +297,7 @@ Maps flat slugs to JSON file paths. Auto-generated by `generate_manifest.py`:
 }
 ```
 
-Run `python3 generate_manifest.py` after adding, renaming, or removing any entry file.
+Run `python3 generate_manifest.py` after adding, renaming, or removing any entry file. This also regenerates all `/{slug}/index.html` files with updated SEO meta tags.
 
 ---
 
@@ -289,10 +307,12 @@ Run `python3 generate_manifest.py` after adding, renaming, or removing any entry
 /
 +-- index.html                           Homepage (landing page)
 +-- section.html                         Universal tag/filter page
-+-- entry.html                           Individual project page
-+-- 404.html                             SPA routing handler
-+-- styles.css                           All site styles
-+-- generate_manifest.py                 Manifest auto-generator
++-- entry.html                           Entry page template (used by generate_manifest.py)
++-- 404.html                             SPA routing for section pages + true 404s
++-- landing.css                          Homepage styles
++-- styles.css                           Entry + section page styles
++-- generate_manifest.py                 Manifest + entry HTML generator
++-- {slug}/index.html                    Auto-generated entry pages with SEO meta tags
 |
 +-- assets/
     +-- js/
@@ -308,19 +328,19 @@ Run `python3 generate_manifest.py` after adding, renaming, or removing any entry
     +-- entries/
     |   +-- uid-*.json                   Project entry files (v5.0 schema)
     |
-    +-- media/
-    |   +-- {slug}/                      Per-project image directories
-    |       +-- thumb-slides-*.webp      Thumbnail images
-    |       +-- img-sq-slides-*.webp     Square page images
+    +-- images/                          Working directory for CDN uploads (gitignored)
+    |   +-- {slug}/                      Per-project image staging
     |
     +-- docs/
     |   +-- _entry_template.json         Blank entry template (v5.0)
     |   +-- tags.json                    Tag registry (4 groups)
+    |   +-- ENTRY_SOP.md                 Entry creation standard operating procedure
     |   +-- JSON_ARCHITECTURE.md         This document
     |
     +-- scripts/
         +-- project.sh                   CLI for generating new entry files
         +-- new_project.py               Entry file generator
+        +-- validate_v5.py               Entry schema validator
 ```
 
 ---
@@ -413,13 +433,15 @@ Entry:        http://localhost:5500/entry.html?path=saas-product-sale-features
 
 ### Adding a New Entry
 
-1. Run `project` CLI (or copy `assets/docs/_entry_template.json`)
-2. Fill in all required fields, using tags from `assets/docs/tags.json`
-3. Save as `assets/entries/uid-xxx-###.json`
-4. Add images to `assets/media/{slug}/`
-5. Run `python3 generate_manifest.py` to update the manifest
+See `assets/docs/ENTRY_SOP.md` for the full step-by-step procedure. Summary:
+
+1. Run `python3 assets/scripts/new_project.py` to generate entry file
+2. Source + process images via Cloudinary, upload to R2 CDN
+3. Fill in all required fields using tags from `assets/docs/tags.json`
+4. Move to `assets/entries/`, validate with `python3 assets/scripts/validate_v5.py`
+5. Run `python3 generate_manifest.py` to update manifest + generate entry HTML
 
 ---
 
-*Last updated: 2026-03-16*
+*Last updated: 2026-03-29*
 *Schema version: 5.0*

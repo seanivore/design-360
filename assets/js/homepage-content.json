@@ -9,9 +9,12 @@
         "Web Developer"
       ]
     },
+    "cta_primary_text": "See Web Projects",
     "cta_secondary": {
       "text": "All Projects",
-      "filter": { "any": [] }
+      "filter": {
+        "any": []
+      }
     }
   },
   "showcase": {
@@ -66,48 +69,176 @@
         "display_name": "FREELANCE",
         "company": "Freelance",
         "title": "Creative Consultant & Digital Contractor",
-        "dates": "2024\u2013Present",
+        "dates": "2024–Present",
         "tags": [
-          { "label": "Webflow", "filter": { "all": ["Webflow", "Freelance"] } },
-          { "label": "E-Commerce", "filter": { "all": ["E-Commerce", "Freelance"] } },
-          { "label": "AI + Automation", "filter": { "all": ["Automation", "Freelance"] } },
-          { "label": "Generative AI", "filter": { "all": ["Generative AI", "Freelance"] } }
+          {
+            "label": "Webflow",
+            "filter": {
+              "all": [
+                "Webflow",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "E-Commerce",
+            "filter": {
+              "all": [
+                "E-Commerce",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "AI + Automation",
+            "filter": {
+              "all": [
+                "Automation",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "Generative AI",
+            "filter": {
+              "all": [
+                "Generative AI",
+                "Freelance"
+              ]
+            }
+          }
         ]
       },
       {
         "display_name": "SILENT LABS",
         "company": "Silent Labs",
         "title": "Art Director",
-        "dates": "2020\u20132023",
+        "dates": "2020–2023",
         "tags": [
-          { "label": "Brand Identity", "filter": { "all": ["Brand Identity", "Silent Labs"] } },
-          { "label": "Motion Graphics", "filter": { "all": ["Motion Graphics", "Silent Labs"] } },
-          { "label": "Illustration", "filter": { "all": ["Illustration", "Silent Labs"] } },
-          { "label": "Art Direction", "filter": { "all": ["Art Direction", "Silent Labs"] } }
+          {
+            "label": "Brand Identity",
+            "filter": {
+              "all": [
+                "Brand Identity",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Motion Graphics",
+            "filter": {
+              "all": [
+                "Motion Graphics",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Illustration",
+            "filter": {
+              "all": [
+                "Illustration",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Art Direction",
+            "filter": {
+              "all": [
+                "Art Direction",
+                "Silent Labs"
+              ]
+            }
+          }
         ]
       },
       {
         "display_name": "SEANIVORE GROUP",
         "company": "SEANIVORE GROUP LLC",
         "title": "SBO Digital Consultant",
-        "dates": "2019\u20132020",
+        "dates": "2019–2020",
         "tags": [
-          { "label": "Copywriting", "filter": { "all": ["Copywriting", "SEANIVORE GROUP LLC"] } },
-          { "label": "Content Strategy", "filter": { "all": ["Content Production", "SEANIVORE GROUP LLC"] } },
-          { "label": "Growth Strategy", "filter": { "all": ["Scaling Systems", "SEANIVORE GROUP LLC"] } },
-          { "label": "Landing Pages", "filter": { "all": ["Landing Page Design", "SEANIVORE GROUP LLC"] } }
+          {
+            "label": "Copywriting",
+            "filter": {
+              "all": [
+                "Copywriting",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Content Strategy",
+            "filter": {
+              "all": [
+                "Content Production",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Growth Strategy",
+            "filter": {
+              "all": [
+                "Scaling Systems",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Landing Pages",
+            "filter": {
+              "all": [
+                "Landing Page Design",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          }
         ]
       },
       {
         "display_name": "PETA",
         "company": "PETA, Inc.",
-        "title": "Marketing Innovations \u2192 Senior Strategist",
-        "dates": "2011\u20132018",
+        "title": "Marketing Innovations → Senior Strategist",
+        "dates": "2011–2018",
         "tags": [
-          { "label": "Content Production", "filter": { "all": ["Content Production", "PETA, Inc."] } },
-          { "label": "Video Production", "filter": { "all": ["Video Production", "PETA, Inc."] } },
-          { "label": "Analytics", "filter": { "all": ["Analytics", "PETA, Inc."] } },
-          { "label": "Art Direction", "filter": { "all": ["Art Direction", "PETA, Inc."] } }
+          {
+            "label": "Content Production",
+            "filter": {
+              "all": [
+                "Content Production",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Video Production",
+            "filter": {
+              "all": [
+                "Video Production",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Analytics",
+            "filter": {
+              "all": [
+                "Analytics",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Art Direction",
+            "filter": {
+              "all": [
+                "Art Direction",
+                "PETA, Inc."
+              ]
+            }
+          }
         ]
       }
     ]
@@ -170,11 +301,17 @@
     "heading": "Interested in web development?",
     "primary": {
       "text": "See All Web Projects",
-      "filter": { "any": ["Web Developer"] }
+      "filter": {
+        "any": [
+          "Web Developer"
+        ]
+      }
     },
     "secondary": {
       "text": "Explore Full Portfolio",
-      "filter": { "any": [] }
+      "filter": {
+        "any": []
+      }
     }
   }
 }
