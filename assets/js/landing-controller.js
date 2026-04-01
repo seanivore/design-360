@@ -82,7 +82,10 @@ const LandingController = (() => {
         })
         .join('');
 
-      // Each headline shows for 3 images; total = heroCount × 5s
+      // Force reflow after DOM mutation so iOS Safari starts the animation
+      imgScroll.style.animation = 'none';
+      void imgScroll.offsetWidth;
+      imgScroll.style.animation = '';
       imgScroll.style.animationDuration = (heroCount * 5) + 's';
     }
 
