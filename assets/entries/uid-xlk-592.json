@@ -1,0 +1,41 @@
+{
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-xlk-592",
+  "slug": "psychedelic-desert-drive",
+  "title": "Psychedelic Desert Drive to Alien Vegas",
+  "subtitle": "A vibrant, synthwave-inspired psychedelic drive towards an alien metropolis",
+  "seo_title": "Psychedelic Desert Drive — Alien Vegas Synthwave Generative Art",
+  "seo_description": "Vibrant synthwave-inspired generative artwork depicting a psychedelic desert drive towards an alien version of Las Vegas.",
+  "role": ["Creative Director"],
+  "skill": ["Art Direction", "Generative AI", "Illustration"],
+  "product": ["Digital Art Collection"],
+  "company": "Freelance",
+  "thumb": [
+    "https://cdn.august.style/media/psychedelic-desert-drive/thumb-psychedelic-desert-drive-1.webp",
+    "https://cdn.august.style/media/psychedelic-desert-drive/thumb-psychedelic-desert-drive-2.webp",
+    "https://cdn.august.style/media/psychedelic-desert-drive/thumb-psychedelic-desert-drive-3.webp",
+    "https://cdn.august.style/media/psychedelic-desert-drive/thumb-psychedelic-desert-drive-4.webp",
+    "https://cdn.august.style/media/psychedelic-desert-drive/thumb-psychedelic-desert-drive-5.webp"
+  ],
+  "thumb_alt": "Psychedelic synthwave artwork showing a futuristic desert drive and neon alien cityscapes",
+  "img": [
+    "https://cdn.august.style/media/psychedelic-desert-drive/img-sq-psychedelic-desert-drive-1.webp",
+    "https://cdn.august.style/media/psychedelic-desert-drive/img-sq-psychedelic-desert-drive-2.webp",
+    "https://cdn.august.style/media/psychedelic-desert-drive/img-sq-psychedelic-desert-drive-3.webp"
+  ],
+  "img_alt": "Detail views of glowing neon elements and surreal synthwave landscapes",
+  "mobile_img": [], "mobile_img_alt": "",
+  "media_url": "", "media_embed": "", "media_alt": "",
+  "origin_url": "https://www.behance.net/gallery/215000891/Psychedelic-Desert-Drive-to-Alien-Vegas",
+  "origin_url_text": "View on Behance",
+  "repository": "",
+  "tiles": ["Synthwave Aesthetic Retro-Futurism", "Neon Glowing Motifs", "Alien Landscape Generation", "Cinematic Environment Design"],
+  "challenge": "Reimagining the classic Americana road trip to Las Vegas through a retro-futuristic, hyper-saturated synthwave aesthetic, translating a familiar concept into an alien, psychedelic dreamscape.",
+  "approach": "Leveraged generative models configured for extreme color saturation and high-contrast lighting to create glowing neon structures against deep desert night skies. Composition emphasized leading lines simulating high-speed driving dynamics.",
+  "result": "A visually arresting, cohesive narrative gallery that effectively transports the viewer into a vivid, glowing alien world, successfully executing a complex synthwave visual style with modern generative fidelity.",
+  "role_headline": "Psychedelic Worldbuilding Art",
+  "hero_btn_cta": "View Full Gallery",
+  "final_cta_text": "Need concept art?",
+  "final_btn_cta": "See Concept Art",
+  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+}

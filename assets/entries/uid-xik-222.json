@@ -1,0 +1,41 @@
+{
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-xik-222",
+  "slug": "midcentury-art-deco",
+  "title": "Mid-Century Modern Art Deco",
+  "subtitle": "Geometric abstract prints conceptualizing an Art Deco loft interior",
+  "seo_title": "Mid-Century Modern Art Deco — Geometric Abstract Digital Prints",
+  "seo_description": "A curated collection of mid-century modern geometric abstracts created for digital print and interior decor styling.",
+  "role": ["Creative Director"],
+  "skill": ["Art Direction", "Generative AI", "Print Design"],
+  "product": ["Digital Art Collection"],
+  "company": "Freelance",
+  "thumb": [
+    "https://cdn.august.style/media/midcentury-art-deco/thumb-midcentury-art-deco-1.webp",
+    "https://cdn.august.style/media/midcentury-art-deco/thumb-midcentury-art-deco-2.webp",
+    "https://cdn.august.style/media/midcentury-art-deco/thumb-midcentury-art-deco-3.webp",
+    "https://cdn.august.style/media/midcentury-art-deco/thumb-midcentury-art-deco-4.webp",
+    "https://cdn.august.style/media/midcentury-art-deco/thumb-midcentury-art-deco-5.webp"
+  ],
+  "thumb_alt": "Mid-century modern geometric abstract compositions designed for interior decor",
+  "img": [
+    "https://cdn.august.style/media/midcentury-art-deco/img-sq-midcentury-art-deco-1.webp",
+    "https://cdn.august.style/media/midcentury-art-deco/img-sq-midcentury-art-deco-2.webp",
+    "https://cdn.august.style/media/midcentury-art-deco/img-sq-midcentury-art-deco-3.webp"
+  ],
+  "img_alt": "Close ups of geometric pattern intersections and mid-century modern color palettes",
+  "mobile_img": [], "mobile_img_alt": "",
+  "media_url": "", "media_embed": "", "media_alt": "",
+  "origin_url": "https://www.behance.net/gallery/193452985/Mid-Century-Modern-Art-Deco-Geometric-Abstract",
+  "origin_url_text": "View on Behance",
+  "repository": "",
+  "tiles": ["Geometric Abstraction", "Mid-Century Modern Palette", "Interior Styling Print Design", "Symmetrical Art Deco Influences"],
+  "challenge": "Producing a scalable series of abstract artworks that seamlessly bridge the aesthetic gap between the organic warmth of Mid-Century Modernism and the rigid, luxurious geometry of Art Deco.",
+  "approach": "Iterated generative outputs focusing specifically on strict geometric frameworks, muted earthy palettes punctuated by vibrant contrasts, and balanced composition tailored for print-on-demand and interior framing.",
+  "result": "A highly cohesive collection of production-ready digital prints that fit perfectly into contemporary interior design aesthetics, demonstrating the commercial viability of procedurally generated decor art.",
+  "role_headline": "Geometric Abstract Production",
+  "hero_btn_cta": "View Full Gallery",
+  "final_cta_text": "Need print designs?",
+  "final_btn_cta": "View All Print Work",
+  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+}

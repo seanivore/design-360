@@ -1,0 +1,41 @@
+{
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-yxl-432",
+  "slug": "degradation-of-pride",
+  "title": "Degradation of Pride",
+  "subtitle": "A photo story about first contact with a military ruling class of androids",
+  "seo_title": "Degradation of Pride — Sci-Fi Generative Photo Story",
+  "seo_description": "A generative sci-fi photo story documenting human anthropologists making first contact with a society of ageless androids.",
+  "role": ["Creative Director"],
+  "skill": ["Art Direction", "Generative AI", "Photography"],
+  "product": ["Digital Art Collection"],
+  "company": "Freelance",
+  "thumb": [
+    "https://cdn.august.style/media/degradation-of-pride/thumb-degradation-of-pride-1.webp",
+    "https://cdn.august.style/media/degradation-of-pride/thumb-degradation-of-pride-2.webp",
+    "https://cdn.august.style/media/degradation-of-pride/thumb-degradation-of-pride-3.webp",
+    "https://cdn.august.style/media/degradation-of-pride/thumb-degradation-of-pride-4.webp",
+    "https://cdn.august.style/media/degradation-of-pride/thumb-degradation-of-pride-5.webp"
+  ],
+  "thumb_alt": "Photorealistic generative imagery showing humanoid androids and futuristic urban decay in a photo documentary style",
+  "img": [
+    "https://cdn.august.style/media/degradation-of-pride/img-sq-degradation-of-pride-1.webp",
+    "https://cdn.august.style/media/degradation-of-pride/img-sq-degradation-of-pride-2.webp",
+    "https://cdn.august.style/media/degradation-of-pride/img-sq-degradation-of-pride-3.webp"
+  ],
+  "img_alt": "Close-up details of detailed photorealistic android android characters",
+  "mobile_img": [], "mobile_img_alt": "",
+  "media_url": "", "media_embed": "", "media_alt": "",
+  "origin_url": "https://www.behance.net/gallery/184561511/Degradation-of-pride",
+  "origin_url_text": "View on Behance",
+  "repository": "",
+  "tiles": ["Sci-Fi Worldbuilding Narrative", "Photorealistic AI Imagery", "Documentary Photography Stylization", "Character and Environment Design"],
+  "challenge": "Fusing narrative storytelling with generative art to create a grounded, documentary-style 'photo story' about an encounter with an advanced, decaying android society—ensuring lighting and atmosphere remained consistent across a series of generated images.",
+  "approach": "Prompts were structured with specific 'camera' and 'lens' parameters to emulate journalistic analog photography from the late 20th century. Careful curation and seed manipulation maintained character and environmental consistency across the narrative sequence.",
+  "result": "A compelling, cinematic sci-fi narrative presented as a lost photographic archive, proving that generative AI can transcend standalone images to tell cohesive, highly-detailed speculative fiction stories.",
+  "role_headline": "Narrative Generative Photography",
+  "hero_btn_cta": "View Full Gallery",
+  "final_cta_text": "Need visual storytelling?",
+  "final_btn_cta": "View All Photography",
+  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+}
