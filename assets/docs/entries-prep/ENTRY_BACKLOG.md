@@ -8,17 +8,17 @@ Tracking lists for projects still to be added as v5.0 entries. 36 entries alread
 
 ## Priority 1: New Projects (Need Media)
 
-- [ ] **Freelance Payments Platform** — React 18 + TypeScript + Vite, Stripe integration, Vercel serverless
+- [x] **Freelance Payments Platform** — React 18 + TypeScript + Vite, Stripe integration, Vercel serverless
   - Docs: `/Users/seanivore/Development/freelance-payments/assets/docs/PAYMENTS_PLATFORM.md`
   - Live: `payments.august.style`
   - Slug: `freelance-payments-platform`
-  - Status: NEEDS MEDIA
+  - Status: Complete 
 
 - [ ] **Thot Markdown Scratchpad PWA** — CodeMirror 6 + TypeScript + Vite, PWA with offline support
   - Docs: `/Users/seanivore/Development/thot/docs/THOT_APP.md`
   - Live: `thots.august.style`
-  - Slug: `thot-markdown-scratchpad`
-  - Status: NEEDS MEDIA
+  - Slug: `notes-app-thot`
+  - Status: ALL MEDIA CREATED `assets/images/notes-app-thot`
 
 ---
 
@@ -81,7 +81,7 @@ All generative art entries. Follow the Behance Entry Pattern in `ENTRY_SOP.md`.
 
 ---
 
-## Priority 4: More from Visual Portfolio
+## Priority 4: More from Visual Portfolio **ALERT SEAN BEFORE STARTING HERE**
 
 Source: `assets/docs/entries-prep/more_entries.md`
 
