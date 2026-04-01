@@ -27,7 +27,8 @@
         "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-1.webp",
         "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-2.webp",
         "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-3.webp",
-        "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-4.webp"
+        "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-4.webp",
+        "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-5.webp"
     ],
     "thumb_alt": "Freelance payments platform showing login portal and invoice document views",
     "img": [
@@ -38,11 +39,11 @@
     "img_alt": "Payment portal interface with branded login screen and document management views",
     "mobile_img": [],
     "mobile_img_alt": "",
-    "media_url": "https://payments.august.style",
-    "media_embed": "",
-    "media_alt": "",
-    "origin_url": "",
-    "origin_url_text": "",
+    "media_url": "https://youtu.be/84RtKT3dfDk",
+    "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/84RtKT3dfDk?si=74w7Yz6IGe98gy52&amp;controls=0' title='Freelance Payments Platform Walkthrough' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+    "media_alt": "Video walkthrough of the freelance payments platform showing the client login, contract signing, and Stripe checkout flow",
+    "origin_url": "https://payments.august.style",
+    "origin_url_text": "Visit Live Site",
     "repository": "",
     "tiles": [
         "React 18 + TypeScript + Vite with Stripe Elements checkout",

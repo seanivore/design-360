@@ -266,7 +266,7 @@ const EntryController = (() => {
 
         container.innerHTML = project.img.map((img, index) => `
             <img
-                src="/${img}"
+                src="${img.startsWith('http') ? img : '/' + img}"
                 alt="${project.img_alt || 'Additional project image'}"
                 class="entry-page-image ${index === 0 ? 'active' : ''}"
                 loading="lazy"

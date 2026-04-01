@@ -251,6 +251,24 @@ These default to `null`. Only populate when the project warrants it.
 { "headline": "...", "details": "..." }
 ```
 
+### YouTube video embed pattern
+
+For projects with a YouTube walkthrough or demo video, convert the raw YouTube embed to single-quote format and set all three media fields:
+
+```json
+"media_url": "https://youtu.be/VIDEO_ID",
+"media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/VIDEO_ID?si=SHARE_TOKEN&amp;controls=0' title='Project-Specific Title Here' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+"media_alt": "Description of what the video shows"
+```
+
+**Rules:**
+- Replace all double quotes in the embed HTML with single quotes (JSON string requires this)
+- Keep `&amp;` entity encoding (do not use raw `&`)
+- Change the `title` attribute from "YouTube video player" to a description of the specific project
+- `media_url` gets the YouTube share URL (`https://youtu.be/...`)
+- `media_alt` describes what the video shows for accessibility
+- If the project also has a live site URL, put it in `origin_url` and `origin_url_text`
+
 ### Behance entry pattern
 
 For generative art projects hosted on Behance, set `media_embed` to the iframe (use single quotes for attribute values):

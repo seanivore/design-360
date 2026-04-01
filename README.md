@@ -62,4 +62,4 @@ python3 generate_manifest.py
 
 This outputs:
 - `assets/js/manifest.json` — slug-to-file mapping
-- `/{slug}/index.html` — per-entry HTML with pre-rendered SEO meta tags
+- `_pages/{slug}.html` — per-entry HTML with pre-rendered SEO meta tags (Jekyll collection)
