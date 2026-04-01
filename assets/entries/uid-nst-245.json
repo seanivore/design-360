@@ -1,0 +1,70 @@
+{
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
+  "id": "uid-nst-245",
+  "slug": "notes-app-thot",
+  "title": "Markdown Scratchpad PWA with IDE-Grade Syntax Highlighting",
+  "subtitle": "CodeMirror 6 editor with 100+ custom Lezer highlight tags and offline PWA support",
+  "seo_title": "Thot — Markdown Scratchpad PWA with Custom Syntax Highlighting",
+  "seo_description": "A progressive web app markdown editor built on CodeMirror 6 with 100+ custom Lezer tags, auto-save, and offline support for persistent note-taking.",
+  "role": [
+    "Product Designer",
+    "Web Developer"
+  ],
+  "skill": [
+    "CodeMirror 6",
+    "Git",
+    "GitHub Pages",
+    "HTML/CSS/JS",
+    "Responsive Design",
+    "TypeScript",
+    "Vite"
+  ],
+  "product": [
+    "Progressive Web App",
+    "Web Application"
+  ],
+  "company": "Freelance",
+  "thumb": [
+    "https://cdn.august.style/media/notes-app-thot/thumb-notes-app-thot-1.webp",
+    "https://cdn.august.style/media/notes-app-thot/thumb-notes-app-thot-2.webp",
+    "https://cdn.august.style/media/notes-app-thot/thumb-notes-app-thot-3.webp",
+    "https://cdn.august.style/media/notes-app-thot/thumb-notes-app-thot-4.webp",
+    "https://cdn.august.style/media/notes-app-thot/thumb-notes-app-thot-5.webp"
+  ],
+  "thumb_alt": "Thot markdown scratchpad PWA showing IDE-style syntax highlighting with custom color-coded headings, lists, code blocks, and emphasis markers on a dark background",
+  "img": [
+    "https://cdn.august.style/media/notes-app-thot/img-sq-notes-app-thot-1.webp",
+    "https://cdn.august.style/media/notes-app-thot/img-sq-notes-app-thot-2.webp",
+    "https://cdn.august.style/media/notes-app-thot/img-sq-notes-app-thot-3.webp"
+  ],
+  "img_alt": "Thot app interface showing markdown syntax highlighting, auto-save indicators, and JetBrains Mono typography on dark theme",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "https://youtu.be/dRkbOV4BDEU",
+  "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/dRkbOV4BDEU?si=JNe5Qt8EMKsYfTwF&amp;controls=0' title='Thot Markdown Scratchpad PWA Demo' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+  "media_alt": "Video walkthrough of Thot markdown scratchpad demonstrating real-time syntax highlighting, auto-save, and PWA installation on desktop",
+  "origin_url": "https://thots.august.style",
+  "origin_url_text": "thots.august.style",
+  "repository": "https://github.com/seanivore/thot",
+  "tiles": [
+    "100+ custom Lezer highlight tags with priority cascade",
+    "Auto-saves content, cursor, and scroll to localStorage",
+    "Installable PWA with full offline support",
+    "Built on CodeMirror 6 — handles 100K+ lines"
+  ],
+  "challenge": "Existing markdown editors fall into two extremes: too simple with no highlighting, or full IDEs loaded with irrelevant features. Writers who live in markdown all day needed a single-purpose scratchpad that opens instantly, highlights beautifully, and never loses work. A previous native Swift/iOS attempt using NSTextStorage flickered at 88+ lines due to reactive re-rendering, proving the web was the right platform.",
+  "approach": "Built on CodeMirror 6 for its incremental Lezer parser and virtual scrolling. Authored 100+ custom highlight tag mappings with a carefully designed CSS cascade where later rules override earlier ones for correct priority (inline code overrides bold which overrides list content). Three context-dependent markers required a custom ViewPlugin to walk the Lezer syntax tree because depth-0 styleTags rules block context-based overrides. Auto-save uses a 500ms debounced write to localStorage with force-save on tab close, visibility change, and Cmd+S.",
+  "result": "Thot is a persistent, always-on writing tool that treats markdown like code in an IDE — monospace JetBrains Mono NL font, syntax-colored, line-numbered. The nine font weight variants and carefully tuned color palette make formatting immediately scannable. The PWA installs on desktop and mobile, works fully offline, and maintains cursor and scroll position across sessions. The custom autocorrect engine overcomes Safari limitations with context-aware corrections that skip code blocks and URLs.",
+  "role_headline": "Markdown PWA with Custom Syntax Engine",
+  "hero_btn_cta": "See Web Projects",
+  "final_cta_text": "Interested in web development?",
+  "final_btn_cta": "See All Web Projects",
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": []
+}

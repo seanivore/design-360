@@ -1,0 +1,67 @@
+{
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
+  "id": "uid-sez-023",
+  "slug": "social-advertising-strategy",
+  "title": "Meta Ads at $0.003 Per Engagement and $0.31 Per Follower",
+  "subtitle": "Cross-platform paid social strategy achieving cost-per-engagement rates 10x below industry average",
+  "seo_title": "Social Advertising Strategy — $0.003 Cost Per Engagement",
+  "seo_description": "Strategic social media ad campaigns across Meta platforms achieving $0.003 per engagement and $0.31 per follower through targeted content optimization.",
+  "role": [
+    "Growth Strategist",
+    "Social Media Manager"
+  ],
+  "skill": [
+    "A/B Testing",
+    "Analytics",
+    "Campaign Management",
+    "Content Production",
+    "Social Media Marketing"
+  ],
+  "product": [
+    "Marketing Campaign"
+  ],
+  "company": "PETA, Inc.",
+  "thumb": [
+    "https://cdn.august.style/media/social-advertising-strategy/thumb-social-advertising-strategy-1.webp",
+    "https://cdn.august.style/media/social-advertising-strategy/thumb-social-advertising-strategy-2.webp",
+    "https://cdn.august.style/media/social-advertising-strategy/thumb-social-advertising-strategy-3.webp",
+    "https://cdn.august.style/media/social-advertising-strategy/thumb-social-advertising-strategy-4.webp",
+    "https://cdn.august.style/media/social-advertising-strategy/thumb-social-advertising-strategy-5.webp"
+  ],
+  "thumb_alt": "Social advertising analytics dashboard showing $0.003 cost per engagement, Instagram shop performance with 9,200+ views, and fashion lookbook creative assets",
+  "img": [
+    "https://cdn.august.style/media/social-advertising-strategy/img-sq-social-advertising-strategy-1.webp",
+    "https://cdn.august.style/media/social-advertising-strategy/img-sq-social-advertising-strategy-2.webp",
+    "https://cdn.august.style/media/social-advertising-strategy/img-sq-social-advertising-strategy-3.webp"
+  ],
+  "img_alt": "Campaign performance metrics showing cost efficiency and engagement analytics across Meta advertising platforms",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
+  "origin_url": "https://developer-technologist.august.style/social-advertising-strategy",
+  "origin_url_text": "Full Case Study",
+  "repository": "",
+  "tiles": [
+    "$0.003 cost per engagement on Meta",
+    "$0.31 cost per follower acquisition",
+    "9,200+ Instagram shop views per campaign",
+    "Cross-platform targeting and optimization"
+  ],
+  "challenge": "Social advertising costs continue to rise as platforms mature, with average cost-per-engagement rates climbing year over year. Advocacy organizations operate on tight budgets and need every dollar to work harder than commercial advertisers. The challenge was achieving meaningful audience growth and engagement at rates dramatically below industry benchmarks.",
+  "approach": "Implemented a data-driven advertising strategy across Meta platforms, combining sophisticated audience targeting with creative A/B testing. Each campaign used iterative creative optimization — testing visual formats, copy variations, and audience segments to identify the highest-performing combinations. The lookbook-style creative assets were designed specifically for social consumption, with strong visual hooks that stopped scrolling and drove engagement.",
+  "result": "Achieved $0.003 cost per engagement and $0.31 cost per follower — rates approximately 10x below typical industry averages. Instagram shop campaigns generated 9,200+ views per cycle. The strategy proved that exceptional cost efficiency comes from relentless creative testing combined with precise audience targeting, not from increasing budget. These metrics set internal benchmarks that reshaped how the organization approached paid social going forward.",
+  "role_headline": "$0.003/Engagement Ad Campaigns",
+  "hero_btn_cta": "See Growth Work",
+  "final_cta_text": "Need growth strategy?",
+  "final_btn_cta": "See All Growth Work",
+  "skill_summary": "",
+  "process": null,
+  "metric": { "value": "$0.003", "kpi": "Cost Per Engagement", "context": "10x below industry average across Meta social advertising campaigns" },
+  "achievement": null,
+  "notes": []
+}

@@ -19,14 +19,20 @@
     "constructi-haus": "assets/entries/uid-lrt-716.json",
     "ai-meditation-mobile-app": "assets/entries/uid-lul-419.json",
     "flat-bauhaus": "assets/entries/uid-mnu-667.json",
+    "viral-campaign-strategy": "assets/entries/uid-mrt-136.json",
+    "notes-app-thot": "assets/entries/uid-nst-245.json",
     "humanistic-exploration": "assets/entries/uid-nvw-152.json",
     "clockwork-splendor": "assets/entries/uid-pzy-452.json",
     "css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
     "surreal-heads": "assets/entries/uid-rda-284.json",
     "saas-product-sale-features": "assets/entries/uid-rfr-187.json",
+    "social-advertising-strategy": "assets/entries/uid-sez-023.json",
     "amorphous-gradient-css-animation": "assets/entries/uid-sgt-851.json",
+    "content-strategy-framework": "assets/entries/uid-slz-942.json",
     "neo-expresi-cyber": "assets/entries/uid-spc-535.json",
     "data-visualization-dashboard": "assets/entries/uid-srs-009.json",
+    "ux-ui-ios-marketing": "assets/entries/uid-ssz-402.json",
+    "realtime-social-system": "assets/entries/uid-sxz-828.json",
     "blog-lookbook-print-gallery": "assets/entries/uid-tev-176.json",
     "training-yoga-sales": "assets/entries/uid-unw-889.json",
     "freelance-payments-platform": "assets/entries/uid-vin-427.json",
@@ -41,6 +47,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 37
+    "entry_count": 43
   }
 }

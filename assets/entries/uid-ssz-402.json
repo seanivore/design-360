@@ -1,0 +1,67 @@
+{
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
+  "id": "uid-ssz-402",
+  "slug": "ux-ui-ios-marketing",
+  "title": "Mobile App Collection with 1M+ Downloads",
+  "subtitle": "iOS app portfolio spanning user growth, sticker packs, and cruelty-free product databases",
+  "seo_title": "UX/UI iOS Marketing — Mobile App Collection, 1M+ Downloads",
+  "seo_description": "Management and development strategy for a collection of iOS mobile applications achieving 1M+ downloads, including user growth optimization and app marketing.",
+  "role": [
+    "Growth Strategist",
+    "Product Designer"
+  ],
+  "skill": [
+    "A/B Testing",
+    "Analytics",
+    "Campaign Management",
+    "Content Production",
+    "Responsive Design"
+  ],
+  "product": [
+    "Mobile App"
+  ],
+  "company": "PETA, Inc.",
+  "thumb": [
+    "https://cdn.august.style/media/ux-ui-ios-marketing/thumb-ux-ui-ios-marketing-1.webp",
+    "https://cdn.august.style/media/ux-ui-ios-marketing/thumb-ux-ui-ios-marketing-2.webp",
+    "https://cdn.august.style/media/ux-ui-ios-marketing/thumb-ux-ui-ios-marketing-3.webp",
+    "https://cdn.august.style/media/ux-ui-ios-marketing/thumb-ux-ui-ios-marketing-4.webp",
+    "https://cdn.august.style/media/ux-ui-ios-marketing/thumb-ux-ui-ios-marketing-5.webp"
+  ],
+  "thumb_alt": "iOS app portfolio showing PETA main app with 1M+ downloads, Animal Rights Stickers ranked #198, and Bunny Free cruelty-free product database",
+  "img": [
+    "https://cdn.august.style/media/ux-ui-ios-marketing/img-sq-ux-ui-ios-marketing-1.webp",
+    "https://cdn.august.style/media/ux-ui-ios-marketing/img-sq-ux-ui-ios-marketing-2.webp",
+    "https://cdn.august.style/media/ux-ui-ios-marketing/img-sq-ux-ui-ios-marketing-3.webp"
+  ],
+  "img_alt": "Mobile app UI designs showing PETA app interface, sticker pack rankings, and cruelty-free product search",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
+  "origin_url": "https://developer-technologist.august.style/ux-ui-ios-marketing",
+  "origin_url_text": "Full Case Study",
+  "repository": "",
+  "tiles": [
+    "1M+ downloads across app portfolio",
+    "#198 category ranking — Animal Rights Stickers",
+    "Bunny Free cruelty-free product database",
+    "User growth optimization and engagement analytics"
+  ],
+  "challenge": "Managing a portfolio of mobile applications for a nonprofit requires balancing user acquisition costs, engagement retention, and mission impact. Each app served a different purpose — the main PETA app for activism, sticker packs for cultural presence, Bunny Free for practical utility — but all needed cohesive growth strategy within budget constraints.",
+  "approach": "Applied systematic user growth optimization across the app portfolio, using analytics-driven iteration to improve download rates, onboarding completion, and daily active usage. The Animal Rights Stickers app leveraged iMessage platform integration for organic distribution. The Bunny Free app focused on utility-driven retention — users returned because the cruelty-free product database solved a real shopping need. Each app's marketing strategy was tailored to its user acquisition channel.",
+  "result": "The app portfolio surpassed 1M+ total downloads. Animal Rights Stickers reached #198 in its App Store category through organic growth mechanics — users sharing stickers naturally promoted the app. The Bunny Free database became a go-to reference tool with strong retention metrics. The portfolio demonstrated that purpose-built apps with clear user value outperform general-purpose advocacy apps in both downloads and sustained engagement.",
+  "role_headline": "1M+ Download App Portfolio",
+  "hero_btn_cta": "See Product Design",
+  "final_cta_text": "Need product design?",
+  "final_btn_cta": "View Product Work",
+  "skill_summary": "",
+  "process": null,
+  "metric": { "value": "1M+", "kpi": "App Downloads", "context": "Across iOS app portfolio including PETA main app, sticker packs, and Bunny Free" },
+  "achievement": null,
+  "notes": []
+}
