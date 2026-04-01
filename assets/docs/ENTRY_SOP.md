@@ -1,6 +1,6 @@
 # Standard Operating Procedure: Creating Project Entry JSON Files
 
-**Updated**: 2026-03-29
+**Updated**: 2026-04-01
 **JSON Schema**: v5.0
 
 ---
@@ -90,18 +90,18 @@ For each source image, download the processed version directly:
 
 ```bash
 # Thumbnail (1920x1080 landscape .webp)
-curl -o "assets/images/{slug}/thumb-slides-{slug}-1.webp" \
+curl -o "assets/images/{slug}/thumb-{slug}-1.webp" \
   "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1/{public_id}"
 
 # Square image (1080x1080 .webp)
-curl -o "assets/images/{slug}/img-sq-slides-{slug}-1.webp" \
+curl -o "assets/images/{slug}/img-sq-{slug}-1.webp" \
   "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1080,h_1080,q_auto,f_webp/v1/{public_id}"
 ```
 
 If the subject gets cropped poorly, add gravity detection:
 
 ```bash
-curl -o "assets/images/{slug}/thumb-slides-{slug}-1.webp" \
+curl -o "assets/images/{slug}/thumb-{slug}-1.webp" \
   "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,g_auto,w_1920,h_1080,q_auto,f_webp/v1/{public_id}"
 ```
 
@@ -140,8 +140,8 @@ aws s3 sync assets/images/{slug}/ s3://portfolio/media/{slug}/ \
 Test at least one thumbnail and one square image in a browser:
 
 ```
-https://cdn.august.style/media/{slug}/thumb-slides-{slug}-1.webp
-https://cdn.august.style/media/{slug}/img-sq-slides-{slug}-1.webp
+https://cdn.august.style/images/{slug}/thumb-{slug}-1.webp
+https://cdn.august.style/images/{slug}/img-sq-{slug}-1.webp
 ```
 
 Both should return HTTP 200 with `content-type: image/webp`.
@@ -157,7 +157,9 @@ assets/docs/tags.json
 ```
 
 **Rules:**
-- Use only tags that already exist in the registry. Do not invent new tags or create near-duplicates (e.g., do not add "Web Design" when "Web Developer" exists).
+- Use only tags that already exist in the registry. 
+- Do not invent new tags or create near-duplicates 
+- E.g., do not add "Web Design" when "Web Developer" exists
 - If a genuinely new tag is needed, add it to `tags.json` first, then reference it.
 - Tags are case-sensitive and must match exactly.
 - `role`, `skill`, and `product` are arrays — include at least one value in each.
@@ -170,15 +172,15 @@ assets/docs/tags.json
 
 ```json
 "thumb": [
-  "https://cdn.august.style/media/{slug}/thumb-slides-{slug}-1.webp",
-  "https://cdn.august.style/media/{slug}/thumb-slides-{slug}-2.webp",
-  "https://cdn.august.style/media/{slug}/thumb-slides-{slug}-3.webp",
-  "https://cdn.august.style/media/{slug}/thumb-slides-{slug}-4.webp"
+  "https://cdn.august.style/images/{slug}/thumb-{slug}-1.webp",
+  "https://cdn.august.style/images/{slug}/thumb-{slug}-2.webp",
+  "https://cdn.august.style/images/{slug}/thumb-{slug}-3.webp",
+  "https://cdn.august.style/images/{slug}/thumb-{slug}-4.webp"
 ],
 "img": [
-  "https://cdn.august.style/media/{slug}/img-sq-slides-{slug}-1.webp",
-  "https://cdn.august.style/media/{slug}/img-sq-slides-{slug}-2.webp",
-  "https://cdn.august.style/media/{slug}/img-sq-slides-{slug}-3.webp"
+  "https://cdn.august.style/images/{slug}/img-sq-{slug}-1.webp",
+  "https://cdn.august.style/images/{slug}/img-sq-{slug}-2.webp",
+  "https://cdn.august.style/images/{slug}/img-sq-{slug}-3.webp"
 ]
 ```
 
@@ -193,8 +195,8 @@ assets/docs/tags.json
 | `seo_title`       | string | 50-60 characters                          |
 | `seo_description` | string | 150-160 characters                        |
 | `role`            | array  | At least one value from `tags.json`       |
-| `skill`           | array  | At least one value from `tags.json`       |
-| `product`         | array  | At least one value from `tags.json`       |
+| `skill`           | array  | Applicable values from `tags.json`        |
+| `product`         | array  | Applicable values from `tags.json`        |
 | `company`         | string | One of the four locked values (see below) |
 | `thumb`           | array  | 4-6 CDN URLs (landscape thumbnails)       |
 | `thumb_alt`       | string | Alt text for thumbnail slideshow          |
