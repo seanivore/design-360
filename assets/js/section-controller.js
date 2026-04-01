@@ -187,7 +187,7 @@
 
         // Init first so matchMode is set from URL before renderFilters builds the toggle
         FilterController.init((newActiveTags, mode) => {
-            // Re-filter using the selected match mode (any = OR, all = AND)
+            activeTags = newActiveTags;
             let filtered = allProjects;
             if (newActiveTags.length > 0) {
                 const resolvedTags = newActiveTags.map(t =>
