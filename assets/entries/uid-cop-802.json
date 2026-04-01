@@ -1,0 +1,41 @@
+{
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-cop-802",
+  "slug": "illustrated-poetry-book",
+  "title": "LGBTQ Illustrated Poetry Collection",
+  "subtitle": "Digital illustration and poetry bridging traditional and computational creative workflows",
+  "seo_title": "LGBTQ Illustrated Poetry Book — Digital Art Collection",
+  "seo_description": "An illustrated poetry collection combining LGBTQ themes with digital illustration techniques bridging traditional and computational art workflows.",
+  "role": ["Creative Director", "Graphic Designer"],
+  "skill": ["Art Direction", "Generative AI", "Illustration", "Print Design"],
+  "product": ["Print"],
+  "company": "Freelance",
+  "thumb": [
+    "https://cdn.august.style/media/illustrated-poetry-book/thumb-illustrated-poetry-book-1.webp",
+    "https://cdn.august.style/media/illustrated-poetry-book/thumb-illustrated-poetry-book-2.webp",
+    "https://cdn.august.style/media/illustrated-poetry-book/thumb-illustrated-poetry-book-3.webp",
+    "https://cdn.august.style/media/illustrated-poetry-book/thumb-illustrated-poetry-book-4.webp",
+    "https://cdn.august.style/media/illustrated-poetry-book/thumb-illustrated-poetry-book-5.webp"
+  ],
+  "thumb_alt": "LGBTQ illustrated poetry book pages showing digital illustrations with poetic text layouts and mixed-media compositions",
+  "img": [
+    "https://cdn.august.style/media/illustrated-poetry-book/img-sq-illustrated-poetry-book-1.webp",
+    "https://cdn.august.style/media/illustrated-poetry-book/img-sq-illustrated-poetry-book-2.webp",
+    "https://cdn.august.style/media/illustrated-poetry-book/img-sq-illustrated-poetry-book-3.webp"
+  ],
+  "img_alt": "Poetry book spread illustrations with LGBTQ themes and mixed-media digital artwork",
+  "mobile_img": [], "mobile_img_alt": "",
+  "media_url": "", "media_embed": "", "media_alt": "",
+  "origin_url": "https://developer-technologist.august.style/illustrated-poetry-book",
+  "origin_url_text": "Full Case Study",
+  "repository": "",
+  "tiles": ["Original LGBTQ poetry and illustration", "Digital/traditional hybrid workflow", "Print-ready production design", "Mixed-media visual narrative"],
+  "challenge": "Illustrated poetry books require seamless integration of visual and literary elements — neither should overwhelm the other. The creative challenge was developing an illustration style that amplified the poetry's emotional content while creating a cohesive visual identity across the collection, using digital tools to bridge traditional illustration sensibilities with computational techniques.",
+  "approach": "Each poem received illustration treatment that responded to its specific emotional tenor — some pieces called for bold, graphic compositions while others needed subtle, atmospheric treatment. The digital workflow allowed for iterative refinement that traditional media doesn't permit, while maintaining the organic quality of hand-crafted illustration. Page layouts were designed for print production with attention to paper stock, bleed areas, and binding constraints.",
+  "result": "The completed collection demonstrates that digital illustration workflows can produce work with the warmth and intentionality of traditional media while adding computational capabilities — generative exploration, precise color management, and unlimited iteration. The LGBTQ themes are served by an illustration style that is both personal and universal, making the work accessible beyond its specific community.",
+  "role_headline": "Illustrated Poetry Collection",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Need illustration?",
+  "final_btn_cta": "See All Creative Work",
+  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+}

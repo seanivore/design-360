@@ -1,0 +1,40 @@
+{
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-cap-258",
+  "slug": "advanced-animation-system",
+  "title": "Maximalist Lottie Animation System",
+  "subtitle": "Hand-drawn illustration brought to life through precision Lottie animation workflows",
+  "seo_title": "Advanced Lottie Animation System — Hand-Drawn to Motion",
+  "seo_description": "A maximalist animation system transforming hand-drawn illustrations into performant Lottie web animations with custom easing and interaction design.",
+  "role": ["Graphic Designer", "Motion Designer"],
+  "skill": ["After Effects", "Animation", "Illustration", "Lottie"],
+  "product": ["Animation"],
+  "company": "Freelance",
+  "thumb": [
+    "https://cdn.august.style/media/advanced-animation-system/thumb-advanced-animation-system-1.webp",
+    "https://cdn.august.style/media/advanced-animation-system/thumb-advanced-animation-system-2.webp",
+    "https://cdn.august.style/media/advanced-animation-system/thumb-advanced-animation-system-3.webp",
+    "https://cdn.august.style/media/advanced-animation-system/thumb-advanced-animation-system-4.webp"
+  ],
+  "thumb_alt": "Maximalist hand-drawn illustrations with Lottie animation system showing detailed artwork and motion design process",
+  "img": [
+    "https://cdn.august.style/media/advanced-animation-system/img-sq-advanced-animation-system-1.webp",
+    "https://cdn.august.style/media/advanced-animation-system/img-sq-advanced-animation-system-2.webp",
+    "https://cdn.august.style/media/advanced-animation-system/img-sq-advanced-animation-system-3.webp"
+  ],
+  "img_alt": "Hand-drawn illustration detail and Lottie animation layer composition",
+  "mobile_img": [], "mobile_img_alt": "",
+  "media_url": "", "media_embed": "", "media_alt": "",
+  "origin_url": "https://developer-technologist.august.style/advanced-animation-system",
+  "origin_url_text": "Full Case Study",
+  "repository": "",
+  "tiles": ["Hand-drawn to Lottie animation pipeline", "Maximalist illustration style", "Custom easing curves and interaction triggers", "Web-optimized animation performance"],
+  "challenge": "Web animations face a fundamental tension between visual richness and performance. Traditional GIFs and video embeds are heavy. CSS animations lack complexity. Lottie solves the format problem but bringing intricate hand-drawn illustrations into the Lottie pipeline requires careful layer management and animation structure to maintain visual fidelity while keeping file sizes practical.",
+  "approach": "Developed a structured workflow from hand-drawn illustration through After Effects composition to Lottie export. Each illustration was constructed with animation in mind from the start — layers separated by animation intent, not just visual stacking. Custom easing curves gave each element naturalistic motion. The animation system was designed as a reusable framework rather than one-off compositions.",
+  "result": "The animation system produces rich, maximalist motion graphics that load instantly and play smoothly across all devices. The hand-drawn aesthetic distinguishes the work from typical vector-based web animations while the Lottie format ensures performance. The framework approach means new illustrations can be animated consistently without rebuilding the system each time.",
+  "role_headline": "Lottie Animation System",
+  "hero_btn_cta": "See Creative Work",
+  "final_cta_text": "Need animation?",
+  "final_btn_cta": "See All Creative Work",
+  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+}
