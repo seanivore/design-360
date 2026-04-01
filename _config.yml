@@ -6,4 +6,4 @@ url: "https://www.august.style/"
 collections:
   pages:
     output: true
-    permalink: /:basename/
+    permalink: /:name/
