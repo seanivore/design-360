@@ -24,14 +24,24 @@
     "humanistic-exploration": "assets/entries/uid-nvw-152.json",
     "clockwork-splendor": "assets/entries/uid-pzy-452.json",
     "css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
+    "web3-strategy-branding": "assets/entries/uid-rcy-132.json",
     "surreal-heads": "assets/entries/uid-rda-284.json",
     "saas-product-sale-features": "assets/entries/uid-rfr-187.json",
+    "technical-defi-content-simplification": "assets/entries/uid-rjy-542.json",
+    "product-marketing-branding": "assets/entries/uid-rvy-322.json",
+    "full-stack-automated-ecommerce": "assets/entries/uid-scz-944.json",
+    "ai-virtual-photoshoot-design": "assets/entries/uid-sdz-155.json",
     "social-advertising-strategy": "assets/entries/uid-sez-023.json",
     "amorphous-gradient-css-animation": "assets/entries/uid-sgt-851.json",
+    "agentic-marketing-department": "assets/entries/uid-sjz-330.json",
+    "agentic-social-manager": "assets/entries/uid-skz-743.json",
     "content-strategy-framework": "assets/entries/uid-slz-942.json",
     "neo-expresi-cyber": "assets/entries/uid-spc-535.json",
+    "scalable-augmented-generative-podcasts": "assets/entries/uid-sqz-852.json",
     "data-visualization-dashboard": "assets/entries/uid-srs-009.json",
     "ux-ui-ios-marketing": "assets/entries/uid-ssz-402.json",
+    "agentic-fashion-designer": "assets/entries/uid-svz-258.json",
+    "api-automate-video-production": "assets/entries/uid-sxz-424.json",
     "realtime-social-system": "assets/entries/uid-sxz-828.json",
     "blog-lookbook-print-gallery": "assets/entries/uid-tev-176.json",
     "training-yoga-sales": "assets/entries/uid-unw-889.json",
@@ -47,6 +57,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 43
+    "entry_count": 53
   }
 }

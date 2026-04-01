@@ -1,0 +1,42 @@
+{
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-scz-944",
+  "slug": "full-stack-automated-ecommerce",
+  "title": "AI-Maintained E-Commerce Historic Art Print Shop",
+  "subtitle": "Fully automated Shopify store with AI-curated inventory from museum collections",
+  "seo_title": "AI-Automated E-Commerce — Historic Art Print Shop",
+  "seo_description": "A fully automated Shopify e-commerce store using AI to curate historic art prints from museum collections with automated inventory and fulfillment.",
+  "role": ["AI & Automation Strategist", "Web Developer"],
+  "skill": ["Automation", "E-Commerce", "Generative AI", "Make.com", "Stripe"],
+  "product": ["E-Commerce Store"],
+  "company": "SEANIVORE GROUP LLC",
+  "thumb": [
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/thumb-full-stack-automated-ecommerce-1.webp",
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/thumb-full-stack-automated-ecommerce-2.webp",
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/thumb-full-stack-automated-ecommerce-3.webp",
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/thumb-full-stack-automated-ecommerce-4.webp",
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/thumb-full-stack-automated-ecommerce-5.webp"
+  ],
+  "thumb_alt": "AI-automated e-commerce store showcasing historic art prints with automated inventory management and product listings",
+  "img": [
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/img-sq-full-stack-automated-ecommerce-1.webp",
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/img-sq-full-stack-automated-ecommerce-2.webp",
+    "https://cdn.august.style/media/full-stack-automated-ecommerce/img-sq-full-stack-automated-ecommerce-3.webp"
+  ],
+  "img_alt": "Automated Shopify store interface with AI-curated artwork listings and product details",
+  "mobile_img": [], "mobile_img_alt": "",
+  "media_url": "", "media_embed": "", "media_alt": "",
+  "origin_url": "https://developer-technologist.august.style/full-stack-automated-ecommerce",
+  "origin_url_text": "Full Case Study",
+  "repository": "",
+  "tiles": ["Fully automated product curation pipeline", "AI-written descriptions and SEO metadata", "Museum collection API integration", "Print-on-demand fulfillment automation"],
+  "challenge": "Running an e-commerce store traditionally requires constant manual effort — product photography, copywriting, inventory management, SEO optimization. For a historic art print shop sourcing from museum collections, the volume of potential inventory is enormous but the per-item margin makes manual curation economically unviable.",
+  "approach": "Built a full-stack automation pipeline that discovers, curates, and lists historic artworks from museum collection APIs. AI agents analyze artwork metadata to generate compelling product descriptions, SEO-optimized titles, and contextual collection groupings. The system handles print-on-demand fulfillment integration, pricing strategy, and inventory rotation — the entire operation runs without daily oversight.",
+  "result": "The store operates as a genuinely autonomous e-commerce business with minimal human intervention. Products are automatically curated, listed with AI-generated copy, and fulfilled through print-on-demand partners. The approach proves viable for niche e-commerce where product volume is high but per-item manual effort would destroy margins.",
+  "role_headline": "Fully Automated Art E-Commerce",
+  "hero_btn_cta": "See AI Projects",
+  "final_cta_text": "Need automation?",
+  "final_btn_cta": "See All AI Work",
+  "skill_summary": "",
+  "process": null, "metric": null, "achievement": null, "notes": []
+}

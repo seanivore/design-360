@@ -1,0 +1,42 @@
+{
+  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "id": "uid-sjz-330",
+  "slug": "agentic-marketing-department",
+  "title": "The Agentic Marketing Department",
+  "subtitle": "Multi-agent AI system replacing traditional marketing team workflows",
+  "seo_title": "Agentic Marketing Department — AI Multi-Agent System",
+  "seo_description": "A multi-agent AI system that autonomously manages marketing workflows including content creation, scheduling, analytics, and campaign optimization.",
+  "role": ["AI & Automation Strategist", "Content Strategist"],
+  "skill": ["Automation", "Campaign Management", "Content Production", "Generative AI", "Make.com", "Social Media Marketing"],
+  "product": ["Marketing Campaign"],
+  "company": "SEANIVORE GROUP LLC",
+  "thumb": [
+    "https://cdn.august.style/media/agentic-marketing-department/thumb-agentic-marketing-department-1.webp",
+    "https://cdn.august.style/media/agentic-marketing-department/thumb-agentic-marketing-department-2.webp",
+    "https://cdn.august.style/media/agentic-marketing-department/thumb-agentic-marketing-department-3.webp",
+    "https://cdn.august.style/media/agentic-marketing-department/thumb-agentic-marketing-department-4.webp",
+    "https://cdn.august.style/media/agentic-marketing-department/thumb-agentic-marketing-department-5.webp"
+  ],
+  "thumb_alt": "Agentic marketing department system architecture showing multi-agent AI workflows for content, social, and campaign management",
+  "img": [
+    "https://cdn.august.style/media/agentic-marketing-department/img-sq-agentic-marketing-department-1.webp",
+    "https://cdn.august.style/media/agentic-marketing-department/img-sq-agentic-marketing-department-2.webp",
+    "https://cdn.august.style/media/agentic-marketing-department/img-sq-agentic-marketing-department-3.webp"
+  ],
+  "img_alt": "Multi-agent marketing automation system showing workflow diagrams and campaign output",
+  "mobile_img": [], "mobile_img_alt": "",
+  "media_url": "", "media_embed": "", "media_alt": "",
+  "origin_url": "https://developer-technologist.august.style/agentic-marketing-department",
+  "origin_url_text": "Full Case Study",
+  "repository": "",
+  "tiles": ["Multi-agent system replacing team workflows", "Autonomous content creation and scheduling", "Cross-platform campaign orchestration", "Self-optimizing based on performance data"],
+  "challenge": "Traditional marketing departments require multiple specialists — content writers, social media managers, analytics leads, campaign strategists. Small businesses and startups rarely have the budget for full marketing teams but need the same breadth of output. The challenge was designing a system where AI agents could genuinely replace the coordination overhead of a marketing team.",
+  "approach": "Architected a multi-agent system where specialized AI agents handle distinct marketing functions: content strategy, copywriting, visual asset creation, social scheduling, and performance analytics. The agents communicate through structured handoffs — the analytics agent feeds performance data back to the content strategy agent, creating a self-improving loop. Make.com orchestrates the automation triggers and inter-agent communication.",
+  "result": "The system autonomously handles the core functions of a small marketing department — content calendars, social media publishing, campaign reporting, and creative iteration. The self-optimizing feedback loop means performance improves over time without manual tuning. The architecture demonstrates that AI agent orchestration can meaningfully reduce the human headcount needed for professional marketing operations.",
+  "role_headline": "AI Multi-Agent Marketing System",
+  "hero_btn_cta": "See AI Projects",
+  "final_cta_text": "Need AI automation?",
+  "final_btn_cta": "See All AI Work",
+  "skill_summary": "",
+  "process": null, "metric": null, "achievement": null, "notes": []
+}
