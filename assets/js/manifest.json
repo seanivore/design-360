@@ -4,7 +4,6 @@
     "advanced-animation-system": "assets/entries/uid-cap-258.json",
     "influencer-growth-strategy": "assets/entries/uid-ccp-818.json",
     "embeddings-art-curation": "assets/entries/uid-chp-854.json",
-    "thought-chaining-early-analysis": "assets/entries/uid-cjp-640.json",
     "illustrated-poetry-book": "assets/entries/uid-cop-802.json",
     "public-health-response-platform": "assets/entries/uid-cpp-781.json",
     "vector-nft-art": "assets/entries/uid-cvp-436.json",
@@ -75,6 +74,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 71
+    "entry_count": 70
   }
 }
