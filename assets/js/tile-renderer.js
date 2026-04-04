@@ -7,8 +7,10 @@ const TileRenderer = (() => {
 
     /**
      * Render a section tile
+     * @param {Object} project - Project data
+     * @param {string[]} activeTags - Currently active filter tags (excluded from pill display)
      */
-    function renderSectionTile(project) {
+    function renderSectionTile(project, activeTags) {
         const slug = project.slug;
         const entryURL = `/${slug}`;
 
@@ -54,6 +56,33 @@ const TileRenderer = (() => {
         textArea.appendChild(text);
         tile.appendChild(gallery);
         tile.appendChild(textArea);
+
+        // Tag pills (exclude active filter tags)
+        const allTags = [
+            ...(project.role || []),
+            ...(project.skill || []),
+            ...(project.product || [])
+        ];
+        const activeSet = new Set((activeTags || []).map(t => DataLoader.normalizeForURL(t)));
+        let filteredTags = allTags.filter(t => !activeSet.has(DataLoader.normalizeForURL(t)));
+
+        // Shuffle
+        for (let i = filteredTags.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [filteredTags[i], filteredTags[j]] = [filteredTags[j], filteredTags[i]];
+        }
+
+        if (filteredTags.length > 0) {
+            const tagContainer = document.createElement('div');
+            tagContainer.className = 'tile-tags';
+            filteredTags.forEach(tag => {
+                const pill = document.createElement('span');
+                pill.className = 'tile-tag';
+                pill.textContent = tag;
+                tagContainer.appendChild(pill);
+            });
+            tile.appendChild(tagContainer);
+        }
 
         // Text cycling
         if (tileTexts.length > 1) {
@@ -177,7 +206,7 @@ const TileRenderer = (() => {
         if (emptyState) emptyState.style.display = 'none';
     }
 
-    function renderSectionTiles(projects, container) {
+    function renderSectionTiles(projects, container, activeTags) {
         showLoading(container);
         hideEmptyState();
 
@@ -192,7 +221,7 @@ const TileRenderer = (() => {
 
             projects.forEach((project, index) => {
                 try {
-                    const tile = renderSectionTile(project);
+                    const tile = renderSectionTile(project, activeTags);
                     tile.style.animationDelay = `${index * 100}ms`;
                     container.appendChild(tile);
                 } catch (error) {

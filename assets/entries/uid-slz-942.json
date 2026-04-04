@@ -7,7 +7,7 @@
   "slug": "content-strategy-framework",
   "title": "Multi-Platform Content Strategy Framework",
   "subtitle": "Strategic content system driving earned media through #AskSeaWorld innovation and video production",
-  "seo_title": "Multi-Platform Content Strategy — Earned Media Framework",
+  "seo_title": "Multi-Platform Content Strategy \u2014 Earned Media Framework",
   "seo_description": "Comprehensive content strategy framework spanning multiple platforms, featuring the #AskSeaWorld hashtag innovation and strategic video production at PETA.",
   "role": [
     "Content Strategist",
@@ -54,7 +54,7 @@
     "Emotional video production driving action"
   ],
   "challenge": "Content distribution across multiple platforms requires more than repurposing the same message everywhere. Each platform has distinct audience expectations, optimal formats, and algorithmic preferences. Building a unified content strategy that maintains message consistency while maximizing performance per platform demands a systematic framework rather than ad hoc publishing.",
-  "approach": "Developed a comprehensive content strategy framework that matched content formats to platform strengths. The #AskSeaWorld campaign innovated by hijacking a competitor's branded hashtag to redirect public conversation. Video production focused on emotional storytelling — the Britches animal testing video combined investigative journalism with narrative craft. Content was distributed through a coordinated calendar that timed releases for maximum earned media potential.",
+  "approach": "Developed a comprehensive content strategy framework that matched content formats to platform strengths. The #AskSeaWorld campaign innovated by hijacking a competitor's branded hashtag to redirect public conversation. Video production focused on emotional storytelling \u2014 the Britches animal testing video combined investigative journalism with narrative craft. Content was distributed through a coordinated calendar that timed releases for maximum earned media potential.",
   "result": "The #AskSeaWorld hashtag strategy generated widespread organic press coverage including features in Refinery29 and other major outlets. The framework produced consistent earned media across platforms, proving that strategic content planning outperforms high-volume publishing. The Britches video production demonstrated that emotional storytelling drives deeper engagement and sharing behavior than informational content alone.",
   "role_headline": "Multi-Platform Content Strategy",
   "hero_btn_cta": "See Campaign Work",
@@ -64,5 +64,10 @@
   "process": null,
   "metric": null,
   "achievement": null,
-  "notes": []
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

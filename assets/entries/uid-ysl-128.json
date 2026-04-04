@@ -1,14 +1,25 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-ysl-128",
   "slug": "my-robot-commune-life",
   "title": "My Robot Commune Life",
   "subtitle": "A generative narrative charting robotic evolution from commune to metropolis",
-  "seo_title": "My Robot Commune Life — AI Generative Storytelling",
+  "seo_title": "My Robot Commune Life \u2014 AI Generative Storytelling",
   "seo_description": "An AI-generated visual narrative following robotic characters as they evolve from living in a commune to traveling to a futuristic metropolis for an Instagram photoshoot.",
-  "role": ["Creative Director"],
-  "skill": ["Art Direction", "Generative AI", "Illustration"],
-  "product": ["Digital Art Collection"],
+  "role": [
+    "Creative Director"
+  ],
+  "skill": [
+    "Art Direction",
+    "Generative AI",
+    "Illustration"
+  ],
+  "product": [
+    "Digital Art Collection"
+  ],
   "company": "Freelance",
   "thumb": [
     "https://cdn.august.style/media/my-robot-commune-life/thumb-my-robot-commune-life-1.webp",
@@ -24,12 +35,20 @@
     "https://cdn.august.style/media/my-robot-commune-life/img-sq-my-robot-commune-life-3.webp"
   ],
   "img_alt": "Close-up details of robotic character designs and futuristic environment art",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://www.behance.net/gallery/183961255/My-robot-commune-life",
   "origin_url_text": "View on Behance",
   "repository": "",
-  "tiles": ["Sequential Generative Narrative", "Character Design Consistency", "Environment Worldbuilding", "Retro-Futuristic Elements"],
+  "tiles": [
+    "Sequential Generative Narrative",
+    "Character Design Consistency",
+    "Environment Worldbuilding",
+    "Retro-Futuristic Elements"
+  ],
   "challenge": "Maintaining character identity and aesthetic continuity across a sequential narrative created entirely with generative AI tools, moving the subjects through drastically different lighting and environmental setups.",
   "approach": "Relied on rigorous prompt formulation to maintain rigid aesthetic rules for the robotic protagonists, ensuring their core design remained recognizable whether placed in a dusty terrestrial commune or a sleek, high-end extraterrestrial metropolis.",
   "result": "A charming, cohesive storybook-like project that traces a clear narrative arc solely through environmental change and character posing, proving AI's capacity for sequential art when directed carefully.",
@@ -37,5 +56,14 @@
   "hero_btn_cta": "View Full Gallery",
   "final_cta_text": "Need character design?",
   "final_btn_cta": "View All Character Art",
-  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

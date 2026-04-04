@@ -78,5 +78,10 @@
   "process": null,
   "metric": null,
   "achievement": null,
-  "notes": []
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

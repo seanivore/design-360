@@ -53,15 +53,25 @@
     "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-sq-slides-automated-e-commerce-shop-lookbook-3.webp"
   ],
   "img_alt": "Automated e-commerce storefront screenshots showing product catalog, fashion lookbook, and custom navigation",
-  "mobile_img": [
-    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-1.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-2.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-3.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-4.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-5.webp",
-    "assets/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-6.webp"
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "gif": [], "gif_alt": "",
+  "grid": [], "grid_alt": "",
+  "slideshows": [
+    {
+      "title": "Mobile Screenshots",
+      "type": "mobile",
+      "images": [
+        "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-1.webp",
+        "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-2.webp",
+        "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-3.webp",
+        "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-4.webp",
+        "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-5.webp",
+        "https://cdn.august.style/media/automated-e-commerce-shop-lookbook/img-mobile-automated-e-commerce-shop-lookbook-6.webp"
+      ],
+      "alt": "Mobile views of the automated e-commerce shop and fashion lookbook"
+    }
   ],
-  "mobile_img_alt": "Mobile views of the automated e-commerce shop and fashion lookbook",
   "media_url": "https://youtu.be/lnoKsXWa584",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/lnoKsXWa584?si=1bdNy9s8d65d5Kme&amp;controls=0' title='Automated Webflow CMS Shop and Fashion Gallery' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Fully automated Webflow e-commerce system with 800+ products managed through Make.com workflows, Notion databases, and custom navigation spanning online store, fashion lookbook, and editorial content sections",

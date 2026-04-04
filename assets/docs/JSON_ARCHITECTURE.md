@@ -1,12 +1,12 @@
-# v5.0 JSON Architecture Reference
+# v5.1 JSON Architecture Reference
 
 Technical reference for the portfolio architecture at [august.style](https://august.style). This document covers the entry schema, homepage configuration, tag system, URL routing, file structure, and data flow.
 
 ---
 
-## 1. Entry Schema (v5.0)
+## 1. Entry Schema (v5.1)
 
-Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. The v5.0 schema is flat -- no nested `categorization` or `content` wrappers.
+Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. The v5.1 schema is flat -- no nested `categorization` or `content` wrappers.
 
 ### Required Fields
 
@@ -33,10 +33,15 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. T
 
 | Field             | Type           | Default | Description                              |
 | ----------------- | -------------- | ------- | ---------------------------------------- |
-| `img`             | `string[]`     | `[]`    | Square page images (entry page gallery)  |
+| `img`             | `string[]`     | `[]`    | Square page images (hero fallback)       |
 | `img_alt`         | `string`       | `""`    | Alt text for page images                 |
-| `mobile_img`      | `string[]`     | `[]`    | Mobile-specific images                   |
-| `mobile_img_alt`  | `string`       | `""`    | Alt text for mobile images               |
+| `mobile_img`      | `string[]`     | `[]`    | **Deprecated** -- use `slideshows` with `type: "mobile"` instead |
+| `mobile_img_alt`  | `string`       | `""`    | **Deprecated** -- use `slideshows`       |
+| `gif`             | `string[]`     | `[]`    | GIF animation URLs (any aspect ratio)    |
+| `gif_alt`         | `string`       | `""`    | Alt text for GIFs                        |
+| `grid`            | `string[]`     | `[]`    | 1080px square grid images (3-across)     |
+| `grid_alt`        | `string`       | `""`    | Alt text for grid images                 |
+| `slideshows`      | `array`        | `[]`    | Grouped slideshow collections (see below)|
 | `media_url`       | `string`       | `""`    | External video URL (e.g. YouTube link)   |
 | `media_embed`     | `string`       | `""`    | Raw iframe embed HTML for video          |
 | `media_alt`       | `string`       | `""`    | Alt text for video embed                 |
@@ -75,12 +80,35 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. T
 "achievement": { "headline": "Award Name", "details": "Description paragraph" }
 ```
 
+**`slideshows`** -- Array of slideshow group objects, rendered as independent slideshow instances on the entry page. Each group has its own title, navigation, and display behavior:
+
+```json
+"slideshows": [
+  {
+    "title": "Growth Strategy Deck",
+    "type": "slide",
+    "images": ["https://cdn.august.style/media/{slug}/slide-{slug}-1.webp"],
+    "alt": "Alt text for this slideshow"
+  },
+  {
+    "title": "Mobile Screenshots",
+    "type": "mobile",
+    "images": ["https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp"],
+    "alt": "Alt text for mobile screenshots"
+  }
+]
+```
+
+- `type: "slide"` -- one image per slide (default)
+- `type: "mobile"` -- 2-3 tall/narrow images displayed side-by-side per slide
+- Replaces the deprecated flat `slideshow` / `slideshow_alt` and `mobile_img` / `mobile_img_alt` fields
+
 ### Metadata Block
 
 Every entry file includes a `_metadata` block. This is informational only and not consumed by any controller:
 
 ```json
-"_metadata": { "schema_version": "5.0", "template_type": "project_entry" }
+"_metadata": { "schema_version": "5.1", "template_type": "project_entry" }
 ```
 
 ### Image Path Conventions
@@ -88,8 +116,12 @@ Every entry file includes a `_metadata` block. This is informational only and no
 All images are hosted on the Cloudflare R2 CDN at `cdn.august.style`. Image URLs in entry JSON use full CDN URLs:
 
 ```
-https://cdn.august.style/media/{slug}/thumb-slides-{slug}-1.webp    (thumbnail)
-https://cdn.august.style/media/{slug}/img-sq-slides-{slug}-1.webp   (square page image)
+https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp           (thumbnail)
+https://cdn.august.style/media/{slug}/img-sq-{slug}-1.webp          (square page image)
+https://cdn.august.style/media/{slug}/gif-{slug}-1.gif              (GIF animation)
+https://cdn.august.style/media/{slug}/img-grid-{slug}-1.webp        (1080px square grid image)
+https://cdn.august.style/media/{slug}/slide-{slug}-1.webp           (slideshow image)
+https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp      (mobile screenshot)
 ```
 
 The controllers detect CDN URLs (`src.startsWith('http')`) and use them directly, or prepend `/` for any legacy relative paths.
@@ -443,5 +475,5 @@ See `assets/docs/ENTRY_SOP.md` for the full step-by-step procedure. Summary:
 
 ---
 
-*Last updated: 2026-03-29*
-*Schema version: 5.0*
+*Last updated: 2026-04-04*
+*Schema version: 5.1*

@@ -1,14 +1,26 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-xxk-777",
   "slug": "neo-expressionism-cyberpunk",
   "title": "Neo-Expressionism Meets Cyberpunk",
   "subtitle": "Animated graphic design merging aggressive expressionist brushwork with sci-fi motifs",
-  "seo_title": "Neo-Expressionism Cyberpunk Abstract — Animated Graphic Design",
+  "seo_title": "Neo-Expressionism Cyberpunk Abstract \u2014 Animated Graphic Design",
   "seo_description": "An animated generative art collection merging raw neo-expressionism with cyberpunk aesthetics, edited with LumaFusion.",
-  "role": ["Motion Designer", "Creative Director"],
-  "skill": ["Animation", "Generative AI", "Motion Graphics"],
-  "product": ["Digital Art Collection"],
+  "role": [
+    "Motion Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Animation",
+    "Generative AI",
+    "Motion Graphics"
+  ],
+  "product": [
+    "Digital Art Collection"
+  ],
   "company": "Freelance",
   "thumb": [
     "https://cdn.august.style/media/neo-expressionism-cyberpunk/thumb-neo-expressionism-cyberpunk-1.webp",
@@ -24,18 +36,35 @@
     "https://cdn.august.style/media/neo-expressionism-cyberpunk/img-sq-neo-expressionism-cyberpunk-3.webp"
   ],
   "img_alt": "Detail views of animated neo-expressionist cyberpunk composites",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://www.behance.net/gallery/215001371/Neo-Expressionism-Oil-Painting-Abstract-Cyberpunk",
   "origin_url_text": "View on Behance",
   "repository": "",
-  "tiles": ["Cyberpunk Aesthetic Clash", "Neo-Expressionist Textures", "LumaFusion Animation Edit", "Abstract Storytelling"],
-  "challenge": "Fusing two heavily contrasting aesthetics—the neon, high-tech gloss of cyberpunk and the aggressive, analog chaos of neo-expressionism—into a harmonious, animated visual piece.",
+  "tiles": [
+    "Cyberpunk Aesthetic Clash",
+    "Neo-Expressionist Textures",
+    "LumaFusion Animation Edit",
+    "Abstract Storytelling"
+  ],
+  "challenge": "Fusing two heavily contrasting aesthetics\u2014the neon, high-tech gloss of cyberpunk and the aggressive, analog chaos of neo-expressionism\u2014into a harmonious, animated visual piece.",
   "approach": "Generated baseline keyframes prioritizing thick, chaotic oil textures but structured the prompts around sci-fi compositions. The assets were then sequenced and animated dynamically using LumaFusion to introduce pulsing, glitch-like digital movement over analog textures.",
   "result": "A unique, tension-filled digital short, \"The Trouble With Twins & Meeting The Architect,\" providing a fresh stylistic take on sci-fi art and expanding the boundaries of AI animation.",
   "role_headline": "Cyberpunk Animated Art",
   "hero_btn_cta": "View Full Gallery",
   "final_cta_text": "Need motion design?",
   "final_btn_cta": "View All Galleries",
-  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

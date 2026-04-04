@@ -1,14 +1,25 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-yel-369",
   "slug": "transmutations-hyperobject",
   "title": "Transmutations of a Conscious Hyperobject",
   "subtitle": "Visualizing concepts too massive and complex for human understanding",
-  "seo_title": "Transmutations of a Conscious Hyperobject — Generative Art Concept",
-  "seo_description": "AI generative art exploration of hyperobjects—entities of such vast temporal and spatial dimensions that they defeat traditional human understanding.",
-  "role": ["Creative Director"],
-  "skill": ["Art Direction", "Generative AI", "Illustration"],
-  "product": ["Digital Art Collection"],
+  "seo_title": "Transmutations of a Conscious Hyperobject \u2014 Generative Art Concept",
+  "seo_description": "AI generative art exploration of hyperobjects\u2014entities of such vast temporal and spatial dimensions that they defeat traditional human understanding.",
+  "role": [
+    "Creative Director"
+  ],
+  "skill": [
+    "Art Direction",
+    "Generative AI",
+    "Illustration"
+  ],
+  "product": [
+    "Digital Art Collection"
+  ],
   "company": "Freelance",
   "thumb": [
     "https://cdn.august.style/media/transmutations-hyperobject/thumb-transmutations-hyperobject-1.webp",
@@ -24,18 +35,35 @@
     "https://cdn.august.style/media/transmutations-hyperobject/img-sq-transmutations-hyperobject-3.webp"
   ],
   "img_alt": "Detailed abstract structures and surreal compositions of the hyperobject",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://www.behance.net/gallery/184259979/Transmutations-of-a-Conscious-Hyperobject",
   "origin_url_text": "View on Behance",
   "repository": "",
-  "tiles": ["Conceptual Data Visualization", "Vast Scale Depiction in Art", "Abstract Surrealist Prompts", "Philosophical Art Direction"],
-  "challenge": "Visually representing a 'hyperobject'—a philosophical concept defined by being so massive in time and space relative to humans that it defies traditional representation and comprehension.",
+  "tiles": [
+    "Conceptual Data Visualization",
+    "Vast Scale Depiction in Art",
+    "Abstract Surrealist Prompts",
+    "Philosophical Art Direction"
+  ],
+  "challenge": "Visually representing a 'hyperobject'\u2014a philosophical concept defined by being so massive in time and space relative to humans that it defies traditional representation and comprehension.",
   "approach": "Rather than attempting literal illustration, the approach pushed generative models to produce fractal-like, non-Euclidean dreamscapes. The emphasis was on overwhelming scale, impossible geometries, and unsettling organic-synthetic synthesis.",
   "result": "Created as brand art for August.Style, the resulting gallery offers a profoundly uncanny and awe-inspiring aesthetic experience, using AI not to render reality, but to visualize pure, mind-bending conceptual philosophy.",
   "role_headline": "Conceptual Generative Artwork",
   "hero_btn_cta": "View Full Gallery",
   "final_cta_text": "See more conceptual art?",
   "final_btn_cta": "View Conceptual Galleries",
-  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

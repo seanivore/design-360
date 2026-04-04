@@ -62,60 +62,63 @@
       <h3 id="entry-role"><!-- Populated by JS --></h3>
     </section>
 
-    <!-- Optional: Video Embed (moved below role) -->
-    <section id="entry-video" class="entry-optional-section" style="display: none;">
-      <!-- Populated by entry-controller.js if video_embed exists -->
-    </section>
-
-    <!-- Main Content: Two Columns (Text + Thumbnail Images) -->
-    <div class="entry-main-content">
-      <div class="entry-text-column">
-        <!-- Challenge Section -->
-        <section class="entry-section">
-          <h4 class="section-label">CHALLENGE</h4>
-          <p id="entry-challenge"><!-- Populated by JS --></p>
-        </section>
-
-        <!-- Approach Section -->
-        <section class="entry-section">
-          <h4 class="section-label">APPROACH</h4>
-          <p id="entry-approach"><!-- Populated by JS --></p>
-        </section>
-
-        <!-- Result Section -->
-        <section class="entry-section">
-          <h4 class="section-label">RESULT</h4>
-          <p id="entry-result"><!-- Populated by JS --></p>
-        </section>
-      </div>
-
-      <div class="entry-media-column">
-        <!-- Thumbnail Images (first 3 on desktop) -->
-        <div id="entry-thumbnail-images-column" class="entry-thumbnail-images-column">
-          <!-- Populated by entry-controller.js -->
-        </div>
-      </div>
-    </div>
-
-    <!-- Remaining Thumbnail Images (below 2-column layout) -->
-    <section id="entry-thumbnail-images-grid" class="entry-thumbnail-images-grid" style="display: none;">
+    <!-- Hero: Video embed (priority) or random thumbnail -->
+    <section id="entry-hero" class="entry-hero" style="display: none;">
       <!-- Populated by entry-controller.js -->
     </section>
 
-    <!-- Optional: Page Imagery -->
-    <section id="entry-page-imagery" class="entry-optional-section entry-page-imagery" style="display: none;">
-      <!-- Populated by entry-controller.js if page_imagery exists -->
-    </section>
+    <!-- Two-column: Text + Compact Thumbnail Grid with Lightbox -->
+    <div class="entry-content-media">
+      <div class="entry-text-column">
+        <section class="entry-section">
+          <h4 class="section-label">CHALLENGE</h4>
+          <p id="entry-challenge"></p>
+        </section>
+        <section class="entry-section">
+          <h4 class="section-label">APPROACH</h4>
+          <p id="entry-approach"></p>
+        </section>
+        <section class="entry-section">
+          <h4 class="section-label">RESULT</h4>
+          <p id="entry-result"></p>
+        </section>
+      </div>
+      <div class="entry-thumb-grid" id="entry-thumb-grid">
+        <!-- Populated by entry-controller.js: compact 2-col thumbnails -->
+      </div>
+    </div>
 
     <!-- Optional: Project URL -->
     <section id="entry-project-url" class="entry-optional-section" style="display: none;">
-      <!-- Populated by entry-controller.js if project_url exists -->
     </section>
 
     <!-- Optional: GitHub Repository -->
     <section id="entry-github-repo" class="entry-optional-section" style="display: none;">
-      <!-- Populated by entry-controller.js if github_repository exists -->
     </section>
+
+    <!-- Optional: GIFs -->
+    <section id="entry-gifs" class="entry-gifs" style="display: none;">
+      <!-- Populated by entry-controller.js if gif array has items -->
+    </section>
+
+    <!-- Optional: Image Grid (3-across square images) -->
+    <section id="entry-image-grid" class="entry-image-grid" style="display: none;">
+      <!-- Populated by entry-controller.js if grid array has items -->
+    </section>
+
+    <!-- Optional: Slideshows (multiple groups) -->
+    <section id="entry-slideshows" class="entry-slideshows" style="display: none;">
+      <!-- Populated by entry-controller.js if slideshows array has items -->
+    </section>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox-overlay" class="lightbox-overlay" style="display: none;">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+      <button class="lightbox-next" aria-label="Next">&rsaquo;</button>
+      <img class="lightbox-img" src="" alt="">
+      <span class="lightbox-counter"></span>
+    </div>
 
     <!-- Bottom Tags -->
     <div class="entry-tags-layout entry-bottom-tags">

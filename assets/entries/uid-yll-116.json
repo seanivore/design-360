@@ -1,14 +1,25 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-yll-116",
   "slug": "all-that-glitters",
   "title": "All That Glitters",
   "subtitle": "Exploring crystalline alien structures as beautiful but dangerous lifeforms",
-  "seo_title": "All That Glitters — Alien Generative Concept Art",
+  "seo_title": "All That Glitters \u2014 Alien Generative Concept Art",
   "seo_description": "Generative concept art exploring the sci-fi hypothesis that crystalline, shiny objects on alien worlds might actually be dangerous lifeforms.",
-  "role": ["Creative Director"],
-  "skill": ["Art Direction", "Generative AI", "Illustration"],
-  "product": ["Digital Art Collection"],
+  "role": [
+    "Creative Director"
+  ],
+  "skill": [
+    "Art Direction",
+    "Generative AI",
+    "Illustration"
+  ],
+  "product": [
+    "Digital Art Collection"
+  ],
   "company": "Freelance",
   "thumb": [
     "https://cdn.august.style/media/all-that-glitters/thumb-all-that-glitters-1.webp",
@@ -24,18 +35,35 @@
     "https://cdn.august.style/media/all-that-glitters/img-sq-all-that-glitters-3.webp"
   ],
   "img_alt": "Detailed views of alien crystalline structures and their glowing internal geometries",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://www.behance.net/gallery/183958871/All-that-glitters-might-be-dangerous-aliens",
   "origin_url_text": "View on Behance",
   "repository": "",
-  "tiles": ["Sci-Fi Concept Design", "Material Simulation Imagery", "Crystalline Structure Generation", "Environmental Storytelling"],
+  "tiles": [
+    "Sci-Fi Concept Design",
+    "Material Simulation Imagery",
+    "Crystalline Structure Generation",
+    "Environmental Storytelling"
+  ],
   "challenge": "Producing compelling sci-fi concept art that conveys environmental danger not through traditional monstrous forms, but through the seductive, deceptive beauty of crystalline and geometric structures.",
-  "approach": "Fine-tuned generative prompts to prioritize hyper-realistic material simulation—glass, crystal, chrome, and refractive lighting—set against bleak, desolate off-world environments to create intense visual contrast and narrative tension.",
+  "approach": "Fine-tuned generative prompts to prioritize hyper-realistic material simulation\u2014glass, crystal, chrome, and refractive lighting\u2014set against bleak, desolate off-world environments to create intense visual contrast and narrative tension.",
   "result": "A visually striking concept art series that effectively communicates a sci-fi narrative premise solely through mood, lighting, and material rendering, highlighting generative AI's strength in rapid stylistic worldbuilding.",
   "role_headline": "Sci-Fi Generative Concept Art",
   "hero_btn_cta": "View Full Gallery",
   "final_cta_text": "Need conceptual worldbuilding?",
   "final_btn_cta": "See Concept Art",
-  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

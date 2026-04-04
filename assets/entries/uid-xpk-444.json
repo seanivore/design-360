@@ -1,14 +1,26 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-xpk-444",
   "slug": "tripping-animated-artwork",
   "title": "\"Tripping\" Animated Digital Artwork",
   "subtitle": "Combining constructionism, surrealism, and brutalism in a generative oil painting",
-  "seo_title": "Tripping Animated Digital Art — Surrealist AI Motion Artwork",
+  "seo_title": "Tripping Animated Digital Art \u2014 Surrealist AI Motion Artwork",
   "seo_description": "An animated generative art piece blending constructionist structures with surrealist and brutalist elements in an oil-painting style.",
-  "role": ["Motion Designer", "Creative Director"],
-  "skill": ["Animation", "Generative AI", "Motion Graphics"],
-  "product": ["Digital Art Collection"],
+  "role": [
+    "Motion Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Animation",
+    "Generative AI",
+    "Motion Graphics"
+  ],
+  "product": [
+    "Digital Art Collection"
+  ],
   "company": "Freelance",
   "thumb": [
     "https://cdn.august.style/media/tripping-animated-artwork/thumb-tripping-animated-artwork-1.webp",
@@ -24,12 +36,20 @@
     "https://cdn.august.style/media/tripping-animated-artwork/img-sq-tripping-animated-artwork-3.webp"
   ],
   "img_alt": "Still frames from the animated surrealist digital artwork",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://www.behance.net/gallery/215001693/Tripping-Animated-AI-Generated-Artwork",
   "origin_url_text": "View on Behance",
   "repository": "",
-  "tiles": ["Surrealist Animation", "Brutalist Architecture Elements", "Digital Oil Painting Simulation", "Generative Motion Process"],
+  "tiles": [
+    "Surrealist Animation",
+    "Brutalist Architecture Elements",
+    "Digital Oil Painting Simulation",
+    "Generative Motion Process"
+  ],
   "challenge": "Creating compelling, dream-like motion within a static, highly textured, AI-generated image without breaking the illusion of a painted physical medium.",
   "approach": "Starting with a highly detailed, brutalist-surrealist generative base image, motion layers and depth maps were carefully constructed to isolate environmental elements, enabling slow, hypnotic animation that respects the original 'painted' texture.",
   "result": "An evocative, looping digital artwork that pulls the viewer into a surreal, constructed landscape, proving that generative static art can successfully cross over into engaging motion media.",
@@ -37,5 +57,14 @@
   "hero_btn_cta": "View Full Gallery",
   "final_cta_text": "See more motion art?",
   "final_btn_cta": "View All Motion Work",
-  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

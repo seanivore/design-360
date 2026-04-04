@@ -7,7 +7,7 @@
   "slug": "web3-strategy-branding",
   "title": "Web3 Privacy Protocol Branding Productions",
   "subtitle": "Brand identity and content production for decentralized privacy infrastructure",
-  "seo_title": "Web3 Privacy Protocol Branding — Decentralized Identity Design",
+  "seo_title": "Web3 Privacy Protocol Branding \u2014 Decentralized Identity Design",
   "seo_description": "Brand identity and visual production for a Web3 privacy protocol, creating accessible design language for decentralized identity infrastructure.",
   "role": [
     "Brand Designer",
@@ -52,8 +52,8 @@
     "Design language making cryptography approachable",
     "Content strategy for developer and consumer audiences"
   ],
-  "challenge": "Privacy protocols are among the most technically complex products in Web3. The branding needed to communicate the value of decentralized identity and data sovereignty to both developers who would build on the protocol and consumers who would benefit from it — two audiences with fundamentally different technical literacy levels.",
-  "approach": "Created a brand identity system that used visual metaphors for privacy and security without resorting to lock-and-key clichés. The illustration style conveyed both the sophistication of the underlying cryptography and the human benefits of data protection. Content production included technical documentation design, social media templates, and presentation materials adapted for conferences and investor meetings.",
+  "challenge": "Privacy protocols are among the most technically complex products in Web3. The branding needed to communicate the value of decentralized identity and data sovereignty to both developers who would build on the protocol and consumers who would benefit from it \u2014 two audiences with fundamentally different technical literacy levels.",
+  "approach": "Created a brand identity system that used visual metaphors for privacy and security without resorting to lock-and-key clich\u00e9s. The illustration style conveyed both the sophistication of the underlying cryptography and the human benefits of data protection. Content production included technical documentation design, social media templates, and presentation materials adapted for conferences and investor meetings.",
   "result": "The brand system successfully served both technical and consumer-facing communications. Developer-focused materials maintained credibility with the crypto community while consumer-facing content made privacy technology feel relevant and urgent. The visual identity established the protocol as a serious player in the decentralized identity space.",
   "role_headline": "Privacy Protocol Brand Identity",
   "hero_btn_cta": "See Brand Work",
@@ -63,5 +63,10 @@
   "process": null,
   "metric": null,
   "achievement": null,
-  "notes": []
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

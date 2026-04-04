@@ -1,14 +1,27 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-sxz-424",
   "slug": "api-automate-video-production",
   "title": "API To Scale Video Production By 10X",
   "subtitle": "Automated video production pipeline using APIs to eliminate manual editing workflows",
-  "seo_title": "API-Automated Video Production — 10X Scale",
+  "seo_title": "API-Automated Video Production \u2014 10X Scale",
   "seo_description": "Video production automation using API integrations to scale output 10x, replacing manual editing workflows with programmatic asset assembly and publishing.",
-  "role": ["AI & Automation Strategist", "Video Editor"],
-  "skill": ["Automation", "Make.com", "Scaling Systems", "Video Production"],
-  "product": ["Video"],
+  "role": [
+    "AI & Automation Strategist",
+    "Video Editor"
+  ],
+  "skill": [
+    "Automation",
+    "Make.com",
+    "Scaling Systems",
+    "Video Production"
+  ],
+  "product": [
+    "Video"
+  ],
   "company": "SEANIVORE GROUP LLC",
   "thumb": [
     "https://cdn.august.style/media/api-automate-video-production/thumb-api-automate-video-production-1.webp",
@@ -24,19 +37,39 @@
     "https://cdn.august.style/media/api-automate-video-production/img-sq-api-automate-video-production-3.webp"
   ],
   "img_alt": "Video production automation system architecture and output samples",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://developer-technologist.august.style/api-automate-video-production",
   "origin_url_text": "Full Case Study",
   "repository": "",
-  "tiles": ["10x production volume increase", "API-driven asset assembly pipeline", "Eliminated manual editing bottleneck", "Template-based scalable video system"],
-  "challenge": "Video production at scale hits a hard bottleneck — manual editing. Each video requires a skilled editor spending hours on assembly, transitions, text overlays, and export. When content demand calls for dozens of videos per week, the traditional approach simply doesn't scale without proportionally scaling expensive editor headcount.",
-  "approach": "Replaced the manual editing workflow with an API-driven production pipeline. Video templates define structure, transitions, and brand elements programmatically. Source assets are assembled through API calls to video rendering services. The system handles text overlay personalization, audio sync, format optimization, and multi-platform export — all without opening an editing application.",
-  "result": "Production throughput increased 10x while reducing per-video cost dramatically. The API-driven approach eliminated the editing bottleneck entirely — videos are produced programmatically from templates and assets. The system handles format variations for different platforms automatically, meaning one piece of source content generates multiple platform-optimized outputs.",
+  "tiles": [
+    "10x production volume increase",
+    "API-driven asset assembly pipeline",
+    "Eliminated manual editing bottleneck",
+    "Template-based scalable video system"
+  ],
+  "challenge": "Video production at scale hits a hard bottleneck \u2014 manual editing. Each video requires a skilled editor spending hours on assembly, transitions, text overlays, and export. When content demand calls for dozens of videos per week, the traditional approach simply doesn't scale without proportionally scaling expensive editor headcount.",
+  "approach": "Replaced the manual editing workflow with an API-driven production pipeline. Video templates define structure, transitions, and brand elements programmatically. Source assets are assembled through API calls to video rendering services. The system handles text overlay personalization, audio sync, format optimization, and multi-platform export \u2014 all without opening an editing application.",
+  "result": "Production throughput increased 10x while reducing per-video cost dramatically. The API-driven approach eliminated the editing bottleneck entirely \u2014 videos are produced programmatically from templates and assets. The system handles format variations for different platforms automatically, meaning one piece of source content generates multiple platform-optimized outputs.",
   "role_headline": "10X Video Production via API",
   "hero_btn_cta": "See AI Projects",
   "final_cta_text": "Need production automation?",
   "final_btn_cta": "See All AI Work",
   "skill_summary": "",
-  "process": null, "metric": { "value": "10x", "kpi": "Production Scale", "context": "Video production throughput increase via API automation" }, "achievement": null, "notes": []
+  "process": null,
+  "metric": {
+    "value": "10x",
+    "kpi": "Production Scale",
+    "context": "Video production throughput increase via API automation"
+  },
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

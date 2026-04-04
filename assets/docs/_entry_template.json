@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "5.1",
     "template_type": "project_entry"
   },
   "id": "uid-xxx-###",
@@ -28,22 +28,13 @@
     "https://cdn.august.style/media/{slug}/img-sq-{slug}-1.webp"
   ],
   "img_alt": "Alt text for square images",
-  "mobile_img": [
-    "https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp"
-  ],
-  "mobile_img_alt": "Alt text for mobile images",
-  "grid": [
-    "https://cdn.august.style/media/{slug}/img-grid-{slug}-1.webp"
-  ],
-  "grid_alt": "Alt text for grid images",
-  "slideshow": [
-    "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp"
-  ],
-  "slideshow_alt": "Alt text for slideshow images",
-  "gif": [
-    "https://cdn.august.style/media/{slug}/gif-{slug}-1.webp"
-  ],
-  "gif_alt": "Alt text for gif images",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": [],
   "media_url": "",
   "media_embed": "",
   "media_alt": "",

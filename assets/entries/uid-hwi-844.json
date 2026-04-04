@@ -63,8 +63,8 @@
     "Typography hierarchy mirrors editorial print design",
     "Archetypal characters tell relatable luxury stories"
   ],
-  "challenge": "High-end fashion magazines translate poorly to the web — the visual impact gets lost in typical blog layouts. This project needed to capture the weight and sophistication of print editorial design while maintaining digital usability. The content follows archetypal character journeys through art historical movements, requiring a design that supports complex narrative flow across multiple sections while keeping each spread visually stunning.",
-  "approach": "Built a custom HTML/CSS/JS photo journal that prioritizes large-format imagery with minimal interface elements. Developed a typography system using hierarchy and white space to create breathing room between sections, letting each fashion spread command attention. Structured the multi-part narrative with clear visual transitions between art movements — Impressionism to Surrealism to Neo-Expressionism — using subtle design cues rather than heavy-handed navigation. The layout adapts to showcase full-bleed images on desktop while maintaining editorial pacing on mobile.",
+  "challenge": "High-end fashion magazines translate poorly to the web \u2014 the visual impact gets lost in typical blog layouts. This project needed to capture the weight and sophistication of print editorial design while maintaining digital usability. The content follows archetypal character journeys through art historical movements, requiring a design that supports complex narrative flow across multiple sections while keeping each spread visually stunning.",
+  "approach": "Built a custom HTML/CSS/JS photo journal that prioritizes large-format imagery with minimal interface elements. Developed a typography system using hierarchy and white space to create breathing room between sections, letting each fashion spread command attention. Structured the multi-part narrative with clear visual transitions between art movements \u2014 Impressionism to Surrealism to Neo-Expressionism \u2014 using subtle design cues rather than heavy-handed navigation. The layout adapts to showcase full-bleed images on desktop while maintaining editorial pacing on mobile.",
   "result": "The design successfully translates luxury print editorial aesthetics into a digital experience that maintains visual impact and narrative cohesion. The clean, timeless layout lets the fashion photography and art historical references take center stage without competing UI elements. The multi-section structure guides users through character arcs naturally, with the minimal interface encouraging full immersion in visual storytelling rather than typical web browsing behavior.",
   "role_headline": "Art History Fashion Lookbook Site",
   "hero_btn_cta": "See Web Projects",
@@ -74,5 +74,10 @@
   "process": null,
   "metric": null,
   "achievement": null,
-  "notes": []
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

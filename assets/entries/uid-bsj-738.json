@@ -8,7 +8,7 @@
   "title": "Baroque Fruit Still Life (De Heem Study)",
   "subtitle": "Generative painting study with baroque composition, chiaroscuro, and rich color.",
   "seo_title": "Baroque Fruit Still Life in the Style of Jan Davidsz de Heem | Generative Digital Art",
-  "seo_description": "A generative art study channeling baroque still life aesthetics—luminous fruit, rich chiaroscuro, and balanced composition—produced with modern AI image workflows and finishing polish.",
+  "seo_description": "A generative art study channeling baroque still life aesthetics\u2014luminous fruit, rich chiaroscuro, and balanced composition\u2014produced with modern AI image workflows and finishing polish.",
   "role": [
     "Graphic Designer",
     "Creative Director"
@@ -65,5 +65,10 @@
   "process": null,
   "metric": null,
   "achievement": null,
-  "notes": []
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

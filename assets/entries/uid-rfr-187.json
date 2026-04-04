@@ -40,7 +40,7 @@
     "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-5.webp",
     "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-6.webp"
   ],
-  "thumb_alt": "Three-stage SaaS conversion funnel walkthrough showing landing page with tiered pricing, sign-up flow with progress indicators, and profile setup—all using enterprise-grade CSS architecture without JavaScript",
+  "thumb_alt": "Three-stage SaaS conversion funnel walkthrough showing landing page with tiered pricing, sign-up flow with progress indicators, and profile setup\u2014all using enterprise-grade CSS architecture without JavaScript",
   "img": [
     "https://cdn.august.style/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-1.webp",
     "https://cdn.august.style/media/saas-product-sale-features/img-sq-slides-saas-product-sale-features-2.webp",
@@ -51,7 +51,7 @@
   "mobile_img_alt": "",
   "media_url": "https://youtu.be/JHghuUyw7xA",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JHghuUyw7xA?si=MjBm5BsP1mdXweTq&amp;controls=0' title='SAAS Product Sales Sign-up Contact Page Essentials' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-  "media_alt": "Three-stage SaaS conversion funnel walkthrough showing landing page with tiered pricing, sign-up flow with progress indicators, and profile setup—all using enterprise-grade CSS architecture without JavaScript",
+  "media_alt": "Three-stage SaaS conversion funnel walkthrough showing landing page with tiered pricing, sign-up flow with progress indicators, and profile setup\u2014all using enterprise-grade CSS architecture without JavaScript",
   "origin_url": "https://design.august.style/projects/css-anim-saas-landing",
   "origin_url_text": "august.style/animated-saas-landing-page",
   "repository": "https://github.com/seanivore/design-site",
@@ -61,8 +61,8 @@
     "Tiered pricing with clear feature differentiation",
     "Modular component structure for rapid customization"
   ],
-  "challenge": "Modern SaaS products require conversion-optimized websites that guide users from initial interest through sign-up to profile setup. Each stage serves a distinct goal — landing pages build excitement, sign-up pages reduce friction, and profile pages encourage completion. The opportunity was building an entire multi-stage conversion flow using enterprise-grade CSS architecture that delivers polished interactions without JavaScript dependencies.",
-  "approach": "Designed and developed a complete three-page SaaS conversion system: a landing page with animated feature cards and tiered pricing, a streamlined sign-up flow with progress indicators, and a guided profile setup with multi-step form states. All animations and micro-interactions use pure CSS — hover states, loading indicators, form validation feedback, and page transitions perform smoothly without JavaScript overhead. The modular component structure enables quick brand customization through CSS variable swaps.",
+  "challenge": "Modern SaaS products require conversion-optimized websites that guide users from initial interest through sign-up to profile setup. Each stage serves a distinct goal \u2014 landing pages build excitement, sign-up pages reduce friction, and profile pages encourage completion. The opportunity was building an entire multi-stage conversion flow using enterprise-grade CSS architecture that delivers polished interactions without JavaScript dependencies.",
+  "approach": "Designed and developed a complete three-page SaaS conversion system: a landing page with animated feature cards and tiered pricing, a streamlined sign-up flow with progress indicators, and a guided profile setup with multi-step form states. All animations and micro-interactions use pure CSS \u2014 hover states, loading indicators, form validation feedback, and page transitions perform smoothly without JavaScript overhead. The modular component structure enables quick brand customization through CSS variable swaps.",
   "result": "The CSS-only animation approach maintains performance while delivering sophisticated interactions, with page load times under two seconds even on 3G connections. The modular architecture enables complete brand color changes in under ten minutes through CSS variable updates. The project demonstrates deep understanding of multi-step user journeys, conversion psychology, and modern web design execution at enterprise scale.",
   "role_headline": "SaaS Conversion Flow, Pure CSS",
   "hero_btn_cta": "See Web Projects",
@@ -72,5 +72,10 @@
   "process": null,
   "metric": null,
   "achievement": null,
-  "notes": []
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

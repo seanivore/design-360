@@ -54,11 +54,21 @@
     "https://cdn.august.style/media/animated-cms-weekly-blogs/img-sq-slide-animated-cms-weekly-blog-3.webp"
   ],
   "img_alt": "Animated CMS blog screenshots showing hand-drawn Lottie illustrations, blog post layouts, and automated content sections",
-  "mobile_img": [
-    "assets/media/animated-cms-weekly-blogs/img-mobile-animaged-cms-weekly-blog-1.webp",
-    "assets/media/animated-cms-weekly-blogs/img-mobile-animaged-cms-weekly-blog-2.webp"
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "gif": [], "gif_alt": "",
+  "grid": [], "grid_alt": "",
+  "slideshows": [
+    {
+      "title": "Mobile Screenshots",
+      "type": "mobile",
+      "images": [
+        "https://cdn.august.style/media/animated-cms-weekly-blogs/img-mobile-animated-cms-weekly-blog-1.webp",
+        "https://cdn.august.style/media/animated-cms-weekly-blogs/img-mobile-animated-cms-weekly-blog-2.webp"
+      ],
+      "alt": "Mobile views of the animated CMS blog with hand-drawn Lottie animations"
+    }
   ],
-  "mobile_img_alt": "Mobile views of the animated CMS blog with hand-drawn Lottie animations",
   "media_url": "https://youtu.be/LakcBI95rfU",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/LakcBI95rfU?si=Ml8H49Xs5LXGL5iv&amp;controls=0' title='Custom Lottie Animated Webflow CMS Daily Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Webflow CMS blog platform publishing 200+ weekly AI-generated posts featuring custom hand-drawn Lottie animations created with iPad Pro, with line animations directing user navigation through automated content",

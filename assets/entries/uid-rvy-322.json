@@ -7,7 +7,7 @@
   "slug": "product-marketing-branding",
   "title": "Web3 Brand Creative Direction & Strategy",
   "subtitle": "Art direction and brand identity for blockchain-based social marketplace",
-  "seo_title": "Web3 Brand Creative Direction — Social Marketplace Identity",
+  "seo_title": "Web3 Brand Creative Direction \u2014 Social Marketplace Identity",
   "seo_description": "Creative direction and brand strategy for a Web3 social marketplace, developing visual identity and marketing materials for blockchain product launch.",
   "role": [
     "Brand Designer",
@@ -54,8 +54,8 @@
     "Marketing collateral for product launch",
     "Visual language bridging crypto and consumer audiences"
   ],
-  "challenge": "Web3 products face a fundamental branding challenge — they must communicate complex blockchain technology to mainstream consumers without alienating crypto-native audiences. The social marketplace needed a visual identity that felt approachable and trustworthy while signaling innovation, avoiding both the corporate blandness of traditional fintech and the chaotic aesthetics of early crypto projects.",
-  "approach": "Developed a comprehensive brand identity system that used generative AI-assisted illustration to create a distinctive visual language. The creative direction balanced abstract technological motifs with warm, human-centered design elements. Marketing materials were crafted for multiple touchpoints — landing pages, social media, pitch decks — each adapted to its audience while maintaining brand coherence.",
+  "challenge": "Web3 products face a fundamental branding challenge \u2014 they must communicate complex blockchain technology to mainstream consumers without alienating crypto-native audiences. The social marketplace needed a visual identity that felt approachable and trustworthy while signaling innovation, avoiding both the corporate blandness of traditional fintech and the chaotic aesthetics of early crypto projects.",
+  "approach": "Developed a comprehensive brand identity system that used generative AI-assisted illustration to create a distinctive visual language. The creative direction balanced abstract technological motifs with warm, human-centered design elements. Marketing materials were crafted for multiple touchpoints \u2014 landing pages, social media, pitch decks \u2014 each adapted to its audience while maintaining brand coherence.",
   "result": "Delivered a cohesive brand identity that successfully positioned the social marketplace as both innovative and accessible. The visual system scaled across all marketing channels and provided the startup with professional-grade brand assets for investor presentations and user acquisition campaigns. The approach demonstrated that thoughtful creative direction can make emerging technology feel inviting rather than intimidating.",
   "role_headline": "Web3 Brand Creative Direction",
   "hero_btn_cta": "See Brand Work",
@@ -65,5 +65,10 @@
   "process": null,
   "metric": null,
   "achievement": null,
-  "notes": []
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

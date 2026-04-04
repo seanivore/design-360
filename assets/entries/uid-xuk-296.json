@@ -1,14 +1,25 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-xuk-296",
   "slug": "art-nouveau-brand-design",
   "title": "Contemporary Art Nouveau Inspiration",
   "subtitle": "AI generative art exploration for early 20th century brand aesthetics",
-  "seo_title": "Contemporary Art Nouveau — Generative Brand Design Exploration",
+  "seo_title": "Contemporary Art Nouveau \u2014 Generative Brand Design Exploration",
   "seo_description": "A generative AI artwork collection exploring contemporary art nouveau brand aesthetics, inspired by Mucha and early 20th century illustration.",
-  "role": ["Creative Director"],
-  "skill": ["Art Direction", "Generative AI", "Illustration"],
-  "product": ["Digital Art Collection"],
+  "role": [
+    "Creative Director"
+  ],
+  "skill": [
+    "Art Direction",
+    "Generative AI",
+    "Illustration"
+  ],
+  "product": [
+    "Digital Art Collection"
+  ],
   "company": "Freelance",
   "thumb": [
     "https://cdn.august.style/media/art-nouveau-brand-design/thumb-art-nouveau-brand-design-1.webp",
@@ -24,18 +35,35 @@
     "https://cdn.august.style/media/art-nouveau-brand-design/img-sq-art-nouveau-brand-design-3.webp"
   ],
   "img_alt": "Detail views of contemporary art nouveau brand design concepts",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://www.behance.net/gallery/189957541/Designing-contemporary-art-nouveau-for-a-brand",
   "origin_url_text": "View on Behance",
   "repository": "",
-  "tiles": ["Generative Art Nouveau Interpretation", "Mucha-Inspired Creative Direction", "Brand Identity Exploration", "Visual Strategy"],
+  "tiles": [
+    "Generative Art Nouveau Interpretation",
+    "Mucha-Inspired Creative Direction",
+    "Brand Identity Exploration",
+    "Visual Strategy"
+  ],
   "challenge": "Translating the intricate, organic sensibility of late 19th and early 20th-century Art Nouveau into a contemporary brand identity requires balancing historical authenticity with modern digital readability.",
-  "approach": "Utilized generative AI models to iterate rapidly on classic Art Nouveau motifs—flowing lines, floral elements, and stylized figures—prompting the system to isolate and modernize these forms for brand application.",
+  "approach": "Utilized generative AI models to iterate rapidly on classic Art Nouveau motifs\u2014flowing lines, floral elements, and stylized figures\u2014prompting the system to isolate and modernize these forms for brand application.",
   "result": "A cohesive visual exploration that modernizes the Art Nouveau styling, demonstrating how classic artistic movements can inform distinct, attention-grabbing contemporary brand aesthetics.",
   "role_headline": "Art Nouveau Brand Exploration",
   "hero_btn_cta": "View Full Gallery",
   "final_cta_text": "Need creative direction?",
   "final_btn_cta": "See More Art",
-  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

@@ -1,14 +1,25 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-xbk-777",
   "slug": "burning-desire-distain",
   "title": "Burning Desire to Distain & Back",
   "subtitle": "Neo-expressionism generative art capturing raw, visceral emotion",
-  "seo_title": "Burning Desire to Distain — Neo-Expressionism Generative Art",
+  "seo_title": "Burning Desire to Distain \u2014 Neo-Expressionism Generative Art",
   "seo_description": "A neo-expressionist generative art collection exploring raw emotion, distorted figures, and visceral abstraction.",
-  "role": ["Creative Director"],
-  "skill": ["Art Direction", "Generative AI", "Illustration"],
-  "product": ["Digital Art Collection"],
+  "role": [
+    "Creative Director"
+  ],
+  "skill": [
+    "Art Direction",
+    "Generative AI",
+    "Illustration"
+  ],
+  "product": [
+    "Digital Art Collection"
+  ],
   "company": "Freelance",
   "thumb": [
     "https://cdn.august.style/media/burning-desire-distain/thumb-burning-desire-distain-1.webp",
@@ -24,18 +35,35 @@
     "https://cdn.august.style/media/burning-desire-distain/img-sq-burning-desire-distain-3.webp"
   ],
   "img_alt": "Detail views of textured brushstrokes in neo-expressionist generative pieces",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://www.behance.net/gallery/191705387/Burning-desire-to-distain-back",
   "origin_url_text": "View on Behance",
   "repository": "",
-  "tiles": ["Neo-Expressionist AI Art", "Highly Textured Digital Impasto", "Emotionally Driven Composition", "Distorted Figural Exploration"],
-  "challenge": "Capturing the raw, visceral energy and intense texture of Neo-Expressionist physical painting—thick impasto, aggressive brushstrokes, and emotional distortion—within a purely digital, generative medium.",
+  "tiles": [
+    "Neo-Expressionist AI Art",
+    "Highly Textured Digital Impasto",
+    "Emotionally Driven Composition",
+    "Distorted Figural Exploration"
+  ],
+  "challenge": "Capturing the raw, visceral energy and intense texture of Neo-Expressionist physical painting\u2014thick impasto, aggressive brushstrokes, and emotional distortion\u2014within a purely digital, generative medium.",
   "approach": "Engineered prompts specifically focused on materiality, surface texture, and aggressive abstraction. Pushed the models to break away from clean digital aesthetics and simulate chaotic, physical artistic processes.",
   "result": "A striking collection of digital artworks that successfully emulate the tactile intensity of physical Neo-Expressionist paintings, provoking strong emotional resonance through chaotic composition and vivid color.",
   "role_headline": "Neo-Expressionism Art Direction",
   "hero_btn_cta": "View Full Gallery",
   "final_cta_text": "See more digital art?",
   "final_btn_cta": "View All Galleries",
-  "skill_summary": "", "process": null, "metric": null, "achievement": null, "notes": []
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

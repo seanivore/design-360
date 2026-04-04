@@ -44,12 +44,22 @@
     "https://cdn.august.style/media/training-yoga-sales/img-sq-slides-training-yoga-sales-3.webp"
   ],
   "img_alt": "Custom-designed Webflow wellness training platform with hand-drawn brand identity and illustration elements.",
-  "mobile_img": [
-    "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-1.webp",
-    "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-2.webp",
-    "assets/media/training-yoga-sales/img-training-yoga-sales-mobile-3.webp"
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "gif": [], "gif_alt": "",
+  "grid": [], "grid_alt": "",
+  "slideshows": [
+    {
+      "title": "Mobile Screenshots",
+      "type": "mobile",
+      "images": [
+        "https://cdn.august.style/media/training-yoga-sales/img-mobile-training-yoga-sales-1.webp",
+        "https://cdn.august.style/media/training-yoga-sales/img-mobile-training-yoga-sales-2.webp",
+        "https://cdn.august.style/media/training-yoga-sales/img-mobile-training-yoga-sales-3.webp"
+      ],
+      "alt": "Mobile view shows beautifully responsive, custom art covered, Webflow designed website"
+    }
   ],
-  "mobile_img_alt": "Mobile view shows beautifully responsive, custom art covered, Webflow designed website.",
   "media_url": "https://youtu.be/LmwTrPKaUtg",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/LmwTrPKaUtg?si=wfQU81GdbJ7psu8o&amp;controls=0' title='Client Branded Webflow Online Training Platform' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Experience moving through this custom digital art covered Webflow site for a small business in the lifestyle and fitness industry.",

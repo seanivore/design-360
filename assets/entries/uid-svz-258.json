@@ -1,14 +1,28 @@
 {
-  "_metadata": { "schema_version": "5.0", "template_type": "project_entry" },
+  "_metadata": {
+    "schema_version": "5.0",
+    "template_type": "project_entry"
+  },
   "id": "uid-svz-258",
   "slug": "agentic-fashion-designer",
   "title": "Agentic Fashion Designer",
   "subtitle": "AI agents autonomously designing and producing fashion lookbook concepts",
-  "seo_title": "Agentic Fashion Designer — AI-Driven Lookbook Production",
+  "seo_title": "Agentic Fashion Designer \u2014 AI-Driven Lookbook Production",
   "seo_description": "An agentic AI system that autonomously designs fashion concepts, produces lookbook imagery, and iterates on creative direction without manual intervention.",
-  "role": ["AI & Automation Strategist", "Creative Director"],
-  "skill": ["Art Direction", "Automation", "Generative AI", "Lookbook Design", "Photography"],
-  "product": ["Lookbook"],
+  "role": [
+    "AI & Automation Strategist",
+    "Creative Director"
+  ],
+  "skill": [
+    "Art Direction",
+    "Automation",
+    "Generative AI",
+    "Lookbook Design",
+    "Photography"
+  ],
+  "product": [
+    "Lookbook"
+  ],
   "company": "SEANIVORE GROUP LLC",
   "thumb": [
     "https://cdn.august.style/media/agentic-fashion-designer/thumb-agentic-fashion-designer-1.webp",
@@ -24,13 +38,21 @@
     "https://cdn.august.style/media/agentic-fashion-designer/img-sq-agentic-fashion-designer-3.webp"
   ],
   "img_alt": "Agentic fashion design system output with AI-directed lookbook imagery",
-  "mobile_img": [], "mobile_img_alt": "",
-  "media_url": "", "media_embed": "", "media_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
   "origin_url": "https://developer-technologist.august.style/agentic-fashion-designer",
   "origin_url_text": "Full Case Study",
   "repository": "",
-  "tiles": ["Autonomous AI creative direction", "End-to-end lookbook production pipeline", "Iterative concept refinement without human input", "Fashion-specific prompt engineering"],
-  "challenge": "Traditional fashion lookbook production requires extensive coordination between designers, photographers, stylists, and art directors. The process is expensive, time-consuming, and difficult to iterate on once a shoot is complete. The challenge was building an agentic system that could autonomously handle the entire creative pipeline — from concept generation through final image production.",
+  "tiles": [
+    "Autonomous AI creative direction",
+    "End-to-end lookbook production pipeline",
+    "Iterative concept refinement without human input",
+    "Fashion-specific prompt engineering"
+  ],
+  "challenge": "Traditional fashion lookbook production requires extensive coordination between designers, photographers, stylists, and art directors. The process is expensive, time-consuming, and difficult to iterate on once a shoot is complete. The challenge was building an agentic system that could autonomously handle the entire creative pipeline \u2014 from concept generation through final image production.",
   "approach": "Designed an agentic AI system where specialized agents handle different aspects of the fashion design pipeline. A concept agent generates design direction based on trend analysis and brand parameters. A styling agent translates concepts into detailed visual specifications. A production agent generates the final lookbook imagery with consistent aesthetic quality. Each agent can iterate and refine based on evaluation criteria without human intervention.",
   "result": "The system produces publication-quality lookbook concepts at a fraction of traditional production costs and timelines. Multiple design directions can be explored simultaneously, and the iterative refinement loop means concepts improve autonomously through evaluation cycles. The approach demonstrates that creative production can be meaningfully augmented by agentic AI systems while maintaining high aesthetic standards.",
   "role_headline": "Autonomous AI Fashion Design",
@@ -38,5 +60,13 @@
   "final_cta_text": "Need AI automation?",
   "final_btn_cta": "See All AI Work",
   "skill_summary": "",
-  "process": null, "metric": null, "achievement": null, "notes": []
+  "process": null,
+  "metric": null,
+  "achievement": null,
+  "notes": [],
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": []
 }

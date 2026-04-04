@@ -145,7 +145,7 @@
      */
     function renderView(filteredProjects) {
         const projects = filteredProjects || shuffledProjects;
-        TileRenderer.renderSectionTiles(projects, tileGrid);
+        TileRenderer.renderSectionTiles(projects, tileGrid, activeTags);
         updatePageHeader(projects.length);
     }
 

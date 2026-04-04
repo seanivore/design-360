@@ -24,6 +24,16 @@
   ],
   "img_alt": "Hand-drawn illustration detail and Lottie animation layer composition",
   "mobile_img": [], "mobile_img_alt": "",
+  "gif": [
+    "https://cdn.august.style/media/advanced-animation-system/gif-advanced-animation-system-1.gif",
+    "https://cdn.august.style/media/advanced-animation-system/gif-advanced-animation-system-2.gif",
+    "https://cdn.august.style/media/advanced-animation-system/gif-advanced-animation-system-3.gif",
+    "https://cdn.august.style/media/advanced-animation-system/gif-advanced-animation-system-4.gif",
+    "https://cdn.august.style/media/advanced-animation-system/gif-advanced-animation-system-5.gif"
+  ],
+  "gif_alt": "Hand-drawn Lottie animations in motion showing custom easing and interaction triggers",
+  "grid": [], "grid_alt": "",
+  "slideshows": [],
   "media_url": "", "media_embed": "", "media_alt": "",
   "origin_url": "https://developer-technologist.august.style/advanced-animation-system",
   "origin_url_text": "Full Case Study",
