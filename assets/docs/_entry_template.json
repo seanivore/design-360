@@ -9,40 +9,61 @@
   "subtitle": "One-line tagline",
   "seo_title": "SEO Title (50-60 chars)",
   "seo_description": "SEO description (150-160 chars)",
-
-  "role": ["Web Developer"],
-  "skill": ["HTML/CSS/JS", "React"],
-  "product": ["Website"],
+  "role": [
+    "Web Developer"
+  ],
+  "skill": [
+    "HTML/CSS/JS",
+    "React"
+  ],
+  "product": [
+    "Website"
+  ],
   "company": "Freelance",
-
-  "thumb": ["assets/media/slug/thumb-slides-slug-1.webp"],
+  "thumb": [
+    "https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp"
+  ],
   "thumb_alt": "Alt text for thumbnail slideshow",
-  "img": ["assets/media/slug/img-sq-slides-slug-1.webp"],
+  "img": [
+    "https://cdn.august.style/media/{slug}/img-sq-{slug}-1.webp"
+  ],
   "img_alt": "Alt text for square images",
-  "mobile_img": [],
-  "mobile_img_alt": "",
+  "mobile_img": [
+    "https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp"
+  ],
+  "mobile_img_alt": "Alt text for mobile images",
+  "grid": [
+    "https://cdn.august.style/media/{slug}/img-grid-{slug}-1.webp"
+  ],
+  "grid_alt": "Alt text for grid images",
+  "slideshow": [
+    "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp"
+  ],
+  "slideshow_alt": "Alt text for slideshow images",
+  "gif": [
+    "https://cdn.august.style/media/{slug}/gif-{slug}-1.webp"
+  ],
+  "gif_alt": "Alt text for gif images",
   "media_url": "",
   "media_embed": "",
   "media_alt": "",
-
   "origin_url": "",
   "origin_url_text": "",
   "repository": "",
-
-  "tiles": ["Tile text 1", "Tile text 2"],
+  "tiles": [
+    "Tile text 1",
+    "Tile text 2"
+  ],
   "challenge": "Problem statement (2-4 sentences)",
   "approach": "Approach taken (2-4 sentences)",
   "result": "Outcome achieved (2-4 sentences)",
-
   "role_headline": null,
   "hero_btn_cta": null,
   "final_cta_text": null,
   "final_btn_cta": null,
   "skill_summary": "",
-
   "process": null,
   "metric": null,
   "achievement": null,
-
   "notes": []
 }

@@ -17,18 +17,18 @@ Portfolio site for Sean August Horvath. JSON-driven architecture where all conte
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Homepage (landing page) |
-| `entry.html` | Entry page template |
-| `section.html` | Universal tag/filter page |
-| `generate_manifest.py` | Generates manifest + per-entry HTML with SEO meta tags |
-| `assets/js/homepage-content.json` | Homepage section configuration |
-| `assets/js/data-loader.js` | Data fetching, caching, filtering |
-| `assets/js/landing-controller.js` | Homepage rendering |
-| `assets/docs/ENTRY_SOP.md` | Entry creation standard operating procedure |
-| `assets/docs/JSON_ARCHITECTURE.md` | Full technical architecture reference |
-| `assets/docs/tags.json` | Tag registry |
+| File                               | Purpose                                                |
+| ---------------------------------- | ------------------------------------------------------ |
+| `index.html`                       | Homepage (landing page)                                |
+| `entry.html`                       | Entry page template                                    |
+| `section.html`                     | Universal tag/filter page                              |
+| `generate_manifest.py`             | Generates manifest + per-entry HTML with SEO meta tags |
+| `assets/js/homepage-content.json`  | Homepage section configuration                         |
+| `assets/js/data-loader.js`         | Data fetching, caching, filtering                      |
+| `assets/js/landing-controller.js`  | Homepage rendering                                     |
+| `assets/docs/ENTRY_SOP.md`         | Entry creation standard operating procedure            |
+| `assets/docs/JSON_ARCHITECTURE.md` | Full technical architecture reference                  |
+| `assets/docs/tags.json`            | Tag registry                                           |
 
 ## Local Development
 
