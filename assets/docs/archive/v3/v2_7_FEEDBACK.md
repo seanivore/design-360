@@ -1,6 +1,6 @@
 # FEEDBACK: v2.7.0 Final Updates & New Entries 
 
-**Created**: 2026-04-01
+**Created**: 2026-04-04
 **Version**: 2.7.0
 **Status**: Final Review Fixes 
 **Project**: `~/Development/360-design`
@@ -325,3 +325,36 @@ We should review the post and decide how to sort these up. I've not yet created 
     - `assets/images/embeddings-art-curation/GROUP_6/digital-entropy-embeddings-art-curation-7.webp`
     - `assets/images/embeddings-art-curation/GROUP_6/digital-entropy-embeddings-art-curation-8.webp`
     - `assets/images/embeddings-art-curation/GROUP_6/digital-entropy-embeddings-art-curation-9.webp`
+
+---
+
+## Section Page Component Update 
+
+### Current State 
+
+**SECTION TILES NOW MUST VIEW**: `assets/docs/archive/v2/IMG/section-page-tiles-currently.jpg`
+
+The design isn't bad, it is just lacking in information. I don't want to mess with the thumbnail slideshow at all; it took a while to get them to look perfect on mobile: where the images bleed to the edge of the device. The tile text is intriguing and can prompt desire to click, which was the intention. 
+
+However, at a glance, even with a tag filter applied, it is hard to know exactly which entry tile I'd want to click through to a project about. The current vibe is very "click bait", but we need to put ourselves in the heads of hiring managers who are going to be clicking with intention. 
+
+A good example is when just "Web Developer" tag is applied and there is still little other than the visual design to differentiate them, which isn't always helpful when, for example, one project was hand drawn lottie animations on art deco illustrations and another is a very high-conversion polished SaaS landing page. 
+
+### Proposed Changes 
+
+I think we need to use the little tag pills that we used on the front homepage. 
+
+**HOMEPAGE EXAMPLE MUST VIEW**: `assets/docs/archive/v2/IMG/section-tile-update-example-homepage-component-tags.jpg`
+
+We should be careful not to mess too much with the tile; I think we could probably get away with just having them be a third row of text but showing the tag pills instead. The challenge will be figuring out how to limit them so that they are informative but not redundant based on the tags applied to the section filtering already. 
+
+For example, if I filter by "Web Developer" and "UI/UX", I don't need to see those tags on the tile. I should see the other tags that apply to that project. 
+
+Similarly, many of the "Role" tags are super similar to the "Product" tags in terms of understanding the project: 'Web Developer' versus 'Website'. Though 'Landing Page' would be more helpful. 
+
+The tags should only be one row and I think however we narrow them down, maybe then with whatever tags remain, they are randomized and displayed. Then the should be small enough so that at least 3 are showing. There could be more tags, but we can have them extend off the right side of the tile, hidden, but so that the user knows they could scroll to see the other tags. If we did this it would mean that the tags would not be clickable but I think that is probably fine considering there are tag filtering UI options on the section page. 
+
+Curious to get your thoughts. 
+
+---
+*This is not the complete list of required image fixes from the agentically created project entries; please compile a list of the URLs for project that we did not update in this document's work, so that I can continue to review them later, after we make and approve the other design changes and make the current fixes that have been found. 2026-04-04, Sean*
