@@ -10,8 +10,72 @@
 ## Pending Review (61 entries)
 
 - [Agentic Fashion Designer](https://www.august.style/agentic-fashion-designer/)
+  **THUMB**
+  - `assets/images/agentic-fashion-designer/thumb-agentic-fashion-designer-1.webp`
+  - `assets/images/agentic-fashion-designer/thumb-agentic-fashion-designer-2.webp`
+  - `assets/images/agentic-fashion-designer/thumb-agentic-fashion-designer-3.webp`
+  - `assets/images/agentic-fashion-designer/thumb-agentic-fashion-designer-4.webp`
+  - `assets/images/agentic-fashion-designer/thumb-agentic-fashion-designer-5.webp`
+  - `assets/images/agentic-fashion-designer/thumb-agentic-fashion-designer-6.webp`
+  **SQUARE**
+  - `assets/images/agentic-fashion-designer/img-sq-agentic-fashion-designer-1.webp`
+  - `assets/images/agentic-fashion-designer/img-sq-agentic-fashion-designer-2.webp`
+  - `assets/images/agentic-fashion-designer/img-sq-agentic-fashion-designer-3.webp`
+  **SLIDESHOW**
+  - `assets/images/agentic-fashion-designer/slide-agentic-fashion-designer-1.webp`
+  - `assets/images/agentic-fashion-designer/slide-agentic-fashion-designer-2.webp`
+  - `assets/images/agentic-fashion-designer/slide-agentic-fashion-designer-3.webp`
+  - `assets/images/agentic-fashion-designer/slide-agentic-fashion-designer-4.webp`
+  - `assets/images/agentic-fashion-designer/slide-agentic-fashion-designer-5.webp`
+  - `assets/images/agentic-fashion-designer/slide-agentic-fashion-designer-6.webp`
 - [The Agentic Marketing Department](https://www.august.style/agentic-marketing-department/)
+  **THUMB**
+  - `assets/images/agentic-marketing-department/thumb-agentic-marketing-department-1.webp`
+  - `assets/images/agentic-marketing-department/thumb-agentic-marketing-department-2.webp`
+  - `assets/images/agentic-marketing-department/thumb-agentic-marketing-department-3.webp`
+  - `assets/images/agentic-marketing-department/thumb-agentic-marketing-department-4.webp`
+  - `assets/images/agentic-marketing-department/thumb-agentic-marketing-department-5.webp`
+  **SQUARE** 
+  - `assets/images/agentic-marketing-department/img-sq-agentic-marketing-department-1.webp`
+  - `assets/images/agentic-marketing-department/img-sq-agentic-marketing-department-2.webp`
+  - `assets/images/agentic-marketing-department/img-sq-agentic-marketing-department-3.webp`
+  **SLIDESHOW** 
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-1.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-2.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-3.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-4.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-5.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-6.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-7.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-8.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-9.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-10.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-11.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-12.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-13.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-14.webp`
+  - `assets/images/agentic-marketing-department/slide-agentic-marketing-department-15.webp`
 - [Agentic Social Media Manager](https://www.august.style/agentic-social-manager/)
+  **THUMB** 
+  - `assets/images/agentic-social-manager/thumb-agentic-social-manager-1.webp`
+  - `assets/images/agentic-social-manager/thumb-agentic-social-manager-2.webp`
+  - `assets/images/agentic-social-manager/thumb-agentic-social-manager-3.webp`
+  - `assets/images/agentic-social-manager/thumb-agentic-social-manager-4.webp`
+  - `assets/images/agentic-social-manager/thumb-agentic-social-manager-5.webp`
+  **SQUARE** 
+  - `assets/images/agentic-social-manager/img-sq-agentic-social-manager-1.webp`
+  - `assets/images/agentic-social-manager/img-sq-agentic-social-manager-2.webp`
+  - `assets/images/agentic-social-manager/img-sq-agentic-social-manager-3.webp`
+  **SLIDESHOW** 
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-1.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-2.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-3.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-4.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-5.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-6.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-7.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-8.webp`
+  - `assets/images/agentic-social-manager/slide-agentic-social-manager-9.webp`
 - [Shoppable Fashion Lookbook with Google Lens API](https://www.august.style/ai-design-fashion-lookbook/)
 - [AI-Managed Wellness App Replacing Traditional Menus](https://www.august.style/ai-meditation-mobile-app/)
 - [Art Deco Luxury AI-Directed Virtual Photoshoot](https://www.august.style/ai-virtual-photoshoot-design/)
