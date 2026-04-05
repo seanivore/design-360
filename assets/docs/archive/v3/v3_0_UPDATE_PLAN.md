@@ -14,13 +14,13 @@ v2.7 completed with 70 entries, SEO pre-rendering via `_pages/`, and a tested ag
 
 For each: upload correct local files from `assets/images/{slug}/` to CDN, update JSON arrays.
 
-| Entry | JSON File | Thumbs | Img-sq | Other |
-|-------|-----------|--------|--------|-------|
-| advanced-animation-system | uid-cap-258.json | 4 | 3 | Add 5 GIFs to `gif` array |
-| illustrated-poetry-book | uid-cop-802.json | 5 | 3 | -- |
-| influencer-growth-strategy | uid-ccp-818.json | 5 (3 currently) | 3 | Rename `deck-` to `slide-` on CDN, add as `slideshows` group |
-| public-health-response-platform | uid-cpp-781.json | 6 | 3 | -- |
-| viral-campaign-strategy | uid-mrt-136.json | 5 | 3 | Add YouTube embed + 2 GIFs |
+| Entry                           | JSON File        | Thumbs          | Img-sq | Other                                                        |
+| ------------------------------- | ---------------- | --------------- | ------ | ------------------------------------------------------------ |
+| advanced-animation-system       | uid-cap-258.json | 4               | 3      | Add 5 GIFs to `gif` array                                    |
+| illustrated-poetry-book         | uid-cop-802.json | 5               | 3      | --                                                           |
+| influencer-growth-strategy      | uid-ccp-818.json | 5 (3 currently) | 3      | Rename `deck-` to `slide-` on CDN, add as `slideshows` group |
+| public-health-response-platform | uid-cpp-781.json | 6               | 3      | --                                                           |
+| viral-campaign-strategy         | uid-mrt-136.json | 5               | 3      | Add YouTube embed + 2 GIFs                                   |
 
 **CDN upload command pattern:**
 ```bash
@@ -38,11 +38,11 @@ aws s3 sync assets/images/{slug}/ s3://cdn-august-style/media/{slug}/ --profile 
 
 These entries have `mobile_img` arrays pointing to `assets/media/` (nonexistent). Upload images to CDN, then migrate from deprecated `mobile_img` field to new `slideshows` array with `type: "mobile"`.
 
-| Entry | JSON File | Fix |
-|-------|-----------|-----|
-| animated-cms-weekly-blogs | uid-fth-565.json | Fix typo ("animaged" -> "animated"), upload 2 images, convert to `slideshows` group |
-| automated-e-commerce-shop-lookbook | uid-dff-987.json | Upload 6 images, convert to `slideshows` group |
-| training-yoga-sales | uid-unw-889.json | Upload 3 images, fix naming mismatch, convert to `slideshows` group |
+| Entry                              | JSON File        | Fix                                                                                 |
+| ---------------------------------- | ---------------- | ----------------------------------------------------------------------------------- |
+| animated-cms-weekly-blogs          | uid-fth-565.json | Fix typo ("animaged" -> "animated"), upload 2 images, convert to `slideshows` group |
+| automated-e-commerce-shop-lookbook | uid-dff-987.json | Upload 6 images, convert to `slideshows` group                                      |
+| training-yoga-sales                | uid-unw-889.json | Upload 3 images, fix naming mismatch, convert to `slideshows` group                 |
 
 ### 1C. embeddings-art-curation (uid-chp-854.json) -- SEPARATE SESSION
 
