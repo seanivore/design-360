@@ -76,12 +76,87 @@
   - `assets/images/agentic-social-manager/slide-agentic-social-manager-7.webp`
   - `assets/images/agentic-social-manager/slide-agentic-social-manager-8.webp`
   - `assets/images/agentic-social-manager/slide-agentic-social-manager-9.webp`
-- [Shoppable Fashion Lookbook with Google Lens API](https://www.august.style/ai-design-fashion-lookbook/)
-- [AI-Managed Wellness App Replacing Traditional Menus](https://www.august.style/ai-meditation-mobile-app/)
 - [Art Deco Luxury AI-Directed Virtual Photoshoot](https://www.august.style/ai-virtual-photoshoot-design/)
+  **THUMB** 
+  - `assets/images/ai-virtual-photoshoot-design/thumb-ai-virtual-photoshoot-design-1.webp`
+  - `assets/images/ai-virtual-photoshoot-design/thumb-ai-virtual-photoshoot-design-2.webp`
+  - `assets/images/ai-virtual-photoshoot-design/thumb-ai-virtual-photoshoot-design-3.webp`
+  - `assets/images/ai-virtual-photoshoot-design/thumb-ai-virtual-photoshoot-design-4.webp`
+  - `assets/images/ai-virtual-photoshoot-design/thumb-ai-virtual-photoshoot-design-5.webp`
+  **SQUARE** 
+  - `assets/images/ai-virtual-photoshoot-design/img-sq-ai-virtual-photoshoot-design-1.webp`
+  - `assets/images/ai-virtual-photoshoot-design/img-sq-ai-virtual-photoshoot-design-2.webp`
+  - `assets/images/ai-virtual-photoshoot-design/img-sq-ai-virtual-photoshoot-design-3.webp`
+  **SLIDESHOW** 
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-1.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-2.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-3.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-4.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-5.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-6.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-7.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-8.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-9.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-10.webp`
+  - `assets/images/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-11.webp`
 - [All That Glitters](https://www.august.style/all-that-glitters/)
-- [Casual Projects Overview with Morphing Gradients](https://www.august.style/amorphous-gradient-css-animation/)
+  **THUMB** 
+  - `assets/images/all-that-glitters/thumb-all-that-glitters-1.webp`
+  - `assets/images/all-that-glitters/thumb-all-that-glitters-2.webp`
+  - `assets/images/all-that-glitters/thumb-all-that-glitters-3.webp`
+  - `assets/images/all-that-glitters/thumb-all-that-glitters-4.webp`
+  - `assets/images/all-that-glitters/thumb-all-that-glitters-5.webp`
+  **SQUARE** 
+  - `assets/images/all-that-glitters/img-sq-all-that-glitters-1.webp`
+  - `assets/images/all-that-glitters/img-sq-all-that-glitters-2.webp`
+  - `assets/images/all-that-glitters/img-sq-all-that-glitters-3.webp`
 - [API To Scale Video Production By 10X](https://www.august.style/api-automate-video-production/)
+  **THUMB**
+  - `assets/images/api-automate-video-production/thumb-api-automate-video-production-1.webp`
+  - `assets/images/api-automate-video-production/thumb-api-automate-video-production-2.webp`
+  - `assets/images/api-automate-video-production/thumb-api-automate-video-production-3.webp`
+  - `assets/images/api-automate-video-production/thumb-api-automate-video-production-4.webp`
+  - `assets/images/api-automate-video-production/thumb-api-automate-video-production-5.webp`
+  **SQUARE** 
+  - `assets/images/api-automate-video-production/img-sq-api-automate-video-production-1.webp`
+  - `assets/images/api-automate-video-production/img-sq-api-automate-video-production-2.webp`
+  - `assets/images/api-automate-video-production/img-sq-api-automate-video-production-3.webp`
+  **GIF** 
+  - `assets/images/api-automate-video-production/gif-api-automate-video-production-1.gif`
+  - `assets/images/api-automate-video-production/gif-api-automate-video-production-2.gif`
+  **GRID_1** 
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-1.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-2.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-3.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-4.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-5.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-6.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-7.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-8.webp`
+  - `assets/images/api-automate-video-production/grid-1-api-automate-video-production-9.webp`
+  **GRID_2** 
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-1.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-2.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-3.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-4.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-5.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-6.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-7.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-8.webp`
+  - `assets/images/api-automate-video-production/grid-2-api-automate-video-production-9.webp`
+  **SLIDESHOW *of gifs*** 
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-1.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-2.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-3.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-4.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-5.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-6.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-7.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-8.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-9.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-10.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-11.gif`
+  - `assets/images/api-automate-video-production/slide-gif-api-automate-video-production-12.gif`
 - [Contemporary Art Nouveau Inspiration](https://www.august.style/art-nouveau-brand-design/)
 - [Art Nouveau Iconic Portraiture](https://www.august.style/art-nouveau-female-model/)
 - [Baroque Fruit Still Life (De Heem Study)](https://www.august.style/baroque-de-heem-still-life/)
