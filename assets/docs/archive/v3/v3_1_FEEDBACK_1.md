@@ -6,6 +6,17 @@
 
 ---
 
+## Notes 
+
+Find the Art History posts with prints and reframe them so that they are more about growth and improving my own intelligence, and *THEN* sharing in case anyone else wants to. Make it WAY less technical. What I did do is research each movement, craft various prompts, and then identified those that seemed to both best encompass what I had learned the movement was about and those that I just found appealing. This kind of reframing will open me up more to less technical graphic design jobs, whereas if they see someone talking super technical about something and they just want an artist, they'd pass over me. 
+
+Then any posts that have a slideshow of artwork, almost always from art history but sometimes from previous jobs, primarily Silent, should be better highlighted on the front page. 
+
+We want to make the front page more clearly WEBSITE DESIGN/DEV and GRAPHIC DESIGN/SOCIAL. 
+
+Note: Of the updates, there is one that needs to have the gifs in the slideshow. The filenames are treated like normal slideshow images but for the different extension. 
+The only other oddity is that we need to make sure there can be more than one GRID component if needed. 
+
 ## Entry Image Updates & Additions 
 
 - [Agentic Fashion Designer](https://www.august.style/agentic-fashion-designer/)
