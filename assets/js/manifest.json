@@ -28,7 +28,6 @@
     "viral-campaign-strategy": "assets/entries/uid-mrt-136.json",
     "notes-app-thot": "assets/entries/uid-nst-245.json",
     "humanistic-exploration": "assets/entries/uid-nvw-152.json",
-    "clockwork-splendor": "assets/entries/uid-pzy-452.json",
     "css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
     "web3-strategy-branding": "assets/entries/uid-rcy-132.json",
     "surreal-heads": "assets/entries/uid-rda-284.json",
@@ -53,27 +52,21 @@
     "training-yoga-sales": "assets/entries/uid-unw-889.json",
     "freelance-payments-platform": "assets/entries/uid-vin-427.json",
     "psychedelic-impressi": "assets/entries/uid-vlf-055.json",
-    "ethereal-amalgamations": "assets/entries/uid-vue-009.json",
     "ai-design-fashion-lookbook": "assets/entries/uid-wgw-370.json",
     "minimalist-web-store-product": "assets/entries/uid-wnw-867.json",
     "visual-artist-process-portfolio": "assets/entries/uid-wty-542.json",
     "burning-desire-distain": "assets/entries/uid-xbk-777.json",
-    "art-nouveau-female-model": "assets/entries/uid-xek-037.json",
     "midcentury-art-deco": "assets/entries/uid-xik-222.json",
     "psychedelic-desert-drive": "assets/entries/uid-xlk-592.json",
     "tripping-animated-artwork": "assets/entries/uid-xpk-444.json",
     "art-nouveau-brand-design": "assets/entries/uid-xuk-296.json",
-    "neo-expressionism-cyberpunk": "assets/entries/uid-xxk-777.json",
     "transmutations-hyperobject": "assets/entries/uid-yel-369.json",
     "all-that-glitters": "assets/entries/uid-yll-116.json",
-    "my-robot-commune-life": "assets/entries/uid-ysl-128.json",
-    "dragon-headshots": "assets/entries/uid-yvg-990.json",
-    "degradation-of-pride": "assets/entries/uid-yxl-432.json",
     "constructi-landscapes": "assets/entries/uid-zri-192.json"
   },
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 70
+    "entry_count": 63
   }
 }
