@@ -67,9 +67,63 @@
   },
   "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
+  "gif": [
+    "https://cdn.august.style/media/api-automate-video-production/gif-api-automate-video-production-1.gif",
+    "https://cdn.august.style/media/api-automate-video-production/gif-api-automate-video-production-2.gif"
+  ],
+  "gif_alt": "API-automated video production pipeline in motion",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "grids": [
+    {
+      "title": "Source Assets & Templates",
+      "alt": "Source assets and template variations used by the API-driven video pipeline",
+      "images": [
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-1.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-2.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-3.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-4.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-5.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-6.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-7.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-8.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-1-api-automate-video-production-9.webp"
+      ]
+    },
+    {
+      "title": "Rendered Output Variations",
+      "alt": "Rendered video output variations produced by the API pipeline",
+      "images": [
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-1.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-2.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-3.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-4.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-5.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-6.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-7.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-8.webp",
+        "https://cdn.august.style/media/api-automate-video-production/grid-2-api-automate-video-production-9.webp"
+      ]
+    }
+  ],
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Animated slideshow of video production pipeline outputs",
+      "images": [
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-1.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-2.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-3.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-4.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-5.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-6.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-7.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-8.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-9.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-10.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-11.gif",
+        "https://cdn.august.style/media/api-automate-video-production/slide-gif-api-automate-video-production-12.gif"
+      ]
+    }
+  ]
 }

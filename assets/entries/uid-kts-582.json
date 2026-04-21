@@ -69,5 +69,24 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Bohemian Abstractions geometric rhythm and layered color slideshow",
+      "images": [
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-1.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-2.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-3.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-4.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-5.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-6.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-7.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-8.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-9.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-10.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-11.webp",
+        "https://cdn.august.style/media/bohemian-abstractions/slide-bohemian-abstractions-12.webp"
+      ]
+    }
+  ]
 }

@@ -29,7 +29,8 @@
     "https://cdn.august.style/media/agentic-fashion-designer/thumb-agentic-fashion-designer-2.webp",
     "https://cdn.august.style/media/agentic-fashion-designer/thumb-agentic-fashion-designer-3.webp",
     "https://cdn.august.style/media/agentic-fashion-designer/thumb-agentic-fashion-designer-4.webp",
-    "https://cdn.august.style/media/agentic-fashion-designer/thumb-agentic-fashion-designer-5.webp"
+    "https://cdn.august.style/media/agentic-fashion-designer/thumb-agentic-fashion-designer-5.webp",
+    "https://cdn.august.style/media/agentic-fashion-designer/thumb-agentic-fashion-designer-6.webp"
   ],
   "thumb_alt": "AI-generated fashion lookbook concepts showing autonomous design iteration and creative direction by agentic system",
   "img": [
@@ -68,5 +69,18 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Agentic fashion designer lookbook slideshow",
+      "images": [
+        "https://cdn.august.style/media/agentic-fashion-designer/slide-agentic-fashion-designer-1.webp",
+        "https://cdn.august.style/media/agentic-fashion-designer/slide-agentic-fashion-designer-2.webp",
+        "https://cdn.august.style/media/agentic-fashion-designer/slide-agentic-fashion-designer-3.webp",
+        "https://cdn.august.style/media/agentic-fashion-designer/slide-agentic-fashion-designer-4.webp",
+        "https://cdn.august.style/media/agentic-fashion-designer/slide-agentic-fashion-designer-5.webp",
+        "https://cdn.august.style/media/agentic-fashion-designer/slide-agentic-fashion-designer-6.webp"
+      ]
+    }
+  ]
 }

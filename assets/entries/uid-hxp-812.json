@@ -69,5 +69,24 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Bau Noir Haus monochrome Bauhaus geometry slideshow",
+      "images": [
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-1.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-2.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-3.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-4.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-6.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-7.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-8.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-9.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-10.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-11.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-12.webp",
+        "https://cdn.august.style/media/bau-noir-haus/slide-bau-noir-haus-13.webp"
+      ]
+    }
+  ]
 }

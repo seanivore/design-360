@@ -67,5 +67,23 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Art deco luxury AI-directed virtual photoshoot slideshow",
+      "images": [
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-1.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-2.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-3.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-4.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-5.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-6.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-7.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-8.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-9.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-10.webp",
+        "https://cdn.august.style/media/ai-virtual-photoshoot-design/slide-ai-virtual-photoshoot-design-11.webp"
+      ]
+    }
+  ]
 }

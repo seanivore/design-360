@@ -102,6 +102,20 @@ def validate_entry(file_path: Path, tags_registry: dict) -> list:
             if key not in achievement:
                 errors.append(f"'achievement' missing key: {key}")
 
+    # Check grids[] shape if present (optional grouped grid schema)
+    grids = data.get("grids")
+    if grids is not None:
+        if not isinstance(grids, list):
+            errors.append("'grids' must be an array")
+        else:
+            for i, group in enumerate(grids):
+                if not isinstance(group, dict):
+                    errors.append(f"grids[{i}] must be an object")
+                    continue
+                images = group.get("images")
+                if not isinstance(images, list) or len(images) == 0:
+                    errors.append(f"grids[{i}] must have non-empty 'images' array")
+
     # Check all tags exist in tags registry
     if tags_registry:
         for tag_type in ["role", "skill", "product"]:

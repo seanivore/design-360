@@ -68,5 +68,21 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Agentic social media manager workflow and output slideshow",
+      "images": [
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-1.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-2.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-3.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-4.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-5.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-6.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-7.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-8.webp",
+        "https://cdn.august.style/media/agentic-social-manager/slide-agentic-social-manager-9.webp"
+      ]
+    }
+  ]
 }

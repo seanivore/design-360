@@ -39,8 +39,9 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. T
 | `mobile_img_alt`  | `string`       | `""`    | **Deprecated** -- use `slideshows`                                                                                |
 | `gif`             | `string[]`     | `[]`    | GIF animation URLs (any aspect ratio)                                                                             |
 | `gif_alt`         | `string`       | `""`    | Alt text for GIFs                                                                                                 |
-| `grid`            | `string[]`     | `[]`    | 1080px square grid images (3-across)                                                                              |
-| `grid_alt`        | `string`       | `""`    | Alt text for grid images                                                                                          |
+| `grid`            | `string[]`     | `[]`    | 1080px square grid images (3-across). **Legacy flat schema** — new entries should use `grids[]` when multiple blocks are needed. |
+| `grid_alt`        | `string`       | `""`    | Alt text for legacy `grid[]` images                                                                               |
+| `grids`           | `array`        | `[]`    | Grouped 3-across grid blocks (see below). Used when an entry needs more than one grid component.                  |
 | `slideshows`      | `array`        | `[]`    | Grouped slideshow collections (see below)                                                                         |
 | `media_url`       | `string`       | `""`    | External video URL (e.g. YouTube link)                                                                            |
 | `media_embed`     | `string`       | `""`    | Raw iframe embed HTML for video                                                                                   |
@@ -79,6 +80,26 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. T
 ```json
 "achievement": { "headline": "Award Name", "details": "Description paragraph" }
 ```
+
+**`grids`** -- Array of grid group objects, rendered as independent 3-across grid blocks. Use when an entry needs more than one grid component (e.g. before/after, two campaigns, two deliverables). Coexists with legacy flat `grid[]` — the renderer prefers `grids[]` if both are present:
+
+```json
+"grids": [
+  {
+    "title": "Launch Campaign",
+    "images": ["https://cdn.august.style/media/{slug}/grid-1-{slug}-1.webp"],
+    "alt": "Alt text for this grid block"
+  },
+  {
+    "title": "Expansion Campaign",
+    "images": ["https://cdn.august.style/media/{slug}/grid-2-{slug}-1.webp"],
+    "alt": "Alt text for this grid block"
+  }
+]
+```
+
+- `title` is optional; rendered as a small caps heading above the block when present.
+- Each group's `images[]` renders as its own 3-column grid.
 
 **`slideshows`** -- Array of slideshow group objects, rendered as independent slideshow instances on the entry page. Each group has its own title, navigation, and display behavior:
 

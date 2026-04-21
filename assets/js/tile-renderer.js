@@ -53,7 +53,12 @@ const TileRenderer = (() => {
         text.className = 'tile-text';
         text.textContent = displayText;
 
+        const title = document.createElement('h3');
+        title.className = 'tile-title';
+        title.textContent = project.title || '';
+
         textArea.appendChild(text);
+        textArea.appendChild(title);
         tile.appendChild(gallery);
         tile.appendChild(textArea);
 

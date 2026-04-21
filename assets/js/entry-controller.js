@@ -173,17 +173,50 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate 3-across square image grid
+     * Populate 3-across square image grid(s).
+     * Prefers grouped `grids[]` schema; falls back to legacy flat `grid[]`.
      */
     function populateImageGrid(project) {
-        const container = document.getElementById('entry-image-grid');
-        if (!container || !project.grid || project.grid.length === 0) return;
+        const groupedContainer = document.getElementById('entry-image-grids');
+        const legacyContainer = document.getElementById('entry-image-grid');
 
+        const groups = Array.isArray(project.grids) ? project.grids.filter(g => g && Array.isArray(g.images) && g.images.length > 0) : [];
+
+        if (groups.length > 0 && groupedContainer) {
+            groupedContainer.innerHTML = '';
+            groups.forEach(group => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'entry-image-grid-group';
+
+                if (group.title) {
+                    const heading = document.createElement('h4');
+                    heading.className = 'entry-image-grid-title';
+                    heading.textContent = group.title;
+                    wrapper.appendChild(heading);
+                }
+
+                const grid = document.createElement('div');
+                grid.className = 'entry-image-grid';
+                const altText = group.alt || project.grid_alt || 'Project image';
+                grid.innerHTML = group.images.map(url => `
+                    <img src="${imgSrc(url)}" alt="${altText}" class="entry-grid-image" loading="lazy">
+                `).join('');
+                wrapper.appendChild(grid);
+
+                groupedContainer.appendChild(wrapper);
+            });
+            groupedContainer.style.display = 'block';
+            if (legacyContainer) legacyContainer.style.display = 'none';
+            return;
+        }
+
+        // Legacy flat grid[] path
+        if (!legacyContainer || !project.grid || project.grid.length === 0) return;
         const altText = project.grid_alt || 'Project image';
-        container.innerHTML = project.grid.map(url => `
+        legacyContainer.innerHTML = project.grid.map(url => `
             <img src="${imgSrc(url)}" alt="${altText}" class="entry-grid-image" loading="lazy">
         `).join('');
-        container.style.display = 'grid';
+        legacyContainer.style.display = 'grid';
     }
 
     /**

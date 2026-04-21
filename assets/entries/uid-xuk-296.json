@@ -65,5 +65,28 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Contemporary Art Nouveau inspired brand design slideshow",
+      "images": [
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-1.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-2.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-3.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-4.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-5.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-6.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-7.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-8.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-9.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-10.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-11.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-12.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-13.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-14.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-15.jpg",
+        "https://cdn.august.style/media/art-nouveau-brand-design/slide-art-nouveau-brand-design-16.jpg"
+      ]
+    }
+  ]
 }

@@ -70,5 +70,26 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Baroque fruit still life (De Heem study) slideshow",
+      "images": [
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-1.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-2.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-3.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-4.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-5.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-6.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-7.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-8.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-9.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-10.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-11.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-12.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-13.webp",
+        "https://cdn.august.style/media/baroque-de-heem-still-life/slide-baroque-de-heem-still-life-14.webp"
+      ]
+    }
+  ]
 }

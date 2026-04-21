@@ -1,0 +1,76 @@
+{
+  "_metadata": {
+    "schema_version": "5.1",
+    "template_type": "project_entry"
+  },
+  "id": "uid-dbr-368",
+  "slug": "everlastings-by-emaline",
+  "title": "Everlastings by Emaline",
+  "subtitle": "An artisan e-commerce store run by a custom GPT, for $30 a year.",
+  "seo_title": "Everlastings by Emaline | AI-Run Artisan E-Commerce",
+  "seo_description": "A custom e-commerce store, CMS, and ops panel for a one-person artisan shop — authored by a custom GPT on $30/year of infrastructure.",
+  "role": [
+    "Web Developer",
+    "AI & Automation Strategist",
+    "Creative Director"
+  ],
+  "skill": [
+    "HTML/CSS/JS",
+    "TypeScript",
+    "Automation",
+    "Stripe",
+    "E-Commerce",
+    "Copywriting",
+    "Vercel",
+    "CMS Management"
+  ],
+  "product": [
+    "E-Commerce Store",
+    "CMS Site",
+    "Website"
+  ],
+  "company": "Freelance",
+  "thumb": [],
+  "thumb_alt": "",
+  "img": [],
+  "img_alt": "",
+  "mobile_img": [],
+  "mobile_img_alt": "",
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
+  "slideshows": [],
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
+  "origin_url": "https://everlastingsbyemaline.com",
+  "origin_url_text": "Visit Everlastings by Emaline",
+  "repository": "",
+  "tiles": [
+    "Custom GPT authors products",
+    "Supabase + Stripe + R2",
+    "~$30/year infrastructure",
+    "AI proposes, human approves"
+  ],
+  "challenge": "A small artisan shop needed a real storefront — product pages, checkout, inventory, order fulfillment, marketing — without enterprise e-commerce pricing or a technical operator. Shopify-class subscriptions would consume the margin on one-of-a-kind pieces, and the client writes poetic story cards by voice, not spreadsheets. The business needed to run on language, not dashboards.",
+  "approach": "A custom GPT became the authoring interface: the client describes a new piece conversationally, drops in photos, and reviews a structured preview before anything goes live. Behind it, a thin stack — Supabase for the catalog, Stripe for payments, Cloudinary for transforms, Cloudflare R2 for the CDN, Vercel for hosting — runs for roughly $30 a year. Every mutation follows an AI-proposes → human-approves → execution pattern, so the GPT drafts copy, shapes records, and lines up images, but the client is always the one who says ship.",
+  "result": "The client can now launch a product by talking to ChatGPT: photos flow through Cloudinary to the R2 CDN, a Supabase insert triggers an automatic Stripe product and price, and a permalink lands back in the chat within seconds. The admin panel handles orders and shipping when she wants a form; the GPT handles everything else when she wants a conversation. A one-person workshop gets the authoring layer of a much larger brand — at roughly the price of a domain.",
+  "role_headline": "AI-Authored E-Commerce Store, $30/yr Stack",
+  "hero_btn_cta": "See AI & Automation Work",
+  "final_cta_text": "Interested in AI-authored products?",
+  "final_btn_cta": "See All AI & Automation Projects",
+  "skill_summary": "",
+  "process": null,
+  "metric": {
+    "value": "$30/yr",
+    "kpi": "Infrastructure Cost",
+    "context": "Full stack — database, payments, CDN, hosting, and AI authoring layer — for a live artisan storefront."
+  },
+  "achievement": null,
+  "notes": [
+    "Images pending — thumb/img/grid/slideshows arrays intentionally empty until staging session.",
+    "Stack: custom GPT (authoring), Supabase (catalog + webhooks), Stripe (products/prices), Cloudinary (4:5 webp transforms), Cloudflare R2 at cdn.everlastingsbyemaline.com, Vercel (hosting).",
+    "Pattern: AI proposes -> human approves -> execution. GPT never creates a product without showing a preview first."
+  ]
+}

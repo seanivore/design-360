@@ -69,5 +69,27 @@
   "gif_alt": "",
   "grid": [],
   "grid_alt": "",
-  "slideshows": []
+  "slideshows": [
+    {
+      "type": "slide",
+      "alt": "Agentic marketing department workflow and output slideshow",
+      "images": [
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-1.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-2.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-3.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-4.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-5.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-6.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-7.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-8.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-9.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-10.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-11.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-12.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-13.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-14.webp",
+        "https://cdn.august.style/media/agentic-marketing-department/slide-agentic-marketing-department-15.webp"
+      ]
+    }
+  ]
 }
