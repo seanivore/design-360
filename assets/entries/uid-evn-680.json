@@ -6,7 +6,7 @@
   "id": "uid-evn-680",
   "slug": "constructivist-profiles",
   "title": "Profile People",
-  "subtitle": "Geometric portraits in constructivist, cubist inspired angular forms.",
+  "subtitle": "Portrait studies made while I was reading about Constructivism and Cubism.",
   "seo_title": "Profile People: Constructivist Geometric Portraits with Sharp Angles",
   "seo_description": "A generative portrait series focusing on geometric head and shoulder profiles with constructivist and cubist cues, sharp angles, and vibrant color fields",
   "role": [
@@ -49,13 +49,13 @@
   "origin_url_text": "behance.net/gallery/Constructivist-Profiles",
   "repository": "",
   "tiles": [
-    "Angular constructivist head and shoulder profiles",
-    "Sharp geometry and vibrant color fields",
-    "Generative portraits with disciplined finishing"
+    "Studying Constructivism and Cubism",
+    "The face broken into planes",
+    "The profiles I kept"
   ],
-  "challenge": "Constructivist and cubist visual languages offer a rich formal vocabulary for portraiture, but translating those art-historical references into a cohesive generative series requires careful control over geometry, color relationships, and compositional legibility. The goal was to produce a collection of head-and-shoulder profile portraits that maintain sharp angular discipline and bold color blocking while remaining recognizable and visually compelling at every scale.",
-  "approach": "Used a generative pipeline to establish profile geometry and axis lines for each portrait, then applied disciplined in-painting to refine edge quality, color relationships, and highlight placement. Each piece balances constructivist angularity with cubist fragmentation, using vibrant flat color fields to define form rather than gradients or photorealistic rendering. The finishing process ensured consistent silhouette clarity and visual cohesion across the series.",
-  "result": "Produced a cohesive collection of geometric portraits that read instantly as thumbnail tiles and carry sufficient structural detail for large-format print. The series demonstrates fluency in art-historical visual languages translated through contemporary generative tools, showcasing both creative direction and technical execution in AI-assisted art production.",
+  "challenge": "Constructivist and Cubist portraiture taught painters to stop copying a face and start building one \u2014 out of planes, color blocks, and decisions. I wanted to see if I could learn to think that way about a portrait myself.",
+  "approach": "I read into both movements, then drafted profile after profile, watching for the ones where the face was clearly a construction but still felt like a person. I kept the ones that taught me something and that I personally liked.",
+  "result": "Six angular, color-blocked profiles that I'm fond of. They're available as prints for anyone who enjoys that kind of geometric portraiture.",
   "role_headline": "Angular Constructivist Portraits",
   "hero_btn_cta": "See Creative Work",
   "final_cta_text": "Interested in creative direction?",

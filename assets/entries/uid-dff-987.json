@@ -6,7 +6,7 @@
   "id": "uid-dff-987",
   "slug": "automated-e-commerce-shop-lookbook",
   "title": "800+ Product Store with Automated CMS Management",
-  "subtitle": "Full-stack automation from Notion to checkout integration",
+  "subtitle": "A Make.com + Notion pipeline runs an 800-product Webflow store end to end.",
   "seo_title": "Automated Webflow CMS Shop & Fashion Gallery",
   "seo_description": "Custom developed and designed, engaging, interactive from the navigation to the 800+ product web store & fashion lookbook",
   "role": [
@@ -55,8 +55,10 @@
   "img_alt": "Automated e-commerce storefront screenshots showing product catalog, fashion lookbook, and custom navigation",
   "mobile_img": [],
   "mobile_img_alt": "",
-  "gif": [], "gif_alt": "",
-  "grid": [], "grid_alt": "",
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
   "slideshows": [
     {
       "title": "Mobile Screenshots",
@@ -79,14 +81,14 @@
   "origin_url_text": "fashion-art.august.style",
   "repository": "https://github.com/seanivore/webflow-store",
   "tiles": [
-    "Make.com workflows automate entire pipeline",
-    "Notion databases sync to CMS and inventory",
-    "Custom navigation handles complex multi-section site",
-    "Python scripts rebuilt Webflow export for GitHub Pages"
+    "Make.com scenarios tag, enrich, and route 800+ products automatically",
+    "Notion is the single source of truth \u2014 edits publish themselves",
+    "LLM calls generate product copy, categories, and SEO fields",
+    "Python scripts rebuilt the Webflow export for GitHub Pages"
   ],
-  "challenge": "Managing 800+ products across an e-commerce store and fashion lookbook manually would be unsustainable. The site required three distinct sections — e-commerce store, fashion lookbook magazine, and editorial content — all pulling from interconnected databases while maintaining separate navigation patterns and checkout integration. Webflow's CMS capabilities combined with Notion and Make.com offered the foundation for a fully automated content and inventory management system.",
-  "approach": "Architected a fully automated Webflow e-commerce system with custom backend integration. Connected Make.com automation workflows to Notion databases containing product information, fashion imagery, and editorial content, which automatically populate Webflow CMS collections and sync inventory across all storefronts. Designed custom navigation that handles the site's complexity, allowing users to flow between shopping, lookbook, and editorial sections without losing context. When the site was later deployed to GitHub Pages, developed Python utility scripts to correct image paths, navigation links, nested directory handling, and lookbook navigation issues.",
-  "result": "The automation eliminated manual data entry for 800+ products and reduced inventory update time from hours to minutes. The Make.com integration enabled real-time synchronization between Notion databases, Webflow CMS, and checkout systems. The custom navigation architecture proved robust enough for the multi-section site while remaining intuitive. The Python migration scripts demonstrated full-stack problem-solving beyond Webflow design, addressing real technical challenges in deeply nested directory structures.",
+  "challenge": "An 800-product store with a fashion lookbook and an editorial magazine cannot be managed by hand \u2014 every new SKU would need photography, copy, categorization, and cross-linking across three connected sections. The real problem was not the design; it was that no small team could keep an inventory of that size accurate, on-brand, and shoppable without weeks of manual data entry per update.",
+  "approach": "I built a Make.com pipeline (Make.com is a visual automation tool that chains services together) that watches a Notion database and routes each new product through a series of AI steps: an LLM writes the description, another tags category and collection, a third drafts SEO metadata, and the finished record is pushed into Webflow's CMS and the checkout system. Editors just update Notion \u2014 the pipeline handles the rest. When the site later moved to GitHub Pages, I wrote Python scripts to rewrite paths, fix nested directories, and keep the lookbook navigation intact.",
+  "result": "Inventory updates that used to take hours now finish in minutes, and the site scaled to 800+ products without adding headcount. One editor in Notion runs what would normally need a small CMS team. The same pattern (Notion \u2192 Make.com \u2192 AI enrichment \u2192 CMS) has since become the template I reuse for other clients who need high-volume storefronts on a small-team budget.",
   "role_headline": "800+ Product Store, Fully Automated",
   "hero_btn_cta": "See Web Projects",
   "final_cta_text": "Interested in web development?",
@@ -101,7 +103,7 @@
     },
     {
       "word": "Implement",
-      "summary": "Build iteratively — custom scripts, AI-generated SERP descriptions, Webflow storefronts connected to inventory APIs. Ship early, validate with real traffic.",
+      "summary": "Build iteratively \u2014 custom scripts, AI-generated SERP descriptions, Webflow storefronts connected to inventory APIs. Ship early, validate with real traffic.",
       "link_text": "SaaS Conversion Flow",
       "link_slug": "saas-product-sale-features"
     },

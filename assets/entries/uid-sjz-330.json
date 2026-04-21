@@ -6,7 +6,7 @@
   "id": "uid-sjz-330",
   "slug": "agentic-marketing-department",
   "title": "The Agentic Marketing Department",
-  "subtitle": "Multi-agent AI system replacing traditional marketing team workflows",
+  "subtitle": "A multi-agent AI system that covers the jobs of a small marketing team \u2014 content, social, analytics, and iteration.",
   "seo_title": "Agentic Marketing Department \u2014 AI Multi-Agent System",
   "seo_description": "A multi-agent AI system that autonomously manages marketing workflows including content creation, scheduling, analytics, and campaign optimization.",
   "role": [
@@ -48,14 +48,14 @@
   "origin_url_text": "Full Case Study",
   "repository": "",
   "tiles": [
-    "Multi-agent system replacing team workflows",
-    "Autonomous content creation and scheduling",
-    "Cross-platform campaign orchestration",
-    "Self-optimizing based on performance data"
+    "Specialist AI agents for strategy, copy, visuals, social, and analytics",
+    "Agents hand off through Make.com scenarios \u2014 no human ferrying tasks",
+    "Analytics agent feeds results back into the strategy agent",
+    "Self-improving loop: performance data tunes the next campaign"
   ],
-  "challenge": "Traditional marketing departments require multiple specialists \u2014 content writers, social media managers, analytics leads, campaign strategists. Small businesses and startups rarely have the budget for full marketing teams but need the same breadth of output. The challenge was designing a system where AI agents could genuinely replace the coordination overhead of a marketing team.",
-  "approach": "Architected a multi-agent system where specialized AI agents handle distinct marketing functions: content strategy, copywriting, visual asset creation, social scheduling, and performance analytics. The agents communicate through structured handoffs \u2014 the analytics agent feeds performance data back to the content strategy agent, creating a self-improving loop. Make.com orchestrates the automation triggers and inter-agent communication.",
-  "result": "The system autonomously handles the core functions of a small marketing department \u2014 content calendars, social media publishing, campaign reporting, and creative iteration. The self-optimizing feedback loop means performance improves over time without manual tuning. The architecture demonstrates that AI agent orchestration can meaningfully reduce the human headcount needed for professional marketing operations.",
+  "challenge": "A real marketing department has a strategist, a copywriter, a designer, a social manager, and an analytics lead \u2014 five salaries minimum. Small businesses need the same breadth of output but can't staff it, and stringing together point AI tools just hands the coordination problem back to the owner. The real challenge was making the coordination itself automatic: getting specialized agents to hand off cleanly and learn from each other.",
+  "approach": "I designed a multi-agent system where each function lives in its own LLM-backed agent with a defined role: one plans the content calendar, one writes copy, one briefs visuals, one schedules social posts, and one reads performance data back from the platforms. Make.com (a visual automation layer) orchestrates the handoffs \u2014 the analytics agent's output feeds the strategy agent's next brief, which creates a self-improving loop instead of a one-shot generation. Every agent has guardrails on tone, brand, and escalation back to a human when it isn't sure.",
+  "result": "The system autonomously runs the core work of a small marketing department \u2014 calendars, social publishing, campaign reporting, and creative iteration \u2014 at a fraction of the headcount cost. Performance improves over time without manual tuning because analytics feeds back into strategy. This is the clearest demonstration in my portfolio that AI agents can collapse departmental coordination, not just individual tasks.",
   "role_headline": "AI Multi-Agent Marketing System",
   "hero_btn_cta": "See AI Projects",
   "final_cta_text": "Need AI automation?",

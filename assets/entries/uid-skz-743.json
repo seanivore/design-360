@@ -6,7 +6,7 @@
   "id": "uid-skz-743",
   "slug": "agentic-social-manager",
   "title": "Agentic Social Media Manager",
-  "subtitle": "Autonomous AI system managing social media presence across platforms",
+  "subtitle": "An autonomous AI agent that runs a social media presence end-to-end \u2014 write, schedule, engage, learn.",
   "seo_title": "Agentic Social Media Manager \u2014 Autonomous AI System",
   "seo_description": "An autonomous AI agent managing social media accounts across platforms with content creation, scheduling, engagement monitoring, and performance optimization.",
   "role": [
@@ -47,14 +47,14 @@
   "origin_url_text": "Full Case Study",
   "repository": "",
   "tiles": [
-    "Autonomous cross-platform publishing",
-    "AI content creation and curation",
-    "Self-optimizing posting schedule",
-    "Performance-driven content iteration"
+    "Autonomous agent writes, schedules, and posts across platforms",
+    "Engagement monitoring catches replies and opportunities in real time",
+    "Scheduling optimizes itself against accumulated performance data",
+    "Make.com orchestrates the full loop without daily human input"
   ],
-  "challenge": "Social media management is a constant operational demand \u2014 daily posting, engagement monitoring, trend response, and analytics review require ongoing human attention. For businesses without dedicated social media staff, maintaining consistent presence across platforms is either neglected or outsourced at significant cost.",
-  "approach": "Built an agentic AI system that autonomously manages social media presence. The agent creates platform-appropriate content, schedules posts based on audience engagement patterns, monitors responses for engagement opportunities, and adjusts strategy based on performance analytics. The system uses Make.com for workflow orchestration and integrates with multiple social platforms through their APIs.",
-  "result": "The system maintains active social media presence across platforms without daily human management. Content quality and posting consistency match what a dedicated social media manager would produce. The self-optimizing scheduling algorithm has progressively improved engagement rates as it accumulates performance data. The approach demonstrates that social media operations are well-suited for agentic automation.",
+  "challenge": "Social media is the kind of work that eats an owner alive \u2014 daily posting, replies, trend response, and weekly analytics. Businesses either let it slide or outsource it at $3\u20138k/month to an agency. I wanted to see how much of that job could actually be run by an agent rather than chopped into disconnected AI tools that still need a human driver.",
+  "approach": "I built an agentic system where a single LLM-driven agent owns the full social workflow. It drafts platform-appropriate posts, schedules them against learned engagement windows, monitors replies and mentions for response opportunities, and re-reads its own analytics each week to adjust strategy. Make.com wires the agent into each platform's API so it can actually publish, listen, and react \u2014 not just generate text.",
+  "result": "The system keeps a consistent, on-brand presence across platforms with no daily human involvement, and engagement has trended up as the scheduling model accumulates data. Output quality is within the range of what a dedicated social manager would produce, at a fraction of the cost. It's the most complete example I have of an agent doing a whole job, not just a task inside one.",
   "role_headline": "Autonomous AI Social Management",
   "hero_btn_cta": "See AI Projects",
   "final_cta_text": "Need social automation?",

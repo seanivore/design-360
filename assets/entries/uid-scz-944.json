@@ -6,7 +6,7 @@
   "id": "uid-scz-944",
   "slug": "full-stack-automated-ecommerce",
   "title": "AI-Maintained E-Commerce Historic Art Print Shop",
-  "subtitle": "Fully automated Shopify store with AI-curated inventory from museum collections",
+  "subtitle": "An AI pipeline sources, writes, and lists historic art prints from museum APIs \u2014 the store runs itself.",
   "seo_title": "AI-Automated E-Commerce \u2014 Historic Art Print Shop",
   "seo_description": "A fully automated Shopify e-commerce store using AI to curate historic art prints from museum collections with automated inventory and fulfillment.",
   "role": [
@@ -47,14 +47,14 @@
   "origin_url_text": "Full Case Study",
   "repository": "",
   "tiles": [
-    "Fully automated product curation pipeline",
-    "AI-written descriptions and SEO metadata",
-    "Museum collection API integration",
-    "Print-on-demand fulfillment automation"
+    "Museum collection APIs feed an AI-curated product pipeline",
+    "LLMs write descriptions, titles, and SEO for each artwork",
+    "Make.com orchestrates curation, listing, and fulfillment",
+    "Zero daily human intervention required"
   ],
-  "challenge": "Running an e-commerce store traditionally requires constant manual effort \u2014 product photography, copywriting, inventory management, SEO optimization. For a historic art print shop sourcing from museum collections, the volume of potential inventory is enormous but the per-item margin makes manual curation economically unviable.",
-  "approach": "Built a full-stack automation pipeline that discovers, curates, and lists historic artworks from museum collection APIs. AI agents analyze artwork metadata to generate compelling product descriptions, SEO-optimized titles, and contextual collection groupings. The system handles print-on-demand fulfillment integration, pricing strategy, and inventory rotation \u2014 the entire operation runs without daily oversight.",
-  "result": "The store operates as a genuinely autonomous e-commerce business with minimal human intervention. Products are automatically curated, listed with AI-generated copy, and fulfilled through print-on-demand partners. The approach proves viable for niche e-commerce where product volume is high but per-item manual effort would destroy margins.",
+  "challenge": "Historic art prints are a high-volume, low-margin category \u2014 there are millions of public-domain works available through museum APIs, but the per-item profit will not pay for a human writing descriptions, choosing collections, and optimizing SEO. A traditional art print shop either stays tiny (100 curated pieces) or bleeds money trying to scale. The problem was building a store where the unit economics work because the labor per product is near zero.",
+  "approach": "I built an end-to-end pipeline where Make.com pulls new artwork metadata from museum collection APIs, hands it to an LLM chain that writes a compelling product description, generates an SEO-ready title, and assigns the piece to thematic collections, then pushes the finished listing into Shopify. Print-on-demand fulfillment is wired into the same flow, so orders trigger production without a human touching them. Pricing and inventory rotation are policy-driven inside the automation.",
+  "result": "The store operates as a genuinely autonomous business \u2014 curation, listing, copy, SEO, and fulfillment all run without daily oversight. The architecture proves a category that would normally destroy its own margins can work when AI absorbs the per-SKU labor. The same pipeline template transfers cleanly to any niche where inventory is abundant but per-item effort is the blocker.",
   "role_headline": "Fully Automated Art E-Commerce",
   "hero_btn_cta": "See AI Projects",
   "final_cta_text": "Need automation?",

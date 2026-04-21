@@ -6,7 +6,7 @@
   "id": "uid-fth-565",
   "slug": "animated-cms-weekly-blogs",
   "title": "200+ Weekly Blogs with Custom Hand-Drawn Animation",
-  "subtitle": "Lottie animations guide users through automated AI content",
+  "subtitle": "A Make.com + LLM pipeline publishes 200+ blogs a week \u2014 hand-drawn animation keeps it from feeling like a content mill.",
   "seo_title": "Custom Lottie Animated Webflow CMS Daily Blog",
   "seo_description": "Hand-drawn custom backgrounds and animated illustrations cover this massive 10+ daily Webflow CMS blog",
   "role": [
@@ -56,8 +56,10 @@
   "img_alt": "Animated CMS blog screenshots showing hand-drawn Lottie illustrations, blog post layouts, and automated content sections",
   "mobile_img": [],
   "mobile_img_alt": "",
-  "gif": [], "gif_alt": "",
-  "grid": [], "grid_alt": "",
+  "gif": [],
+  "gif_alt": "",
+  "grid": [],
+  "grid_alt": "",
   "slideshows": [
     {
       "title": "Mobile Screenshots",
@@ -76,14 +78,14 @@
   "origin_url_text": "august.style/astrofluenced-blogs",
   "repository": "https://github.com/seanivore/astrofluenced",
   "tiles": [
-    "Hand-drawn illustrations created with iPad Pro",
-    "Custom Lottie animations add movement without load bloat",
-    "200+ AI-generated weekly blogs fully automated",
-    "Custom line animations direct user navigation"
+    "200+ weekly posts written, formatted, and published by an AI pipeline",
+    "Make.com orchestrates LLM writing, tagging, and CMS publishing",
+    "Hand-drawn iPad Pro illustrations, shipped as lightweight Lottie animations",
+    "Python migration scripts carried everything over to GitHub Pages"
   ],
-  "challenge": "Publishing 200+ AI-generated blogs weekly requires automation, but automation often produces sterile, template-feeling sites. The opportunity was creating a unique visual identity through custom hand-drawn animations that would make high-volume automated content feel crafted and personal. The design needed enough varied artwork to keep the massive blog platform visually interesting while maintaining cohesive design language.",
-  "approach": "Illustrated extensive custom artwork using iPad Pro and Apple Pencil, then converted hand-drawn backgrounds and illustrations to Lottie animations via After Effects and Adobe Illustrator. The animations serve dual purposes: adding visual interest and guiding user navigation through custom line animations that direct attention to different blog sections. Built the Webflow CMS architecture to support 200+ weekly AI-generated posts that publish automatically via Make.com automation. When migrating to GitHub Pages, developed Python utility scripts to handle conditional content visibility, external link conversion, image path corrections, and collection page generation.",
-  "result": "The automated publishing system handles 200+ weekly posts while maintaining visual cohesion through a custom hand-drawn animation library. The Lottie approach keeps file sizes minimal despite the volume of animated elements. The hand-drawn illustrations transform what could feel like a content mill into a distinctive branded experience. The GitHub Pages migration scripts demonstrate full-stack problem-solving across content visibility, path management, and collection generation.",
+  "challenge": "Running a blog that ships 200+ posts a week is impossible manually \u2014 that is more output than a small newsroom. The usual automated answer (mass AI content) reads sterile and hurts the brand more than no posts at all. So the real problem was twofold: build a pipeline that can actually publish at that volume, and make the output feel crafted instead of churned.",
+  "approach": "I built a Make.com pipeline that triggers an LLM to draft each post, another model to tag and categorize it, and a publishing step that pushes it into Webflow's CMS on a schedule. On the design side, I drew hundreds of illustrations on iPad Pro, converted them through After Effects and Illustrator into Lottie animations (a format that stays tiny even when animated), and used custom line animations to guide the reader's eye between sections. When the whole thing migrated to GitHub Pages, Python utilities handled conditional visibility, external-link conversion, and collection-page generation.",
+  "result": "The site publishes 200+ posts every week with no daily human touch, and it still looks like a designed magazine rather than an AI content farm. The Lottie approach kept page weight low despite heavy animation, and the same Make.com + LLM pattern now underpins several of the production pipelines I run for other projects.",
   "role_headline": "200+ Blogs with Hand-Drawn Animation",
   "hero_btn_cta": "See Web Projects",
   "final_cta_text": "Interested in web development?",
