@@ -7,7 +7,7 @@
   "slug": "scalable-augmented-generative-podcasts",
   "title": "Scalable AI-Driven News Producer Network",
   "subtitle": "Automated podcast production pipeline generating multi-format content from news sources",
-  "seo_title": "AI Podcast Production \u2014 Scalable Generative Audio Network",
+  "seo_title": "AI Podcast Production Scalable Generative Audio Network",
   "seo_description": "Automated podcast production system using AI to generate, produce, and distribute multi-format audio content from curated news sources at scale.",
   "role": [
     "AI & Automation Strategist",
@@ -52,9 +52,9 @@
     "Scalable content network architecture",
     "Cross-platform distribution automation"
   ],
-  "challenge": "Podcast production is labor-intensive \u2014 research, scripting, recording, editing, and distribution require significant human hours per episode. Scaling a podcast network traditionally means scaling production staff linearly. The challenge was building a system that could produce quality audio content at scale without proportional increases in human effort.",
+  "challenge": "Podcast production is labor-intensive research, scripting, recording, editing, and distribution require significant human hours per episode. Scaling a podcast network traditionally means scaling production staff linearly. The challenge was building a system that could produce quality audio content at scale without proportional increases in human effort.",
   "approach": "Built an automated production pipeline that ingests curated news sources, generates editorial-quality scripts through AI analysis and summarization, produces multi-voice narration using text-to-speech synthesis, and distributes finished episodes across podcast platforms. The system handles the entire workflow from source discovery through published episode, with quality gates at each stage.",
-  "result": "The system produces podcast episodes autonomously at a scale that would require a substantial production team to match manually. Content quality is maintained through structured editorial guidelines embedded in the AI pipeline. The architecture is horizontally scalable \u2014 adding new topic verticals or formats requires configuration changes, not additional staff.",
+  "result": "The system produces podcast episodes autonomously at a scale that would require a substantial production team to match manually. Content quality is maintained through structured editorial guidelines embedded in the AI pipeline. The architecture is horizontally scalable adding new topic verticals or formats requires configuration changes, not additional staff.",
   "role_headline": "Scalable AI Podcast Network",
   "hero_btn_cta": "See AI Projects",
   "final_cta_text": "Need content automation?",
