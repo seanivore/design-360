@@ -206,6 +206,11 @@ Then, for any entry pages that had a Behance or Youtube embed as the hero, place
 
 Last thought is that this container of tags and media embed could be sticky and stay with the viewer as they scroll down, with them moving down along the left column just to the bottom. So it would be subtle — not far, but far enough to be intriguing. 
 
+Note: When adjusting the Youtube embeds, we need to look into if there is a reason that the thumbnail loads INCREDIBLY blurry when the page first loads because it looks very embarrassingly bad. 
+  - SEE IMAGE: `assets/docs/archive/v3/IMG/youtube-blurry-embed.jpg`
+If it helps to figure it out, when you refresh or return to the page, the thumbnail looks crisp and proper. 
+  - SEE IMAGE: `assets/docs/archive/v3/IMG/youtube-second-visit.jpg`
+
 ### **4. Eliminate Slideshows** 
 
 The slideshows do not do any of the content justice. Based on our focus points in storytelling, there are better ways to frame all of these heavily with the media and potentially even more with the copywriting. 
@@ -218,6 +223,29 @@ These all could really have more of a focus on the AI pipeline that created them
   - assets/entries/uid-hxp-812.json -> `https://www.august.style/bau-noir-haus/`
   - assets/entries/uid-kts-582.json -> `https://www.august.style/bohemian-abstractions/`
   - assets/entries/uid-xuk-296.json -> `https://www.august.style/art-nouveau-brand-design/`
+
+  **Art History**
+  - Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
+  - The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
+
+    + https://www.august.style/surreal-constructivism-perception/
+    + https://www.august.style/pie-claesz-modern-vibes/
+    + https://www.august.style/baroque-de-heem-still-life/
+    + https://www.august.style/flat-bauhaus/
+    + https://www.august.style/pie-claesz/
+    + https://www.august.style/bau-noir-haus/
+    + https://www.august.style/neo-expresi-cyber/
+    + https://www.august.style/minimalism-bauhaus/
+    + https://www.august.style/humanistic-exploration/
+    + https://www.august.style/constructi-landscapes/
+    + https://www.august.style/all-that-glitters/
+    + https://www.august.style/surreal-constructivism/
+    + https://www.august.style/gradient-bauhaus/
+    + https://www.august.style/art-nouveau-brand-design/
+    + https://www.august.style/constructivist-profiles/
+    + https://www.august.style/constructi-haus/
+    + https://www.august.style/flowering-symmetric-asymmetry/
+    + https://www.august.style/psychedelic-impressi/
 
 #### Storytelling Layout Images 
 
@@ -237,6 +265,29 @@ These are website tours and it just makes way more sense than slideshows. Plain 
   - assets/entries/uid-dff-987.json -> `https://www.august.style/automated-e-commerce-shop-lookbook/`
   - assets/entries/uid-fth-565.json -> `https://www.august.style/animated-cms-weekly-blogs/`
   - assets/entries/uid-unw-889.json -> `https://www.august.style/training-yoga-sales/`
+
+### **5. Entry Page Bleed Image Components**
+
+  1. How are we handling and laying out GIFs? -> https://www.august.style/advanced-animation-system/
+  2. What do we do when we have just normal images to show off, not artsy bleed images? Are they like GIF layout? 
+  3. Grid image components are fine except they, like all other images, need light boxes
+  4. If images don't get light boxes, perhaps it is either just because they have URL click through and/or a default turned off.  
+  5. We need to understand in what order all of these types of images are presented regardless of what a JSON has or doesn't have 
+  6. Some of the posts really need a better story telling layout, instead of the 3 chunks of text, it is more like text, image, text, image, etc. What should we do to accommodate this? -> https://www.august.style/agentic-fashion-designer/
+
+For prints and some other images where a grid is too cropped in and the slideshows are too compact or small and non-visual, I want to be able to share images that are of any aspect ratio, laid out on the page just below the last bit of "Result" copy, with decent spacing around the images. This placement is intended to be used when we want images to be shown LARGE. 
+
+I was going to say we could just place images as if they were GIFs, but I'd really like it if we were able to push the visual appeal of these images even further. We'd try to do this by making sure on desktop there are two per row, and mobile or tablet one per row, but importantly these images should BLEED. The right of the right image should meet the actual edge of the right page with no margin or padding, and then the same for the left image's left side. 
+
+Let's call them BLEED in the filename which I'll define below. And this can mean we only ever provide even number of BLEED images. And the the last aspect that sets them apart from the GIF layout, let's apply the lightbox click-to-expand for these images as well. 
+
+All together that will help make sure that if there are BLEED images to include that they get a SUPER visual, engaging presentation that let's them enjoy the piece as much as they want. 
+
+I'm thinking that we'll be adjusting the homepage for an optional BLEED component as well so that I can make sure that my homepage design is also as great as it can be.
+
+### **6. Homepage Bleed Image Component** 
+
+For showing off the print and graphic design posts. Should bleed, obviously, and be sort of like a tight grid of images that covers the width of the page, with maybe 2 or 3 images per row and perhaps 4 or 5 rows deep max. Since these images are large already, instead of lighthouse to expand them, we would want each one to click-through to the respective project entry. 
 
 ---
 
@@ -271,148 +322,87 @@ All need at least GIF tours. The particularly striking designs should get large 
 
   - https://www.august.style/data-visualization-dashboard/
   - https://www.august.style/saas-product-sale-features/
-
-
----
-
-### **New**: Entry Page Bleed Images Section
-
-For prints and some other images where a grid is too cropped in and the slideshows are too compact or small and non-visual, I want to be able to share images that are of any aspect ratio, laid out on the page just below the last bit of "Result" copy, with decent spacing around the images. This placement is intended to be used when we want images to be shown LARGE. 
-
-I was going to say we could just place images as if they were GIFs, but I'd really like it if we were able to push the visual appeal of these images even further. We'd try to do this by making sure on desktop there are two per row, and mobile or tablet one per row, but importantly these images should BLEED. The right of the right image should meet the actual edge of the right page with no margin or padding, and then the same for the left image's left side. 
-
-Let's call them BLEED in the filename which I'll define below. And this can mean we only ever provide even number of BLEED images. And the the last aspect that sets them apart from the GIF layout, let's apply the lightbox click-to-expand for these images as well. 
-
-All together that will help make sure that if there are BLEED images to include that they get a SUPER visual, engaging presentation that let's them enjoy the piece as much as they want. 
-
-I'm thinking that we'll be adjusting the homepage for an optional BLEED component as well so that I can make sure that my 
-
-### Entry Page Bleed 
-
-### Homepage Bleed 
-
-### Images Treated Like GIF Layout 
-
-### Story Tell Text Image Repeat 
-
-  + https://www.august.style/agentic-fashion-designer/
+  - https://www.august.style/ai-meditation-mobile-app/
 
 ---
 
 ## Fixes 
 
-### Link Card Design 
+### Tile Tag Layout Inconsistency 
 
-The "project" and "repository" links look terrible. 
-We need more flexibility for things like the store for published book or the website for them to explore. 
+**Desktop**
 
-### Youtube Embeds 
+  - On section pages, there is a layout difference because we use two columns of tiles, but you can see the tags were placed neatly  
+    - SEE IMAGE: `assets/docs/archive/images/v4_0_0_content-tag-full-width-section-tile.jpg`
+  - On entry pages, the related posts tiles are intentionally in a single, wider layout, column, but you can see the tags were not placed neatly as they should say within the width of the black text container above, and rather they extend past its edges, to the left. 
+    - SEE IMAGE: `assets/docs/archive/images/v4_0_0_content-tag-full-width-related-posts.jpg`
 
-They all look fuzzy on the page. 
-Maybe we make them smaller. Double check if it has a good thumbnail upload in YT Studio. 
-Example of issue that is present on every page that has a Youtube: `assets/docs/archive/v3/IMG/youtube-blurry-embed.jpg`
-Strangely, when I went back to this one it was clear upon second reload; how?: `assets/docs/archive/v3/IMG/youtube-second-visit.jpg`
-Confirmed: On second reload it does get clear. Why? 
-Perhaps Youtube just isn't the best option. 
+**Tablet** 
 
-### Drafts Needing New Images 
+  - On section pages, at tablet width the switch to a similar one wide column layout, and you can see that the tags were only given the width of the tile and anything beyond is hidden and the user can scroll left to see more 
+    - SEE IMAGE: `assets/docs/archive/images/v4_0_0_content-tags-tablet-section-tile.jpg`
+  - On entry pages, the related posts tiles when at tablet width actually have two issues; for some reason the right margin/padding is HUGE; and then you can see what makes the layout look problematic in comparison this time is that the black text container lengthened with the slideshow on the section page content tiles, but it stayed far too narrow on the entry page related post tiles, which makes the shorter list of tags here look very lopsided 
+    - SEE IMAGE: `assets/docs/archive/images/v4_0_0_content-tags-tablet-related-posts.jpg`
 
-Create new images  and list the local path to them below each entry in the list below. Agent should then add the images, which have been finalized, to CDN to get URL and update the `asset/docs/...` JSON entry, and then move the JSON to `assets/entries/...` to be published. 
+**Mobile** 
+
+  - Both the section page content tiles at mobile width, and the entry page related post tiles at mobile width, have been handled nicely
+    - SEE IMAGE: `assets/docs/archive/images/v4_0_0_content-tags-mobile-section-tile.jpg`
+    - SEE IMAGE: `assets/docs/archive/images/v4_0_0_content-tags-mobile-related-posts.jpg`
+
+**How To Fix** 
+
+  1. On entry pages at desktop view, make the width of the container the tags are within only as wide as the black text container above it, and then set it to allow but hide the overflow for the posts with lots of tags so that users can scroll through them. 
+
+  2. On entry pages at tablet view, the right page margin must mirror the left margin (or whatever padding that is), and then the black text component should be made wider to be just slightly shorter on both sides than the image slideshow; the tags look like the might already be set up properly to accommodate this in the same way they're accommodated in the section tile tags. 
+
+---
+
+## Draft Posts 
+
+### Need New Images 
+
+Create new images for the drafts listed below. List the local path to them below each entry in the list below. Agent should then add the images, which have been finalized, to CDN to get URL and update the `asset/docs/drafts/...` JSON entry, and then move the JSON to `assets/entries/...` where it will then automatically be published. 
 
 **NEW IMAGE LIST**
 
   + https://www.august.style/scalable-augmented-generative-podcasts/
-    - `assets/docs/uid-sqz-852.json`
+    - `assets/docs/drafts/uid-sqz-852.json`
   + https://www.august.style/burning-desire-distain/
-    - `assets/docs/uid-xbk-777.json`
+    - `assets/docs/drafts/uid-xbk-777.json`
   + https://www.august.style/transmutations-hyperobject/
-    - `assets/docs/uid-yel-369.json`
+    - `assets/docs/drafts/uid-yel-369.json`
   + https://www.august.style/realtime-social-system/
-    - `assets/docs/uid-sxz-828.json`
+    - `assets/docs/drafts/uid-sxz-828.json`
   + https://www.august.style/ux-ui-ios-marketing/
-    - `assets/docs/uid-ssz-402.json`
+    - `assets/docs/drafts/uid-ssz-402.json`
   + https://developer-technologist.august.style/web3-strategy-branding/
-    - `assets/docs/uid-rcy-132.json`
+    - `assets/docs/drafts/uid-rcy-132.json`
   + https://www.august.style/full-stack-automated-ecommerce/
-    - `assets/docs/uid-scz-944.json`
+    - `assets/docs/drafts/uid-scz-944.json`
   + https://developer-technologist.august.style/product-marketing-branding/
-    - `assets/docs/uid-rvy-322.json`
+    - `assets/docs/drafts/uid-rvy-322.json`
   + https://www.august.style/content-strategy-framework/
-    - `assets/docs/uid-slz-942.json`
+    - `assets/docs/drafts/uid-slz-942.json`
 
 **ALL DRAFTS TO SORT THROUGH** 
 
-  - `assets/docs/uid-cvp-436.json`
-  - `assets/docs/uid-dbr-368.json`
-  - `assets/docs/uid-pzy-452.json`
-  - `assets/docs/uid-vue-009.json`
-  - `assets/docs/uid-xik-222.json`
-  - `assets/docs/uid-xlk-592.json`
-  - `assets/docs/uid-xpk-444.json`
-  - `assets/docs/uid-ysl-128.json`
-  - `assets/docs/uid-yvg-990.json`
-  - `assets/docs/uid-yxl-432.json`
+  - `assets/docs/drafts/uid-cvp-436.json`
+  - `assets/docs/drafts/uid-dbr-368.json`
+  - `assets/docs/drafts/uid-pzy-452.json`
+  - `assets/docs/drafts/uid-vue-009.json`
+  - `assets/docs/drafts/uid-xik-222.json`
+  - `assets/docs/drafts/uid-xlk-592.json`
+  - `assets/docs/drafts/uid-xpk-444.json`
+  - `assets/docs/drafts/uid-ysl-128.json`
+  - `assets/docs/drafts/uid-yvg-990.json`
+  - `assets/docs/drafts/uid-yxl-432.json`
 
 **FINALIZED READY FOR AGENT**
 
   + `assets/docs/uid-sqz-852.json` — slug: scalable-augmented-generative-podcasts
-    - 
-
-
-### Entry Page Sections 
-
-* **Lightroom added to GRIDS**
-  - https://www.august.style/api-automate-video-production/
-   
-* **Consider removing thumbnail section and replace with better option**
-  - https://www.august.style/training-yoga-sales/
-   
-### Related Post Design 
-
-The newly added contextual tags `.tile-tags` below the `.tile-text-area`. 
-This issue might also exist on section pages when not full desktop view, like in tablet. 
-
-`.tile-text-area` uses the following. 
-
-```css
-{
-  .grid-related .tile-text-area {
-    width: 60%;
-  }
-}
-```
-
-Similar adjustment can be added to `.tile-tags` but more adjustments are needed. I added "align-self: center", "flex-wrap: wrap", and then the same "width: 60%".  
-
-```css
-}
-  .tile-tags {
-    display: flex;
-    gap: 0.375rem;
-    padding: 0.375rem 0.75rem;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    align-self: center;
-    flex-wrap: wrap;
-    width: 60%;
-  }
-}
-```
-
-Actually, on the section pages, it looks like the layout for `.tile-tags` what handled, possibly in `.tile-grid`. 
-`assets/docs/archive/v3/IMG/tile-tags-on-section-page.jpg`
-
 
 ---
-
-## Designer 
-
-**Need BLEED images and section**
-
-## Design Swarms 
-
-  + https://www.august.style/data-visualization-dashboard/
-  + https://www.august.style/ai-meditation-mobile-app/
 
 ### Illustration 
 
@@ -424,30 +414,6 @@ Actually, on the section pages, it looks like the layout for `.tile-tags` what h
 **Animation and motion design** 
 
   + https://www.august.style/advanced-animation-system/
-
-### Art History
-
-Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
-The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
-
-  + https://www.august.style/surreal-constructivism-perception/
-  + https://www.august.style/pie-claesz-modern-vibes/
-  + https://www.august.style/baroque-de-heem-still-life/
-  + https://www.august.style/flat-bauhaus/
-  + https://www.august.style/pie-claesz/
-  + https://www.august.style/bau-noir-haus/
-  + https://www.august.style/neo-expresi-cyber/
-  + https://www.august.style/minimalism-bauhaus/
-  + https://www.august.style/humanistic-exploration/
-  + https://www.august.style/constructi-landscapes/
-  + https://www.august.style/all-that-glitters/
-  + https://www.august.style/surreal-constructivism/
-  + https://www.august.style/gradient-bauhaus/
-  + https://www.august.style/art-nouveau-brand-design/
-  + https://www.august.style/constructivist-profiles/
-  + https://www.august.style/constructi-haus/
-  + https://www.august.style/flowering-symmetric-asymmetry/
-  + https://www.august.style/psychedelic-impressi/
 
 ### Websites 
 
