@@ -42,16 +42,16 @@ Encourage them to remain blissfully unaware of the wildly generalist collection 
 
 ### Entry Sorting 
 
-- [x] 1. Review all currently published project entries
-- [x] 2. Sort URLs into action items with focus groupings in mind 
-- [ ] 3. Subpar or focus goal unrelated projects are moved to a fourth list
-- [ ] 4. List four projects that need updates are moved to drafts 
-- [ ] 5. Amp up showcase project's visual page layout 
-- [ ] 6. Rewrite copy of showcase projects to fit homepage focuses
-- [ ] 7. Tell engaging story through page overall
-- [ ] 8. Assess count of showcase list projects after all projects are processed
-- [ ] 9. Be selective; each focus only needs about 3, at most 5 entries
-- [ ] 10. Add specific, well worded tag to all projects in 3 lists 
+  - [x] 1. Review all currently published project entries
+  - [x] 2. Sort URLs into action items with focus groupings in mind 
+  - [ ] 3. Subpar or focus goal unrelated projects are moved to a fourth list
+  - [ ] 4. List four projects that need updates are moved to drafts 
+  - [ ] 5. Amp up showcase project's visual page layout 
+  - [ ] 6. Rewrite copy of showcase projects to fit homepage focuses
+  - [ ] 7. Tell engaging story through page overall
+  - [ ] 8. Assess count of showcase list projects after all projects are processed
+  - [ ] 9. Be selective; each focus only needs about 3, at most 5 entries
+  - [ ] 10. Add specific, well worded tag to all projects in 3 lists 
 
 ### Audit Attention 
 
@@ -85,21 +85,19 @@ Answering: What does it mean to rebuild ourselves to use AI, everything from how
 
 ## Component Updates
 
-### Lightroom Use Expansion 
+### **1. More Lightroom**
 
-Previously we only had the lightroom click-to-expand effect working for the thumbnail images. We need to expand this to work for virtually all media visuals on an `entry.html` page possible. 
+Expand the use of the lightroom click-to-expand effect. Previously we only had the effect working for the thumbnail images. We need to expand this to work for virtually all media visuals on an `entry.html` page possible. 
 
-### Entry Page Hero 
+### **2. Thumbnail Image Slideshow Hero**
 
 We will be implementing one type of hero element for all entries. Hero styles and changes directly below, and details on how to manage entries with media embed heroes below that.
-
-#### Thumbnail Image Slideshow Hero
 
 Entry page hero is currently a static image, randomly selected from the thumbnail images. Let's instead use the same slideshow tactic as our content tiles. Then we can completely remove our thumbnails from the right page content column completely and replace them with better media. 
 
 Other than making sure we show thumbnail full height, we will also need the row of images, spaced, that go off page. However, what will really make this change powerful is that we will make the hero image container slideshow full width, letting the images bleed right to the edges of the page on all devices. 
 
-**Below find the breakdown of two groups of essential styling information**
+Below find the breakdown of two groups of essential styling information.
 
   + We'll need the details of the hero that we're changing and the thumbnail media we're removing from that page section. 
   + We'll also need the details about the content tiles, how the slideshow styling works, what adjustments allow their mobile view to have bleed images, and any other details you notice. 
@@ -176,7 +174,7 @@ Other than making sure we show thumbnail full height, we will also need the row 
   }
   ```
 
-#### Moving Thumbnail Section & Embedding Heroes  
+### **3. Tag & Media Embed Right Column**
 
 Right now the two columns are both 50% of the width of the page. We can make the left column larger for the text, and then might the right one more narrow to around 60% / 40%. 
 
@@ -186,6 +184,39 @@ Then, for any entry pages that had a Behance or Youtube embed as the hero, place
 
 Last thought is that this container of tags and media embed could be sticky and stay with the viewer as they scroll down, with them moving down along the left column just to the bottom. So it would be subtle — not far, but far enough to be intriguing. 
 
+### **4. Eliminate Slideshows** 
+
+The slideshows do not do any of the content justice. Based on our focus points in storytelling, there are better ways to frame all of these heavily with the media and potentially even more with the copywriting. 
+
+#### Art Bleed Images 
+
+These all could really have more of a focus on the AI pipeline that created them. The "Bleed Images" are a new component section that will be introduced below. 
+
+  - assets/entries/uid-bsj-738.json -> `https://www.august.style/baroque-de-heem-still-life/`
+  - assets/entries/uid-hxp-812.json -> `https://www.august.style/bau-noir-haus/`
+  - assets/entries/uid-kts-582.json -> `https://www.august.style/bohemian-abstractions/`
+  - assets/entries/uid-xuk-296.json -> `https://www.august.style/art-nouveau-brand-design/`
+
+#### Storytelling Layout Images 
+
+All of these are AI pipeline focus first, but most could be combined with the visual content posts. There are a lot of more non-visual posts that fit in the AI pipeline section, too, that will need to be make more storytelling somehow as well. 
+
+  - assets/entries/uid-ccp-818.json -> `https://www.august.style/influencer-growth-strategy/`
+  - assets/entries/uid-sdz-155.json -> `https://www.august.style/ai-virtual-photoshoot-design/` (maybe also bleed image section)
+  - assets/entries/uid-sjz-330.json -> `https://www.august.style/agentic-marketing-department/` (but find post with content made)
+  - assets/entries/uid-skz-743.json -> `https://www.august.style/agentic-social-manager/` 
+  - assets/entries/uid-svz-258.json -> `https://www.august.style/agentic-fashion-designer/` (but find content)
+  - assets/entries/uid-sxz-424.json -> `https://www.august.style/api-automate-video-production/`
+  
+#### Use GIFs Instead 
+
+These are website tours and it just makes way more sense than slideshows. Plain and simple. 
+
+  - assets/entries/uid-dff-987.json -> `https://www.august.style/automated-e-commerce-shop-lookbook/`
+  - assets/entries/uid-fth-565.json -> `https://www.august.style/animated-cms-weekly-blogs/`
+  - assets/entries/uid-unw-889.json -> `https://www.august.style/training-yoga-sales/`
+
+---
 
 
 
