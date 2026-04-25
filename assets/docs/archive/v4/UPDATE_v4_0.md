@@ -1,8 +1,30 @@
 # v4.0.0 Portfolio Update 
 
+**Created**: 2026-04-25 
+**Version**: v3.1.0 -> v4.0.0 
+**Features**: Focused skill targeting; media and component layout upgrades 
+**Status**: Drafting 
+
+---
+
+**IMPORTANT**: Jump start this so that it can be used for job applications ASAP. 
+
+  1. Finish purging through and organizing to know what exists 
+  2. Find the 3 best for the 3 focus group main focus 
+  3. Polish those 9 posts before doing anything else 
+  4. Update any copy framing and homepage component layout in minimal way for now 
+
+**SECOND WAVE**: 
+
+  1. Find what is missing, the more graphic design heavy posts 
+  2. Update the important entry components 
+  3. Add new homepage components that better highlight top 9 
+
+---
+
 ## Summary 
 
-One more drilldown setting up a focused homepage that frames only the top 1% of project entries for each of 3 topical and specific groupings. 
+One more drill-down setting up a focused homepage that frames only the top 1% of project entries for each of 3 topical and specific groupings. 
 
 ### Overview 
 
@@ -218,7 +240,40 @@ These are website tours and it just makes way more sense than slideshows. Plain 
 
 ---
 
+## Media Additions & Fixes 
 
+### Website & Apps 
+
+All need at least GIF tours. The particularly striking designs should get large format image placement. 
+
+  - https://www.august.style/freelance-payments-platform/
+  - https://www.august.style/notes-app-thot/
+  - https://www.august.style/blog-lookbook-print-gallery/
+  - https://www.august.style/minimalist-web-store-product/
+  - https://www.august.style/ai-design-fashion-lookbook/
+  - https://www.august.style/modular-portfolio-build/
+  - https://www.august.style/amorphous-gradient-css-animation/
+  - https://www.august.style/personalized-fashion-magazine/ -- where is the content post though 
+
+---
+
+## Entry Reframing 
+
+### Marketing Consultant 
+
+  - https://www.august.style/public-health-response-platform/
+
+### AI Pipeline 
+
+  - https://www.august.style/css-animated-micro-interactions/ -> GIFs but more focused on process 
+
+### Design Swarms 
+
+  - https://www.august.style/data-visualization-dashboard/
+  - https://www.august.style/saas-product-sale-features/
+
+
+---
 
 ### **New**: Entry Page Bleed Images Section
 
