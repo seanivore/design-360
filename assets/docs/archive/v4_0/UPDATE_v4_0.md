@@ -241,7 +241,7 @@ These all could really have more of a focus on the AI pipeline that created them
     + https://www.august.style/all-that-glitters/
     + https://www.august.style/surreal-constructivism/
     + https://www.august.style/gradient-bauhaus/
-    + https://www.august.style/art-nouveau-brand-design/
+    + https://www.august.style/art-nouveau-brand-des ign/
     + https://www.august.style/constructivist-profiles/
     + https://www.august.style/constructi-haus/
     + https://www.august.style/flowering-symmetric-asymmetry/

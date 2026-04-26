@@ -7,7 +7,7 @@
   "slug": "embeddings-art-curation",
   "title": "CLIP Embeddings for Automated Art Curation",
   "subtitle": "Using neural embeddings and PCA to discover visual relationships across art collections",
-  "seo_title": "CLIP Embeddings Art Curation \u2014 Neural Visual Analysis",
+  "seo_title": "CLIP Embeddings Art Curation Neural Visual Analysis",
   "seo_description": "Exploration of CLIP neural embeddings and PCA dimensionality reduction for automated art curation and visual similarity discovery.",
   "role": [
     "AI & Automation Strategist",
@@ -50,9 +50,9 @@
     "Automated visual similarity discovery",
     "Data-driven curation replacing manual selection"
   ],
-  "challenge": "Art curation is traditionally a deeply subjective process \u2014 curators spend years developing visual intuition. For large collections, manual curation doesn't scale. The question was whether neural embeddings could capture the visual relationships that human curators intuit, enabling automated discovery of thematic connections across artwork collections.",
-  "approach": "Used OpenAI's CLIP model to generate high-dimensional embeddings of artworks, capturing semantic and visual features in vector space. Applied PCA to reduce these embeddings to visualizable dimensions, revealing clusters of visually related works. The resulting similarity maps show which artworks the neural model groups together \u2014 often surfacing non-obvious connections based on composition, color palette, or subject matter.",
-  "result": "The embedding analysis revealed that neural models do capture meaningful visual relationships \u2014 artworks that a human curator would group together appeared as natural clusters in reduced embedding space. The approach creates a quantitative foundation for curation that can scale to collections of any size while surfacing relationships that might escape manual review.",
+  "challenge": "Art curation is traditionally a deeply subjective process curators spend years developing visual intuition. For large collections, manual curation doesn't scale. The question was whether neural embeddings could capture the visual relationships that human curators intuit, enabling automated discovery of thematic connections across artwork collections.",
+  "approach": "Used OpenAI's CLIP model to generate high-dimensional embeddings of artworks, capturing semantic and visual features in vector space. Applied PCA to reduce these embeddings to visualize dimensions, revealing clusters of visually related works. The resulting similarity maps show which artworks the neural model groups together often surfacing non-obvious connections based on composition, color palette, or subject matter.",
+  "result": "The embedding analysis revealed that neural models do capture meaningful visual relationships artworks that a human curator would group together appeared as natural clusters in reduced embedding space. The approach creates a quantitative foundation for curation that can scale to collections of any size while surfacing relationships that might escape manual review.",
   "role_headline": "Neural Art Curation System",
   "hero_btn_cta": "See AI Projects",
   "final_cta_text": "Need AI solutions?",
