@@ -1,7 +1,7 @@
 # Development Protocols
 
-**Version**: 3.1.0
-**Last Updated**: 2026-04-25
+**Version**: 3.2.0
+**Last Updated**: 2026-04-27
 **Purpose**: Inform agents on our standardized project structure, documentation and development workflows.
 **Syncing**: Sync any updates to all `.agent/DEV_RULES.md` files using `frdoc` (see § *Syncing This Document*).
 
@@ -9,16 +9,16 @@
 
 ## How This Works
 
-These protocols work because (1) **agents follow these standards** and (2) **agents maintain project directories according to them**, and (3) **agents support each other by taking initiative to correct inconsistencies and drift** from these standards. Your support for each other makes all of us a more effective team.
+These protocols work because they (1) **maintain lifespan documents** for future reference, (2) **agents follow standards** that maintain organization, and (3) agents take initiative **correcting protocol drift**. This is how you support each other which makes us an effective team.
 
 ### Correcting Issues
 
-If you encounter inconsistencies, drift, or other issues that violate these protocols, you must take action to correct them. If you are:
+If you encounter inconsistencies, drift, or protocol violations, take action to correct the issues. 
 
-  A. Creating or executing a plan — integrate drift cleanup into your plan, making sure it is present when human reviews the plan.
-  B. Not working on or creating a plan — flag the issue with human, presuming you'll fix it, but wait for the final approval before doing so.
+  A. When creating your session plan, integrate a cleanup step for the drift you observed. This is done whether or not you created the drift.
+  B. If you discover issues while following your session plan, pause and explain to human what needs cleanup for immediate approval.
 
-Do not assume that human knows about the issue, that someone else will fix it, or that you'll be able to come back to it later.
+Do not assume you'll be able to come back later. Don't assume someone else will fix it. Don't assume that human already knows.
 
 **Your assistance in maintaining these protocols is greatly appreciated.**
 
@@ -28,9 +28,9 @@ Do not assume that human knows about the issue, that someone else will fix it, o
 
 **Planning should take 10X longer than implementation** 
 
-The bulk of the work we do is in producing implementation plans, reviewing them, and updating them repeatedly. This is done until the plans are clear and comprehensive enough to be executed without further clarification or research, ensuring implementation is smooth, uneventful, and requires little to no debugging or clarification. 
+For big-picture full project planning, write and iterate the implementation plan document. Beware of dated agent training data with a bias towards figuring things out as you build; today's modern tools encourage modern workflows.
 
-This requires a focus on:
+Implementation guide planning should involve:
 
   - Clear and concise documentation
   - Thorough research ensuring no assumptions 
@@ -41,37 +41,41 @@ This requires a focus on:
 
 ### Core Principle 
 
-Projects work in a research and planning loop until the implementation plan reached the point we call "EXCLUSIVELY EXECUTABLE". Following the plan to build requires no guessing, looking anything up, or pausing to figure something out; all should be accounted for.
+Project implementation guide preparation occurs in a research and planning loop until the plan becomes *EXCLUSIVELY EXECUTABLE*. This means that the agent following the plan to build requires no prior context, no guessing or looking anything up. If something needed to be figured out, it all should have been accounted for during planning. 
 
 ### Why Work This Way 
 
-  * **The Challenge**: LLMs are built in a way that allows them to expect the answer will come when they do the work. You might not realize you don't actually know, or be unaware that your data is out of date. 
+  * **The Challenge**: By design, LLMs expect answers come during active work. This stream of thought can blind one from recognizing gaps in knowledge, or considering if training data might now be out of date.
 
-  * **The Solution**: This requires moving the finding of solutions out of the implementation development phase and into the planning for development phase. 
+  * **The Solution**: This can be a strength, if handled during planning. Move "finding solutions" thinking out of active building, and into planning where there is opportunity for revisions and review.
 
-  * **Why This Matters**: It is virtually impossible that ever single path has been accounted for in implementation planning, so we must work to minimize instances in advance. This prevents wasted time debugging issues that could have been avoided with better planning.
+  * **Why This Matters**: Even with extensive planning, something will fall through the cracks. This minimizes those instances helping to prevent time spent debugging later in the process. 
 
 ### Novel Benefits
 
-  * **Parallel Development**: This method allows you to develop the front and back end in parallel. This provides time to iterate on the user-facing design while looking for any background issues or bugs in connecting services. Then in the final path, everything can be wired up. 
-
   * **Concurrent Documentation**: Documentation is being created for multiple features simultaneously. 
+
+  * **Parallel Development**: Becoming aware of exactly what must be done before acting allows for more work in parallel, which is certainly not something much training data accounts for. 
 
 ### Using Modern Tools 
 
-Agents can write hundreds of pages of code, even an entire application, in one go taking minutes. This challenges the logic for historic methods of debugging which were created because code was an extremely high-value, labor-intensive asset. 
+Historic method of debugging placed code as extremely high-value, time consuming, exhaustive cognitive work. We have to question these workflows given an agent can write thousands of lines of lines of code, even an entire functional app, in a single output that just takes minutes to write. 
 
-Agents can "go down the wrong path" when creating code. This means that, while it might feel counter-intuitive or uncomfortable for seasoned developers, whole rewrites of a feature or system may be the best path forward. 
+Agents can "go down the wrong path" when producing output. This means that whole rewrites of features or functions can be more effective than the historic methods of debugging, even if it makes the seasoned, pre-AI developers uncomfortable. 
 
-Working on debugging in the old method of find-and-patch creates a myriad of code that wasn't initially expected. This causes issues maintaining accurate documentation. Most significantly, agents have to work in context windows, for which trying to sort through all the various patches becomes a challenge.
+Eliminating bugs by hunting-and-patching things together can result in a functioning application, but it creates a codebase that wasn't explicitly planned and now will be difficult to document. Agents work best from specifics where accuracy regarding the smallest details matters. 
+
+Most significantly, agents have to work inside a context window, which doesn't bode well for trying to sort through patches and code adjustments. 
+
+**Modern tools require modern workflows.**
 
 ---
 
 ## Versioning & Naming Conventions
 
-### 1. Version Number Format
+### 1. Standard Version Number Format
 
-A standard, three-part semantic version is used: `vMAJOR.MINOR.PATCH` (e.g., `v3.1.2`). This is used throughout the life of the project, versioning both the implementation planning document revisions and then the codebase itself, which picks up where the implementation plan ended. This is so future documentation of feature additions can smoothly continue the flow.
+A three-part semantic version is used: `vMAJOR.MINOR.PATCH` (e.g., `v3.1.2`). This is used throughout the life of the project, versioning from the first implementation guide document, updating it with each revision, and then matching the version numbers with the codebase itself allowing future feature updates to continue smoothly. 
 
 | Position           | Bumps when                                                                |
 | ------------------ | ------------------------------------------------------------------------- |
@@ -81,13 +85,19 @@ A standard, three-part semantic version is used: `vMAJOR.MINOR.PATCH` (e.g., `v3
 
 **Bumping a higher position resets lower positions to zero.** `v3.1.5` → next minor is `v3.2.0`, not `v3.2.5`.
 
-A patch bump is justified for docs-only changes when those changes constitute a release artifact (e.g., a state snapshot, a feedback round closing). Trivial commit-message-level doc edits don't need a bump.
+A patch or minor bump is justified for docs-only changes if the changes were substantial and constitute a new artifact (e.g., a state snapshot, a feedback round closing). Trivial commit-message-level doc edits don't need a bump.
 
-Examples: 
+Updating docs-only examples: 
+
+  * **Major**: Changing architecture (SwiftUI → PWA) 
+  * **Minor**: Adjusting a feature (local only -> synched across devices)
+  * **Patch**: Expanding implementation details (general steps -> production-ready code snippets) or (referencing a service -> actual API documentation or SDK usage)
+
+Development example: 
 
   * **Major**: SwiftUI → Web rewrite; PWA → native shell
   * **Minor**: URL/anchor click handling; multi-window persistence
-  * **Patch**: Single CSS fix; correcting a typo in `THOT_APP.md`
+  * **Patch**: Single CSS fix for proper line numbering; correcting a typo in `THOT_APP.md`
 
 ### 2. Writing Version Delimiters
 
@@ -150,32 +160,29 @@ The `docs/UPDATE_MAP.md` document is important when it is necessary for agents w
 
 ### 5. Archive File Naming Protocol
 
-The naming pattern below is designed so that a `ls` of any version subdirectory reads like a chronological build log — alphabetical sort *is* the lifecycle flow. See the **Working Chronological Example** below.
+We have five document types, with six filename variations. 
 
-#### **HUMAN'S INFORMAL FILES** 
+The filenames and formatting have been specifically constructed so that an alphabetical sort of all files in a version's directory reads like the chronological lifecycle of that version. A `ls` of any version subdirectory reads like a build log of what happened, in the order it happened.
 
-  + Update ideas for new version 
-  + Bug logging details 
-  + Feedback from reviewing previous plan
-  + Feedback for updates from reviewing build 
+**Each file type in a typical lifespan order might look like the following outline.**
 
-    - `UPDATE_vX_Y_Z.md` — planning
-    - `FEEDBACK_vX_Y_Z.md` — fixes and planning 
-    - `vX_Y_Z_BUGS.md` — fixes 
-
-#### **AGENT'S FORMAL FILES**
-
-There are exactly three formal agent document types. The mechanics of how they are created and saved during a session are in § *Session Document Handling* below.
-
-  - `vX_Y_Z_DEV_PLANNING.md` — planning
-  - `vX_Y_Z_IMPLEMENT.md` — to execute
-  - `vX_Y_Z_SESSION_DEV.md` — building
-
-The `IMPLEMENT.md` is the master implementation plan — worked on in loops via § *The Gap-Finding Loop* until all gaps are found. There is **one IMPLEMENT.md per version**.
+  1. Human provides **`UPDATE_vX_Y_Z.md`**, a sketch or detailed outline of a major version proposal that now needs detailed planning. 
+  
+  2. Human provides Claude Code in Plan Mode the `UPDATE_vX_Y_Z.md` document, and Claude writes a plan for how to address all that is needed for the update, from architecture decisions that require discussions, to research online for best-practice methods. Claude creates an 'ephemeral session container' for the plan for human to review. When human approves the plan, Claude starts executing it immediately, and human grabs a markdown copy of that session plan and saves it as **`vX_Y_Z_DEV_PLANNING.md`** in the docs/archive/vX_X/ directory. Often, part of this plan will involve starting to write an IMPLEMENT.md document, which serves as a blueprint for implementation through the life of the proposed scope which may cross a number of versions, as they are created on the fly. Other times, a DEV_PLANNING session will be details on how Claude will approach investigating bug reports and then applying fixes, and so on. "DEV_PLANNING" does not imply either specifically planning or building, it is merely the plan the agent created *for that session* immediately executed as a guide or a to-do list for that session. Keeping this allows agents to look back and identify if anything fell through the cracks when trying to fix a bug or address how to implement a new feature improvement. 
+  
+  3. Agent creates and works with human to iteratively update and refine an **`vX_Y_Z_IMPLEMENT.md`**, which would be produced during a session and thus could be tracked using Claude Code's Plan Mode output which can be found in `.claude/plans/...` or later added by human to the version directory as a DEV_PLANNING document type or a SESSION_DEV document type. 
+  
+  4. Human, agent, or another subagent can provide **`vX_Y_Z_FEEDBACK.md`** documents to Claude Code to start a session. The feedback will be from a review of a build, perhaps testing, or evaluation of the ongoing iterative process of creating the IMPLEMENT.md file. The filename of FEEDBACK.md will reflect the version that the feedback is regarding. To keep the lifespan organization of files, a v1_1_0_FEEDBACK.md would be about a v1.1.0 document or build, but is placed in the version directory it drive the creation of, which would be v1_2_0_FEEDBACK.md in this example. To address a detailed FEEDBACK.md file, the agent might create a Claude Code Plan Mode 'ephemeral session container' that will immediately be presented to the human for approval and then followed to address all of the feedback according to the plan. If substantial, and particularly if the feedback requires and update to the IMPLEMENT.md document, the human will typically take the markdown copy of the session's plan for record keeping and save it as a DEV_PLANNING.md or a SESSION_DEV.md. If the feedback is not overly details, it might not require saving the session's plan to address the feedback, as the FEEDBACK.md document itself would suffice as documentation. 
+  
+  5. When human presents Claude Code Plan Mode with a completed and ready to build **`vX_Y_Z_IMPLEMENT.md`** document, Claude will assess the implementation plan and create an 'ephemeral session container' that details how they will process through the implementation guide. This might include things like spawning various subagents that work in parallel, the specific files that will be changed along with how they'll be changed, and information on how the session's work will be validated. While Claude Code will immediately begin executing this plan in the same session they created it, the human will grab a copy of it in markdown form and save it to the project directory so that it follows the IMPLEMENT.md document in chronological order by placing it in the same directory as the IMPLEMENT.md it is based on, and with the naming convention **`vX_Y_Z_SESSION_DEV.md`**. Again, it is *important to understand that SESSION_DEV and DEV_PLANNING are both plans that the agent creates FOR THAT SESSION and then immediately executes the plan*. They are named differently specifically to keep the file lifespan order within the project directories consistent with the chronological order of file creation, and human adds them to the project directory simply for historic record keeping. Claude Code and other agents would be able to access the same plan to look back at in a future session or to continue if it was not finished from `.claude/plans/...` or similar. 
+  
+  6. When human is reviewing a build and has feedback specifically in the form of bugs, they create a bug log and save it with the name **`vX_Y_Z_BUGS.md`** in the same directory as the build it is reporting on. On occasion, if the human is reporting bug issues directly to the agent in the chat, the agent will create the bug log document themselves and add it to the version directory. The same session that human started with Claude Code by providing the BUGS.md file, Claude will, as usual, create a plan that addresses how exactly they plan on exploring the bug, diagnosing the issue, and then fixing the problem. This same session the human will review this session plan and the the agent immediately begins executing it. As in previous sessions, the human will take a copy of the session plan and save it as a SESSION_DEV.md or DEV_FEEDBACK.md in the docs/archive/vX_X/ directory. This way if the fix doesn't work and it is being diagnosed again but by a different agent in the future, they can simply look back at the BUG.md file and the fill immediately preceding it to see exactly what had been attempted when Claude initially tried to fix the issue. 
 
 #### Working Chronological Example 
 
-Noted "human" for informal documents and "agent" for formal documents, provided examples of each change or session, and how it relates to the next doc in the timeline as well as which drive version number changes. 
+Noted "human" for informal documents and "agent" for either 'ephemeral session containers' created of their to-do list plan for that specific session, in the case of DEV_PLANNING and SESSION_DEV, or a formal document created by agent with human during one of these planning sessions. 
+
+Included is what might have occurred to require that session plan or implementation guide update, along with notation for when an update drove a version number change. 
 
 ```
 docs/
@@ -183,41 +190,35 @@ docs/
 │   ├── v3_0/
 │   │   └── UPDATE_v3_0_0.md        # Human intro plan 
 │   ├── v3_1/
-│   │   ├── v3_1_0_DEV_PLANNING.md  # Agent session; research, notable plan change during session drove v3.0.0 -> v3.1.0
-│   │   └── v3_1_0_IMPLEMENT.md     # Agent's resulting implementation guide 
+│   │   ├── v3_1_0_DEV_PLANNING.md  # Agent's session plan involving research and notable expansion of the scope driving v3.0.0 -> v3.1.0
+│   │   └── v3_1_0_IMPLEMENT.md     # Implementation guide that was started during the DEV_PLANNING session
 │   ├── v3_2/
-│   │   ├── FEEDBACK_v3_1_0.md      # Human found implementation plan gaps, drove v3.1.0 -> v3.2.0
-│   │   ├── FEEDBACK_v3_2_0.md      # Human found more, smaller gaps, drove v3.2.0 -> v3.2.1 
-│   │   ├── v3_2_1_DEV_PLANNING.md  # Agent session filling in implementation gaps
-│   │   ├── v3_2_1_IMPLEMENT.md     # Agent's resulting updated implementation guide  
-│   │   ├── v3_2_2_DEV_PLANNING.md  # Agent session; gaps found during session driving v3.2.2 -> v3.2.3
-│   │   ├── v3_2_3_DEV_PLANNING.md  # Agent has another session with small plan changes driving v3.2.3 -> v3.2.4
-│   │   └── v3_2_4_IMPLEMENT.md     # Agent's resulting new implementation guide
+│   │   ├── v3_1_0_FEEDBACK.md      # Human review of implementation guide gaps in v3.1.0, driving v3.1.0 -> v3.2.0 
+│   │   ├── v3_2_0_FEEDBACK.md      # Human found additional, smaller feedback for the plan, driving v3.2.0 -> v3.2.1 
+│   │   ├── v3_2_1_DEV_PLANNING.md  # Agent received the feedback docs, created, executed this plan to address gaps
+│   │   ├── v3_2_1_IMPLEMENT.md     # Implementation guide that was created during the DEV_PLANNING session 
+│   │   ├── v3_2_2_DEV_PLANNING.md  # Human communicated gaps via chat; Agent planned, executed this session, driving v3.2.2 -> v3.2.3
+│   │   ├── v3_2_3_DEV_PLANNING.md  # Plan created by agent planning another session to fix smaller gaps driving v3.2.3 -> v3.2.4
+│   │   └── v3_2_4_IMPLEMENT.md     # Implementation guide that was created/updated during the two previous recorded session plans
 │   ├── v3_3/
-│   │   ├── FEEDBACK_v3_2_4.md      # Human reviewed last plan and made larger build change driving v3.2.4 -> v3.3.0
-│   │   ├── v3_3_0_DEV_PLANNING.md  # Agent session adjusting plan for those changes 
-│   │   ├── v3_3_0_IMPLEMENT.md     # Agent's implementation guide reflecting changes 
-│   │   ├── v3_3_0_SESSION_DEV.md   # Agent session plan executing implementation plan
+│   │   ├── v3_2_4_FEEDBACK.md      # Human reviewed v3.2.4 plan and suggested larger build change driving v3.2.4 -> v3.3.0
+│   │   ├── v3_3_0_DEV_PLANNING.md  # Agent's plan of immediately executed session created new v3.3.0 plan integrating human's feedback
+│   │   ├── v3_3_0_IMPLEMENT.md     # Implementation guide created during v3.3.0 session reflected in DEV_PLANNING plan 
+│   │   ├── v3_3_0_SESSION_DEV.md   # Reviewing the implementation guide, this is agents plan to start execution
 │   │   ├── v3_3_1_BUGS.md          # Human reviewed build, found issues, drove v3.3.0 -> v3.3.1
-│   │   ├── v3_3_1_DEV_PLANNING.md  # Agent session finding bug fixes 
-│   │   └── v3_3_1_SESSION_DEV.md   # Agent session plan executing bug fixes
+│   │   ├── v3_3_1_DEV_PLANNING.md  # Looking at bugs, agent created and immediately executed this plan that details fixes
+│   │   └── v3_3_1_SESSION_DEV.md   # Agent needed second session for bugs, this is the plan they created and executed that session
 │   └── v4_0/
-│       ├── FEEDBACK_v3_3_1.md      # Human has notable feature updates driving v3.3.1 -> v4.0.0
-│       ├── v4_0_0_DEV_PLANNING.md  # Agent session researching to create new plan 
-│       ├── v4_0_1_DEV_PLANNING.md  # Agent session auditing plan, small issues updated drove v4.0.0 -> v4.0.1
-│       ├── v4_0_2_DEV_PLANNING.md  # Agent session fixing more audit issues, drove v4.0.1 -> v4.0.2 
-│       └── v4_0_2_IMPLEMENT.md     # Agent updated implementation plan, ready for next session 
+│       ├── v3_3_1_FEEDBACK.md      # Human has notable feature updates driving v3.3.1 -> v4.0.0
+│       ├── v4_0_0_DEV_PLANNING.md  # Provided with feedback, agent created and executed this plan updating the guide 
+│       ├── v4_0_1_DEV_PLANNING.md  # This is a plan showing that agent had subagents audit the guide this session, driving v4.0.0 -> v4.0.1
+│       ├── v4_0_2_DEV_PLANNING.md  # Plan immediately executed that fixed more audit issues, driving v4.0.1 -> v4.0.2 
+│       └── v4_0_2_IMPLEMENT.md     # Copy of the implementation plan that was being updated in the previous few sessions, reflected in those plans 
 ├── BRAND.md                        # Voice, palette, etc. for branding 
 └── PROJECT_NAME.md                 # Master architecture, context primer, general all-purpose document, not an implementation plan
 ```
 
-  * **Read the FEEDBACK suffix as "about" not "for"**: 
-    - `FEEDBACK_v3_2_0.md` is feedback about v3.2.0. 
-    - The agent's response lives in a new doc named for the version it updates, e.g. `v3_2_1_DEV_PLANNING.md`. 
-
-  * **If mid-build you discover the `v5_2_0_IMPLEMENT.md` plan is wrong, don't edit it directly**: 
-    - First, write a new `v5_2_1_DEV_PLANNING.md` that responds to the discovery.
-    - Then, create a new IMPLEMENT plan with the version bumped up accordingly, as `v5_2_1_IMPLEMENT.md`. 
+**In almost all cases, human will be placing these files into their directories, with the exception of the IMPLEMENT.md guides that human comes to agent with feedback to use adjusting the plan during planning or development sessions; during these sessions, as reflected in the plan, the agent copies the old implementation plan and then updates it according to the evolving needs presented. Otherwise, agent will be presented with relative paths to all relevant documents when they start any session, at which point the agent creates a plan to address whatever is in those documents or communicated by the human.**
 
 ### 6. File Lifecycle (Read the Tree Above)
 
@@ -243,18 +244,7 @@ Three master documents live outside the archive. Each has a single, explicit rol
 
 ## Session Document Handling
 
-The `vX_Y_Z_SESSION_DEV.md` file is not a report you write at the end — it is the live working document you use throughout the session. This makes the protocol resilient to interruption (laptop closes, context fills, agent crashes) and removes an entire category of "the agent forgot to log" failure modes.
-
-### Step 0: Save the Plan
-
-The first action of every execution session is to copy the human-approved plan into the archive at the proper version path:
-
-  - `docs/archive/vX_Y/vX_Y_Z_SESSION_DEV.md` — for build/execution sessions
-  - `docs/archive/vX_Y/vX_Y_Z_DEV_PLANNING.md` — for planning/research sessions
-
-This is the agent's job, not the human's. The human approving a plan in the terminal should not also have to find the file path, copy markdown, rename, and place it — that step gets skipped, and the plan is lost.
-
-For Claude Code, the plan is at `~/.claude/plans/<auto-generated-name>.md` after `ExitPlanMode` is approved. Copy it. Rename it. Move it.
+A `vX_Y_Z_SESSION_DEV.md` or `vX_Y_Z_DEV_PLANNING.md` file is the live working document for the session — marked off as work completes, not written as a report at the end. The human files the plan into the archive after a session; recognize one when you see it and treat it as the in-conversation plan you already have.
 
 ### During the Session
 
@@ -270,16 +260,7 @@ Append these sections to the bottom of `SESSION_DEV.md` before closing the sessi
   - **`## Picked Up From / Stopped At`** — exact resumption pointer for the next session. File:line, branch state, what's tested vs untested.
   - **`## Open Threads For Next Session`** — questions, deferred work, things the human or next agent needs to act on.
 
-These footers replace what other systems call "post-session walkthroughs" or "completion reports." Keeping them inline at the bottom of `SESSION_DEV.md` means everything for that session lives in one file, in the right place, automatically.
-
-### Non-Claude-Code Agents
-
-Every agentic system that produces a plan document follows the same convention:
-
-  - Save the approved plan to the proper archive path with the proper name (`vX_Y_Z_SESSION_DEV.md` or `vX_Y_Z_DEV_PLANNING.md`) as step zero.
-  - Append walkthrough / post-session content to the bottom of `SESSION_DEV.md` as the footer sections above — never as a separate file.
-
-Anti-Gravity's "Walkthrough" maps to `## Session Notes`. Cursor's session output maps the same way. If your tool produces something this convention doesn't anticipate, ask — don't invent a parallel filing system.
+These footers replace what other systems call "post-session walkthroughs" or "completion reports." Keeping them inline at the bottom of `SESSION_DEV.md` means everything for that session lives in one file, in the right place.
 
 ---
 
@@ -791,21 +772,17 @@ The minimum protocol for any session, in order. If something here is unclear, th
   3. Your assigned `docs/archive/vX_Y/vX_Y_Z_IMPLEMENT.md` — what to build
   4. `.agent/PROJECT_LESSONS.md` — incidents that shaped this project's protocols (skim)
 
-### Step zero of execution
-
-  5. Save the human-approved plan: copy to `docs/archive/vX_Y/vX_Y_Z_SESSION_DEV.md`. Don't wait for human to do this. (See § *Session Document Handling*.)
-
 ### As you work
 
-  6. Mark `SESSION_DEV.md` checkboxes live, not at the end.
-  7. If the `IMPLEMENT.md` plan is wrong: stop, write `vX_Y_Z+1_DEV_PLANNING.md`. Don't silently patch.
-  8. Confirm changes via `git diff` before commit. Every line intentional.
+  5. Mark `SESSION_DEV.md` checkboxes live, not at the end.
+  6. If the `IMPLEMENT.md` plan is wrong: stop, write `vX_Y_Z+1_DEV_PLANNING.md`. Don't silently patch.
+  7. Confirm changes via `git diff` before commit. Every line intentional.
 
 ### Before closing the session
 
-  9. Append `## Session Notes`, `## Picked Up From / Stopped At`, `## Open Threads For Next Session` to `SESSION_DEV.md`.
-  10. If architecture changed: update `docs/PROJECT_NAME.md`. Future you depends on this.
-  11. Commit with a message matching `IMPLEMENT.md` grouping (see § *Commit Message Standards*).
+  8. Append `## Session Notes`, `## Picked Up From / Stopped At`, `## Open Threads For Next Session` to `SESSION_DEV.md`.
+  9. If architecture changed: update `docs/PROJECT_NAME.md`. Future you depends on this.
+  10. Commit with a message matching `IMPLEMENT.md` grouping (see § *Commit Message Standards*).
 
 ### What you do NOT do
 
@@ -814,5 +791,6 @@ The minimum protocol for any session, in order. If something here is unclear, th
   - Don't write a separate "completion" or "walkthrough" file. Footers go in `SESSION_DEV.md`.
   - Don't create archive directories at the major-version level only (no `archive/v3/` — only `archive/v3_0/`, `archive/v3_1/`, etc.).
   - Don't write `IMPLEMENT.md` reference content (schemas, glossaries, architecture diagrams). Send the reader to `PROJECT_NAME.md` or `archive/resources/`.
+  - Don't file `~/.claude/plans/<name>.md` into `docs/archive/`. The human handles that — they choose the version and filing path.
 
-If you do these eleven things and avoid those five, the protocol is satisfied.
+If you do these ten things and avoid those six, the protocol is satisfied.

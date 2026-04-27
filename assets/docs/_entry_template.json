@@ -28,13 +28,25 @@
     "https://cdn.august.style/media/{slug}/img-sq-{slug}-1.webp"
   ],
   "img_alt": "Alt text for square images",
-  "mobile_img": [],
+  "mobile_img": [
+    "https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp"
+  ],
   "mobile_img_alt": "",
-  "gif": [],
+  "gif": [
+    "https://cdn.august.style/media/{slug}/gif-{slug}-1.gif",
+    "https://cdn.august.style/media/{slug}/gif-{slug}-2.gif"
+  ],
   "gif_alt": "",
-  "grid": [],
+  "grid": [
+    "https://cdn.august.style/media/{slug}/grid-{slug}-1.webp",
+    "https://cdn.august.style/media/{slug}/grid-{slug}-2.webp",
+    "https://cdn.august.style/media/{slug}/grid-{slug}-3.webp"
+  ],
   "grid_alt": "",
-  "slideshows": [],
+  "slideshows": [
+    "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp",
+    "https://cdn.august.style/media/{slug}/slide-{slug}-2.webp"
+  ],
   "media_url": "",
   "media_embed": "",
   "media_alt": "",
