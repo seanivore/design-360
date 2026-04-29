@@ -470,7 +470,7 @@ For this reason, I'd like to propose creating a new tag that is just **FEATURED*
 
 ### Homepage Bleed Image Component
 
-This component should be very similar to the entry page bleed image component. Some important distinctions. 
+This component should be very similar to the entry page bleed image component. Some important distinctions and reiterations. 
 
   - Instead of a lightbox expansion, clicking an image should lead the viewer to that image's project entry page
   - The images displayed should consist of *any* `bleed-1-{slug}-1.webp` image, no matter the bleed-number or image count number 
@@ -498,78 +498,178 @@ As I'm going through the entry pages and grouping them for these changes, I'll t
 
 ---
 
+## Project Entry Review 
 
+  + Worth of keeping published? 
+  + Worth having on homepage? 
+  + Quality slug? 
+  + Status of visuals? 
+  + Status of layout? 
+  + Does it fit a main focus? 
+  + Any other adjustments? 
 
-Art Bleed Images 
+### Pages 
 
-These all could really have more of a focus on the AI pipeline that created them. The "Bleed Images" are a new component section that will be introduced below. 
+  - [x] /constructivist-profiles/
+  - [x] /illustrated-poetry-book/
+  - [x] /advanced-animation-system/
+  - [x] /gradient-bauhaus/
+  - [x] /ai-design-fashion-lookbook/
+  - [x] /data-visualization-dashboard/
+  - [x] /agentic-marketing-department/
+  - [x] /constructi-haus/
+  - [x] /constructi-landscapes/
+  - [x] /all-that-glitters/
+  - [x] /surreal-constructivism-perception/
+  - [x] /flowering-symmetric-asymmetry/
+  - [x] /psychedelic-impressi/
+  - [x] /saas-product-sale-features/
+  - [X] /animated-cms-weekly-blogs/
+  - [X] /viral-campaign-strategy/
+  - [x] /bau-noir-haus/
+  - [x] bohemian-abstractions
+  - [x] influencer-growth-strategy
+  - [x] visual-artist-process-portfolio
+  - [x] blog-lookbook-print-gallery
+  - [X] pie-claesz-modern-vibes
+  - [X] flat-bauhaus
+  - [X] pie-claesz
+  - [X] css-animated-micro-interactions
+  - [X] api-automate-video-production
+  - [X] training-yoga-sales
+  - [X] automated-e-commerce-shop-lookbook
+  - [X] personalized-fashion-magazine
+  - [X] social-advertising-strategy
+  - [X] ai-virtual-photoshoot-design
+  - [X] agentic-social-manager
+  - [X] baroque-de-heem-still-life
+  - [X] public-health-response-platform
+  - [x] minimalism-bauhaus
+  - [X] technical-defi-content-simplification
+  - [X] humanistic-exploration
+  - [X] minimalist-web-store-product
+  - [X] agentic-fashion-designer
+  - [X] neo-expresi-cyber
+  - [X] surreal-heads
+  - [X] art-nouveau-brand-design
+  - [X] surreal-constructivism
+  - [X] modular-portfolio-build
+  - [X] notes-app-thot
+  - [X] amorphous-gradient-css-animation
+  - [X] fashion-ai-video
+  - [X] ai-meditation-mobile-app
+  - [X] freelance-payments-platform
 
-  - assets/entries/uid-bsj-738.json -> `https://www.august.style/baroque-de-heem-still-life/`
-  - assets/entries/uid-hxp-812.json -> `https://www.august.style/bau-noir-haus/`
-  - assets/entries/uid-kts-582.json -> `https://www.august.style/bohemian-abstractions/`
-  - assets/entries/uid-xuk-296.json -> `https://www.august.style/art-nouveau-brand-design/`
+---
 
-  **Art History**
+## Page Updates 
+
+### Unpublish 
+
+**No action, just unpublish** 
+
+  - all-that-glitters
+
+**Action then unpublish**
+
+  - visual-artist-process-portfolio
+    - Find branding and character development web3 content to post 
+    - Find motion graphic videos from web3 content to post 
+    - *FOUND* technical-defi-content-simplification
+
+### Art History 
+
   - Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
   - The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
 
-    + https://www.august.style/surreal-constructivism-perception/
-    + https://www.august.style/pie-claesz-modern-vibes/
-    + https://www.august.style/baroque-de-heem-still-life/
-    + https://www.august.style/flat-bauhaus/
-    + https://www.august.style/pie-claesz/
-    + https://www.august.style/bau-noir-haus/
-    + https://www.august.style/neo-expresi-cyber/
-    + https://www.august.style/minimalism-bauhaus/
-    + https://www.august.style/humanistic-exploration/
-    + https://www.august.style/constructi-landscapes/
-    + https://www.august.style/all-that-glitters/
-    + https://www.august.style/surreal-constructivism/
-    + https://www.august.style/gradient-bauhaus/
-    + https://www.august.style/art-nouveau-brand-des ign/
-    + https://www.august.style/constructivist-profiles/
-    + https://www.august.style/constructi-haus/
-    + https://www.august.style/flowering-symmetric-asymmetry/
-    + https://www.august.style/psychedelic-impressi/
+| Group                      | Page                              |
+| -------------------------- | --------------------------------- |
+| **Geometric Abstractions** | -                                 |
+|                            | constructivist-profiles           |
+|                            | constructi-landscapes             |
+|                            | surreal-constructivism-perception |
+|                            | humanistic-exploration            |
+|                            | surreal-constructivism            |
+| **Bauhaus Variations**     | -                                 |
+|                            | gradient-bauhaus                  |
+|                            | constructi-haus                   |
+|                            | bau-noir-haus                     |
+|                            | bohemian-abstractions             |
+|                            | flat-bauhaus                      |
+|                            | minimalism-bauhaus                |
+| **Art Nouveau**            | -                                 |
+|                            | flowering-symmetric-asymmetry     |
+|                            | art-nouveau-brand-design          |
+| **Imp. Psych.**            | -                                 |
+|                            | psychedelic-impressi              |
+|                            | neo-expresi-cyber                 |
+|                            | surreal-heads                     |
+| **Baroque**                | -                                 |
+|                            | pie-claesz-modern-vibes           |
+|                            | pie-claesz                        |
+|                            | baroque-de-heem-still-life        |
 
-> Below each focus are tentatively agent-selected projects that have yet to be reviewed; any final selection will need to be refined and polished. 
+#### Generative Design 
 
-     - automated-e-commerce-shop-lookbook
-     - animated-cms-weekly-blogs 
-     - notes-app-thot 
-     - freelance-payments-platform 
-     - css-animated-micro-interactions
+ - Design swarm websites and apps 
+ - ai-virtual-photoshoot-design *project management, image generation*
+ - fashion-ai-video *image to video*
 
-     - viral-campaign-strategy
-     - baroque-de-heem-still-life
-     - bau-noir-haus
-     - bohemian-abstractions
-     - art-nouveau-brand-design 
-     - social-advertising-strategy
+---
 
-     - agentic-marketing-department
-     - agentic-social-manager
-     - api-automate-video-production
-     - full-stack-automated-ecommerce
-     - (FYC: automated-e-commerce-shop-lookbook, animated-cms-weekly-blogs also in web section)
+## Featured Focus 
 
-  * **Titles promise motion/walkthrough/gallery but ship no slideshow/gif/embed; all claim animation in the title but have no motion artifact** 
-    - css-animated-micro-interactions 
-    - saas-product-sale-features 
-    - amorphous-gradient-css-animation 
-    - advanced-animation-system 
+### Graphic/Motion Design 
 
-  * **Abbreviated-template copy with metric/achievement/notes inlined on one line; perhaps never filled in**
-    - influencer-growth-strategy 
-    - content-strategy-framework 
-    - realtime-social-system 
-    - illustrated-poetry-book
-    - public-health-response-platform
+| Project/Page                 | Automation | Agentic | Generative | Group | Flow |
+| ---------------------------- | ---------- | ------- | ---------- | ----- | ---- |
+| *all art history pages*      | x          |         | x          | x     | x    |
+| ai-virtual-photoshoot-design |            | x       | x          |       | x    |
+| advanced-animation-system    |            |         |            |       |      |
+| illustrated-poetry-book      |            |         |            |       |      |
 
-  * **Mobile app entries missing GIF walkthrough** 
-    - ai-meditation-mobile-app 
-    - notes-app-thot 
-    - ux-ui-ios-marketing
+**Branding & Character Development**
+
+### Website Design/Development 
+
+| Page                               | Automation | Agentic | Generative | Group | Flow |
+| ---------------------------------- | ---------- | ------- | ---------- | ----- | ---- |
+| **Fashion Production**             |            |         |            |       |      |
+| ai-design-fashion-lookbook         | x          | x       | x          | x     | x    |
+| personalized-fashion-magazine      | x          | x       | x          | x     | x    |
+| automated-e-commerce-shop-lookbook | x          |         |            |       | x    |
+| agentic-fashion-designer           | x          | x       | x          | x     | x    |
+| **Design Swarms**                  |            |         |            |       |      |
+| ai-meditation-mobile-app           |            | x       | x          | x     | x    |
+| data-visualization-dashboard       |            | x       | x          | x     | x    |
+| saas-product-sale-features         |            | x       | x          | x     | x    |
+| **AI Production Pipeline**         |            |         |            |       |      |
+| animated-cms-weekly-blogs          | x          |         | x          |       | x    |
+| blog-lookbook-print-gallery        | x          |         |            |       |      |
+| css-animated-micro-interactions    | x          | x       |            |       | x    |
+| minimalist-web-store-product       |            | x       |            |       | x    |
+| modular-portfolio-build            |            | x       |            |       | x    |
+| notes-app-thot                     |            | x       |            |       | x    |
+| amorphous-gradient-css-animation   |            | x       |            |       | x    |
+| freelance-payments-platform        |            | x       |            |       |      |
+| **Client Webflow/Framer Work**     |            |         |            |       |      |
+| public-health-response-platform    |            |         |            |       |      |
+| training-yoga-sales                |            |         |            |       | x    |
+
+### Social Design/Strategy 
+
+| Project                               | AI Pipeline | Video | Image | Strategy | Group | Flow |
+| ------------------------------------- | ----------- | ----- | ----- | -------- | ----- | ---- |
+| api-automate-video-production         | x           | x     |       |          | x     | x    |
+| viral-campaign-strategy               |             | x     | x     | x        |       | x    |
+| influencer-growth-strategy            |             |       |       | x        |       | x    |
+| social-advertising-strategy           |             | x     | x     | x        | x     | x    |
+| agentic-social-manager                | x           | x     | x     | x        | x     | x    |
+| technical-defi-content-simplification |             | x     | x     | x        | x     | x    |
+| fashion-ai-video                      |             | x     |       |          | x     | x    |
+| agentic-marketing-department          | x           | x     | x     |          | x     | x    |
+
+---
 
 ## Top Entries 
 
@@ -592,7 +692,7 @@ These all could really have more of a focus on the AI pipeline that created them
        - https://www.august.style/api-automate-video-production/
        - https://developer-technologist.august.style/api-automate-video-production
 
-### Graphic Design 
+### Graphic/Motion Design 
 
   1. Production & Branding 
      + `assets/entries/uid-wty-542.json`
@@ -604,19 +704,13 @@ These all could really have more of a focus on the AI pipeline that created them
        - https://www.august.style/illustrated-poetry-book/
        - https://developer-technologist.august.style/illustrated-poetry-book
 
----
-
-## New Creative Production Entries 
-
-### 3D Animation
-
-  1. VFX 3D Perspective Infinite Grid Tunnel 
+  3. VFX 3D Perspective Infinite Grid Tunnel 
     + After Effects
     + Background video content design asset
     + `assets/.media/3d/vfx-after-effects/vfx-3d-perspective-video-grid-tunnel-animation-after-effects-motion-design.png`
     + GET YOUTUBE AND MAKE GIFs 
  
-  2. 3D Spinning Reflective Glass Logo
+  4. 3D Spinning Reflective Glass Logo
     + Blender 
     + Branding social design asset 
       + `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-1.png`
@@ -624,7 +718,7 @@ These all could really have more of a focus on the AI pipeline that created them
       + `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-3.png`
     + GET YOUTUBE AND MAKE GIFs 
 
-### Digital Illustration 
+### Social Design/Strategy
 
   1. Coworkers Anime Avatars 
     + Drawn by hand with iPad and Apple Pencil 
@@ -666,9 +760,7 @@ These all could really have more of a focus on the AI pipeline that created them
       + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-07-c.png`
       + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-08.png`
 
-### Social Media Content Design 
-
-  1. web3 Privacy App Branding Character Design 
+  2. web3 Privacy App Branding Character Design 
     + Silent Protocol
     + Concept art for character 
     + Requested from client/CEO to create storytelling the importance of privacy as a civil right 
@@ -694,85 +786,6 @@ These all could really have more of a focus on the AI pipeline that created them
       + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-4.png`
       + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-5.png`
       + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-6.png`
-
----
-
-#### Storytelling Layout Images 
-
-All of these are AI pipeline focus first, but most could be combined with the visual content posts. There are a lot of more non-visual posts that fit in the AI pipeline section, too, that will need to be make more storytelling somehow as well. 
-
-  - assets/entries/uid-ccp-818.json -> `https://www.august.style/influencer-growth-strategy/`
-  - assets/entries/uid-sdz-155.json -> `https://www.august.style/ai-virtual-photoshoot-design/` (maybe also bleed image section)
-  - assets/entries/uid-sjz-330.json -> `https://www.august.style/agentic-marketing-department/` (but find post with content made)
-  - assets/entries/uid-skz-743.json -> `https://www.august.style/agentic-social-manager/` 
-  - assets/entries/uid-svz-258.json -> `https://www.august.style/agentic-fashion-designer/` (but find content)
-  - assets/entries/uid-sxz-424.json -> `https://www.august.style/api-automate-video-production/`
-  
-
----
-
-#### Use GIFs Instead 
-
-These are website tours and it just makes way more sense than slideshows. Plain and simple. 
-
-  - assets/entries/uid-dff-987.json -> `https://www.august.style/automated-e-commerce-shop-lookbook/`
-  - assets/entries/uid-fth-565.json -> `https://www.august.style/animated-cms-weekly-blogs/`
-  - assets/entries/uid-unw-889.json -> `https://www.august.style/training-yoga-sales/`
-
-===
-
-Still figuring out specifics for this one. It could be a third layout type, or just a section below the 3 part copy. To decide I want to evaluate the copy of our digital art print graphic design pages in their current state. It is possible we might even want to consolidate a handful of those posts into just one that still has the art history focus, but then also provides space to speak more to the automated process of mass production and then human-in-the-loop selection of the final curated selection, and ultimately what went for sale online. I am also contemplating if this might just be an alternate to the storytelling media flow placement.  
-
-
-
-===
-
-Slideshows, at least on the `_entry_template.json` page, do not seem to have a slide_alt value. It just has the following, but I've added slide_alt. Once we decide if we're keeping slideshows at all, we'll provide further instructions as to if we need to update the schema to accommodate the extra value and which entries have slideshows we're keeping.
-
-```json
-{
-  "slideshows": [
-    "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp",
-    "https://cdn.august.style/media/{slug}/slide-{slug}-2.webp"
-  ],
-  "slide_alt": ""
-}
-```
-
----
-
-## Media Additions & Fixes 
-
-### Website & Apps 
-
-All need at least GIF tours. The particularly striking designs should get large format image placement. 
-
-  - https://www.august.style/freelance-payments-platform/
-  - https://www.august.style/notes-app-thot/
-  - https://www.august.style/blog-lookbook-print-gallery/
-  - https://www.august.style/minimalist-web-store-product/
-  - https://www.august.style/ai-design-fashion-lookbook/
-  - https://www.august.style/modular-portfolio-build/
-  - https://www.august.style/amorphous-gradient-css-animation/
-  - https://www.august.style/personalized-fashion-magazine/ -- where is the content post though 
-
----
-
-## Entry Reframing 
-
-### Marketing Consultant 
-
-  - https://www.august.style/public-health-response-platform/
-
-### AI Pipeline 
-
-  - https://www.august.style/css-animated-micro-interactions/ -> GIFs but more focused on process 
-
-### Design Swarms 
-
-  - https://www.august.style/data-visualization-dashboard/
-  - https://www.august.style/saas-product-sale-features/
-  - https://www.august.style/ai-meditation-mobile-app/
 
 
 ---
