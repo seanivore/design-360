@@ -182,7 +182,7 @@ The filenames and formatting have been specifically constructed so that an alpha
 
 Created specifically for human to keep notes and tasks organized before the next session. Thus far, theses are not items that would require a version update. If at any point there is something in them that would require one, then the filetype and name will change accordingly. 
 
-  + `vX_Y_Z_PREP.md` — this keeps it right after the relevant implementation plan, using the same version number. Because of its neutral nature — mostly just a need to keep notes somewhere handy — it isn't integrated into the directory example below. You can imagine that it could be  placed anywhere and have no effect. It is just for personal reference. 
+  + `vX_Y_Z_PREP.md` — this keeps it right after the relevant implementation plan, using the same version number. Because of its neutral nature — mostly just a need to keep notes somewhere handy — it isn't integrated into the directory example below. You can imagine that it could be  placed anywhere and have no effect. It is just for personal reference. Also `{PROJECT_FEATURE}_vX_Y_Z.md` or `PREP_{FEATURE}_vX_Y_Z.md` — a feature specific prep document. And in very carefully chosen cases (careful in that they don't clutter the system), even just `DETAILS_{FEATURE}.md` without a version number; this is helpful for example if you're not entirely sure what features will make it into the next actual update/feedback/implementation guide. 
 
 #### Alternate Filetype for Simpler Projects
 

@@ -508,67 +508,11 @@ As I'm going through the entry pages and grouping them for these changes, I'll t
   + Does it fit a main focus? 
   + Any other adjustments? 
 
-### Pages 
-
-  - [x] /constructivist-profiles/
-  - [x] /illustrated-poetry-book/
-  - [x] /advanced-animation-system/
-  - [x] /gradient-bauhaus/
-  - [x] /ai-design-fashion-lookbook/
-  - [x] /data-visualization-dashboard/
-  - [x] /agentic-marketing-department/
-  - [x] /constructi-haus/
-  - [x] /constructi-landscapes/
-  - [x] /all-that-glitters/
-  - [x] /surreal-constructivism-perception/
-  - [x] /flowering-symmetric-asymmetry/
-  - [x] /psychedelic-impressi/
-  - [x] /saas-product-sale-features/
-  - [X] /animated-cms-weekly-blogs/
-  - [X] /viral-campaign-strategy/
-  - [x] /bau-noir-haus/
-  - [x] bohemian-abstractions
-  - [x] influencer-growth-strategy
-  - [x] visual-artist-process-portfolio
-  - [x] blog-lookbook-print-gallery
-  - [X] pie-claesz-modern-vibes
-  - [X] flat-bauhaus
-  - [X] pie-claesz
-  - [X] css-animated-micro-interactions
-  - [X] api-automate-video-production
-  - [X] training-yoga-sales
-  - [X] automated-e-commerce-shop-lookbook
-  - [X] personalized-fashion-magazine
-  - [X] social-advertising-strategy
-  - [X] ai-virtual-photoshoot-design
-  - [X] agentic-social-manager
-  - [X] baroque-de-heem-still-life
-  - [X] public-health-response-platform
-  - [x] minimalism-bauhaus
-  - [X] technical-defi-content-simplification
-  - [X] humanistic-exploration
-  - [X] minimalist-web-store-product
-  - [X] agentic-fashion-designer
-  - [X] neo-expresi-cyber
-  - [X] surreal-heads
-  - [X] art-nouveau-brand-design
-  - [X] surreal-constructivism
-  - [X] modular-portfolio-build
-  - [X] notes-app-thot
-  - [X] amorphous-gradient-css-animation
-  - [X] fashion-ai-video
-  - [X] ai-meditation-mobile-app
-  - [X] freelance-payments-platform
-
 ---
 
 ## Page Updates 
 
 ### Unpublish 
-
-**No action, just unpublish** 
-
-  - all-that-glitters
 
 **Action then unpublish**
 
@@ -576,8 +520,50 @@ As I'm going through the entry pages and grouping them for these changes, I'll t
     - Find branding and character development web3 content to post 
     - Find motion graphic videos from web3 content to post 
     - *FOUND* technical-defi-content-simplification
+    - Also semi-ready to publish drafts at bottom 
 
-### Art History 
+---
+
+## Featured Focus 
+
+### **1. Website Design/Development**
+
+| Page                               | Automation | Agentic | Generative | Group | Flow |
+| ---------------------------------- | ---------- | ------- | ---------- | ----- | ---- |
+| **Fashion Production**             |            |         |            |       |      |
+| ai-design-fashion-lookbook         | x          | x       | x          | x     | x    |
+| personalized-fashion-magazine      | x          | x       | x          | x     | x    |
+| automated-e-commerce-shop-lookbook | x          |         |            |       | x    |
+| agentic-fashion-designer           | x          | x       | x          | x     | x    |
+| **Design Swarms**                  |            |         |            |       |      |
+| ai-meditation-mobile-app           |            | x       | x          | x     | x    |
+| data-visualization-dashboard       |            | x       | x          | x     | x    |
+| saas-product-sale-features         |            | x       | x          | x     | x    |
+| **AI Production Pipeline**         |            |         |            |       |      |
+| animated-cms-weekly-blogs          | x          |         | x          |       | x    |
+| blog-lookbook-print-gallery        | x          |         |            |       |      |
+| css-animated-micro-interactions    | x          | x       |            |       | x    |
+| minimalist-web-store-product       |            | x       |            |       | x    |
+| modular-portfolio-build            |            | x       |            |       | x    |
+| notes-app-thot                     |            | x       |            |       | x    |
+| amorphous-gradient-css-animation   |            | x       |            |       | x    |
+| freelance-payments-platform        |            | x       |            |       |      |
+| **Client Webflow/Framer Work**     |            |         |            |       |      |
+| public-health-response-platform    |            |         |            |       |      |
+| training-yoga-sales                |            |         |            |       | x    |
+
+### **2. Graphic/Motion Design**
+
+#### Summary 
+
+| Project/Page                 | Automation | Agentic | Generative | Group | Flow |
+| ---------------------------- | ---------- | ------- | ---------- | ----- | ---- |
+| *all art history pages*      | x          |         | x          | x     | x    |
+| ai-virtual-photoshoot-design |            | x       | x          |       | x    |
+| advanced-animation-system    |            |         |            |       |      |
+| illustrated-poetry-book      |            |         |            |       |      |
+
+#### Art History 
 
   - Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
   - The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
@@ -609,54 +595,7 @@ As I'm going through the entry pages and grouping them for these changes, I'll t
 |                            | pie-claesz                        |
 |                            | baroque-de-heem-still-life        |
 
-#### Generative Design 
-
- - Design swarm websites and apps 
- - ai-virtual-photoshoot-design *project management, image generation*
- - fashion-ai-video *image to video*
-
----
-
-## Featured Focus 
-
-### Graphic/Motion Design 
-
-| Project/Page                 | Automation | Agentic | Generative | Group | Flow |
-| ---------------------------- | ---------- | ------- | ---------- | ----- | ---- |
-| *all art history pages*      | x          |         | x          | x     | x    |
-| ai-virtual-photoshoot-design |            | x       | x          |       | x    |
-| advanced-animation-system    |            |         |            |       |      |
-| illustrated-poetry-book      |            |         |            |       |      |
-
-**Branding & Character Development**
-
-### Website Design/Development 
-
-| Page                               | Automation | Agentic | Generative | Group | Flow |
-| ---------------------------------- | ---------- | ------- | ---------- | ----- | ---- |
-| **Fashion Production**             |            |         |            |       |      |
-| ai-design-fashion-lookbook         | x          | x       | x          | x     | x    |
-| personalized-fashion-magazine      | x          | x       | x          | x     | x    |
-| automated-e-commerce-shop-lookbook | x          |         |            |       | x    |
-| agentic-fashion-designer           | x          | x       | x          | x     | x    |
-| **Design Swarms**                  |            |         |            |       |      |
-| ai-meditation-mobile-app           |            | x       | x          | x     | x    |
-| data-visualization-dashboard       |            | x       | x          | x     | x    |
-| saas-product-sale-features         |            | x       | x          | x     | x    |
-| **AI Production Pipeline**         |            |         |            |       |      |
-| animated-cms-weekly-blogs          | x          |         | x          |       | x    |
-| blog-lookbook-print-gallery        | x          |         |            |       |      |
-| css-animated-micro-interactions    | x          | x       |            |       | x    |
-| minimalist-web-store-product       |            | x       |            |       | x    |
-| modular-portfolio-build            |            | x       |            |       | x    |
-| notes-app-thot                     |            | x       |            |       | x    |
-| amorphous-gradient-css-animation   |            | x       |            |       | x    |
-| freelance-payments-platform        |            | x       |            |       |      |
-| **Client Webflow/Framer Work**     |            |         |            |       |      |
-| public-health-response-platform    |            |         |            |       |      |
-| training-yoga-sales                |            |         |            |       | x    |
-
-### Social Design/Strategy 
+### **3. Social Design/Strategy**
 
 | Project                               | AI Pipeline | Video | Image | Strategy | Group | Flow |
 | ------------------------------------- | ----------- | ----- | ----- | -------- | ----- | ---- |
@@ -666,7 +605,7 @@ As I'm going through the entry pages and grouping them for these changes, I'll t
 | social-advertising-strategy           |             | x     | x     | x        | x     | x    |
 | agentic-social-manager                | x           | x     | x     | x        | x     | x    |
 | technical-defi-content-simplification |             | x     | x     | x        | x     | x    |
-| fashion-ai-video                      |             | x     |       |          | x     | x    |
+| fashion-ai-video                      | x           | x     |       |          | x     | x    |
 | agentic-marketing-department          | x           | x     | x     |          | x     | x    |
 
 ---
