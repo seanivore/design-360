@@ -1,6 +1,7 @@
 # Content Strategy Update 
 
 **Created**: 2026-04-27 17:12
+**Updated**: 2026-04-29 03:03
 **Version**: v3.1.0 -> v4.0.0
 **Features**: Focused skill targeting; media and component layout upgrades 
 **Status**: Drafting 
@@ -18,12 +19,6 @@ Then the more I contemplated how to present these thee focuses and very selectiv
 ## Summary 
 
 This is an update that will create three skill-based focus areas on the homepage that are each backed by top 1% project entries optimized for a consistent skill set narrative. 
-
-### New Copy Bites 
-
-  - Building modern systems and processes by opening up systems to increase speed and productivity. 
-
-  - Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
 
 ### Objective 
 
@@ -44,6 +39,12 @@ With a "custom AI pipeline solution" as an overarching theme, the homepage will 
   1. Website design/development
   2. Graphic/motion design
   3. Social design/strategy
+
+### New Copy Bites 
+
+  - Building modern systems and processes by opening up systems to increase speed and productivity. 
+
+  - Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
 
 ---
 
@@ -91,9 +92,9 @@ Pages that currently have slideshows will be changing to another method of displ
 
 After introducing th rest of the `entry.html` component or layout changes below, each page will be assess and include details on how it should be altered to replace the slideshow. 
 
-  1. **Lightroom Images Everywhere**
+  1. **Lightbox Images Everywhere**
 
-Expand the use of the lightroom click-to-expand effect. It would be helpful in the grid images, and then the other component layouts, even when the image is already on the larger size, seem like there's no reason why we shouldn't stay consistent and give them the same lightroom effect as well. It might be useful for viewers with giant monitors. 
+Expand the use of the Lightbox click-to-expand effect. It would be helpful in the grid images, and then the other component layouts, even when the image is already on the larger size, seem like there's no reason why we shouldn't stay consistent and give them the same lightbox effect as well. It might be useful for viewers with giant monitors. 
 
 ### Thumbnail Slideshow Hero
 
@@ -208,7 +209,7 @@ I'm assuming that the cleanest way to update this will be to add a JSON entry va
 
 As of right now there is only one other proposed layout that would replace just the upper section, the `.entry-content-media` which has two column. I'm seeing "Two-column: Text + Compact Thumbnail Grid with Lightbox" in the browser dev inspector tools. 
 
-In case we come up with future layout options, I'd propose this kind of JSON adjustment rather than something boolean. Obviously, please use whatever consistent term for each layout type for the value. 
+In case we come up with future layout options, I'd propose this kind of JSON adjustment rather than something boolean. Obviously, please use whatever consistent term for each layout type for the value. The "id" value is only provided to give context. 
 
 ```json
 {
@@ -223,45 +224,55 @@ In case we come up with future layout options, I'd propose this kind of JSON adj
 
 In short, the idea is that this would be more like a "Buzzfeed Listicle" page, in that it would alternate between a text row and then a visual media row all the way down the page. They'd naturally be on the longer side and use as an engaging way to tell a story. 
 
-  + GENERAL NOTES ABOUT LAYOUT 
-    - Can be static .webp images, .gif animations, or a mix of both
-    - The flow group number at the front of the filename denotes the order down the page, from 1 to X 
-    - Visual media and text alternates down the page through the flow 
-    - There is no specific number of flow groups; the page narrative ends when there are no more groups provided 
-    - The alt tag will be the same for each visual media element in the same flow group 
-  + TEXT ROWS 
-    - The flow narrative always starts with text, as this would be placed just below the hero image
-    - This allows for a more dynamic storytelling experience that the slideshows and other projects were lacking
-    - Text in the flow should be around 1-3 sentences long
-    - The text rows in a flow narrative should be much larger than the standard paragraph font selection currently used
-  + IMAGE ROWS
-    - Images are either 16:9 at 1920 px wide, or 1:1 at 1080 px wide
-    - Flows are numbered in order, with 1 being first 
-    - Each flow's images should be full page width and centered
-    - Flows will have varying numbers of images to place in that one, page width, centered row 
-    - Groups of images will be selected thoughtfully, pairing for example three square images, or at most two 16:9 images 
-    - Other projects, like those with text-heavy screenshots of an AI pipeline process, will have just one 16:9 image
-    - Even these single images should be made full width and centered so that the image content is easily legible 
-  + IMAGE FILENAMES
-    - They largely follow the same pattern as other image types 
-    - The filename starts with the flow group number 
-    - If there is only one image in the flow group, there will not be a number at the end before the .ext 
-    - If the flow is a group of photos, they will be numbered at the end of the filename before the .ext
-  + JSON SCHEMA UPDATE 
-    - Below is simply a suggestion for how these components might be handled in the JSON 
-    - The "copy" field, as seen below, is the the text row that sits between images 
-    - The "copy" field, on the last flow row, is optional, as this means the narrative is meant to end with a visual 
-    - No other "copy" field is optional 
-    - Because of the intention of creating this type of layout, it is unlikely that there will be only 3 rows as in the example below
-    - Many of the slideshows that we want to turn into scrollytelling narratives have 10 or more slide images, though these might end up in groups 
-    - I use the term scrollytelling intentionally, because I just learned it, and I like it 
-    - Also because I came across this Claude Code skill plugin today on Twitter and the example videos looked really great: `https://github.com/heygen-com/hyperframes` — please explore that repository and let me know what might be possible; it calls out this command `npx skills add heygen-com/hyperframes` but it failed on my first try; hopefully you know something I don't so we can get it working. 
+**General layout notes** 
+
+  - Can be static .webp images, .gif animations, or a mix of both
+  - The flow group number at the front of the filename denotes the order down the page, from 1 to X 
+  - Visual media and text alternates down the page through the flow 
+  - There is no specific number of flow groups; the page narrative ends when there are no more groups provided 
+  - The alt tag will be the same for each visual media element in the same flow group 
+
+**Text row details** 
+
+  - The flow narrative always starts with text, as this would be placed just below the hero image
+  - This allows for a more dynamic storytelling experience that the slideshows and other projects were lacking
+  - Text in the flow should be around 1-3 sentences long
+  - The text rows in a flow narrative should be much larger than the standard paragraph font selection currently used
+
+**Image row details** 
+
+  - Images are either 16:9 at 1920 px wide, or 1:1 at 1080 px wide
+  - Flows are numbered in order, with 1 being first 
+  - Each flow's images should be full page width and centered
+  - Flows will have varying numbers of images to place in that one, page width, centered row 
+  - Groups of images will be selected thoughtfully, pairing for example three square images, or at most two 16:9 images 
+  - Other projects, like those with text-heavy screenshots of an AI pipeline process, will have just one 16:9 image
+  - Even these single images should be made full width and centered so that the image content is easily legible 
+
+**Image filename details** 
+
+  - They largely follow the same pattern as other image types 
+  - The filename starts with the flow group number 
+  - If there is only one image in the flow group, there might not be a number before .ext or it will just be a 1
+  - If the flow is a group of photos, they will be numbered at the end of the filename before the .ext
+
+**JSON Schema Update** 
+
+  - Below is simply a suggestion for how these components might be handled in the JSON 
+  - The "copy" field, as seen below, is the the text row that sits between images 
+  - The "copy" field, on the last flow row, is optional, as this means the narrative is meant to end with a visual 
+  - No other "copy" field is optional 
+  - Because of the intention of creating this type of layout, it is unlikely that there will be only 3 rows as in the example below
+  - Many of the slideshows that we want to turn into scrollytelling narratives have 10 or more slide images, though these might end up in groups 
+  - You'll note that I separated out the grouping here — I'm not sure if it makes more sense than how I presented the other schema examples, but please use your best judgement and alter accordingly and be consistent 
 
 ```json
 {
   "flow_1": {
     "copy": "This is the first line of flow storytelling text. This blurb of text has a lot more to say about what is happening with the project and what is being shown in the images before and then after this message. Even with its length, it should still be able to be larger than the standard paragraph style font size. The text and then image flow should be like a full visual, longer scroll, experience. It is possible the first text row in a narrative might be longer than others to set the tone and provide a more complete overview of the project.",
-    "img": "https://cdn.august.style/media/{slug}/flow-1-{slug}.webp",
+    "img": [
+      "https://cdn.august.style/media/{slug}/flow-1-{slug}-1.webp"
+    ]
     "alt": ""
   },
   "flow_2": {
@@ -274,7 +285,9 @@ In short, the idea is that this would be more like a "Buzzfeed Listicle" page, i
   },
   "flow_3": {
     "copy": null,
-    "img": "https://cdn.august.style/media/{slug}/flow-3-{slug}.webp",
+    "img": [
+      "https://cdn.august.style/media/{slug}/flow-3-{slug}-1.webp"
+    ],
     "alt": ""
   }
 }
@@ -284,36 +297,208 @@ In short, the idea is that this would be more like a "Buzzfeed Listicle" page, i
 
 **This is a new component used for an aesthetically focused section**
 
+For prints and some other images where a grid is too cropped in and the slideshows are too compact or small and non-visual, I want to be able to share images that are of any aspect ratio, laid out on the page just below the layout section. 
 
-  1. What do we do when we have just normal images to show off, not artsy bleed images? Are they like GIF layout? 
-  2. Grid image components are fine except they, like all other images, need light boxes
-  3. If images don't get light boxes, perhaps it is either just because they have URL click through and/or a default turned off.  
-  4. We need to understand in what order all of these types of images are presented regardless of what a JSON has or doesn't have 
-  5. Some of the posts really need a better story telling layout, instead of the 3 chunks of text, it is more like text, image, text, image, etc. What should we do to accommodate this? -> https://www.august.style/agentic-fashion-designer/
+There will be no gaps between images. They will be flush against each other and flush against the left and right edges of the page, thus "bleed" images. On the JSON they will be grouped and numbered which represents the rows of images in the bleed section. There should also be no space between the rows so that above and below the images are flush against each other, too. We do want to make sure that there is padding above and below the component as a whole, by whatever means the page styling currently distributes sections. 
 
-For prints and some other images where a grid is too cropped in and the slideshows are too compact or small and non-visual, I want to be able to share images that are of any aspect ratio, laid out on the page just below the last bit of "Result" copy, with decent spacing around the images. This placement is intended to be used when we want images to be shown LARGE. 
+These images will come in a a few different aspect ratios. They should be displayed so that they are all the same height, downsizing where needed so they have varying widths and don't distort the images, but still are able to be displayed on the same row with a bleed on the page edges. Thought will be put into the grouping of these images and their rows so that this should look decent. Though these images are larger already, we should still apply the lightbox click-to-expand feature for them.
 
-I was going to say we could just place images as if they were GIFs, but I'd really like it if we were able to push the visual appeal of these images even further. We'd try to do this by making sure on desktop there are two per row, and mobile or tablet one per row, but importantly these images should BLEED. The right of the right image should meet the actual edge of the right page with no margin or padding, and then the same for the left image's left side. 
+**JSON Schema Example** 
 
-Let's call them BLEED in the filename which I'll define below. And this can mean we only ever provide even number of BLEED images. And the the last aspect that sets them apart from the GIF layout, let's apply the lightbox click-to-expand for these images as well. 
-
-All together that will help make sure that if there are BLEED images to include that they get a SUPER visual, engaging presentation that let's them enjoy the piece as much as they want. 
-
-I'm thinking that we'll be adjusting the homepage for an optional BLEED component as well so that I can make sure that my homepage design is also as great as it can be.
+  - Don't hesitate to adjust the actual JSON schema layout 
+  - As long as it meets the needs 
+  - As long as it is done in a way that will create the least confusion 
+  - Note that there could be any number of rows provided 
+  - Note that each row has no given set number of images to be provided in 
 
 ```json
-  "bleed_art": [
-    "https://cdn.august.style/media/{slug}/bleed-{slug}-1.png",
-    "https://cdn.august.style/media/{slug}/bleed-{slug}-2.png"
-  ],
-  "bleed_alt": "",
-```
+{
+  "bleed": {
+    "row_1": [
+      "https://cdn.august.style/media/{slug}/bleed-1-{slug}-1.webp",
+      "https://cdn.august.style/media/{slug}/bleed-1-{slug}-2.webp",
+      "https://cdn.august.style/media/{slug}/bleed-1-{slug}-3.webp"
+    ],
+    "alt_1": "",
+    "row_2": [
+      "https://cdn.august.style/media/{slug}/bleed-2-{slug}-1.webp",
+      "https://cdn.august.style/media/{slug}/bleed-2-{slug}-2.webp"
+    ],
+    "alt_2": "",
+    "row_3": [
+      "https://cdn.august.style/media/{slug}/bleed-3-{slug}-1.webp",
+      "https://cdn.august.style/media/{slug}/bleed-3-{slug}-2.webp",
+      "https://cdn.august.style/media/{slug}/bleed-3-{slug}-3.webp",
+      "https://cdn.august.style/media/{slug}/bleed-3-{slug}-4.webp"
+    ],
+    "alt_3": ""
+  }
+}
+``` 
+
+### New Bleed Image Slides Component 
+
+This is very similar to the bleed image component. The difference is that there would only be one row, and it is expected that they will extend off the page to the right. This is the same overflow method that we used on content tiles and related page tiles, and that we're updating the hero to accommodate. 
+
+In this case, the images can again be different aspect ratios. The sizing will have been planned before the images are grouped and provided to be uploaded to CDN and added to a JSON file. Just like the bleed component, there shouldn't be any space between the images on the left and right. There will only ever be one row per section. 
+
+```json
+{
+  "bleed_slides": {
+    "img": [
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-1.webp",
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-2.webp",
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-3.webp",
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-4.webp",
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-5.webp",
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-6.webp",
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-7.webp",
+      "https://cdn.august.style/media/{slug}/bleed-slides-{slug}-8.webp"
+    ],
+    "alt": ""
+  }
+}
+``` 
+
+### New Main Media Component
+
+There are some posts that have a collection of images that need prominent placement, but aren't a good fit for the more artsy "bleed images" section, and that already don't look great in a slideshow. When we created the component for GIFs, we ensured that they were nicely spaced and on the larger side. This is what we'll want to do for the images on these kind of projects. Additionally, in part because mosts of the current mobile images are in a slideshow, we should also use this component for mobile images. This component will replace the GIF and the MOBILE_IMG components; see below for more details. 
+
+#### Details
+
+**Media included and component naming**
+
+  - Current class is `.entry-gifs` with `<-- Optional: GIFs -->` in the code
+  - Just to recap, on the JSON we have 'THUMB', 'IMG', 'MOBILE_IMG', 'GIF', 'GRID' and 'SLIDESHOW' image types 
+  - We should add a new image type to the JSON called 'MAIN_IMG'
+  - Then this class can be called `.entry-main-media` with `<-- Optional: Main Media -->` in the code
+
+**When to use a MAIN MEDIA component** 
+
+  - The "main media" component is still optional
+  - This section component will be necessary any time the 'MOBILE_IMG', 'GIF', and/or 'MAIN_IMG' value arrays contain URLs
+  - It will almost never be used with a "flow storytelling layout" but we shouldn't make that a hard rule 
+  - For either layout, this component should always directly follow the layout section 
+  - Grid components would always follow this main media component 
+
+**Updating pages that have a GIF and/or MOBILE_IMG component**
+
+  - In all cases any GIF specific or MOBILE_IMG specific components should now just use a MAIN_MEDIA component
+  - There might be a desire to keep media types separate, so there can be multiple 'MAIN_MEDIA' sections 
+  - But this component should always use the same styling
+  - The only thing that would differentiate these from each other is the ordering of the images (which is already set by the JSON array order)
+  - For example, if a project has both 'GIF' and 'MOBILE_IMG' values in its JSON, we could represent those as two separate 'MAIN_MEDIA' components, or we could combine them into one large 'MAIN_MEDIA' component
+  - The important thing is that we're not duplicating images across components if we don't have to
+  - We can handle this the same way we were handling slideshows and will handle new bleed image rows 
+
+#### JSON Schema & Filenames 
+
+**Below is a JSON schema example**
+
+  - There can be as many main_media sections as we want 
+  - Each main_media can have any number of images or GIFs 
+  - A single main_media group can have a mix of types, or just one type 
+  - It's just an arbitrary grouping of the main images 
+  - They should always be placed in the order provided on the JSON file
+  - As usual, this is just an example and you are welcome to adjust based on what will work best, given you understand the needs — I don't know if it makes more sense to nest them all in the same "main_media" since it is one section, or to separate out and place the numbering "_1", "_2", etc on "main_media" instead of "img" and "alt" — I defer to you. I pulled this layout after seeing how the agent handled the project entry that had multiple slideshows. But those might have been treated as separate sections, idk. 
+
+```json
+{
+  "main_media": {
+    "img_1": [
+      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-1.webp",
+      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-2.webp",
+      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-3.webp"
+    ],
+    "alt_1": "Alt text for this main media section",
+    "img_2": [
+      "https://cdn.august.style/media/{slug}/main-2-{slug}-mobile-1.gif",
+      "https://cdn.august.style/media/{slug}/main-2-{slug}-mobile-2.gif"
+    ],
+    "alt_2": "Alt text for this main media section",
+    "img_3": [
+      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-1.webp",
+      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-2.webp",
+      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-3.webp"
+    ],
+    "alt_3": "Alt text for this main media section",
+    "img_4": [
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-1.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-2.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-gif-3.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-mobile-4.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-gif-5.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-6.webp"
+    ],
+    "alt_4": "Alt text for this main media section"
+  }
+}
+``` 
+
+**Main media section filenames**
+
+  - As you can see in the example, they are denoted by starting with "main"
+  - The group number is indicated by the number following "main" 
+  - The placement in the group is denoted by the number at the end of the filename before the .ext 
+  - When updating pages that have MOBILE or GIF media the filenames will need to be updated 
+  - Other than just staying consistent, this is necessary because it informs where to place the media in the group
+  - For "https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp" we can just assume the conversion to main media 
+  - For "https://cdn.august.style/media/{slug}/gif-{slug}-1.gif" we can just assume the conversion to main media 
+  - But, any "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp" will be specifically handled by page below 
+
+#### Layout & Image Specifics 
+
+  - The component should handle any aspect ratio 
+  - Just because media is in a group, doesn't mean they must fit in a row 
+  - Component row can have 1-3 images/gifs 
+  - The height of the images should be consistent across each row 
+  - Images downsized in height for a row can still have varying widths so as not to distort the image 
+  - Assess the size of the images when selecting how many to put in each row 
+  - Space between rows should match the gap between images in a row 
 
 ---
 
-Homepage Bleed Image Component** 
+## Homepage Adjustments
 
-For showing off the print and graphic design posts. Should bleed, obviously, and be sort of like a tight grid of images that covers the width of the page, with maybe 2 or 3 images per row and perhaps 4 or 5 rows deep max. Since these images are large already, instead of lighthouse to expand them, we would want each one to click-through to the respective project entry. 
+### Featuring Content
+
+This is regarding the `assets/docs/tags.json` file and the new components, given they are intended to show only about 3 of our absolute best project entries. Because of the limited number of posts to be associated with the focused homepage components for display, and because we're not going to have time to spend updating and perfecting the actual contents of more than these select project entry pages, it is unlikely that any combination of the normal tagging will suffice to get a component to display exactly which projects are desired. 
+
+However, we also do not want to break the standard of there *only* being tags on the `assets/docs/tags.json` file when adjusting what get displayed on the homepage components. 
+
+For this reason, I'd like to propose creating a new tag that is just **FEATURED**. It doesn't need its own category. It does not need to be shown on the entry page tag group, or below the content tiles on section pages or else where, and it doesn't need to be a filtering option on the section page. This tag will exclusively be used to tell each component section that we add to the homepage `assets/docs/tags.json` document which of our projects have been adjusted to properly tell the exact narrative that is desired for that component's skill focus. 
+
+### Homepage Bleed Image Component
+
+This component should be very similar to the entry page bleed image component. Some important distinctions. 
+
+  - Instead of a lightbox expansion, clicking an image should lead the viewer to that image's project entry page
+  - The images displayed should consist of *any* `bleed-1-{slug}-1.webp` image, no matter the bleed-number or image count number 
+  - The images displayed should come from *any* of the projects tagged with **featured** 
+  - The images displayed must be shuffled randomly from all project with that tag 
+  - The images must be re-shuffled and randomly displayed on *every single page refresh* — this is essential for the UX 
+  - The component will, like the entry component, have no space between rows, between images in a row 
+  - The image rows must bleed to the edge of the screen no matter the size of the device 
+  - The height of every image in a row should be the same, with the width of adjusted images changed not to distort the image 
+  - The height of every row should not be the same as the other rows 
+  - Pull the height of each row from the height produced when all images in the row are the same height and reach from edge to edge of the page 
+  - On desktop, the shuffling should choose 3 or 5 images per row, alternating the number of images displayed per row
+  - On desktop, the shuffling should create 4 or 6 rows depending on the total number of images across all the **featured** tagged pages 
+  - On mobile, the layout should not shift to a single image per row column 
+  - Instead, the mobile version should just simplify to 2 to 4 images per row, alternating the number of images displayed per row
+  - And on mobile, simplify to 3 or 4 rows depending on the total number of images across all the **featured** tagged pages 
+
+### Remaining Homepage Sections 
+
+I came across something we should explore and understand called 'HyperFrames' where the specifically created a Claude Code skill plugin. The examples on Twitter were really impressive. It was described as "Claude can design .md to .mp4. and I found this GitHub repo with the code: `https://github.com/heygen-com/hyperframes` — please explore that repository and let me know what might be possible; it calls out this command `npx skills add heygen-com/hyperframes` but it failed on my first try; hopefully you know something I don't so we can get it working. 
+
+For now I'd like to use this to consider the hero/masthead because it still feels a bit janky and given there will be two other sections, and some text with all three, I'm wondering if maybe we don't actually want the kind of slideshow animated visual masthead and could instead do something that is simpler but more impressive, clean, modern, unique. Something that seems like it took a bit more effort to get really polished, whereas the current masthead slideshow just looks like simple vanilla HTML/CSS. 
+
+As I'm going through the entry pages and grouping them for these changes, I'll think of how we want to present the other two focus areas, as well as what copy we want to pair with all of them, including the bleed image component already added above. It seemed like a good idea to hand this over to get started first though. Perhaps you can help with the copy drafts to get me started based on the details given so far, particularly at the top of this document. 
+
+---
+
+
 
 Art Bleed Images 
 
@@ -346,109 +531,6 @@ These all could really have more of a focus on the AI pipeline that created them
     + https://www.august.style/constructi-haus/
     + https://www.august.style/flowering-symmetric-asymmetry/
     + https://www.august.style/psychedelic-impressi/
-
-### New Main Media Component
-
-There are some posts that have a collection of images that need prominent placement, but aren't a good fit for the more artsy "bleed images" section, and that already don't look great in a slideshow. When we created the component for GIFs, we ensured that they were nicely spaced and on the larger side. This is what we'll want to do for the images on these kind of projects. Additionally, in part because mosts of the current mobile images are in a slideshow, we should also use this component for mobile images. This component will replace the GIF and the MOBILE_IMG components; see below for more details. 
-
-#### Component Details
-
-**Media included and component naming**
-
-  - Current class is `.entry-gifs` with `<-- Optional: GIFs -->` in the code
-  - Just to recap, on the JSON we have 'THUMB', 'IMG', 'MOBILE_IMG', 'GIF', 'GRID' and 'SLIDESHOW' image types 
-  - We should add a new image type to the JSON called 'MAIN_IMG'
-  - Then this class can be called `.entry-main-media` with `<-- Optional: Main Media -->` in the code
-
-**When to use a MAIN MEDIA component** 
-
-  - The "main media" component is still optional
-  - This section component will be necessary any time the 'MOBILE_IMG', 'GIF', and/or 'MAIN_IMG' value arrays contain URLs
-  - It will almost never be used with a "flow storytelling layout" but we shouldn't make that a hard rule 
-  - For either layout, this component should always directly follow the layout section 
-  - Grid components would always follow this main media component 
-
-**Updating pages that have a GIF and/or MOBILE_IMG component**
-
-  - In all cases any GIF specific or MOBILE_IMG specific components should now just use a MAIN_MEDIA component
-  - There might be a desire to keep media types separate, so there can be multiple 'MAIN_MEDIA' sections 
-  - But this component should always use the same styling
-  - The only thing that would differentiate these from each other is the ordering of the images (which is already set by the JSON array order)
-  - For example, if a project has both 'GIF' and 'MOBILE_IMG' values in its JSON, we could represent those as two separate 'MAIN_MEDIA' components, or we could combine them into one large 'MAIN_MEDIA' component
-  - The important thing is that we're not duplicating images across components if we don't have to
-  - We can handle this the same way we were handling slideshows and will handle new bleed image rows 
-
-#### JSON Schema & Filenames 
-
-**Below is a JSON schema example**
-
-  - There can be as many main_media sections as we want 
-  - Each main_media can have any number of images or gifs 
-  - A single main_media group can have a mix of types, or just one type 
-  - It's just an arbitrary grouping of the main images 
-  - They should always be placed in the order provided on the JSON file
-
-```json
-{
-  "main_media_1": {
-    "img": [
-      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-1.webp",
-      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-2.webp",
-      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-3.webp"
-    ],
-    "alt": "Alt text for this main media section",
-  },
-  "main_media_2": {
-    "img": [
-      "https://cdn.august.style/media/{slug}/main-2-{slug}-mobile-1.gif",
-      "https://cdn.august.style/media/{slug}/main-2-{slug}-mobile-2.gif"
-    ],
-    "alt": "Alt text for this main media section",
-  },
-  "main_media_3": {
-    "img": [
-      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-1.webp",
-      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-2.webp",
-      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-3.webp"
-    ],
-    "alt": "Alt text for this main media section",
-  },
-  "main_media_4": {
-    "img": [
-      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-1.webp",
-      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-2.webp",
-      "https://cdn.august.style/media/{slug}/main-4-{slug}-gif-3.webp",
-      "https://cdn.august.style/media/{slug}/main-4-{slug}-mobile-4.webp",
-      "https://cdn.august.style/media/{slug}/main-4-{slug}-gif-5.webp",
-      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-6.webp"
-    ],
-    "alt": "Alt text for this main media section",
-  }
-}
-``` 
-
-**Main media section filenames**
-
-  - As you can see in the example, they are denoted by starting with "main"
-  - The group number is indicated by the number following "main" 
-  - The placement in the group is denoted by the number at the end of the filename before the .ext 
-  - When updating pages that have MOBILE or GIF media the filenames will need to be updated 
-  - Other than just staying consistent, this is necessary because it informs where to place the media in the group
-  - For "https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp" we can just assume the conversion to main media 
-  - For "https://cdn.august.style/media/{slug}/gif-{slug}-1.gif" we can just assume the conversion to main media 
-  - But, any "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp" will be specifically handled by page below 
-
-#### Layout & Image Specifics 
-
-  - The component should handle any aspect ratio 
-  - Just because media is in a group, doesn't mean they must fit in a row 
-  - Component row can have 1-3 images/gifs 
-  - The height of the images should be consistent across each row 
-  - Images downsized in height for a row can still have varying widths so as not to distort the image 
-  - Assess the size of the images when selecting how many to put in each row 
-  - Space between rows should match the gap between images in a row 
-
----
 
 > Below each focus are tentatively agent-selected projects that have yet to be reviewed; any final selection will need to be refined and polished. 
 
