@@ -17,7 +17,7 @@ Then the more I contemplated how to present these thee focuses and very selectiv
 
 ## Summary 
 
-One more drill-down setting up a focused homepage that frames only the top 1% of project entries for each of 3 topical and specific groupings. 
+This is an update that will create three skill-based focus areas on the homepage that are each backed by top 1% project entries optimized for a consistent skill set narrative. 
 
 ### New Copy Bites 
 
@@ -27,25 +27,27 @@ One more drill-down setting up a focused homepage that frames only the top 1% of
 
 ### Objective 
 
-Accompany a handful of project entry updates with a very carefully crafted homepage layout grouping our most powerful entries within specific, high skill or trade demand, groupings. This will introduce optional homepage components and improve the visual appeal, directing users to featured projects that have been made to perfectly illustrate highly employable work. Beyond the addition of new entries, and cleanup of others, we'll also make some minor layout adjustments like slideshow width and full VW bleed images. 
+Create updated homepage components designed to better highlight the story of carefully selected skill sets beside innovative new directions for my current digital services and products. Homepage focuses will be backed up by directing viewers toward deep examples of these in-demand skills. This will require a combination of some projects into new entries and introduce variable project entry layouts that will enable a more visual and narrative style of storytelling. 
 
 ### Strategy 
 
-Isolate three in-demand workplace skills in the homepage components. Illustrate them with a few, highly selective projects with a clear, focused objective. Included projects are top 1% in quality. They should perfectly continue to tell the story of that groupings focus to encapsulate visitors. 
+Isolate three in-demand workplace skills in the homepage components. Illustrate them with a few, highly selective projects with a clear, focused objective. Included projects are top 1% in quality. They should perfectly continue to tell the story that the homepage skill groupings focus on to encapsulate visitors. 
 
-Experiencing and exploring project media should move viewers, flowing naturally from homepage and into one of those premium work examples. The narrative must continue down the page where they're met with two other projects that expressly define that same homepage component sections skill or trade. 
+Exploring project media naturally moves viewers into those premium work examples, with the narrative continuing on down the page where they're met with the other projects that expressly define the same skill or trade from that homepage section.
 
-Encourage them to remain blissfully unaware of the wildly generalist collection of 60+ projects, instead of getting distracted by visuals and tags on the section pages, they should maintain focused attention on the specific type of work at hand. 
+The experience around these newly updated project and three focus areas will intentionally keep visitors relatively gated within those topics. We don't need recruiters, hiring managers, or potential clients coming to the site and getting overly distracted by the huge 50+ entry collection of wildly generalist projects. They should maintain focused attention on the specific type of work they clicked to see examples of. 
 
 ### Homepage Focuses 
 
+With a "custom AI pipeline solution" as an overarching theme, the homepage will be focused on three main areas of focus: 
+
   1. Website design/development
   2. Graphic/motion design
-  3. AI pipeline custom solutions 
+  3. Social design/strategy
 
 ---
 
-## Fixes 
+## Current Site UX/UI Fixes 
 
 ### Tile Tag Layout Inconsistency 
 
@@ -74,6 +76,377 @@ Encourage them to remain blissfully unaware of the wildly generalist collection 
   1. On entry pages at desktop view, make the width of the container the tags are within only as wide as the black text container above it, and then set it to allow but hide the overflow for the posts with lots of tags so that users can scroll through them. 
 
   2. On entry pages at tablet view, the right page margin must mirror the left margin (or whatever padding that is), and then the black text component should be made wider to be just slightly shorter on both sides than the image slideshow; the tags look like the might already be set up properly to accommodate this in the same way they're accommodated in the section tile tags. 
+
+---
+
+## Entry Page Adjustments 
+
+The different updates, additions, and changes below may influence each other. Please read and understand in full before making any implementation plans.
+
+### Simple Updates 
+
+  1. **Eliminate Slideshow Component** 
+
+Pages that currently have slideshows will be changing to another method of displaying the images. The slideshows don't do the content justice, make the images hard to read, and just feel like an out-of-style display component. 
+
+After introducing th rest of the `entry.html` component or layout changes below, each page will be assess and include details on how it should be altered to replace the slideshow. 
+
+  1. **Lightroom Images Everywhere**
+
+Expand the use of the lightroom click-to-expand effect. It would be helpful in the grid images, and then the other component layouts, even when the image is already on the larger size, seem like there's no reason why we shouldn't stay consistent and give them the same lightroom effect as well. It might be useful for viewers with giant monitors. 
+
+### Thumbnail Slideshow Hero
+
+This update should create a UX that is almost exactly the same as how users engage with the thumbnails on the actual content tiles seen in `section.html` and at the bottom of the `entry.html` page in the related projects section. This is an intentional, artistic choice. It tells the visitor that they can engage with the images like they did in the content tiles and related thumbnails they just saw. 
+
+Since the thumbnails are currently on the right column of `.entry-content-media`, they will need to be removed and the [plan for the replacement will be detailed below](#tag-and-media-embed-column).
+
+There will also be a [new page layout option described below](#alternate-layout-options); this updated hero will be the same no matter what layout style the rest of the entry page is set to. 
+
+Other than making sure we show thumbnail full height, we will also need the row of images, spaced, that go off page. We'll make the images full page width with a bleed effect, just like we already use on the content tile on section pages and the related content tiles at the bottom of the entry page. There is a new component proposed below that will also be utilizing the 'bleed image' visual effect, and we'll be doing something similar for a component on the homepage. 
+
+Below find the breakdown of two groups of styling information that should help make this change.
+
+  + We'll need the details of the hero that we're changing and the thumbnail media we're removing from that page section. 
+  + We'll also need the details about the content tiles, how the slideshow styling works, what adjustments allow their mobile view to have bleed images, and any other details you notice. 
+
+  1. Details on the current placement of the entry page thumbnail images 
+     - These will be removed for now and replaced with new media defined in a lower second in this document 
+     - `.container .entry-container` — contains our `.entry-hero` and also `.entry-content-media`
+     - The `.entry-content-media` has a left column `.entry-text-column`
+     - The right column has `.entry-thumb-grid` > `.entry-thumb`
+     - There is an `.entry-thumb` for each thumbnail, arrange in the grid 
+
+  2. Simple to identify the hero styling that needs to be updated 
+     - On `entry.html`, the `.entry-hero` is currently using `.entry-hero-image` 
+     - It currently only displays a single JSON `data.thumb` image using `.tile-image` styling
+
+  3. In the related posts section of our entry pages, find the styling using the drill down of their classes: 
+     - `.related-posts-section` > `.related-posts-grid .grid-related` > `.tile .fade-in-item` > `.tile-gallery` > `.tile-image`
+     - There is a `.tile-image` for each of the JSON's `data.thumb` 
+     - Pay special attention to the width REM at different viewport sizes to understand the "peeking" next image coming from off page 
+     - Also will need to identify which div is the one that is actually super wide; hopefully easier than the nothing coming to my mind right now 
+
+  4. You will find similar styling on the content tiles on the section pages:
+     - `.tile-grid .grid-section` > `.tile .fade-in-item` > `.tile-gallery` > `.tile-image`
+     - Again, there is a `.tile-image` for each of the JSON's `data.thumb` 
+     - You should find very similar styling across viewport sizes and for the wide row of images with hide overflow 
+
+  5. Look closely at the media styling because when VW hits < 48 REM the content tiles images bleed to the edge of the device screen: 
+     - `width: 100%;` is replaced by `width: 100vw;`
+     - `max-width: 25rem;` is replaced by `max-width: 100vw;`
+     - Original styles `margin-right: auto;` and `margin-left: auto;` are wiped out 
+     - New styles add are edited to compensate and expand *OVER* the pages padding or margins 
+     - Added styles `margin-left: calc(-1 * var(--space-md));` and `margin-right: calc(+1 * var(--space-md));`
+
+  ```css
+  @media (max-width: 47.9375rem) {
+  .tile {
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: calc(-1 * var(--space-md));
+      margin-right: calc(+1 * var(--space-md));
+    }
+  }
+
+  .tile {
+      ~~width: 100%;~~
+      ~~max-width: 25rem;~~
+      ~~margin: 0 auto var(--space-md);~~
+      display: flex;
+      flex-direction: column;
+  }
+  ```
+
+   5. It appears this is how the images width being only partial so that the UI creates that UX need with next image peeking in is created: 
+      - The only one that is necessarily that helpful to us is the mobile one because it has a single column image like or hero 
+      - So the `.tile-image` is set to `width: 90vw;` allowing the next image to peek in from off page 
+
+  ```css 
+  @media (min-width: 64rem) {
+      .tile-image {
+          width: 21.875rem;
+      }
+  }
+
+  @media (min-width: 48rem) and (max-width: 63.9375rem) {
+      .tile-image {
+          width: 18.75rem;
+      }
+  }
+
+  @media (max-width: 47.9375rem) {
+      .tile-image {
+          width: 90vw;
+      }
+  }
+  ```
+
+#### Tag And Media Embed Column
+
+**This should replace thumbnails for all posts using the 2-column layout**
+
+Right now the two columns are both 50% of the width of the page. We can make the left column larger for the text, and then might the right one more narrow to around 60% / 40%. 
+
+Then remove the `.entry-tags-layout` > `.entry-tags-card` from the very top of the page. Render it as a narrow column instead of row, and place is in the 40% right column at the top of the column in the tag groupings like now, but with wrapping. 
+
+Then, for any entry pages that have a Behance or Youtube embed in the hero, place that below the tag section. The responsiveness of these embeds looks really pretty as they get more and more narrow. If the user wants, they can click to expand or click through. 
+
+Last thought is that this container of tags and media embed could be sticky and stay with the viewer as they scroll down past the three blocks of copy in the left column, until the bottom of the two columns. So it would be subtle — not far, but far enough to be intriguing. 
+
+Note: When adjusting the Youtube embeds, we need to look into if there is a reason that the thumbnail loads INCREDIBLY blurry when the page first loads because it looks very embarrassingly bad. 
+  - SEE IMAGE: `assets/docs/archive/v3/IMG/youtube-blurry-embed.jpg`
+
+If it helps to figure it out, when you refresh or return to the page, the thumbnail looks crisp and proper. 
+  - SEE IMAGE: `assets/docs/archive/v3/IMG/youtube-second-visit.jpg`
+
+### Alternate Layout Options
+
+The hero update shall remain consistent regardless of the rest of the page's layout or components. 
+
+I'm assuming that the cleanest way to update this will be to add a JSON entry value to specifies the layout for that project, and then when loading the project it uses a different dynamic layout. The other consideration was having the project load route to an entirely new `entry-alt.html` instead of `entry.html`, but I'm assuming that that would be an unnecessarily complicated way to make this update. 
+
+As of right now there is only one other proposed layout that would replace just the upper section, the `.entry-content-media` which has two column. I'm seeing "Two-column: Text + Compact Thumbnail Grid with Lightbox" in the browser dev inspector tools. 
+
+In case we come up with future layout options, I'd propose this kind of JSON adjustment rather than something boolean. Obviously, please use whatever consistent term for each layout type for the value. 
+
+```json
+{
+  "id": "uid-xxx-###",
+  "layout": "columns | flow"
+}
+```
+
+#### 'Flow' Storytelling Layout
+
+**This would be the alternate layout option, replacing the two column layout**
+
+In short, the idea is that this would be more like a "Buzzfeed Listicle" page, in that it would alternate between a text row and then a visual media row all the way down the page. They'd naturally be on the longer side and use as an engaging way to tell a story. 
+
+  + GENERAL NOTES ABOUT LAYOUT 
+    - Can be static .webp images, .gif animations, or a mix of both
+    - The flow group number at the front of the filename denotes the order down the page, from 1 to X 
+    - Visual media and text alternates down the page through the flow 
+    - There is no specific number of flow groups; the page narrative ends when there are no more groups provided 
+    - The alt tag will be the same for each visual media element in the same flow group 
+  + TEXT ROWS 
+    - The flow narrative always starts with text, as this would be placed just below the hero image
+    - This allows for a more dynamic storytelling experience that the slideshows and other projects were lacking
+    - Text in the flow should be around 1-3 sentences long
+    - The text rows in a flow narrative should be much larger than the standard paragraph font selection currently used
+  + IMAGE ROWS
+    - Images are either 16:9 at 1920 px wide, or 1:1 at 1080 px wide
+    - Flows are numbered in order, with 1 being first 
+    - Each flow's images should be full page width and centered
+    - Flows will have varying numbers of images to place in that one, page width, centered row 
+    - Groups of images will be selected thoughtfully, pairing for example three square images, or at most two 16:9 images 
+    - Other projects, like those with text-heavy screenshots of an AI pipeline process, will have just one 16:9 image
+    - Even these single images should be made full width and centered so that the image content is easily legible 
+  + IMAGE FILENAMES
+    - They largely follow the same pattern as other image types 
+    - The filename starts with the flow group number 
+    - If there is only one image in the flow group, there will not be a number at the end before the .ext 
+    - If the flow is a group of photos, they will be numbered at the end of the filename before the .ext
+  + JSON SCHEMA UPDATE 
+    - Below is simply a suggestion for how these components might be handled in the JSON 
+    - The "copy" field, as seen below, is the the text row that sits between images 
+    - The "copy" field, on the last flow row, is optional, as this means the narrative is meant to end with a visual 
+    - No other "copy" field is optional 
+    - Because of the intention of creating this type of layout, it is unlikely that there will be only 3 rows as in the example below
+    - Many of the slideshows that we want to turn into scrollytelling narratives have 10 or more slide images, though these might end up in groups 
+    - I use the term scrollytelling intentionally, because I just learned it, and I like it 
+    - Also because I came across this Claude Code skill plugin today on Twitter and the example videos looked really great: `https://github.com/heygen-com/hyperframes` — please explore that repository and let me know what might be possible; it calls out this command `npx skills add heygen-com/hyperframes` but it failed on my first try; hopefully you know something I don't so we can get it working. 
+
+```json
+{
+  "flow_1": {
+    "copy": "This is the first line of flow storytelling text. This blurb of text has a lot more to say about what is happening with the project and what is being shown in the images before and then after this message. Even with its length, it should still be able to be larger than the standard paragraph style font size. The text and then image flow should be like a full visual, longer scroll, experience. It is possible the first text row in a narrative might be longer than others to set the tone and provide a more complete overview of the project.",
+    "img": "https://cdn.august.style/media/{slug}/flow-1-{slug}.webp",
+    "alt": ""
+  },
+  "flow_2": {
+    "copy": "This is a line of flow text, the second. It is not that long.",
+    "img": [
+      "https://cdn.august.style/media/{slug}/flow-2-{slug}-1.gif",
+      "https://cdn.august.style/media/{slug}/flow-2-{slug}-2.gif"
+    ],
+    "alt": ""
+  },
+  "flow_3": {
+    "copy": null,
+    "img": "https://cdn.august.style/media/{slug}/flow-3-{slug}.webp",
+    "alt": ""
+  }
+}
+``` 
+
+### New Bleed Images Component 
+
+**This is a new component used for an aesthetically focused section**
+
+
+  1. What do we do when we have just normal images to show off, not artsy bleed images? Are they like GIF layout? 
+  2. Grid image components are fine except they, like all other images, need light boxes
+  3. If images don't get light boxes, perhaps it is either just because they have URL click through and/or a default turned off.  
+  4. We need to understand in what order all of these types of images are presented regardless of what a JSON has or doesn't have 
+  5. Some of the posts really need a better story telling layout, instead of the 3 chunks of text, it is more like text, image, text, image, etc. What should we do to accommodate this? -> https://www.august.style/agentic-fashion-designer/
+
+For prints and some other images where a grid is too cropped in and the slideshows are too compact or small and non-visual, I want to be able to share images that are of any aspect ratio, laid out on the page just below the last bit of "Result" copy, with decent spacing around the images. This placement is intended to be used when we want images to be shown LARGE. 
+
+I was going to say we could just place images as if they were GIFs, but I'd really like it if we were able to push the visual appeal of these images even further. We'd try to do this by making sure on desktop there are two per row, and mobile or tablet one per row, but importantly these images should BLEED. The right of the right image should meet the actual edge of the right page with no margin or padding, and then the same for the left image's left side. 
+
+Let's call them BLEED in the filename which I'll define below. And this can mean we only ever provide even number of BLEED images. And the the last aspect that sets them apart from the GIF layout, let's apply the lightbox click-to-expand for these images as well. 
+
+All together that will help make sure that if there are BLEED images to include that they get a SUPER visual, engaging presentation that let's them enjoy the piece as much as they want. 
+
+I'm thinking that we'll be adjusting the homepage for an optional BLEED component as well so that I can make sure that my homepage design is also as great as it can be.
+
+```json
+  "bleed_art": [
+    "https://cdn.august.style/media/{slug}/bleed-{slug}-1.png",
+    "https://cdn.august.style/media/{slug}/bleed-{slug}-2.png"
+  ],
+  "bleed_alt": "",
+```
+
+---
+
+Homepage Bleed Image Component** 
+
+For showing off the print and graphic design posts. Should bleed, obviously, and be sort of like a tight grid of images that covers the width of the page, with maybe 2 or 3 images per row and perhaps 4 or 5 rows deep max. Since these images are large already, instead of lighthouse to expand them, we would want each one to click-through to the respective project entry. 
+
+Art Bleed Images 
+
+These all could really have more of a focus on the AI pipeline that created them. The "Bleed Images" are a new component section that will be introduced below. 
+
+  - assets/entries/uid-bsj-738.json -> `https://www.august.style/baroque-de-heem-still-life/`
+  - assets/entries/uid-hxp-812.json -> `https://www.august.style/bau-noir-haus/`
+  - assets/entries/uid-kts-582.json -> `https://www.august.style/bohemian-abstractions/`
+  - assets/entries/uid-xuk-296.json -> `https://www.august.style/art-nouveau-brand-design/`
+
+  **Art History**
+  - Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
+  - The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
+
+    + https://www.august.style/surreal-constructivism-perception/
+    + https://www.august.style/pie-claesz-modern-vibes/
+    + https://www.august.style/baroque-de-heem-still-life/
+    + https://www.august.style/flat-bauhaus/
+    + https://www.august.style/pie-claesz/
+    + https://www.august.style/bau-noir-haus/
+    + https://www.august.style/neo-expresi-cyber/
+    + https://www.august.style/minimalism-bauhaus/
+    + https://www.august.style/humanistic-exploration/
+    + https://www.august.style/constructi-landscapes/
+    + https://www.august.style/all-that-glitters/
+    + https://www.august.style/surreal-constructivism/
+    + https://www.august.style/gradient-bauhaus/
+    + https://www.august.style/art-nouveau-brand-des ign/
+    + https://www.august.style/constructivist-profiles/
+    + https://www.august.style/constructi-haus/
+    + https://www.august.style/flowering-symmetric-asymmetry/
+    + https://www.august.style/psychedelic-impressi/
+
+### New Main Media Component
+
+There are some posts that have a collection of images that need prominent placement, but aren't a good fit for the more artsy "bleed images" section, and that already don't look great in a slideshow. When we created the component for GIFs, we ensured that they were nicely spaced and on the larger side. This is what we'll want to do for the images on these kind of projects. Additionally, in part because mosts of the current mobile images are in a slideshow, we should also use this component for mobile images. This component will replace the GIF and the MOBILE_IMG components; see below for more details. 
+
+#### Component Details
+
+**Media included and component naming**
+
+  - Current class is `.entry-gifs` with `<-- Optional: GIFs -->` in the code
+  - Just to recap, on the JSON we have 'THUMB', 'IMG', 'MOBILE_IMG', 'GIF', 'GRID' and 'SLIDESHOW' image types 
+  - We should add a new image type to the JSON called 'MAIN_IMG'
+  - Then this class can be called `.entry-main-media` with `<-- Optional: Main Media -->` in the code
+
+**When to use a MAIN MEDIA component** 
+
+  - The "main media" component is still optional
+  - This section component will be necessary any time the 'MOBILE_IMG', 'GIF', and/or 'MAIN_IMG' value arrays contain URLs
+  - It will almost never be used with a "flow storytelling layout" but we shouldn't make that a hard rule 
+  - For either layout, this component should always directly follow the layout section 
+  - Grid components would always follow this main media component 
+
+**Updating pages that have a GIF and/or MOBILE_IMG component**
+
+  - In all cases any GIF specific or MOBILE_IMG specific components should now just use a MAIN_MEDIA component
+  - There might be a desire to keep media types separate, so there can be multiple 'MAIN_MEDIA' sections 
+  - But this component should always use the same styling
+  - The only thing that would differentiate these from each other is the ordering of the images (which is already set by the JSON array order)
+  - For example, if a project has both 'GIF' and 'MOBILE_IMG' values in its JSON, we could represent those as two separate 'MAIN_MEDIA' components, or we could combine them into one large 'MAIN_MEDIA' component
+  - The important thing is that we're not duplicating images across components if we don't have to
+  - We can handle this the same way we were handling slideshows and will handle new bleed image rows 
+
+#### JSON Schema & Filenames 
+
+**Below is a JSON schema example**
+
+  - There can be as many main_media sections as we want 
+  - Each main_media can have any number of images or gifs 
+  - A single main_media group can have a mix of types, or just one type 
+  - It's just an arbitrary grouping of the main images 
+  - They should always be placed in the order provided on the JSON file
+
+```json
+{
+  "main_media_1": {
+    "img": [
+      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-1.webp",
+      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-2.webp",
+      "https://cdn.august.style/media/{slug}/main-1-{slug}-gif-3.webp"
+    ],
+    "alt": "Alt text for this main media section",
+  },
+  "main_media_2": {
+    "img": [
+      "https://cdn.august.style/media/{slug}/main-2-{slug}-mobile-1.gif",
+      "https://cdn.august.style/media/{slug}/main-2-{slug}-mobile-2.gif"
+    ],
+    "alt": "Alt text for this main media section",
+  },
+  "main_media_3": {
+    "img": [
+      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-1.webp",
+      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-2.webp",
+      "https://cdn.august.style/media/{slug}/main-3-{slug}-img-3.webp"
+    ],
+    "alt": "Alt text for this main media section",
+  },
+  "main_media_4": {
+    "img": [
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-1.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-2.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-gif-3.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-mobile-4.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-gif-5.webp",
+      "https://cdn.august.style/media/{slug}/main-4-{slug}-img-6.webp"
+    ],
+    "alt": "Alt text for this main media section",
+  }
+}
+``` 
+
+**Main media section filenames**
+
+  - As you can see in the example, they are denoted by starting with "main"
+  - The group number is indicated by the number following "main" 
+  - The placement in the group is denoted by the number at the end of the filename before the .ext 
+  - When updating pages that have MOBILE or GIF media the filenames will need to be updated 
+  - Other than just staying consistent, this is necessary because it informs where to place the media in the group
+  - For "https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp" we can just assume the conversion to main media 
+  - For "https://cdn.august.style/media/{slug}/gif-{slug}-1.gif" we can just assume the conversion to main media 
+  - But, any "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp" will be specifically handled by page below 
+
+#### Layout & Image Specifics 
+
+  - The component should handle any aspect ratio 
+  - Just because media is in a group, doesn't mean they must fit in a row 
+  - Component row can have 1-3 images/gifs 
+  - The height of the images should be consistent across each row 
+  - Images downsized in height for a row can still have varying widths so as not to distort the image 
+  - Assess the size of the images when selecting how many to put in each row 
+  - Space between rows should match the gap between images in a row 
 
 ---
 
@@ -242,212 +615,6 @@ Encourage them to remain blissfully unaware of the wildly generalist collection 
 
 ---
 
-## Entry Page Adjustments 
-
-### Simple Updates 
-
-  1. **Eliminate Slideshows** 
-
-The slideshows do not do any of the content justice. Based on our focus points in storytelling, there are better ways to frame all of these heavily with the media and potentially even more with the copywriting. There aren't too many entries that currently have slideshows. We'll assess if we should keep the component for the possible *one* entry that it worked well on or not, where all of the entries that currently have them are identified below. In either case, we'll indicate how to adjust the JSON for those that need the slideshow eliminated below. 
-
-  2. **Use Lightroom Effect On Most Images**
-
-Expand the use of the lightroom click-to-expand effect. Previously we only had the effect working for the thumbnail images. We need to expand this to work for virtually all media visuals on an `entry.html` page possible. There will be exceptions where this is not applicable, for example with animated GIFs or videos. There will be a couple new section layouts I'm going to introduce below which have large images by default, but as of now I don't see why the couldn't still expand if the user really wanted to, or maybe they happen to have a gigantic 6K monitor or something. 
-
-### Thumbnail Image Slideshow Hero 
-
-We will be implementing one type of hero element for all entries. Hero styles and changes directly below, and details on how to manage entries with media embed heroes below that.
-
-Entry page hero is currently a static image, randomly selected from the thumbnail images. Let's instead use the same slideshow tactic as our content tiles. Then we can completely remove our thumbnails from the right page content column completely and replace them with better media. 
-
-Other than making sure we show thumbnail full height, we will also need the row of images, spaced, that go off page. However, what will really make this change powerful is that we will make the hero image container slideshow full width, letting the images bleed right to the edges of the page on all devices. 
-
-Below find the breakdown of two groups of essential styling information.
-
-  + We'll need the details of the hero that we're changing and the thumbnail media we're removing from that page section. 
-  + We'll also need the details about the content tiles, how the slideshow styling works, what adjustments allow their mobile view to have bleed images, and any other details you notice. 
-
-  1. Details on the current placement of the entry page thumbnail images 
-     - These will be removed for now and replaced with new media defined in a lower second in this document 
-     - `.container .entry-container` — contains our `.entry-hero` and also `.entry-content-media`
-     - The `.entry-content-media` has a left column `.entry-text-column`
-     - The right column has `.entry-thumb-grid` > `.entry-thumb`
-     - There is an `.entry-thumb` for each thumbnail, arrange in the grid 
-
-  2. Simple to identify the hero styling that needs to be updated 
-     - On `entry.html`, the `.entry-hero` is currently using `.entry-hero-image` 
-     - It currently only displays a single JSON `data.thumb` image using `.tile-image` styling
-
-  3. In the related posts section of our entry pages, find the styling using the drill down of their classes: 
-     - `.related-posts-section` > `.related-posts-grid .grid-related` > `.tile .fade-in-item` > `.tile-gallery` > `.tile-image`
-     - There is a `.tile-image` for each of the JSON's `data.thumb` 
-     - Pay special attention to the width REM at different viewport sizes to understand the "peeking" next image coming from off page 
-     - Also will need to identify which div is the one that is actually super wide; hopefully easier than the nothing coming to my mind right now 
-
-  4. You will find similar styling on the content tiles on the section pages:
-     - `.tile-grid .grid-section` > `.tile .fade-in-item` > `.tile-gallery` > `.tile-image`
-     - Again, there is a `.tile-image` for each of the JSON's `data.thumb` 
-     - You should find very similar styling across viewport sizes and for the wide row of images with hide overflow 
-
-  5. Look closely at the media styling because when VW hits < 48 REM the content tiles images bleed to the edge of the device screen: 
-     - `width: 100%;` is replaced by `width: 100vw;`
-     - `max-width: 25rem;` is replaced by `max-width: 100vw;`
-     - Original styles `margin-right: auto;` and `margin-left: auto;` are wiped out 
-     - New styles add are edited to compensate and expand *OVER* the pages padding or margins 
-     - Added styles `margin-left: calc(-1 * var(--space-md));` and `margin-right: calc(+1 * var(--space-md));`
-
-  ```css
-  @media (max-width: 47.9375rem) {
-  .tile {
-      width: 100vw;
-      max-width: 100vw;
-      margin-left: calc(-1 * var(--space-md));
-      margin-right: calc(+1 * var(--space-md));
-    }
-  }
-
-  .tile {
-      ~~width: 100%;~~
-      ~~max-width: 25rem;~~
-      ~~margin: 0 auto var(--space-md);~~
-      display: flex;
-      flex-direction: column;
-  }
-  ```
-
-   5. It appears this is how the images width being only partial so that the UI creates that UX need with next image peeking in is created: 
-      - The only one that is necessarily that helpful to us is the mobile one because it has a single column image like or hero 
-      - So the `.tile-image` is set to `width: 90vw;` allowing the next image to peek in from off page 
-
-  ```css 
-  @media (min-width: 64rem) {
-      .tile-image {
-          width: 21.875rem;
-      }
-  }
-
-  @media (min-width: 48rem) and (max-width: 63.9375rem) {
-      .tile-image {
-          width: 18.75rem;
-      }
-  }
-
-  @media (max-width: 47.9375rem) {
-      .tile-image {
-          width: 90vw;
-      }
-  }
-  ```
-
-### Alternate Layout Options 
-
-The hero update shall remain consistent regardless of the rest of the page, or rather, perhaps which page it is: `entry.html` or `entry-alt.html`. I'm not entirely sure what the cleanest way to implement this dynamic option to give select projects, primarily those being highlighted that are expected will be viewed because of homepage promotion and specific job application submissions. As in, I don't know if an actual section .html for select pages to be routed to will be easier than some kind of JS solution like the way we show or hide sections like the image grid based on if the JSON file has content there or not. I'll explain the layout and then we can discuss and move forward with the best option. 
-
-I am imagining though that we can just add a variable to the select project JSON entries that defines the layout. For example, we could add a value something like the following, where the value could either be "columns" or "alternate".
-
-```json
-{
-  "id": "uid-xxx-###",
-  "layout": "columns | alternate"
-}
-```
-
-Or it might even be simpler to just make it boolean? Where **true** would maintain the current three `data.challenge`, `data.approach`, `data.result` blocks of copy on the left, and an [updated section on the right](#replace-thumbnail-column) that focuses on the tags and, where applicable, embeds. 
-
-```json
-{
-  "id": "uid-xxx-###",
-  "std_layout": true | false 
-}
-```
-
-Then **false** could use the new [alternate layout](#storytelling-media-flow-placement) for a more narrative, storytelling flow that moves down the page, alternating between text and visual media at full width. Finer details in the section for that component below. 
-
-If the 'std_layout' boolean routes to a different .html or just a dynamic layout within the entry.html, we should discuss. 
-
-#### Replace Thumbnail Column 
-
-**Tag & Media Embed Right Column**
-
-Right now the two columns are both 50% of the width of the page. We can make the left column larger for the text, and then might the right one more narrow to around 60% / 40%. 
-
-Then remove the `.entry-tags-layout` > `.entry-tags-card` from the very top of the page. Render it as a narrow column instead of row, and place is in the 40% right column at the top of the column in the tag groupings like now, but with wrapping. 
-
-Then, for any entry pages that had a Behance or Youtube embed as the hero, place that below the tag section. The responsiveness of these embeds looks really pretty as they get more and more narrow. If the user wants, they can click to expand or click through. 
-
-Last thought is that this container of tags and media embed could be sticky and stay with the viewer as they scroll down, with them moving down along the left column just to the bottom. So it would be subtle — not far, but far enough to be intriguing. 
-
-Note: When adjusting the Youtube embeds, we need to look into if there is a reason that the thumbnail loads INCREDIBLY blurry when the page first loads because it looks very embarrassingly bad. 
-  - SEE IMAGE: `assets/docs/archive/v3/IMG/youtube-blurry-embed.jpg`
-
-If it helps to figure it out, when you refresh or return to the page, the thumbnail looks crisp and proper. 
-  - SEE IMAGE: `assets/docs/archive/v3/IMG/youtube-second-visit.jpg`
-
-#### Storytelling Media Flow Placement
-
-**Replacing the two column layout**
-
-The following components are used to replace the two column layout in specific entries:
-
-  + GENERAL NOTES AND LAYOUT 
-    - Can be static .webp images, .gif animations, or a mix of both
-    - The flow group number at the front of the filename denotes the order down the page, from 1 to X 
-    - Visual media and text alternates down the page through the flow 
-    - There is no specific number of flow groups; the page narrative ends when there are no more groups provided 
-    - The alt tag will be the same for each visual media element in the same flow group 
-    - Think of this as if it were a Buzzfeed Listicle from back in the day
-  + TEXT ROWS 
-    - The flow narrative always starts with text, as this would be placed just below the hero image
-    - This allows for a more dynamic storytelling experience that the slideshows and other projects were lacking
-    - Text in the flow should be around 1-3 sentences long
-    - The text rows in a flow narrative should be much larger than the standard paragraph font selection currently used
-  + IMAGE ROWS
-    - Images are either 16:9 at 1920 px wide, or 1:1 at 1080 px wide
-    - Flows are numbered in order, with 1 being first 
-    - Each flow's images should be full page width and centered
-    - Flows will have varying numbers of images to place in that one, page width, centered row 
-    - Groups of images will be selected thoughtfully, pairing for example three square images, or at most two 16:9 images 
-    - Other projects, like those with text-heavy screenshots of an AI pipeline process, will have just one 16:9 image
-    - Even these single images should be made full width and centered so that the image content is easily legible 
-  + IMAGE FILENAMES
-    - They largely follow the same pattern as other image types 
-    - The filename starts with the flow group number 
-    - If there is only one image in the flow group, there will not be a number at the end before the .ext 
-    - If the flow is a group of photos, they will be numbered at the end of the filename before the .ext
-  + JSON SCHEMA UPDATE 
-    - Below is simply a suggestion for how these components might be handled in the JSON 
-    - The "copy" field, as seen below, is the the text row that sits between images 
-    - The "copy" field, on the last flow row, is optional, as this means the narrative is meant to end with a visual 
-    - No other "copy" field is optional 
-    - Because of the intention of creating this type of layout, it is unlikely that there will be only 3 rows as in the example below
-    - Many of the slideshows that we want to turn into scrollytelling narratives have 10 or more slide images, though these might end up in groups 
-    - I use the term scrollytelling intentionally, because I just learned it, and I like it 
-    - Also because I came across this Claude Code skill plugin today on Twitter and the example videos looked really great: `https://github.com/heygen-com/hyperframes` — please explore that repository and let me know what might be possible; it calls out this command `npx skills add heygen-com/hyperframes` but it failed on my first try; hopefully you know something I don't so we can get it working. 
-
-```json
-{
-  "flow_1": {
-    "copy": "This is the first line of flow storytelling text. This blurb of text has a lot more to say about what is happening with the project and what is being shown in the images before and then after this message. Even with its length, it should still be able to be larger than the standard paragraph style font size. The text and then image flow should be like a full visual, longer scroll, experience. It is possible the first text row in a narrative might be longer than others to set the tone and provide a more complete overview of the project.",
-    "img": "https://cdn.august.style/media/{slug}/flow-1-{slug}.webp",
-    "alt": ""
-  },
-  "flow_2": {
-    "copy": "This is a line of flow text, the second. It is not that long.",
-    "img": [
-      "https://cdn.august.style/media/{slug}/flow-2-{slug}-1.gif",
-      "https://cdn.august.style/media/{slug}/flow-2-{slug}-2.gif"
-    ],
-    "alt": ""
-  },
-  "flow_3": {
-    "copy": null,
-    "img": "https://cdn.august.style/media/{slug}/flow-3-{slug}.webp",
-    "alt": ""
-  }
-}
-``` 
----
-
 #### Storytelling Layout Images 
 
 All of these are AI pipeline focus first, but most could be combined with the visual content posts. There are a lot of more non-visual posts that fit in the AI pipeline section, too, that will need to be make more storytelling somehow as well. 
@@ -474,72 +641,6 @@ These are website tours and it just makes way more sense than slideshows. Plain 
 
 Still figuring out specifics for this one. It could be a third layout type, or just a section below the 3 part copy. To decide I want to evaluate the copy of our digital art print graphic design pages in their current state. It is possible we might even want to consolidate a handful of those posts into just one that still has the art history focus, but then also provides space to speak more to the automated process of mass production and then human-in-the-loop selection of the final curated selection, and ultimately what went for sale online. I am also contemplating if this might just be an alternate to the storytelling media flow placement.  
 
-### Bleed Art Print Layout
-
-Entry Page Bleed Image Components**
-
-  1. How are we handling and laying out GIFs? -> https://www.august.style/advanced-animation-system/
-  2. What do we do when we have just normal images to show off, not artsy bleed images? Are they like GIF layout? 
-  3. Grid image components are fine except they, like all other images, need light boxes
-  4. If images don't get light boxes, perhaps it is either just because they have URL click through and/or a default turned off.  
-  5. We need to understand in what order all of these types of images are presented regardless of what a JSON has or doesn't have 
-  6. Some of the posts really need a better story telling layout, instead of the 3 chunks of text, it is more like text, image, text, image, etc. What should we do to accommodate this? -> https://www.august.style/agentic-fashion-designer/
-
-For prints and some other images where a grid is too cropped in and the slideshows are too compact or small and non-visual, I want to be able to share images that are of any aspect ratio, laid out on the page just below the last bit of "Result" copy, with decent spacing around the images. This placement is intended to be used when we want images to be shown LARGE. 
-
-I was going to say we could just place images as if they were GIFs, but I'd really like it if we were able to push the visual appeal of these images even further. We'd try to do this by making sure on desktop there are two per row, and mobile or tablet one per row, but importantly these images should BLEED. The right of the right image should meet the actual edge of the right page with no margin or padding, and then the same for the left image's left side. 
-
-Let's call them BLEED in the filename which I'll define below. And this can mean we only ever provide even number of BLEED images. And the the last aspect that sets them apart from the GIF layout, let's apply the lightbox click-to-expand for these images as well. 
-
-All together that will help make sure that if there are BLEED images to include that they get a SUPER visual, engaging presentation that let's them enjoy the piece as much as they want. 
-
-I'm thinking that we'll be adjusting the homepage for an optional BLEED component as well so that I can make sure that my homepage design is also as great as it can be.
-
-```json
-  "bleed_art": [
-    "https://cdn.august.style/media/{slug}/bleed-{slug}-1.png",
-    "https://cdn.august.style/media/{slug}/bleed-{slug}-2.png"
-  ],
-  "bleed_alt": "",
-```
-
----
-
-Homepage Bleed Image Component** 
-
-For showing off the print and graphic design posts. Should bleed, obviously, and be sort of like a tight grid of images that covers the width of the page, with maybe 2 or 3 images per row and perhaps 4 or 5 rows deep max. Since these images are large already, instead of lighthouse to expand them, we would want each one to click-through to the respective project entry. 
-
-#### Art Bleed Images 
-
-These all could really have more of a focus on the AI pipeline that created them. The "Bleed Images" are a new component section that will be introduced below. 
-
-  - assets/entries/uid-bsj-738.json -> `https://www.august.style/baroque-de-heem-still-life/`
-  - assets/entries/uid-hxp-812.json -> `https://www.august.style/bau-noir-haus/`
-  - assets/entries/uid-kts-582.json -> `https://www.august.style/bohemian-abstractions/`
-  - assets/entries/uid-xuk-296.json -> `https://www.august.style/art-nouveau-brand-design/`
-
-  **Art History**
-  - Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
-  - The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
-
-    + https://www.august.style/surreal-constructivism-perception/
-    + https://www.august.style/pie-claesz-modern-vibes/
-    + https://www.august.style/baroque-de-heem-still-life/
-    + https://www.august.style/flat-bauhaus/
-    + https://www.august.style/pie-claesz/
-    + https://www.august.style/bau-noir-haus/
-    + https://www.august.style/neo-expresi-cyber/
-    + https://www.august.style/minimalism-bauhaus/
-    + https://www.august.style/humanistic-exploration/
-    + https://www.august.style/constructi-landscapes/
-    + https://www.august.style/all-that-glitters/
-    + https://www.august.style/surreal-constructivism/
-    + https://www.august.style/gradient-bauhaus/
-    + https://www.august.style/art-nouveau-brand-des ign/
-    + https://www.august.style/constructivist-profiles/
-    + https://www.august.style/constructi-haus/
-    + https://www.august.style/flowering-symmetric-asymmetry/
-    + https://www.august.style/psychedelic-impressi/
 
 
 ===
