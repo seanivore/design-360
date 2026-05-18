@@ -72,7 +72,14 @@
   "final_btn_cta": "See All Campaigns",
   "skill_summary": "",
   "process": null,
-  "metric": { "value": "100M+", "kpi": "Video Views", "context": "Organic reach across viral comedy campaigns at PETA" },
-  "achievement": { "headline": "DoGooder Award — #1 Funny for Good", "details": "Won the DoGooder Award for the Tofucken viral comedy video and was a Shorty Awards finalist for Behind the Leather, demonstrating that advocacy messaging thrives when designed for organic sharing." },
+  "metric": {
+    "value": "100M+",
+    "kpi": "Video Views",
+    "context": "Organic reach across viral comedy campaigns at PETA"
+  },
+  "achievement": {
+    "headline": "DoGooder Award — #1 Funny for Good",
+    "details": "Won the DoGooder Award for the Tofucken viral comedy video and was a Shorty Awards finalist for Behind the Leather, demonstrating that advocacy messaging thrives when designed for organic sharing."
+  },
   "notes": []
 }

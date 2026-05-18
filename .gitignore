@@ -55,6 +55,10 @@ rusty-tags.vi
 
 # Logistical Files 
 .archive/
+.ideas/
+.resources/
+.cheatsheet.txt
+.cheatsheet.md
 
 # Design Spec Images 
 .agent/apple-ui-design/**.jpeg
