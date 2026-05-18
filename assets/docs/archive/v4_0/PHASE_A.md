@@ -1,90 +1,10 @@
-# Skill Focus Update
+# Phase A: Foundation (Pre-AI)
 
-**Created**: 2026-04-29 15:40
-**Last Updated**: N/A
-**Version**: 4.0
-**Status**: Planning
-
-## Purpose
-
-This document outlines the details necessary to facilitate the [v4.0.0](/assets/docs/archive/v4_0/UPDATE_v4_0_0.md) update plan's main skill focus sections. 
-
-### Overview 
-
-The v4.0.0 update introduces new visual story telling layout and updated components, but the primary change is a shift to focusing on one primary area of experience: **Building Custom AI Pipelines**
-
-  - **Our Opportunity**: Companies are looking to build modern processes and open up their systems in order to increase speed and productivity. 
-
-  - **We're Answering**: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
-
-We'll focus on three main areas of my background, initially laying the groundwork by showcasing achievements before the age of AI. Then, we'll pivot to illustrating different ways that I've implemented AI to enhance creative production, organize workflows, and remove friction from marketing and other digital business processes. 
-
-### Skills 
-
-  1. Website Design & Development 
-  2. Graphic Design & Motion Design 
-  3. Social Media Design & Strategy 
-
-### Timeline Structure 
-
-The more I pull together project entries for this, the more overlap I'm encountering. Instead of breaking up sections in to these three separately, I think it might be more interesting to create a "Timeline" down the homepage. 
-
-  1. **FOUNDATION**: This would showcase achievements from the pre-AI days in all of these three areas, along with a lot of the earlier graphic design and illustration. 
-  
-  2. **GENERATIVE AUTOMATIONS**: Then there is a middle phase where I was using generative AI content production and creating 3rd party tool automations for managing Webflow sites, Online Storefronts, and Social Media content posting and engagement. 
-  
-  3. **CUSTOM AI SOLUTIONS**: Then we can cap things off with the most modern work, using agentic tools for custom digital product development, and then eventually including built in automations into those websites and applications. 
-
----
-
-## Timeline Outline Top Entries 
-
-### PHASE A: Foundation
-
-**Pre-AI work**
-
-  1. Social Design & Strategy  
-  2. Client Website Design 
-  3. Graphic Design, Motion Design, & Illustration  
-
-### PHASE B: Generative Automations
-
-**Initial AI art pipeline and content production automation using generative design**
-
-  1. Art Education Curation 
-     + `assets/drafts/uid-chp-854.json` 
-       - https://www.august.style/embeddings-art-curation/
-       - https://developer-technologist.august.style/embeddings-art-curation
-
-  2. Personality-Based Fashion Design 
-     + `assets/entries/uid-svz-258.json` 
-       - https://www.august.style/agentic-fashion-designer/
-       - https://print-shop-fashion.august.style/fashion/lookbook/summer-2024-cover
-       - https://www.august.style/personalized-fashion-magazine
-       - https://www.august.style/ai-design-fashion-lookbook
-
-  3. Content Production Video Shorts
-     + `assets/entries/uid-sxz-424.json`
-       - https://www.august.style/api-automate-video-production/
-       - https://developer-technologist.august.style/api-automate-video-production
-
-### PHASE C: Custom AI Solutions
-
-**Fully integrated AI work** 
-
----
-
-| Project | 
-
----
-
-## Project Entry Updates 
-
-### PHASE A: 1. **PETA Marketing & Social Media Achievements**
+## 1. **PETA Marketing & Social Media Achievements**
 
 This should be an all in one post that we can tell through the "Flow Storytelling Narrative" layout by going chronologically over time and calling out all the big numbers and earned media press hits. 
 
-#### Written Content 
+### Written Content 
 
 Information to be pulled from these links to the old portfolio entries. 
 
@@ -108,7 +28,7 @@ Information to be pulled from these links to the old portfolio entries.
   - AgencySpy SeaWorld Campaign Coverage 
   - PR News calls out PETA for highest Instagram engagement that quarter
 
-#### Cleanup Entries 
+### Cleanup Entries 
 
 We can scrap these and create just one new entry. 
 
@@ -121,7 +41,7 @@ We can scrap these and create just one new entry.
 + august.style/ux-ui-ios-marketing **DRAFT**
   `assets/drafts/uid-ssz-402.json`
 
-#### Images 
+### Images 
 
 [PULL]
 
@@ -133,9 +53,13 @@ This is marked as a PETA project and it was not. These were ads ran for the art 
   - `https://developer-technologist.august.style/social-advertising-strategy`
   - `assets/entries/uid-sez-023.json`
 
-### PHASE A: 2. Website Design 
+---
 
-### PHASE A: **3. Graphic Design, Motion Design, & Illustration**
+## 2. **Self-Employed Website & Digital Consultancy**
+
+---
+
+## 3. **Graphic Design, Motion Design, & Illustration**
 
   1. Production & Branding 
      + `assets/entries/uid-wty-542.json`

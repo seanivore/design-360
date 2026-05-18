@@ -1,50 +1,91 @@
-# Content Strategy Update 
+# Strategic Design & Content Update 
 
-**Created**: 2026-04-27 17:12
-**Updated**: 2026-04-29 03:03
+**Created**: 2026-04-27
+**Updated**: 2026-05-18
 **Version**: v3.1.0 -> v4.0.0
-**Features**: Focused skill targeting; media and component layout upgrades 
-**Status**: Drafting 
-
-## Overview
-
-I started writing the v4.0.0 update the other day. Then decided I should "jump start" things by just focusing on the entries that I want to highlight specifically for the three main focuses of the homepage I'm preparing to propose everything is framed around, turning a 50+ project UX into a 3-perfect-projects for each of 3 skill focuses. 
-
-I went through all of the entries. Collected different groupings. Made sure all of the entries that needed new images but weren't too relevant or too strong were moved to the new `/docs/drafts/...` directory and no longer published. 
-
-Then the more I contemplated how to present these thee focuses and very selective projects that each need to be polished and work together for the narrative, I ended up realizing that all of the updates I wanted for v4.0.0 are the tools to make this happen. And so now I present to you the proposal for a really strong refocusing that should help making the overall story of my skills more compelling by being better focused and digestible, without the sprinkling of mediocre projects in between everything, staring with the lead-in I wrote all those days ago. 
-
----
+**Features**: Media and component layout upgrades; refocusing showcased entries
+**Status**: Planning 
 
 ## Summary 
 
-This is an update that will create three skill-based focus areas on the homepage that are each backed by top 1% project entries optimized for a consistent skill set narrative. 
+This update will create a specific focus on chronological skill-development highlighting three phases of my growth as a designer, marketer, and now developer. We will curate and polish only may best work to tell a cohesive story of my professional evolution that is easy to digest in one sitting. 
 
-### Objective 
+### Overview 
 
-Create updated homepage components designed to better highlight the story of carefully selected skill sets beside innovative new directions for my current digital services and products. Homepage focuses will be backed up by directing viewers toward deep examples of these in-demand skills. This will require a combination of some projects into new entries and introduce variable project entry layouts that will enable a more visual and narrative style of storytelling. 
+The v4.0.0 update introduces new visual story telling layout and updated components, but the primary change is a shift to focusing on one primary area of experience: **Building Custom AI Pipelines**
 
-### Strategy 
+  - **Our Opportunity**: Companies are looking to build modern processes and open up their systems in order to increase speed and productivity. 
 
-Isolate three in-demand workplace skills in the homepage components. Illustrate them with a few, highly selective projects with a clear, focused objective. Included projects are top 1% in quality. They should perfectly continue to tell the story that the homepage skill groupings focus on to encapsulate visitors. 
+  - **We're Answering**: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
 
-Exploring project media naturally moves viewers into those premium work examples, with the narrative continuing on down the page where they're met with the other projects that expressly define the same skill or trade from that homepage section.
+We'll focus on three main areas of my background, initially laying the groundwork by showcasing achievements before the age of AI. Then, we'll pivot to illustrating different ways that I've implemented AI to enhance creative production, organize workflows, and remove friction from marketing and other digital business processes. 
 
-The experience around these newly updated project and three focus areas will intentionally keep visitors relatively gated within those topics. We don't need recruiters, hiring managers, or potential clients coming to the site and getting overly distracted by the huge 50+ entry collection of wildly generalist projects. They should maintain focused attention on the specific type of work they clicked to see examples of. 
+### Non-AI Skill Focus
 
-### Homepage Focuses 
+  1. Website Design & Development 
+  2. Graphic Design & Motion Design 
+  3. Social Media Design & Strategy 
 
-With a "custom AI pipeline solution" as an overarching theme, the homepage will be focused on three main areas of focus: 
+### Timeline Structure 
 
-  1. Website design/development
-  2. Graphic/motion design
-  3. Social design/strategy
+  1. **FOUNDATION**: This would showcase achievements from the pre-AI days in all of these three areas, along with a lot of the earlier graphic design and illustration. 
+  
+  2. **GENERATIVE AUTOMATIONS**: Then there is a middle phase where I was using generative AI content production and creating 3rd party tool automations for managing Webflow sites, Online Storefronts, and Social Media content posting and engagement. 
+  
+  3. **CUSTOM AI SOLUTIONS**: Then we can cap things off with the most modern work, using agentic tools for custom digital product development, and then eventually including built in automations into those websites and applications. 
 
-### New Copy Bites 
+---
+
+## Content
+
+### [Phase A: Foundation (Pre-AI)](/assets/docs/archive/v4_0/PHASE_A.md)
+
+  1. PETA Marketing & Social Media Achievements
+     - Viral Strategy
+     - Leadership & Team Development
+     - Marketing Innovations
+     - SEO & Optimization
+     - Paid Social
+
+  2. Self-Employed Web Design & Digital Consultancy Achievements 
+     - UX/UI & Web Design
+     - Digital Production
+     - SEO & Copywriting
+     - Direct Marketing
+
+  3. Art Director for Web3 Privacy Protocol
+     - Visual Storytelling
+     - Video & Motion Design
+     - Branding & Design Systems
+     - Social Media Design
+
+### [Phase B: Generative Automations (Early AI)](/assets/docs/archive/v4_0/PHASE_B.md)
+
+  1. Art Education Curation (Generative AI)
+  2. Personality-Based Fashion Design (Generative AI)
+  3. Content Production Video Shorts (Generative AI)
+  4. Content Strategy Framework (3rd Party Tool Automation)
+  5. Viral Campaign Strategy (3rd Party Tool Automation)
+  6. Social Media Design & Strategy (3rd Party Tool Automation)
+
+### [Phase C: Custom AI Solutions (Modern AI)](/assets/docs/archive/v4_0/PHASE_C.md)
 
   - Building modern systems and processes by opening up systems to increase speed and productivity. 
-
   - Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
+
+  - Everlastings Web Store featured a custom AI assistant; Client's Art Web Store, AI Pipeline Managing Updates
+    - Built using a Custom GPT tool, the AI walks the client through everything, removing all friction from maintaining a webstore. The client still has a robust and well design 'Admin' page, but most clients today want to delegate most of the work to AI anyway. 
+  - Fractional consulting.
+    - Selling outcomes not hours, with work rooted in judgement and execution, not necessarily physical presence; all delivered though combination of async collaboration and targeted communication. Rather than running operations internally, I step in to build systems, guide strategy, or help founders navigate periods of growth and transition. This is particularly common now for smaller companies that want senior expertise without the cost or commitment of a full-time hire.
+    - Must show credibility; clear track record. Requires credibility; clear track record. [How Part-Time Senior Leaders Can Help Your Business](https://hbr.org/2024/07/how-part-time-senior-leaders-can-help-your-business)
+  - AI-Assisted Services in Automation, Prompting, Systems. 
+  - As companies implement AI in practical, outcome-driven ways. Not necessarily more tools but how to use them. I work to close the gap between access and application, ensuring that teams use new tools effectively in real business contexts.
+  - This involves creating workflows that reduce manual effort and improve speed, for example, building automations, designing content systems, connecting tools like Zapier and Notion, building custom solutions that replace Zapier and Notion.
+  - The tools are out there. The real value comes from knowing how, and where, to apply them. This requires learning quickly and thinking in systems rather than outputs.
++ How to best use AI.
+  - Primary, heaviest AI use is for metacognitive habits that facilitate constant learning. Don't ask for something outright, but rather, stay in the driver's seat.
+  - Say "What's another way of looking at this?"
+  - Or for example, "I've created a marketing plan that needs refining. It needs to reach mid-career professionals between 28-45 years old. I could use help ensuring that I'm not missing anything stemming from unconscious bias around the topic. I'm not necessarily looking for specific suggestions, but rather, help thinking through various options for improving the plan." "
 
 ---
 
