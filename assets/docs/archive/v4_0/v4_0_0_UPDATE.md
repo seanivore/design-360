@@ -54,33 +54,10 @@ We'll focus on three main areas of my background, initially laying the groundwor
 ### Phase A: Foundation (Pre-AI)
 
   1. PETA Marketing & Social Media Achievements
-     - Viral Strategy
-     - Leadership & Team Development
-     - Marketing Innovations
-     - SEO & Optimization
-     - Paid Social
-
   2. Self-Employed Web Design & Digital Consultancy Highlights 
-     - UX/UI & Web Design
-     - Digital Production
-     - SEO & Copywriting
-     - Direct Marketing
-
   3. Art Director for Web3 Privacy Protocol Branding
-     - Visual Storytelling
-     - Video & Motion Design
-     - Branding & Design Systems
-     - Social Media Design
 
 ### Phase B: Generative Automations (Early AI)
-
-  1. Art Education Curation (Generative AI)
-  2. Personality-Based Fashion Design (Generative AI)
-  3. Content Production Video Shorts (Generative AI)
-  4. Content Strategy Framework (3rd Party Tool Automation)
-  5. Viral Campaign Strategy (3rd Party Tool Automation)
-  6. Social Media Design & Strategy (3rd Party Tool Automation)
-
 ### Phase C: Custom AI Solutions (Modern AI)
 
   - Building modern systems and processes by opening up systems to increase speed and productivity. 
@@ -190,9 +167,17 @@ Pages that currently have slideshows will be changing to another method of displ
 
 After introducing th rest of the `entry.html` component or layout changes below, each page will be assess and include details on how it should be altered to replace the slideshow. 
 
-  1. **Lightbox Images Everywhere**
+  2. **Eliminate separation of any GIF or MOBILE sections, or MOBILE slide show**
+
+All the remaining, updated, or upcoming in this document components describe how the UI should manage any media. Mostly I don't want to end up with the random 2 mobile images after the URLs on an entry page before the related entries. Its awkward looking and in retrospect I suppose it is sort of very, idk 2015 to separate media types into their own components. The only exception will be the bleed image component, which will be introduced below and requires a specific aspect ratio image. And possibly the GRID if we keep it because that currently is supposed to be only 1:1 aspect ratio images, so similar annoyance. 
+
+  3. **Lightbox Images Everywhere**
 
 Expand the use of the Lightbox click-to-expand effect. It would be helpful in the grid images, and then the other component layouts, even when the image is already on the larger size, seem like there's no reason why we shouldn't stay consistent and give them the same lightbox effect as well. It might be useful for viewers with giant monitors. 
+
+  4. **Media Reshuffle** 
+
+Where needed, some entries might need to have previously labeled and placed images put into new components. I'll address those pages at the end. 
 
 ### Thumbnail Slideshow Hero
 
@@ -367,10 +352,11 @@ In short, the idea is that this would be more like a "Buzzfeed Listicle" page, i
 ```json
 {
   "flow_1": {
-    "copy": "This is the first line of flow storytelling text. This blurb of text has a lot more to say about what is happening with the project and what is being shown in the images before and then after this message. Even with its length, it should still be able to be larger than the standard paragraph style font size. The text and then image flow should be like a full visual, longer scroll, experience. It is possible the first text row in a narrative might be longer than others to set the tone and provide a more complete overview of the project.",
+    "copy": "Social Strategy & Production",
+    "copy_format": "h3",
     "img": [
-      "https://cdn.august.style/media/{slug}/flow-1-{slug}-1.webp"
-    ]
+      null
+    ],
     "alt": ""
   },
   "flow_2": {
@@ -390,6 +376,54 @@ In short, the idea is that this would be more like a "Buzzfeed Listicle" page, i
   }
 }
 ``` 
+
+  - I'm not sure how exactly to put this to show the flow in the schema, or if there is notation to be able to write it into the "copy" values, but as I'm writing the flows there are HEADINGS of different sizes, lists, and sub-lists. Obviously there is some room for adjusting formatting but we do want to keep these as "listicle" visual-digestible as possible. 
+  - Actually, the more I try to fit the example I'm working on in `assets/docs/archive/v4_0/PHASE_CONTENT.md` into the schema above the more questions I have so maybe I'll have to have your help making final decisions. Specifically, if possible it would be cool if the "flow" object could just show up on the page in the order it is provided going down the file, for whatever media type it is. 
+  - For example, something like this from Line 134 to 149 on that document might work something like this? I wasn't sure on if the "flow_1" would actually need the array inside the curly brackets; I guess if there was need to have a break in the flow but come back to it. Which maybe that would be another option for the headings or for the lists. Just trying to think of a way to do this without having a million "value" names to need but I guess I'm not even sure if it just being in chronological order would work. Plus I guess I'm seeing that `data.flow_1.copy.format` has more than one value because of the way it is repeated, so I guess I'm seeing now that that won't work. (One more note below the schema code block).
+
+```json
+{
+  "flow_1": {[
+    "copy": {
+      "text": "Social Strategy & Production",
+      "format": "h3"
+    },
+    "copy": {
+      "text": "My career started in social media. Initially we had a two person team: My mentor and myself. Helena taught me copywriting excellence and I brought the visual storytelling to our efforts. We were a great team, pioneering a number of strategies that eventually became industry standards.",
+      "format": "paragraph"
+    },
+    "copy": {
+      "text": "Creating Our First Viral Moments",
+      "format": "h4",
+      "style": "bold"
+    },
+    "copy": {
+      "text": "At the time, we were the first brand adding our messaging as text on images to create a narrative. We birthed some the original memes like EXPECTATION VS REALITY primarily because we were graphic designing on the fly.",
+      "format": "paragraph"
+    },
+    "img": [
+      "assets/.media/awards-viral-social/flow-02-awards-viral-social-1.webp"
+    ],
+    "alt": "YahooNews Article, UGGs and Their 'UGGly' Reputation",
+    "copy": {
+      "text": "Viral UGGs Image Published in YahooNews",
+      "format": "h5"
+    },
+    "copy": {
+      "list": [
+          "- Our first major public success was also when I learned what 'earned media' meant",
+          "- Together we put together posts thinking visual-first, with intentionally 'Sharable' taglines and a punchy one-sentence caption",
+          "- The resulting message resonated so widely that it was picked up and featured in an entire YahooNews article about our campaign.",
+          "- Polished and culturally relevant, this was just the first of many outlets piggybacking on our reach over the years."
+      ],
+      "format": "bluepoints"
+    },
+  ]
+  }
+}
+```
+  - So I think that probably means the labeling of values will need to get way more complex, to the point where I think the best flow for these flow setups might be if I just lay it out on the markdown the way it should be on the HTML and you could help place it into the schema in a way that will actually work. I'm guessing there will just need to be a lot of "flow_n" sections. Unless you introduce ability to have multiple number "copy" values and associated numbered format or style values. Which, still would be way complicated for me; taking me hours where probably will take you minutes. 
+  - My main question now is just how to handle the image filenames. I think I'm just going to not number the flow and keep the end count number running across the entire page. Then they'll still have different filenames and you'll be able to place them and ensure they have proper data. values. 
 
 ### New Bleed Images Component 
 
@@ -677,32 +711,36 @@ This is marked as a PETA project and it was not. These were ads ran for the art 
   - Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
   - The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
 
-| Group                      | Page                              |
-| -------------------------- | --------------------------------- |
-| **Geometric Abstractions** | -                                 |
-|                            | constructivist-profiles           |
-|                            | constructi-landscapes             |
-|                            | surreal-constructivism-perception |
-|                            | humanistic-exploration            |
-|                            | surreal-constructivism            |
-| **Bauhaus Variations**     | -                                 |
-|                            | gradient-bauhaus                  |
-|                            | constructi-haus                   |
-|                            | bau-noir-haus                     |
-|                            | bohemian-abstractions             |
-|                            | flat-bauhaus                      |
-|                            | minimalism-bauhaus                |
-| **Art Nouveau**            | -                                 |
-|                            | flowering-symmetric-asymmetry     |
-|                            | art-nouveau-brand-design          |
-| **Imp. Psych.**            | -                                 |
-|                            | psychedelic-impressi              |
-|                            | neo-expresi-cyber                 |
-|                            | surreal-heads                     |
-| **Baroque**                | -                                 |
-|                            | pie-claesz-modern-vibes           |
-|                            | pie-claesz                        |
-|                            | baroque-de-heem-still-life        |
+  1. Geometric Abstractions 
+     - https://www.august.style/constructivist-profiles/
+     - https://www.august.style/constructi-landscapes/
+     - https://www.august.style/surreal-constructivism-perception/
+     - https://www.august.style/humanistic-exploration/
+     - https://www.august.style/surreal-constructivism/
+
+  2. Bauhaus Variations 
+    - https://www.august.style/gradient-bauhaus/
+    - https://www.august.style/constructi-haus/
+    - https://www.august.style/bau-noir-haus/
+    - https://www.august.style/bohemian-abstractions/
+    - https://www.august.style/flat-bauhaus/
+    - https://www.august.style/minimalism-bauhaus/
+
+  3. Art Nouveau
+     - https://www.august.style/art-nouveau-brand-design/
+     - https://www.august.style/flowering-symmetric-asymmetry/
+
+  4. Impressionist Psychedelic 
+     - https://www.august.style/psychedelic-impressi/
+     - https://www.august.style/neo-expresi-cyber/
+     - https://www.august.style/surreal-heads/
+
+  5. Baroque 
+     - https://www.august.style/pie-claesz-modern-vibes/
+     - https://www.august.style/pie-claesz/
+     - https://www.august.style/baroque-de-heem-still-life/
+
+
 
 ### **3. Social Design/Strategy**
 

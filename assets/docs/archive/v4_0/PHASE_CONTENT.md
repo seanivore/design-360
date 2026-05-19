@@ -64,26 +64,10 @@ https://www.august.style/minimalist-web-store-product/
 https://www.august.style/modular-portfolio-build/
 https://www.august.style/amorphous-gradient-css-animation/
 
-https://www.august.style/art-nouveau-brand-design/
-https://www.august.style/baroque-de-heem-still-life/
-https://www.august.style/pie-claesz/
-https://www.august.style/surreal-heads/
-https://www.august.style/neo-expresi-cyber/
-https://www.august.style/constructivist-profiles/
-https://www.august.style/gradient-bauhaus/
-https://www.august.style/pie-claesz-modern-vibes/
-https://www.august.style/minimalism-bauhaus/
-https://www.august.style/flowering-symmetric-asymmetry/
-https://www.august.style/constructi-landscapes/
-https://www.august.style/constructi-haus/
+
 https://www.august.style/agentic-social-manager/
-https://www.august.style/flat-bauhaus/
-https://www.august.style/surreal-constructivism-perception/
-https://www.august.style/surreal-constructivism/
-https://www.august.style/humanistic-exploration/
-https://www.august.style/bau-noir-haus/
-https://www.august.style/psychedelic-impressi/
-https://www.august.style/bohemian-abstractions/
+
+
 
 https://www.august.style/social-advertising-strategy/
 
@@ -143,8 +127,9 @@ Please understand the HyperFrame Skills before processing through this document.
 ## **ENTRY TITLE**: PETA Marketing & Social Media Achievements
 
   - PHASE: A
-  - SLUG: marketing-awards-viral-social
+  - SLUG: awards-viral-social
   - LAYOUT: Flow
+  - PLACEMENT: The images, headings, and lists are all places as should reflect their flow placement; this should be evident when reading through, as it continues straight down the page.
 
 ### Social Strategy & Production
 
@@ -154,15 +139,18 @@ My career started in social media. Initially we had a two person team: My mentor
 
 At the time, we were the first brand adding our messaging as text on images to create a narrative. We birthed some the original memes like EXPECTATION VS REALITY primarily because we were graphic designing on the fly. 
 
-https://developer-technologist.august.style/realtime-social-system
+IMAGE: `assets/.media/awards-viral-social/flow-02-awards-viral-social-1.webp`
 
-  + Viral UGGs Image Published in YahooNews
-    - Our first major public success was also when I learned what "earned media" meant
-    - Together we put together posts thinking visual-first, with intentionally "Sharable" taglines and a punchy one-sentence caption
-    - The resulting message resonated so widely that it was picked up and featured in an entire YahooNews article about our campaign.
-    - Polished and culturally relevant, this was just the first of many outlets piggybacking on our reach over the years. 
+##### Viral UGGs Image Published in YahooNews
+
+  - Our first major public success was also when I learned what "earned media" meant
+  - Together we put together posts thinking visual-first, with intentionally "Sharable" taglines and a punchy one-sentence caption
+  - The resulting message resonated so widely that it was picked up and featured in an entire YahooNews article about our campaign.
+  - Polished and culturally relevant, this was just the first of many outlets piggybacking on our reach over the years. 
 
 At this point we had taken down the GLOBAL organization's robust website from sending too much traffic more than once; Facebook and even BuzzFeed were reaching out to chat about our "Sharability" strategy. 
+
+IMAGE: `assets/.media/awards-viral-social/flow-01-awards-viral-social-2.webp`
 
   + Witty Superbowl Tweet Goes Viral 
     - My mentor Helena Soh, brought live event coverage experience, so we live-tweeted the Superbowl 
@@ -180,6 +168,10 @@ Our next move was to flex this newly established audience-base. For the first ti
 
 https://developer-technologist.august.style/content-strategy-framework
 
+IMAGES: 
+  - `assets/.media/awards-viral-social/flow-02-awards-viral-social-1.webp`
+  - `assets/.media/awards-viral-social/flow-02-awards-viral-social-2.webp`
+
   + Hijacking the #AskSeaWorld Online Campaign
     - SeaWorld, a target of the organization, can't have realized how quickly our online community had grown when they launched their #AskSeaWorld campaign on Twitter. 
     - We took the hashtag and filled it with images and emotional messaging that our, already inspired audience, was even more inspired to share. 
@@ -189,6 +181,8 @@ https://developer-technologist.august.style/content-strategy-framework
     - AgencySpy chimed in too, with "PETA Pokes Fun at Ongoing SeaWorld PR Campaign"
 
 The tactical use of our online audience then started to find industry recognition and record-breaking engagement rates. 
+
+IMAGE: 
 
   + PR News & PR News Pro Highlight Video Campaign
     - Publishing our viral Animal Testing rescue video with "PETA, Animal Rights Groups Lead Nonprofits on Facebook During Q3 as Video Engagement Soars" 
