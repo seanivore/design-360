@@ -11,17 +11,88 @@ This should be an all in one post that we can tell through the "Flow Storytellin
 
 #### Social Media Strategy & Content Production
 
-Started building social platforms and subsequently teams. 
+I started out in Social Media, focusing specifically on what was new media at the time, with just one coworker: my mentor. She taught me copywriting excellence and I shared how to visually story tell. Because this was a time before many other brands were designing images for posts on the fly, we garnered a decent amount of earned media. 
 
-+ [Social Media Press Coverage](https://developer-technologist.august.style/realtime-social-system)
-  - 2013-2014 Viral hits covered in various press outlets 
-  - Completely earned media, no pitching or any contact 
-  - Viral UGGs in YahooNews
-  - Viral Posts while Live Tweeting the Superbowl 
-+ [Campaign Industry Coverage](https://developer-technologist.august.style/content-strategy-framework)
-  - Earned media from viral campaigns launched social first and managed by social 
+A couple years later and we again positioned ourselves as the first brand editing videos to post to social media on the fly, even spawning some of the most original memes. 
+
+Seeing the success, investment in our efforts increased 10-fold. We grew the team right along side the social footprint, adding 6 more strategists before eventually creating an entire social media video-specific labs department. 
+
+I then shifted my role toward consulting on strategy and production for marketing departments at the organization's affiliates all around the world. 
+
+  **Pioneering Viral Innovation**
+
+This was before anyone was adding text to images, and we took it a step further by creating original memes and graphic designing on the fly to create some of Facebook's first viral moments. 
+
+  + Viral UGGs Image Published in YahooNews
+    - When we began to pioneer viral social marketing tactics, we build everything visual-first. 
+    - With the perfect tagline added to the image and a punchy caption, we'd see unprecedented engagement for the brand, and YahooNews publishing their surprise, adding our advocacy points to their article. 
+    - From there, the viral messages about topical moments everyone remembers were picked up and covered by media outlets like Yahoo News.
+
+These events didn't just get us special attention from Facebook and the likes of BuzzFeed; they also pioneered several viral marketing techniques that are now industry standard practices. Later, Dropbox came out to meet us so they could learn about the built-to-viral-scale content management system developed with our process. 
+
+  + Tweets Go Viral While Live Tweeting the Superbowl
+    - I brought the visual storytelling and graphic design skills and Helena brought live event coverage experience. 
+    - Together we inserted our messaging into national-scale real-time events, prompting celebrities to kick things off, giving reach to our witty but poignant remarks. 
+    - Super Bowl Live-Tweeting Coverage by Brand Dot Com of Viral Tweet that paired an emotional image of a fox used for fur, in a fur farm cage with the words 'not yours to wear' — the viral factor came from being able to directly call out American football professional, Joe Namath, for wearing a huge fur coat on the field. 
+
+  **Expanding to Video Content**
+
+After taking down our website from traffic more than once, we graduated along side Facebook's addition of video support, by using our same real-time editing skills to create viral videos. 
+
+  + Hashtag Campaign Innovation: #AskSeaWorld
+
+Pioneered a landmark example of strategic hashtag response and real-time content creation that demonstrated the power of coordinated social media activism:
+
+Developed rapid response visual content creation system for maximum impact
+Coordinated multi-channel distribution strategy across platforms
+Leveraged existing email lists for amplified reach and engagement
+Created shareable, emotion-driven content optimized for social platforms
+Refinery 29 Coverage of PETA Campaign that made "SeaWorlds #AskSeaWorld Twitter Campaign Backfire Massively, with image of a Orca biting the glass and text "if you were in a bathtub for 30 years you'd be a little psychotic too" that I created.
+AgencySpy headline clipping about campaign effectiveness, "PETA Pokes Fun at Ongoing SeaWorld PR Campaign"
+
+  + Video Content's Viral Engagement: Britches Animal Testing Story
+
+Led the evolution into video content strategy, achieving industry recognition and record-breaking engagement rates:
+
+Pioneered rapid video content creation ahead of market adoption
+Developed efficient workflows for real-time video editing and deployment
+Implemented multi-platform video optimization techniques
+Created scalable video production system for consistent quality
+PR News posts the emotional rescue investigation video of Britches the tortured baby primate video that I produced.
+
+PR New Pro Comparison of Engagement Rates, has all the metrics included in a longer article with photo of my mentor.
+
+The Britches story powerfully demonstrated the impact of video content in driving engagement.
+
+The Britches story powerfully demonstrated the impact of video content in driving engagement.
+Campaign Results & Recognition
+4.5M
+Consumer Actions
+15%
+YOY Engagement Increase
+61%
+Video Engagement Rate
+
+
+--
+
+Working directly with PETA's leadership, we combined strong visual design with strategic messaging to create breakthrough engagement and earned media coverage for some of the organizations biggest campaign priorities. And this time Helena was interviewed by PRNewsPro for the organizations increase in reach. 
+
+
+Started building social platforms and subsequently teams. 
+Earned media from viral campaigns launched social first and managed by social 
   - AgencySpy SeaWorld Campaign Coverage 
   - PR News calls out PETA for highest Instagram engagement that quarter
+
+
+
+
+
+
+
+
++ [Campaign Industry Coverage](https://developer-technologist.august.style/content-strategy-framework)
+  - 
 
 ---
 
