@@ -596,6 +596,18 @@ As I'm going through the entry pages and grouping them for these changes, I'll t
 
 ---
 
+#### Inaccurate "PETA" Live Post 
+
+This is marked as a PETA project and it was not. These were ads ran for the art history prints being sold on social and in the Webflow store, and then also driving traffic to the lookbooks. This can become a large post about generative graphic design, encompassing a handful of other posts into one, and then linking to one or a few art-only aesthetically focused posts. 
+
++ [Social Advertising Campaign Success](https://www.august.style/social-advertising-strategy/)
+  - `https://developer-technologist.august.style/social-advertising-strategy`
+  - `assets/entries/uid-sez-023.json`
+
+
+
+
+
 ## Project Entry Review 
 
   + Worth of keeping published? 
