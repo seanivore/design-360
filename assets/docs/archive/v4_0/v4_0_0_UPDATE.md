@@ -140,6 +140,7 @@ And a few other resources that seemed interesting if not handy.
   - [Using Transitions](/.agent/HYPERFRAMES_TRANSITIONS.md)
   - [Typography Guide](/.agent/HYPERFRAMES_TYPOGRAPHY.md)
 
+**IMPORTANT**: What kind of Schema value(s) are needed for possible HyperFrames produced visual elements? 
 
 ---
 

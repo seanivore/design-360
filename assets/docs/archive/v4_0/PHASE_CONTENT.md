@@ -1,13 +1,34 @@
 # Phase Content
 
-## A: Foundation (Pre-AI)
+**Created**: 2026-05-18
+**Updated**: 2026-05-19
+**Version**: Compliments v4.0.0 Update
+**Note**: Please first review `assets/docs/archive/v4_0/v4_0_0_UPDATE.md` to address layout and schema changes the entries below will require. 
+**Status**: Drafting & Planning
+
+## Purpose 
+
+The content below is part of the planned v4.0.0 update. It identifies the project entries needed to illustrate the three main PHASES of my professional growth.
+
+### Overview 
+
+You'll note that these entries are primarily, if not completely, newly created. I already moved the old, smaller entries to drafts to accommodate creating these larger, more comprehensive, storytelling entries. 
+
+### Thinking Visually
+
+Please understand the HyperFrame Skills before processing through this document. The range of possibilities for visual enhancement with that Claude Code Plugin is vast. Then as you review and set up these new entries you can be on the lookout for anything in them that could be conveyed visually. Charts for anything we'd chart in a markdown document, graphs that have some animation, or even just ornamental UI that encourages engagement and users to continue scrolling through these longer entries.
+
+---
+
+## Phase A: Foundation (Pre-AI)
 
 ### 1. PETA Marketing & Social Media Achievements
 
 **Slug**: marketing-awards-viral-social
+**Layout**: Flow 
 **Tags**: UX, UI, Strategy, Copywriting, Social Media, Branding, Art Direction, Project Management
 
-This should be an all in one post that we can tell through the "Flow Storytelling Narrative" layout by going chronologically over time and calling out all the big numbers and earned media press hits. 
+PETA is going to be one big post that walks them chronologically through my time there and skill development. 
 
 #### Social Media Strategy & Content Production
 
