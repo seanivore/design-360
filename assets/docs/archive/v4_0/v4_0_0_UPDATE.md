@@ -36,9 +36,22 @@ We'll focus on three main areas of my background, initially laying the groundwor
 
 ---
 
-## Content
+## In-Focus Content
 
-### [Phase A: Foundation (Pre-AI)](/assets/docs/archive/v4_0/PHASE_A.md)
+### Homepage "Sell" 
+
+  + AI Focus
+    - AI-Assisted Services in Automation, Prompting, Systems. 
+    - As companies implement AI in practical, outcome-driven ways. Not necessarily more tools but how to use them. I work to close the gap between access and application, ensuring that teams use new tools effectively in real business contexts.
+    - This involves creating workflows that reduce manual effort and improve speed, for example, building automations, designing content systems, connecting tools like Zapier and Notion, building custom solutions that replace Zapier and Notion.
+    - The tools are out there. The real value comes from knowing how, and where, to apply them. This requires learning quickly and thinking in systems rather than outputs.
+
+  + How to best use AI
+    - Primary, heaviest AI use is for metacognitive habits that facilitate constant learning. Don't ask for something outright, but rather, stay in the driver's seat.
+    - Say "What's another way of looking at this?"
+    - Or for example, "I've created a marketing plan that needs refining. It needs to reach mid-career professionals between 28-45 years old. I could use help ensuring that I'm not missing anything stemming from unconscious bias around the topic. I'm not necessarily looking for specific suggestions, but rather, help thinking through various options for improving the plan."
+
+### [Phase A: Foundation (Pre-AI)](/assets/docs/archive/v4_0/PHASE_CONTENT.md#a-foundation-pre-ai)
 
   1. PETA Marketing & Social Media Achievements
      - Viral Strategy
@@ -47,19 +60,19 @@ We'll focus on three main areas of my background, initially laying the groundwor
      - SEO & Optimization
      - Paid Social
 
-  2. Self-Employed Web Design & Digital Consultancy Achievements 
+  2. Self-Employed Web Design & Digital Consultancy Highlights 
      - UX/UI & Web Design
      - Digital Production
      - SEO & Copywriting
      - Direct Marketing
 
-  3. Art Director for Web3 Privacy Protocol
+  3. Art Director for Web3 Privacy Protocol Branding
      - Visual Storytelling
      - Video & Motion Design
      - Branding & Design Systems
      - Social Media Design
 
-### [Phase B: Generative Automations (Early AI)](/assets/docs/archive/v4_0/PHASE_B.md)
+### [Phase B: Generative Automations (Early AI)](/assets/docs/archive/v4_0/PHASE_CONTENT.md#b-generative-automations-early-ai)
 
   1. Art Education Curation (Generative AI)
   2. Personality-Based Fashion Design (Generative AI)
@@ -68,24 +81,65 @@ We'll focus on three main areas of my background, initially laying the groundwor
   5. Viral Campaign Strategy (3rd Party Tool Automation)
   6. Social Media Design & Strategy (3rd Party Tool Automation)
 
-### [Phase C: Custom AI Solutions (Modern AI)](/assets/docs/archive/v4_0/PHASE_C.md)
+### [Phase C: Custom AI Solutions (Modern AI)](/assets/docs/archive/v4_0/PHASE_CONTENT.md#c-custom-ai-solutions-modern-ai)
 
   - Building modern systems and processes by opening up systems to increase speed and productivity. 
   - Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
 
   - Everlastings Web Store featured a custom AI assistant; Client's Art Web Store, AI Pipeline Managing Updates
     - Built using a Custom GPT tool, the AI walks the client through everything, removing all friction from maintaining a webstore. The client still has a robust and well design 'Admin' page, but most clients today want to delegate most of the work to AI anyway. 
-  - Fractional consulting.
-    - Selling outcomes not hours, with work rooted in judgement and execution, not necessarily physical presence; all delivered though combination of async collaboration and targeted communication. Rather than running operations internally, I step in to build systems, guide strategy, or help founders navigate periods of growth and transition. This is particularly common now for smaller companies that want senior expertise without the cost or commitment of a full-time hire.
-    - Must show credibility; clear track record. Requires credibility; clear track record. [How Part-Time Senior Leaders Can Help Your Business](https://hbr.org/2024/07/how-part-time-senior-leaders-can-help-your-business)
-  - AI-Assisted Services in Automation, Prompting, Systems. 
-  - As companies implement AI in practical, outcome-driven ways. Not necessarily more tools but how to use them. I work to close the gap between access and application, ensuring that teams use new tools effectively in real business contexts.
-  - This involves creating workflows that reduce manual effort and improve speed, for example, building automations, designing content systems, connecting tools like Zapier and Notion, building custom solutions that replace Zapier and Notion.
-  - The tools are out there. The real value comes from knowing how, and where, to apply them. This requires learning quickly and thinking in systems rather than outputs.
-+ How to best use AI.
-  - Primary, heaviest AI use is for metacognitive habits that facilitate constant learning. Don't ask for something outright, but rather, stay in the driver's seat.
-  - Say "What's another way of looking at this?"
-  - Or for example, "I've created a marketing plan that needs refining. It needs to reach mid-career professionals between 28-45 years old. I could use help ensuring that I'm not missing anything stemming from unconscious bias around the topic. I'm not necessarily looking for specific suggestions, but rather, help thinking through various options for improving the plan." "
+
+---
+
+## Updating Homepage UI/UX Design
+
+### Plan "Scrollytelling" Animation 
+
+
+
+#### HyperFrames Skills
+
+The Hyperframes NPM package has been install globally. They teach agents to write correct compositions, GSAP timelines, Tailwind v4 browser-runtime styles, and first-party adapter animations. 
+
+In Claude Code the skills register as slash commands:
+
+  - `/hyperframes` for composition authoring
+  - `/hyperframes-cli` for the dev-loop commands (init, lint, preview, render) 
+  - `/hyperframes-media` for asset preprocessing (TTS, transcription, background removal) 
+  - `/tailwind` for init --tailwind projects 
+  - `/gsap` for timeline animation help 
+  - `/animejs`, `/css-animations`, `/lottie`, `/three`, or `/waapi` when a composition uses those runtimes. 
+
+  Invoking the slash command loads the skill context explicitly, which produces correct output the first time
+
+The full list of skills installed: 
+
+  `~/.agents/skills/animejs`
+  `~/.agents/skills/contribute-catalog`
+  `~/.agents/skills/css-animations`
+  `~/.agents/skills/gsap`
+  `~/.agents/skills/hyperframes`
+  `~/.agents/skills/hyperframes-cli`
+  `~/.agents/skills/hyperframes-media`
+  `~/.agents/skills/hyperframes-registry`
+  `~/.agents/skills/lottie`
+  `~/.agents/skills/remotion-to-hyperframes`
+  `~/.agents/skills/tailwind`
+  `~/.agents/skills/three`
+  `~/.agents/skills/typegpu`
+  `~/.agents/skills/waapi`
+  `~/.agents/skills/website-to-hyperframes`
+
+Here's an LLM.txt document with a list of all the [Hyperframe documentation resources](/.agent/HYPERFRAMES_LLM.txt).
+
+  - [Claude Design should start here](/.agent/CLAUDE_DESIGN_HYPERFRAMES_SKILL_SUB.md).
+
+And a few other resources that seemed interesting if not handy. 
+
+  - [Important Motion Principles](/.agent/HYPERFRAMES_MOTION_PRINCIPLES.md)
+  - [Using Transitions](/.agent/HYPERFRAMES_TRANSITIONS.md)
+  - [Typography Guide](/.agent/HYPERFRAMES_TYPOGRAPHY.md)
+
 
 ---
 
@@ -499,7 +553,7 @@ There are some posts that have a collection of images that need prominent placem
 
 ---
 
-## Homepage Adjustments
+## Homepage Adjustments — **Reassess after finalizing homepage layout plans**
 
 ### Featuring Content
 
@@ -532,6 +586,8 @@ This component should be very similar to the entry page bleed image component. S
 ### Remaining Homepage Sections 
 
 I came across something we should explore and understand called 'HyperFrames' where the specifically created a Claude Code skill plugin. The examples on Twitter were really impressive. It was described as "Claude can design .md to .mp4. and I found this GitHub repo with the code: `https://github.com/heygen-com/hyperframes` — please explore that repository and let me know what might be possible; it calls out this command `npx skills add heygen-com/hyperframes` but it failed on my first try; hopefully you know something I don't so we can get it working. 
+
+
 
 For now I'd like to use this to consider the hero/masthead because it still feels a bit janky and given there will be two other sections, and some text with all three, I'm wondering if maybe we don't actually want the kind of slideshow animated visual masthead and could instead do something that is simpler but more impressive, clean, modern, unique. Something that seems like it took a bit more effort to get really polished, whereas the current masthead slideshow just looks like simple vanilla HTML/CSS. 
 

@@ -1,10 +1,12 @@
-# Phase A: Foundation (Pre-AI)
+# Phase Content
 
-## 1. **PETA Marketing & Social Media Achievements**
+## A: Foundation (Pre-AI)
+
+### 1. **PETA Marketing & Social Media Achievements**
 
 This should be an all in one post that we can tell through the "Flow Storytelling Narrative" layout by going chronologically over time and calling out all the big numbers and earned media press hits. 
 
-### Written Content 
+#### Written Content 
 
 Information to be pulled from these links to the old portfolio entries. 
 
@@ -28,7 +30,7 @@ Information to be pulled from these links to the old portfolio entries.
   - AgencySpy SeaWorld Campaign Coverage 
   - PR News calls out PETA for highest Instagram engagement that quarter
 
-### Cleanup Entries 
+#### Cleanup Entries 
 
 We can scrap these and create just one new entry. 
 
@@ -41,11 +43,11 @@ We can scrap these and create just one new entry.
 + august.style/ux-ui-ios-marketing **DRAFT**
   `assets/drafts/uid-ssz-402.json`
 
-### Images 
+#### Images 
 
 [PULL]
 
-### Inaccurate "PETA" Live Post 
+#### Inaccurate "PETA" Live Post 
 
 This is marked as a PETA project and it was not. These were ads ran for the art history prints being sold on social and in the Webflow store, and then also driving traffic to the lookbooks. This can become a large post about generative graphic design, encompassing a handful of other posts into one, and then linking to one or a few art-only aesthetically focused posts. 
 
@@ -53,13 +55,9 @@ This is marked as a PETA project and it was not. These were ads ran for the art 
   - `https://developer-technologist.august.style/social-advertising-strategy`
   - `assets/entries/uid-sez-023.json`
 
----
+### 2. **Self-Employed Website & Digital Consultancy**
 
-## 2. **Self-Employed Website & Digital Consultancy**
-
----
-
-## 3. **Graphic Design, Motion Design, & Illustration**
+### 3. **Graphic Design, Motion Design, & Illustration**
 
   1. Production & Branding 
      + `assets/entries/uid-wty-542.json`
@@ -153,3 +151,35 @@ This is marked as a PETA project and it was not. These were ads ran for the art 
       + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-4.png`
       + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-5.png`
       + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-6.png`
+
+---
+
+## B: Generative Automations (Early AI)
+
+**Initial AI art pipeline and content production automation using generative design**
+
+### Art Education Curation
+
+  - `assets/drafts/uid-chp-854.json` 
+    - https://www.august.style/embeddings-art-curation/
+    - https://developer-technologist.august.style/embeddings-art-curation
+
+### Personality-Based Fashion Design 
+
+  - `assets/entries/uid-svz-258.json` 
+    - https://www.august.style/agentic-fashion-designer/
+    - https://print-shop-fashion.august.style/fashion/lookbook/summer-2024-cover
+    - https://www.august.style/personalized-fashion-magazine
+    - https://www.august.style/ai-design-fashion-lookbook
+
+### Content Production Video Shorts
+
+  - `assets/entries/uid-sxz-424.json`
+    - https://www.august.style/api-automate-video-production/
+    - https://developer-technologist.august.style/api-automate-video-production
+
+---
+
+## C: Custom AI Solutions (Modern AI)
+
+
