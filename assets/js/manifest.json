@@ -23,7 +23,6 @@
     "constructi-haus": "assets/entries/uid-lrt-716.json",
     "ai-meditation-mobile-app": "assets/entries/uid-lul-419.json",
     "flat-bauhaus": "assets/entries/uid-mnu-667.json",
-    "viral-campaign-strategy": "assets/entries/uid-mrt-136.json",
     "notes-app-thot": "assets/entries/uid-nst-245.json",
     "humanistic-exploration": "assets/entries/uid-nvw-152.json",
     "css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
@@ -52,6 +51,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 48
+    "entry_count": 47
   }
 }
