@@ -24,6 +24,7 @@ You'll note that these entries are primarily, if not completely, newly created. 
     2. Self-Employed Web Design & Digital Consultancy Highlights
     3. Art Director for Web3 Privacy Protocol Branding
   + Phase B: Generative Automations (Early AI)
+  + Phase C: Custom AI Solutions (Modern AI)
 
 ---
 
@@ -120,6 +121,97 @@ You'll note that these entries are primarily, if not completely, newly created. 
 `https://developer-technologist.august.style/vector-meme-nfts`
 `https://developer-technologist.august.style/vector-nft-art`
 
++ Production & Branding 
+  `assets/entries/uid-wty-542.json`
+   - https://www.august.style/visual-artist-process-portfolio/
+   - https://visual-producer.august.style/
+
++ Digital Illustration for Print 
+  `assets/entries/uid-cop-802.json`
+   - https://www.august.style/illustrated-poetry-book/
+   - https://developer-technologist.august.style/illustrated-poetry-book
+
++ VFX 3D Perspective Infinite Grid Tunnel 
+  - After Effects
+  - Background video content design asset
+  - `assets/.media/3d/vfx-after-effects/vfx-3d-perspective-video-grid-tunnel-animation-after-effects-motion-design.png`
+  - GET YOUTUBE AND MAKE GIFs 
+ 
++ 3D Spinning Reflective Glass Logo
+  - Blender 
+  - Branding social design asset 
+    `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-1.png`
+    `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-2.png`
+    `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-3.png`
+  - GET YOUTUBE AND MAKE GIFs 
+
++ Coworkers Anime Avatars 
+  - Drawn by hand with iPad and Apple Pencil 
+  - Adobe Fresco, Illustrator, Photoshop 
+  - Created for the CEO's favorite tv show 
+  - Requested as method for encouraging global remote web3 privacy app development team's bonding 
+  - Silent Protocol (Silent Labs)
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-charlotte-1.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-charlotte-2.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-finral-1.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-finral-2.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-julius-1.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-julius-2.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-klaus-1.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-klaus-2.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-licht-1.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-licht-2.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yami-1.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yami-2.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yuno-1.png` 
+    `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yuno-2.png`
+  - Art versions for fun 
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-01-a.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-01-b.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-02-a.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-02-b.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-03-a.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-03-b.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-04-a.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-04-b.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-04-c.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-05-a.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-05-b.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-06-a.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-06-b.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-06-c.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-07-a.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-07-b.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-07-c.png`
+    `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-08.png`
+
++ web3 Privacy App Branding Character Design 
+  - Silent Protocol
+  - Concept art for character 
+  - Requested from client/CEO to create storytelling the importance of privacy as a civil right 
+  - All drawn by hand with iPad Pro and Apple Pencil
+  - Lots of pattern composites for creating scenery like rugs and background  
+  - Used to create motion design social video content 
+  - Secret Agent 
+    `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-1.png` 
+    `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-2.png` 
+    `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-3.png` 
+    `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-4.png` 
+    `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-5.png` 
+    `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-6.png` 
+    `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-7.png`
+      - GET YOUTUBE VIDEO EMBED 
+      - CREATE GIF FROM VIDEO 
+  - Eventually turned into a Marketing Product Education print comic book 
+  - Printed 3,000 copies that were handed out at global web3/Crypto conferences 
+  - Supporting Cast 
+    `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-1.png`
+    `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-2.png`
+    `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-3.png`
+    `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-4.png`
+    `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-5.png`
+    `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-6.png`
+
 ---
 
 # **ENTRY TITLE**: Programmatic & Generative 
@@ -129,6 +221,15 @@ You'll note that these entries are primarily, if not completely, newly created. 
   - LAYOUT: Flow
   - PLACEMENT: The images, headings, and lists are all places as should reflect their flow placement; this should be evident when reading through, as it continues straight down the page.
   - HYPERFRAME: 
+
+```plaintext 
+    1. Art Education Curation (Generative AI)
+    2. Personality-Based Fashion Design (Generative AI)
+    3. Content Production Video Shorts (Generative AI)
+    4. Content Strategy Framework (3rd Party Tool Automation)
+    5. Viral Campaign Strategy (3rd Party Tool Automation)
+    6. Social Media Design & Strategy (3rd Party Tool Automation)
+```
 
 ## Design 
 `https://www.august.style/amorphous-gradient-css-animation/`
@@ -157,6 +258,7 @@ You'll note that these entries are primarily, if not completely, newly created. 
 
   + Generative Podcast Science Research Channel
     `https://www.youtube.com/@style_droid`
+    `https://developer-technologist.august.style/scalable-augmented-generative-podcasts`
 
   + Social Media manager
     `https://developer-technologist.august.style/agentic-social-manager`
@@ -179,176 +281,26 @@ You'll note that these entries are primarily, if not completely, newly created. 
 ### **AI Led Meditation iOS Application**
 `https://www.august.style/ai-meditation-mobile-app/`
 
-
-
----
-
-
-https://www.august.style/css-animated-micro-interactions/ (wrong slug)
-https://www.august.style/personalized-fashion-magazine/
-
-https://developer-technologist.august.style/scalable-augmented-generative-podcasts
-
-https://developer-technologist.august.style/embeddings-art-curation
-
-https://www.august.style/agentic-fashion-designer/
-https://developer-technologist.august.style/agentic-fashion-designer
-https://developer-technologist.august.style/ai-fashion-strategy
-
-https://www.august.style/ai-virtual-photoshoot-design/
-https://developer-technologist.august.style/ai-virtual-photoshoot-design  
-
-https://www.august.style/ai-design-fashion-lookbook/
-
+### SaaS Landing Sales Features
 https://www.august.style/saas-product-sale-features/
 
-https://www.august.style/freelance-payments-platform/
-
-https://developer-technologist.august.style/agentic-social-manager
-
-    1. Art Education Curation (Generative AI)
-    2. Personality-Based Fashion Design (Generative AI)
-    3. Content Production Video Shorts (Generative AI)
-    4. Content Strategy Framework (3rd Party Tool Automation)
-    5. Viral Campaign Strategy (3rd Party Tool Automation)
-    6. Social Media Design & Strategy (3rd Party Tool Automation)
-  + Phase C: Custom AI Solutions (Modern AI)
-
-https://www.august.style/notes-app-thot/
-
-    1. AI-Assisted Services in Automation, Prompting, Systems.
-    2. Building modern systems and processes by opening up systems to increase speed and productivity. 
-    3. Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works?
-    4. Everlastings Web Store featured a custom AI assistant; Client's Art Web Store, AI Pipeline Managing Updates
-
-### Thinking Visually
-
-Please understand the HyperFrame Skills before processing through this document. The range of possibilities for visual enhancement with that Claude Code Plugin is vast. Then as you review and set up these new entries you can be on the lookout for anything in them that could be conveyed visually. Charts for anything we'd chart in a markdown document, graphs that have some animation, or even just ornamental UI that encourages engagement and users to continue scrolling through these longer entries.
-
----
+### **Agentic Research** 
+`https://www.august.style/css-animated-micro-interactions/`
+`https://presenting.august.style/`
+`https://sfagent.august.style/ai-voice-marketing-case-study/`
++ Needs fixed slug that is appropriate for the page 
 
 
-### Self-Employed Web Design & Digital Consultancy Highlights
+### Personality-Based Fashion Design 
 
-**Phase**: B: Generative Automations (Early AI)
-**Slug**: marketing-awards-viral-social
-**Layout**: Flow 
-**Notes**: PETA is going to be one big post that walks them chronologically through my time there and skill development. 
-
-Client Webflow/Framer Work
-
-training-yoga-sales
-advanced-animation-system
-
-https://www.august.style/art-nouveau-brand-design/
-https://www.august.style/surreal-heads/
-https://www.august.style/neo-expresi-cyber/
-
-
-### Art Director for Web3 Privacy Protocol Branding 
-
-https://www.august.style/technical-defi-content-simplification/
-
-Graphic Design, Motion Design, & Illustration
-
-illustrated-poetry-book
-
-  1. Production & Branding 
-     + `assets/entries/uid-wty-542.json`
-       - https://www.august.style/visual-artist-process-portfolio/
-       - https://visual-producer.august.style/
-
-  2. Digital Illustration for Print 
-     + `assets/entries/uid-cop-802.json`
-       - https://www.august.style/illustrated-poetry-book/
-       - https://developer-technologist.august.style/illustrated-poetry-book
-
-  3. VFX 3D Perspective Infinite Grid Tunnel 
-    + After Effects
-    + Background video content design asset
-    + `assets/.media/3d/vfx-after-effects/vfx-3d-perspective-video-grid-tunnel-animation-after-effects-motion-design.png`
-    + GET YOUTUBE AND MAKE GIFs 
- 
-  4. 3D Spinning Reflective Glass Logo
-    + Blender 
-    + Branding social design asset 
-      + `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-1.png`
-      + `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-2.png`
-      + `assets/.media/3d/glass-logo/3d-vfx-animation-glass-logo-spinning-motion-3.png`
-    + GET YOUTUBE AND MAKE GIFs 
-
----Social Design & Strategy
-
-  1. Coworkers Anime Avatars 
-    + Drawn by hand with iPad and Apple Pencil 
-    + Adobe Fresco, Illustrator, Photoshop 
-    + Created for the CEO's favorite tv show 
-    + Requested as method for encouraging global remote web3 privacy app development team's bonding 
-    + Silent Protocol (Silent Labs)
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-charlotte-1.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-charlotte-2.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-finral-1.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-finral-2.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-julius-1.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-julius-2.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-klaus-1.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-klaus-2.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-licht-1.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-licht-2.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yami-1.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yami-2.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yuno-1.png` 
-      + `assets/.media/anime-coworker-avatars/profile-picture-full-size/anime-stylized-coworkers-yuno-2.png`
-    + Art versions for fun 
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-01-a.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-01-b.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-02-a.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-02-b.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-03-a.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-03-b.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-04-a.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-04-b.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-04-c.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-05-a.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-05-b.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-06-a.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-06-b.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-06-c.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-07-a.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-07-b.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-07-c.png`
-      + `assets/.media/anime-coworker-avatars/layering-detail-art-process/opacity-layering-process-08.png`
-
-  2. web3 Privacy App Branding Character Design 
-    + Silent Protocol
-    + Concept art for character 
-    + Requested from client/CEO to create storytelling the importance of privacy as a civil right 
-    + All drawn by hand with iPad Pro and Apple Pencil
-    + Lots of pattern composites for creating scenery like rugs and background  
-    + Used to create motion design social video content 
-    + Secret Agent 
-      + `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-1.png` 
-      + `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-2.png` 
-      + `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-3.png` 
-      + `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-4.png` 
-      + `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-5.png` 
-      + `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-6.png` 
-      + `assets/.media/branding-character-design/secret-agent/secret-agent-branding-web3-character-design-social-content-animated-video-7.png`
-      + GET YOUTUBE VIDEO EMBED 
-      + CREATE GIF FROM VIDEO 
-    + Eventually turned into a Marketing Product Education print comic book 
-    + Printed 3,000 copies that were handed out at global web3/Crypto conferences 
-    + Supporting Cast 
-      + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-1.png`
-      + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-2.png`
-      + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-3.png`
-      + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-4.png`
-      + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-5.png`
-      + `assets/.media/branding-character-design/comic-book-supporting-characters/compliance-staff-supporting-character-design-branding-web3-privacy-6.png`
-
----
-
-**Initial AI art pipeline and content production automation using generative design**
+  - `assets/entries/uid-svz-258.json` 
+    - https://www.august.style/agentic-fashion-designer/
+    - https://developer-technologist.august.style/agentic-fashion-designer
+    - https://print-shop-fashion.august.style/fashion/lookbook/summer-2024-cover
+    - https://www.august.style/personalized-fashion-magazine
+    - https://www.august.style/ai-design-fashion-lookbook
+    - https://design.august.style/projects/autumn-lookbook-part-1
+    - https://developer-technologist.august.style/ai-fashion-strategy
 
 ### Art Education Curation
 
@@ -356,23 +308,37 @@ illustrated-poetry-book
     - https://www.august.style/embeddings-art-curation/
     - https://developer-technologist.august.style/embeddings-art-curation
 
-### Personality-Based Fashion Design 
+### Photoshoot Curation 
+`https://www.august.style/ai-virtual-photoshoot-design/`
+`https://developer-technologist.august.style/ai-virtual-photoshoot-design`
 
-  - `assets/entries/uid-svz-258.json` 
-    - https://www.august.style/agentic-fashion-designer/
-    - https://print-shop-fashion.august.style/fashion/lookbook/summer-2024-cover
-    - https://www.august.style/personalized-fashion-magazine
-    - https://www.august.style/ai-design-fashion-lookbook
-
-### Content Production Video Shorts
-
-  - `assets/entries/uid-sxz-424.json`
-    - https://www.august.style/api-automate-video-production/
-    - https://developer-technologist.august.style/api-automate-video-production
 
 ---
 
-## Project Entries Not Included Or Consolidated 
+# **ENTRY TITLE**: Agentic Product Development & Custom AI Automated Solutions
 
-+ https://www.august.style/illustrated-poetry-book/
-+ https://www.august.style/advanced-animation-system/
+  - PHASE: C
+  - SLUG: 
+  - LAYOUT: Flow
+  - PLACEMENT: The images, headings, and lists are all places as should reflect their flow placement; this should be evident when reading through, as it continues straight down the page.
+  - HYPERFRAME: 
+
+```plaintext
+    1. AI-Assisted Services in Automation, Prompting, Systems.
+    2. Building modern systems and processes by opening up systems to increase speed and productivity. 
+    3. Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works?
+    4. Everlastings Web Store featured a custom AI assistant; Client's Art Web Store, AI Pipeline Managing Updates
+```
+
+## Freelance Payments Platform
+`https://www.august.style/freelance-payments-platform/`
+`https://payments.august.style/`
+
+
+## Agentic Orchestrated Programming
+
+### **Thot App**
+`https://www.august.style/notes-app-thot/`
+`https://thots.august.style/?id=main`
+
+---
