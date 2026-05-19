@@ -52,6 +52,7 @@ You'll note that these entries are primarily, if not completely, newly created. 
 `https://online-pt-trainer.august.style/`
 
   + First Design: Kajabi 
+    `/Users/seanivore/Development/360-design/assets/.media/kajabi-online-course-platform`
     - Website 
     - Online courses
   + Second Design: Webflow Website 
@@ -93,6 +94,9 @@ You'll note that these entries are primarily, if not completely, newly created. 
 ### Facebook & Instagram Shop Advertising Campaigns 
 `https://www.august.style/social-advertising-strategy/`
 `https://developer-technologist.august.style/social-advertising-strategy`
+
+### Shamanism Love Online Course 
+`/Users/seanivore/Development/360-design/assets/.media/online-course-healer-love`  
 
 ---
 
@@ -330,6 +334,29 @@ https://www.august.style/saas-product-sale-features/
     4. Everlastings Web Store featured a custom AI assistant; Client's Art Web Store, AI Pipeline Managing Updates
 ```
 
+## Top Entries 
+
+### AI Art Pipeline 
+
+  1. Art Education Curation 
+     + `assets/drafts/uid-chp-854.json` 
+       - https://www.august.style/embeddings-art-curation/
+       - https://developer-technologist.august.style/embeddings-art-curation
+
+  2. Personality-Based Fashion Design 
+     + `assets/entries/uid-svz-258.json` 
+       - https://www.august.style/agentic-fashion-designer/
+       - https://print-shop-fashion.august.style/fashion/lookbook/summer-2024-cover
+       - https://www.august.style/personalized-fashion-magazine
+       - https://www.august.style/ai-design-fashion-lookbook
+
+  3. Content Production Video Shorts
+     + `assets/entries/uid-sxz-424.json`
+       - https://www.august.style/api-automate-video-production/
+       - https://developer-technologist.august.style/api-automate-video-production
+
+
+
 ## Freelance Payments Platform
 `https://www.august.style/freelance-payments-platform/`
 `https://payments.august.style/`
@@ -342,3 +369,65 @@ https://www.august.style/saas-product-sale-features/
 `https://thots.august.style/?id=main`
 
 ---
+
+
+#### Art History 
+
+  - Describe flow on a main page: Research, Describe, Create pipeline, Generate, Prune, Curate. 
+  - The page titles shouldn't be the name of the collection. URLs are not SEO friendly either for this reason. 
+
+  1. Geometric Abstractions 
+     - https://www.august.style/constructivist-profiles/
+     - https://www.august.style/constructi-landscapes/
+     - https://www.august.style/surreal-constructivism-perception/
+     - https://www.august.style/humanistic-exploration/
+     - https://www.august.style/surreal-constructivism/
+
+  2. Bauhaus Variations 
+    - https://www.august.style/gradient-bauhaus/
+    - https://www.august.style/constructi-haus/
+    - https://www.august.style/bau-noir-haus/
+    - https://www.august.style/bohemian-abstractions/
+    - https://www.august.style/flat-bauhaus/
+    - https://www.august.style/minimalism-bauhaus/
+
+  3. Art Nouveau
+     - https://www.august.style/art-nouveau-brand-design/
+     - https://www.august.style/flowering-symmetric-asymmetry/
+
+  4. Impressionist Psychedelic 
+     - https://www.august.style/psychedelic-impressi/
+     - https://www.august.style/neo-expresi-cyber/
+     - https://www.august.style/surreal-heads/
+
+  5. Baroque 
+     - https://www.august.style/pie-claesz-modern-vibes/
+     - https://www.august.style/pie-claesz/
+     - https://www.august.style/baroque-de-heem-still-life/
+
+---
+
+## Featured Focus 
+
+### **1. Website Design/Development**
+
+| Page                               | Automation | Agentic | Generative | Group | Flow |
+| ---------------------------------- | ---------- | ------- | ---------- | ----- | ---- |
+| **Fashion Production**             |            |         |            |       |      |
+| ai-design-fashion-lookbook         | x          | x       | x          | x     | x    |
+| personalized-fashion-magazine      | x          | x       | x          | x     | x    |
+| automated-e-commerce-shop-lookbook | x          |         |            |       | x    |
+| agentic-fashion-designer           | x          | x       | x          | x     | x    |
+| **Design Swarms**                  |            |         |            |       |      |
+| ai-meditation-mobile-app           |            | x       | x          | x     | x    |
+| data-visualization-dashboard       |            | x       | x          | x     | x    |
+| saas-product-sale-features         |            | x       | x          | x     | x    |
+| **AI Production Pipeline**         |            |         |            |       |      |
+| animated-cms-weekly-blogs          | x          |         | x          |       | x    |
+| blog-lookbook-print-gallery        | x          |         |            |       |      |
+| css-animated-micro-interactions    | x          | x       |            |       | x    |
+| minimalist-web-store-product       |            | x       |            |       | x    |
+| modular-portfolio-build            |            | x       |            |       | x    |
+| notes-app-thot                     |            | x       |            |       | x    |
+| amorphous-gradient-css-animation   |            | x       |            |       | x    |
+| freelance-payments-platform        |            | x       |            |       |      |
