@@ -2,24 +2,17 @@
 
 ## A: Foundation (Pre-AI)
 
-### 1. **PETA Marketing & Social Media Achievements**
+### 1. PETA Marketing & Social Media Achievements
+
+**Slug**: marketing-awards-viral-social
+**Tags**: UX, UI, Strategy, Copywriting, Social Media, Branding, Art Direction, Project Management
 
 This should be an all in one post that we can tell through the "Flow Storytelling Narrative" layout by going chronologically over time and calling out all the big numbers and earned media press hits. 
 
-#### Written Content 
+#### Social Media Strategy & Content Production
 
-Information to be pulled from these links to the old portfolio entries. 
+Started building social platforms and subsequently teams. 
 
-+ [Mobile App Growth](https://developer-technologist.august.style/ux-ui-ios-marketing)
-  - Direct Action App, PETA App
-  - Cruelty Free Database App, Bunny Free
-  - iOS Messages App, Animal Rights Stickers
-+ [Campaign Management](https://developer-technologist.august.style/viral-campaign-strategy) 
-  - Viral Video Award Winner, Funny-For-Good Tofucken 
-  - Viral Video Award Finalist, Shorty Awards Shocking Real Leather Shoppers
-+ [Mobile Game Creative Development](https://developer-technologist.august.style/ux-ui-improvements)
-  - Kitten Squad launch from Playstation to iOS and Android 
-  - Visual Optimization, Copywriting, Art Direction 
 + [Social Media Press Coverage](https://developer-technologist.august.style/realtime-social-system)
   - 2013-2014 Viral hits covered in various press outlets 
   - Completely earned media, no pitching or any contact 
@@ -30,11 +23,68 @@ Information to be pulled from these links to the old portfolio entries.
   - AgencySpy SeaWorld Campaign Coverage 
   - PR News calls out PETA for highest Instagram engagement that quarter
 
+---
+
+#### Award Winning Viral Video Campaigns
+
++ [Campaign Management](https://developer-technologist.august.style/viral-campaign-strategy) 
+  - Viral Video Award Winner, Funny-For-Good Tofucken 
+  - Viral Video Award Finalist, Shorty Awards Shocking Real Leather Shoppers
+
+
+---
+
+#### Innovations & Digital Marketing
+
+I moved into a Marketing Innovations Assistant Manager position where I'd consult with different departments, delivering viral marketing and optimization insights picked up from years building PETA's social media channels.
+
+  **Mobile App Optimization**
+
+  Data-driven knowhow was particularly helpful when working with our in-house, agency, and freelance, iOS app developers and graphic designers. 
+
+  + PETA's Direct Action iOS App 
+    - Increased conversion rate by 22% month-over-month 
+    - Broke 1M+ downloads
+    - Achieved millions of actions taken 
+    - Maintained above a 4.8 app store rating with 1.3k reviews 
+  + iOS Messages Sticker App
+    - Marketing design lead, worked closely with in-house development team
+    - Managed beta testing programs; TestFlight
+    - Managed press release and launch communications
+  + Cruelty-Free Product Database iOS App 
+    - Bunny Free App was updated every single day relaying fine details between communications and corporate advocacy departments and working closely with contracted developer
+    - Optimization and feature updates resulted in an increase of return users by +33.7% and daily page views by +12%
+
+  **Game Development Strategy Improvements**
+
+Heavy copywriting experience and visual storytelling skills translated from social media growth to consulting with agency game developers on content and strategy for our advocacy education game, Kitten Squad.
+
+  + Playstation born, I coordinated the iOS and Android launch through marketing, handling communication pitches for launch and then executed the cross-media marketing campaigns, reaching our goal of 1M+ downloads
+  
+  + By reviewing game assets and reimagining the conversational flow, updating game copy and visuals, the game became more accessible and we saw a +40% increase in user engagement without sacrificing the core advocacy education messaging focus
+  
+  + By addressing and critical user feedback head-on, I integrated the insights into actionable UI/UX design and strategy development directives that resulted in increase of %85 completion rate, %88 satisfaction
+
+
+
+
+
+
+---
+
+#### Written Content 
+
+Information to be pulled from these links to the old portfolio entries. 
+
+
+
+
+
 #### Cleanup Entries 
 
 We can scrap these and create just one new entry. 
 
-+ august.style/viral-campaign-strategy **LIVE**
++ august.style/viral-campaign-strategy **DRAFT**
   `assets/entries/uid-mrt-136.json`
 + august.style/content-strategy-framework **DRAFT** 
   `assets/drafts/uid-slz-942.json`
