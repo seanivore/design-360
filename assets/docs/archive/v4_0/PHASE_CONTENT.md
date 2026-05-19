@@ -21,14 +21,24 @@ You'll note that these entries are primarily, if not completely, newly created. 
     1. PETA Marketing & Social Media Achievements
     2. Self-Employed Web Design & Digital Consultancy Highlights 
        - SQUARESPACE: https://www.august.style/public-health-response-platform/
+       - https://developer-technologist.august.style/public-health-response-platform
+       - https://developer-technologist.august.style/health-digital-integrated
        - WEBFLOW CLIENT: https://www.august.style/training-yoga-sales/
        - INFLUENCER PITCH CLIENT: https://www.august.style/influencer-growth-strategy/
+       - https://developer-technologist.august.style/influencer-growth-strategy
        - WEBFLOW DESIGN: https://www.august.style/visual-artist-process-portfolio/ 
        - Only WEBFLOW design, lotties, and illustrations https://www.august.style/animated-cms-weekly-blogs/ COMBINE WITH LOTTIE POST https://www.august.style/advanced-animation-system/
+       - https://developer-technologist.august.style/advanced-animation-system
        - Astrofluenced Site: https://generative-horoscopes.august.style/
        - CK Heals Site: https://online-pt-trainer.august.style/
+       - https://developer-technologist.august.style/enterprise-cms-development
     3. Art Director for Web3 Privacy Protocol Branding
        - https://www.august.style/technical-defi-content-simplification/
+       - https://developer-technologist.august.style/vector-meme-nfts
+       - https://developer-technologist.august.style/web3-strategy-branding
+       - https://developer-technologist.august.style/technical-defi-content-simplification
+       - https://developer-technologist.august.style/vector-nft-art
+       - https://developer-technologist.august.style/product-marketing-branding
 
 
 
@@ -39,6 +49,14 @@ You'll note that these entries are primarily, if not completely, newly created. 
 https://www.august.style/blog-lookbook-print-gallery/
 https://www.august.style/data-visualization-dashboard/
 https://www.august.style/ai-meditation-mobile-app/
+
+youtube podcasts https://www.youtube.com/@style_droid
+
+astrofluended CONTENT production https://developer-technologist.august.style/scaling-ai-brand
+
+automated posting to social https://www.instagram.com/p/DAWqgtwS1HP/
+
+webstore automated ecommerce https://developer-technologist.august.style/full-stack-automated-ecommerce
 
 https://www.august.style/automated-e-commerce-shop-lookbook/
 
@@ -69,21 +87,37 @@ https://www.august.style/bohemian-abstractions/
 
 https://www.august.style/social-advertising-strategy/
 
+https://developer-technologist.august.style/social-advertising-strategy
+
 https://www.august.style/minimalist-web-store-product/
+
 https://www.august.style/api-automate-video-production/
+https://developer-technologist.august.style/api-automate-video-production
 
 https://www.august.style/css-animated-micro-interactions/ (wrong slug)
 https://www.august.style/personalized-fashion-magazine/
 
 https://www.august.style/agentic-marketing-department/
+https://developer-technologist.august.style/agentic-marketing-department
+
+https://developer-technologist.august.style/scalable-augmented-generative-podcasts
+
+https://developer-technologist.august.style/embeddings-art-curation
 
 https://www.august.style/agentic-fashion-designer/
+https://developer-technologist.august.style/agentic-fashion-designer
+https://developer-technologist.august.style/ai-fashion-strategy
+
 https://www.august.style/ai-virtual-photoshoot-design/
+https://developer-technologist.august.style/ai-virtual-photoshoot-design  
+
 https://www.august.style/ai-design-fashion-lookbook/
 
 https://www.august.style/saas-product-sale-features/
 
 https://www.august.style/freelance-payments-platform/
+
+https://developer-technologist.august.style/agentic-social-manager
 
     1. Art Education Curation (Generative AI)
     2. Personality-Based Fashion Design (Generative AI)
@@ -120,6 +154,8 @@ My career started in social media. Initially we had a two person team: My mentor
 
 At the time, we were the first brand adding our messaging as text on images to create a narrative. We birthed some the original memes like EXPECTATION VS REALITY primarily because we were graphic designing on the fly. 
 
+https://developer-technologist.august.style/realtime-social-system
+
   + Viral UGGs Image Published in YahooNews
     - Our first major public success was also when I learned what "earned media" meant
     - Together we put together posts thinking visual-first, with intentionally "Sharable" taglines and a punchy one-sentence caption
@@ -141,6 +177,8 @@ Our success was acknowledged when investment into our efforts increased 10-fold.
 #### **Leveraging Engagement To Influence Culture**
 
 Our next move was to flex this newly established audience-base. For the first time we could plan from the start to use our engagement as the organic post earned media needed to capture the attention of media outlets.
+
+https://developer-technologist.august.style/content-strategy-framework
 
   + Hijacking the #AskSeaWorld Online Campaign
     - SeaWorld, a target of the organization, can't have realized how quickly our online community had grown when they launched their #AskSeaWorld campaign on Twitter. 
@@ -168,6 +206,8 @@ I started consulting on strategy and giving tutorials on creative production for
 
 Helena and my hands had started to reach in every department of the global organization. Our primary goal: Think social-first. Think visual-first. The organization having previously been primarily traditional communications success led, this was a big shift requiring sharing our reputation backed logic behind every decision offered across the departments. That effort paid off quickly! 
 
+https://developer-technologist.august.style/viral-campaign-strategy
+
   + Winner of "Funny-For-Good" Award: TOFUCKEN 
     - Campaigns build around the viral digital product was the new rule of thumb. One great success that was particularly funny, a nice shift for the organization's social content, won 1st Place in the DoGooder awards
     - The video garnered over 100M+ video views at the time of checking, the number today would easily be in the billions. In fact, this same year we saw 1.1 Billion Facebook Page Impressions, helping make the idea of "billion" easier to comprehend. 
@@ -188,6 +228,9 @@ This part of the work specifically was to couple with how I spent the rest of my
   * **Mobile App Optimization**
 
 My exploring led to consulting all kinds of different departments and projects. My data-driven knowhow was particularly helpful when working with our in-house, agency, and freelance, iOS app developers and graphic designers. 
+
+https://developer-technologist.august.style/ux-ui-ios-marketing
+https://developer-technologist.august.style/ux-ui-improvements
 
   + PETA's Direct Action iOS App 
     - Increased conversion rate by 22% month-over-month 
