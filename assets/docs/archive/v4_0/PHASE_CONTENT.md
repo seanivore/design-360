@@ -16,28 +16,107 @@ The content below is part of the planned v4.0.0 update. It identifies the projec
 
 You'll note that these entries are primarily, if not completely, newly created. I already moved the old, smaller entries to drafts to accommodate creating these larger, more comprehensive, storytelling entries. 
 
+  + Phase A: Foundation (Pre-AI)
+    **3 new project entries**
+    1. PETA Marketing & Social Media Achievements
+    2. Self-Employed Web Design & Digital Consultancy Highlights 
+       - SQUARESPACE: https://www.august.style/public-health-response-platform/
+       - WEBFLOW CLIENT: https://www.august.style/training-yoga-sales/
+       - INFLUENCER PITCH CLIENT: https://www.august.style/influencer-growth-strategy/
+       - WEBFLOW DESIGN: https://www.august.style/visual-artist-process-portfolio/ 
+       - Only WEBFLOW design, lotties, and illustrations https://www.august.style/animated-cms-weekly-blogs/ COMBINE WITH LOTTIE POST https://www.august.style/advanced-animation-system/
+       - Astrofluenced Site: https://generative-horoscopes.august.style/
+       - CK Heals Site: https://online-pt-trainer.august.style/
+    3. Art Director for Web3 Privacy Protocol Branding
+       - https://www.august.style/technical-defi-content-simplification/
+
+
+
+
+
+  + Phase B: Generative Automations (Early AI)
+  - Only about blog production https://www.august.style/animated-cms-weekly-blogs/
+https://www.august.style/blog-lookbook-print-gallery/
+https://www.august.style/data-visualization-dashboard/
+https://www.august.style/ai-meditation-mobile-app/
+
+https://www.august.style/automated-e-commerce-shop-lookbook/
+
+https://www.august.style/minimalist-web-store-product/
+https://www.august.style/modular-portfolio-build/
+https://www.august.style/amorphous-gradient-css-animation/
+
+https://www.august.style/art-nouveau-brand-design/
+https://www.august.style/baroque-de-heem-still-life/
+https://www.august.style/pie-claesz/
+https://www.august.style/surreal-heads/
+https://www.august.style/neo-expresi-cyber/
+https://www.august.style/constructivist-profiles/
+https://www.august.style/gradient-bauhaus/
+https://www.august.style/pie-claesz-modern-vibes/
+https://www.august.style/minimalism-bauhaus/
+https://www.august.style/flowering-symmetric-asymmetry/
+https://www.august.style/constructi-landscapes/
+https://www.august.style/constructi-haus/
+https://www.august.style/agentic-social-manager/
+https://www.august.style/flat-bauhaus/
+https://www.august.style/surreal-constructivism-perception/
+https://www.august.style/surreal-constructivism/
+https://www.august.style/humanistic-exploration/
+https://www.august.style/bau-noir-haus/
+https://www.august.style/psychedelic-impressi/
+https://www.august.style/bohemian-abstractions/
+
+https://www.august.style/social-advertising-strategy/
+
+https://www.august.style/minimalist-web-store-product/
+https://www.august.style/api-automate-video-production/
+
+https://www.august.style/css-animated-micro-interactions/ (wrong slug)
+https://www.august.style/personalized-fashion-magazine/
+
+https://www.august.style/agentic-marketing-department/
+
+https://www.august.style/agentic-fashion-designer/
+https://www.august.style/ai-virtual-photoshoot-design/
+https://www.august.style/ai-design-fashion-lookbook/
+
+https://www.august.style/saas-product-sale-features/
+
+https://www.august.style/freelance-payments-platform/
+
+    1. Art Education Curation (Generative AI)
+    2. Personality-Based Fashion Design (Generative AI)
+    3. Content Production Video Shorts (Generative AI)
+    4. Content Strategy Framework (3rd Party Tool Automation)
+    5. Viral Campaign Strategy (3rd Party Tool Automation)
+    6. Social Media Design & Strategy (3rd Party Tool Automation)
+  + Phase C: Custom AI Solutions (Modern AI)
+
+https://www.august.style/notes-app-thot/
+
+    1. AI-Assisted Services in Automation, Prompting, Systems.
+    2. Building modern systems and processes by opening up systems to increase speed and productivity. 
+    3. Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works?
+    4. Everlastings Web Store featured a custom AI assistant; Client's Art Web Store, AI Pipeline Managing Updates
+
 ### Thinking Visually
 
 Please understand the HyperFrame Skills before processing through this document. The range of possibilities for visual enhancement with that Claude Code Plugin is vast. Then as you review and set up these new entries you can be on the lookout for anything in them that could be conveyed visually. Charts for anything we'd chart in a markdown document, graphs that have some animation, or even just ornamental UI that encourages engagement and users to continue scrolling through these longer entries.
 
 ---
 
-## Phase A: Foundation (Pre-AI)
+## **ENTRY TITLE**: PETA Marketing & Social Media Achievements
 
-### 1. PETA Marketing & Social Media Achievements
+  - PHASE: A
+  - SLUG: marketing-awards-viral-social
+  - LAYOUT: Flow
 
-**Slug**: marketing-awards-viral-social
-**Layout**: Flow 
+### Social Strategy & Production
 
-PETA is going to be one big post that walks them chronologically through my time there and skill development. 
+My career started in social media. Initially we had a two person team: My mentor and myself. Helena taught me copywriting excellence and I brought the visual storytelling to our efforts. We were a great team, pioneering a number of strategies that eventually became industry standards. 
 
-#### Social Media Strategy & Content Production
-
-My career started in social media, as part of a two person team with my mentor. She taught me copywriting excellence, and I brought visual storytelling to our efforts. 
-
-Together, we pioneered a number of strategies that got enough attention to draw in earned media coverage and eventually, became industry standard practices. 
-
-  * **Creating Our First Viral Moments**
+#### **Creating Our First Viral Moments**
 
 At the time, we were the first brand adding our messaging as text on images to create a narrative. We birthed some the original memes like EXPECTATION VS REALITY primarily because we were graphic designing on the fly. 
 
@@ -59,7 +138,7 @@ It wasn't long before Facebook added video sharing to their platform. Our tactic
 
 Our success was acknowledged when investment into our efforts increased 10-fold. Helena and I grew the team right along side our audience growth, hiring assistants and a few strategists, and then eventually creating a social media video-specific labs department. 
 
-  * **Leveraging Engagement To Influence Culture**
+#### **Leveraging Engagement To Influence Culture**
 
 Our next move was to flex this newly established audience-base. For the first time we could plan from the start to use our engagement as the organic post earned media needed to capture the attention of media outlets.
 
@@ -81,7 +160,7 @@ The tactical use of our online audience then started to find industry recognitio
 
 This was another milestone and our roles continued to shift. I was promoted to Marketing Innovations Assistant Manager with my own staff of remote and in-office direct reports who corresponded with everyone who commented on any post, as well as focusing on celebrity and influence engagement. 
 
-#### Award Winning Viral Video Campaigns
+### Award Winning Viral Video Campaigns
 
 I started consulting on strategy and giving tutorials on creative production for marketing departments the organization's affiliates opened in India, Australia, London, and Germany, to start. I also was now routed on all digital content and became known for my lengthy, logical, detailed feedback reshaping entire video productions to optimize them for social media. 
 
@@ -100,7 +179,7 @@ Helena and my hands had started to reach in every department of the global organ
 
 These viral campaigns demonstrate the power of strategic content development and innovative distribution approaches, but really it is the simplicity of the formula that has carried through all of my work my entire career. I started expanding my influence into fresh mediums almost immediately.
 
-#### Innovations & Digital Marketing
+### Innovations & Digital Marketing
 
 When I had moved into the Marketing Innovations position I spent most of my time in two ways. I ran tests, using Optimizely for A/B testing, improving advertising spend, and then gathering the entire marketing department's analytics to create a massive report that was distributed as a resource for all branches of the organization around the globe. 
 
@@ -115,10 +194,12 @@ My exploring led to consulting all kinds of different departments and projects. 
     - Broke 1M+ downloads
     - Achieved millions of actions taken 
     - Maintained above a 4.8 app store rating with 1.3k reviews 
+
   + iOS Messages Sticker App
     - Marketing design lead, worked closely with in-house development team
     - Managed beta testing programs; TestFlight
     - Managed press release and launch communications
+
   + Cruelty-Free Product Database iOS App 
     - Bunny Free App was updated every single day relaying fine details between communications and corporate advocacy departments and working closely with contracted developer
     - Optimization and feature updates resulted in an increase of return users by +33.7% and daily page views by +12%
@@ -133,11 +214,30 @@ Heavy copywriting experience and visual storytelling skills translated from soci
   
   + By addressing and critical user feedback head-on, I integrated the insights into actionable UI/UX design and strategy development directives that resulted in increase of %85 completion rate, %88 satisfaction
 
----
+### Self-Employed Web Design & Digital Consultancy Highlights
 
-### 2. Self-Employed Website & Digital Consultancy
+**Phase**: B: Generative Automations (Early AI)
+**Slug**: marketing-awards-viral-social
+**Layout**: Flow 
+**Notes**: PETA is going to be one big post that walks them chronologically through my time there and skill development. 
 
-### 3. Graphic Design, Motion Design, & Illustration
+Client Webflow/Framer Work
+
+training-yoga-sales
+advanced-animation-system
+
+https://www.august.style/art-nouveau-brand-design/
+https://www.august.style/surreal-heads/
+https://www.august.style/neo-expresi-cyber/
+
+
+### Art Director for Web3 Privacy Protocol Branding 
+
+https://www.august.style/technical-defi-content-simplification/
+
+Graphic Design, Motion Design, & Illustration
+
+illustrated-poetry-book
 
   1. Production & Branding 
      + `assets/entries/uid-wty-542.json`
@@ -234,8 +334,6 @@ Heavy copywriting experience and visual storytelling skills translated from soci
 
 ---
 
-## B: Generative Automations (Early AI)
-
 **Initial AI art pipeline and content production automation using generative design**
 
 ### Art Education Curation
@@ -260,6 +358,7 @@ Heavy copywriting experience and visual storytelling skills translated from soci
 
 ---
 
-## C: Custom AI Solutions (Modern AI)
+## Project Entries Not Included Or Consolidated 
 
-
++ https://www.august.style/illustrated-poetry-book/
++ https://www.august.style/advanced-animation-system/

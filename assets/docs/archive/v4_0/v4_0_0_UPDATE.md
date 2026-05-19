@@ -22,9 +22,9 @@ We'll focus on three main areas of my background, initially laying the groundwor
 
 ### Non-AI Skill Focus
 
-  1. Website Design & Development 
+  1. Social Media Design & Strategy
   2. Graphic Design & Motion Design 
-  3. Social Media Design & Strategy 
+  3. Website Design & Development 
 
 ### Timeline Structure 
 
@@ -51,7 +51,7 @@ We'll focus on three main areas of my background, initially laying the groundwor
     - Say "What's another way of looking at this?"
     - Or for example, "I've created a marketing plan that needs refining. It needs to reach mid-career professionals between 28-45 years old. I could use help ensuring that I'm not missing anything stemming from unconscious bias around the topic. I'm not necessarily looking for specific suggestions, but rather, help thinking through various options for improving the plan."
 
-### [Phase A: Foundation (Pre-AI)](/assets/docs/archive/v4_0/PHASE_CONTENT.md#a-foundation-pre-ai)
+### Phase A: Foundation (Pre-AI)
 
   1. PETA Marketing & Social Media Achievements
      - Viral Strategy
@@ -72,7 +72,7 @@ We'll focus on three main areas of my background, initially laying the groundwor
      - Branding & Design Systems
      - Social Media Design
 
-### [Phase B: Generative Automations (Early AI)](/assets/docs/archive/v4_0/PHASE_CONTENT.md#b-generative-automations-early-ai)
+### Phase B: Generative Automations (Early AI)
 
   1. Art Education Curation (Generative AI)
   2. Personality-Based Fashion Design (Generative AI)
@@ -81,7 +81,7 @@ We'll focus on three main areas of my background, initially laying the groundwor
   5. Viral Campaign Strategy (3rd Party Tool Automation)
   6. Social Media Design & Strategy (3rd Party Tool Automation)
 
-### [Phase C: Custom AI Solutions (Modern AI)](/assets/docs/archive/v4_0/PHASE_CONTENT.md#c-custom-ai-solutions-modern-ai)
+### Phase C: Custom AI Solutions (Modern AI)
 
   - Building modern systems and processes by opening up systems to increase speed and productivity. 
   - Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
@@ -145,6 +145,8 @@ And a few other resources that seemed interesting if not handy.
 ---
 
 ## Current Site UX/UI Fixes 
+
+**NOTE**: Ensure mobile images isn't a separate group anymore. 
 
 ### Tile Tag Layout Inconsistency 
 
@@ -658,9 +660,7 @@ This is marked as a PETA project and it was not. These were ads ran for the art 
 | notes-app-thot                     |            | x       |            |       | x    |
 | amorphous-gradient-css-animation   |            | x       |            |       | x    |
 | freelance-payments-platform        |            | x       |            |       |      |
-| **Client Webflow/Framer Work**     |            |         |            |       |      |
-| public-health-response-platform    |            |         |            |       |      |
-| training-yoga-sales                |            |         |            |       | x    |
+
 
 ### **2. Graphic/Motion Design**
 
@@ -670,8 +670,7 @@ This is marked as a PETA project and it was not. These were ads ran for the art 
 | ---------------------------- | ---------- | ------- | ---------- | ----- | ---- |
 | *all art history pages*      | x          |         | x          | x     | x    |
 | ai-virtual-photoshoot-design |            | x       | x          |       | x    |
-| advanced-animation-system    |            |         |            |       |      |
-| illustrated-poetry-book      |            |         |            |       |      |
+
 
 #### Art History 
 
@@ -892,9 +891,6 @@ Create new images for the drafts listed below. List the local path to them below
   + https://www.august.style/illustrated-poetry-book/
     - Need STORE LINK url card https://www.barnesandnoble.com/w/pantone-3537-up-sean-august-horvath/1129908743
 
-**Animation and motion design** 
-
-  + https://www.august.style/advanced-animation-system/
 
 ### Websites 
 
