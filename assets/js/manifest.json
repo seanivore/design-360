@@ -12,7 +12,6 @@
     "pie-claesz-modern-vibes": "assets/entries/uid-fan-459.json",
     "gradient-bauhaus": "assets/entries/uid-fen-036.json",
     "animated-cms-weekly-blogs": "assets/entries/uid-fth-565.json",
-    "fashion-ai-video": "assets/entries/uid-gcp-491.json",
     "minimalism-bauhaus": "assets/entries/uid-hdp-267.json",
     "personalized-fashion-magazine": "assets/entries/uid-hwi-844.json",
     "bau-noir-haus": "assets/entries/uid-hxp-812.json",
@@ -51,6 +50,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 47
+    "entry_count": 46
   }
 }
