@@ -9,7 +9,7 @@
 ## Summary 
 
 This update will create a specific focus on chronological skill-development highlighting three phases of my growth as a designer, marketer, and now developer. We will curate and polish only may best work to tell a cohesive story of my professional evolution that is easy to digest in one sitting. 
-
+  
 ### Overview 
 
 The v4.0.0 update introduces new visual story telling layout and updated components, but the primary change is a shift to focusing on one primary area of experience: **Building Custom AI Pipelines**

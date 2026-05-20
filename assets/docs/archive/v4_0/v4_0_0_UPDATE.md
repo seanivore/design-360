@@ -17,7 +17,7 @@ The v4.0.0 update introduces new visual story telling layout and updated compone
   - **Our Opportunity**: Companies are looking to build modern processes and open up their systems in order to increase speed and productivity. 
 
   - **We're Answering**: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
-
+  saff
 We'll focus on three main areas of my background, initially laying the groundwork by showcasing achievements before the age of AI. Then, we'll pivot to illustrating different ways that I've implemented AI to enhance creative production, organize workflows, and remove friction from marketing and other digital business processes. 
 
 ### Non-AI Skill Focus
