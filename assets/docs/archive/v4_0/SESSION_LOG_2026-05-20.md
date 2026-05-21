@@ -8,15 +8,15 @@ Phase A and Phase B, modeled on `PHASE_A1.md`.
 
 ## Drafted This Session (7 files, all in `assets/docs/archive/v4_0/`)
 
-| File | Entry | Slug proposed |
-|---|---|---|
-| `PHASE_A2.md` | Self-Employed Web Design & Digital Consultancy Highlights | `self-employed-web-consultancy` |
-| `PHASE_A3.md` | Art Director — Web3 Privacy Protocol Branding | `web3-privacy-art-direction` |
-| `PHASE_B1.md` | ASTRO — generative content engine run from one database | `astro-generative-content-engine` |
-| `PHASE_B2.md` | FASHION — designing collections from character stories | `narrative-ai-fashion-design` |
-| `PHASE_B3.md` | ART HISTORY — an art-print business that runs itself | `automated-art-print-business` |
-| `PHASE_A1_v2.md` | PETA entry — proofread/corrected (original `PHASE_A1.md` kept) | `awards-viral-social` |
-| `SESSION_LOG_2026-05-20.md` | this file | — |
+| File                        | Entry                                                          | Slug proposed                     |
+| --------------------------- | -------------------------------------------------------------- | --------------------------------- |
+| `PHASE_A2.md`               | Self-Employed Web Design & Digital Consultancy Highlights      | `self-employed-web-consultancy`   |
+| `PHASE_A3.md`               | Art Director — Web3 Privacy Protocol Branding                  | `web3-privacy-art-direction`      |
+| `PHASE_B1.md`               | ASTRO — generative content engine run from one database        | `astro-generative-content-engine` |
+| `PHASE_B2.md`               | FASHION — designing collections from character stories         | `narrative-ai-fashion-design`     |
+| `PHASE_B3.md`               | ART HISTORY — an art-print business that runs itself           | `automated-art-print-business`    |
+| `PHASE_A1_v2.md`            | PETA entry — proofread/corrected (original `PHASE_A1.md` kept) | `awards-viral-social`             |
+| `SESSION_LOG_2026-05-20.md` | this file                                                      | —                                 |
 
 Featured-entry count after this session: **9 planned** (A1–A3, B1–B3, C1–C3), **10 with B4**.
 This session drafted 5 of them; A1 already existed. Phase C and B4 are deferred (below).

@@ -1,5 +1,7 @@
 {
   "markdown.validate.ignoredLinks": [
     "/assets/entries/<data.categorization.entry_id>.json"
-  ]
+  ],
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "JetBrains Mono"
 }
