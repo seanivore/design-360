@@ -28,6 +28,20 @@
 
 ---
 
+**FEEDBACK**: 
+
+I've edited A1 again, though it does need another pass from you/agent, but it is clearer now just how much the role transformed and why it would actually make perfect sense not to specialize. My last role there was literally just to look across all of digital and produce analytics reports to find where I could make the biggest impact in improving the organization. We evangelized the entire organization which had so many different types of specialized departments, consulted all the new global affiliate marketing employees to do what we had done, and then there is a handful of other consulting related tasks I took on in that last phase of PETA. I don't like the term generalist because it was far more big picture and performance related — rather than wearing lots of hats, I had my hands in everything because I changed the entire organizations processes and means for creating their public appearance and communications with their audience. I oversaw the new websites and app builds, I consulted direct and SMS marketing departments on best practices, I reviewed all video cuts, trained teams on copywriting and edited content department's new post copy — all while being one of two managers permitted to skip sending anything I wrote to the writing department for grammar and to legal department for accuracy. I created all types of creative digital content production, managed remote and local employees, fired people. I guess what I don't like about it is that it very much implies that the norm or appropriate thing is typically to specialize and if I had stayed at PETA I would have been a director and then VP, I was going the opposite of specializing because I had been involved in all the different parts of the digital marketing spectrum and was the one sent in to improve those departments. Not that I'm saying I want to be all "it didn't make sense to specialize" or "my path was blah blah whatever the opposite is" at all. It should just be presented as what it is and backed up with examples and references to my experience. 
+
+This was my opportunity to be an artist and maintain the crazy amount of freedom I had from building peta, that had faded away towards the ends because my role was literally to build out the process and hire in the people to do the creative work. It was the most sensible way to use what I had learned through experience was a really strong eye for design and visual storytelling, with a knack for technical thinking, growing my understanding of the specifics of actual technical details — that is the way I've headed since leaving PETA -- I was straight up graphic designing and making art, and then over time have ended up now where I work with code. 
+
+I don't see a generalist as a consultant. I see a consultant as hired because they're the expert. This is why I often say "Digital Business Consultant" because most clients are SBO, many going onto the internet for the first time and needing a digital presence. Less so today, but that was how it started. 
+
+Like for CK Heals — at PETA I created the brand's voice and aesthetic and worked it out towards all the mediums and media. To me, it seems like I did the same for CK Heals. 
+
+I could go on but I think hopefully you get my point. Before I continue reviewing, I think in general, that these new pages should be at least reviewed if not updated -- it seems like the primary cause of all of the above is just that the dots from experience beforehand weren't pulled through and instead each was produced in isolation. That was due to poor design mostly on my part but yeah they definately should make sense cohesively -- they are afterall, the actual chronolofical path I took. 
+
+---
+
 ## Going Out On My Own
 
 When I left in-house viral marketing, I didn't specialize — I did the opposite. I started a
