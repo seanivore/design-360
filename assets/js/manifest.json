@@ -2,11 +2,8 @@
   "entries": {
     "baroque-de-heem-still-life": "assets/entries/uid-bsj-738.json",
     "advanced-animation-system": "assets/entries/uid-cap-258.json",
-    "influencer-growth-strategy": "assets/entries/uid-ccp-818.json",
     "illustrated-poetry-book": "assets/entries/uid-cop-802.json",
-    "public-health-response-platform": "assets/entries/uid-cpp-781.json",
     "automated-e-commerce-shop-lookbook": "assets/entries/uid-dff-987.json",
-    "modular-portfolio-build": "assets/entries/uid-eme-689.json",
     "surreal-constructivism-perception": "assets/entries/uid-enm-522.json",
     "constructivist-profiles": "assets/entries/uid-evn-680.json",
     "pie-claesz-modern-vibes": "assets/entries/uid-fan-459.json",
@@ -38,7 +35,6 @@
     "agentic-fashion-designer": "assets/entries/uid-svz-258.json",
     "api-automate-video-production": "assets/entries/uid-sxz-424.json",
     "blog-lookbook-print-gallery": "assets/entries/uid-tev-176.json",
-    "training-yoga-sales": "assets/entries/uid-unw-889.json",
     "freelance-payments-platform": "assets/entries/uid-vin-427.json",
     "psychedelic-impressi": "assets/entries/uid-vlf-055.json",
     "ai-design-fashion-lookbook": "assets/entries/uid-wgw-370.json",
@@ -50,6 +46,6 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 46
+    "entry_count": 42
   }
 }
