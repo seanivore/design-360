@@ -1,7 +1,9 @@
 # **ENTRY TITLE**: PETA Marketing & Social Media Achievements
 
-**JSON Details**:
+**Planning**: 
   - PHASE: A
+  - Group: 1
+**JSON Details**:
   - SLUG: awards-viral-social
   - LAYOUT: Flow
 **Needed To Post**:
@@ -9,14 +11,54 @@
   - Anything with **Bold** notation is notation about the placement and not actually meant to be published on the page. This often is followed by bullet points adding notation that isn't to be published verbatim.
   - We should consider centering H4 headings if it can be consistent and look good on all posts with the same type of 'flow' layout.
   - Any URLs added within page copy should be hyperlinked in the same way in the published version
-  - HYPERFRAME: Consider Lottie horizontal break before 2nd and 3rd H2 headings. I used these which are probably too ornate, but made them in After Effects years ago for one of the websites. They progress like ivy being written on the page as you would scroll up and down, it was very pretty.
-    - `assets/.media/awards-viral-social/lottie-ivy-page-break.lottie`
-    - `assets/.media/awards-viral-social/lottie-segment-arch-page-break.lottie`
+  - HYPERFRAME: Something animated that in engages and encourages the user to scroll and enjoy scrolling up and down. I did this in the past by hand drawing ivy and animating it in After Effects so that it 'grew' or reversed depending on scroll direction and used those as page breaks in the past. This is just one idea; we just need something that keeps them scrolling.
 **Created**: 2026-05-19
 **Updated**: 2026-05-21
-**Update Details**: Reviewed and edited for clarity by agents. 
+**Update Details**: Finalized by Sean after agent edits. 
 **Original**: `assets/docs/archive/v4_0/PHASE_A1.md`
 **Status**: Ready to Publish
+**Structure**: 
+  - PETA Marketing & Social Media Achievements
+    - **Social Strategy & Production**
+      - *Our First Viral Moments*
+        - Viral UGGs Image in Tweet Published in YahooNews
+          - The strategy
+          - The results
+          - Big picture
+        - Witty Superbowl Tweet Goes Viral
+          - Why live coverage
+          - Our process
+          - Spotted an opportunity
+          - The execution
+        - The Same But Different
+      - *Leveraging Engagement To Influence Culture*
+        - Hijacking the #AskSeaWorld Online Campaign
+          - SeaWorld's dumbest PR campaign
+          - Our opportunistic strategy
+          - The results
+        - Ranked #1 in Engagement Across All Industries
+          - Beating industry benchmarks
+          - Getting personal recognition
+          - How we achieved it
+          - Important results
+    - **Strategic Architect & Operational Lead**
+      - *Award Winning Viral Video Campaigns*
+        - Cursing Vegan Grandma Is 'Funny For Good' Award Finalist
+          - Rare humor genre viral sensation
+          - By the numbers
+        - Graphic Horror For Luxury Shoppers Takes First Place
+          - Shoppers Horrified When They Realize Their Luxury Leather Purse Was Alive
+          - By the numbers
+    - **Marketing Innovations & Performance Optimization**
+      - *Identifying Where To Improve The Organization Next*
+        - Mobile App Optimization
+          - PETA's Direct Action iOS App
+          - iOS Messages Sticker App
+          - Cruelty-Free Product Database iOS App
+        - Game Development Strategy Improvements
+          - Playstation-born
+          - Game development agency consulting
+          - UX strategy implementation
 
 ---
 
@@ -32,7 +74,7 @@ Experimenting with new platform features and formats, we tapped into the frontie
 
 #### Viral [UGGs Image in Tweet](https://x.com/peta/status/396670298465914880?s=20) Published in YahooNews
 
-    **MEDIA**: Single row, one image, centered and a bit less wide than the text column above and below: `assets/.media/awards-viral-social/flow-awards-viral-social-01.webp`
+**MEDIA: Single row, one image, centered and a bit less wide than the text column above and below: `assets/.media/awards-viral-social/flow-awards-viral-social-01.webp`**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
   + The strategy: 
@@ -73,7 +115,7 @@ In these early years both Facebook and BuzzFeed were requesting meetings with us
     - Helena would constantly draft possible phasing and blurbs that might evolve into tweets or captions.
     - I stayed close, paging through my mental and digital archives of images, exploring how to translate her concepts into visuals.
 
-  + A spotted opportunity: 
+  + Spotted an opportunity: 
     - Helena spotted Joe Namath walking out onto the field in a ridiculous fur coat. 
     - This instantly mentally flagged our emotional photojournalist work investigating fur farms across the globe.
     - After rapidly paging through those images, only pausing for one that "gut checked" us in the split second it was on the screen, we paired the visual with copywriting crafted to amplify the emotional gut check. 
@@ -84,7 +126,7 @@ In these early years both Facebook and BuzzFeed were requesting meetings with us
     - Viral-status was all but guaranteed thanks to our corespondents tapping in celebrities asking them to kick off the re-sharing.
     - The work paid off when online articles like 'Brand Dot Com' picked it up and published it in their own articles. 
 
-**MEDIA**: Single row, keep it maybe 3/4 of the width of the text width on desktop as it is a very long image `assets/.media/awards-viral-social/flow-awards-viral-social-03.webp`. 
+**MEDIA: Single row, keep it maybe 3/4 of the width of the text width on desktop as it is a very long image `assets/.media/awards-viral-social/flow-awards-viral-social-03.webp`**
 
 #### The Same But Different 
 
@@ -131,9 +173,9 @@ In little more than a month we were ready to flex this newly established audienc
     - Even some business publications shared the PR failure and our organization's success. 
     - Most impressively, AdWeek chimed with ["PETA Pokes Fun at Ongoing SeaWorld PR Campaign"](https://www.adweek.com/agencyspy/peta-pokes-fun-at-ongoing-seaworld-pr-campaign/)
 
-#### PR News & PR News Pro Highlight Video Campaign
+#### Ranked #1 in Engagement Across All Industries
 
-The tactical use of our online audience then started to find industry recognition and record-breaking engagement rates. 
+The tactical use of our online audience then started to find industry recognition thanks to record-breaking engagement rates. PRNews Pro found our engagement rate so impressive they published a story interviewing Helena.
 
 **MEDIA: the only image for this row is `assets/.media/awards-viral-social/flow-awards-viral-social-09.webp`**
 
@@ -144,9 +186,9 @@ The tactical use of our online audience then started to find industry recognitio
     - They featured our Animal Testing rescue video story as an example. 
     - The article was headlined with ["PETA, Animal Rights Groups Lead Nonprofits on Facebook During Q3 as Video Engagement Soars"](https://www.prnewsonline.com/peta-animal-rights-groups-lead-nonprofits-facebook-q3-video-engagment-soars/).
   
-  + Giving credit where it's due:
+  + Getting personal recognition:
     - The details offering official benchmark statistics across industries and platforms.
-    - Significantly, they interviewed Helena about our social media strategy.
+    - Significantly, they interviewed Helena, now Associate Director of Social Media, about the social media strategy we built together.
 
 **MEDIA: the only image for this row is `assets/.media/awards-viral-social/flow-awards-viral-social-10.webp`**
 
@@ -168,19 +210,32 @@ These new milestones continued to allow our roles to shift. I was promoted to Ma
 
 ---
 
-## Organizational Restructuring To Visual & Social-First Planning
+## Strategic Architect & Operational Lead
 
-This shift involved consulting on strategy and giving tutorials on creative production to the marketing departments of the organization's new affiliates departments. I worked closely with employees in India, Australia, London, and Germany. When it came to my involvement in the work Helena and I had built together, I was now routed on all digital content where I quickly developed a reputation for offering lengthy, logical, highly-detailed feedback that transformed entire video cuts making them properly optimized for social media, something our traditional production teams were less accustomed to, and part of our new organization-wide endeavor.
+Helena and my hands had started to reach in every department of the global organization with a lofty task of shifting the entire organization's strategy from a traditional-communications model to a social-first model. Process had to be broken down and rebuilt, remaining assertive and confident through constant challenges and resistance. 
+
+While leadership insulated the team from institutional friction, I owned the data, built the logic models that defended our strategy, and systematically trained global affiliates to build campaigns from the digital asset outward. 
+
+Our end goal for the many departments that all focused on different, highly specialized content, was: Think social-first. Think visual-first. 
+
+The brand's original household name status came from the days of legacy media; efforts that had been in decline during our ascent. But we were determined that we'd, for example, not have to drop everything to lead someone in the campaigns department working with highly specialized team in the animal testing department, to ensure they put together a demonstration or protest that inherently created viral moments. We needed to be able to shut down requests for urgent last minute input on campaigns. It took some downright strategic assertiveness. Politely turning down those last minute requests, then smartly making sure they witnessed the magic that was a campaign for another department that didn't jump over the updated process tying us in from the beginning; just takes a few global distro email sharing all the press and earned social media coverage that campaign got, which almost always guaranteed a reply-all from the president in awe of the work. The message: use the process and we all win.
+
+This shift involved consulting on strategy and giving tutorials on creative production to the marketing departments of the organization's new affiliates departments. I worked closely with employees in India, Australia, London, and Germany. 
+
+In my original social marketing department my role was a bit removed and elevated: I was now routed on all digital content where I quickly developed a reputation for offering lengthy, logical, highly-detailed feedback that transformed entire video cuts making them properly optimized for social media, something our traditional production teams were less accustomed to, and part of our new organization-wide endeavor.
 
 ### Award Winning Viral Video Campaigns
 
-Helena and my hands had started to reach in every department of the global organization. Our primary goal: Think social-first. Think visual-first. The organization having previously been led primarily by traditional-communications success, this was a big shift requiring sharing our reputation backed logic behind every decision offered across the departments. That effort paid off quickly! 
+The organization having previously been led primarily by traditional-communications success, this was a big shift requiring sharing our reputation backed logic behind every decision offered across the departments. That effort paid off quickly! 
+
+#### Cursing Vegan Grandma Is 'Funny For Good' Award Finalist
 
 **MEDIA: the only visual in this row is this GIF `assets/.media/awards-viral-social/flow-awards-viral-social-12.gif`**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + Celebrated NTEN Do Gooder Awards 'Funny For Good' Finalist
-    - *Tofucken* campaign video [starred a foul-mouthed, heartwarming grandma making a vegan holiday roast](https://youtu.be/j5QAjcbvbDg?si=5E3AqQ-LOdeLiZbF). 
+  + Rare humor genre viral sensation: 
+    - This vegan granny was a beloved character in a much-celebrated viral video that was a 'Funny For Good' NTEN Do Gooder Award Finalist  
+    - Called *Tofucken* the campaign video [starred a foul-mouthed, heartwarming grandma making a vegan holiday roast](https://youtu.be/j5QAjcbvbDg?si=5E3AqQ-LOdeLiZbF). 
     - It was a standout viral hit and refreshing shift away from much of the organization's more serious content.
     - It was refreshing because viral digital products were not built around the viral digital product by design, across the organization.
 
@@ -189,11 +244,16 @@ Helena and my hands had started to reach in every department of the global organ
     - Today, across platforms, it has been seen by billions of people. 
     - This same year, our primary Facebook page achieved 1.1 billion impressions.
 
+#### Graphic Horror For Luxury Shoppers Takes First Place
+
+
+
 **MEDIA: the only visual in this row is the following GIF `assets/.media/awards-viral-social/flow-awards-viral-social-13.gif`**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + [1st Place NTEN Do Gooder 'Funny For Good' Award](https://shortyawards.com/1st-socialgood/shoppers-horrified-when-they-realize-their-luxury-leather-purse-was-alive)
-    - "Beyond Words" was a comedic, lighthearted social-video centered ad campaign.
+  + Shoppers Horrified When They Realize Their Luxury Leather Purse Was Alive
+    - Winner of [1st Place NTEN Do Gooder 'Funny For Good' Award](https://shortyawards.com/1st-socialgood/shoppers-horrified-when-they-realize-their-luxury-leather-purse-was-alive)
+    - Called "Beyond Words" this was a comedic, "lighthearted" social-video centered ad campaign.
     - We used human and acting to show shoppers where their leather came from, to their disgust.
     - It highlight the importance of animal compassion and adopting a vegan lifestyle.
 
@@ -210,11 +270,11 @@ These viral campaigns demonstrate the power of strategic content development and
 
 ---
 
-## Identifying Where To Improve The Organization Next
+## Marketing Innovations & Performance Optimization
+
+### Identifying Where To Improve The Organization Next
 
 Two major roles as Marketing Innovations Assistant Manager involved running optimization split testing to improve conversions and social advertising spend, and then gathering the entire marketing department's analytics to create a massive report that was distributed as a resource for all branches of the organization around the globe. It was with this report that I was able to identify where I could next make the biggest impact and then I'd consult with those teams, offering my own strategic advice, content, and guidance.
-
-### Innovations & Digital Marketing
 
 #### Mobile App Optimization
 
@@ -260,7 +320,7 @@ Heavy copywriting experience and visual storytelling skills translated from soci
 **MEDIA: just this GIF in this row `assets/.media/awards-viral-social/flow-awards-viral-social-25.gif`**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + Consulting with agency game developer: 
+  + Game development agency consulting: 
     - Reviewed game assets to re-imagine the conversational flow 
     - Updated game copy and visuals
     - Work helped make the game more accessible
@@ -270,7 +330,7 @@ Heavy copywriting experience and visual storytelling skills translated from soci
 **MEDIA: these three images should go in one row in the following order `assets/.media/awards-viral-social/flow-awards-viral-social-26.png` and `assets/.media/awards-viral-social/flow-awards-viral-social-27.png` and `assets/.media/awards-viral-social/flow-awards-viral-social-28.png`**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + UX strategy and implementation: 
+  + UX strategy implementation: 
     - Addressed user feedback head-on, often directly from comments in the app store 
     - Integrated insights into actionable written UI design guidelines 
     - Produced strategy-development directives

@@ -1,16 +1,32 @@
 # **ENTRY TITLE**: Self-Employed Web Design & Digital Consultancy Highlights
 
+**Planning**: 
   - PHASE: A
-  - SLUG: self-employed-web-consultancy
+  - Group: 2
+**JSON Details**:
+  - SLUG: freelance-web-consultant
   - LAYOUT: Flow
+**Needed to Post**: 
   - PLACEMENT: Images, headings, and lists are placed to reflect their flow placement; this should be evident reading straight down the page.
-  - HYPERFRAME: Optional — a light horizontal page-break between the three H2 sections would help pace the read. Nothing as ornate as A1's ivy; a thin animated rule is enough.
+  - Anything with **Bold** notation is notation about the placement and not actually meant to be published on the page. This often is followed by bullet points adding notation that isn't to be published verbatim.
+  - We should consider centering H4 headings if it can be consistent and look good on all posts with the same type of 'flow' layout.
+  - Any URLs added within page copy should be hyperlinked in the same way in the published version
+  - HYPERFRAME: Something animated that in engages and encourages the user to scroll and enjoy scrolling up and down. I did this in the past by hand drawing ivy and animating it in After Effects so that it 'grew' or reversed depending on scroll direction and used those as page breaks in the past. This is just one idea; we just need something that keeps them scrolling.
+**Created**: 2026-05-20
+**Updated**: 2026-05-21
+**Update Details**: Needs to be reviewed and edited by Sean.
+**Original**: N/A
+**Status**: Drafting
+**Built from**: 
+  - `assets/drafts/uid-cpp-781.json` *Covid Squarespace*
+  - `assets/drafts/uid-unw-889.json` *CK Heals*
+  - `assets/drafts/uid-ccp-818.json` *Influencer Deck*
+  - `assets/drafts/uid-eme-689.json` *First HTML/CSS/JS site*
+**Must do**: 
+  - `NEW MEDIA` callout needs producing
+  - Confirm full collection of appropriate portfolio entires by checking `PHASE_CONTENT.md` and perhaps `ORIGINAL_PORTFOLIO.md`
 
-> DRAFT NOTE (for Sean): Built from `uid-cpp-781`, `uid-unw-889`, `uid-ccp-818`, `uid-eme-689`
-> entry JSONs + `PHASE_CONTENT.md` + `ORIGINAL_PORTFOLIO.md`. Bite-size pass — trimmed from the
-> longer PHASE_CONTENT list (Webflow CMS blog/shop work moved to Phase B; old illustration
-> portfolio moved to A3). Flow image refs use the `flow-{slug}-N` convention; source material is
-> noted per beat, `NEW MEDIA` calls out what still needs producing.
+---
 
 ## Going Out On My Own
 
@@ -23,6 +39,10 @@ hand-drawn art, hand-written copy, and platforms — Squarespace, Kajabi, Webflo
 the client could maintain after I handed it over.
 
 ### **Emergency Work on a 24-Hour Clock**
+
+Urgent Covid-19 Communication Platform, State of Hawaii Physicians
+`https://www.august.style/public-health-response-platform`
+`https://developer-technologist.august.style/public-health-response-platform`
 
 My first proof that "generalist" meant "fast" came from the Hawaii COVID-19 Taskforce. They needed a
 public health communications platform live immediately — not in a sprint, in a day.
