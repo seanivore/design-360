@@ -53,32 +53,35 @@ I.   SOCIAL STRATEGY & PRODUCTION
         3. *The Same But Different*
      B. __Leveraging Engagement To Influence Culture__
         4. *Hijacking the #AskSeaWorld Online Campaign*
-           (a) SeaWorld's dumbest PR campaign
-           (b) Our opportunistic strategy
-           (c) The results
-        5. *Ranked #1 in Engagement Across All Industries*
+           (a) Lessons in thinking critically
+           (b) We went hard
+           (c) We got loud
+           (d) Results poured in
+           (e) Culture defining implications
+        5. *#1 Engagement Rate Across Industries*
            (a) Beating industry benchmarks
-           (b) Getting personal recognition
-           (c) How we achieved it
-           (d) Important results
+           (b) It gets personal
+           (c) How we did it
+           (d) Important numbers
 II.  STRATEGIC ARCHITECT & OPERATIONAL LEAD
      A. __Award Winning Viral Video Campaigns__
-        1. *Cursing Vegan Grandma Is 'Funny For Good' Award Finalist*
-           (a) Rare humor genre viral sensation
-           (b) By the numbers
-        2. *Graphic Horror For Luxury Shoppers Takes First Place*
-           (a) Shoppers Horrified When They Realize Their Luxury Leather Purse Was Alive
-           (b) By the numbers
+        1. *Cursing Vegan Grandma Is 'Funny For Good'*
+           (a) Humor has another moment
+           (b) Cursing Granny's stats
+        2. *Graphic Horror For Luxury Shoppers*
+           (a) Putting guts in shoppers purses
+           (b) Bloody heart still in purse
+           (c) The numbers are in
 III. MARKETING INNOVATIONS & PERFORMANCE OPTIMIZATION
-     A. __Identifying Where To Improve The Organization Next__
+     A. __Find Ways To Improve Anyone's Work__
         1. *Mobile App Optimization*
            (a) PETA's Direct Action iOS App
            (b) iOS Messages Sticker App
            (c) Cruelty-Free Product Database iOS App
         2. *Game Development Strategy Improvements*
            (a) Playstation-born
-           (b) Game development agency consulting
-           (c) UX strategy implementation
+           (b) Consulting for an agency
+           (c) This one is for the users
 
 
 ---
@@ -336,77 +339,103 @@ These new milestones continued to allow our roles to shift. I was promoted to Ma
 
 I also hired my own remote and in-office team of correspondents, overseeing their work artfully replying to every comment we got on social media, often getting the more outspoken of trolls to come around to our side and even become polite. They spoke with literally thousands of people a day, as well as working closely with celebrity and influencer campaign planning efforts.
 
+This shift also involved consulting on strategy and giving tutorials on creative production to the marketing teams of the organization's newly opened affiliate offices. I worked closely with employees in India, Australia, London, and Germany. 
+
 ---
 
 ## Strategic Architect & Operational Lead
 
-Helena's and my hands had started to reach in every department of the global organization with a lofty task of shifting the entire organization's strategy from a traditional-communications model to a social-first model. Process had to be broken down and rebuilt, remaining assertive and confident through constant challenges and resistance. 
+Helena's and my hands had started to reach in every department of the global organization with a lofty task of shifting the entire organization's strategy from a traditional-communications model to a social-first model. Process had to be broken down and rebuilt, and we needed to remain assertive and confident through constant challenges and resistance. 
 
 While leadership insulated the team from institutional friction, I owned the data, built the logic models that defended our strategy, and systematically trained global affiliates to build campaigns from the digital asset outward. 
 
 Our end goal for the many departments that all focused on different, highly specialized content, was: Think social-first. Think visual-first. 
 
-Holding that line took strategic assertiveness. We had to stop fielding urgent, last-minute requests for campaign input and instead get departments to tie us in from the start. The proof did the persuading: a global email sharing the press and earned coverage of a properly-run campaign almost always drew a reply-all from the president, in awe of the work. The message landed — use the process, and we all win.
-
-This shift involved consulting on strategy and giving tutorials on creative production to the marketing teams of the organization's newly opened affiliate offices. I worked closely with employees in India, Australia, London, and Germany. 
-
-In my original social marketing department my role was a bit removed and elevated: I was now routed on all digital content, where I quickly developed a reputation for offering lengthy, logical, highly-detailed feedback that transformed entire video cuts, optimizing them properly for social media — something our traditional production teams were less accustomed to, and part of our new organization-wide endeavor.
-
 ### Award Winning Viral Video Campaigns
 
-The organization had previously been led primarily by traditional-communications success, so this was a big shift — and it required sharing the reputation-backed logic behind every decision we offered across the departments. That effort paid off quickly! 
+In my original social marketing department my role was a bit removed and elevated: I was now routed on all digital content, where I quickly developed a reputation for offering lengthy, logical, highly-detailed feedback that transformed entire video cuts, optimizing them properly for social media — something our traditional production teams were less accustomed to, and part of our new organization-wide endeavor. It required sharing the reputation-backed logic behind every decision we offered across the departments. 
 
-#### Cursing Vegan Grandma Is 'Funny For Good' Award Finalist
+#### Cursing Vegan Grandma Is 'Funny For Good'
 
-**MEDIA: the only visual in this row is this GIF `assets/.media/awards-viral-social/flow-awards-viral-social-12.gif`**
+| **Media**    | Image                                                               |
+| ------------ | ------------------------------------------------------------------- |
+| Row x Column | 1 x 1                                                               |
+| Visual/Row   | 1                                                                   |
+| Notes        | Just one GIF                                                        |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-12.gif` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + Rare humor genre viral sensation: 
-    - This vegan granny was a beloved character in a much-celebrated viral video that was a 'Funny For Good' NTEN Do Gooder Award Finalist  
+  + Humor has another moment 
+    - With such emotional content, it is rare enough that we produce humor, and this went viral
+    - Vegan cursing granny was our viral 'Funny For Good' NTEN Do Gooder Award Finalist  
     - Called *Tofucken* the campaign video [starred a foul-mouthed, heartwarming grandma making a vegan holiday roast](https://youtu.be/j5QAjcbvbDg?si=5E3AqQ-LOdeLiZbF). 
-    - It was a standout viral hit and refreshing shift away from much of the organization's more serious content.
-    - It was refreshing because, across the organization, campaigns were rarely built around a viral digital product by design.
+    - Another organization-wide strategy shift success, as this campaign was built around the video
 
-  + By the numbers:
-    - *Tofucken* garnered over 100 million video views when submitted for the award. 
-    - Today, across platforms, it has been seen by billions of people. 
-    - This same year, our primary Facebook page achieved 1.1 billion impressions.
+  + Cursing Granny's stats
+    - *Tofucken* garnered over 100 million video views  
+    - Today that number is over a billion 
+    - This same year we had 1.1 billion Facebook Page impressions
 
-#### Graphic Horror For Luxury Shoppers Takes First Place
+#### Graphic Horror For Luxury Shoppers
 
-**MEDIA: the only visual in this row is the following GIF `assets/.media/awards-viral-social/flow-awards-viral-social-13.gif`**
-
-**FLAG (Sean to confirm): the award below is named "1st Place NTEN Do Gooder 'Funny For Good' Award," but the link points to a Shorty Award (1st place, Social Good). The Tofucken video above is the NTEN Do Gooder 'Funny For Good' finalist — confirm which award this leather campaign actually won and correct the name accordingly.**
+| **Media**    | Image                                                               |
+| ------------ | ------------------------------------------------------------------- |
+| Row x Column | 1 x 1                                                               |
+| Visual/Row   | 1                                                                   |
+| Notes        | Just one GIF                                                        |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-13.gif` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + Shoppers Horrified When They Realize Their Luxury Leather Purse Was Alive
-    - Winner of [1st Place NTEN Do Gooder 'Funny For Good' Award](https://shortyawards.com/1st-socialgood/shoppers-horrified-when-they-realize-their-luxury-leather-purse-was-alive)
-    - Called "Beyond Words," this was a comedic, lighthearted, social-video-centered ad campaign.
-    - We used humor and acting to show shoppers where their leather came from, to their disgust.
-    - It highlighted the importance of animal compassion and adopting a vegan lifestyle.
+  + Putting guts in shoppers purses 
+    - In this video spot we reminded shoppers that their luxury leather was alive 
+    - The video won 1st Place NTEN Do Gooder 'Funny For Good' Award
+    - It was also a [ShortyAwards Social Good Finalist](https://shortyawards.com/1st-socialgood/shoppers-horrified-when-they-realize-their-luxury-leather-purse-was-alive)
 
-**MEDIA: two images in this row with this one `assets/.media/awards-viral-social/flow-awards-viral-social-14.webp` on the left, and this one `assets/.media/awards-viral-social/flow-awards-viral-social-15.webp` on the right**
+  + Bloody heart still in purse
+    - The video was really all about the reactions of the shoppers 
+    - As they walked around the store they found blood, tissue, and even organs in all the leather goods
+    - Titled "Beyond Words," the short was considered comedic and lighthearted 
+    - Once again, the social-optimized video was the center of this campaign 
 
-  + By the numbers: 
-    - At the time of submission the [video had over 40 million views across platforms](https://youtu.be/qs8yqcrqo1s?si=JGdejlwXJtrjTY0Y).
-    - The campaign created a powerful in-store experience, and that is what translated into viral content.
-    - This innovative social media strategy and approach created widespread engagement and press coverage. 
+| **Media**    | Image                                                                |
+| ------------ | -------------------------------------------------------------------- |
+| Row x Column | 1 x 2                                                                |
+| Visual/Row   | 2                                                                    |
+| Notes        | First on left and second on right side please                        |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-14.webp` |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-15.webp` |
 
-**MEDIA: two images in this row with this one `assets/.media/awards-viral-social/flow-awards-viral-social-16.webp` on the left and then `assets/.media/awards-viral-social/flow-awards-viral-social-17.webp` on the right**
+  + The numbers are in
+    - More than [40 million views](https://youtu.be/qs8yqcrqo1s?si=JGdejlwXJtrjTY0Y) when the video was submitted
+    - The campaign created a powerful in-store experience
+    - That environment and those reactions made for viral success without any need for dialog
+    - The innovative social optimized strategy created widespread engagement and press coverage
 
-These viral campaigns demonstrate the power of strategic content development and innovative distribution approaches, but really it is the simplicity of the formula that has carried through all of my work, my entire career. I started expanding my work into new mediums almost immediately.
+| **Media**    | Image                                                                |
+| ------------ | -------------------------------------------------------------------- |
+| Row x Column | 1 x 2                                                                |
+| Visual/Row   | 2                                                                    |
+| Notes        | First on left and second on right side please                        |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-16.webp` |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-17.webp` |
+
+These viral campaigns demonstrate the power of strategic content development and innovative distribution approaches. 
+
+When you break it down though, it is really always the same, simple formula. Gut checks create conversions. I applied this in every area of my work for my entire career.
 
 ---
 
 ## Marketing Innovations & Performance Optimization
 
-### Identifying Where To Improve The Organization Next
+### Find Ways To Improve Anyone's Work
 
-The Marketing Innovations Assistant Manager role had two major thrusts. I ran optimization split-testing to improve conversions and social advertising spend, and I gathered the entire marketing department's analytics into a single report, distributed as a resource to every branch of the organization worldwide. That report was how I identified where I could make the next big impact — and then I would consult with those teams directly, offering strategic advice, content, and guidance.
+My job had truly become a game of finding areas where I could have the most impact and improve the organization's work. It was freeing, endlessly creative, and sort of perfect for my personality and way of thinking. I'm down to help anyone in any department, and so I did!
+
+To find opportunities I gathered the entire marketing department's analytics into a single report, distributed as a resource to every branch of the organization worldwide. Then I ran optimization split-testing to improve conversions and social advertising spend and various email metrics, as well as providing strategic insights and recommendations to teams across the organization.
 
 #### Mobile App Optimization
 
-My exploring led to consulting on all kinds of different departments and projects. My data-driven knowhow was particularly helpful when working with our in-house, agency, and freelance, iOS app developers and graphic designers. 
+My data-driven knowhow was particularly helpful in working with our in-house, agency, and freelance iOS app developers and graphic designers. 
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
   + PETA's Direct Action iOS App 
@@ -415,7 +444,13 @@ My exploring led to consulting on all kinds of different departments and project
     - Achieved millions of actions taken 
     - Maintained above a 4.8 app store rating with 1.3k reviews 
 
-**MEDIA: two images in this row in the following order `assets/.media/awards-viral-social/flow-awards-viral-social-18.webp` and `assets/.media/awards-viral-social/flow-awards-viral-social-19.webp`**
+| **Media**    | Image                                                                |
+| ------------ | -------------------------------------------------------------------- |
+| Row x Column | 1 x 2                                                                |
+| Visual/Row   | 2                                                                    |
+| Notes        | First on left and second on right side please                        |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-18.webp` |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-19.webp` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
   + iOS Messages Sticker App
@@ -423,45 +458,81 @@ My exploring led to consulting on all kinds of different departments and project
     - Managed beta testing programs; TestFlight
     - Managed press release and launch communications
 
-**MEDIA: two images in this row in the following order `assets/.media/awards-viral-social/flow-awards-viral-social-20.webp` and `assets/.media/awards-viral-social/flow-awards-viral-social-21.webp`**
+| **Media**    | Image                                                                |
+| ------------ | -------------------------------------------------------------------- |
+| Row x Column | 1 x 2                                                                |
+| Visual/Row   | 2                                                                    |
+| Notes        | First on left and second on right side please                        |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-20.webp` |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-21.webp` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
   + Cruelty-Free Product Database iOS App 
-    - Bunny Free App was updated every single day, relaying fine details between communications and corporate advocacy departments and working closely with the contracted developer
-    - Optimization and feature updates resulted in an increase of return users by +33.7% and daily page views by +12%
+    - Bunny Free App was updated every single day 
+    - I relayed fine details between the communications and corporate advocacy departments 
+    - I worked closely with the contracted developer
+    - Optimization and feature updates had great results
+    - We saw increases in return users (+33.7%) and daily page views (+12%)
 
-**MEDIA: two images in this row in the following order `assets/.media/awards-viral-social/flow-awards-viral-social-22.webp` and `assets/.media/awards-viral-social/flow-awards-viral-social-23.webp`**
+| **Media**    | Image                                                                |
+| ------------ | -------------------------------------------------------------------- |
+| Row x Column | 1 x 2                                                                |
+| Visual/Row   | 2                                                                    |
+| Notes        | First on left and second on right side please                        |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-22.webp` |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-23.webp` |
 
 #### Game Development Strategy Improvements
 
 Heavy copywriting experience and visual storytelling skills translated from social media growth to consulting with agency game developers on content and strategy for our advocacy education game, Kitten Squad.
 
-**MEDIA: just this image in this row `assets/.media/awards-viral-social/flow-awards-viral-social-24.webp`**
+| **Media**    | Image                                                                |
+| ------------ | -------------------------------------------------------------------- |
+| Row x Column | 1 x 1                                                                |
+| Visual/Row   | 1                                                                    |
+| Notes        | Just one image in the row                                            |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-24.webp` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + Playstation-born: 
+  + Playstation-born
     - I coordinated the iOS and Android launch through marketing 
-    - Handled communication pitches for launch 
+    - Handled communication and writing press releases for launch 
     - Executed the cross-media marketing campaigns 
     - Reached 1M+ download goal
 
-**MEDIA: just this GIF in this row `assets/.media/awards-viral-social/flow-awards-viral-social-25.gif`**
+| **Media**    | Image                                                               |
+| ------------ | ------------------------------------------------------------------- |
+| Row x Column | 1 x 1                                                               |
+| Visual/Row   | 1                                                                   |
+| Notes        | Just one GIF in the row                                             |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-25.gif` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + Game development agency consulting: 
-    - Reviewed game assets to re-imagine the conversational flow 
-    - Updated game copy and visuals
-    - Work helped make the game more accessible
+  + Consulting for an agency
+    - I got to work closely with the development team of the agency that handled our game development 
+    - I reviewed game assets to re-imagine the conversational flow 
+    - Updated the copywriting in the game 
+    - Improved the emotionality of the visuals
+    - Work helped make the game more accessible and engaging
     - Contributed to a +40% increase in user engagement
     - Maintained focus on the core advocacy education messaging
 
-**MEDIA: these three images should go in one row in the following order `assets/.media/awards-viral-social/flow-awards-viral-social-26.png` and `assets/.media/awards-viral-social/flow-awards-viral-social-27.png` and `assets/.media/awards-viral-social/flow-awards-viral-social-28.png`**
+| **Media**    | Image                                                               |
+| ------------ | ------------------------------------------------------------------- |
+| Row x Column | 1 x 3                                                               |
+| Visual/Row   | 3                                                                   |
+| Notes        | Three images in the row with first in left, last on right           |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-26.png` |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-27.png` |
+| Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-28.png` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + UX strategy implementation: 
-    - Addressed user feedback head-on, often directly from comments in the app store 
-    - Integrated insights into actionable written UI design guidelines 
+  + This one is for the users 
+    - Specifically addressed UX strategy
+    - Reviewed user feedback and addressed it head-on
+    - Integrated insights into actionable UI writing
     - Produced strategy-development directives
-    - These updates resulted in an increase to an 85% completion rate and 88% satisfaction
+    - Updates resulted in improving completion to 85% 
+    - User satisfaction increased to 88% 
 
 ---
