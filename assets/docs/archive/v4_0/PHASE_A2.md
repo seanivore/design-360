@@ -4,7 +4,7 @@
   - PHASE: A
   - Group: 2
 **JSON Details**:
-  - SLUG: freelance-web-consultant
+  - SLUG: freelance-marketing-web
   - LAYOUT: Flow
 **Needed to Post**: 
   - PLACEMENT: Images, headings, and lists are placed to reflect their flow placement; this should be evident reading straight down the page.
@@ -13,8 +13,8 @@
   - Any URLs added within page copy should be hyperlinked in the same way in the published version
   - HYPERFRAME: Something animated that in engages and encourages the user to scroll and enjoy scrolling up and down. I did this in the past by hand drawing ivy and animating it in After Effects so that it 'grew' or reversed depending on scroll direction and used those as page breaks in the past. This is just one idea; we just need something that keeps them scrolling.
 **Created**: 2026-05-20
-**Updated**: 2026-05-21
-**Update Details**: Reframed and restructured to the A1_v2 format — pulls the chronological through-line from the PETA entry, removes the "generalist" framing, H2s set as job-title-type roles. Needs review/edit by Sean.
+**Updated**: 2026-05-22
+**Update Details**: Sean edited. 
 **Original**: N/A
 **Status**: Drafting
 **Built from**: 
@@ -30,95 +30,124 @@
   - Self-Employed Web Design & Digital Consultancy Highlights
     - **Digital Business Consultant**
       - *Hired As The Expert*
-        - Urgent COVID-19 Communication Platform — State of Hawaii Physicians
+        - Hawaii Physicians Urgent Need for COVID-19 PPE
           - The brief
           - The build
           - Why it worked
-      - *Data-Driven Strategy*
-        - Influencer Growth Pitch Deck
-          - The pitch
-          - The deck
-    - **Brand Designer & Web Developer**
       - *Carrying One Brand Across Every Medium*
         - CK Heals — A Wellness Brand Built Twice
           - First build, Kajabi
           - Second build, Webflow
           - What I drew and ran
-      - *Designing Full Learning Experiences*
-        - Shamanism Love Online Course
+      - *Data-Driven Strategy*
+        - Influencer Growth Pitch Deck
+          - The pitch
+          - The deck
+    - **Front-End Specialization**
+      - *Becoming The Topic Expert*
+        - Building Kajabi Online Courses
           - The work
-    - **Front-End Web Developer**
-      - *Returning To Code, On A System*
+      - *Bringing System Design Into Coding*
         - Modular Portfolio Build
           - The system
           - The bridge
 
 ---
 
-**FEEDBACK**: 
-
-I've edited A1 again, though it does need another pass from you/agent, but it is clearer now just how much the role transformed and why it would actually make perfect sense not to specialize. My last role there was literally just to look across all of digital and produce analytics reports to find where I could make the biggest impact in improving the organization. We evangelized the entire organization which had so many different types of specialized departments, consulted all the new global affiliate marketing employees to do what we had done, and then there is a handful of other consulting related tasks I took on in that last phase of PETA. I don't like the term generalist because it was far more big picture and performance related — rather than wearing lots of hats, I had my hands in everything because I changed the entire organizations processes and means for creating their public appearance and communications with their audience. I oversaw the new websites and app builds, I consulted direct and SMS marketing departments on best practices, I reviewed all video cuts, trained teams on copywriting and edited content department's new post copy — all while being one of two managers permitted to skip sending anything I wrote to the writing department for grammar and to legal department for accuracy. I created all types of creative digital content production, managed remote and local employees, fired people. I guess what I don't like about it is that it very much implies that the norm or appropriate thing is typically to specialize and if I had stayed at PETA I would have been a director and then VP, I was going the opposite of specializing because I had been involved in all the different parts of the digital marketing spectrum and was the one sent in to improve those departments. Not that I'm saying I want to be all "it didn't make sense to specialize" or "my path was blah blah whatever the opposite is" at all. It should just be presented as what it is and backed up with examples and references to my experience. 
-
-This was my opportunity to be an artist and maintain the crazy amount of freedom I had from building peta, that had faded away towards the ends because my role was literally to build out the process and hire in the people to do the creative work. It was the most sensible way to use what I had learned through experience was a really strong eye for design and visual storytelling, with a knack for technical thinking, growing my understanding of the specifics of actual technical details — that is the way I've headed since leaving PETA -- I was straight up graphic designing and making art, and then over time have ended up now where I work with code. 
-
-I don't see a generalist as a consultant. I see a consultant as hired because they're the expert. This is why I often say "Digital Business Consultant" because most clients are SBO, many going onto the internet for the first time and needing a digital presence. Less so today, but that was how it started. 
-
-Like for CK Heals — at PETA I created the brand's voice and aesthetic and worked it out towards all the mediums and media. To me, it seems like I did the same for CK Heals. 
-
-I could go on but I think hopefully you get my point. Before I continue reviewing, I think in general, that these new pages should be at least reviewed if not updated -- it seems like the primary cause of all of the above is just that the dots from experience beforehand weren't pulled through and instead each was produced in isolation. That was due to poor design mostly on my part but yeah they definately should make sense cohesively -- they are afterall, the actual chronolofical path I took. 
-
----
-
 ## Digital Business Consultant
 
-By the time I left PETA, my role had stopped being hands-on. I owned the data, set the process, reviewed the cuts, and hired the people who did the creative work. I had built the system — and I missed building the thing.
+By the time I left [PETA](https://wwww.august.style/awards-viral-social), my role had stopped being hands-on. I owned the data, set the process, reviewed the cuts, and hired the people who did the creative work. The system we had built became so large that I started to oversee the integral parts of maintaining it end to end, rather than working directly hands on each step of the way. This was highly valuable experience and opened me up to entirely new ways of thinking about business, strategy, and production, while exposing me to new teams, both in-house, abroad, agency, and freelance, and provided me with agency to find new problems to solve, pulling what I knew into new territory. 
 
-Going independent gave the work back. I had run every part of the digital-marketing spectrum at a global scale, and that is exactly what a small business owner is looking for when they hire a consultant. They aren't buying a set of hours; they're buying the person who has already done it. Most of my early clients were getting a real digital presence for the first time, and what they needed was one expert who could take a brand from nothing to live.
+After almost a decade of creating, scaling, then optimizing and future proofing, our global organization-wide system was officially a well oiled machine. We had even successfully filled the role of passing down the wisdom we picked up over the years. Though I enjoyed the autonomy I was granted, even the opportunities to improve the organization's work were becoming less and less frequent. It was then that my mentor who I had built everything with parted ways with the organization to start her own consultancy. 
+
+The next few months found myself considering my own options. By then I had lived in Los Angeles for a decade. My network of peers was diverse except for a small close knit group who found themselves in similar positions at large global advertising agencies. Even on our trips to sit by the pool in Palm Springs, we always ended up talking shop, sharing strategies, advice, experiences, and the occasional business opportunity connection. We pushed each other to grow, so when my closest friend [Chelsea Williams](https://www.linkedin.com/in/naftelberg/) announced she was making her own moves towards their own consultancy, ever following in the footsteps of her wisdom, I was considering doing the same. I had interviewed at a handful of creative agencies and even made a tough call regarding a position that would have placed me directly in social production for Ayzenberg Group, rebranding the Galaxy Tablet product line for their client Microsoft. 
 
 ### Hired As The Expert
 
-The clearest proof of what that expertise is worth is what happens when there's no time to spare.
+I decided my experience running every part of the digital-marketing spectrum at a global scale could be better put to use if I tried to do something similar again, meaning owning every step of the work, end to end. This was exactly what a small business owner is looking for when they hire a consultant. They aren't buying a set of hours, they're buying an outcome. This kicked off an exciting new era of challenges with variability that introducing me to new industries with different types of people. 
 
-#### Urgent [COVID-19 Communication Platform](https://www.august.style/public-health-response-platform) — State of Hawaii Physicians
+#### Hawaii Physicians Urgent Need for COVID-19 PPE
 
-**MEDIA: Single row, one image — a GIF walkthrough of the COVID-19 platform showing the homepage, the testing/vaccination resource pages, and the mobile view. Capture at desktop 1440 and mobile 390. `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-01.webp`**
+Most of my early clients were getting a real digital presence for the first time, and what they needed was one expert who could take a brand from nothing to live, some just needed an online asset ASAP. The Hawaii COVID-19 Taskforce needed their communication resource platform immediately, not in a sprint, or a day. 
 
-The Hawaii COVID-19 Taskforce needed a public health communications platform live immediately — not in a sprint, in a day. An expert is who you call when the deadline is already here.
+**MEDIA: Two images in a single row with `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-01.webp` and `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-02.webp` second, same height**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
   + The brief:
-    - A communications platform for the State of Hawaii's physician taskforce
-    - Built and live inside a 24-hour turnaround, during an active emergency
-    - Had to serve a whole population, across every level of digital literacy
+    - Provided as a frantic phone call looking for solutions to address the shortage of PPE in Hawaii 
+    - I suggested a means of connected providers across the state to facilitate better sharing of what they did have as a first step
+    - They provided their credit card details and a phone number to their assistant for details, and I got straight to work 
+    - I ensured I'd stay available for any fixes and updates needed for the following weeks as long as they needed
+    - Then I got straight to work, detailing each decision, with brief rational if needed
 
   + The build:
-    - Built on Squarespace so it was stable, fast, and instantly maintainable
-    - The information hierarchy put the critical resources first — testing locations, vaccination sites, quarantine guidance
-    - Architected so non-technical taskforce staff could publish real-time updates with no developer in the loop
+    - At the time I had built many sites on Squarespace so it was my best bet for speed and ease of maintenance 
+    - I created a fresh Gmail account and signed up for Squarespace and Mailchimp so they could send the health network updates
+    - As I built framework and placeholders I communicated with the client's assistant gathering any details or media needed 
+    - Materials sent over were rushed, riddled with typos, and very obviously passed along with urgency
+    - I took it upon myself to organize information in what seemed like a logical hierarchy, made thing as brief as possible with contact prominent 
+    - All architected so non-technical taskforce staff could publish real-time updates with no developer in the loop
 
-  + Why it worked:
-    - An effective emergency platform comes from clarity, not technical complexity
-    - Knowing exactly what to leave out is a senior decision — and it's the one that made a one-day build possible
-
-### Data-Driven Strategy
-
-The analytics discipline I had built at PETA — the habit of letting the numbers point at the opportunity — was just as valuable on the strategy side of consulting as it was on the build side.
-
-#### [Influencer Growth Pitch Deck](https://www.august.style/influencer-growth-strategy/)
-
-**MEDIA: Single row, two images — deck spreads. Use the audience-demographics slide and the milestone-timeline slide. `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-02.webp` and `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-03.webp`**
-
-Some clients didn't need a build — they needed a plan they could take to a stakeholder and get funded. This one was a data-driven growth strategy, sold as a pitch deck.
+**MEDIA: Two images, same height, in this row with `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-03.webp` and `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-04.webp` second.**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + The pitch:
+  + Why it worked:
+    - It was fast, and a solution they hadn't yet considered, effectively encouraging stronger community during times of crisis 
+    - It demonstrated clarity without complexity, necessary in emergencies
+    - The addition of the Mailchimp account was unexpected and heavily utilized as the state slowly received supplies over the following weeks
+    - Knowing exactly what to leave out is a senior decision and likely part of why I was their first contact for the service 
+    - No revisions were needed after handoff, which took just a few hours, and the site was picked up by local news and promoted for weeks
+    - I provided exactly what an urgent situation where every minute costs lives needed 
+
+### Offering Human Solutions Where Others Chose Bots
+
+#### Influencer Growth Pitch Deck
+
+**MEDIA: Single row of four images, same hight, in order should be `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-05.webp`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-06.webp`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-07.webp` and `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-08.webp`**
+
+**BULLETED LIST WITH INDENTED SUB-LISTS**
+  + New business opportunity: 
+    - I reached out to an influencer I had been following on Instagram for a while 
+    - I asked to chat with her about where she was at with her brand growth and where her strengths were 
+    - We had a great conversation and I walked away with a good sense of where I could help her grow her brand
+    - Over the next day I came up with a strategy that played into what she felt most comfortable with and avoided what she didn't 
+
+**MEDIA: Single row of four images, same hight, in order should be `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-09.webp`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-10.webp` and `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-11.webp`**
+
+  + The preparation: 
+    - First I put together a deck defining the strategy 
+    - All of the visuals and even the UI aesthetic came from the potential client's social profiles
+    - Even those tiny Instagram Profile Grid visuals had to be pieced together one image at a time to tell the right story
+    - Once complete, I reached out to a long time friend and industry peer who had experience signing and working with influencers agency-side
+    - Ms. Naftelberg had been VP of a major social-first advertising agency in Los Angeles before also going freelance
+    - Even at this time when we were both freelancing, the Toyota client she worked with when at an agency came with her when she left the agency
+    - She was someone I both admired and trusted implicitly, and frequently bounced ideas off of even when we weren't working together 
+    - I sent her the deck and asked if she might help me close the new business for a signing bonus and we were set to setup the potential client call    
+
+**MEDIA: Single row of four images, same hight, in order should be `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-12.webp`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-13.webp` and `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-14.webp`**
+
+  + The strategy:
+    - I leaned into the analytics discipline I had built over the years
+    - Pulled from experience creating and executing viral campaigns with award-winning engagement rates
+    - In the deck I made sure all of the numbers pointed at the opportunity
     - A growth strategy built on real audience data — not bots, not vanity metrics
     - Audience demographics, engagement patterns, and content performance turned into specific moves
     - Content formats to prioritize, optimal posting windows, audience segments, and growth milestones with timelines
+    - This was during an era when many wannabe influencers were buying likes and follows
+    - We made sure to show her how evident it was when influencers did this: you could see their following but their posts had no engagement 
+    - This was crafted as a real-person solution that would serve as a stepping stone towards the next steps in building her audience 
+    - The next step was discussed as well, though it wasn't in the deck 
+    - The secondary step involved identifying the core 12-20 most engaging followers 
+    - Influencers then essentially become best friends with those followers, creating real relationships built on the content's subject matter
 
-  + The deck:
-    - Designed so the deck itself demonstrated the creative quality the strategy promised
-    - Made a data-heavy argument legible to non-marketing stakeholders who had to approve the budget
+**MEDIA: Single row of four images, same hight, in order should be `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-15.webp`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-16.webp` and `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-17.webp`** 
+
+  + The outcome: 
+    - This specific client didn't end up booking 
+    - The strategy itself was pitched to other potential clients in coming months 
+    - It was successful and for a time became a go-to offering for those seeking audience growth
+
+**MEDIA: Single row of four images, same hight, in order should be `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-18.webp`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-19.webp`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-20.webp`, and `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-21.webp`**
 
 ---
 
@@ -130,7 +159,7 @@ At PETA, the work I was proudest of was building a brand's voice and visual iden
 
 CK Heals is the clearest example. A body-awareness coach and online personal trainer came to me with a practice and not much else — and I did for her exactly what I had done for a global organization: found the brand's voice, drew its aesthetic, and worked it out across every medium it needed to live in.
 
-#### [CK Heals](https://online-pt-trainer.august.style/) — A Wellness Brand Built Twice
+#### CK Heals — A Wellness Brand Built Twice
 
 **MEDIA: Single row, two images — the Kajabi course-platform build on the left, the Webflow rebuild on the right. Source material: `assets/.media/kajabi-online-course-platform/` (9 slide thumbs + .mp4), `assets/.media/online-course-meditation-yoga/` (10 course-production images), `assets/.media/vid-training-yoga-sales.mp4`. `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-04.webp` and `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-05.webp`**
 
