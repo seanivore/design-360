@@ -6,6 +6,8 @@
 **JSON Details**:
   - SLUG: freelance-marketing-web
   - LAYOUT: Flow
+  - THUMBS: 
+  - ACHIEVEMENT: []
 **Needed to Post**: 
   - PLACEMENT: Images, headings, and lists are placed to reflect their flow placement; this should be evident reading straight down the page.
   - Anything with **Bold** notation is notation about the placement and not actually meant to be published on the page. This often is followed by bullet points adding notation that isn't to be published verbatim.
@@ -218,6 +220,7 @@ When she first came to me it was to set up her entire online presence for the fi
 **TWO IN ONE ROW: `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-29.mp4`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-30.mp4`**
 
 ```html
+<div class="portfolio-grid">
   <div class="portfolio-video">
     <video
       src="https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-29.mp4"

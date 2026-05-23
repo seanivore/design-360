@@ -6,7 +6,8 @@
 **JSON Details**:
   - SLUG: awards-viral-social
   - LAYOUT: Flow
-  - THUMBS:
+  - THUMBS: 
+  - ACHIEVEMENT: []
 **Needed To Post**:
   - PLACEMENT: The images, headings, and lists are all places as should reflect their flow placement; this should be evident when reading through, as it continues straight down the page.
   - Anything with **Bold** notation is notation about the placement and not actually meant to be published on the page. This often is followed by bullet points adding notation that isn't to be published verbatim.

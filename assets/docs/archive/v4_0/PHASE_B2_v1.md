@@ -6,6 +6,8 @@
 **JSON Details**:
   - SLUG: narrative-ai-fashion-design
   - LAYOUT: Flow
+  - THUMBS: 
+  - ACHIEVEMENT: []
 **Needed To Post**:
   - PLACEMENT: Images, headings, and lists are placed to reflect their flow placement; this should be evident reading straight down the page.
   - Anything with **Bold** notation is notation about the placement and not actually meant to be published on the page. This often is followed by bullet points adding notation that isn't to be published verbatim.

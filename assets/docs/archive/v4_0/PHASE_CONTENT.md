@@ -270,7 +270,7 @@ You'll note that these entries are primarily, if not completely, newly created. 
 
   + Marketing Department manager
     `https://www.august.style/agentic-marketing-department/`
-    `https://developer-technologist.august.style/agentic-marketing-department`
+    `https://developer-technologist.august.style/agentic-marketing-department` -- end one is good for embeded art curator 
 
 ## Swarm Design Iterations 
 
