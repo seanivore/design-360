@@ -13,8 +13,8 @@
   - Any URLs added within page copy should be hyperlinked in the same way in the published version
   - HYPERFRAME: Something animated that in engages and encourages the user to scroll and enjoy scrolling up and down. The pipeline (database → art → posts → social → video) is a natural moment to animate building one stage at a time.
 **Created**: 2026-05-20
-**Updated**: 2026-05-21
-**Update Details**: Reframed and restructured to the A1_v2 format — opens from the A3 art-direction chapter, H2s set as job-title-type roles. Needs review/edit by Sean.
+**Updated**: 2026-05-23
+**Update Details**: Consolidated to Sean's full-body rewrite. The earlier agent draft has been removed. Its seven MEDIA callouts were moved into Sean's body at the points where they support what he's describing, with the slug corrected from `astro-generative-content-engine` to the real slug `generative-blog-workflow`. The Structure block now reflects Sean's actual body. Two FLAGs left inline for Sean's review (Lottie image placement and post-volume figure).
 **Original**: N/A
 **Status**: Drafting
 **Built from**: 
@@ -27,24 +27,26 @@
 **Must do**: 
   - `MEDIA` callouts need producing
   - Cross-link out to B7 (ASD podcast) at the close
-  - Set the exact post-volume figure — source docs vary (treated as "200+ a week")
+  - Confirm exact post-volume figure — currently "200+ a week"
 **Structure**: 
   - Database Powered Generative Content Engine
     - **Content Systems Architect**
-      - *One Database In*
-        - The Notion Source Of Truth
-        - Daily Artwork From A Mood Keyword
-    - **Generative Producer**
-      - *Writing & Publishing On Autopilot*
-        - Automated Horoscopes
-      - *Hand-Drawn Craft In An Automated Brand*
-        - Maximalist Lottie Animation
-    - **Automation & Distribution**
-      - *The Social Layer*
-        - Agentic Social Media Manager
-      - *Video At 10x*
-        - API-Automated Video Shorts
-      - *Where It Led*
+      - *Fully Automated Astrological Readings*
+        - I Love Creating Process
+          - The building blocks
+          - The showcase
+          - Tools for the job
+        - Publishing 200 Blogs Weekly
+          - The written content
+          - The artwork
+          - Curation and publication
+        - Social Media And Podcast Pipelines
+          - Types of promotional content
+          - The final product
+          - Podcast episode generation flow
+        - Humanity Has A Place
+          - This is when I had to do some work
+          - Performance metrics
 
 ---
 
@@ -58,12 +60,12 @@ I quickly recognized that even the earliest GPT release had extensive understand
 
 #### I Love Creating Process 
 
-Long before I had ever heard the terms 'system design' or 'solutions architect' I was at PETA, coming up with new strategy and building the system needed to scale it up for an global organization. There's something magical about finding the simplest form of a logical system, and the idea of creating one that was fully automated sort of blew my mind. 
+Long before I had ever heard the terms 'system design' or 'solutions architect' I was at PETA, coming up with new strategy and building the system needed to scale it up for a global organization. There's something magical about finding the simplest form of a logical system, and the idea of creating one that was fully automated sort of blew my mind. 
 
   + The building blocks  
     - Somewhere to gather the initial data 
     - A setup to structure that data 
-    - Another structure the fit the desired end result of the data
+    - Another structure to fit the desired end result of the data
     - A pipeline that pulled the data in and returned the output it produced with it
     - A way to integrate this amazing new tool "ChatGPT" into this pipeline 
 
@@ -87,13 +89,15 @@ Long before I had ever heard the terms 'system design' or 'solutions architect' 
     - The exact same flow worked for producing video shorts as well 
     - And finally, all of these promotional assets were pushed by Make when it was time for them to go live 
 
-#### Publishing 200 Blogs Weekly 
+**MEDIA: Single row, one image — a clean screenshot of the Notion source-of-truth database, rows of daily aspects and planetary positions. `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-01.webp`**
+
+#### [Publishing 200 Blogs Weekly](https://www.august.style/animated-cms-weekly-blogs/)
 
   + The written content 
-    - This massive blog website had a collect of 5 different types of horoscopes for all 12 zodiac signs 
+    - This massive blog website had a collection of 5 different types of horoscopes for all 12 zodiac signs 
     - It had a weekly reading that helped you identify catalysts for change interpersonally, internally, and integrating the two 
     - Daily chart reading that "translated" the planet positions and major aspects 
-    - Weekly planner that provided activity ideas based on the energy for the weekend and weekend
+    - Weekly planner that provided activity ideas based on the energy for the weekday and weekend
 
   + The artwork 
     - Every single post included a freshly created brand artwork
@@ -101,11 +105,19 @@ Long before I had ever heard the terms 'system design' or 'solutions architect' 
     - Keywords were placed into Adobe Firefly along with some basic aesthetic guides that fit the mood of the keywords 
     - A hundred or so images were generated for the week 
 
+**MEDIA: Single row, one image — a batch grid of the daily Firefly artwork showing the visual range across one week's keyword sets. `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-02.webp`**
+
   + Curation and publication
     - Out of a hundred or so images I would select the best 20 or so that fit the mood
     - Adobe Lightroom makes it super easy to do this very quickly 
-    - Put the images in dropbox and they can be picked up the automation and placed in Notion where they belonged 
+    - Put the images in Dropbox and they can be picked up by the automation and placed in Notion where they belonged 
     - This same collection of automations facilitated pushing the content out across social media as well 
+
+**MEDIA: Single row, one video — the live horoscope site scrolling, showing the hand-drawn backgrounds the AI artwork sits on top of. Source `assets/.media/vid-animated-cms-weekly-blogs.mp4`; YouTube `https://youtu.be/LakcBI95rfU`. `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-03.webp`**
+
+**FLAG (Sean to confirm placement or remove): the hand-drawn [Lottie animation system](https://www.august.style/advanced-animation-system/) for the site is its own project (`uid-cap-258.json`) — entirely hand-drawn, no AI. The agent draft staged a GIF of it here as the craft counterweight to the automated pipeline. Your current body doesn't call it out specifically; keep, move, or remove this image at your discretion.**
+
+**MEDIA: Single row, one GIF of the hand-drawn Lottie animation in motion. `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-04.webp`**
 
 #### Social Media And Podcast Pipelines 
 
@@ -115,9 +127,13 @@ Long before I had ever heard the terms 'system design' or 'solutions architect' 
     - These automations could feed a horoscope to ChatGPT and have them write up a Tweet or Instagram post 
     - Visuals were viewed in the pipeline by ChatGPT so that copy could be written for automated video short production 
     - Automated Instagram stories were posted with copy and images 
-    - Standard updated of the planets and their translated archetypal energies were published to Facebook
+    - Standard updates of the planets and their translated archetypal energies were published to Facebook
     - Weekly horoscope updates were posted to Facebook 
     - It only occurred to me when building the automations that it was not typical to post hundreds of updates on social every week 
+
+**MEDIA: Single row, one image — examples of the social posts in their final form, both text-only and image with overlaid text. Built by the [agentic social manager](https://www.august.style/agentic-social-manager/) running on top of the [agentic marketing department](https://www.august.style/agentic-marketing-department/). `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-05.webp`**
+
+**MEDIA: Single row, one image — 2–3 example [API-automated video shorts](https://www.august.style/api-automate-video-production/) as a small grid, showing the cross-platform output of the same day's content. `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-06.webp`**
 
   + The final product 
     - The final and most popular product was the Astrofluenced Podcast
@@ -125,14 +141,16 @@ Long before I had ever heard the terms 'system design' or 'solutions architect' 
     - Every episode got special cover art based on the mood of the reading 
     - This pipeline was much more intricate than the others because it bounced drafts back and forth between different AI instances
 
+**MEDIA: Single row, one image — the Astrofluenced podcast on Spotify, showing the per-episode cover art generated from each weekly reading's mood. `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-07.webp`**
+
   + Podcast episode generation flow
     - First the AI came up with the overall story for the podcast from the weekly astrology aspects and planet positions 
-    - Another AI instance would review this for accuracy to minimize need for human in the loop moments 
+    - Another AI instance would review this for accuracy to minimize need for human-in-the-loop moments 
     - This was passed to an AI instance that broke the reading into scripts for two characters 
     - The profile for the personality of the characters was carefully crafted and highly detailed 
     - These character profiles were fed into yet another AI along with their scripts to be edited 
     - The edited scripts went into a Text-To-Voice AI tool 
-    - The final clips were then neatly placed in Dropbox folder for each episode 
+    - The final clips were then neatly placed in a Dropbox folder for each episode 
 
 #### Humanity Has A Place
 
@@ -140,113 +158,13 @@ Long before I had ever heard the terms 'system design' or 'solutions architect' 
     - This is when I stepped in to reap the benefits
     - I had an Adobe Audition template prepared along with a folder for perfect transition music selections
     - I dropped the clips into the template and exported the final audio 
-    - This audio then went into Adobe After Effect and along with the weekly cover art 
+    - This audio then went into Adobe After Effects and along with the weekly cover art 
     - The VFX tool created a waveform following the speaking of the characters and transition music 
-    - I output this and finalized it in Adobe Premier Pro where subtitles were generated and then edited for accuracy 
-    - That final output was then uploaded and scheduled for publication to Spotify and [Youtube](https://youtu.be/tdon1UFwULs?si=sM7oJBJpFalXK8Mw)
+    - I output this and finalized it in Adobe Premiere Pro where subtitles were generated and then edited for accuracy 
+    - That final output was then uploaded and scheduled for publication to Spotify and [YouTube](https://youtu.be/tdon1UFwULs?si=sM7oJBJpFalXK8Mw)
 
   + Performance metrics
     - These Podcasts were before the magic that is Google's NotebookLM was released so it got a bit of traction 
     - Over 800 listens, totaling 27 hours played, for 68 total episodes posted 
 
-=== FIRST DRAFT BELOW THIS LINE ===
-
-### One Database In
-
-Every day has a real, fixed set of astrological data — the aspects and planetary positions. That, and only that, is what I entered.
-
-#### The Notion Source Of Truth
-
-**MEDIA: Single row, one image — a clean screenshot of the Notion database, rows of daily aspects and positions. `assets/.media/astro-generative-content-engine/flow-astro-generative-content-engine-01.webp`**
-
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + The input:
-    - One grouped set of Notion databases holding each day's astrological aspects and positions
-    - No copy, no art direction, no scheduling — just the raw daily data
-    - Everything past this point ran without me
-
-#### Daily Artwork From A Mood Keyword
-
-**MEDIA: Single row, one image — a batch of daily Firefly artwork. `assets/.media/astro-generative-content-engine/flow-astro-generative-content-engine-02.webp`**
-
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + The first automated step:
-    - The day's data resolved to a mood keyword
-    - That keyword drove a batch of artwork generated in Adobe Firefly — one set per day
-    - The brand got fresh, on-theme visuals every single day, with zero manual design
-
----
-
-## Generative Producer
-
-From that one database, the content built itself in stages. Each stage was its own system; together they were the engine.
-
-### Writing & Publishing On Autopilot
-
-#### [Automated Horoscopes](https://www.august.style/animated-cms-weekly-blogs/)
-
-**MEDIA: Single row, one image — a GIF of the live horoscope site scrolling, showing the hand-drawn backgrounds. Source `assets/.media/vid-animated-cms-weekly-blogs.mp4`; YouTube `https://youtu.be/LakcBI95rfU`. `assets/.media/astro-generative-content-engine/flow-astro-generative-content-engine-03.webp`**
-
-The site published at a volume — 200+ posts a week — that no small team could match by hand.
-
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + How it ran:
-    - A Make.com and LLM pipeline wrote, formatted, and published the horoscope posts
-    - An [agentic marketing department](https://www.august.style/agentic-marketing-department/) coordinated it — specialist agents for strategy, copy, visuals, and analytics, handing off through Make.com scenarios
-    - Analytics fed back into the next round, so the system tuned itself
-
-  + Why it didn't read like a content farm:
-    - The site was hand-built in Webflow, and every background was drawn by hand
-    - That deliberate craft is what kept an automated brand from feeling automated
-
-### Hand-Drawn Craft In An Automated Brand
-
-The animation deserves its own note, because none of it was AI.
-
-#### [Maximalist Lottie Animation](https://www.august.style/advanced-animation-system/)
-
-**MEDIA: Single row, one GIF of the hand-drawn Lottie animation in motion. `assets/.media/astro-generative-content-engine/flow-astro-generative-content-engine-04.webp`**
-
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + Pure craft, on purpose:
-    - Illustrations drawn by hand on iPad Pro, animated in After Effects, shipped as lightweight Lottie
-    - No AI anywhere in this part — and it's why a heavy-animation site still loaded instantly
-    - This hand-drawn animation work later fed directly into the podcast
-
----
-
-## Automation & Distribution
-
-A published post is only half of reach. The engine also took each day's content out to where the audience already was.
-
-### The Social Layer
-
-#### [Agentic Social Media Manager](https://www.august.style/agentic-social-manager/)
-
-**MEDIA: Single row, one image — example social posts, text-only and image. `assets/.media/astro-generative-content-engine/flow-astro-generative-content-engine-05.webp`**
-
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + What the agent did:
-    - Took the daily horoscopes and art and turned them into social posts — text-only, and images both with and without overlaid text
-    - Wrote, scheduled, posted, and monitored engagement across platforms with no daily human involvement
-    - Scheduling tuned itself against accumulated performance data
-
-### Video At 10x
-
-#### [API-Automated Video Shorts](https://www.august.style/api-automate-video-production/)
-
-**MEDIA: Single row, one image — 2–3 example video shorts as a small grid. `assets/.media/astro-generative-content-engine/flow-astro-generative-content-engine-06.webp`**
-
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + The last stage of the engine:
-    - The same daily content was assembled into video shorts programmatically — templates plus APIs, AI-generated copy and captions, platform-native formats
-    - Video throughput rose roughly 10x, because there was no editor in the loop
-    - One day's source content now produced an optimized cut for every platform it needed to live on
-
-### Where It Led
-
-**MEDIA: Single row, one image — the Astrofluenced podcast. `assets/.media/astro-generative-content-engine/flow-astro-generative-content-engine-07.webp`**
-
-Running an entire brand from one database proved the model — and the model didn't stop at Astrofluenced. The engine's reach grew into a generative podcast, and that first podcast became the proof of concept for a far more robust system: the ASD podcast network. *(Cross-link out to the B7 podcast entry here.)*
-
-One person, one database, and a pipeline doing the work of a whole content department — the clearest single picture of what generative automation actually buys a brand.
+*This first podcast became the proof of concept for a far more robust system — the ASD podcast network. (Cross-link out to the B7 podcast entry here.)*
