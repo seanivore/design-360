@@ -1,8 +1,8 @@
 # Strategic Design & Content Update 
 
 **Created**: 2026-04-27
-**Updated**: 2026-05-19
-**Version**: v3.1.0 -> v4.0.0
+**Updated**: 2026-05-23
+**Version**: v3.1.0 -> v4.0.0 -> v4.1.0
 **Features**: Media and component layout upgrades; refocusing showcased entries
 **Status**: Planning 
 

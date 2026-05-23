@@ -31,33 +31,33 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. T
 
 ### Optional Fields
 
-| Field             | Type           | Default | Description                                                                                                       |
-| ----------------- | -------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| `img`             | `string[]`     | `[]`    | Square page images (hero fallback)                                                                                |
-| `img_alt`         | `string`       | `""`    | Alt text for page images                                                                                          |
-| `mobile_img`      | `string[]`     | `[]`    | **Deprecated** -- use `slideshows` with `type: "mobile"` instead                                                  |
-| `mobile_img_alt`  | `string`       | `""`    | **Deprecated** -- use `slideshows`                                                                                |
-| `gif`             | `string[]`     | `[]`    | GIF animation URLs (any aspect ratio)                                                                             |
-| `gif_alt`         | `string`       | `""`    | Alt text for GIFs                                                                                                 |
+| Field             | Type           | Default | Description                                                                                                                      |
+| ----------------- | -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `img`             | `string[]`     | `[]`    | Square page images (hero fallback)                                                                                               |
+| `img_alt`         | `string`       | `""`    | Alt text for page images                                                                                                         |
+| `mobile_img`      | `string[]`     | `[]`    | **Deprecated** -- use `slideshows` with `type: "mobile"` instead                                                                 |
+| `mobile_img_alt`  | `string`       | `""`    | **Deprecated** -- use `slideshows`                                                                                               |
+| `gif`             | `string[]`     | `[]`    | GIF animation URLs (any aspect ratio)                                                                                            |
+| `gif_alt`         | `string`       | `""`    | Alt text for GIFs                                                                                                                |
 | `grid`            | `string[]`     | `[]`    | 1080px square grid images (3-across). **Legacy flat schema** — new entries should use `grids[]` when multiple blocks are needed. |
-| `grid_alt`        | `string`       | `""`    | Alt text for legacy `grid[]` images                                                                               |
-| `grids`           | `array`        | `[]`    | Grouped 3-across grid blocks (see below). Used when an entry needs more than one grid component.                  |
-| `slideshows`      | `array`        | `[]`    | Grouped slideshow collections (see below)                                                                         |
-| `media_url`       | `string`       | `""`    | External video URL (e.g. YouTube link)                                                                            |
-| `media_embed`     | `string`       | `""`    | Raw iframe embed HTML for video                                                                                   |
-| `media_alt`       | `string`       | `""`    | Alt text for video embed                                                                                          |
-| `origin_url`      | `string`       | `""`    | External live project URL                                                                                         |
-| `origin_url_text` | `string`       | `""`    | Display text for origin URL                                                                                       |
-| `repository`      | `string`       | `""`    | GitHub repo URL                                                                                                   |
-| `role_headline`   | `string\|null` | `null`  | Headline for hero flip clock (e.g. "800+ Product Store, Fully Automated"). Lead with deliverable, not role title. |
-| `hero_btn_cta`    | `string\|null` | `null`  | CTA button text when this entry is randomly selected for hero (e.g. "See Web Projects")                           |
-| `final_cta_text`  | `string\|null` | `null`  | Bottom CTA section heading when this entry is selected (e.g. "Interested in web development?")                    |
-| `final_btn_cta`   | `string\|null` | `null`  | Bottom CTA primary button text (e.g. "See All Web Projects")                                                      |
-| `skill_summary`   | `string`       | `""`    | Brief summary of skills demonstrated                                                                              |
-| `process`         | `array\|null`  | `null`  | Process steps array (see below)                                                                                   |
-| `metric`          | `object\|null` | `null`  | Impact metric (see below)                                                                                         |
-| `achievement`     | `object\|null` | `null`  | Achievement accordion item (see below)                                                                            |
-| `notes`           | `string[]`     | `[]`    | Internal notes, not rendered                                                                                      |
+| `grid_alt`        | `string`       | `""`    | Alt text for legacy `grid[]` images                                                                                              |
+| `grids`           | `array`        | `[]`    | Grouped 3-across grid blocks (see below). Used when an entry needs more than one grid component.                                 |
+| `slideshows`      | `array`        | `[]`    | Grouped slideshow collections (see below)                                                                                        |
+| `media_url`       | `string`       | `""`    | External video URL (e.g. YouTube link)                                                                                           |
+| `media_embed`     | `string`       | `""`    | Raw iframe embed HTML for video                                                                                                  |
+| `media_alt`       | `string`       | `""`    | Alt text for video embed                                                                                                         |
+| `origin_url`      | `string`       | `""`    | External live project URL                                                                                                        |
+| `origin_url_text` | `string`       | `""`    | Display text for origin URL                                                                                                      |
+| `repository`      | `string`       | `""`    | GitHub repo URL                                                                                                                  |
+| `role_headline`   | `string\|null` | `null`  | Headline for hero flip clock (e.g. "800+ Product Store, Fully Automated"). Lead with deliverable, not role title.                |
+| `hero_btn_cta`    | `string\|null` | `null`  | CTA button text when this entry is randomly selected for hero (e.g. "See Web Projects")                                          |
+| `final_cta_text`  | `string\|null` | `null`  | Bottom CTA section heading when this entry is selected (e.g. "Interested in web development?")                                   |
+| `final_btn_cta`   | `string\|null` | `null`  | Bottom CTA primary button text (e.g. "See All Web Projects")                                                                     |
+| `skill_summary`   | `string`       | `""`    | Brief summary of skills demonstrated                                                                                             |
+| `process`         | `array\|null`  | `null`  | Process steps array (see below)                                                                                                  |
+| `metric`          | `object\|null` | `null`  | Impact metric (see below)                                                                                                        |
+| `achievement`     | `object\|null` | `null`  | Achievement accordion item (see below)                                                                                           |
+| `notes`           | `string[]`     | `[]`    | Internal notes, not rendered                                                                                                     |
 
 ### Structured Optional Fields
 

@@ -81,43 +81,43 @@ portfolio-starter/
 
 These files contain no personal content and work as-is:
 
-| File | Notes |
-|------|-------|
-| `assets/js/data-loader.js` | Pure utility — filtering, caching, normalization |
-| `assets/js/landing-controller.js` | Renders homepage from config, no hardcoded content |
-| `assets/js/entry-controller.js` | Populates entry from JSON, no personal refs |
-| `assets/js/tile-renderer.js` | DOM construction, fully generic |
-| `assets/js/filter-controller.js` | Filter UI, fully generic |
-| `assets/scripts/new_project.py` | UID generator |
-| `assets/scripts/validate_v5.py` | Schema validator |
-| `generate_manifest.py` | Manifest + HTML generator |
-| `assets/docs/_entry_template.json` | Blank template |
-| `assets/docs/JSON_ARCHITECTURE.md` | Architecture reference (update file paths) |
-| `.github/workflows/manifest.yml` | Auto-manifest on push |
+| File                               | Notes                                              |
+| ---------------------------------- | -------------------------------------------------- |
+| `assets/js/data-loader.js`         | Pure utility — filtering, caching, normalization   |
+| `assets/js/landing-controller.js`  | Renders homepage from config, no hardcoded content |
+| `assets/js/entry-controller.js`    | Populates entry from JSON, no personal refs        |
+| `assets/js/tile-renderer.js`       | DOM construction, fully generic                    |
+| `assets/js/filter-controller.js`   | Filter UI, fully generic                           |
+| `assets/scripts/new_project.py`    | UID generator                                      |
+| `assets/scripts/validate_v5.py`    | Schema validator                                   |
+| `generate_manifest.py`             | Manifest + HTML generator                          |
+| `assets/docs/_entry_template.json` | Blank template                                     |
+| `assets/docs/JSON_ARCHITECTURE.md` | Architecture reference (update file paths)         |
+| `.github/workflows/manifest.yml`   | Auto-manifest on push                              |
 
 ### Genericize (replace personal content)
 
-| File | What to change |
-|------|----------------|
-| `index.html` | Replace "Sean August Horvath" with placeholder, update meta tags, remove specific nav links |
-| `entry.html` | Replace footer name/links, remove specific social URLs |
-| `section.html` | Replace meta tag defaults with placeholders |
-| `404.html` | No personal content, but review |
-| `landing.css` | Keep as-is — CSS variables already enable theming |
-| `styles.css` | Keep as-is |
+| File                              | What to change                                                                                                                                              |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `index.html`                      | Replace "Sean August Horvath" with placeholder, update meta tags, remove specific nav links                                                                 |
+| `entry.html`                      | Replace footer name/links, remove specific social URLs                                                                                                      |
+| `section.html`                    | Replace meta tag defaults with placeholders                                                                                                                 |
+| `404.html`                        | No personal content, but review                                                                                                                             |
+| `landing.css`                     | Keep as-is — CSS variables already enable theming                                                                                                           |
+| `styles.css`                      | Keep as-is                                                                                                                                                  |
 | `assets/js/section-controller.js` | Lines 96-103: Replace hardcoded "Sean August Horvath" with a config value. Add `site_config.json` or read from `homepage-content.json._metadata.owner_name` |
-| `assets/js/homepage-content.json` | Replace with starter template (see Section 5) |
+| `assets/js/homepage-content.json` | Replace with starter template (see Section 5)                                                                                                               |
 
 ### Create new
 
-| File | Purpose |
-|------|---------|
-| `setup.py` | Interactive setup script (prompts for name, domain, CDN config) |
-| `.env.example` | Template for credentials |
-| `assets/docs/CLOUDINARY_SETUP.md` | Step-by-step Cloudinary free account setup |
-| `assets/docs/CDN_SETUP.md` | Step-by-step Cloudflare R2 setup with custom domain |
-| `IMPLEMENTATION_GUIDE.md` | Complete getting-started guide |
-| `assets/entries/uid-example-001.json` | Example entry with realistic dummy data |
+| File                                  | Purpose                                                         |
+| ------------------------------------- | --------------------------------------------------------------- |
+| `setup.py`                            | Interactive setup script (prompts for name, domain, CDN config) |
+| `.env.example`                        | Template for credentials                                        |
+| `assets/docs/CLOUDINARY_SETUP.md`     | Step-by-step Cloudinary free account setup                      |
+| `assets/docs/CDN_SETUP.md`            | Step-by-step Cloudflare R2 setup with custom domain             |
+| `IMPLEMENTATION_GUIDE.md`             | Complete getting-started guide                                  |
+| `assets/entries/uid-example-001.json` | Example entry with realistic dummy data                         |
 
 ---
 
@@ -125,17 +125,17 @@ These files contain no personal content and work as-is:
 
 Strings that reference Sean specifically and must be genericized:
 
-| Location | Current Value | Solution |
-|----------|--------------|----------|
-| `index.html` nav | "Sean August Horvath" | Read from config |
-| `index.html` meta tags | og:title, og:description with name | Populated by setup script |
-| `entry.html` footer | "Sean August Horvath", social links | Read from config |
-| `section.html` meta | "Sean August Horvath" | Read from config |
-| `section-controller.js:96-103` | Hardcoded name in title/description | Read from `homepage-content.json._metadata.owner_name` |
-| `entry-controller.js` og:url | `august.style` domain | Read from config or `.env` |
-| `generate_manifest.py` | `august.style` in canonical URL | Read from `.env` or `site_config.json` |
-| `ENTRY_SOP.md` | Cloudinary cloud name, R2 endpoint, CDN domain | Reference `.env` |
-| Various social links | GitHub/LinkedIn/Instagram URLs | Configurable in `homepage-content.json` or HTML |
+| Location                       | Current Value                                  | Solution                                               |
+| ------------------------------ | ---------------------------------------------- | ------------------------------------------------------ |
+| `index.html` nav               | "Sean August Horvath"                          | Read from config                                       |
+| `index.html` meta tags         | og:title, og:description with name             | Populated by setup script                              |
+| `entry.html` footer            | "Sean August Horvath", social links            | Read from config                                       |
+| `section.html` meta            | "Sean August Horvath"                          | Read from config                                       |
+| `section-controller.js:96-103` | Hardcoded name in title/description            | Read from `homepage-content.json._metadata.owner_name` |
+| `entry-controller.js` og:url   | `august.style` domain                          | Read from config or `.env`                             |
+| `generate_manifest.py`         | `august.style` in canonical URL                | Read from `.env` or `site_config.json`                 |
+| `ENTRY_SOP.md`                 | Cloudinary cloud name, R2 endpoint, CDN domain | Reference `.env`                                       |
+| Various social links           | GitHub/LinkedIn/Instagram URLs                 | Configurable in `homepage-content.json` or HTML        |
 
 ### Recommended config approach
 
@@ -424,19 +424,19 @@ Before releasing, validate the full user journey:
 
 ## 11. Gaps to Fill Before Packaging
 
-| Gap | Priority | Effort | Notes |
-|-----|----------|--------|-------|
-| `site_config.json` system | High | ~2 hrs | Create config file, update all controllers to read from it instead of hardcoding name/domain |
-| `setup.py` interactive script | High | ~2 hrs | Prompts for values, writes config, updates HTML |
-| `IMPLEMENTATION_GUIDE.md` | High | ~3 hrs | Full walkthrough (see outline above) |
-| `CLOUDINARY_SETUP.md` | Medium | ~30 min | Step-by-step free account setup with screenshots |
-| `CDN_SETUP.md` | Medium | ~30 min | R2 bucket creation, custom domain, API token |
-| `THEMING.md` or section | Medium | ~30 min | CSS variable reference, light theme example |
-| Example entry with dummy data | Medium | ~30 min | Realistic but fictional project entry |
-| Genericize social links in HTML | Low | ~15 min | Move to `site_config.json`, render via JS |
-| `section-controller.js` name extraction | Low | ~15 min | Read owner name from config instead of hardcoding |
-| `generate_manifest.py` domain extraction | Low | ~15 min | Read domain from `.env` or config |
-| Test suite for setup flow | Low | ~1 hr | Automated test that setup.py works correctly |
+| Gap                                      | Priority | Effort  | Notes                                                                                        |
+| ---------------------------------------- | -------- | ------- | -------------------------------------------------------------------------------------------- |
+| `site_config.json` system                | High     | ~2 hrs  | Create config file, update all controllers to read from it instead of hardcoding name/domain |
+| `setup.py` interactive script            | High     | ~2 hrs  | Prompts for values, writes config, updates HTML                                              |
+| `IMPLEMENTATION_GUIDE.md`                | High     | ~3 hrs  | Full walkthrough (see outline above)                                                         |
+| `CLOUDINARY_SETUP.md`                    | Medium   | ~30 min | Step-by-step free account setup with screenshots                                             |
+| `CDN_SETUP.md`                           | Medium   | ~30 min | R2 bucket creation, custom domain, API token                                                 |
+| `THEMING.md` or section                  | Medium   | ~30 min | CSS variable reference, light theme example                                                  |
+| Example entry with dummy data            | Medium   | ~30 min | Realistic but fictional project entry                                                        |
+| Genericize social links in HTML          | Low      | ~15 min | Move to `site_config.json`, render via JS                                                    |
+| `section-controller.js` name extraction  | Low      | ~15 min | Read owner name from config instead of hardcoding                                            |
+| `generate_manifest.py` domain extraction | Low      | ~15 min | Read domain from `.env` or config                                                            |
+| Test suite for setup flow                | Low      | ~1 hr   | Automated test that setup.py works correctly                                                 |
 
 ### Execution order
 
@@ -455,17 +455,17 @@ Before releasing, validate the full user journey:
 
 These files in the current `360-design` repo contain the patterns and implementations to copy/adapt:
 
-| File | Path | Relevance |
-|------|------|-----------|
-| Homepage controller | `assets/js/landing-controller.js` | Renders all homepage sections from config |
-| Data loader | `assets/js/data-loader.js` | All filtering, caching, tag matching logic |
-| Entry SOP | `assets/docs/ENTRY_SOP.md` | The agentic entry creation procedure |
-| Architecture ref | `assets/docs/JSON_ARCHITECTURE.md` | Full technical documentation |
-| Entry template | `assets/docs/_entry_template.json` | v5.0 schema template |
-| Tag registry | `assets/docs/tags.json` | Current tag structure |
-| Homepage config | `assets/js/homepage-content.json` | Current homepage configuration (basis for starter template) |
-| CSS design tokens | `landing.css` lines 9-22 | `:root` CSS custom properties |
-| Phase 8 concept | `assets/docs/archive/v2/v2_4_UPDATE_PLAN.md` lines 977-1054 | Original product packaging vision |
-| Manifest generator | `generate_manifest.py` | Entry HTML generation + manifest |
-| Schema validator | `assets/scripts/validate_v5.py` | Entry validation |
-| UID generator | `assets/scripts/new_project.py` | New entry scaffolding |
+| File                | Path                                                        | Relevance                                                   |
+| ------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| Homepage controller | `assets/js/landing-controller.js`                           | Renders all homepage sections from config                   |
+| Data loader         | `assets/js/data-loader.js`                                  | All filtering, caching, tag matching logic                  |
+| Entry SOP           | `assets/docs/ENTRY_SOP.md`                                  | The agentic entry creation procedure                        |
+| Architecture ref    | `assets/docs/JSON_ARCHITECTURE.md`                          | Full technical documentation                                |
+| Entry template      | `assets/docs/_entry_template.json`                          | v5.0 schema template                                        |
+| Tag registry        | `assets/docs/tags.json`                                     | Current tag structure                                       |
+| Homepage config     | `assets/js/homepage-content.json`                           | Current homepage configuration (basis for starter template) |
+| CSS design tokens   | `landing.css` lines 9-22                                    | `:root` CSS custom properties                               |
+| Phase 8 concept     | `assets/docs/archive/v2/v2_4_UPDATE_PLAN.md` lines 977-1054 | Original product packaging vision                           |
+| Manifest generator  | `generate_manifest.py`                                      | Entry HTML generation + manifest                            |
+| Schema validator    | `assets/scripts/validate_v5.py`                             | Entry validation                                            |
+| UID generator       | `assets/scripts/new_project.py`                             | New entry scaffolding                                       |
