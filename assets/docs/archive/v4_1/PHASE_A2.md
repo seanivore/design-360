@@ -13,19 +13,10 @@
   - Any URLs added within page copy should be hyperlinked in the same way in the published version
   - HYPERFRAME: Something animated that in engages and encourages the user to scroll and enjoy scrolling up and down. I did this in the past by hand drawing ivy and animating it in After Effects so that it 'grew' or reversed depending on scroll direction and used those as page breaks in the past. This is just one idea; we just need something that keeps them scrolling.
 **Created**: 2026-05-20
-**Updated**: 2026-05-22
-**Update Details**: Sean edited. 
+**Updated**: 2026-05-23
+**Update Details**: Sean edited, needs another agent edit review, then final clean up by Sean afterwards. 
 **Original**: N/A
 **Status**: Drafting
-**Built from**: 
-  - `assets/drafts/uid-cpp-781.json` *Covid Squarespace*
-  - `assets/drafts/uid-unw-889.json` *CK Heals*
-  - `assets/drafts/uid-ccp-818.json` *Influencer Deck*
-  - `assets/drafts/uid-eme-689.json` *First HTML/CSS/JS site*
-  - Shamanism Love online course — no JSON; source media `assets/.media/online-course-healer-love/` *(PNGs are low quality — Sean to source better detail / Wayback Machine)*
-**Must do**: 
-  - `MEDIA` callouts need producing
-  - Confirm full collection of appropriate portfolio entires by checking `PHASE_CONTENT.md` and perhaps `ORIGINAL_PORTFOLIO.md`
 **Structure**: 
   - Self-Employed Web Design & Digital Consultancy Highlights
     - **Digital Business Consultant**
@@ -34,16 +25,16 @@
           - The brief
           - The build
           - Why it worked
+      - *Data-Driven Strategy*
+        - Influencer Growth Pitch Deck
+          - The pitch
+          - The deck
       - *Carrying One Brand Across Every Medium*
         - CK Heals — A Wellness Brand Built Twice
           - First build, Kajabi
           - Second build, Webflow
           - What I drew and ran
-      - *Data-Driven Strategy*
-        - Influencer Growth Pitch Deck
-          - The pitch
-          - The deck
-    - **Front-End Specialization**
+    - **Front-End Specialization** (Moved to part 2 as a post v4.1.0 update: `assets/docs/archive/v4_1/PHASE_A2_PART_2.md`)
       - *Becoming The Topic Expert*
         - Building Kajabi Online Courses
           - The work
@@ -153,72 +144,140 @@ Most of my early clients were getting a real digital presence for the first time
 
 ## Brand Designer & Web Developer
 
-At PETA, the work I was proudest of was building a brand's voice and visual identity and carrying it cleanly across every medium it touched. Consulting was the chance to do that whole job again, start to finish, for one client at a time.
+At [PETA](https://august.style/awards-viral-social), the work I was proudest of was building the organizations brand's voice and visual identity and carrying it cleanly across every medium it touched. Consulting was the chance to do that whole job again, start to finish, for one client at a time.
 
 ### Carrying One Brand Across Every Medium
 
-CK Heals is the clearest example. A body-awareness coach and online personal trainer came to me with a practice and not much else — and I did for her exactly what I had done for a global organization: found the brand's voice, drew its aesthetic, and worked it out across every medium it needed to live in.
+CK Heals is the clearest example: She's a client I've been working with since 2019. I built her brand's voice, drew its aesthetics, and set up all the different digital mediums she needed. There were times when she needed copywriting, running ads, or help learning how to use new social media platforms. She would send me pictures or direct me to her Instagram so that everything I made for her truly spoke with her personality. 
 
-#### CK Heals — A Wellness Brand Built Twice
+#### 10 Years of Client Growth & Change 
 
-**MEDIA: Single row, two images — the Kajabi course-platform build on the left, the Webflow rebuild on the right. Source material: `assets/.media/kajabi-online-course-platform/` (9 slide thumbs + .mp4), `assets/.media/online-course-meditation-yoga/` (10 course-production images), `assets/.media/vid-training-yoga-sales.mp4`. `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-04.webp` and `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-05.webp`**
-
-In an industry built on trust, a stock template reads as a stranger. So every brand element was drawn by hand — and as her practice grew, I rebuilt the whole presence a second time to grow with it.
+When she first came to me it was to set up her entire online presence for the first time. She was pioneering as one of the earliest "Skype Personal Trainers". I built her website and updated it almost monthly. Over time she took new classes getting new certifications in yoga and energy healing. After a few years it was time to create a fresh website from scratch. This time we needed to highlight the different offerings as she had expanded CK Heals LLC, and we needed to build it somewhere that she could also set up online courses that she started teaching. 
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
-  + First build, Kajabi:
-    - A website plus a full online-course platform, so her training programs and her site lived together
-    - Set her up to sell and teach from one place from day one
+  + Original request
+    - Build out entire online presence for the first time
+    - Website for 'Skype Personal Training'
+    - Setting up social media platforms
+    - Writing and running social media advertisements
+    - Updating the website with testimonials monthly
 
-  + Second build, Webflow:
-    - A rebuild on Webflow once the brand had outgrown the first site
-    - Handed over so she could manage her own content without breaking the design
+  + Developing as her company grew
+    - A few years later it was time to update her website
+    - We needed to expand into more than just personal training
+    - We needed to add information about energy healing 
+    - Kajabi was chosen because we had space to build online courses as well
+
+**MEDIA: Single row, two GIFs with `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-26.gif` first, and then `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-27.gif` on the right**
+
+**BULLETED LIST WITH INDENTED SUB-LISTS**
+  + Checking the analytics
+    - When analyzing her website traffic I noticed something powerful that I had to share   
+    - On pages on the old site users either bounced or didn't stay long 
+    - That part wasn't surprising since she was getting more than enough new clients for her to manage 
+    - The testimonials page had an average "Session" duration of 14 MINUTES
+    - That was profound I had to reach out and suggest we create a site that completely focused on what visitors wanted
+    - She was interested so we scheduled a meeting
+
+  + Redesign uncovered multiple benefits 
+    - After chatting a bit I recognized that her course teaching flow sort of made the online platform redundant
+    - I explained how robust Kajabi was and why it was so expensive
+    - My point was that it seemed unnecessary for her to pay for that platform 
+    - The client was obviously very excited 
+
+**MEDIA: the media for this section will be videos because they're far smaller filesize for quality than the GIFs. Please see the drafted HTML and CSS below for thoughts and include the provided media through our CDN. There are three short clips prepared. we should put one in a row by itself and two in the other row, but let's not allow the width of the single overwhelm things; all of these I rendered at 1080 px wide. They are not exactly 16:9 but they are all the same ratio.**
+
+**SINGLE ROW: `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-28.mp4`**
+
+```html
+<div class="portfolio-grid">
+  <div class="portfolio-video">
+    <video
+      src="https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-28.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+    ></video>
+  </div>
+</div>
+```
+
+**BULLETED LIST WITH INDENTED SUB-LISTS**
+  + Making something special
+    - After our chats it was clear what we needed and I had to come up with how to do it
+    - The concept I ended up sharing was to produce all custom graphic design for the backgrounds and UI 
+    - This placed the testimonials on the front page along with client photos and some artwork I created for her
+    - We chose Webflow because it offered the most design customization that fit my skill and vision  
 
   + What I drew and ran:
     - Logo, background illustrations, and decorative details — all hand-drawn on iPad Pro and Apple Pencil to express her teaching style
     - A full design system so the hand-drawn identity held together as the site grew
     - Ongoing digital business consulting, social media strategy, Facebook Ads, heavy copywriting, and roughly monthly site updates
 
-The hand-drawn identity is what made the brand feel like *her*. Knowing when the human touch is the deliverable — and when to draw every element rather than reach for stock — is a judgment call, and it's one of the things a client is paying an expert to make.
+**MEDIA: the media for this section will be videos because they're far smaller filesize for quality than the GIFs. The rest of the drafted HTML and CSS is also below. This is for the remaining two for placing in one row this time. I also provided a possible version for mobile that would make the left and right of the video "bleed" to the edge of the phone, over the padding of the page or parent containers. That number might just need to be updated as well as adding a margin size to it if we need; we'll have to see when we know what contain it is in but this is very similar to the content tile setting we have in the `section.html` as well as the related content on `entry.html` at the bottom. Please adjust as needed**
 
-### Designing Full Learning Experiences
+**TWO IN ONE ROW: `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-29.mp4`, `assets/.media/freelance-marketing-web/flow-freelance-marketing-web-30.mp4`**
 
-Consulting also meant building things that weren't websites at all. Course design is its own craft, and it is heavy on the skill I lean on hardest — copywriting.
+```html
+  <div class="portfolio-video">
+    <video
+      src="https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-29.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+    ></video>
+  </div>
 
-#### Shamanism Love Online Course
+  <div class="portfolio-video">
+    <video
+      src="https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-30.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+    ></video>
+  </div>
+</div>
+```
 
-**MEDIA: Single row, two images — course production assets. Source `assets/.media/online-course-healer-love/production_online_course_1.png` through `8.png` (low-resolution — Sean sourcing better detail). `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-06.webp` and `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-07.webp`**
+```CSS
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* up to 2 per row */
+  gap: 24px; /* space between tiles */
+}
 
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + The work:
-    - Full course production — structure, visual design, and the production assets that carried the curriculum
-    - An enormous volume of copywriting, lesson by lesson, in the client's voice
-    - One of several course builds in my background — the experience that makes "design a learning experience" a real line on the résumé, not a one-off
+/* The video tile */
+.portfolio-video {
+  width: 100%;           /* or 600px or whatever fits the layout */
+  margin: 0 auto;        /* center it in the column */
+}
 
----
+/* Make the video fill its tile */
+.portfolio-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;     /* possibly */
+  object-fit: cover;      /* they're all the same height so probably don't need this, maybe height 100% instead idk */
+}
 
-## Front-End Web Developer
+/* On small screens, stack into one per row */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;  /* single column */
+  }
 
-The other half of the post-PETA path was technical. The strong eye for design and the knack for systems were always there; what changed was that I started learning the actual technical detail — and after years of no-code, I wanted back into real HTML, CSS, and JavaScript.
+  .portfolio-video {
+    margin-left: -16px;   /* negate page padding */
+    margin-right: -16px;
+    width: calc(100% + 32px); /* add it back so it fully spans */
+  }
+}
+```
 
-### Returning To Code, On A System
+The hand-drawn identity is what made the brand feel like *her*. It is sites like these that where the human touch is basically the deliverable. I don't think I've ever used stock images for a client before. 
 
-I came back to code the way I'd do everything after: with AI as a pair, but on a system strict enough to keep AI honest.
-
-#### [Modular Portfolio Build](https://www.august.style/modular-portfolio-build/)
-
-**MEDIA: Single row, one image — a GIF of the modular portfolio site. Source `assets/.media/vid-modular-portfolio-build.mp4`; YouTube `https://youtu.be/OLZHwv2o-zQ`. `assets/.media/freelance-web-consultant/flow-freelance-web-consultant-08.webp`**
-
-It looks like a portfolio. It's really a template system designed to prevent AI coding chaos.
-
-**BULLETED LIST WITH INDENTED SUB-LISTS**
-  + The system:
-    - A comprehensive `CONVENTIONS.md` that doubles as human reference and AI training material
-    - Reusable component patterns — navigation, project cards, content sections — consistent across 50+ entries
-    - Tag-based filtering in vanilla JavaScript, kept lightweight on purpose
-
-  + The bridge:
-    - Repeatable enough that AI could generate new pages matching the existing structure across many separate sessions without breaking patterns
-    - This is the hinge of the whole story — the last build of the foundation years, and the first one designed for the agentic workflow that defines Phase B
-
-The consultancy years gave me the full stack — strategy, brand, design, copy, and code — under one expert. They also ran alongside one engagement big enough to be its own chapter: Art Director for a Web3 privacy protocol.
+Right now I'm in the process with this client on the next redesign to their website. She is going to be focusing more on what is called "Forest Bathing", a meditative practice to help people get out in nature more, be more social, and learn how to connect with their own body while in nature. I've started the planning and we'll be building it with vanilla JS and HTML/CSS. I'm looking to surprise her by using a engaging short video of a forest path that was generated by creating a Nano Banana 3 image and then animating it with Kling Video 3.0 and Seedance 2.0; the results these days are impressive for use cases like these where it is going to be purely ornamental. Using Claude Design along with my usual heavy use of Claude Code levels up the game as we just added a HyperFrame Skill that will let us make a handful of scroll animated interface elements. 

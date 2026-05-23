@@ -1,10 +1,10 @@
-# **ENTRY TITLE**: Art Director — Web3 Privacy Protocol Branding
+# **ENTRY TITLE**: Art Director Web3 Privacy Protocol Branding
 
 **Planning**: 
   - PHASE: A
   - Group: 3
 **JSON Details**:
-  - SLUG: web3-privacy-art-direction
+  - SLUG: branding-director-web3
   - LAYOUT: Flow
 **Needed To Post**:
   - PLACEMENT: Images, headings, and lists are placed to reflect their flow placement; this should be evident reading straight down the page.
@@ -13,8 +13,8 @@
   - Any URLs added within page copy should be hyperlinked in the same way in the published version
   - HYPERFRAME: Something animated that in engages and encourages the user to scroll and enjoy scrolling up and down. I did this in the past by hand drawing ivy and animating it in After Effects so that it 'grew' or reversed depending on scroll direction and used those as page breaks in the past. The 3D spinning glass logo is also a natural motion moment for this entry.
 **Created**: 2026-05-20
-**Updated**: 2026-05-21
-**Update Details**: Reframed and restructured to the A1_v2 format — opens from the A2 consultancy chapter, H2s set as job-title-type roles. Needs review/edit by Sean.
+**Updated**: 2026-05-23
+**Update Details**: Being edited by Sean.
 **Original**: N/A
 **Status**: Drafting
 **Built from**: 
@@ -29,7 +29,7 @@
   - `MEDIA` callouts need producing
   - A3 is a rich era — trim toward bite-size on review
 **Structure**: 
-  - Art Director — Web3 Privacy Protocol Branding
+  - Art Director Web3 Privacy Protocol Branding
     - **Art Director**
       - *Building The Brand System*
         - Web3 Brand Creative Direction & Strategy

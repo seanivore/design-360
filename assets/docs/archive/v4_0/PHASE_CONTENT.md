@@ -20,7 +20,7 @@ You'll note that these entries are primarily, if not completely, newly created. 
 
   + Phase A: Foundation (Pre-AI)
     **3 new project entries**
-    1. [PETA Marketing & Social Media Achievements](/assets/docs/archive/v4_0/PHASE_A1.md)
+    1. [PETA Marketing & Social Media Achievements](/assets/docs/archive/v4_0/PHASE_A1_v1.md)
     2. Self-Employed Web Design & Digital Consultancy Highlights
     3. Art Director for Web3 Privacy Protocol Branding
   + Phase B: Generative Automations (Early AI)
