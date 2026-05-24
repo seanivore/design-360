@@ -1,63 +1,71 @@
-# **ENTRY TITLE**: Art Director Web3 Privacy Protocol Branding
+# Art Director Web3 Privacy Protocol Branding
 
-**Planning**: 
-  - PHASE: A
-  - Group: 3
-**JSON Details**:
-  - SLUG: branding-director-web3
-  - LAYOUT: Flow
-**Needed To Post**:
-  - PLACEMENT: Images, headings, and lists are placed to reflect their flow placement; this should be evident reading straight down the page.
-  - Anything with **Bold** notation is notation about the placement and not actually meant to be published on the page. This often is followed by bullet points adding notation that isn't to be published verbatim.
-  - We should consider centering H4 headings if it can be consistent and look good on all posts with the same type of 'flow' layout.
-  - Any URLs added within page copy should be hyperlinked in the same way in the published version
-  - HYPERFRAME: Something animated that in engages and encourages the user to scroll and enjoy scrolling up and down. I did this in the past by hand drawing ivy and animating it in After Effects so that it 'grew' or reversed depending on scroll direction and used those as page breaks in the past. The 3D spinning glass logo is also a natural motion moment for this entry.
 **Created**: 2026-05-20
-**Updated**: 2026-05-23
+**Updated**: 2026-05-24
 **Update Details**: Being edited by Sean.
 **Original**: N/A
+**Tied to**: `assets/docs/archive/v4_1/v4_1_0_IMPLEMENT.md`
 **Status**: Drafting
-**Built from**: 
-  - `assets/drafts/uid-rvy-322.json` *Product Marketing Branding*
-  - `assets/drafts/uid-rjy-542.json` *Technical DeFi Content Simplification*
-  - `assets/drafts/uid-rcy-132.json` *Web3 Strategy Branding*
-  - `assets/drafts/uid-cvp-436.json` *Vector NFT Art*
-  - `assets/entries/uid-cop-802.json` *Illustrated Poetry Book*
-  - `assets/entries/uid-wty-542.json` *Hand-Illustrated Portfolio*
-  - Media: `assets/.media/branding-character-design/`, `assets/.media/anime-coworker-avatars/`, `assets/.media/product-mkt-web3-edu-comic/`, `assets/.media/3d/`, `assets/.media/motion-graphics-gifs/`, `assets/.media/minting-nft-collections/`, `assets/.media/illustration-poetry-paperback/`
-**Must do**: 
-  - `MEDIA` callouts need producing
-  - A3 is a rich era — trim toward bite-size on review
-**Structure**: 
-  - Art Director Web3 Privacy Protocol Branding
-    - **Art Director**
-      - *Building The Brand System*
-        - Web3 Brand Creative Direction & Strategy
-          - The problem
-          - The system
-      - *Making The Technology Legible*
-        - Technical DeFi Content Simplification
-        - Web3 Strategy Branding Productions
-    - **Character Designer & Illustrator**
-      - *Making Privacy Personal*
-        - The Secret Agent & A Printed Comic Book
-          - The character
-          - From social content to print
-      - *Drawing The Team Into The Brand*
-        - Anime Coworker Avatars
-    - **Motion & 3D Designer**
-      - *Effects & Animation*
-        - VFX, 3D Logo & Animated Memes
-      - *Minted Collections*
-        - Vector NFT Art & Cartoon GIF NFTs
-    - **Illustrator & Published Author**
-      - *A Body Of Hand-Drawn Work*
-        - The Hand-Illustrated Portfolio
-        - Illustrated Poetry Book
+
+---
+
+This is one, new portfolio project entry that has been carefully crafted to fit an overarching chronological narrative of my career through three phases. These are: 
+
+  1. Phase A: Foundation (Pre-AI)
+  2. Phase B: Generative Automations (Early AI)
+  3. Phase C: Custom AI Solutions (Modern AI)
+
+Please see the most current version numbered IMPLEMENT.md document indicated above for the full details.
+
+| Attention         | Details                                                                        |
+| ----------------- | ------------------------------------------------------------------------------ |
+| Phase             | Third 'A' entry                                                                |
+| JSON Title        | Art Director Web3 Privacy Protocol Branding                                    |
+| JSON Slug         | branding-director-web3                                                         |
+| JSON Layout       | Flow                                                                           |
+| JSON Thumbnails   | `assets/.media/branding-director-web3/thumb-branding-director-web3-{1-8}.webp` |
+| JSON Achievements | *Please come up with a handful of them from the collection below*              |
+| Placement         | Document is in intended flow order                                             |
+| Notes             | **Bold** denotes info not for publishing                                       |
+| Media URLs        | Need to run through CDN                                                        |
+| Structure         | Consistent with all Phase entries                                              |
+| Resources         | Add helpful internal or external URLs for reader                               |
+| Animation         | Assess for all phase entries                                                   |
+| Desired anim UX   | Encourage scrolling, make it visually fun                                      |
+| Animation tool    | `.agents/skills/hyperframes/SKILL.md`                                          |
+
+**Art Director Web3 Privacy Protocol Branding**
+
+I.   ART DIRECTOR
+     A. __Building The Brand System__
+        1. *Web3 Brand Creative Direction & Strategy*
+           (a) The problem
+           (b) The system
+        2. *Making The Technology Legible*
+           (a) Technical DeFi Content Simplification
+           (b) Web3 Strategy Branding Productions
+II.  CHARACTER DESIGN ILLUSTRATOR
+     A. __Making Privacy Personal__
+        1. *The Secret Agent & A Printed Comic Book*
+           (a) The character
+           (b) From social content to print
+     B. __Drawing The Team Into The Brand__
+        1. *Anime Coworker Avatars*
+III. MOTION & 3D DESIGNER
+     A. __Effects & Animation__
+        1. *VFX, 3D Logo & Animated Memes*
+     B. __Minted Collections__
+        1. *Vector NFT Art & Cartoon GIF NFTs*
 
 ---
 
 ## Art Director
+
+PETA experience backed up by consulting for clients validated my know how when it comes to taking a brand from nothing to live. Silent Labs had been around for a bit, buy thus far they had only been focused on building their privacy application layer. I was their first non technical-focused hire, but it was my technical aptitude that enabled me to take a product that felt abstract to people in the same industry, and a turn it into something digestible, even for people outside of the industry. 
+
+Silent Labs was another opportunity to work from a place of passion and advocacy; we were creating products that would make everyday people's lives safer. 
+
+---
 
 The consultancy work proved I could own a brand from nothing to live. Silent Labs was where that became a title — Art Director for a Web3 privacy protocol — and a single, hard problem: make something abstract feel human.
 
@@ -69,7 +77,12 @@ Everything started with the identity — the visual language the rest of the wor
 
 #### [Web3 Brand Creative Direction & Strategy](https://developer-technologist.august.style/product-marketing-branding)
 
-**MEDIA: Single row, one image — a brand-system board showing logo, palette, type, and a few collateral pieces together. `assets/.media/web3-privacy-art-direction/flow-web3-privacy-art-direction-01.webp`**
+| **Media**   | Layout Essential Details                                                           |
+| ----------- | ---------------------------------------------------------------------------------- |
+| Row x Colum | 1 x 1                                                                              |
+| Visual/Row  | 1                                                                                  |
+| Notes       | Just one image in this row                                                         |
+| Asset       | `assets/.media/web3-privacy-art-direction/flow-web3-privacy-art-direction-01.webp` |
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
   + The problem:
@@ -204,3 +217,15 @@ Under all of it was one constant: I draw, by hand, constantly. The two projects 
     - The same hand-drawn discipline that built a protocol's brand, turned to a personal book
 
 The Silent Labs years were where art direction, illustration, motion, 3D, and print became one practice — and where the technical fluency kept growing. That combination, a strong eye paired with real comfort in the technical detail, is exactly what makes the next chapter possible. From here, the work turns to AI.
+
+
+---
+
+**Built from**: 
+  - `assets/drafts/uid-rvy-322.json` *Product Marketing Branding*
+  - `assets/drafts/uid-rjy-542.json` *Technical DeFi Content Simplification*
+  - `assets/drafts/uid-rcy-132.json` *Web3 Strategy Branding*
+  - `assets/drafts/uid-cvp-436.json` *Vector NFT Art*
+  - `assets/entries/uid-cop-802.json` *Illustrated Poetry Book*
+  - `assets/entries/uid-wty-542.json` *Hand-Illustrated Portfolio*
+  - Media: `assets/.media/branding-character-design/`, `assets/.media/anime-coworker-avatars/`, `assets/.media/product-mkt-web3-edu-comic/`, `assets/.media/3d/`, `assets/.media/motion-graphics-gifs/`, `assets/.media/minting-nft-collections/`, `assets/.media/illustration-poetry-paperback/`
