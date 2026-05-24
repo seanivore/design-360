@@ -2,10 +2,10 @@
 
 **Created**: 2026-05-21
 **Updated**: 2026-05-23
-**Update Details**: Second copy-edit pass on PHASE_A1_v3.md — fixed remaining typos and broken sentences in the back half ("supported"→"supporters", "where results"→"are the results", "Helena and my hands"→"Helena's and my hands", missing prepositions, doubled "earned"). No structural or factual changes. Award attribution `**FLAG**` from v3 preserved.
+**Update Details**: Sean worked through entire document, improving voice and phrasing, while condensing the verbose nature; all issues agents flagged have been addressed. 
 **Original**: `assets/docs/archive/v4_1/PHASE_A1_v3.md` (v2 at `assets/docs/archive/v4_0/PHASE_A1_v2.md`, pre-restructure original at `assets/docs/archive/v4_0/PHASE_A1.md`)
 **Tied to**: `assets/docs/archive/v4_1/v4_1_0_IMPLEMENT.md`
-**Status**: Review — second copy-edit pass applied, awaiting Sean's check
+**Status**: The media is all prepped in at the indicated paths but needs to be run through the CDN and the JSON created, along with a handful of achievements can be pulled from this document. This entry is meant to be published with the v4.1.0 update implementation.
 
 ---
 
@@ -19,22 +19,22 @@ This is one, new portfolio project entry that has been carefully crafted to fit 
 
 Please see the most current version numbered IMPLEMENT.md document indicated above for the full details.
 
-| Attention         | Details                                          |
-| ----------------- | ------------------------------------------------ |
-| Phase             | First 'A' entry                                  |
-| JSON Title        | PETA Marketing & Social Media Achievements       |
-| JSON Slug         | awards-viral-social                              |
-| JSON Layout       | Flow                                             |
-| JSON Thumbnails   | TK                                               |
-| JSON Achievements | TK                                               |
-| Placement         | Document is in intended flow order               |
-| Notes             | **Bold** denotes info not for publishing         |
-| Media URLs        | Need to run through CDN                          |
-| Structure         | Consistent with all Phase entries                |
-| Resources         | Add helpful internal or external URLs for reader |
-| Animation         | Assess for all phase entries using               |
-| Desired anim UX   | Encourage scrolling, make it visually fun        |
-| Animation tool    | `.agents/skills/hyperframes/SKILL.md`            |
+| Attention         | Details                                                                  |
+| ----------------- | ------------------------------------------------------------------------ |
+| Phase             | First 'A' entry                                                          |
+| JSON Title        | PETA Marketing & Social Media Achievements                               |
+| JSON Slug         | awards-viral-social                                                      |
+| JSON Layout       | Flow                                                                     |
+| JSON Thumbnails   | `assets/.media/awards-viral-social/thumb-awards-viral-social-{1-5}.webp` |
+| JSON Achievements | *Please come up with a handful of them from the collection below*        |
+| Placement         | Document is in intended flow order                                       |
+| Notes             | **Bold** denotes info not for publishing                                 |
+| Media URLs        | Need to run through CDN                                                  |
+| Structure         | Consistent with all Phase entries                                        |
+| Resources         | Add helpful internal or external URLs for reader                         |
+| Animation         | Assess for all phase entries                                             |
+| Desired anim UX   | Encourage scrolling, make it visually fun                                |
+| Animation tool    | `.agents/skills/hyperframes/SKILL.md`                                    |
 
 **PETA Marketing & Social Media Achievements**
 
@@ -100,7 +100,7 @@ Helena and I knew the nature of social media was its pace, that was part of what
 
 #### Viral [UGGs Image in Tweet](https://x.com/peta/status/396670298465914880?s=20) Published in YahooNews
 
-| **Media**   | Image                                                                |
+| **Media**   | Layout Essential Details                                             |
 | ----------- | -------------------------------------------------------------------- |
 | Row x Colum | 1 x 1                                                                |
 | Visual/Row  | 1                                                                    |
@@ -138,7 +138,7 @@ Helena and I knew the nature of social media was its pace, that was part of what
 
 #### Witty [Superbowl Tweet](https://x.com/peta/status/430123610359885824) Goes Viral
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -184,7 +184,7 @@ Helena and I knew the nature of social media was its pace, that was part of what
     - 'Brand Dot Com' was the first online outlet to publish the image
     - We gave outlets an entry point into the conversation
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                                |
 | Visual/Row   | 1                                                                    |
@@ -204,7 +204,7 @@ It didn't take long to come up with a strategy to flex our newly established aud
 
 #### [Hijacking the #AskSeaWorld Online Campaign](https://x.com/peta/status/581552543530139648)
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -226,7 +226,7 @@ It didn't take long to come up with a strategy to flex our newly established aud
     - Either way, they wanted the internet to #AskSeaWorld
     - Luckily for orcas, we were able to tell the internet exactly what to #AskSeaWorld
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -249,7 +249,7 @@ It didn't take long to come up with a strategy to flex our newly established aud
     - In just hours, our massive audience bombarded SeaWorld beyond anything they could manage
     - Calling out a problematic company straight to their face was exactly what our audience wanted
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -287,7 +287,7 @@ The tactical use of our online audience didn't just craft American culture, next
 
 They reached out to interview Helena about our strategy after a video about a baby monkey rescued from animal testing, which come with some rather intense visuals, broke engagement rate records for a few months. 
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                                |
 | Visual/Row   | 1                                                                    |
@@ -307,7 +307,7 @@ They reached out to interview Helena about our strategy after a video about a ba
     - She was Social Director by then, it was quite the honor 
     - In the article the detailed stats and benchmarks for our work     
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                                |
 | Visual/Row   | 1                                                                    |
@@ -328,7 +328,7 @@ They reached out to interview Helena about our strategy after a video about a ba
     - We achieved a 15% YoY engagement increase
     - The overall campaign reached over a 61% video engagement rate
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                                |
 | Visual/Row   | 1                                                                    |
@@ -357,7 +357,7 @@ In my original social marketing department my role was a bit removed and elevate
 
 #### Cursing Vegan Grandma Is 'Funny For Good'
 
-| **Media**    | Image                                                               |
+| **Media**    | Layout Essential Details                                            |
 | ------------ | ------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                               |
 | Visual/Row   | 1                                                                   |
@@ -378,7 +378,7 @@ In my original social marketing department my role was a bit removed and elevate
 
 #### Graphic Horror For Luxury Shoppers
 
-| **Media**    | Image                                                               |
+| **Media**    | Layout Essential Details                                            |
 | ------------ | ------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                               |
 | Visual/Row   | 1                                                                   |
@@ -397,7 +397,7 @@ In my original social marketing department my role was a bit removed and elevate
     - Titled "Beyond Words," the short was considered comedic and lighthearted 
     - Once again, the social-optimized video was the center of this campaign 
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -411,7 +411,7 @@ In my original social marketing department my role was a bit removed and elevate
     - That environment and those reactions made for viral success without any need for dialog
     - The innovative social optimized strategy created widespread engagement and press coverage
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -444,7 +444,7 @@ My data-driven knowhow was particularly helpful in working with our in-house, ag
     - Achieved millions of actions taken 
     - Maintained above a 4.8 app store rating with 1.3k reviews 
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -458,7 +458,7 @@ My data-driven knowhow was particularly helpful in working with our in-house, ag
     - Managed beta testing programs; TestFlight
     - Managed press release and launch communications
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -474,7 +474,7 @@ My data-driven knowhow was particularly helpful in working with our in-house, ag
     - Optimization and feature updates had great results
     - We saw increases in return users (+33.7%) and daily page views (+12%)
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 2                                                                |
 | Visual/Row   | 2                                                                    |
@@ -486,7 +486,7 @@ My data-driven knowhow was particularly helpful in working with our in-house, ag
 
 Heavy copywriting experience and visual storytelling skills translated from social media growth to consulting with agency game developers on content and strategy for our advocacy education game, Kitten Squad.
 
-| **Media**    | Image                                                                |
+| **Media**    | Layout Essential Details                                             |
 | ------------ | -------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                                |
 | Visual/Row   | 1                                                                    |
@@ -500,7 +500,7 @@ Heavy copywriting experience and visual storytelling skills translated from soci
     - Executed the cross-media marketing campaigns 
     - Reached 1M+ download goal
 
-| **Media**    | Image                                                               |
+| **Media**    | Layout Essential Details                                            |
 | ------------ | ------------------------------------------------------------------- |
 | Row x Column | 1 x 1                                                               |
 | Visual/Row   | 1                                                                   |
@@ -517,7 +517,7 @@ Heavy copywriting experience and visual storytelling skills translated from soci
     - Contributed to a +40% increase in user engagement
     - Maintained focus on the core advocacy education messaging
 
-| **Media**    | Image                                                               |
+| **Media**    | Layout Essential Details                                            |
 | ------------ | ------------------------------------------------------------------- |
 | Row x Column | 1 x 3                                                               |
 | Visual/Row   | 3                                                                   |
