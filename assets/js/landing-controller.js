@@ -28,6 +28,7 @@ const LandingController = (() => {
     loadHomepage(content, projects);
     initScrollReveal();
     initNavCollapse();
+    initAccordion();
   }
 
   function loadHomepage(content, projects) {
@@ -202,8 +203,12 @@ const LandingController = (() => {
   }
 
   /**
-   * PROCESS — rewrite from content.process.steps[].
-   * Emits a heading + three linked step cards.
+   * PROCESS — restored to pre-v4.2.3 layout per v4_1_0_IMPLEMENT
+   * "Final Keepers Of Current Homepage Components": 01/02/03 numbered cards
+   * in a horizontal scroller. Numbers cycle terra/blue/mauve.
+   *
+   * Data shape adapted to v4.2.3: reads content.process.steps[] with
+   * {word, body, href} (was previously pulled from a project entry).
    */
   function renderProcess(content) {
     const section = document.getElementById('process');
@@ -216,23 +221,26 @@ const LandingController = (() => {
       return;
     }
 
-    const heading = cfg.heading
-      ? `<h2 class="section-heading">${cfg.heading}</h2>`
-      : '';
+    const heading = section.querySelector('#processHeading');
+    if (heading && cfg.heading) heading.textContent = cfg.heading;
 
-    const stepsHTML = steps
-      .map(step => {
+    const scrollContainer = section.querySelector('#processScroll');
+    if (!scrollContainer) return;
+
+    const nums = ['01', '02', '03'];
+    scrollContainer.innerHTML = steps
+      .slice(0, 3)
+      .map((step, i) => {
         const href = step.href || '/section.html';
         return (
-          `<a href="${href}" class="process-step">` +
-            `<div class="process-step__word">${step.word || ''}</div>` +
-            `<div class="process-step__body">${step.body || ''}</div>` +
+          `<a href="${href}" class="process-card">` +
+            `<div class="process-num">${nums[i] || ''}</div>` +
+            `<div class="process-card-title">${step.word || ''}</div>` +
+            `<div class="process-card-body">${step.body || ''}</div>` +
           `</a>`
         );
       })
       .join('');
-
-    section.innerHTML = `<div class="container">${heading}<div class="process-steps">${stepsHTML}</div></div>`;
   }
 
   /**
@@ -282,8 +290,10 @@ const LandingController = (() => {
   }
 
   /**
-   * ACHIEVEMENTS — flat list (no accordion).
-   * Flattens achievements[] across all projects; optional limit from JSON.
+   * ACHIEVEMENTS — expandable accordion cards, restored from pre-v4.2.3
+   * per v4_1_0_IMPLEMENT "Final Keepers Of Current Homepage Components".
+   * v4.2.3 adaptation: flattens entry.achievements[] (array) across all
+   * projects instead of singleton entry.achievement.
    */
   function renderAchievements(projects, content) {
     const section = document.getElementById('achievements');
@@ -318,11 +328,30 @@ const LandingController = (() => {
     list.innerHTML = items
       .map(a => (
         `<div class="ach-item">` +
-          `<h3 class="ach-title">${a.headline || ''}</h3>` +
-          `<div class="ach-body">${a.details || ''}</div>` +
+          `<button class="ach-header" type="button">` +
+            `<div class="ach-accent trio-sm"><span></span><span></span><span></span></div>` +
+            `<span class="ach-title">${a.headline || ''}</span>` +
+            `<svg class="ach-icon" viewBox="0 0 24 24" aria-hidden="true">` +
+              `<line x1="12" y1="5" x2="12" y2="19"/>` +
+              `<line x1="5" y1="12" x2="19" y2="12"/>` +
+            `</svg>` +
+          `</button>` +
+          `<div class="ach-body">` +
+            `<div class="ach-body-inner">${a.details || ''}</div>` +
+          `</div>` +
         `</div>`
       ))
       .join('');
+  }
+
+  /**
+   * Toggle .open on .ach-item when its header is clicked.
+   * Restored from pre-v4.2.3.
+   */
+  function initAccordion() {
+    document.querySelectorAll('.ach-header').forEach(h => {
+      h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+    });
   }
 
   /**

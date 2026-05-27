@@ -764,60 +764,106 @@ a.cred-company:hover {
 /* ---- Process (v4.2.3 shape) ----
    Vertical stack of clickable steps. Each step shows a large all-caps brand
    word alongside body copy. */
+/* §5 PROCESS — restored from pre-v4.2.3 layout per v4_1_0_IMPLEMENT
+   "Final Keepers Of Current Homepage Components". Horizontal scroll of 3
+   numbered cards (01/02/03 in terra/blue/mauve) with subtle indicator bars. */
 .process {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  padding: var(--space-xl) var(--g)
+  padding: 48px 0
 }
 
-.process-step {
+.process-scroll {
   display: flex;
-  align-items: baseline;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  border-radius: var(--r);
-  cursor: pointer;
-  color: inherit;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 var(--g) 8px;
+  margin: 0 calc(var(--g) * -1)
+}
+
+.process-scroll::-webkit-scrollbar {
+  display: none
+}
+
+.process-card {
+  min-width: 280px;
+  max-width: 320px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  padding: 24px;
   text-decoration: none;
-  transition: background-color .2s ease
+  color: inherit;
+  display: block
 }
 
-.process-step:hover {
-  background: rgba(255, 255, 255, .04)
-}
-
-.process-step__word {
-  font-family: 'Bernina Sans', 'Agency FB', sans-serif;
-  font-size: clamp(1.75rem, 5vw, 3rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .02em;
+.process-num {
+  font-size: 3rem;
+  font-weight: 900;
   line-height: 1;
-  color: var(--terra);
-  flex-shrink: 0
+  margin-bottom: 8px
 }
 
-.process-step:nth-child(2) .process-step__word {
+.process-card:nth-child(1) .process-num {
+  color: var(--terra)
+}
+
+.process-card:nth-child(2) .process-num {
   color: var(--blue)
 }
 
-.process-step:nth-child(3) .process-step__word {
+.process-card:nth-child(3) .process-num {
   color: var(--mauve)
 }
 
-.process-step__body {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text2);
-  flex: 1;
-  min-width: 0
+.process-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px
 }
 
-@media (max-width: 44.9375rem) {
-  .process-step {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs, 8px)
-  }
+.process-card-body {
+  font-size: .875rem;
+  color: var(--text2);
+  line-height: 1.6
+}
+
+.process-source {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: .75rem;
+  color: var(--blue);
+  font-weight: 500
+}
+
+/* Process scroll indicator (3 bars beneath the scrolling cards) */
+.process-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px var(--g) 0;
+  overflow: hidden
+}
+
+.process-indicator span {
+  display: block;
+  height: 2px;
+  border-radius: 1px
+}
+
+.process-indicator span:nth-child(1) {
+  width: 100%;
+  background: var(--terra)
+}
+
+.process-indicator span:nth-child(2) {
+  width: 85%;
+  margin-left: 15%;
+  background: var(--blue)
+}
+
+.process-indicator span:nth-child(3) {
+  width: 75%;
+  margin-left: 25%;
+  background: var(--mauve)
 }
