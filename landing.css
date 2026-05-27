@@ -289,6 +289,15 @@ a {
   margin: 0 auto
 }
 
+/* Align the "Experience" heading with the left edge of the .cred-list cards
+   instead of letting it sit at the full container width. Same max-width +
+   auto margins so it stacks directly above the cards. */
+.credentials .section-heading {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto
+}
+
 .cred-item {
   background: var(--bg2);
   border-radius: var(--r);
