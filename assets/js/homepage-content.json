@@ -16,31 +16,59 @@
     "phase_a": {
       "label": "Phase A",
       "heading": "Foundation",
-      "body": "Before AI, I learned the part of the job that doesn't change. On a two-person social team at PETA, my mentor Helena and I pioneered the rapid, visual-first publishing playbook that the rest of the industry adopted years later — 3.2 billion impressions a year, a #1 engagement rate across nonprofits, viral campaigns that landed in YahooNews, Refinery 29, and a Kanye lyric. Then I went independent and ran every part of that work — strategy, brand, design, build — for clients of my own. This is the foundation the rest of the portfolio is built on: systems thinking, gut-check storytelling, and shipping under real deadlines.",
-      "feature_cards": [
-        { "slug": "awards-viral-social", "subtitle": "Our First Viral Moments, Hijacking #AskSeaWorld, and a foul-mouthed vegan grandma with a billion video views." },
-        { "slug": "freelance-marketing-web", "subtitle": "Carrying one brand across every medium, ten years with a single client, and a hand-drawn website where the human touch was the deliverable." }
-      ]
+      "body": "Before AI, I learned the part of the job that doesn't change. A two-person social team at PETA, pioneering the visual-first playbook the industry adopted years later. Then independent — running every part of the work for my own clients. The foundation everything else is built on."
     },
     "phase_b": {
       "label": "Phase B",
       "heading": "Generative Automations",
-      "body": "When the first GPT release shipped, I stopped doing almost anything else and learned. The question that mattered wasn't whether AI was safe or inevitable: it was how to apply it to every skill I already had. The answer turned out to be pipelines: Notion as the structured data layer, Make.com as the connective tissue, ChatGPT as the writer, Adobe Firefly for the art, Webflow for the surface. Then I built one: Astrofluenced, an astrology-based self-help network publishing 100+ blogs a week, a podcast voiced by two AI characters with distinct personalities, and matching social assets. Mostly hands-off, all of it on-brand.",
-      "feature_cards": [
-        { "slug": "generative-blog-workflow", "subtitle": "Fully Automated Daily Astrological Readings, 100+ weekly blogs, hand-drawn artwork covering an AI blog, and a podcast with 68 episodes hosted by characters named Theodore and Stella." }
-      ]
+      "body": "When the first GPT shipped, I stopped doing almost anything else and learned. The answer turned out to be pipelines — structured data, connective tissue, a writer, an artist, a surface. Then I built one and let it run."
     },
     "phase_c": {
       "label": "Phase C",
       "heading": "Custom AI Solutions",
-      "body": "Most companies are trying to roll out AI the way they roll out any new software: pick a few people from each department, send them to a seminar, expect them to come back as the \"AI person\" on their team. It doesn't work, because AI isn't that kind of tool. The value isn't in adding it on top of how you already work — it's in rebuilding the work itself.\n\nThat's what Phase C is. Custom digital products built agentically against ironed-out dev protocols, then taken one step further: the friction that's *still* left after launch — updating a website, onboarding clients, scheduling content, pushing a new product to a storefront — gets absorbed into a custom AI pipeline the client already uses every day. They open the same ChatGPT they were already using. It asks what changed. It edits the images, writes the copy, updates the database, and pushes the site. No new tool to learn, no Zapier rats-nest to maintain, no new vendor. This portfolio is one example. The Everlastings webstore is another. The DataEdger investment plan and the Thot App are next."
+      "body": "Most companies roll out AI as another tool slotted on top of how they already work. The real value is in rebuilding the work itself — custom pipelines wired into the AI your team is already using. No new tool, no Zapier rats-nest, no new vendor."
     }
   },
   "featured_tiles": {
-    "tiles": [
-      { "phase": "Phase A", "filter": { "all": ["Featured", "Phase A"] } },
-      { "phase": "Phase B", "filter": { "all": ["Featured", "Phase B"] } },
-      { "phase": "Phase C", "filter": { "all": ["Featured", "Phase C"] } }
+    "heading": "Three phases. One through-line.",
+    "subheading": "Find the friction. Design the system. Ship the thing.",
+    "video_card": {
+      "filter": { "any": ["Featured"] }
+    },
+    "cards": [
+      {
+        "phase": "Phase A",
+        "title": "Foundation",
+        "bullets": [
+          "3.2B annual impressions at PETA",
+          "#1 nonprofit engagement rate (PRNews Pro)",
+          "Viral hits in YahooNews, Refinery 29, even a Kanye lyric",
+          "10-year freelance client roster"
+        ],
+        "href": "/section.html?tags=Phase%20A"
+      },
+      {
+        "phase": "Phase B",
+        "title": "Generative Automations",
+        "bullets": [
+          "100+ weekly blogs auto-generated",
+          "68-episode AI-voiced podcast",
+          "Notion + Make.com + ChatGPT + Webflow pipeline",
+          "Hand-drawn Lottie animations over an AI blog"
+        ],
+        "href": "/section.html?tags=Phase%20B"
+      },
+      {
+        "phase": "Phase C",
+        "title": "Custom AI Solutions",
+        "bullets": [
+          "Pipelines embedded in your existing ChatGPT",
+          "No new tool, no Zapier rats-nest, no new vendor",
+          "Custom agentic builds against dev protocols",
+          "This portfolio. Everlastings. DataEdger. Thot."
+        ],
+        "href": "/section.html?tags=Phase%20C"
+      }
     ]
   },
   "process": {

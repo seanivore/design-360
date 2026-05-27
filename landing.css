@@ -640,26 +640,29 @@ a.cred-company:hover {
   left: 0;
   width: 50%;
   height: 100%;
-  backdrop-filter: blur(14px) saturate(110%);
-  -webkit-backdrop-filter: blur(14px) saturate(110%);
-  background: rgba(255, 255, 255, .12);
-  border-right: 1px solid rgba(255, 255, 255, .06);
+  backdrop-filter: blur(18px) saturate(115%);
+  -webkit-backdrop-filter: blur(18px) saturate(115%);
+  background: rgba(255, 255, 255, .16);
+  border-right: 1px solid rgba(255, 255, 255, .08);
   z-index: 1
 }
 
-/* ---- Integrated nav overlay (top bar of the hero) ---- */
+/* ---- Integrated nav overlay (top bar of the hero) ----
+   Layout: logo top-left of the FROSTED HALF, +work/+process/+about
+   right-aligned within the same frosted half, +contact top-right of the
+   UNFROSTED HALF. Achieved via 50% width left & right groupings. */
 .hero-cyberpunk__nav {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: clamp(16px, 4vw, 56px);
   padding: clamp(16px, 2.5vh, 28px) clamp(20px, 3vw, 48px);
+  gap: clamp(16px, 3vw, 48px);
   background: transparent;
-  border: none;
   transition: transform .3s ease
 }
 
@@ -667,12 +670,31 @@ a.cred-company:hover {
   transform: translateY(-100%);
 }
 
+/* Left half of the nav grid — holds the logo (left edge) AND the nav
+   links (right edge of the frosted half). */
+.hero-cyberpunk__nav > .hero-cyberpunk__logo {
+  justify-self: start
+}
+
+.hero-cyberpunk__nav-links {
+  list-style: none;
+  display: flex;
+  gap: clamp(14px, 2vw, 28px);
+  margin: 0;
+  padding: 0;
+  justify-self: end;   /* right-align inside the left half (frosted side) */
+  grid-column: 1;
+  grid-row: 1
+}
+
 .hero-cyberpunk__logo {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  opacity: .85;
-  transition: opacity .2s ease
+  opacity: .9;
+  transition: opacity .2s ease;
+  grid-column: 1;
+  grid-row: 1
 }
 
 .hero-cyberpunk__logo img {
@@ -685,21 +707,13 @@ a.cred-company:hover {
   opacity: 1
 }
 
-.hero-cyberpunk__nav-links {
-  list-style: none;
-  display: flex;
-  gap: clamp(12px, 2vw, 32px);
-  margin: 0;
-  padding: 0
-}
-
 .hero-cyberpunk__nav-links a,
 .hero-cyberpunk__contact {
   font-size: .8125rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .03em;
   text-transform: lowercase;
-  color: rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, .92);
   text-decoration: none;
   transition: color .2s ease, opacity .2s ease
 }
@@ -710,7 +724,9 @@ a.cred-company:hover {
 }
 
 .hero-cyberpunk__contact {
-  margin-left: auto
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end
 }
 
 /* ---- Name cutouts ---- */
@@ -797,10 +813,10 @@ a.cred-company:hover {
 
 .hero-cyberpunk__about-label {
   font-size: .75rem;
-  font-weight: 500;
-  letter-spacing: .05em;
-  text-transform: lowercase;
-  opacity: .75;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .8;
   margin-bottom: 10px
 }
 
@@ -808,9 +824,9 @@ a.cred-company:hover {
   margin: 0;
   font-size: clamp(.9375rem, 1.2vw, 1.0625rem);
   line-height: 1.55;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: .005em;
-  color: rgba(255, 255, 255, .92);
+  color: #fff;
   transition: opacity .4s ease
 }
 
@@ -832,13 +848,6 @@ a.cred-company:hover {
   text-decoration: none;
   color: #fff;
   transition: opacity .2s ease
-}
-
-.hero-cyberpunk__cta-eyebrow {
-  font-size: .6875rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  opacity: .55
 }
 
 .hero-cyberpunk__cta-label {
@@ -962,12 +971,19 @@ a.cred-company:hover {
   transition: background-color .2s ease
 }
 
+/* Subtle alternating tint — per annotation #5, "JUST BARELY different
+   from the actual background. This is that important kind of detail that
+   people FEEL more than they see." */
+.spine-section:nth-child(odd) {
+  background: rgba(255, 255, 255, .015)
+}
+
 .spine-section:nth-child(even) {
-  background: var(--color-tint)
+  background: rgba(255, 255, 255, .035)
 }
 
 .spine-section:hover {
-  background: rgba(255, 255, 255, .05)
+  background: rgba(255, 255, 255, .065)
 }
 
 .spine-section__inner {
@@ -1016,10 +1032,10 @@ a.cred-company:hover {
 }
 
 .spine-section__body {
-  font-size: clamp(.95rem, 1.4vw, 1.0625rem);
+  font-size: 0.8rem;        /* smaller per Sean — "spine body can be 0.8rem" */
   line-height: 1.65;
   color: var(--text2);
-  max-width: 38rem;        /* readable measure — narrower than the heading */
+  max-width: 34rem;         /* tighter readable measure */
   margin: 0 auto;
   text-align: left
 }
@@ -1034,64 +1050,181 @@ a.cred-company:hover {
   }
 }
 
-/* ---- Featured tiles ----
-   Three-column grid desktop, single-column mobile.
-   4:5 vertical aspect (1080×1350 video source). */
+/* ---- Featured tiles (Prisma reference) ----
+   Section heading row at top, then a 4-card grid below:
+   Card 1 = random feature_tile video with subtle sepia filter.
+   Cards 2-4 = phase title + 4 bullets + Learn more link.
+   Subtle bg-tint per annotation #5 — JUST barely different from the
+   page background, "more felt than seen". */
 .feature-tiles {
+  background: rgba(255, 255, 255, .02);
+  padding: clamp(48px, 8vh, 96px) clamp(24px, 5vw, 72px);
+  /* L/R padding slightly larger than top/bottom per annotation #1-4 —
+     intentional asymmetry so the section feels framed, not stale. */
+}
+
+.feature-tiles__header {
+  max-width: 56rem;
+  margin: 0 auto clamp(24px, 4vh, 48px);
+  text-align: left
+}
+
+.feature-tiles__heading {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 600;
+  letter-spacing: -.005em;
+  line-height: 1.25;
+  color: #fff;
+  margin: 0 0 4px
+}
+
+.feature-tiles__subheading {
+  font-size: clamp(1.0625rem, 1.6vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, .45);
+  margin: 0
+}
+
+.feature-tiles__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
-  padding: var(--space-xl) var(--g)
+  gap: 10px;
+  max-width: 80rem;
+  margin: 0 auto
+}
+
+@media (min-width: 48rem) {
+  .feature-tiles__grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (min-width: 64rem) {
+  .feature-tiles__grid {
+    grid-template-columns: repeat(4, 1fr);
+    min-height: clamp(380px, 50vh, 480px)
+  }
 }
 
 .feature-tile {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
-  cursor: pointer;
-  border-radius: var(--r);
-  background: var(--bg2);
-  transition: transform .25s ease
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .04);
+  transition: background .25s ease, transform .25s ease
 }
 
-.feature-tile__video {
+/* --- Video card (first tile): aesthetic-only, sepia-tinted --- */
+.feature-tile--video {
+  min-height: 380px;
+  background: #1a1a1a
+}
+
+.feature-tile--video .feature-tile__video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s ease, opacity .25s ease
+  /* Subtle warm wash — not full sepia, just a tint that pulls the video
+     toward the brand palette so it reads as "aesthetic mood", not as a
+     project teaser. */
+  filter: sepia(.25) saturate(.7) brightness(.95) contrast(1.05);
 }
 
-.feature-tile__phase-label {
-  position: absolute;
-  top: var(--space-sm, 16px);
-  left: var(--space-sm, 16px);
+/* --- Content card (cards 2-4): phase / title / bullets / Learn more --- */
+.feature-tile--card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 2.5vw, 28px);
+  background: rgba(255, 255, 255, .035);
+  border: 1px solid rgba(255, 255, 255, .04);
+  min-height: 380px
+}
+
+.feature-tile--card:hover {
+  background: rgba(255, 255, 255, .055);
+  border-color: rgba(255, 255, 255, .08)
+}
+
+.feature-tile__phase {
   font-size: .6875rem;
   font-weight: 600;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  letter-spacing: .08em;
+  color: rgba(255, 255, 255, .5);
+  margin-bottom: 12px
+}
+
+.feature-tile__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+  margin: 0 0 24px;
+  letter-spacing: -.005em
+}
+
+.feature-tile__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+
+.feature-tile__bullets li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: .8125rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .68)
+}
+
+.feature-tile__bullets li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: .75rem;
+  font-weight: 700;
   color: var(--terra);
-  z-index: 2;
-  background: rgba(0, 0, 0, .35);
-  padding: 4px 8px;
-  border-radius: 3px
+  line-height: 1.5
 }
 
-/* Flip-to-video utility: JS toggles this when a tile becomes the active one
-   in the sequence. */
+.feature-tile__more {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: rgba(255, 255, 255, .85);
+  text-decoration: none;
+  transition: color .2s ease
+}
+
+.feature-tile__more:hover {
+  color: var(--terra)
+}
+
+.feature-tile__more span {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform .2s ease
+}
+
+.feature-tile__more:hover span {
+  transform: translateX(2px) rotate(-45deg)
+}
+
+/* Legacy flip utility kept for the featured-tile-controller — it toggles
+   .feature-tile__flip on the active tile. Now applies only the subtle
+   scale transform, not the autoplay sequence (which is no longer used
+   since card 1 always autoplays a single random video). */
 .feature-tile__flip {
-  transform: scale(1.02)
-}
-
-.feature-tile__flip .feature-tile__video {
-  transform: scale(1.04)
-}
-
-@media (min-width: 720px) {
-  .feature-tiles {
-    grid-template-columns: repeat(3, 1fr)
-  }
+  transform: scale(1.01)
 }
 
 /* ---- Process (v4.2.3 shape) ----

@@ -163,59 +163,67 @@ const LandingController = (() => {
   }
 
   /**
-   * FEATURED TILES — one tile per phase. For each tile config:
-   *   1. Filter projects by tile.filter.
-   *   2. Random-pick one qualifying entry.
-   *   3. Random-pick one URL from that entry's feature_tile[].
-   *   4. Emit a tile with the video + phase label.
+   * FEATURED TILES — Prisma-style 4-card grid per Sean's mockup:
+   *   Card 1: random feature_tile video from any qualifying entry
+   *           (aesthetic mood, no phase attribution; sepia-tinted).
+   *   Cards 2-4: phase title + 4 bullets + "Learn more →" link.
    *
-   * Dispatches 'featured-tiles:ready' on document after mount so the
-   * featured-tile-controller can attach state-machine behavior.
+   * Heading row above the grid carries the section title + subheading.
    */
   function renderFeaturedTiles(projects, content) {
     const section = document.getElementById('featured-tiles');
     if (!section) return;
 
-    const tileConfigs = (content.featured_tiles && content.featured_tiles.tiles) || [];
-    if (!tileConfigs.length) {
+    const cfg = content.featured_tiles || {};
+    const cards = cfg.cards || [];
+    if (!cards.length) {
       section.style.display = 'none';
       return;
     }
 
-    const tilesHTML = [];
+    // --- Card 1: random video from any entry with a feature_tile.
+    const videoFilter = (cfg.video_card && cfg.video_card.filter) || { any: ['Featured'] };
+    const videoCandidates = DataLoader.resolveFilter(projects, videoFilter)
+      .filter(p => Array.isArray(p.feature_tile) && p.feature_tile.length > 0)
+      .flatMap(p => p.feature_tile);
+    let videoCardHTML = '';
+    if (videoCandidates.length) {
+      const videoURL = videoCandidates[Math.floor(Math.random() * videoCandidates.length)];
+      const resolved = videoURL.startsWith('http') ? videoURL : '/' + videoURL;
+      videoCardHTML =
+        `<div class="feature-tile feature-tile--video" aria-hidden="true">` +
+          `<video class="feature-tile__video" muted loop playsinline autoplay src="${resolved}"></video>` +
+        `</div>`;
+    }
 
-    tileConfigs.forEach(tile => {
-      const qualifying = DataLoader.resolveFilter(projects, tile.filter)
-        .filter(p => Array.isArray(p.feature_tile) && p.feature_tile.length > 0);
-
-      if (!qualifying.length) return;
-
-      const entry = qualifying[Math.floor(Math.random() * qualifying.length)];
-      const urls = entry.feature_tile;
-      const url = urls[Math.floor(Math.random() * urls.length)];
-      if (!url) return;
-
-      const resolved = url.startsWith('http') ? url : '/' + url;
-      const slug = entry.slug || '';
-      const title = entry.title || '';
-
-      tilesHTML.push(
-        `<div class="feature-tile" role="button" tabindex="0" data-slug="${slug}" ` +
-          `aria-label="${title} — feature tile, double-tap to view project">` +
-          `<video class="feature-tile__video" muted loop playsinline src="${resolved}"></video>` +
-          `<div class="feature-tile__phase-label">${tile.phase || ''}</div>` +
+    // --- Cards 2-4: phase title + bullets + Learn more link.
+    const phaseCardsHTML = cards.map(card => {
+      const title = card.title || '';
+      const phase = card.phase || '';
+      const href = card.href || '/section.html';
+      const bullets = (Array.isArray(card.bullets) ? card.bullets : [])
+        .map(b => `<li>${b}</li>`)
+        .join('');
+      return (
+        `<div class="feature-tile feature-tile--card">` +
+          `<div class="feature-tile__phase">${phase}</div>` +
+          `<h3 class="feature-tile__title">${title}</h3>` +
+          `<ul class="feature-tile__bullets">${bullets}</ul>` +
+          `<a class="feature-tile__more" href="${href}">Learn more <span aria-hidden="true">→</span></a>` +
         `</div>`
       );
-    });
+    }).join('');
 
-    if (!tilesHTML.length) {
-      section.style.display = 'none';
-      return;
-    }
+    const headerHTML =
+      `<header class="feature-tiles__header">` +
+        (cfg.heading ? `<h2 class="feature-tiles__heading">${cfg.heading}</h2>` : '') +
+        (cfg.subheading ? `<p class="feature-tiles__subheading">${cfg.subheading}</p>` : '') +
+      `</header>`;
 
-    section.innerHTML = tilesHTML.join('');
+    section.innerHTML = headerHTML + `<div class="feature-tiles__grid">${videoCardHTML}${phaseCardsHTML}</div>`;
 
-    // Hand off to featured-tile-controller.js once tiles are in the DOM
+    // The video card still lights up via featured-tile-controller for its
+    // sequenced auto-play behaviors if needed. For now we just autoplay.
     const tiles = section.querySelectorAll('.feature-tile');
     document.dispatchEvent(new CustomEvent('featured-tiles:ready', {
       detail: { tiles }
