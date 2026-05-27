@@ -1,19 +1,13 @@
 {
   "entries": {
-    "baroque-de-heem-still-life": "assets/entries/uid-bsj-738.json",
-    "advanced-animation-system": "assets/entries/uid-cap-258.json",
     "illustrated-poetry-book": "assets/entries/uid-cop-802.json",
-    "automated-e-commerce-shop-lookbook": "assets/entries/uid-dff-987.json",
     "surreal-constructivism-perception": "assets/entries/uid-enm-522.json",
     "constructivist-profiles": "assets/entries/uid-evn-680.json",
     "pie-claesz-modern-vibes": "assets/entries/uid-fan-459.json",
     "gradient-bauhaus": "assets/entries/uid-fen-036.json",
-    "animated-cms-weekly-blogs": "assets/entries/uid-fth-565.json",
     "minimalism-bauhaus": "assets/entries/uid-hdp-267.json",
     "personalized-fashion-magazine": "assets/entries/uid-hwi-844.json",
-    "bau-noir-haus": "assets/entries/uid-hxp-812.json",
     "surreal-constructivism": "assets/entries/uid-iir-099.json",
-    "bohemian-abstractions": "assets/entries/uid-kts-582.json",
     "flowering-symmetric-asymmetry": "assets/entries/uid-kvs-366.json",
     "pie-claesz": "assets/entries/uid-lrt-041.json",
     "constructi-haus": "assets/entries/uid-lrt-716.json",
@@ -25,27 +19,21 @@
     "surreal-heads": "assets/entries/uid-rda-284.json",
     "saas-product-sale-features": "assets/entries/uid-rfr-187.json",
     "technical-defi-content-simplification": "assets/entries/uid-rjy-542.json",
-    "ai-virtual-photoshoot-design": "assets/entries/uid-sdz-155.json",
     "social-advertising-strategy": "assets/entries/uid-sez-023.json",
     "amorphous-gradient-css-animation": "assets/entries/uid-sgt-851.json",
-    "agentic-marketing-department": "assets/entries/uid-sjz-330.json",
-    "agentic-social-manager": "assets/entries/uid-skz-743.json",
     "neo-expresi-cyber": "assets/entries/uid-spc-535.json",
     "data-visualization-dashboard": "assets/entries/uid-srs-009.json",
-    "agentic-fashion-designer": "assets/entries/uid-svz-258.json",
-    "api-automate-video-production": "assets/entries/uid-sxz-424.json",
     "blog-lookbook-print-gallery": "assets/entries/uid-tev-176.json",
     "freelance-payments-platform": "assets/entries/uid-vin-427.json",
     "psychedelic-impressi": "assets/entries/uid-vlf-055.json",
     "ai-design-fashion-lookbook": "assets/entries/uid-wgw-370.json",
     "minimalist-web-store-product": "assets/entries/uid-wnw-867.json",
     "visual-artist-process-portfolio": "assets/entries/uid-wty-542.json",
-    "art-nouveau-brand-design": "assets/entries/uid-xuk-296.json",
     "constructi-landscapes": "assets/entries/uid-zri-192.json"
   },
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 42
+    "entry_count": 30
   }
 }
