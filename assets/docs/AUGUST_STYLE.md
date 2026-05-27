@@ -1,9 +1,11 @@
 # august.style — Project Architecture & Schema Reference
 
-**Aligned with**: v4.2.3_IMPLEMENT.md
+**Aligned with**: v4.2.3 shipped state (post-ship visual review folded in)
 **Last updated**: 2026-05-27
 
 Living master document for the august.style portfolio site (vanilla HTML/CSS/JS + Jekyll, zero JS dependencies, Cloudflare R2 CDN). Updated each planning session to reflect the current target state of schema, controllers, and architecture. Symbiotic with the highest-numbered `vX_Y_Z_IMPLEMENT.md` in `assets/docs/archive/vX_Y/`.
+
+**Note on this revision**: v4.2.3 shipped against the IMPLEMENT spec, then went through a substantial post-ship visual review with Sean. The doc below describes the **shipped state**, which diverged from IMPLEMENT in several places (hero composition, featured-tile interaction model, spine typography, entry-hero shape, entry-page nav). Where the IMPLEMENT and the ship diverge, this doc reflects what's actually in the repo.
 
 ---
 
@@ -124,15 +126,15 @@ Informational, not consumed by controllers.
 
 A flow-layout entry replaces the columns shape with a typed-block sequence. Each block is one of:
 
-- `{ "type": "h3", "text": "..." }` — section heading
-- `{ "type": "h4", "text": "..." }` — sub-heading
-- `{ "type": "h5", "text": "..." }` — minor heading
-- `{ "type": "p", "text": "..." }` — paragraph
-- `{ "type": "img", "images": [...], "alt": "..." }` — image row (1–N images side by side)
-- `{ "type": "list", "items": [...], "style": "bluepoints" }` — bulleted list
-- `{ "type": "chunk_break", "button_text": "Continue reading" }` — progressive-disclosure marker; everything after this block is hidden until the button is clicked, then fades in with light animation
-- `{ "type": "embed_html", "html": "<blockquote>...</blockquote>", "alt": "..." }` — raw HTML embed for tweet / YouTube / Bluesky cards
-- `{ "type": "collection_preview", "collection": "slug-here" }` — renders a horizontal-scroll collection preview component. Replaces a media row; can sit anywhere a typed `img` block would.
+- `{ "type": "h3", "text": "..." }` — chapter-tier heading (large bold sans, normal case).
+- `{ "type": "h4", "text": "..." }` — section-tier heading (medium bold sans).
+- `{ "type": "h5", "text": "..." }` — leaf-tier heading. Renders as **italic Instrument Serif** in terracotta — distinct family + style so even at small size it stays distinguishable from h4. The IMPLEMENT spec called for uppercase all-caps; that was reversed post-ship for readability.
+- `{ "type": "p", "text": "..." }` — paragraph. Max-width 56rem (--flow-text-measure) centered.
+- `{ "type": "img", "images": [...], "alt": "..." }` — image row. Single-image rows constrain to 60% width centered (so they read at the size a 2-up tile would); multi-image rows fill the row.
+- `{ "type": "list", "items": [...], "style": "bluepoints" }` — bulleted list. **Items can be either plain strings (leaf bullet) OR `{ "text": "Topic", "items": [...] }`** for nested topic-with-sub-bullets. Top-level depth-0 list = topic-tier (bolder, terracotta dot, narrower 44rem); depth-1 sub-list = leaf-tier (smaller font, bluepoint sub-bullets). The Wave 3 entries were initially authored with flat "Topic — sub1; sub2; sub3" strings; a one-shot migration converted them to the nested shape post-ship.
+- `{ "type": "chunk_break", "button_text": "Continue reading" }` — progressive-disclosure marker. Auto-reveals on scroll via IntersectionObserver (button doesn't have to be clicked), OR by manual click. When the first chunk-break fires, ALL `.flow-chunk-hidden` siblings reveal and every subsequent chunk-break wrapper is removed too (no laddering).
+- `{ "type": "embed_html", "html": "<blockquote>...</blockquote>", "alt": "..." }` — raw HTML embed. Centered (max-width 56rem). Twitter `<blockquote class='twitter-tweet'>` blocks auto-load `platform.twitter.com/widgets.js` via `ensureTwitterWidgets()` since `<script>` tags injected via `innerHTML` don't execute. Tweet blockquotes should use `data-theme='light'` so they read on the dark site.
+- `{ "type": "collection_preview", "collection": "slug-here" }` — renders a horizontal-scroll preview of the first 8 items in the named collection + a "View Full Collection" link. Each thumb registers into the lightbox pool.
 
 The flow renderer walks the array, emits the right DOM for each block, and registers any media into the lightbox state pool used by the columns layout.
 
@@ -266,34 +268,34 @@ Located at `assets/js/homepage-content.json`. Controls which entries populate ea
 
 Editing these strings is a push-redeploy without touching any entry JSON. Source-of-truth for in-progress drafts lives in `assets/docs/BRAND_COPY_STRATEGY.md`; locked picks propagate to `homepage-content.json` during BUILD.
 
-### Filter-based sections
-
-Sections that pull from entries use `filter` objects:
+### Filter-based + copy-only sections
 
 ```json
 {
   "hero": {
-    "filter": { "any": ["Web Developer"] },
-    "about_pool": [
-      "Line one variant",
-      "Line two variant"
-    ],
+    "filter": { "any": [] },
+    "about_pool": ["Line one variant", "Line two variant"],
     "cta_secondary": { "text": "All Projects", "href": "/section.html" }
   },
+  "narrative_spine": {
+    "phase_a": { "label": "Phase A", "heading": "Foundation", "body": "..." },
+    "phase_b": { "label": "Phase B", "heading": "Generative Automations", "body": "..." },
+    "phase_c": { "label": "Phase C", "heading": "Custom AI Solutions", "body": "..." }
+  },
   "featured_tiles": {
-    "tiles": [
-      { "phase": "Phase A", "filter": { "all": ["Featured", "Phase A"] } },
-      { "phase": "Phase B", "filter": { "all": ["Featured", "Phase B"] } },
-      { "phase": "Phase C", "filter": { "all": ["Featured", "Phase C"] } }
+    "heading": "Three phases. One through-line.",
+    "subheading": "Find the friction. Design the system. Ship the thing.",
+    "video_card": { "filter": { "any": ["Featured"] } },
+    "cards": [
+      { "phase": "Phase A", "title": "Foundation", "bullets": ["..."], "href": "/section.html?tags=Phase%20A" },
+      { "phase": "Phase B", "title": "Generative Automations", "bullets": ["..."], "href": "/section.html?tags=Phase%20B" },
+      { "phase": "Phase C", "title": "Custom AI Solutions", "bullets": ["..."], "href": "/section.html?tags=Phase%20C" }
     ]
   },
-  "credentials": { /* unchanged from v5.1 */ },
-  "achievements": {
-    "heading": "Achievements",
-    "source": "entries",
-    "limit": null
-  },
-  "cta_section": { /* copy block */ }
+  "process": { "heading": "...", "steps": [ { "word": "FOUNDATION", "body": "...", "href": "..." } ] },
+  "credentials": { "heading": "Experience", "items": [/* unchanged shape */] },
+  "achievements": { "heading": "Achievements", "source": "entries", "limit": null },
+  "cta_section": { "heading": "...", "body": "...", "primary": { "text": "...", "href": "..." }, "secondary": { "text": "...", "href": "..." } }
 }
 ```
 
@@ -302,20 +304,20 @@ Sections that pull from entries use `filter` objects:
 - `"any": [...]` — entry has at least one of these tags
 - `"all": [...]` — entry has every one of these tags
 
-Both can combine. `DataLoader.resolveFilter()` applies `all` first, then `any` on the result.
+Both can combine. `DataLoader.resolveFilter()` applies `all` first, then `any` on the result. `DataLoader.getProjectTags(project)` includes role + skill + product + **placement** + company — the placement-inclusion was a post-ship fix (the original implementation omitted placement, breaking featured-tile filtering).
 
-### Featured-tile selection
+### Featured-tiles section (Prisma 4-card grid — shipped reality)
 
-A homepage tile populates only from entries whose `placement[]` contains BOTH `"Featured"` AND one of `"Phase A"` / `"Phase B"` / `"Phase C"`. Each tile is reserved for a specific phase. On every reload, one qualifying entry per phase is picked at random; one of that entry's `feature_tile[]` videos is then picked at random.
+The shipped featured-tiles section is a 4-card grid: **one video card** (left) + **three phase cards** (right). The IMPLEMENT spec called for three sequenced video tiles with a tap-state machine — that was replaced post-ship with this layout per Sean's Prisma reference.
 
-### Tile interaction model
+- **Video card** (card 1): random pick from any entry whose tags match `video_card.filter` (default `{any: ["Featured"]}`) AND has a non-empty `feature_tile[]`. Random URL from that pool. Auto-plays, muted/loop/playsinline. Subtle warm-wash CSS filter (sepia .25 / saturate .7 / brightness .95 / contrast 1.05) so it reads as "aesthetic mood" not as a project teaser. No click-through.
+- **Phase cards** (cards 2–4): each renders the phase label + title + 4 bullets (terracotta ✓ markers) + "Learn more →" linking to `/section.html?tags=Phase%20X`.
+- Section heading above the grid: `featured_tiles.heading` (white) + `featured_tiles.subheading` (gray).
+- The `featured-tile-controller.js` state machine from IMPLEMENT § 4.5 (sequenced auto-play, single/double/triple-tap detection) is **dormant in the shipped homepage**. The file still exists for compatibility; it listens for `'featured-tiles:ready'` but there's only one video card now, so its state machine doesn't actually run.
 
-Scroll-into-view triggers a flip animation that reveals the video. Tiles auto-play sequentially, one at a time. Mobile + desktop both:
+### URL routing — Phase URLs
 
-- Single-tap: pauses sequence; tapped tile keeps looping
-- Double-tap: navigates to the entry
-- Triple-tap (rapid): stops just that tile's video; sequence continues
-- Tap-elsewhere: returns all tiles to default sequenced behavior
+Phase URLs use `%20` (URL-encoded space), not `+`: e.g. `?tags=Phase%20A`. The section-controller splits `tags` queries on `+` as the multi-tag AND delimiter; passing `Phase+A` would parse as two tags ("Phase", "A") and match zero entries.
 
 ---
 
@@ -350,8 +352,11 @@ Case-insensitive via normalization. No partial/substring matching.
 
 ### Tag display
 
-- Section page filter UI: dropdown grouped by Role / Skill / Product. `company` and `placement` excluded from filter display.
-- Entry page: tags render as clickable pills grouped by role/skill/product, each linking to `section.html?tags={normalized}`.
+- **Section page filter UI**: dropdown grouped by Role / Skill / Product. `company` and `placement` excluded from filter display. (Known gap: `company` isn't surfaced in the section-page filter dropdown yet; logged for a later patch.)
+- **Entry page tags — layout-aware** (shipped post-ship dedup):
+  - `layout: "flow"` entries: top + bottom `.entry-tags-card` pills (clickable to `section.html?tags=...`). The sticky `#entry-tag-column` is hidden because there's no two-column structure to anchor it.
+  - `layout: "columns"` entries: sticky `#entry-tag-column` on the right holds the tag pills + media_embed iframe. Top + bottom `.entry-tags-card` are hidden to avoid duplicate tag rendering.
+- **Homepage credentials tags**: render as visual `<span class="tag">` pills (non-clickable, `pointer-events: none`). The whole `.cred-item` is the clickthrough anchor — links to `?tags={company}`. Tag-level filter routing is parked until those routes have real content; the visual pills stay either way.
 
 ---
 
@@ -548,53 +553,81 @@ Controllers and their responsibilities. File:line references are intentionally o
 
 ### `entry-controller.js`
 
-- `getEntryPath()` — resolves slug from URL/sessionStorage/pathname
-- `loadEntryData(slug)` — fetches via manifest
-- `populateMetadata()` — title, meta tags, OG tags
-- `populateTagsCards()` — role/skill/product tag pills
-- `populateColumnsLayout()` — orchestrates columns-layout rendering
-- `populateFlowLayout()` — walks `flow[]` array, dispatches per block type (v4.2.3)
-- `populateMainMedia()` — renders `main_media[]` groups (v4.2.3, replaces populateGifs / populateMobileImg)
-- `populateBleed()` / `populateBleedSlides()` — new bleed components (v4.2.3)
-- `populateRelatedPosts()` — 5 entries via 6-hour seeded random
-- Lightbox index pool registration happens inline during each populate function
+- `getEntryPath()` — resolves slug from URL/sessionStorage/pathname.
+- `loadEntryData(slug)` — fetches via manifest.
+- `populateMetadata()` — title, meta tags, OG tags.
+- `populateTagsCards()` — role/skill/product tag pills into top + bottom `.entry-tags-card`. Called for flow layout only (columns hides these; see § 6 Tag display).
+- `populateTagColumn()` — sticky right-column tag pills + `media_embed` iframe. Called for columns layout only (flow hides the `.entry-content-media` wrapper entirely).
+- `populateThumbHero()` — renders the entry-hero as a **full-bleed peeking-row of thumbnails** (post-ship redesign). One `<img class="entry-hero-tile">` per `entry.thumb[]` URL, each 80vw wide with `aspect-ratio: 16/9` and a 2px white border. The row scrolls horizontally; on every viewport the row breaks out of the container padding via the `width: 100vw; margin-left: calc(50% - 50vw)` trick. Pagination/arrows from the IMPLEMENT spec were removed — the horizontal scroll IS the navigation.
+- `populateColumnsLayout()` — orchestrates the columns shape: tag column, content text, thumb hero, main_media, image_grids, slideshows, project_url, github_repo, bleed, bleed_slides.
+- `populateFlow()` — orchestrates flow: shared shell (tags / thumb hero / content / origin links) + `populateFlowLayout`.
+- `populateFlowLayout()` — walks `entry.flow[]`. Block types: h3/h4/h5/p/img/list/chunk_break/embed_html/collection_preview.
+- `buildListUL(items, style, depth)` — recursive list renderer (post-ship). Items can be plain strings (leaf bullets) OR `{text, items}` (topic + nested sub-bullets). Top-level depth-0 list is "topic-tier" (terracotta dot, bolder); depth-1 sub-list is "leaf-tier" (smaller font, smaller dot, in bluepoints style or default).
+- `populateMainMedia()` / `populateBleed()` / `populateBleedSlides()` — render their respective sections.
+- `populateRelatedPosts()` — 5 entries via 6-hour seeded random.
+- `wireChunkBreak(chunkEl, parent)` — wires a chunk-break block. Two trigger paths: manual click OR `IntersectionObserver` auto-reveal as the button scrolls into view. Both call the same `reveal()` (idempotent), which strips `.flow-chunk-hidden` from all subsequent siblings and removes every `.flow-chunk-break` wrapper from the parent (gates collapse, no leftover empty space).
+- `ensureTwitterWidgets()` — loads `platform.twitter.com/widgets.js` on demand when an `embed_html` block contains a `.twitter-tweet`. Necessary because `<script>` tags injected via `innerHTML` don't execute. Calls `twttr.widgets.load()` on re-entry.
+- `initLightbox()` — unified lightbox index pool. Every image-emitting renderer (`populateThumbHero`, `populateMainMedia`, `populateImageGrid`, `populateBleed`, `populateBleedSlides`, `renderSlide`, flow `img` blocks, `resolveCollectionPreview`) registers into one `lightboxPool[]` and sets `data-lightbox-index` on each `<img>`. Document-level click delegation reads the index. Keyboard: arrows + Home/End + Esc. Touch swipe + neighbor preload via injected `<link rel="preload" as="image">`.
+- `initNavCollapse()` — fixed `#siteNav` (entry-page top bar) hides on scroll-down past 200px, returns on scroll-up. `#navPill` hamburger reappears as a "bring nav back" affordance when the nav is hidden.
 
 ### `landing-controller.js`
 
-- Hero render (background video, blurred half, cutout name, rotating ABOUT pool from homepage-content.json)
-- Narrative spine render (three-section, no tabs)
-- Featured tiles render (delegated to `featured-tile-controller.js`)
-- Process section render (static three-step, clickable to `section.html?tags=Phase+X`)
-- Credentials / Achievements / CTA renders (achievements flattens across all entries)
+- `renderHero()` — picks one random line from `homepage-content.json.hero.about_pool[]` and writes `#heroAboutLine`. The video, blur, AUGUST cutout, HORVATH cutout are CSS-only.
+- `renderNarrativeSpine()` — emits three `.spine-section` blocks, one per phase. Each section is a clickable anchor to `/section.html?tags=Phase%20X`. Heading uses a mixed-style pattern: `<span>Phase A is</span> <em class="spine-section__heading-accent">Foundation</em>.` — italic-serif (Instrument Serif) accent on the heading word, normal sans on the prefix. Body paragraph below in a narrower (34rem) measure at 0.8rem.
+- `renderFeaturedTiles()` — 4-card grid. Video card uses `featured_tiles.video_card.filter` to pick from any qualifying entry's `feature_tile[]`; phase cards are static from `featured_tiles.cards[]`. Dispatches `'featured-tiles:ready'` for the featured-tile-controller (which is dormant in this layout).
+- `renderProcess()` — 01/02/03 horizontal-scroll cards (terra/blue/mauve nth-child color cycle), restored to pre-rewrite layout per "Final Keepers" direction. Each card clickable to `step.href`.
+- `renderCredentials()` — emits each item as a `<a class="cred-item">` linking to the company filter. Tag pills inside are `<span class="tag">` with `pointer-events: none` (post-ship dedup: whole card is the clickthrough, individual tag clicks parked).
+- `renderAchievements()` — flattens `achievements[]` across all projects, keeping each entry's `slug` + `title` alongside. Each item is an expandable accordion (`.ach-item` + `initAccordion`). Body ends with an italic-serif terracotta `see where this happened →` link to the source entry.
+- `renderCTASection()` — heading + body + `.cta-actions` row with two buttons (primary + secondary). Stacks to column on mobile (≤32rem).
+- `initAccordion()` — toggles `.open` on `.ach-item` when the header is clicked.
+- `initScrollReveal()` — IntersectionObserver fades in `.sr` elements.
+- `initNavCollapse()` — hides `.hero-cyberpunk__nav.hide` on scroll-down past 200px, returns on scroll-up. The homepage **does not ship a nav-pill** (removed post-ship: the hero-integrated nav lives inside the hero section, so a "bring me back" pill has no useful action). `initNavCollapse` is pill-optional — if `#navPill` doesn't exist, scroll-hide still works.
 
-### `featured-tile-controller.js` (new, v4.2.3)
+### `featured-tile-controller.js` (dormant in shipped homepage)
 
-- Sequenced auto-play state machine (one tile at a time, scroll-into-view trigger)
-- Tap-state machine (single / double / triple-tap behavior)
-- Random pick of qualifying entry per phase slot + random pick of video from that entry's `feature_tile[]`
+Sequenced auto-play state machine from IMPLEMENT § 4.5 — IntersectionObserver trigger, Pointer Events single/double/triple-tap detection. **Currently dormant**: the shipped featured-tiles section has only one video card (auto-plays on its own with `autoplay loop muted playsinline`), so the controller's state machine has nothing to sequence. The file is retained for compatibility and for any future return to the 3-tile sequenced layout.
 
 ### `data-loader.js`
 
-- `loadManifest()` / `loadProject()` / `loadAllProjects()` (existing)
-- `loadCollection()` / `loadCollectionItem()` (v4.2.3, with resolver for collection-of-collections union/intersection)
-- `resolveFilter()` — applies `all` then `any`
-- `filterByAllTags()` — section-page filtering
-- `normalizeForURL()` — tag normalization for matching
+- `loadManifest()` / `loadProject()` / `loadAllProjects()` (existing).
+- `loadCollection()` / `loadCollectionItem()` — slug-keyed Promise cache; resolves via `manifest.collections[slug]` / `manifest.items[slug]`.
+- `resolveCollectionMedia(collection)` — lazy UID→slug index then `Promise.all` resolves `collection.media[]` UIDs to loaded item objects.
+- `unionCollections(slugs)` / `intersectCollections(slugs)` — set operations on multiple collections' resolved media.
+- `resolveFilter(projects, filter)` — applies `all` then `any`.
+- `filterByAllTags()` / `filterByAnyTag()` — section-page filtering.
+- `getProjectTags(project)` — combined tag union: role + skill + product + **placement** + company. Placement was added post-ship (the original implementation omitted it, breaking featured-tile filtering).
+- `normalizeForURL()` — tag normalization for matching.
 
 ### `section-controller.js`
 
-- `parseURL()` — querystring + hash + sessionStorage merge
-- Renders filtered tiles, wires `FilterController` callbacks
+- `parseURL()` — querystring + hash + sessionStorage merge.
+- Renders filtered tiles, wires `FilterController` callbacks.
 
-### `collection-controller.js` / `media-controller.js` (new, v4.2.3)
+### `collection-controller.js` / `media-controller.js`
 
-- Per § 7 routing description above
-- Collection page reuses `FilterController` scoped to one collection's items
+- Per § 7 routing description above.
+- `media-controller.js` has an inlined private `loadAllItems()` helper (mirror of `loadAllProjects` but for items) — kept local to the controller rather than added to `data-loader.js` to avoid a parallel-write conflict during Wave 2.
 
 ### DOM regions (high-level)
 
-- `entry.html` — `.entry-hero-image` (replaced in v4.2.3 by thumbnail slideshow hero), `.entry-thumb-grid` (replaced by sticky tag+embed column), `#main-media-region`, `#bleed-region`, `#bleed-slides-region`, `#flow-region`
-- `index.html` — `#hero`, `#narrative-spine` (new v4.2.3), `#featured-tiles` (new v4.2.3), `#process`, `#credentials`, `#achievements`, `#cta-section`
+- `entry.html`:
+  - **Nav**: `<nav class="site-nav site-nav--entry" id="siteNav">` (fixed top bar) with `.site-logo` favicon SVG + `.nav-links` (Home / All Projects / Contact). `#navPill` hamburger appears when nav is hidden. Both controlled by `entry-controller.initNavCollapse`.
+  - **Header**: `.entry-header` (h1 title + h2 subtitle), `.entry-role-section` (h3 role).
+  - **Tags**: `.entry-tags-layout` (top + bottom `.entry-tags-card`) — hidden on columns layout. `#entry-tag-column` (sticky right) — hidden on flow layout.
+  - **Hero**: `#entry-hero > .entry-hero-gallery > .entry-hero-tile[]` — full-bleed peeking-row of thumbs (post-ship redesign).
+  - **Media regions**: `#main-media-region`, `#bleed-region`, `#bleed-slides-region`, `#flow-region` (flow layout only).
+  - **Legacy regions**: `#entry-image-grid`, `#entry-image-grids`, `#entry-slideshows`, `#entry-gifs` (display:none until populated for legacy entries).
+  - **Lightbox**: `#lightbox-overlay`.
+  - **Related**: `.related-posts-section > #related-posts-grid`.
+- `index.html`:
+  - **Hero**: `<section id="hero" class="hero-cyberpunk">` — integrated nav overlay (logo + lowercase +prefix links + +contact), bg-video, frost blur (left half), AUGUST cutout (top-left, Bernina Sans Compressed Exbold), HORVATH cutout (bottom-right), bottom-left footer block (`#heroAboutLine` + explore CTA + socials). No separate top nav bar. No `#navPill` on homepage.
+  - **Spine**: `<section id="narrative-spine" class="spine">` — three `.spine-section` blocks with alternating subtle bg tint.
+  - **Featured tiles**: `<section id="featured-tiles" class="feature-tiles">` — 4-card grid (1 video + 3 phase cards).
+  - **Process**: `<section id="process" class="process">` — heading + horizontal-scroll cards.
+  - **Credentials**: `<section id="credentials" class="credentials">` — 56rem-wide centered list of company cards.
+  - **Achievements**: `<section id="achievements" class="achievements">` — 40rem-wide centered accordion.
+  - **CTA trios**: `.cta-trio--minimal` between Achievements and CTA, `.cta-trio--full` (animated) after CTA.
+  - **CTA**: `<section id="ctaSection" class="cta-section">` — heading + body + `.cta-actions` row of two buttons.
 
 ---
 
