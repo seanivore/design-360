@@ -1168,11 +1168,12 @@ const EntryController = (() => {
 
     /**
      * Orchestrate the columns layout (default).
-     * Renders the two-column shape with sticky tag/embed column + main media,
-     * grids, slideshows, bleed, bleed_slides, project URL, GitHub repo.
+     * Two-column structure: text on left, sticky tag/embed column on right
+     * (the v4.2.3 home for tags — top + bottom .entry-tags-card are hidden
+     * to avoid duplicate tag rendering).
      */
     function populateColumnsLayout(project) {
-        populateTagsCards(project);
+        hideTagsCardsLegacy();
         populateContent(project);
         populateThumbHero(project);
         populateTagColumn(project);
@@ -1187,18 +1188,39 @@ const EntryController = (() => {
 
     /**
      * Orchestrate the flow layout.
-     * Tag pills + thumbnail hero are shared with columns; body is the typed
-     * sequence walked from entry.flow[]. Media regions outside flow[] are
-     * intentionally not rendered (the flow blocks own that real estate).
+     * Single-column long-form. Tags live in the top + bottom .entry-tags-card
+     * (the sticky right column is hidden because there's no two-column anchor
+     * in flow). Body is the typed sequence walked from entry.flow[]. Media
+     * regions outside flow[] are intentionally not rendered.
      */
     async function populateFlow(project) {
         populateTagsCards(project);
         populateContent(project);
         populateThumbHero(project);
-        populateTagColumn(project);
+        hideTagColumnAndContentMedia();
         if (project.origin_url) populateProjectURL(project);
         if (project.repository) populateGitHubRepo(project.repository);
         await populateFlowLayout(project);
+    }
+
+    /**
+     * Hide the top + bottom .entry-tags-card containers — used by columns
+     * layout where tags live in the sticky right column instead.
+     */
+    function hideTagsCardsLegacy() {
+        document.querySelectorAll('.entry-tags-layout').forEach(el => {
+            el.style.display = 'none';
+        });
+    }
+
+    /**
+     * Hide the .entry-content-media two-column wrapper (which holds the
+     * sticky #entry-tag-column) — used by flow layout where the wrapper
+     * has no left text column to anchor against.
+     */
+    function hideTagColumnAndContentMedia() {
+        const wrapper = document.querySelector('.entry-content-media');
+        if (wrapper) wrapper.style.display = 'none';
     }
 
     /**
