@@ -39,8 +39,16 @@
   <section id="hero" class="hero-cyberpunk">
     <video class="hero-cyberpunk__bg-video" autoplay muted loop playsinline src="https://cdn.august.style/media/home-anim/hero-cyberpunk-FINAL.mp4"></video>
     <div class="hero-cyberpunk__blur"></div>
-    <div class="hero-cyberpunk__cutout"><h1>AUGUST</h1></div>
-    <p class="hero-cyberpunk__about" id="heroAboutLine"></p>
+
+    <!-- AUGUST cutout — top-left over the blurred half (mix-blend-mode against the dim/blur).
+         Right half is intentionally left clean for the cyberpunk video to read through. -->
+    <div class="hero-cyberpunk__name hero-cyberpunk__name--top"><h1>AUGUST</h1></div>
+
+    <!-- ABOUT block: bottom-left, over the blurred half -->
+    <div class="hero-cyberpunk__about-block">
+      <div class="hero-cyberpunk__about-label">ABOUT</div>
+      <p class="hero-cyberpunk__about" id="heroAboutLine"></p>
+    </div>
   </section>
 
   <!-- NARRATIVE SPINE -->
