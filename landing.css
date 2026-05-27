@@ -378,19 +378,21 @@ a.cred-company:hover {
    .process-step__body shape lives further down in the v4.2.3 block. The
    .creative and .impact sections were dropped from the homepage. */
 
-/* §8 ACHIEVEMENTS — tighter container so the section feels boxed, and the
-   bottom CTA reads as part of the same conversation (not floating far below). */
+/* §8 ACHIEVEMENTS — narrow container (Sean: "more narrow, 600-900px") so the
+   list reads as a scannable index. Bottom padding tight so CTA below feels
+   like part of the same conversation. */
 .achievements {
   padding: 48px 0 24px
 }
 
 .achievements__inner {
-  max-width: 56rem;
-  margin: 0 auto
+  max-width: 40rem;
+  margin: 0 auto;
+  padding-inline: var(--g, 24px)
 }
 
 .ach-item {
-  padding: 20px 0;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(255, 255, 255, .06)
 }
 

@@ -579,6 +579,13 @@ const EntryController = (() => {
                 if (block.alt) wrapper.setAttribute('aria-label', block.alt);
                 // Trusted HTML: we authored these strings in the entry JSONs.
                 wrapper.innerHTML = block.html || '';
+
+                // Twitter blockquotes won't transform without widgets.js, and
+                // <script> tags injected via innerHTML don't execute. Detect
+                // and load (or re-run) widgets.js explicitly.
+                if (wrapper.querySelector('.twitter-tweet')) {
+                    ensureTwitterWidgets();
+                }
                 return wrapper;
             }
 
@@ -606,6 +613,30 @@ const EntryController = (() => {
      *      stop and click. The button stays as a visible affordance until
      *      either trigger fires.
      */
+    /**
+     * Load Twitter's widgets.js once, then call twttr.widgets.load() to
+     * transform every .twitter-tweet on the page into the rendered iframe.
+     * Called whenever an embed_html block contains a Twitter blockquote
+     * (the <script> tag inside the embed HTML cannot execute since it's
+     * being injected via innerHTML — see HTML spec on inserted scripts).
+     */
+    function ensureTwitterWidgets() {
+        // Already loaded — just re-run the parser on any newly-added blockquotes.
+        if (window.twttr && window.twttr.widgets) {
+            window.twttr.widgets.load();
+            return;
+        }
+        // Loading in flight — let it finish; widgets.js auto-parses on load.
+        if (document.querySelector('script[data-twitter-widgets]')) return;
+
+        const s = document.createElement('script');
+        s.src = 'https://platform.twitter.com/widgets.js';
+        s.async = true;
+        s.charset = 'utf-8';
+        s.dataset.twitterWidgets = 'true';
+        document.head.appendChild(s);
+    }
+
     function wireChunkBreak(chunkEl, parent) {
         const btn = chunkEl.querySelector('.flow-chunk-break__btn');
         if (!btn) return;
@@ -619,7 +650,11 @@ const EntryController = (() => {
                 el.classList.remove('flow-chunk-hidden');
                 el.classList.add('flow-chunk-revealed');
             });
-            btn.remove();
+            // Remove the entire chunk-break wrapper (not just the button) so no
+            // empty space remains in the flow. Also remove any OTHER chunk_break
+            // wrappers in the same parent — once the first gate opens, every
+            // subsequent gate is moot (we don't ladder chunk_breaks).
+            parent.querySelectorAll('.flow-chunk-break').forEach(el => el.remove());
         };
 
         btn.addEventListener('click', reveal);

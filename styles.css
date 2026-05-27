@@ -1263,13 +1263,24 @@ li a:hover {
 
 .entry-hero-tile {
   flex-shrink: 0;
-  width: 21.875rem;        /* 350px — matches .tile-image */
+  /* Each tile fills ~80% of the viewport so one dominates the hero with the
+     next tile peeking from the right edge. Cap at 80rem (~1280px) on very
+     wide displays so we don't outrun the source thumbnail resolution. */
+  width: min(80vw, 80rem);
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 0.125rem solid #ffffff;
   box-shadow: var(--tile-shadow);
   cursor: zoom-in;
   display: block;
+}
+
+@media (max-width: 47.9375rem) {
+  .entry-hero-tile {
+    /* On mobile, let it run a touch wider so the peeking effect is preserved
+       even at the smallest viewports. */
+    width: 88vw;
+  }
 }
 
 /* Legacy single-image hero (still defined for any references that survive) */
@@ -1935,7 +1946,14 @@ li a:hover {
   transform: scale(1.2);
 }
 
-/* Flow blocks: consistent vertical rhythm via --flow-rhythm. */
+/* Flow region — narrow reading measure for text content per Sean's
+   direction ("text/bullet point sections on the flow layout should be way
+   narrower than full width... 900px"). Images, embeds, and the chunk-break
+   button can stay wider; only the text blocks are constrained. */
+#flow-region {
+  --flow-text-measure: 56rem;
+}
+
 .flow-h3,
 .flow-h4,
 .flow-h5,
@@ -1946,6 +1964,17 @@ li a:hover {
 .flow-collection-preview,
 .flow-chunk-break {
   margin-block: var(--flow-rhythm);
+}
+
+/* Text blocks: cap width and center, so paragraphs/lists/headings read in a
+   comfortable measure rather than spanning the full container. */
+.flow-h3,
+.flow-h4,
+.flow-h5,
+.flow-p,
+.flow-list {
+  max-width: var(--flow-text-measure);
+  margin-inline: auto;
 }
 
 .flow-h3 {
@@ -2010,6 +2039,26 @@ li a:hover {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Single-image flow rows: constrain to ~60% width centered so they read
+   roughly the size a single image would in a 2-up row. Multi-image rows
+   keep the full-width row layout. */
+.flow-img__row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.flow-img__row > img:only-child {
+  margin-inline: auto;
+  max-width: 60%
+}
+
+@media (max-width: 47.9375rem) {
+  .flow-img__row > img:only-child {
+    max-width: 100%
+  }
 }
 
 .flow-img__row {
