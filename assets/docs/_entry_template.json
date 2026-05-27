@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "6.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-xxx-###",
@@ -19,11 +19,14 @@
     "Website"
   ],
   "company": "Freelance",
-  "feature": [
+  "placement": [
+    "Featured",
     "Phase A"
   ],
-  "feature_video": "https://cdn.august.style/media/{slug}/feature-video-{slug}.mp4",
-  "feature_video_alt": "Short description of the feature video content",
+  "feature_tile": [
+    "https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4"
+  ],
+  "tile_alt": "Short description of the featured content that applies across the array",
   "layout": "columns",
   "thumb": [
     "https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp"

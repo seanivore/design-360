@@ -1,115 +1,173 @@
-# Standard Operating Procedure: Creating Project Entry JSON Files
+# Entry SOP — Authoring Entries, Collections, and Items
 
-**Updated**: 2026-04-01
-**JSON Schema**: v5.0
+**Aligned with**: v4.2.3_IMPLEMENT.md
+**Last updated**: 2026-05-27
+**Schema versions** (verify before authoring): entry 6.1, collection 6.0, item 6.0 — see `AUGUST_STYLE.md` § *Schema Version Alignment Check*.
+
+This document is the single procedural reference for authoring the three JSON content types that drive the august.style portfolio: **entries** (project pages), **collections** (curated media sets), and **items** (single media pieces). The agent receives a brief (often a markdown file with prose + media references, sometimes just links and notes) and runs this pipeline end-to-end, including CDN handoff.
+
+For schema definitions and field-by-field reference, see `AUGUST_STYLE.md`. This doc covers *process*, not *schema*.
 
 ---
 
-## 1. Determine Slug and Create Entry File
+## 1. Overview
 
-Run the generator script from the project root:
+The pipeline:
+
+```
+Brief (markdown, links, or both)
+  -> Choose type (entry / collection / item)
+  -> Generate JSON skeleton
+  -> Source + process media (Cloudinary)
+  -> Upload to R2 CDN
+  -> Fill JSON (schema-bound fields)
+  -> Validate
+  -> Regenerate manifest
+  -> Local smoke test
+```
+
+All three types share the same shape. Type-specific notes are called out per step.
+
+### Type selection
+
+- **Entry** — a project case study with hero, copy, media. Belongs in `assets/entries/`. Has either `layout: "columns"` (traditional two-column case study) or `layout: "flow"` (typed-block long-form storytelling).
+- **Collection** — a curated set of media items (e.g., "Logo Marks 2026", "Generative Portraits"). Belongs in `assets/collections/`. References item UIDs in its `media[]` array.
+- **Item** — a single media piece (image or short video) that belongs to one or more collections. Belongs in `assets/items/`. Free-form tags from `tags.json` `item` group.
+
+If unclear, default to entry. Collections and items are for the Media Collections subsystem and are used when a brief describes a curated set of standalone media pieces rather than a project case study.
+
+---
+
+## 2. Generate JSON Skeleton
+
+Run the generator from the project root:
 
 ```bash
-python3 assets/scripts/new_project.py
+python3 assets/scripts/new_project.py --type entry
+python3 assets/scripts/new_project.py --type collection
+python3 assets/scripts/new_project.py --type item
 ```
 
-This generates a unique ID (format `uid-xxx-###`), stamps v5.0 metadata, and writes a new file to `assets/docs/`. You will move the completed file to `assets/entries/` at the end.
+The script generates a UID (`uid-xxx-###`), stamps the appropriate `_metadata` block, and writes a skeleton to `assets/docs/uid-xxx-###.json`. Move to the correct directory at the end of the pipeline.
 
-The custom `project` command does the same thing:
+The legacy `project` shell command alias is equivalent to `--type entry` for backward compatibility.
 
-```bash
-project
-# Created project file: assets/docs/uid-std-018.json
-# Entry ID: uid-std-018
-```
-
-Choose a slug for the project (URL-safe, lowercase, hyphenated). Set the `"slug"` field in the JSON.
+Choose a slug (URL-safe, lowercase, hyphenated) and set `"slug"` in the JSON before anything else — the slug is used for the media directory name and CDN paths throughout the pipeline.
 
 ---
 
-## 2. Create Image Directory
+## 3. Tag the Document
 
-Create the image working directory using the slug:
+Open `assets/docs/tags.json` and verify the tag values you intend to use exist in the correct group. The six groups are documented in `AUGUST_STYLE.md` § 6.
 
-```bash
-mkdir -p assets/images/{slug}
-```
+- **Entries**: set `role`, `skill`, `product`, `company`, `placement` (placement is `[]` unless the entry is a featured-tile candidate).
+- **Collections**: set `role`, `skill`, `product`, `company`. No `placement`.
+- **Items**: set `tags[]` — this is the only group that is free-form. Add new tag values to `tags.json` `item` array if your brief introduces new ones, but reuse existing values where possible.
 
-This directory is gitignored. All processed images go here before CDN upload.
-
----
-
-## 3. Source Images
-
-Every entry needs:
-- **4-6 thumbnails** (landscape, 1920x1080px)
-- **3 square images** (1080x1080px)
-
-### Where to get source images
-
-**From project pages**: Download screenshots or exports from the live project, Behance gallery, or other hosted location.
-
-**From screenshots**: Use browser dev tools or browser automation to set viewport before capturing:
-- Desktop: 1440x900
-- Mobile: 390x844
-- Capture meaningful states (loaded data, active interactions, key features)
-
-**Authenticated or gated apps**: If the project requires login (payment portals, admin dashboards, etc.), log in first or use demo/test credentials. Avoid capturing real PII — use test data or redact sensitive content. Note any access requirements in the entry's `notes` field.
-
-Save raw source images anywhere temporarily. They will be processed through Cloudinary in the next step.
+Rules:
+- Tag values are case-sensitive and must match the registry exactly.
+- For pre-locked groups (role, skill, product, company, placement), do not invent values without adding them to `tags.json` first.
+- `company` is a single string, not an array.
 
 ---
 
-## 4. Process Images with Cloudinary
+## 4. Source Media
 
-Cloud name: `dzrtucxh7`
+Where the media comes from depends on the brief:
 
-### Authentication
+### Brief includes media references at known paths
 
-Cloudinary API calls require authentication. Credentials are in the project `.env` file as `CLOUDINARY_URL`:
+The brief points to source files at `assets/.media/{slug}/...` (Sean staged them ahead of time). Skip to § 5 — Cloudinary processing.
 
-```
-CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@dzrtucxh7
-```
+### Brief includes external sources to capture
 
-Extract the API key and secret from this URL. All upload and destroy calls must use `-u "API_KEY:API_SECRET"` for HTTP basic auth.
+The brief lists URLs to screenshot, project pages to download from, or describes assets to compose. Use one of:
 
-### Step 1 — Upload source image
+- **Browser screenshots** — set viewport before capturing:
+  - Desktop: 1440×900
+  - Mobile: 390×844
+  - Capture meaningful states (loaded data, active interactions, key features)
+- **Asset downloads** — pull existing exports from Behance, the live project, or another hosted location
+- **Authenticated/gated apps** — log in first or use demo/test credentials. Avoid capturing real PII; use test data or redact. Note access requirements in the entry's `notes` field
+
+Save raw source images to `assets/.media/{slug}/` (gitignored) before processing. Sean's convention is to keep `.media/` as both staging AND personal archive — files persist after CDN upload.
+
+### Brief includes prose only, media TBD
+
+Surface to Sean. The orchestrator does NOT compose media from imagination.
+
+---
+
+## 5. Process Media with Cloudinary
+
+Cloudinary handles resizing, cropping, and format conversion to WebP.
+
+**Cloud name**: `dzrtucxh7`
+**Authentication**: API key + secret are in `.env` as `CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@dzrtucxh7`. All API calls use `-u "API_KEY:API_SECRET"` for HTTP basic auth.
+**Full API reference**: `assets/docs/entries-prep/CLOUDINARY_IMAGE_API.md`.
+
+For each raw source image:
+
+### Upload
 
 ```bash
 curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/upload \
   -u "API_KEY:API_SECRET" \
-  -F "file=@/path/to/source-image.png"
+  -F "file=@/path/to/source.png"
 ```
 
-The response JSON contains a `public_id` field. Use this in the next step.
+The response JSON contains a `public_id` field used in the next step.
 
-### Step 2 — Download transformed image
+### Download transformed versions
 
-For each source image, download the processed version directly:
+Standard transforms by purpose:
 
 ```bash
-# Thumbnail (1920x1080 landscape .webp)
-curl -o "assets/images/{slug}/thumb-{slug}-1.webp" \
+# Thumbnail — landscape 1920×1080 .webp
+curl -o "assets/.media/{slug}/thumb-{slug}-1.webp" \
   "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1/{public_id}"
 
-# Square image (1080x1080 .webp)
-curl -o "assets/images/{slug}/img-sq-{slug}-1.webp" \
+# Square page image — 1080×1080 .webp
+curl -o "assets/.media/{slug}/img-sq-{slug}-1.webp" \
   "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1080,h_1080,q_auto,f_webp/v1/{public_id}"
+
+# Grid image — 1080×1080 .webp (same as square)
+curl -o "assets/.media/{slug}/grid-1-{slug}-1.webp" \
+  "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1080,h_1080,q_auto,f_webp/v1/{public_id}"
+
+# Bleed image — landscape 2400×1200 .webp
+curl -o "assets/.media/{slug}/bleed-1-{slug}-1.webp" \
+  "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_2400,h_1200,q_auto,f_webp/v1/{public_id}"
+
+# Flow image — flexible, default 1600×1200 .webp
+curl -o "assets/.media/{slug}/flow-{slug}-NN.webp" \
+  "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,w_1600,h_1200,q_auto,f_webp/v1/{public_id}"
 ```
 
-If the subject gets cropped poorly, add gravity detection:
+If the subject crops poorly, add `g_auto` to the transformation chain (`c_fill,g_auto,w_1920,h_1080,q_auto,f_webp`).
 
-```bash
-curl -o "assets/images/{slug}/thumb-{slug}-1.webp" \
-  "https://res.cloudinary.com/dzrtucxh7/image/upload/c_fill,g_auto,w_1920,h_1080,q_auto,f_webp/v1/{public_id}"
-```
+### Filename conventions
 
-Increment the number suffix for each image: `-1.webp`, `-2.webp`, `-3.webp`, etc.
+The numbering scheme used in `assets/.media/{slug}/` mirrors the CDN path. The pattern:
 
-### Step 3 — Delete from Cloudinary
+| Purpose | Filename | Notes |
+| ------- | -------- | ----- |
+| Thumbnail | `thumb-{slug}-N.webp` | N starts at 1 |
+| Square image | `img-sq-{slug}-N.webp` | N starts at 1 |
+| Grid group K, image M | `grid-K-{slug}-M.webp` | both 1-indexed |
+| Bleed group K, image M | `bleed-K-{slug}-M.webp` | both 1-indexed |
+| Bleed slides image N | `bleed-slide-{slug}-N.webp` | single group |
+| Main media group K, image M | `main-K-{slug}-M.webp` | both 1-indexed |
+| Flow asset NN | `flow-{slug}-NN.webp` | two-digit zero-padded, matches phase-draft conventions |
+| Feature tile N | `feature-tile-{slug}-N.mp4` | mp4 only |
+| Collection thumb N | `media/collection/{slug}/thumb-{slug}-N.webp` | different prefix |
+| Item source | `media/item/{slug}.webp` (or `.mp4`) | different prefix |
 
-After downloading all processed images, delete the source from Cloudinary. This is required to stay on the free plan.
+For videos (mp4): do not go through Cloudinary. Place at `assets/.media/{slug}/...mp4` directly and proceed to § 6 upload.
+
+### Delete from Cloudinary
+
+After downloading all processed images, delete each source from Cloudinary to stay on the free plan:
 
 ```bash
 curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/destroy \
@@ -117,216 +175,216 @@ curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/destroy \
   -F "public_id={public_id}"
 ```
 
-Repeat steps 1-3 for every source image until all thumbnails and square images are ready.
-
-Full API reference: `assets/docs/entries-prep/CLOUDINARY_IMAGE_API.md`
-
 ---
 
-## 5. Upload to R2 CDN
+## 6. Upload to R2 CDN
 
-All images must be hosted on the CDN. Local paths are not acceptable.
+All processed media must live on the CDN before the JSON references it. Local paths in JSON are never acceptable in committed entries.
 
-### Upload the slug directory
+**R2 endpoint**: `https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com`
+**AWS CLI profile**: `r2`
+
+### Sync the slug directory
 
 ```bash
-aws s3 sync assets/images/{slug}/ s3://portfolio/media/{slug}/ \
+aws s3 sync assets/.media/{slug}/ s3://portfolio/media/{slug}/ \
   --endpoint-url https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com \
   --profile r2
 ```
 
-### Verify the URLs load
+For collections, use `s3://portfolio/media/collection/{slug}/`. For items, use `s3://portfolio/media/item/`.
 
-Test at least one thumbnail and one square image in a browser:
+### Pre-flight verify
 
+For every CDN URL the JSON will reference, confirm the URL returns HTTP 200 with the right content-type:
+
+```bash
+curl -I https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp
+# Expect: HTTP/2 200, content-type: image/webp
+
+curl -I https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4
+# Expect: HTTP/2 200, content-type: video/mp4
 ```
-https://cdn.august.style/images/{slug}/thumb-{slug}-1.webp
-https://cdn.august.style/images/{slug}/img-sq-{slug}-1.webp
-```
 
-Both should return HTTP 200 with `content-type: image/webp`.
+If any URL 404s after upload: the sync failed for that file. Re-run the sync. If still 404, surface to Sean.
 
 ---
 
-## 6. Check Tags
+## 7. Fill JSON
 
-Before filling in `role`, `skill`, `product`, or `company`, open the tag registry:
+Reference `AUGUST_STYLE.md` § 2 (entries), § 3 (collections), § 4 (items) for the full field list. Highlights:
 
-```
-assets/docs/tags.json
-```
+### All types
 
-**Rules:**
-- Use only tags that already exist in the registry. 
-- Do not invent new tags or create near-duplicates 
-- E.g., do not add "Web Design" when "Web Developer" exists
-- If a genuinely new tag is needed, add it to `tags.json` first, then reference it.
-- Tags are case-sensitive and must match exactly.
-- `role`, `skill`, and `product` are arrays — include at least one value in each.
+- `id`: matches filename (format `uid-xxx-###`).
+- `slug`: URL-safe, lowercase, hyphenated.
+- `title`, `subtitle`: display text.
+- `seo_title` (50–60 chars), `seo_description` (150–160 chars).
+- `thumb[]`: CDN URLs (full `https://cdn.august.style/...`).
+- `thumb_alt`: alt text.
 
----
+### Entries — type-specific
 
-## 7. Fill Out JSON Entry
+- `role`, `skill`, `product`, `company`: per § 3 of this doc.
+- `placement`: `[]` by default. For homepage-featured entries: `["Featured", "Phase A" or "Phase B" or "Phase C"]`.
+- `feature_tile`: `[]` by default. For featured entries: `["https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4"]`.
+- `tile_alt`: alt text for the feature-tile video.
+- `layout`: `"columns"` or `"flow"`.
+- `achievements[]`: array of `{ headline, details }` objects. Optional; populates the homepage Achievements section if non-empty.
 
-### Image paths — use CDN URLs
+### Entries — columns layout
+
+Use when the brief describes a single project with traditional case-study sections. Fields:
+
+- `img[]`, `img_alt`: square page images (3 typical).
+- `main_media[]`: array of grouped media blocks (each block has `title`, `images[]`, `alt`).
+- `grids[]`: array of 3-across grid blocks.
+- `bleed[]`, `bleed_slides`: full-bleed components.
+- `challenge`, `approach`, `result`: 2–4 sentences each.
+- `tiles[]`: short scannable lines for the section page tile.
+
+### Entries — flow layout
+
+Use when the brief is long-form storytelling with mixed media types (the three new v4.2.3 showcase entries are examples). Fields:
+
+- `flow[]`: typed-block array (see `AUGUST_STYLE.md` § 2a for the full block-type catalog: h3/h4/h5/p/img/list/chunk_break/embed_html/collection_preview).
+- All optional case-study fields (challenge/approach/result/tiles) are skipped — the flow handles narrative pacing.
+
+Convert markdown briefs to flow blocks:
+
+| Brief form | Flow block |
+| ---------- | ---------- |
+| `### Heading` | `{ "type": "h3", "text": "Heading" }` |
+| `#### Heading` | `{ "type": "h4", ... }` |
+| `##### Heading` | `{ "type": "h5", ... }` |
+| Paragraph | `{ "type": "p", "text": "..." }` |
+| Image (one or more) | `{ "type": "img", "images": [...], "alt": "..." }` |
+| Bulleted list | `{ "type": "list", "items": [...], "style": "bluepoints" }` |
+| HTML block (tweet / YouTube / Behance iframe) | `{ "type": "embed_html", "html": "...", "alt": "..." }` — copy HTML verbatim, escape double quotes for JSON, preserve `&amp;` entities |
+| `**chunk_break**` marker | `{ "type": "chunk_break", "button_text": "Continue reading" }` |
+| Collection preview | `{ "type": "collection_preview", "collection": "collection-slug" }` |
+
+### Collections — type-specific
+
+- `media[]`: array of item UIDs (strings like `"uid-itm-001"`). Items must exist in `assets/items/` first; the validator cross-references.
+
+### Items — type-specific
+
+- `media_type`: `"image"` or `"video"`.
+- `src`: full CDN URL to the single media piece.
+- `tags[]`: free-form values; add to `tags.json` `item` group as you go.
+
+### YouTube / Behance embeds (columns or flow)
+
+For projects with a YouTube walkthrough or Behance gallery in the columns layout, set:
 
 ```json
-"thumb": [
-  "https://cdn.august.style/images/{slug}/thumb-{slug}-1.webp",
-  "https://cdn.august.style/images/{slug}/thumb-{slug}-2.webp",
-  "https://cdn.august.style/images/{slug}/thumb-{slug}-3.webp",
-  "https://cdn.august.style/images/{slug}/thumb-{slug}-4.webp"
-],
-"img": [
-  "https://cdn.august.style/images/{slug}/img-sq-{slug}-1.webp",
-  "https://cdn.august.style/images/{slug}/img-sq-{slug}-2.webp",
-  "https://cdn.august.style/images/{slug}/img-sq-{slug}-3.webp"
-]
+"media_url": "https://youtu.be/VIDEO_ID",
+"media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/VIDEO_ID?si=SHARE_TOKEN&amp;controls=0' title='Descriptive title' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+"media_alt": "Description of what the video shows"
 ```
 
-### Required fields checklist
+Rules:
+- Single quotes for HTML attributes (JSON string requirement).
+- Keep `&amp;` entity encoding; never raw `&`.
+- `title` attribute is descriptive, not "YouTube video player".
+- For Behance: `src` is `https://www.behance.net/embed/project/GALLERY_NUMBER?ilo0=1`.
 
-| Field             | Type   | Notes                                     |
-| ----------------- | ------ | ----------------------------------------- |
-| `id`              | string | Format: `uid-xxx-###`                     |
-| `slug`            | string | URL-safe, lowercase, hyphenated           |
-| `title`           | string | Display title for the project             |
-| `subtitle`        | string | One-line tagline                          |
-| `seo_title`       | string | 50-60 characters                          |
-| `seo_description` | string | 150-160 characters                        |
-| `role`            | array  | At least one value from `tags.json`       |
-| `skill`           | array  | Applicable values from `tags.json`        |
-| `product`         | array  | Applicable values from `tags.json`        |
-| `company`         | string | One of the four locked values (see below) |
-| `thumb`           | array  | 4-6 CDN URLs (landscape thumbnails)       |
-| `thumb_alt`       | string | Alt text for thumbnail slideshow          |
-| `img`             | array  | Exactly 3 CDN URLs (square images)        |
-| `img_alt`         | string | Alt text for square images                |
-| `tiles`           | array  | 2-4 short display lines                   |
-| `challenge`       | string | 2-4 sentences                             |
-| `approach`        | string | 2-4 sentences                             |
-| `result`          | string | 2-4 sentences                             |
+In flow layouts, embed iframes go in an `embed_html` flow block, not `media_embed`.
 
 ### Locked company values
 
-The `company` field must be exactly one of:
+The `company` field must be one of:
 
 - `"Freelance"`
 - `"Silent Labs"`
 - `"SEANIVORE GROUP LLC"`
 - `"PETA, Inc."`
 
-### Copy field guidelines
+---
 
-**`tiles`** — 2-4 short lines displayed on the project card. Each line is a standalone point, not a full sentence. Think scannable highlights.
+## 8. Validate
 
-**`challenge`** — 2-4 sentences describing the problem or opportunity before work began. No first person.
+Move the JSON from `assets/docs/` to its destination directory:
 
-**`approach`** — 2-4 sentences describing the method or solution. Explain what was done and why.
-
-**`result`** — 2-4 sentences describing the outcome. Focus on what was delivered and its impact. Concrete details over vague claims.
-
-**`role_headline`** — A short role-based headline for the hero flip clock (e.g., "Web Developer", "Creative Director"). Should reflect the entry's primary role.
-
-**`hero_btn_cta`** — CTA button text for hero display (e.g., "See Web Projects").
-
-**`final_cta_text`** — Bottom CTA section heading (e.g., "Interested in web development?").
-
-**`final_btn_cta`** — Bottom CTA primary button text (e.g., "See All Web Projects").
-
-### Optional structured fields
-
-These default to `null`. Only populate when the project warrants it.
-
-**`process`** — Array of exactly 3 steps. `link_text` and `link_slug` are optional (use empty strings if no related entry exists):
-```json
-{ "word": "Research", "summary": "Analyzed competitor approaches...", "link_text": "See the analysis", "link_slug": "related-entry-slug" }
+```bash
+mv assets/docs/uid-xxx-###.json assets/entries/      # for entries
+mv assets/docs/uid-xxx-###.json assets/collections/  # for collections
+mv assets/docs/uid-xxx-###.json assets/items/        # for items
 ```
 
-**`metric`** — Single object:
-```json
-{ "value": "...", "kpi": "...", "context": "..." }
+Run the validator:
+
+```bash
+python3 assets/scripts/validate.py
 ```
 
-**`achievement`** — Single object:
-```json
-{ "headline": "...", "details": "..." }
-```
+The validator checks:
+- Required fields present.
+- Tag values exist in `tags.json` (except `item` tags, which are free-form).
+- Locked `company` value.
+- CDN URL format and `schema_version` correctness.
+- Cross-references for collections (every UID in `media[]` exists in `assets/items/`).
+- Cross-references for entries (every collection slug referenced in `collection_preview` flow blocks exists in `assets/collections/`).
 
-### YouTube video embed pattern
-
-For projects with a YouTube walkthrough or demo video, convert the raw YouTube embed to single-quote format and set all three media fields:
-
-```json
-"media_url": "https://youtu.be/VIDEO_ID",
-"media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/VIDEO_ID?si=SHARE_TOKEN&amp;controls=0' title='Project-Specific Title Here' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-"media_alt": "Description of what the video shows"
-```
-
-**Rules:**
-- Replace all double quotes in the embed HTML with single quotes (JSON string requires this)
-- Keep `&amp;` entity encoding (do not use raw `&`)
-- Change the `title` attribute from "YouTube video player" to a description of the specific project
-- `media_url` gets the YouTube share URL (`https://youtu.be/...`)
-- `media_alt` describes what the video shows for accessibility
-- If the project also has a live site URL, put it in `origin_url` and `origin_url_text`
-
-### Behance entry pattern
-
-For generative art projects hosted on Behance, set `media_embed` to the iframe (use single quotes for attribute values):
-
-```json
-"media_embed": "<iframe src='https://www.behance.net/embed/project/GALLERY_NUMBER?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>"
-```
-
-Standard tags for Behance art entries:
-```json
-"role": ["Graphic Designer", "Creative Director"],
-"skill": ["Generative AI", "Art Direction", "Illustration", "Print Design", "Adobe Creative Cloud"],
-"product": ["Digital Art Collection", "Art Print"],
-"company": "Freelance"
-```
+Fix every reported error before proceeding. The validator's job is to ensure orchestrators downstream see only consistent data.
 
 ---
 
-## 8. Validate and Generate Manifest
-
-### Step 1 — Move to entries directory
-
-```bash
-mv assets/docs/uid-xxx-###.json assets/entries/
-```
-
-### Step 2 — Validate
-
-```bash
-python3 assets/scripts/validate_v5.py
-```
-
-Fix any reported errors before proceeding. The validator checks: required fields, tag registry membership, locked company values, CDN URL format, and structural integrity of optional fields.
-
-### Step 3 — Regenerate manifest
+## 9. Regenerate Manifest
 
 ```bash
 python3 generate_manifest.py
 ```
 
-Confirm the new slug appears in the output.
+This:
+- Updates `assets/js/manifest.json` with the new slug → JSON path mapping.
+- Generates the per-slug HTML at `_pages/{slug}.html` (entry), `_pages/collection-{slug}.html` (collection), or `_pages/media-{slug}.html` (item) — with SEO meta tags baked in from the JSON's `seo_title` / `seo_description` / `thumb[0]` (or `src` for items).
+
+Confirm the new slug appears in the manifest output.
 
 ---
 
-## Quick Reference
+## 10. Local Smoke Test
 
-1. Run `project` (or `python3 assets/scripts/new_project.py`)
-2. Choose slug, set in JSON
-3. `mkdir -p assets/images/{slug}`
-4. Source images (download or screenshot)
-5. Upload to Cloudinary, download transformed, delete from Cloudinary
-6. Upload `assets/images/{slug}/` to R2 CDN, verify URLs
-7. Check `assets/docs/tags.json` for valid tags
-8. Fill out all JSON fields using CDN URLs for images
-9. `mv` JSON to `assets/entries/`
-10. `python3 assets/scripts/validate_v5.py` — fix errors
-11. `python3 generate_manifest.py` — confirm slug appears
+Start the local dev server:
 
-**Backlog**: See `assets/docs/entries-prep/ENTRY_BACKLOG.md` for projects awaiting entry creation.
+```bash
+python3 -m http.server 5500 --bind 127.0.0.1
+```
+
+Visit the new content:
+
+```
+Entry:      http://localhost:5500/entry.html?path={slug}
+Collection: http://localhost:5500/collection.html?path={slug}
+Item:       http://localhost:5500/media.html?path={slug}
+```
+
+Verify:
+- Page renders without console errors.
+- All media loads (no broken images / videos).
+- Tags link correctly to section pages.
+- Lightbox opens on click (entries).
+- Layout shape is correct (columns vs flow for entries).
+
+If anything fails, fix locally before opening a PR.
+
+---
+
+## Quick reference checklist
+
+1. Generate skeleton: `python3 assets/scripts/new_project.py --type {entry|collection|item}`.
+2. Choose slug; set in JSON.
+3. Tag the document per `tags.json`.
+4. Stage source media at `assets/.media/{slug}/` (entries) or `assets/.media/collection/{slug}/` (collections) or `assets/.media/item/` (items).
+5. Process media via Cloudinary (resize, crop, webp) — § 5.
+6. Upload to R2: `aws s3 sync` against the project endpoint with profile `r2` — § 6.
+7. Pre-flight every CDN URL the JSON will reference (HTTP 200 + correct content-type).
+8. Fill JSON — § 7.
+9. Move to destination directory; validate: `python3 assets/scripts/validate.py`.
+10. Regenerate manifest: `python3 generate_manifest.py`.
+11. Local smoke test at `localhost:5500`.
+12. Commit.
+
+**Backlog**: `assets/docs/entries-prep/ENTRY_BACKLOG.md` (if present) tracks projects awaiting entry creation.
