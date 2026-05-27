@@ -968,29 +968,18 @@ a.cred-company:hover {
      AUGUST instead of bottom-right (which collided with the ABOUT body).
    - Bottom: ABOUT label + body + CTA + socials. */
 @media (max-width: 47.9375rem) {
-  /* On mobile, the frost is the ONLY full-coverage surface (no unfrosted
-     right half), so 100% blur the whole time hides too much of the
-     cyberpunk art. Pulse the backdrop-filter + background-color directly:
-     most of the cycle it sits near-clear so the painting breathes through,
-     then eases up to full frost for a beat so the ABOUT body reads, then
-     back down. 14s loop, ease-in-out, infinite.
-
-     NOTE: opacity animation does NOT work for this — iOS Safari/WebKit
-     evaluates backdrop-filter against the unmodified backdrop before
-     applying the element's opacity, so the blur stays full strength
-     regardless of opacity. Animating backdrop-filter directly is the
-     reliable cross-browser path. translateZ(0) + will-change hint pin
-     the layer to GPU compositing so iOS repaints each keyframe. */
+  /* On mobile, full-viewport frost hides too much of the cyberpunk art.
+     Instead of animating (iOS Safari refuses to honor backdrop-filter
+     keyframes reliably even with GPU hints), apply a STATIC gradient
+     mask so the frost is solid at the bottom (where the white ABOUT body
+     + CTA + socials sit) and fades to fully transparent by mid-viewport.
+     AUGUST/HORVATH and the nav links read fine against the unblurred art
+     above the fade. Same idea as a gradient blur, achieved by masking
+     the blur layer rather than the filter value itself. */
   .hero-cyberpunk__blur {
     width: 100%;
-    animation: heroBlurPulse 14s ease-in-out infinite;
-    will-change: backdrop-filter, -webkit-backdrop-filter, background-color;
-    transform: translateZ(0)
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-cyberpunk__blur {
-      animation: none
-    }
+    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 35%, transparent 55%);
+    mask-image: linear-gradient(to top, #000 0%, #000 35%, transparent 55%)
   }
   /* Drop the 2-col grid — use flex so logo, links, and contact don't
      overlap each other. */
@@ -1071,21 +1060,6 @@ a.cred-company:hover {
   }
 }
 
-/* Mobile blur pulse — animates backdrop-filter + background-color so the
-   art shows through most of the cycle, with brief legibility windows.
-   Both -webkit- and unprefixed declared per keyframe for iOS Safari. */
-@keyframes heroBlurPulse {
-  0%, 35%, 100% {
-    -webkit-backdrop-filter: blur(0px) saturate(100%);
-    backdrop-filter: blur(0px) saturate(100%);
-    background-color: rgba(255, 255, 255, 0);
-  }
-  50%, 65% {
-    -webkit-backdrop-filter: blur(18px) saturate(115%);
-    backdrop-filter: blur(18px) saturate(115%);
-    background-color: rgba(255, 255, 255, 0.16);
-  }
-}
 
 /* ---- Narrative spine ----
    Motion.ai "About" section pattern: centered narrow column, small-caps top
