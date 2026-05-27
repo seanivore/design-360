@@ -34,13 +34,17 @@
     "visual-artist-process-portfolio": "assets/entries/uid-wty-542.json",
     "constructi-landscapes": "assets/entries/uid-zri-192.json"
   },
-  "collections": {},
-  "items": {},
+  "collections": {
+    "stub-collection": "assets/collections/uid-col-001.json"
+  },
+  "items": {
+    "saas-conversion-funnel-thumb": "assets/items/uid-itm-001.json"
+  },
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
     "entry_count": 33,
-    "collection_count": 0,
-    "item_count": 0
+    "collection_count": 1,
+    "item_count": 1
   }
 }

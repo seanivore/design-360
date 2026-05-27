@@ -1,0 +1,17 @@
+{
+  "_metadata": { "schema_version": "6.0", "template_type": "media_collection" },
+  "id": "uid-col-001",
+  "slug": "stub-collection",
+  "title": "Stub Collection",
+  "subtitle": "v4.2.3 smoke-test fixture for the Media Collections subsystem.",
+  "seo_title": "Stub Collection — august.style v4.2.3 Smoke Test",
+  "seo_description": "Placeholder collection for the august.style Media Collections subsystem verification — one item, real CDN image, no production purpose.",
+  "role": [],
+  "skill": [],
+  "product": [],
+  "company": "Freelance",
+  "thumb": ["https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"],
+  "thumb_alt": "Stub collection thumbnail — reused SaaS landing slide.",
+  "media": ["uid-itm-001"],
+  "notes": ["v4.2.3 stub fixture per Sean Q2; delete or move to drafts/ after smoke test passes."]
+}

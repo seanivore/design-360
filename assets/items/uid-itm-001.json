@@ -1,0 +1,15 @@
+{
+  "_metadata": { "schema_version": "6.0", "template_type": "collection_item" },
+  "id": "uid-itm-001",
+  "slug": "saas-conversion-funnel-thumb",
+  "title": "SaaS Conversion Funnel — Landing Slide",
+  "subtitle": "Stub item for the v4.2.3 collection-page smoke test.",
+  "seo_title": "SaaS Conversion Funnel Landing — Sample Item",
+  "seo_description": "Placeholder item for the august.style Media Collections subsystem smoke test. Image reused from the SaaS conversion case study.",
+  "media_type": "image",
+  "src": "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp",
+  "thumb": ["https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"],
+  "thumb_alt": "SaaS landing-page slide showing tiered pricing layout — stub fixture for collection smoke test.",
+  "tags": ["stub", "landing-page", "saas"],
+  "notes": ["v4.2.3 stub fixture per Sean Q2; reuse delete or move to drafts/ after smoke test."]
+}
