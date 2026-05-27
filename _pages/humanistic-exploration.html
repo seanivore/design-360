@@ -65,12 +65,19 @@
       <h3 id="entry-role"><!-- Populated by JS --></h3>
     </section>
 
-    <!-- Hero: Video embed (priority) or random thumbnail -->
+    <!-- Hero: Thumbnail slideshow (sourced from entry.thumb[]) -->
     <section id="entry-hero" class="entry-hero" style="display: none;">
-      <!-- Populated by entry-controller.js -->
+      <div class="entry-hero-slideshow">
+        <div class="entry-hero-slideshow__slot">
+          <!-- Populated by entry-controller.js: thumbnail slide(s) -->
+        </div>
+        <div class="entry-hero-slideshow__pagination" hidden>
+          <!-- Populated by entry-controller.js; hidden when only one thumb -->
+        </div>
+      </div>
     </section>
 
-    <!-- Two-column: Text + Compact Thumbnail Grid with Lightbox -->
+    <!-- Two-column: Text + Sticky Tag/Embed Column (60/40 via CSS) -->
     <div class="entry-content-media">
       <div class="entry-text-column">
         <section class="entry-section">
@@ -86,10 +93,16 @@
           <p id="entry-result"></p>
         </section>
       </div>
-      <div class="entry-thumb-grid" id="entry-thumb-grid">
-        <!-- Populated by entry-controller.js: compact 2-col thumbnails -->
-      </div>
+      <aside class="entry-tag-column" id="entry-tag-column">
+        <!-- Populated by entry-controller.js: tag pills + optional media embed -->
+      </aside>
     </div>
+
+    <!-- New v4.2.3 layout regions (additive; legacy regions below remain for columns layout) -->
+    <section id="main-media-region"></section>
+    <section id="bleed-region"></section>
+    <section id="bleed-slides-region"></section>
+    <section id="flow-region"></section>
 
     <!-- Optional: Project URL -->
     <section id="entry-project-url" class="entry-optional-section" style="display: none;">

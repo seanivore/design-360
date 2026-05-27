@@ -31,9 +31,13 @@
     "visual-artist-process-portfolio": "assets/entries/uid-wty-542.json",
     "constructi-landscapes": "assets/entries/uid-zri-192.json"
   },
+  "collections": {},
+  "items": {},
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 30
+    "entry_count": 30,
+    "collection_count": 0,
+    "item_count": 0
   }
 }
