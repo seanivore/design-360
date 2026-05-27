@@ -33,7 +33,7 @@ const LandingController = (() => {
 
   function loadHomepage(content, projects) {
     renderHero(content);
-    renderNarrativeSpine(content);
+    renderNarrativeSpine(content, projects);
     renderFeaturedTiles(projects, content);
     renderProcess(content);
     renderCredentials(content);
@@ -108,8 +108,19 @@ const LandingController = (() => {
   }
 
   /**
-   * NARRATIVE SPINE — emit Phase A / B / C as full-bleed linked sections.
-   * Each phase reads from content.narrative_spine.phase_{a,b,c}.
+   * NARRATIVE SPINE — motion.ai "About" section pattern.
+   *
+   * Per v4_1_0_IMPLEMENT § "Next Two Homepage Landing Page Sections" (line 78+):
+   * the Prisma template's About section uses WordsPullUpMultiStyle — one
+   * flowing heading composed of segments where some are normal sans-serif
+   * and one is italic serif (Instrument Serif) for the accent phrase
+   * ("I am Marcus Chen, a self-taught director."). Narrow centered column
+   * (max-w-3xl), small-caps top label, body paragraph below.
+   *
+   * Our adaptation: small top label "Phase A", flowing heading "Phase A is
+   * <em>Foundation</em>." with the heading phrase italic-serif accent, body
+   * paragraphs below. Each section is a clickable <a> so the whole block
+   * links to /section.html?tags=Phase%20X.
    */
   function renderNarrativeSpine(content) {
     const section = document.getElementById('narrative-spine');
@@ -131,11 +142,20 @@ const LandingController = (() => {
       .map(phase => {
         const token = phaseToURLToken(phase.label);
         const href = `/section.html?tags=${token}`;
+        const label = phase.label || '';
+        const heading = phase.heading || '';
         return (
-          `<a href="${href}" class="spine-section">` +
-            `<div class="spine-section__label">${phase.label || ''}</div>` +
-            `<h2 class="spine-section__heading">${phase.heading || ''}</h2>` +
-            `<div class="spine-section__body">${renderParagraphs(phase.body || '')}</div>` +
+          `<a class="spine-section" href="${href}">` +
+            `<div class="spine-section__inner">` +
+              `<div class="spine-section__label">${label}</div>` +
+              `<h2 class="spine-section__heading">` +
+                `<span class="spine-section__heading-prefix">${label} is</span>` +
+                ` ` +
+                `<em class="spine-section__heading-accent">${heading}</em>` +
+                `<span class="spine-section__heading-period">.</span>` +
+              `</h2>` +
+              `<div class="spine-section__body">${renderParagraphs(phase.body || '')}</div>` +
+            `</div>` +
           `</a>`
         );
       })

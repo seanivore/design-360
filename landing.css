@@ -607,9 +607,12 @@ a.cred-company:hover {
   left: 0;
   width: 50%;
   height: 100%;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  background: rgba(0, 0, 0, .5);
+  /* Lighter blur than the original 20px — keeps more of the video readable
+     through the overlay while still giving the left half its dimmer, softer
+     feel for the cutout text to read against. */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, .32);
   z-index: 1
 }
 
@@ -706,18 +709,19 @@ a.cred-company:hover {
 }
 
 /* ---- Narrative spine ----
-   Three sections stacked vertically. Generous padding-block.
-   Even sections take a subtle tint background. */
+   Motion.ai "About" section pattern: centered narrow column, small-caps top
+   label, a flowing heading with normal-sans prefix + italic-serif accent
+   (Instrument Serif italic from Google Fonts loaded in index.html), body
+   paragraph below. Three sections stacked vertically with generous spacing;
+   even sections take a subtle tint background. */
 .spine {
   display: flex;
-  flex-direction: column;
-  padding-block: var(--space-xl)
+  flex-direction: column
 }
 
 .spine-section {
   display: block;
-  padding-block: var(--space-lg);
-  padding-inline: var(--g);
+  padding-block: clamp(48px, 8vh, 96px);
   color: inherit;
   text-decoration: none;
   transition: background-color .2s ease
@@ -731,28 +735,68 @@ a.cred-company:hover {
   background: rgba(255, 255, 255, .05)
 }
 
+.spine-section__inner {
+  max-width: 56rem;        /* motion.ai's max-w-3xl analog */
+  margin: 0 auto;
+  padding-inline: var(--g);
+  text-align: center
+}
+
 .spine-section__label {
   display: inline-block;
   font-size: .6875rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: .15em;
   color: var(--terra);
-  margin-bottom: 8px
-}
-
-.spine-section__heading {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  font-weight: 800;
-  line-height: 1.15;
   margin-bottom: var(--space-md)
 }
 
+.spine-section__heading {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(2rem, 5.5vw, 4.25rem);
+  font-weight: 400;        /* motion.ai uses font-normal; weight contrast is achieved via italic-serif */
+  line-height: .95;
+  letter-spacing: -.01em;
+  margin: 0 0 var(--space-lg)
+}
+
+.spine-section__heading-prefix {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400
+}
+
+.spine-section__heading-accent {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  /* Slight bump for the serif's apparent size — serifs tend to read smaller */
+  font-size: 1.05em
+}
+
+.spine-section__heading-period {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400
+}
+
 .spine-section__body {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: clamp(.95rem, 1.4vw, 1.0625rem);
+  line-height: 1.65;
   color: var(--text2);
-  max-width: 70ch
+  max-width: 38rem;        /* readable measure — narrower than the heading */
+  margin: 0 auto;
+  text-align: left
+}
+
+.spine-section__body p + p {
+  margin-top: 1em
+}
+
+@media (max-width: 47.9375rem) {
+  .spine-section__body {
+    text-align: left
+  }
 }
 
 /* ---- Featured tiles ----
