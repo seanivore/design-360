@@ -1,3 +1,12 @@
+/* v4.2.3: Gimlet Display Condensed for hero cutout treatment. */
+@font-face {
+  font-family: 'Gimlet Display Condensed';
+  src: url('/assets/fonts/GimletDisplayCond-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -18,7 +27,15 @@
   --mauve: #C99CAD;
   --r: 6px;
   --g: 16px;
-  --f: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif
+  --f: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* v4.2.3 */
+  --hero-cutout-font: 'Gimlet Display Condensed', 'Inter', sans-serif;
+  --color-tint: rgba(255, 255, 255, 0.03);
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px
 }
 
 html {
@@ -242,225 +259,11 @@ a {
 }
 
 /* §2 HERO SCROLL WRAPPER */
-.hero-scroll-wrapper {
-  position: relative;
-  height: 280vh
-}
-
-.hero-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding-top: 56px
-}
-
-/* Stats — circle accent behind number */
-.hero-stats {
-  display: flex;
-  gap: 8px;
-  padding: 12px var(--g);
-  z-index: 3;
-  flex-shrink: 0
-}
-
-.stat-item {
-  flex: 1;
-  text-align: center;
-  padding: 12px 8px;
-  cursor: pointer;
-  position: relative;
-  transition: transform .15s
-}
-
-.stat-item:hover .stat-number {
-  filter: brightness(1.2)
-}
-
-.stat-item:hover .stat-label {
-  color: var(--text2)
-}
-
-.stat-item:active {
-  transform: scale(.96)
-}
-
-.stat-number {
-  font-size: 1.75rem;
-  font-weight: 800;
-  line-height: 1;
-  position: relative;
-  z-index: 1;
-  display: inline-block
-}
-
-.stat-number::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%;
-  z-index: -1;
-  opacity: .15
-}
-
-.stat-item:nth-child(1) .stat-number {
-  color: var(--terra)
-}
-
-.stat-item:nth-child(1) .stat-number::before {
-  background: var(--terra)
-}
-
-.stat-item:nth-child(2) .stat-number {
-  color: var(--blue)
-}
-
-.stat-item:nth-child(2) .stat-number::before {
-  background: var(--blue)
-}
-
-.stat-item:nth-child(3) .stat-number {
-  color: var(--mauve)
-}
-
-.stat-item:nth-child(3) .stat-number::before {
-  background: var(--mauve)
-}
-
-.stat-label {
-  font-size: .6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--muted);
-  margin-top: 4px
-}
-
-/* Hero image area — CONSTRAINED initial height, JS grows it */
-.hero-visual {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-  flex: 0 0 auto;
-  height: 50vh
-}
-
-.hero-img-scroll {
-  display: flex;
-  width: max-content;
-  height: 100%;
-  gap: 6px;
-  animation: hero-drift 60s linear infinite
-}
-
-.hero-img-scroll img {
-  height: 100%;
-  width: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  filter: saturate(.5) contrast(.9);
-  border-radius: var(--r)
-}
-
-@keyframes hero-drift {
-  0% {
-    transform: translateX(0)
-  }
-
-  100% {
-    transform: translateX(-50%)
-  }
-}
-
-.hero-visual-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, var(--bg) 0%, rgba(31, 31, 31, .3) 25%, rgba(31, 31, 31, .3) 65%, var(--bg) 100%);
-  z-index: 1;
-  transition: opacity .3s
-}
-
-/* Hero text content — pinned at bottom of viewport */
-.hero-content {
-  position: relative;
-  z-index: 3;
-  flex-shrink: 0;
-  margin-top: auto;
-  padding: 16px var(--g) 24px;
-  transition: opacity .3s ease
-}
-
-/* Flip-clock headline (subtitle text, now the main hook) */
-.flip-headline {
-  font-size: clamp(1.25rem, 5vw, 2rem);
-  font-weight: 800;
-  line-height: 1.2;
-  height: 2.4em;
-  overflow: hidden;
-  perspective: 400px;
-  margin-bottom: 12px
-}
-
-.flip-track {
-  position: relative;
-  height: 100%
-}
-
-.flip-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  backface-visibility: hidden;
-  transition: transform .8s cubic-bezier(.23, 1, .32, 1), opacity .6s ease
-}
-
-.flip-item.active {
-  transform: rotateX(0);
-  opacity: 1
-}
-
-.flip-item.above {
-  transform: rotateX(90deg);
-  opacity: 0;
-  transform-origin: bottom center
-}
-
-.flip-item.below {
-  transform: rotateX(-90deg);
-  opacity: 0;
-  transform-origin: top center
-}
-
-/* Byline (name) */
-.hero-byline {
-  font-size: .875rem;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: .04em;
-  margin-bottom: 16px
-}
-
-.hero-byline strong {
-  color: var(--blue);
-  font-weight: 700
-}
-
-/* CTA */
-.hero-cta {
-  display: flex;
-  gap: var(--g)
-}
+/* v4.2.3 hero rules live further down (.hero-cyberpunk).
+   The previous flip-headline / hero-stats / hero-visual / hero-img-scroll /
+   hero-trio-bridge / hero-cta / flip-* / stat-* / hero-scroll-wrapper /
+   hero-sticky / hero-content / hero-byline rules were removed because the
+   old hero block is gone from index.html. */
 
 .btn {
   display: inline-flex;
@@ -492,164 +295,15 @@ a {
   border: 1.5px solid rgba(255, 255, 255, .12)
 }
 
-/* Hero scroll transition — trio bridge */
-.hero-trio-bridge {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 90;
-  pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  gap: 12px;
-  opacity: 0;
-  transition: opacity .3s
-}
-
-.hero-trio-bridge span {
-  display: block;
-  height: 4px;
-  border-radius: 2px;
-  transform: scaleX(0);
-  transition: transform 1s cubic-bezier(.22, 1, .36, 1)
-}
-
-.hero-trio-bridge span:nth-child(1) {
-  width: 55%;
-  background: var(--terra)
-}
-
-.hero-trio-bridge span:nth-child(2) {
-  width: 42%;
-  background: var(--blue);
-  transition-delay: .15s
-}
-
-.hero-trio-bridge span:nth-child(3) {
-  width: 30%;
-  background: var(--mauve);
-  transition-delay: .3s
-}
-
-.hero-trio-bridge.vis {
-  opacity: 1
-}
-
-.hero-trio-bridge.vis span {
-  transform: scaleX(1)
-}
-
-/* §3 SHOWCASE */
-.showcase {
-  padding: 64px 0
-}
+/* v4.2.3: showcase, tabs, project-cards, hero-trio-bridge, and the
+   homepage-scoped .tag pill were removed because the old homepage
+   regions are gone from index.html. The entry-page .tag styling
+   lives in styles.css and is untouched. */
 
 .section-heading {
   font-size: 1.75rem;
   font-weight: 800;
   margin-bottom: 20px
-}
-
-.showcase-tabs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 24px
-}
-
-.tab-btn {
-  padding: 8px 16px;
-  font-size: .8125rem;
-  font-weight: 600;
-  background: var(--bg2);
-  color: var(--text2);
-  border: none;
-  border-radius: var(--r);
-  cursor: pointer;
-  font-family: var(--f);
-  transition: background .15s, transform .15s
-}
-
-.tab-btn:active {
-  transform: scale(.95)
-}
-
-.tab-btn.active {
-  background: var(--blue);
-  color: var(--bg)
-}
-
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px
-}
-
-.project-card {
-  background: var(--bg2);
-  border-radius: var(--r);
-  overflow: hidden;
-  transition: transform .15s
-}
-
-.project-card:active {
-  transform: scale(.98)
-}
-
-.project-card img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover
-}
-
-.project-card-body {
-  padding: 12px
-}
-
-.project-card-title {
-  font-size: .8125rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  line-height: 1.3
-}
-
-.project-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px
-}
-
-.tag {
-  font-size: .625rem;
-  font-weight: 500;
-  padding: 2px 8px;
-  background: var(--bg3);
-  color: var(--muted);
-  border-radius: 2px;
-  white-space: nowrap
-}
-
-a.tag {
-  text-decoration: none;
-  color: inherit;
-  transition: background .15s
-}
-
-a.tag:hover {
-  background: var(--bg2);
-  color: var(--text2)
-}
-
-.showcase-panel {
-  display: none
-}
-
-.showcase-panel.active {
-  display: block
 }
 
 /* §4 CREDENTIALS */
@@ -719,226 +373,10 @@ a.cred-company:hover {
   flex-shrink: 0
 }
 
-/* §5 PROCESS */
-.process {
-  padding: 48px 0
-}
-
-.process-scroll {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 0 var(--g) 8px;
-  margin: 0 calc(var(--g) * -1)
-}
-
-.process-scroll::-webkit-scrollbar {
-  display: none
-}
-
-.process-card {
-  min-width: 280px;
-  max-width: 320px;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  padding: 24px
-}
-
-.process-num {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1;
-  margin-bottom: 8px
-}
-
-.process-card:nth-child(1) .process-num {
-  color: var(--terra)
-}
-
-.process-card:nth-child(2) .process-num {
-  color: var(--blue)
-}
-
-.process-card:nth-child(3) .process-num {
-  color: var(--mauve)
-}
-
-.process-card-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 8px
-}
-
-.process-card-body {
-  font-size: .875rem;
-  color: var(--text2);
-  line-height: 1.6
-}
-
-.process-source {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: .75rem;
-  color: var(--blue);
-  font-weight: 500
-}
-
-/* Process scroll indicator */
-.process-indicator {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px var(--g) 0;
-  overflow: hidden
-}
-
-.process-indicator span {
-  display: block;
-  height: 2px;
-  border-radius: 1px
-}
-
-.process-indicator span:nth-child(1) {
-  width: 100%;
-  background: var(--terra)
-}
-
-.process-indicator span:nth-child(2) {
-  width: 85%;
-  margin-left: 15%;
-  background: var(--blue)
-}
-
-.process-indicator span:nth-child(3) {
-  width: 75%;
-  margin-left: 25%;
-  background: var(--mauve)
-}
-
-/* §6 CREATIVE */
-.creative {
-  padding: 48px 0
-}
-
-.creative-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px
-}
-
-.creative-card {
-  position: relative;
-  border-radius: var(--r);
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  cursor: pointer
-}
-
-.creative-card:nth-child(3) {
-  grid-column: span 2;
-  aspect-ratio: 16/9
-}
-
-.creative-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(.7);
-  transition: transform .4s ease
-}
-
-.creative-card:active img {
-  transform: scale(1.03)
-}
-
-.creative-card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 16px 14px;
-  background: linear-gradient(to top, rgba(0, 0, 0, .75), transparent)
-}
-
-.creative-label {
-  font-size: .6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 2px
-}
-
-.creative-card:nth-child(1) .creative-label {
-  color: var(--terra)
-}
-
-.creative-card:nth-child(2) .creative-label {
-  color: var(--blue)
-}
-
-.creative-card:nth-child(3) .creative-label {
-  color: var(--mauve)
-}
-
-.creative-card-title {
-  font-size: 1rem;
-  font-weight: 700
-}
-
-/* §7 IMPACT */
-.impact {
-  padding: 48px 0
-}
-
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px
-}
-
-.impact-stat {
-  background: var(--bg2);
-  border-radius: var(--r);
-  padding: 20px 16px
-}
-
-.impact-num {
-  font-size: 1.75rem;
-  font-weight: 900;
-  line-height: 1;
-  margin-bottom: 4px
-}
-
-.impact-stat:nth-child(1) .impact-num {
-  color: var(--terra)
-}
-
-.impact-stat:nth-child(2) .impact-num {
-  color: var(--blue)
-}
-
-.impact-stat:nth-child(3) .impact-num {
-  color: var(--mauve)
-}
-
-.impact-stat:nth-child(4) .impact-num {
-  color: var(--terra)
-}
-
-.impact-label {
-  font-size: .8125rem;
-  font-weight: 600;
-  margin-bottom: 4px
-}
-
-.impact-detail {
-  font-size: .75rem;
-  color: var(--muted);
-  line-height: 1.4
-}
+/* v4.2.3: old .process-scroll / .process-card / .process-num / .process-indicator
+   shape was removed; the new .process / .process-step / .process-step__word /
+   .process-step__body shape lives further down in the v4.2.3 block. The
+   .creative and .impact sections were dropped from the homepage. */
 
 /* §8 ACHIEVEMENTS */
 .achievements {
@@ -1108,10 +546,6 @@ a.cred-company:hover {
 }
 
 @media(max-width:340px) {
-  .hero-stats {
-    flex-direction: column
-  }
-
   .nav-links {
     gap: 12px;
     font-size: .75rem
@@ -1119,23 +553,6 @@ a.cred-company:hover {
 }
 
 @media(min-width:768px) {
-  .showcase-grid {
-    grid-template-columns: repeat(3, 1fr)
-  }
-
-  .creative-grid {
-    grid-template-columns: repeat(3, 1fr)
-  }
-
-  .creative-card:nth-child(3) {
-    grid-column: auto;
-    aspect-ratio: 3/4
-  }
-
-  .impact-grid {
-    grid-template-columns: repeat(4, 1fr)
-  }
-
   .cta-buttons {
     flex-direction: row;
     justify-content: center
@@ -1149,5 +566,258 @@ a.cred-company:hover {
 @media(min-width:1024px) {
   .section-heading {
     font-size: 2.25rem
+  }
+}
+
+/* ============================================
+   v4.2.3 HOMEPAGE COMPONENTS
+   Cyberpunk hero, narrative spine, featured
+   tiles, and the new process shape.
+   ============================================ */
+
+/* ---- Hero (cyberpunk) ----
+   Full-viewport-height. Background video covers; left half is blur-overlaid;
+   centerpiece "AUGUST" cutout uses mix-blend-mode against the blurred half. */
+.hero-cyberpunk {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.hero-cyberpunk__bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0
+}
+
+.hero-cyberpunk__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, .5);
+  z-index: 1
+}
+
+.hero-cyberpunk__cutout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 var(--g);
+  pointer-events: none
+}
+
+.hero-cyberpunk__cutout h1 {
+  font-family: var(--hero-cutout-font);
+  font-size: clamp(6rem, 18vw, 18rem);
+  font-weight: 900;
+  letter-spacing: .02em;
+  line-height: 1;
+  color: #fff;
+  mix-blend-mode: difference;
+  margin: 0
+}
+
+.hero-cyberpunk__about {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: var(--space-md) auto 0;
+  padding: 0 var(--g);
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 1;
+  transition: opacity .4s ease
+}
+
+.hero-cyberpunk__about.is-fading {
+  opacity: 0
+}
+
+/* ---- Narrative spine ----
+   Three sections stacked vertically. Generous padding-block.
+   Even sections take a subtle tint background. */
+.spine {
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--space-xl)
+}
+
+.spine-section {
+  display: block;
+  padding-block: var(--space-lg);
+  padding-inline: var(--g);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .2s ease
+}
+
+.spine-section:nth-child(even) {
+  background: var(--color-tint)
+}
+
+.spine-section:hover {
+  background: rgba(255, 255, 255, .05)
+}
+
+.spine-section__label {
+  display: inline-block;
+  font-size: .6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--terra);
+  margin-bottom: 8px
+}
+
+.spine-section__heading {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-md)
+}
+
+.spine-section__body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text2);
+  max-width: 70ch
+}
+
+/* ---- Featured tiles ----
+   Three-column grid desktop, single-column mobile.
+   4:5 vertical aspect (1080×1350 video source). */
+.feature-tiles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--g)
+}
+
+.feature-tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  cursor: pointer;
+  border-radius: var(--r);
+  background: var(--bg2);
+  transition: transform .25s ease
+}
+
+.feature-tile__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease, opacity .25s ease
+}
+
+.feature-tile__phase-label {
+  position: absolute;
+  top: var(--space-sm, 16px);
+  left: var(--space-sm, 16px);
+  font-size: .6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--terra);
+  z-index: 2;
+  background: rgba(0, 0, 0, .35);
+  padding: 4px 8px;
+  border-radius: 3px
+}
+
+/* Flip-to-video utility: JS toggles this when a tile becomes the active one
+   in the sequence. */
+.feature-tile__flip {
+  transform: scale(1.02)
+}
+
+.feature-tile__flip .feature-tile__video {
+  transform: scale(1.04)
+}
+
+@media (min-width: 720px) {
+  .feature-tiles {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+/* ---- Process (v4.2.3 shape) ----
+   Vertical stack of clickable steps. Each step shows a large all-caps brand
+   word alongside body copy. */
+.process {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-xl) var(--g)
+}
+
+.process-step {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--r);
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .2s ease
+}
+
+.process-step:hover {
+  background: rgba(255, 255, 255, .04)
+}
+
+.process-step__word {
+  font-family: 'Bernina Sans', 'Agency FB', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1;
+  color: var(--terra);
+  flex-shrink: 0
+}
+
+.process-step:nth-child(2) .process-step__word {
+  color: var(--blue)
+}
+
+.process-step:nth-child(3) .process-step__word {
+  color: var(--mauve)
+}
+
+.process-step__body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text2);
+  flex: 1;
+  min-width: 0
+}
+
+@media (max-width: 44.9375rem) {
+  .process-step {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs, 8px)
   }
 }

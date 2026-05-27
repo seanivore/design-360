@@ -104,6 +104,12 @@
   /* 1200px */
   --tile-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.4), 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
   --tile-shadow-hover: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.5), 0 0.375rem 1.25rem rgba(0, 0, 0, 0.4);
+
+  /* Flow block vertical rhythm (v4.2.3) */
+  --flow-rhythm: var(--space-md);
+
+  /* Subtle background tint for alternating sections (v4.2.3) */
+  --color-tint: rgba(255, 255, 255, 0.03);
 }
 
 /* ============================================
@@ -449,6 +455,17 @@ li a:hover {
   border-radius: 2px;
   white-space: nowrap;
   flex-shrink: 0;
+  /* v4.2.3: prevent overflow on desktop/tablet — tag pills clip with ellipsis
+     when constrained by the parent track. */
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* v4.2.3: allow grid/flex parents of .tile to shrink children below content size
+   so .tile-tag's max-width can take effect. */
+.tile {
+  min-width: 0;
 }
 
 /* Mobile: Full bleed with 90vw images */
@@ -1183,7 +1200,8 @@ li a:hover {
 
 @media (min-width: 48rem) {
   .entry-content-media {
-    grid-template-columns: 1fr 1fr;
+    /* v4.2.3: shift from 50/50 to 60/40 (main column / tag+embed column). */
+    grid-template-columns: 3fr 2fr;
     gap: var(--space-xl);
   }
 }
@@ -1709,6 +1727,387 @@ li a:hover {
 
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================
+   v4.2.3 ENTRY COMPONENTS
+   Sticky tag+embed column, main_media, bleed,
+   bleed_slides, flow blocks, chunk_break,
+   collection_preview, iframe responsiveness.
+   ============================================ */
+
+/* Sticky tag + embed column (replaces the old .entry-thumb-grid slot).
+   Holds tag pills + an optional media_embed iframe. Desktop: sticky inside
+   the 60/40 .entry-content-media grid. Mobile (<900px): un-stick and stack
+   below the main column at full width. */
+.entry-tag-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-self: start;
+}
+
+@media (min-width: 56.25rem) {
+  .entry-tag-column {
+    position: sticky;
+    top: var(--space-md);
+  }
+}
+
+@media (max-width: 56.1875rem) {
+  .entry-tag-column {
+    position: static;
+    width: 100%;
+  }
+}
+
+/* Main media: centered block with vertical rhythm between groups.
+   A "group" can contain one image or a side-by-side row of images. */
+.entry-main-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  max-width: 50rem;
+  margin: var(--space-xl) auto;
+}
+
+.entry-main-media__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.entry-main-media__row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.entry-main-media__row > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.entry-main-media img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: var(--tile-shadow);
+}
+
+@media (max-width: 44.9375rem) {
+  .entry-main-media__row {
+    flex-direction: column;
+  }
+}
+
+/* Bleed: full-viewport-width edge-to-edge media. */
+.entry-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-block: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.entry-bleed img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.entry-bleed__row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.entry-bleed__row > * {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 44.9375rem) {
+  .entry-bleed__row {
+    flex-direction: column;
+  }
+}
+
+/* Bleed slides: full-bleed slideshow with overlay pagination dots. */
+.entry-bleed-slides {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-block: var(--space-xl);
+  overflow: hidden;
+}
+
+.entry-bleed-slides__track {
+  position: relative;
+  width: 100%;
+}
+
+.entry-bleed-slides__slide {
+  display: none;
+  width: 100%;
+}
+
+.entry-bleed-slides__slide.is-active {
+  display: block;
+}
+
+.entry-bleed-slides img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.entry-bleed-slides__dots {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-md);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.entry-bleed-slides__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--easing),
+    transform var(--duration-fast) var(--easing);
+}
+
+.entry-bleed-slides__dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.entry-bleed-slides__dot.is-active {
+  background: var(--color-text-primary);
+  transform: scale(1.2);
+}
+
+/* Flow blocks: consistent vertical rhythm via --flow-rhythm. */
+.flow-h3,
+.flow-h4,
+.flow-h5,
+.flow-p,
+.flow-list,
+.flow-img,
+.flow-embed-html,
+.flow-collection-preview,
+.flow-chunk-break {
+  margin-block: var(--flow-rhythm);
+}
+
+.flow-h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
+  line-height: var(--line-height-tight);
+}
+
+.flow-h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.flow-h5 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-terracotta);
+}
+
+.flow-p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.flow-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.flow-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: var(--space-xs);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.flow-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.625em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: var(--color-text-secondary);
+  opacity: 0.5;
+}
+
+/* Bluepoints variant — small filled circle, brand-accent blue. */
+.flow-list.style-bluepoints li::before {
+  background: var(--color-accent-blue);
+  opacity: 1;
+}
+
+.flow-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.flow-img__row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.flow-img__row > * {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 44.9375rem) {
+  .flow-img__row {
+    flex-direction: column;
+  }
+}
+
+.flow-embed-html {
+  width: 100%;
+}
+
+/* chunk_break: a CTA-styled button; subsequent siblings fade in on click. */
+.flow-chunk-break {
+  display: flex;
+  justify-content: center;
+}
+
+.flow-chunk-break button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.75rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  color: var(--color-text-primary);
+  background: var(--color-bg-tile);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--easing),
+    border-color var(--duration-fast) var(--easing),
+    transform var(--duration-fast) var(--easing);
+}
+
+.flow-chunk-break button:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-accent);
+}
+
+.flow-chunk-break button:active {
+  transform: scale(0.98);
+}
+
+.flow-chunk-hidden {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  pointer-events: none;
+}
+
+.flow-chunk-revealed {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+/* collection_preview: horizontal scroll strip of resolved item thumbs. */
+.flow-collection-preview {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: var(--space-xs);
+}
+
+.flow-collection-preview::-webkit-scrollbar {
+  display: none;
+}
+
+.flow-collection-preview__item {
+  flex-shrink: 0;
+  width: 12.5rem; /* 200px desktop */
+  scroll-snap-align: start;
+}
+
+.flow-collection-preview__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  box-shadow: var(--tile-shadow);
+}
+
+.flow-collection-preview__link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 44.9375rem) {
+  .flow-collection-preview__item {
+    width: 9.375rem; /* 150px mobile */
+  }
+}
+
+/* Responsive iframe rule for embedded media (Behance, YouTube, etc.).
+   Modern aspect-ratio replaces padding-bottom hacks; the legacy
+   .video-container padding-bottom: 56.25% remains in place as a fallback. */
+.entry-tag-column iframe,
+.flow-embed-html iframe,
+.video-container iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+}
+
+/* For .video-container the iframe is still absolutely positioned over the
+   padding-bottom box — restore those properties so the modern rule above
+   doesn't strand the iframe inside its own intrinsic box. */
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  height: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
