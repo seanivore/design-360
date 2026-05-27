@@ -968,8 +968,22 @@ a.cred-company:hover {
      AUGUST instead of bottom-right (which collided with the ABOUT body).
    - Bottom: ABOUT label + body + CTA + socials. */
 @media (max-width: 47.9375rem) {
+  /* On mobile, the frost is the ONLY full-coverage surface (no unfrosted
+     right half), so 100% blur the whole time hides too much of the
+     cyberpunk art. Instead, pulse the blur element's opacity: most of the
+     cycle it sits low (~15%) so the painting breathes through, then eases
+     up to full for a beat so the ABOUT body becomes readable, then back
+     down. 14s loop, ease-in-out, infinite. */
   .hero-cyberpunk__blur {
-    width: 100%
+    width: 100%;
+    animation: heroBlurPulse 14s ease-in-out infinite;
+    will-change: opacity
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-cyberpunk__blur {
+      animation: none;
+      opacity: 1
+    }
   }
   /* Drop the 2-col grid — use flex so logo, links, and contact don't
      overlap each other. */
@@ -1017,13 +1031,14 @@ a.cred-company:hover {
   .hero-cyberpunk__name--top h1 {
     font-size: clamp(3rem, 17vw, 6.5rem)
   }
-  /* HORVATH: stack directly under AUGUST instead of bottom-right, where
-     it overlapped the ABOUT body. Right-aligned, smaller scale. */
+  /* HORVATH: tucked directly under AUGUST, left-aligned to AUGUST's
+     x-start so the pair reads as a stacked first/last name. */
   .hero-cyberpunk__name--bottom {
     top: calc(clamp(76px, 11vh, 120px) + clamp(2.6rem, 15vw, 5.8rem));
     bottom: auto;
-    right: 16px;
-    text-align: right
+    left: 16px;
+    right: auto;
+    text-align: left
   }
   .hero-cyberpunk__name--bottom span {
     font-size: clamp(1.5rem, 7vw, 3rem)
@@ -1047,6 +1062,16 @@ a.cred-company:hover {
     align-items: flex-start;
     gap: 14px
   }
+}
+
+/* Mobile blur pulse — animates the frost overlay's opacity so the art
+   shows through most of the cycle, with brief legibility windows. */
+@keyframes heroBlurPulse {
+  0%   { opacity: 0.15; }
+  35%  { opacity: 0.15; }
+  50%  { opacity: 1; }
+  65%  { opacity: 1; }
+  100% { opacity: 0.15; }
 }
 
 /* ---- Narrative spine ----
