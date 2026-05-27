@@ -204,76 +204,27 @@ const EntryController = (() => {
             return;
         }
 
-        const slot = hero.querySelector('.entry-hero-slideshow__slot');
-        const pagination = hero.querySelector('.entry-hero-slideshow__pagination');
-        if (!slot) return;
+        const gallery = hero.querySelector('.entry-hero-gallery');
+        if (!gallery) return;
 
         const altText = project.thumb_alt || project.title || '';
 
-        // Build each slide as an <img>. Each one gets a lightbox index.
-        slot.innerHTML = '';
-        const slideEls = thumbs.map((url, i) => {
+        // Build a horizontal peeking-tile row — same pattern as the related-posts
+        // .tile-gallery but the parent section bleeds full-viewport-width on
+        // both desktop and mobile (see .entry-hero CSS).
+        gallery.innerHTML = '';
+        thumbs.forEach((url, i) => {
             const lightboxIdx = registerLightboxImage(url, altText);
             const img = document.createElement('img');
             img.src = imgSrc(url);
             img.alt = altText;
-            img.className = 'entry-hero-slide';
+            img.className = 'entry-hero-tile';
             img.loading = i === 0 ? 'eager' : 'lazy';
             img.dataset.lightboxIndex = String(lightboxIdx);
-            img.style.display = i === 0 ? '' : 'none';
-            slot.appendChild(img);
-            return img;
+            gallery.appendChild(img);
         });
 
         hero.style.display = 'block';
-
-        // Single-thumb: hide pagination chrome and bail.
-        if (thumbs.length < 2) {
-            if (pagination) pagination.hidden = true;
-            return;
-        }
-
-        // Multi-thumb: build pagination dots + prev/next arrows.
-        if (!pagination) return;
-        pagination.hidden = false;
-        pagination.innerHTML = '';
-
-        const prevBtn = document.createElement('button');
-        prevBtn.className = 'entry-hero-slideshow__arrow entry-hero-slideshow__prev';
-        prevBtn.setAttribute('aria-label', 'Previous slide');
-        prevBtn.innerHTML = '&lsaquo;';
-        pagination.appendChild(prevBtn);
-
-        const dotsWrap = document.createElement('div');
-        dotsWrap.className = 'entry-hero-slideshow__dots';
-        pagination.appendChild(dotsWrap);
-
-        const nextBtn = document.createElement('button');
-        nextBtn.className = 'entry-hero-slideshow__arrow entry-hero-slideshow__next';
-        nextBtn.setAttribute('aria-label', 'Next slide');
-        nextBtn.innerHTML = '&rsaquo;';
-        pagination.appendChild(nextBtn);
-
-        let current = 0;
-        const dots = thumbs.map((_, i) => {
-            const dot = document.createElement('button');
-            dot.className = 'entry-hero-slideshow__dot' + (i === 0 ? ' is-active' : '');
-            dot.setAttribute('aria-label', `Slide ${i + 1}`);
-            dot.addEventListener('click', () => goTo(i));
-            dotsWrap.appendChild(dot);
-            return dot;
-        });
-
-        function goTo(i) {
-            current = (i + thumbs.length) % thumbs.length;
-            slideEls.forEach((el, idx) => {
-                el.style.display = idx === current ? '' : 'none';
-            });
-            dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
-        }
-
-        prevBtn.addEventListener('click', () => goTo(current - 1));
-        nextBtn.addEventListener('click', () => goTo(current + 1));
     }
 
     /**

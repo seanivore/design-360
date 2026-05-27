@@ -62,15 +62,12 @@
       <h3 id="entry-role"><!-- Populated by JS --></h3>
     </section>
 
-    <!-- Hero: Thumbnail slideshow (sourced from entry.thumb[]) -->
+    <!-- Hero: full-bleed peeking-row of thumbnails (sourced from entry.thumb[]).
+         Mirrors the .tile-gallery pattern from section.html / related posts, but
+         always bleeds full viewport-width on both desktop and mobile. -->
     <section id="entry-hero" class="entry-hero" style="display: none;">
-      <div class="entry-hero-slideshow">
-        <div class="entry-hero-slideshow__slot">
-          <!-- Populated by entry-controller.js: thumbnail slide(s) -->
-        </div>
-        <div class="entry-hero-slideshow__pagination" hidden>
-          <!-- Populated by entry-controller.js; hidden when only one thumb -->
-        </div>
+      <div class="entry-hero-gallery">
+        <!-- Populated by entry-controller.js: one <img class="entry-hero-tile"> per thumb -->
       </div>
     </section>
 

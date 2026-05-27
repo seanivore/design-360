@@ -1230,11 +1230,49 @@ li a:hover {
   color: var(--color-text-secondary);
 }
 
-/* Hero section */
+/* Entry hero — v4.2.3: peeking-tile gallery row, full-bleed on every viewport.
+   Mirrors the .tile-gallery pattern used by section.html content tiles and the
+   related-posts row at the bottom of entries, but where those only bleed at
+   mobile widths, the entry hero bleeds on desktop too (per Sean's direction). */
 .entry-hero {
-  margin-bottom: var(--space-lg);
+  margin: 0 0 var(--space-lg);
+  /* Escape the parent .container's horizontal padding so the row reaches
+     edge-to-edge. The negative margin = the container's left padding, and
+     we set width: 100vw to occupy the full viewport. */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
+.entry-hero-gallery {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: var(--space-md) var(--g, 24px);
+}
+
+.entry-hero-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.entry-hero-tile {
+  flex-shrink: 0;
+  width: 21.875rem;        /* 350px — matches .tile-image */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 0.125rem solid #ffffff;
+  box-shadow: var(--tile-shadow);
+  cursor: zoom-in;
+  display: block;
+}
+
+/* Legacy single-image hero (still defined for any references that survive) */
 .entry-hero-image {
   width: 100%;
   max-height: 28rem;
