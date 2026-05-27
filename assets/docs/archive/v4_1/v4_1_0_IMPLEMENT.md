@@ -718,6 +718,18 @@ There would also be opportunity to use the vast collection of `data.media.tags` 
 
 These possible combinations are endless, and though there is not necessarily a specific use-case already planned, we wanted to define the potential at this point so that the option is there for us as the portfolio grows and changes over the years. 
 
+### More Specifics & Ideas 
+
+I'd like this subpage to be sort of like the navigational experience of a well designed Shopify 'all products' page, in that whatever the batch of content being presented is, it can be very easily managed to show only the kinds of entries the user wants to see. 
+  1. This means they would need tagging that would group and represent different things depending on the specific group of media being presented.
+  2. Maximize the amount of visual space given to the piece of media on the media tile
+
+And then I'd like for us to create a specific component for showcasing the batch of media in any one subpage on the `entry.html` page. 
+  - It should span the page width and have UI that allow the user to scroll the collection in the element left or right without opening the element
+  - Clicking an element in the collection's `entry.html` preview component should take take the user to 
+  - The styling should use a negative value for it to create a "bleed" effect on the left and right of the element reaching the very edge of the browser window on desktop or device on mobile
+  - The number of rows that the element preview 
+
 ---
 
 ## Finalize 
