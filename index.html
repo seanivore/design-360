@@ -26,7 +26,7 @@
   <nav class="site-nav" id="siteNav">
     <div class="container">
       <ul class="nav-links">
-        <li><a href="#showcase">Work</a></li>
+        <li><a href="#featured-tiles">Work</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#credentials">About</a></li>
       </ul>
@@ -35,58 +35,23 @@
   </nav>
   <button class="nav-pill" id="navPill" aria-label="Open navigation"><span></span><span></span><span></span></button>
 
-  <!-- HERO -->
-  <div class="hero-scroll-wrapper" id="heroWrapper">
-    <div class="hero-sticky" id="heroSticky">
-      <div class="hero-stats" id="heroStats">
-        <a href="/section.html" class="stat-item">
-          <div class="stat-number" data-count="0">0</div>
-          <div class="stat-label">Projects</div>
-        </a>
-        <a href="/section.html" class="stat-item" id="statRoles">
-          <div class="stat-number" data-count="0">0</div>
-          <div class="stat-label">Roles</div>
-        </a>
-        <a href="/section.html" class="stat-item" id="statSkills">
-          <div class="stat-number" data-count="0">0</div>
-          <div class="stat-label">Skills</div>
-        </a>
-      </div>
-      <div class="hero-visual" id="heroVisual">
-        <div class="hero-img-scroll" id="heroImgScroll">
-          <!-- Populated by landing-controller.js -->
-        </div>
-        <div class="hero-visual-overlay" id="heroOverlay"></div>
-      </div>
-      <div class="hero-content" id="heroContent">
-        <div class="flip-headline" id="flipHeadline">
-          <div class="flip-track" id="flipTrack">
-            <!-- Populated by landing-controller.js -->
-          </div>
-        </div>
-        <div class="hero-byline">by <strong>Sean August Horvath</strong></div>
-        <div class="hero-cta" id="heroCTA">
-          <a class="btn btn-primary" href="/section.html"><!-- JS --></a>
-          <a class="btn btn-ghost" href="/section.html"><!-- JS --></a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- HERO (cyberpunk) -->
+  <section id="hero" class="hero-cyberpunk">
+    <video class="hero-cyberpunk__bg-video" autoplay muted loop playsinline src="https://cdn.august.style/media/home-anim/hero-cyberpunk-FINAL.mp4"></video>
+    <div class="hero-cyberpunk__blur"></div>
+    <div class="hero-cyberpunk__cutout"><h1>AUGUST</h1></div>
+    <p class="hero-cyberpunk__about" id="heroAboutLine"></p>
+  </section>
 
-  <!-- Trio bridge -->
-  <div class="hero-trio-bridge" id="trioBridge"><span></span><span></span><span></span></div>
+  <!-- NARRATIVE SPINE -->
+  <section id="narrative-spine" class="spine"></section>
 
-  <!-- SHOWCASE -->
-  <section class="showcase sr" id="showcase">
-    <div class="container">
-      <h2 class="section-heading" id="showcaseHeading"><!-- JS --></h2>
-      <div class="showcase-tabs" id="showcaseTabs" role="tablist">
-        <!-- Populated by landing-controller.js -->
-      </div>
-      <div id="showcasePanels">
-        <!-- Populated by landing-controller.js -->
-      </div>
-    </div>
+  <!-- FEATURED TILES -->
+  <section id="featured-tiles" class="feature-tiles"></section>
+
+  <!-- PROCESS -->
+  <section class="process sr" id="process">
+    <!-- Populated by landing-controller.js from homepage-content.json.process.steps[] -->
   </section>
 
   <!-- CREDENTIALS -->
@@ -99,43 +64,12 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="process sr" id="process">
-    <div class="container">
-      <h2 class="section-heading" id="processHeading"><!-- JS --></h2>
-    </div>
-    <div class="process-scroll" id="processScroll">
-      <!-- Populated by landing-controller.js -->
-    </div>
-    <div class="process-indicator"><span></span><span></span><span></span></div>
-  </section>
-
-  <!-- CREATIVE -->
-  <section class="creative sr" id="creative">
-    <div class="container">
-      <h2 class="section-heading" id="creativeHeading"><!-- JS --></h2>
-      <div class="creative-grid" id="creativeGrid">
-        <!-- Populated by landing-controller.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- IMPACT -->
-  <section class="impact sr" id="impact">
-    <div class="container">
-      <h2 class="section-heading" id="impactHeading"><!-- JS --></h2>
-      <div class="impact-grid" id="impactGrid">
-        <!-- Populated by landing-controller.js -->
-      </div>
-    </div>
-  </section>
-
   <!-- ACHIEVEMENTS -->
   <section class="achievements sr" id="achievements">
     <div class="container">
       <h2 class="section-heading" id="achievementsHeading"><!-- JS --></h2>
       <div id="achievementsList">
-        <!-- Populated by landing-controller.js -->
+        <!-- Populated by landing-controller.js as a flat list (no accordion) -->
       </div>
     </div>
   </section>
@@ -167,5 +101,6 @@
   <!-- Scripts -->
   <script src="/assets/js/data-loader.js"></script>
   <script src="/assets/js/landing-controller.js"></script>
+  <script src="/assets/js/featured-tile-controller.js"></script>
 </body>
 </html>

@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags (pre-rendered by generate_manifest.py, updated by entry-controller.js) -->
+  <!-- SEO Meta Tags (pre-rendered by generate_manifest.py, updated by collection-controller.js) -->
   <title><!-- Populated by JS --></title>
   <meta name="description" content="">
   <meta property="og:title" content="">
   <meta property="og:description" content="">
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -42,117 +42,22 @@
   </header>
 
   <!-- Main Content -->
-  <main class="container entry-container">
+  <main class="container">
 
-    <!-- Tag Pills (role and skill groups) -->
-    <div class="entry-tags-layout">
-      <div class="entry-tags-card">
-        <!-- Populated by entry-controller.js (role + skill pills) -->
-      </div>
-    </div>
-
-    <!-- Page Title & Subtitle -->
-    <header class="entry-header">
-      <h1 id="entry-title"><!-- Populated by JS --></h1>
-      <h2 id="entry-subtitle"><!-- Populated by JS --></h2>
+    <!-- Collection Header: title + subtitle -->
+    <header id="collection-header">
+      <!-- Populated by collection-controller.js -->
     </header>
 
-    <!-- Role Section (H3) -->
-    <section class="entry-section entry-role-section">
-      <h3 id="entry-role"><!-- Populated by JS --></h3>
-    </section>
-
-    <!-- Hero: Thumbnail slideshow (sourced from entry.thumb[]) -->
-    <section id="entry-hero" class="entry-hero" style="display: none;">
-      <div class="entry-hero-slideshow">
-        <div class="entry-hero-slideshow__slot">
-          <!-- Populated by entry-controller.js: thumbnail slide(s) -->
-        </div>
-        <div class="entry-hero-slideshow__pagination" hidden>
-          <!-- Populated by entry-controller.js; hidden when only one thumb -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Two-column: Text + Sticky Tag/Embed Column (60/40 via CSS) -->
-    <div class="entry-content-media">
-      <div class="entry-text-column">
-        <section class="entry-section">
-          <h4 class="section-label">CHALLENGE</h4>
-          <p id="entry-challenge"></p>
-        </section>
-        <section class="entry-section">
-          <h4 class="section-label">APPROACH</h4>
-          <p id="entry-approach"></p>
-        </section>
-        <section class="entry-section">
-          <h4 class="section-label">RESULT</h4>
-          <p id="entry-result"></p>
-        </section>
-      </div>
-      <aside class="entry-tag-column" id="entry-tag-column">
-        <!-- Populated by entry-controller.js: tag pills + optional media embed -->
-      </aside>
+    <!-- Filter Chips -->
+    <div id="collection-filters">
+      <!-- Populated by filter-controller.js / collection-controller.js -->
     </div>
 
-    <!-- New v4.2.3 layout regions (additive; legacy regions below remain for columns layout) -->
-    <section id="main-media-region"></section>
-    <section id="bleed-region"></section>
-    <section id="bleed-slides-region"></section>
-    <section id="flow-region"></section>
-
-    <!-- Optional: Project URL -->
-    <section id="entry-project-url" class="entry-optional-section" style="display: none;">
-    </section>
-
-    <!-- Optional: GitHub Repository -->
-    <section id="entry-github-repo" class="entry-optional-section" style="display: none;">
-    </section>
-
-    <!-- Optional: GIFs -->
-    <section id="entry-gifs" class="entry-gifs" style="display: none;">
-      <!-- Populated by entry-controller.js if gif array has items -->
-    </section>
-
-    <!-- Optional: Image Grid (3-across square images) - legacy flat grid[] -->
-    <section id="entry-image-grid" class="entry-image-grid" style="display: none;">
-      <!-- Populated by entry-controller.js if grid array has items -->
-    </section>
-
-    <!-- Optional: Grouped Image Grids (multiple 3-across blocks with titles) -->
-    <section id="entry-image-grids" class="entry-image-grids" style="display: none;">
-      <!-- Populated by entry-controller.js if grids array has items -->
-    </section>
-
-    <!-- Optional: Slideshows (multiple groups) -->
-    <section id="entry-slideshows" class="entry-slideshows" style="display: none;">
-      <!-- Populated by entry-controller.js if slideshows array has items -->
-    </section>
-
-    <!-- Lightbox Overlay -->
-    <div id="lightbox-overlay" class="lightbox-overlay" style="display: none;">
-      <button class="lightbox-close" aria-label="Close">&times;</button>
-      <button class="lightbox-prev" aria-label="Previous">&lsaquo;</button>
-      <button class="lightbox-next" aria-label="Next">&rsaquo;</button>
-      <img class="lightbox-img" src="" alt="">
-      <span class="lightbox-counter"></span>
+    <!-- Tile Grid -->
+    <div id="collection-grid">
+      <!-- Populated by collection-controller.js (item tiles) -->
     </div>
-
-    <!-- Bottom Tags -->
-    <div class="entry-tags-layout entry-bottom-tags">
-      <hr class="entry-divider">
-      <div class="entry-tags-card">
-        <!-- Populated by entry-controller.js (same as top) -->
-      </div>
-    </div>
-
-    <!-- Related Posts Section -->
-    <section class="related-posts-section">
-      <h3 class="section-heading">Related Posts</h3>
-      <div id="related-posts-grid" class="grid-related">
-        <!-- Populated by entry-controller.js (5 tiles, 6-hour rotation) -->
-      </div>
-    </section>
 
   </main>
 
@@ -192,7 +97,8 @@
   <!-- JavaScript Modules -->
   <script src="/assets/js/data-loader.js"></script>
   <script src="/assets/js/tile-renderer.js"></script>
-  <script src="/assets/js/entry-controller.js"></script>
+  <script src="/assets/js/filter-controller.js"></script>
+  <script src="/assets/js/collection-controller.js"></script>
 
 </body>
 
