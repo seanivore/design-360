@@ -968,18 +968,18 @@ a.cred-company:hover {
      AUGUST instead of bottom-right (which collided with the ABOUT body).
    - Bottom: ABOUT label + body + CTA + socials. */
 @media (max-width: 47.9375rem) {
-  /* On mobile, full-viewport frost hides too much of the cyberpunk art.
-     Instead of animating (iOS Safari refuses to honor backdrop-filter
-     keyframes reliably even with GPU hints), apply a STATIC gradient
-     mask so the frost is solid at the bottom (where the white ABOUT body
-     + CTA + socials sit) and fades to fully transparent by mid-viewport.
-     AUGUST/HORVATH and the nav links read fine against the unblurred art
-     above the fade. Same idea as a gradient blur, achieved by masking
-     the blur layer rather than the filter value itself. */
+  /* On mobile, drop the backdrop-filter entirely — iOS Safari handles
+     backdrop-filter animation unreliably AND a full-coverage frost hides
+     too much of the cyberpunk art. Replace with a flat dark tint that
+     dims the whole backdrop uniformly: all the white text + lowercase
+     nav reads cleanly against the darkened painting, the art stays
+     fully visible (just darker / more cinematic), and the AUGUST/HORVATH
+     pink cutouts pop harder via mix-blend-mode against the dimmer base. */
   .hero-cyberpunk__blur {
     width: 100%;
-    -webkit-mask-image: linear-gradient(to top, #000 0%, #000 35%, transparent 55%);
-    mask-image: linear-gradient(to top, #000 0%, #000 35%, transparent 55%)
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(37, 36, 36, 0.73)
   }
   /* Drop the 2-col grid — use flex so logo, links, and contact don't
      overlap each other. */
