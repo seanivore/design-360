@@ -19,22 +19,23 @@ This is one, new portfolio project entry that has been carefully crafted to fit 
 
 Please see the most current version numbered IMPLEMENT.md document indicated above for the full details.
 
-| Attention         | Details                                                                          |
-| ----------------- | -------------------------------------------------------------------------------- |
-| Phase             | Second 'A' entry                                                                 |
-| JSON Title        | Self-Employed Web Design & Digital Consultancy Highlights                        |
-| JSON Slug         | freelance-marketing-web                                                          |
-| JSON Layout       | Flow                                                                             |
-| JSON Thumbnails   | `assets/.media/freelance-marketing-web/thumb-freelance-marketing-web-{1-7}.webp` |
-| JSON Achievements | *Please come up with a handful of them from the collection below*                |
-| Placement         | Document is in intended flow order                                               |
-| Notes             | **Bold** denotes info not for publishing                                         |
-| Media URLs        | Need to run through CDN                                                          |
-| Structure         | Consistent with all Phase entries                                                |
-| Resources         | Add helpful internal or external URLs for reader                                 |
-| Animation         | Assess for all phase entries                                                     |
-| Desired anim UX   | Encourage scrolling, make it visually fun                                        |
-| Animation tool    | `.agents/skills/hyperframes/SKILL.md`                                            |
+| Attention               | Details                                                                            |
+| ----------------------- | ---------------------------------------------------------------------------------- |
+| Phase                   | Second 'A' entry                                                                   |
+| JSON Title              | Self-Employed Web Design & Digital Consultancy Highlights                          |
+| JSON Slug               | freelance-marketing-web                                                            |
+| JSON Layout             | Flow                                                                               |
+| JSON Thumbnails         | `assets/.media/freelance-marketing-web/thumb-freelance-marketing-web-{1-7}.webp`   |
+| JSON Achievements       | *Please come up with a handful of them from the collection below*                  |
+| JSON Feature Tile Video | `assets/.media/freelance-marketing-web/feature-tile-freelance-marketing-web-1.mp4` |
+| Placement               | Document is in intended flow order                                                 |
+| Notes                   | **Bold** denotes info not for publishing                                           |
+| Media URLs              | Need to run through CDN                                                            |
+| Structure               | Consistent with all Phase entries                                                  |
+| Resources               | Add helpful internal or external URLs for reader                                   |
+| Animation               | Assess for all phase entries                                                       |
+| Desired anim UX         | Encourage scrolling, make it visually fun                                          |
+| Animation tool          | `.agents/skills/hyperframes/SKILL.md`                                              |
 
 **Self-Employed Web Design & Digital Consultancy Highlights**
 

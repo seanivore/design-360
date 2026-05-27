@@ -165,11 +165,11 @@ Narrative paragraph (80–140 words — slightly longer since no entries to link
 
 Each step is one short sentence (the step word + a one-line elaboration). Same Phase A/B/C structure as the Narrative Spine but in a different visual shape (process bar). Click target: `section.html?tags=phase_a` etc.
 
-| Step | Word | One-line copy | Click target |
-| ---- | ---- | ------------- | ------------ |
-| 1 | **FOUNDATION** | A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics. | `section.html?tags=phase_a` |
-| 2 | **AUTOMATE** | Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social. | `section.html?tags=phase_b` |
-| 3 | **EMBED** | Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead. | `section.html?tags=phase_c` |
+| Step | Word           | One-line copy                                                                                                             | Click target                |
+| ---- | -------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| 1    | **FOUNDATION** | A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics. | `section.html?tags=phase_a` |
+| 2    | **AUTOMATE**   | Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social.              | `section.html?tags=phase_b` |
+| 3    | **EMBED**      | Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead.      | `section.html?tags=phase_c` |
 
 _Alternate Phase A word if "FOUNDATION" reads too generic to Sean: **GROUND** ("Ground the work in a decade of...") — leaving the call to Sean._
 
@@ -231,10 +231,10 @@ Theme: career-evolution + custom-AI-solutions. Drop the generic "Interested in w
 >
 > If your company is trying to do real work with AI — not seminars, not pilots, not another tool slotted on top of the old process — that's the kind of thing I build.
 
-| | Text | Href |
-| -- | ---- | ---- |
-| Primary CTA | **Start a custom pipeline** | `mailto:sean@august.style?subject=Custom%20AI%20Pipeline` |
-| Secondary CTA | See how Phase C works | `/section.html?tags=phase_c` |
+|               | Text                        | Href                                                      |
+| ------------- | --------------------------- | --------------------------------------------------------- |
+| Primary CTA   | **Start a custom pipeline** | `mailto:sean@august.style?subject=Custom%20AI%20Pipeline` |
+| Secondary CTA | See how Phase C works       | `/section.html?tags=phase_c`                              |
 
 ---
 

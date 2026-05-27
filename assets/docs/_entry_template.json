@@ -68,13 +68,42 @@
     "alt": ""
   },
   "flow": [
-    { "type": "h3", "text": "Section heading" },
-    { "type": "p",  "text": "Paragraph copy." },
-    { "type": "img", "images": ["https://cdn.august.style/media/{slug}/flow-1-{slug}-1.webp"], "alt": "" },
-    { "type": "list", "items": ["First bullet", "Second bullet"], "style": "bluepoints" },
-    { "type": "chunk_break", "button_text": "Continue reading" },
-    { "type": "h3", "text": "Next chapter heading" },
-    { "type": "embed_html", "html": "<blockquote class='twitter-tweet'>...</blockquote>", "alt": "" }
+    {
+      "type": "h3",
+      "text": "Section heading"
+    },
+    {
+      "type": "p",
+      "text": "Paragraph copy."
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/{slug}/flow-1-{slug}-1.webp"
+      ],
+      "alt": ""
+    },
+    {
+      "type": "list",
+      "items": [
+        "First bullet",
+        "Second bullet"
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "chunk_break",
+      "button_text": "Continue reading"
+    },
+    {
+      "type": "h3",
+      "text": "Next chapter heading"
+    },
+    {
+      "type": "embed_html",
+      "html": "<blockquote class='twitter-tweet'>...</blockquote>",
+      "alt": ""
+    }
   ],
   "media_url": "",
   "media_embed": "",
@@ -98,7 +127,10 @@
   "process": null,
   "metric": null,
   "achievements": [
-    { "headline": "Award name or notable accomplishment", "details": "Description paragraph with context, metric, or press reference." }
+    {
+      "headline": "Award name or notable accomplishment",
+      "details": "Description paragraph with context, metric, or press reference."
+    }
   ],
   "notes": []
 }

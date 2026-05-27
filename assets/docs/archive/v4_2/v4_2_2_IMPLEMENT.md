@@ -50,7 +50,7 @@ See `v4_1_0_IMPLEMENT.md` § *The Strategy* + § *Chronological Timeline Structu
 
 ## 1.5. Priority & Sequencing (Sean's brain order)
 
-Confirmed 2026-05-27: **the goal of "today's push" is a presentable state to resume job applications** — cohesive homepage narrative + 3 new showcase entries live + nothing visibly broken. Everything else is "continue forward after." Sean explicitly wants room left to keep iterating on collections and bleed-style polish for non-showcased entries on his own cadence afterward.
+Confirmed 2026-05-27: **the goal of "today's push" is a presentable state to resume job applications** — cohesive homepage narrative + 3 new showcase entries live + nothing visibly broken. Everything else is "continue forward after." Sean explicitly wants room left to keep iterating on collections and bleed-style polish for non-showcased entries on his own cadence afterward. 
 
 That reorders v4.2's BUILD tracks into two waves:
 
@@ -613,11 +613,11 @@ Italicized triage hints are best-guess only — Sean's call governs. The "?" row
 
 **Still open after v4_2_2** (very minimal — all are post-Wave-1 or pure-asset):
 
-| #   | Gap                                                       | Type                  | Notes                                                                                                                                                                                                       |
-| --- | --------------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 23  | Sean's 4:5 feature videos (Leonardo.ai)                   | Asset (TRACK_C prep)  | Needed: 1 video per phase (minimum) of `feature`-tagged entries. Fallback to thumb image if not ready; renderer handles gracefully.                                                                          |
-| 22  | WS-5 triage signoff                                       | Decision (post-Wave1) | Sean tags each WS-5 row MIGRATE or → COLLECTION before TRACK_E starts. Not Wave 1 blocking.                                                                                                                  |
-| 24  | Sean's editorial picks                                    | Decision (in-track)   | Inline TRACK_B/C decisions: (a) which 2–3 of the 5 ABOUT pool variants survive; (b) GROUND vs FOUNDATION for Process step 1; (c) cutout-letter font from the candidate shortlist; (d) CTA imperative phrasing. |
+| #   | Gap                                     | Type                  | Notes                                                                                                                                                                                                          |
+| --- | --------------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 23  | Sean's 4:5 feature videos (Leonardo.ai) | Asset (TRACK_C prep)  | Needed: 1 video per phase (minimum) of `feature`-tagged entries. Fallback to thumb image if not ready; renderer handles gracefully.                                                                            |
+| 22  | WS-5 triage signoff                     | Decision (post-Wave1) | Sean tags each WS-5 row MIGRATE or → COLLECTION before TRACK_E starts. Not Wave 1 blocking.                                                                                                                    |
+| 24  | Sean's editorial picks                  | Decision (in-track)   | Inline TRACK_B/C decisions: (a) which 2–3 of the 5 ABOUT pool variants survive; (b) GROUND vs FOUNDATION for Process step 1; (c) cutout-letter font from the candidate shortlist; (d) CTA imperative phrasing. |
 
 ---
 

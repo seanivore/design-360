@@ -19,22 +19,25 @@ This is one, new portfolio project entry that has been carefully crafted to fit 
 
 Please see the most current version numbered IMPLEMENT.md document indicated above for the full details.
 
-| Attention         | Details                                                                  |
-| ----------------- | ------------------------------------------------------------------------ |
-| Phase             | First 'A' entry                                                          |
-| JSON Title        | PETA Marketing & Social Media Achievements                               |
-| JSON Slug         | awards-viral-social                                                      |
-| JSON Layout       | Flow                                                                     |
-| JSON Thumbnails   | `assets/.media/awards-viral-social/thumb-awards-viral-social-{1-5}.webp` |
-| JSON Achievements | *Please come up with a handful of them from the collection below*        |
-| Placement         | Document is in intended flow order                                       |
-| Notes             | **Bold** denotes info not for publishing                                 |
-| Media URLs        | Need to run through CDN                                                  |
-| Structure         | Consistent with all Phase entries                                        |
-| Resources         | Add helpful internal or external URLs for reader                         |
-| Animation         | Assess for all phase entries                                             |
-| Desired anim UX   | Encourage scrolling, make it visually fun                                |
-| Animation tool    | `.agents/skills/hyperframes/SKILL.md`                                    |
+| Attention               | Details                                                                    |
+| ----------------------- | -------------------------------------------------------------------------- |
+| Phase                   | First 'A' entry                                                            |
+| JSON Title              | PETA Marketing & Social Media Achievements                                 |
+| JSON Slug               | awards-viral-social                                                        |
+| JSON Layout             | Flow                                                                       |
+| JSON Thumbnails         | `assets/.media/awards-viral-social/thumb-awards-viral-social-{1-5}.webp`   |
+| JSON Achievements       | *Please come up with a handful of them from the collection below*          |
+| JSON Feature Tile Video | `assets/.media/awards-viral-social/feature-tile-awards-viral-social-1.mp4` |
+| Placement               | Document is in intended flow order                                         |
+| Notes                   | **Bold** denotes info not for publishing                                   |
+| Media URLs              | Need to run through CDN                                                    |
+| Structure               | Consistent with all Phase entries                                          |
+| Resources               | Add helpful internal or external URLs for reader                           |
+| Animation               | Assess for all phase entries                                               |
+| Desired anim UX         | Encourage scrolling, make it visually fun                                  |
+| Animation tool          | `.agents/skills/hyperframes/SKILL.md`                                      |
+
+**NOTE**: "JSON Tile Feature Video" was just added. 
 
 **PETA Marketing & Social Media Achievements**
 
