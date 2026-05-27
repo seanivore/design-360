@@ -99,9 +99,43 @@
     {
       "type": "list",
       "items": [
-        "Frantic phone call as a brief — I was contacted looking for rush solutions to PPE shortage issues; I suggested I build a platform to connect providers around the state as a first step; a means of facilitating better sharing of what little PPE they did have; I assuring them I'd be available for as long as they needed, any day, any time; that was it; I got a credit card number, assistant's phone number, and got to work.",
-        "Over-communication process — Contacted the assistant to get on the same page; established additional lines of contact; I offered that I'd detail every step and decision with rationale; proposed Squarespace because of my experience there for rapid work; she agreed and was off to gather the copy details I'd need on the site.",
-        "Build process — Squarespace was my best bet for speed and ease of maintenance thanks to experience; set up fresh email account for all account creation on the project; added Mailchimp as I figured they could send health network updates in real time; I built the framework with some placeholders for media and text; receiving materials that were a bit jumbled, I quickly organized and created clarity; structured what seemed like would be a logical hierarchy of information; upon finalizing things I gave the assistant a heads up that I was just about complete; I made things a bit briefer everywhere and the action steps more prominent; ensured non-technical staff could publish real-time with no developer needed; she was very happy with the final product; it was shared widely, ahead of any government efforts in the state."
+        {
+          "text": "Frantic phone call as a brief",
+          "items": [
+            "I was contacted looking for rush solutions to PPE shortage issues",
+            "I suggested I build a platform to connect providers around the state as a first step",
+            "a means of facilitating better sharing of what little PPE they did have",
+            "I assuring them I'd be available for as long as they needed, any day, any time",
+            "that was it",
+            "I got a credit card number, assistant's phone number, and got to work"
+          ]
+        },
+        {
+          "text": "Over-communication process",
+          "items": [
+            "Contacted the assistant to get on the same page",
+            "established additional lines of contact",
+            "I offered that I'd detail every step and decision with rationale",
+            "proposed Squarespace because of my experience there for rapid work",
+            "she agreed and was off to gather the copy details I'd need on the site"
+          ]
+        },
+        {
+          "text": "Build process",
+          "items": [
+            "Squarespace was my best bet for speed and ease of maintenance thanks to experience",
+            "set up fresh email account for all account creation on the project",
+            "added Mailchimp as I figured they could send health network updates in real time",
+            "I built the framework with some placeholders for media and text",
+            "receiving materials that were a bit jumbled, I quickly organized and created clarity",
+            "structured what seemed like would be a logical hierarchy of information",
+            "upon finalizing things I gave the assistant a heads up that I was just about complete",
+            "I made things a bit briefer everywhere and the action steps more prominent",
+            "ensured non-technical staff could publish real-time with no developer needed",
+            "she was very happy with the final product",
+            "it was shared widely, ahead of any government efforts in the state"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -116,7 +150,19 @@
     {
       "type": "list",
       "items": [
-        "Why it worked — I provided a fast solution that they hadn't yet fully considered; the platform effectively encouraged stronger community during a time of crisis; the one-page site demonstrated clarity and removed all complexity; the Mailchimp account was unexpected, but ended up being heavily utilized; emails went out as the state slowly received PPE supplies in following weeks; no revisions were needed after handoff, which took just a few hours; the site was picked up by local news outlets and promoted for weeks; it provided exactly what an urgent situation where every minute costs lives needed."
+        {
+          "text": "Why it worked",
+          "items": [
+            "I provided a fast solution that they hadn't yet fully considered",
+            "the platform effectively encouraged stronger community during a time of crisis",
+            "the one-page site demonstrated clarity and removed all complexity",
+            "the Mailchimp account was unexpected, but ended up being heavily utilized",
+            "emails went out as the state slowly received PPE supplies in following weeks",
+            "no revisions were needed after handoff, which took just a few hours",
+            "the site was picked up by local news outlets and promoted for weeks",
+            "it provided exactly what an urgent situation where every minute costs lives needed"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -141,9 +187,41 @@
     {
       "type": "list",
       "items": [
-        "Building foundation — Had been following astrology influencer on Instagram for a while; found them unique, highly intelligent, bookish, and grounded in their craft; took an intensive few hour class training from her; learned to read Astrology charts and translate energy by the end; her teaching method was incredible, pattern based, and engaging; learned different plant roles by looking at the chart as a ship; also learned to read the chart by thinking about it as a map of consciousness; I in turn shared my knowledge, teaching friends; I still exercised the muscle by writing the energy reading for myself most days of the week; continued to follow her and engage smartly on Instagram over the year that followed.",
-        "Creating opportunity — In time I messaged her to see how things were going; she mentioned the brand a few times so I asked if she wanted to meet; that we would chat about where she was at with her brand growth; she happened to be coming out to Santa Monica the next week so we set something casual up.",
-        "Listening and learning — When we met I kept it casual, not coming in with any offers; instead I wanted to learn about her process and goals; she broke down her strengths and struggles; it ended up being a great conversation; about a day passed and then the potential strategy for her came to me; it played into what she felt most comfortable with and avoided what she didn't."
+        {
+          "text": "Building foundation",
+          "items": [
+            "Had been following astrology influencer on Instagram for a while",
+            "found them unique, highly intelligent, bookish, and grounded in their craft",
+            "took an intensive few hour class training from her",
+            "learned to read Astrology charts and translate energy by the end",
+            "her teaching method was incredible, pattern based, and engaging",
+            "learned different plant roles by looking at the chart as a ship",
+            "also learned to read the chart by thinking about it as a map of consciousness",
+            "I in turn shared my knowledge, teaching friends",
+            "I still exercised the muscle by writing the energy reading for myself most days of the week",
+            "continued to follow her and engage smartly on Instagram over the year that followed"
+          ]
+        },
+        {
+          "text": "Creating opportunity",
+          "items": [
+            "In time I messaged her to see how things were going",
+            "she mentioned the brand a few times so I asked if she wanted to meet",
+            "that we would chat about where she was at with her brand growth",
+            "she happened to be coming out to Santa Monica the next week so we set something casual up"
+          ]
+        },
+        {
+          "text": "Listening and learning",
+          "items": [
+            "When we met I kept it casual, not coming in with any offers",
+            "instead I wanted to learn about her process and goals",
+            "she broke down her strengths and struggles",
+            "it ended up being a great conversation",
+            "about a day passed and then the potential strategy for her came to me",
+            "it played into what she felt most comfortable with and avoided what she didn't"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -162,8 +240,29 @@
     {
       "type": "list",
       "items": [
-        "Her personality in the deck — I put together a deck defining the strategy; I pulled from her actual aesthetic and perceived personal taste; images came from her social profile; I constructed example grids that fit her style and more.",
-        "Testing my strategy idea — Once complete, I reached out to a long time friend and industry peer; Ms. Naftelberg had experience signing and working with influencers agency-side; she had been VP of a major social-first advertising agency in Los Angeles; she went freelance right before I did; impressively Toyota client left with her; she was someone I both admired and trusted implicitly, and frequently bounced ideas off; I sent her the deck for her thoughts; when she liked it, I asked if she might help me close the new business for a signing bonus; she agreed so we set up a call with the potential client that coming week."
+        {
+          "text": "Her personality in the deck",
+          "items": [
+            "I put together a deck defining the strategy",
+            "I pulled from her actual aesthetic and perceived personal taste",
+            "images came from her social profile",
+            "I constructed example grids that fit her style and more"
+          ]
+        },
+        {
+          "text": "Testing my strategy idea",
+          "items": [
+            "Once complete, I reached out to a long time friend and industry peer",
+            "Ms. Naftelberg had experience signing and working with influencers agency-side",
+            "she had been VP of a major social-first advertising agency in Los Angeles",
+            "she went freelance right before I did",
+            "impressively Toyota client left with her",
+            "she was someone I both admired and trusted implicitly, and frequently bounced ideas off",
+            "I sent her the deck for her thoughts",
+            "when she liked it, I asked if she might help me close the new business for a signing bonus",
+            "she agreed so we set up a call with the potential client that coming week"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -184,7 +283,26 @@
     {
       "type": "list",
       "items": [
-        "About the strategy — I leaned into the analytics discipline I had built over the years; pulled from experience creating campaigns with award-winning engagement rates; in the deck I made sure all of the numbers pointed at the opportunity; a growth strategy built on real audience data instead of bots and vanity metrics; audience demographics, engagement patterns, and content performance turned into specific moves; content formats to prioritize, audience segments, and growth milestones with timelines; this was during an era when many wannabe influencers were buying likes and follows; we made sure to show her how evident it was when influencers did this; it is clear that someone bought fake followers when their posts have no engagement; this was crafted as a real-person solution; it should serve as a stepping stone towards the next steps in building her audience; the next step was discussed as well, though it wasn't in the deck; the secondary step involved identifying the core 12-20 most engaging followers; influencers then essentially become best friends with those followers; they real relationships built on the content's subject matter."
+        {
+          "text": "About the strategy",
+          "items": [
+            "I leaned into the analytics discipline I had built over the years",
+            "pulled from experience creating campaigns with award-winning engagement rates",
+            "in the deck I made sure all of the numbers pointed at the opportunity",
+            "a growth strategy built on real audience data instead of bots and vanity metrics",
+            "audience demographics, engagement patterns, and content performance turned into specific moves",
+            "content formats to prioritize, audience segments, and growth milestones with timelines",
+            "this was during an era when many wannabe influencers were buying likes and follows",
+            "we made sure to show her how evident it was when influencers did this",
+            "it is clear that someone bought fake followers when their posts have no engagement",
+            "this was crafted as a real-person solution",
+            "it should serve as a stepping stone towards the next steps in building her audience",
+            "the next step was discussed as well, though it wasn't in the deck",
+            "the secondary step involved identifying the core 12-20 most engaging followers",
+            "influencers then essentially become best friends with those followers",
+            "they real relationships built on the content's subject matter"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -200,7 +318,14 @@
     {
       "type": "list",
       "items": [
-        "A learning experience — This specific client didn't end up booking; the strategy itself was pitched to other potential clients in coming months; it was successful and for a time became a go-to offering for those seeking audience growth."
+        {
+          "text": "A learning experience",
+          "items": [
+            "This specific client didn't end up booking",
+            "the strategy itself was pitched to other potential clients in coming months",
+            "it was successful and for a time became a go-to offering for those seeking audience growth"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -235,8 +360,25 @@
     {
       "type": "list",
       "items": [
-        "Original request — Build out entire online presence for the first time; website for 'Skype Personal Training'; setting up social media platforms; writing and running social media advertisements; updating the website with testimonials monthly.",
-        "Developing as her company grew — A few years later it was time to update her website; we needed to expand into more than just personal training; we needed to add information about energy healing; Kajabi was chosen because we had space to build online courses as well."
+        {
+          "text": "Original request",
+          "items": [
+            "Build out entire online presence for the first time",
+            "website for 'Skype Personal Training'",
+            "setting up social media platforms",
+            "writing and running social media advertisements",
+            "updating the website with testimonials monthly"
+          ]
+        },
+        {
+          "text": "Developing as her company grew",
+          "items": [
+            "A few years later it was time to update her website",
+            "we needed to expand into more than just personal training",
+            "we needed to add information about energy healing",
+            "Kajabi was chosen because we had space to build online courses as well"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -251,8 +393,27 @@
     {
       "type": "list",
       "items": [
-        "Website analytics surprises — Analyzing her web traffic I noticed something powerful; I immediately reached out to share the details; the session time and time on page metrics were normal for most pages; but on the testimonials page, the average session duration was 14 MINUTES; that was profound, wild information and incredibly powerful; it really informed what the website design should be better focused on.",
-        "Redesign uncovered additional benefits — After chatting I recognized her course flow made her online platform redundant; her online platform was still Kajabi; I explained how robust Kajabi was and why it was so expensive; my point was that it seemed unnecessary for her to pay for that platform; the client was obviously very excited."
+        {
+          "text": "Website analytics surprises",
+          "items": [
+            "Analyzing her web traffic I noticed something powerful",
+            "I immediately reached out to share the details",
+            "the session time and time on page metrics were normal for most pages",
+            "but on the testimonials page, the average session duration was 14 MINUTES",
+            "that was profound, wild information and incredibly powerful",
+            "it really informed what the website design should be better focused on"
+          ]
+        },
+        {
+          "text": "Redesign uncovered additional benefits",
+          "items": [
+            "After chatting I recognized her course flow made her online platform redundant",
+            "her online platform was still Kajabi",
+            "I explained how robust Kajabi was and why it was so expensive",
+            "my point was that it seemed unnecessary for her to pay for that platform",
+            "the client was obviously very excited"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -272,8 +433,26 @@
     {
       "type": "list",
       "items": [
-        "Chat takeaway — Clear that we need a site that features testimonials more prominently; no need for online courses; just selling energy healing and personal training; ongoing digital business consulting and social media strategy; occasional Facebook Ads and copywriting; update website with new testimonials roughly once a month.",
-        "The concept — I suggested I'll create all graphic design for backgrounds and other interface; place testimonials on the front page; include client photos and hand drawn digital brand art; build on Webflow for design freedom and fun custom animations."
+        {
+          "text": "Chat takeaway",
+          "items": [
+            "Clear that we need a site that features testimonials more prominently",
+            "no need for online courses",
+            "just selling energy healing and personal training",
+            "ongoing digital business consulting and social media strategy",
+            "occasional Facebook Ads and copywriting",
+            "update website with new testimonials roughly once a month"
+          ]
+        },
+        {
+          "text": "The concept",
+          "items": [
+            "I suggested I'll create all graphic design for backgrounds and other interface",
+            "place testimonials on the front page",
+            "include client photos and hand drawn digital brand art",
+            "build on Webflow for design freedom and fun custom animations"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -284,7 +463,16 @@
     {
       "type": "list",
       "items": [
-        "Artwork I prepared — All drawn on iPad Pro with Apple Pencil; new design system; refreshed logo; a different illustration for each page; decorative ornate UI details."
+        {
+          "text": "Artwork I prepared",
+          "items": [
+            "All drawn on iPad Pro with Apple Pencil",
+            "new design system",
+            "refreshed logo",
+            "a different illustration for each page",
+            "decorative ornate UI details"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -312,8 +500,21 @@
     {
       "type": "list",
       "items": [
-        "Forest Bathing — New meditative in person focus; help people get out in nature more; encourage socialization.",
-        "Body Activation — Help people learn to connect with their body; use nature to heal."
+        {
+          "text": "Forest Bathing",
+          "items": [
+            "New meditative in person focus",
+            "help people get out in nature more",
+            "encourage socialization"
+          ]
+        },
+        {
+          "text": "Body Activation",
+          "items": [
+            "Help people learn to connect with their body",
+            "use nature to heal"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -324,10 +525,45 @@
     {
       "type": "list",
       "items": [
-        "Requirements — Sell the two offerings; provide online version courses; include online booking; Stripe payment integration; testimonials section.",
-        "AI pipeline — Built to help her manage calendar availability; onboard clients; send follow up emails; help her prepare social posts; help her prepare email newsletters; schedule social and email posts.",
-        "Architecture thoughts — Vanilla HTML/CSS/JS; Vercel deploy with prod/dev env setup; custom domain for production.",
-        "Design thoughts — Engaging forest path animation for hero section; make with Nano Banana 3 image; animating it with Kling Video 3.0 and Seedance 2.0; construct with Claude Design first; finish up with Claude Code services."
+        {
+          "text": "Requirements",
+          "items": [
+            "Sell the two offerings",
+            "provide online version courses",
+            "include online booking",
+            "Stripe payment integration",
+            "testimonials section"
+          ]
+        },
+        {
+          "text": "AI pipeline",
+          "items": [
+            "Built to help her manage calendar availability",
+            "onboard clients",
+            "send follow up emails",
+            "help her prepare social posts",
+            "help her prepare email newsletters",
+            "schedule social and email posts"
+          ]
+        },
+        {
+          "text": "Architecture thoughts",
+          "items": [
+            "Vanilla HTML/CSS/JS",
+            "Vercel deploy with prod/dev env setup",
+            "custom domain for production"
+          ]
+        },
+        {
+          "text": "Design thoughts",
+          "items": [
+            "Engaging forest path animation for hero section",
+            "make with Nano Banana 3 image",
+            "animating it with Kling Video 3.0 and Seedance 2.0",
+            "construct with Claude Design first",
+            "finish up with Claude Code services"
+          ]
+        }
       ],
       "style": "bluepoints"
     }

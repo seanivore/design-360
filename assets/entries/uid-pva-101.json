@@ -95,10 +95,48 @@
     {
       "type": "list",
       "items": [
-        "The strategy — Think 'visual-first'; workshop a 'sharable' tagline; sharable = what is the user saying when they share it to their profile; help them skip a caption by putting that right on the image; follow the 'gut punch' rule; gut punch = only post if it causes you to audibly gasp (or laugh, etc.); perfect a ~1 sentence post copy until punchy; stay culturally relevant; this was easy because we were cool hipsters.",
-        "The results — The juxtaposition of the footwear and the abused animal hit hard; users were angry and sad, which creates sharing and engagement; UGGs were peak popularity, so it felt so relatable.",
-        "Big picture — This success taught me the term 'earned media'; 'Viral' was new to social; we only recently got shared news feeds; users didn't hesitate to engage when emotional; YahooNews recognized the novelty, which was an obvious story.",
-        "Our new reputation — Digital media outlets saw that piggybacking our work gave them reach; we took down PETA's website on a regular basis because of viral traffic; Facebook, once difficult to get a response from, began requesting meetings; King of website content, BuzzFeed, wanted in on our social game; we worked with BuzzFeed trading strategy in a handful of meetings."
+        {
+          "text": "The strategy",
+          "items": [
+            "Think 'visual-first'",
+            "workshop a 'sharable' tagline",
+            "sharable = what is the user saying when they share it to their profile",
+            "help them skip a caption by putting that right on the image",
+            "follow the 'gut punch' rule",
+            "gut punch = only post if it causes you to audibly gasp (or laugh, etc.)",
+            "perfect a ~1 sentence post copy until punchy",
+            "stay culturally relevant",
+            "this was easy because we were cool hipsters"
+          ]
+        },
+        {
+          "text": "The results",
+          "items": [
+            "The juxtaposition of the footwear and the abused animal hit hard",
+            "users were angry and sad, which creates sharing and engagement",
+            "UGGs were peak popularity, so it felt so relatable"
+          ]
+        },
+        {
+          "text": "Big picture",
+          "items": [
+            "This success taught me the term 'earned media'",
+            "'Viral' was new to social",
+            "we only recently got shared news feeds",
+            "users didn't hesitate to engage when emotional",
+            "YahooNews recognized the novelty, which was an obvious story"
+          ]
+        },
+        {
+          "text": "Our new reputation",
+          "items": [
+            "Digital media outlets saw that piggybacking our work gave them reach",
+            "we took down PETA's website on a regular basis because of viral traffic",
+            "Facebook, once difficult to get a response from, began requesting meetings",
+            "King of website content, BuzzFeed, wanted in on our social game",
+            "we worked with BuzzFeed trading strategy in a handful of meetings"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -121,8 +159,27 @@
     {
       "type": "list",
       "items": [
-        "Why live coverage — The goal is to insert our message into real-time, national conversations; this opportunity was otherwise fairly rare; Helena had red carpet event experience from social media at E!; we thrived in face paced environments; finding images was easy as I was discovering my visual encyclopedic memory catalog.",
-        "Our process — Spit-balling ideas was our natural dynamic; laptops open, big screen on, and constant coffee and chatter; bring in assistants to help make sure we don't miss opportunities; snacks are essential for keeping energy levels high; possible opportunity found, Helena starts drafting Tweet-length messages; watching her thinking, I gathered the strongest images that gut-checked me."
+        {
+          "text": "Why live coverage",
+          "items": [
+            "The goal is to insert our message into real-time, national conversations",
+            "this opportunity was otherwise fairly rare",
+            "Helena had red carpet event experience from social media at E!",
+            "we thrived in face paced environments",
+            "finding images was easy as I was discovering my visual encyclopedic memory catalog"
+          ]
+        },
+        {
+          "text": "Our process",
+          "items": [
+            "Spit-balling ideas was our natural dynamic",
+            "laptops open, big screen on, and constant coffee and chatter",
+            "bring in assistants to help make sure we don't miss opportunities",
+            "snacks are essential for keeping energy levels high",
+            "possible opportunity found, Helena starts drafting Tweet-length messages",
+            "watching her thinking, I gathered the strongest images that gut-checked me"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -133,8 +190,31 @@
     {
       "type": "list",
       "items": [
-        "Opportunity arises — Helena spotted Joe Namath, in a giant, white fur coat, waltzing onto the field; I explored fur farm images for the most emotional gut check I could find; with a few options selected, Helena started paring them with copy; we never publish until it feels done, always opting for quality over quantity.",
-        "Why it worked — We chose a technically beautiful photograph of terrified, caged, fur farm raccoon dog; adding the text 'NOT YOURS TO WEAR' created a haunting emotion; dual meaning in the tagline, first the raccoon dog speaking to the viewer; secondary tagline meaning was a direct statement AT Joe Namath; users re-sharing this image were doing it to evoke one of those meanings if not both; users share to build their online identity, tapping us into a bit of virtue signaling; viral status was all but guaranteed, but we had backup; our correspondents who chatted with users and influencers tapped celebrities; sharing the image at a big account with a personalized message asking they share works well; 'Brand Dot Com' was the first online outlet to publish the image; we gave outlets an entry point into the conversation."
+        {
+          "text": "Opportunity arises",
+          "items": [
+            "Helena spotted Joe Namath, in a giant, white fur coat, waltzing onto the field",
+            "I explored fur farm images for the most emotional gut check I could find",
+            "with a few options selected, Helena started paring them with copy",
+            "we never publish until it feels done, always opting for quality over quantity"
+          ]
+        },
+        {
+          "text": "Why it worked",
+          "items": [
+            "We chose a technically beautiful photograph of terrified, caged, fur farm raccoon dog",
+            "adding the text 'NOT YOURS TO WEAR' created a haunting emotion",
+            "dual meaning in the tagline, first the raccoon dog speaking to the viewer",
+            "secondary tagline meaning was a direct statement AT Joe Namath",
+            "users re-sharing this image were doing it to evoke one of those meanings if not both",
+            "users share to build their online identity, tapping us into a bit of virtue signaling",
+            "viral status was all but guaranteed, but we had backup",
+            "our correspondents who chatted with users and influencers tapped celebrities",
+            "sharing the image at a big account with a personalized message asking they share works well",
+            "'Brand Dot Com' was the first online outlet to publish the image",
+            "we gave outlets an entry point into the conversation"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -188,7 +268,19 @@
     {
       "type": "list",
       "items": [
-        "Lessons in thinking critically — SeaWorld, a target of the organization, might not have seen our rapid audience growth; that said, they knew we responded no matter what they posted; it isn't clear what they expected when they launched a campaign soliciting questions; they knew very well that we had a LOT of questions for them, that we posted almost daily; with declining attendance, perhaps they were desperate; or perhaps they paid a consultant and didn't think twice; either way, they wanted the internet to #AskSeaWorld; luckily for orcas, we were able to tell the internet exactly what to #AskSeaWorld."
+        {
+          "text": "Lessons in thinking critically",
+          "items": [
+            "SeaWorld, a target of the organization, might not have seen our rapid audience growth",
+            "that said, they knew we responded no matter what they posted",
+            "it isn't clear what they expected when they launched a campaign soliciting questions",
+            "they knew very well that we had a LOT of questions for them, that we posted almost daily",
+            "with declining attendance, perhaps they were desperate",
+            "or perhaps they paid a consultant and didn't think twice",
+            "either way, they wanted the internet to #AskSeaWorld",
+            "luckily for orcas, we were able to tell the internet exactly what to #AskSeaWorld"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -203,8 +295,26 @@
     {
       "type": "list",
       "items": [
-        "We went hard — It isn't often your rival basically creates the campaign against themselves for us; we needed a strategy that took advantage of this once-in-a-career misstep; our new video labs department rapidly produced a satirical video; the video resembled a SeaWorld commercial with comical accuracy; the actor, 'Laura', a 'Fish Doctor And Stuff' had #AskSeaWorld answers for everyone.",
-        "We got loud — Campaigns and action team joined the social team in recruiting supporters to #AskSeaWorld; we created powerful graphics and made them readily available online and sent out in emails; the strategy is always the same for conversions: find and amplify that emotional gut check; in just hours, our massive audience bombarded SeaWorld beyond anything they could manage; calling out a problematic company straight to their face was exactly what our audience wanted."
+        {
+          "text": "We went hard",
+          "items": [
+            "It isn't often your rival basically creates the campaign against themselves for us",
+            "we needed a strategy that took advantage of this once-in-a-career misstep",
+            "our new video labs department rapidly produced a satirical video",
+            "the video resembled a SeaWorld commercial with comical accuracy",
+            "the actor, 'Laura', a 'Fish Doctor And Stuff' had #AskSeaWorld answers for everyone"
+          ]
+        },
+        {
+          "text": "We got loud",
+          "items": [
+            "Campaigns and action team joined the social team in recruiting supporters to #AskSeaWorld",
+            "we created powerful graphics and made them readily available online and sent out in emails",
+            "the strategy is always the same for conversions: find and amplify that emotional gut check",
+            "in just hours, our massive audience bombarded SeaWorld beyond anything they could manage",
+            "calling out a problematic company straight to their face was exactly what our audience wanted"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -219,8 +329,35 @@
     {
       "type": "list",
       "items": [
-        "Results poured in — News outlets started announcing SeaWorld's campaign a failure without us needing to ask; they were covering our movement, not SeaWorld's intended message; it was literally impossible to find any of SeaWorld's propaganda under #AskSeaWorld; Refinery 29 posted that 'SeaWorld's #AskSeaWorld Twitter Campaign Backfired Massively'; business publications shared the PR failure and our organization's success; AdWeek chimed in with 'PETA Pokes Fun at Ongoing SeaWorld PR Campaign'.",
-        "Culture defining implications — With coordination and powerful content, the power of our impact reached a new level; celebrities, influencers, even moms and dads in middle America took note; 'Oh, no you don't want to anger PETA' reality TV show characters joked; Kanye rapped 'Someone tell PETA my mink is draggin' on the floor'; and again, he rapped 'PETA's mad cause I made a jacket outta possum'; 'Beat the pussy up call PETA' rapped Doja Cat in 'Tia & Tamara'; and again, she rapped 'hit up P.E.T.A., paint on me make me gorgeous'; followed by 'take the geese and chinchilla coat on a walk-in'; a 'walk in' is what we called it when celebrities came to the office for a tour; and of course PETA was well known for their stunning body paint protests; the list goes on with Nicki Minaj, 'Too high to give a shit about PETA'; once a household name, now we were something more, something deeper and cultural and savage; and that is exactly what PETA wanted."
+        {
+          "text": "Results poured in",
+          "items": [
+            "News outlets started announcing SeaWorld's campaign a failure without us needing to ask",
+            "they were covering our movement, not SeaWorld's intended message",
+            "it was literally impossible to find any of SeaWorld's propaganda under #AskSeaWorld",
+            "Refinery 29 posted that 'SeaWorld's #AskSeaWorld Twitter Campaign Backfired Massively'",
+            "business publications shared the PR failure and our organization's success",
+            "AdWeek chimed in with 'PETA Pokes Fun at Ongoing SeaWorld PR Campaign'"
+          ]
+        },
+        {
+          "text": "Culture defining implications",
+          "items": [
+            "With coordination and powerful content, the power of our impact reached a new level",
+            "celebrities, influencers, even moms and dads in middle America took note",
+            "'Oh, no you don't want to anger PETA' reality TV show characters joked",
+            "Kanye rapped 'Someone tell PETA my mink is draggin' on the floor'",
+            "and again, he rapped 'PETA's mad cause I made a jacket outta possum'",
+            "'Beat the pussy up call PETA' rapped Doja Cat in 'Tia & Tamara'",
+            "and again, she rapped 'hit up P.E.T.A., paint on me make me gorgeous'",
+            "followed by 'take the geese and chinchilla coat on a walk-in'",
+            "a 'walk in' is what we called it when celebrities came to the office for a tour",
+            "and of course PETA was well known for their stunning body paint protests",
+            "the list goes on with Nicki Minaj, 'Too high to give a shit about PETA'",
+            "once a household name, now we were something more, something deeper and cultural and savage",
+            "and that is exactly what PETA wanted"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -250,8 +387,24 @@
     {
       "type": "list",
       "items": [
-        "Beating industry benchmarks — PRNews Pro covered our extremely high engagement rate; they compared us favorably to other organizations; the article highlighted our pioneering approaches for leveraging social media for activism; they featured our Animal Testing rescue video story as an example; the article was headlined with 'PETA, Animal Rights Groups Lead Nonprofits on Facebook During Q3 as Video Engagement Soars'.",
-        "It gets personal — They went a step further in their coverage, contacting us to interview Helena; she was Social Director by then, it was quite the honor; in the article they detailed stats and benchmarks for our work."
+        {
+          "text": "Beating industry benchmarks",
+          "items": [
+            "PRNews Pro covered our extremely high engagement rate",
+            "they compared us favorably to other organizations",
+            "the article highlighted our pioneering approaches for leveraging social media for activism",
+            "they featured our Animal Testing rescue video story as an example",
+            "the article was headlined with 'PETA, Animal Rights Groups Lead Nonprofits on Facebook During Q3 as Video Engagement Soars'"
+          ]
+        },
+        {
+          "text": "It gets personal",
+          "items": [
+            "They went a step further in their coverage, contacting us to interview Helena",
+            "she was Social Director by then, it was quite the honor",
+            "in the article they detailed stats and benchmarks for our work"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -265,8 +418,25 @@
     {
       "type": "list",
       "items": [
-        "How we did it — The strategies highlighted through this portfolio are direct results of Helena and my collaboration; our work came from passion, and we were well known for being able to tap into emotion; we pioneered rapid video content creation ahead of market adoption; the productions we put out were always emotionally resonant and shareable by design; content was always optimized for each specific platform; we often coordinated direct marketing emails and SMS pushes to amplify messaging.",
-        "Important numbers — The 'Britches' story resulted in 4.5M consumer actions; we achieved a 15% YoY engagement increase; the overall campaign reached over a 61% video engagement rate."
+        {
+          "text": "How we did it",
+          "items": [
+            "The strategies highlighted through this portfolio are direct results of Helena and my collaboration",
+            "our work came from passion, and we were well known for being able to tap into emotion",
+            "we pioneered rapid video content creation ahead of market adoption",
+            "the productions we put out were always emotionally resonant and shareable by design",
+            "content was always optimized for each specific platform",
+            "we often coordinated direct marketing emails and SMS pushes to amplify messaging"
+          ]
+        },
+        {
+          "text": "Important numbers",
+          "items": [
+            "The 'Britches' story resulted in 4.5M consumer actions",
+            "we achieved a 15% YoY engagement increase",
+            "the overall campaign reached over a 61% video engagement rate"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -327,8 +497,23 @@
     {
       "type": "list",
       "items": [
-        "Humor has another moment — With such emotional content, it is rare enough that we produce humor, and this went viral; vegan cursing granny was our viral 'Funny For Good' NTEN Do Gooder Award Finalist; called Tofucken the campaign video starred a foul-mouthed, heartwarming grandma making a vegan holiday roast; another organization-wide strategy shift success, as this campaign was built around the video.",
-        "Cursing Granny's stats — Tofucken garnered over 100 million video views; today that number is over a billion; this same year we had 1.1 billion Facebook Page impressions."
+        {
+          "text": "Humor has another moment",
+          "items": [
+            "With such emotional content, it is rare enough that we produce humor, and this went viral",
+            "vegan cursing granny was our viral 'Funny For Good' NTEN Do Gooder Award Finalist",
+            "called Tofucken the campaign video starred a foul-mouthed, heartwarming grandma making a vegan holiday roast",
+            "another organization-wide strategy shift success, as this campaign was built around the video"
+          ]
+        },
+        {
+          "text": "Cursing Granny's stats",
+          "items": [
+            "Tofucken garnered over 100 million video views",
+            "today that number is over a billion",
+            "this same year we had 1.1 billion Facebook Page impressions"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -350,8 +535,23 @@
     {
       "type": "list",
       "items": [
-        "Putting guts in shoppers purses — In this video spot we reminded shoppers that their luxury leather was alive; the video won 1st Place NTEN Do Gooder 'Funny For Good' Award; it was also a ShortyAwards Social Good Finalist.",
-        "Bloody heart still in purse — The video was really all about the reactions of the shoppers; as they walked around the store they found blood, tissue, and even organs in all the leather goods; titled 'Beyond Words,' the short was considered comedic and lighthearted; once again, the social-optimized video was the center of this campaign."
+        {
+          "text": "Putting guts in shoppers purses",
+          "items": [
+            "In this video spot we reminded shoppers that their luxury leather was alive",
+            "the video won 1st Place NTEN Do Gooder 'Funny For Good' Award",
+            "it was also a ShortyAwards Social Good Finalist"
+          ]
+        },
+        {
+          "text": "Bloody heart still in purse",
+          "items": [
+            "The video was really all about the reactions of the shoppers",
+            "as they walked around the store they found blood, tissue, and even organs in all the leather goods",
+            "titled 'Beyond Words,' the short was considered comedic and lighthearted",
+            "once again, the social-optimized video was the center of this campaign"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -366,7 +566,15 @@
     {
       "type": "list",
       "items": [
-        "The numbers are in — More than 40 million views when the video was submitted; the campaign created a powerful in-store experience; that environment and those reactions made for viral success without any need for dialog; the innovative social optimized strategy created widespread engagement and press coverage."
+        {
+          "text": "The numbers are in",
+          "items": [
+            "More than 40 million views when the video was submitted",
+            "the campaign created a powerful in-store experience",
+            "that environment and those reactions made for viral success without any need for dialog",
+            "the innovative social optimized strategy created widespread engagement and press coverage"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -413,7 +621,15 @@
     {
       "type": "list",
       "items": [
-        "PETA's Direct Action iOS App — Increased conversion rate by 22% month-over-month; broke 1M+ downloads; achieved millions of actions taken; maintained above a 4.8 app store rating with 1.3k reviews."
+        {
+          "text": "PETA's Direct Action iOS App",
+          "items": [
+            "Increased conversion rate by 22% month-over-month",
+            "broke 1M+ downloads",
+            "achieved millions of actions taken",
+            "maintained above a 4.8 app store rating with 1.3k reviews"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -428,7 +644,15 @@
     {
       "type": "list",
       "items": [
-        "iOS Messages Sticker App — Marketing design lead, worked closely with in-house development team; managed beta testing programs; TestFlight; managed press release and launch communications."
+        {
+          "text": "iOS Messages Sticker App",
+          "items": [
+            "Marketing design lead, worked closely with in-house development team",
+            "managed beta testing programs",
+            "TestFlight",
+            "managed press release and launch communications"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -443,7 +667,16 @@
     {
       "type": "list",
       "items": [
-        "Cruelty-Free Product Database iOS App — Bunny Free App was updated every single day; I relayed fine details between the communications and corporate advocacy departments; I worked closely with the contracted developer; optimization and feature updates had great results; we saw increases in return users (+33.7%) and daily page views (+12%)."
+        {
+          "text": "Cruelty-Free Product Database iOS App",
+          "items": [
+            "Bunny Free App was updated every single day",
+            "I relayed fine details between the communications and corporate advocacy departments",
+            "I worked closely with the contracted developer",
+            "optimization and feature updates had great results",
+            "we saw increases in return users (+33.7%) and daily page views (+12%)"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -477,7 +710,15 @@
     {
       "type": "list",
       "items": [
-        "Playstation-born — I coordinated the iOS and Android launch through marketing; handled communication and writing press releases for launch; executed the cross-media marketing campaigns; reached 1M+ download goal."
+        {
+          "text": "Playstation-born",
+          "items": [
+            "I coordinated the iOS and Android launch through marketing",
+            "handled communication and writing press releases for launch",
+            "executed the cross-media marketing campaigns",
+            "reached 1M+ download goal"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -491,7 +732,18 @@
     {
       "type": "list",
       "items": [
-        "Consulting for an agency — I got to work closely with the development team of the agency that handled our game development; I reviewed game assets to re-imagine the conversational flow; updated the copywriting in the game; improved the emotionality of the visuals; work helped make the game more accessible and engaging; contributed to a +40% increase in user engagement; maintained focus on the core advocacy education messaging."
+        {
+          "text": "Consulting for an agency",
+          "items": [
+            "I got to work closely with the development team of the agency that handled our game development",
+            "I reviewed game assets to re-imagine the conversational flow",
+            "updated the copywriting in the game",
+            "improved the emotionality of the visuals",
+            "work helped make the game more accessible and engaging",
+            "contributed to a +40% increase in user engagement",
+            "maintained focus on the core advocacy education messaging"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -507,7 +759,17 @@
     {
       "type": "list",
       "items": [
-        "This one is for the users — Specifically addressed UX strategy; reviewed user feedback and addressed it head-on; integrated insights into actionable UI writing; produced strategy-development directives; updates resulted in improving completion to 85%; user satisfaction increased to 88%."
+        {
+          "text": "This one is for the users",
+          "items": [
+            "Specifically addressed UX strategy",
+            "reviewed user feedback and addressed it head-on",
+            "integrated insights into actionable UI writing",
+            "produced strategy-development directives",
+            "updates resulted in improving completion to 85%",
+            "user satisfaction increased to 88%"
+          ]
+        }
       ],
       "style": "bluepoints"
     }

@@ -504,6 +504,34 @@ const EntryController = (() => {
      * (and warns). collection_preview returns a placeholder that is filled
      * asynchronously by resolveCollectionPreview.
      */
+    /**
+     * Build a <ul> for a list block, supporting nested items. An item is either:
+     *   - a string (plain leaf bullet), or
+     *   - { text, items } where items is a list of strings or further nested
+     *     {text, items} objects → recursively emits a sub-<ul>.
+     *
+     * Depth is tracked so CSS can style each level differently (different
+     * bullet, indent, font size).
+     */
+    function buildListUL(items, style, depth) {
+        const ul = document.createElement('ul');
+        ul.className = `flow-list style-${style} flow-list--depth-${depth}`;
+        items.forEach(item => {
+            const li = document.createElement('li');
+            if (typeof item === 'string') {
+                li.textContent = item;
+            } else if (item && typeof item === 'object') {
+                li.textContent = item.text || '';
+                if (Array.isArray(item.items) && item.items.length > 0) {
+                    li.classList.add('flow-list__topic');
+                    li.appendChild(buildListUL(item.items, style, depth + 1));
+                }
+            }
+            ul.appendChild(li);
+        });
+        return ul;
+    }
+
     function buildFlowBlock(block, index, project) {
         if (!block || !block.type) return null;
 
@@ -550,16 +578,9 @@ const EntryController = (() => {
             }
 
             case 'list': {
-                const ul = document.createElement('ul');
                 const style = block.style || 'bluepoints';
-                ul.className = `flow-list style-${style}`;
                 const items = Array.isArray(block.items) ? block.items : [];
-                items.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    ul.appendChild(li);
-                });
-                return ul;
+                return buildListUL(items, style, 0);
             }
 
             case 'chunk_break': {
@@ -999,6 +1020,36 @@ const EntryController = (() => {
      * Initialize lightbox: overlay controls + global click delegation for
      * any <img[data-lightbox-index]> on the page.
      */
+    /**
+     * Hide the entry-page top nav on scroll-down (past 200px), restore on
+     * scroll-up. Same pattern as landing-controller.initNavCollapse — the
+     * .nav-pill hamburger appears while the nav is hidden and brings it
+     * back when clicked.
+     */
+    function initNavCollapse() {
+        const nav = document.getElementById('siteNav');
+        const pill = document.getElementById('navPill');
+        if (!nav || !pill) return;
+
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const cur = window.scrollY;
+            if (cur > 200 && cur > lastScroll) {
+                nav.classList.add('hide');
+                pill.classList.add('vis');
+            } else if (cur < lastScroll - 5) {
+                nav.classList.remove('hide');
+                pill.classList.remove('vis');
+            }
+            lastScroll = cur;
+        }, { passive: true });
+
+        pill.addEventListener('click', () => {
+            nav.classList.remove('hide');
+            pill.classList.remove('vis');
+        });
+    }
+
     function initLightbox() {
         const overlay = document.getElementById('lightbox-overlay');
         if (!overlay) return;
@@ -1242,6 +1293,7 @@ const EntryController = (() => {
             }
 
             initLightbox();
+            initNavCollapse();
             await populateRelatedPosts(project);
         } catch (error) {
             console.error('Error initializing entry page:', error);

@@ -91,8 +91,26 @@
     {
       "type": "list",
       "items": [
-        "The building blocks — Somewhere to gather the initial data; a setup to structure that data; another structure to fit the desired end result of the data; a pipeline that pulled the data in and returned the output it produced with it; a way to integrate this amazing new tool 'ChatGPT' into this pipeline.",
-        "Showcasing the work — Content coming from the building blocks needed somewhere to be displayed; it needed to integrate with the same pipeline; it should be a tool I had used and could quickly iterate upon; this needed a cohesive brand; the core content would need visuals."
+        {
+          "text": "The building blocks",
+          "items": [
+            "Somewhere to gather the initial data",
+            "a setup to structure that data",
+            "another structure to fit the desired end result of the data",
+            "a pipeline that pulled the data in and returned the output it produced with it",
+            "a way to integrate this amazing new tool 'ChatGPT' into this pipeline"
+          ]
+        },
+        {
+          "text": "Showcasing the work",
+          "items": [
+            "Content coming from the building blocks needed somewhere to be displayed",
+            "it needed to integrate with the same pipeline",
+            "it should be a tool I had used and could quickly iterate upon",
+            "this needed a cohesive brand",
+            "the core content would need visuals"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -107,9 +125,36 @@
     {
       "type": "list",
       "items": [
-        "Tools for the job — For 1 hour every week I copied and pasted plant positions and aspects from AstroSeek; I save the daily astrology chart; these assets were placed in Notion databases; Make.com integrated with the databases, other tools, and publishing platforms.",
-        "Writing the astrology basics — Make scheduled automation would trigger; it pulls the planets and passes them into ChatGPT with a prompt; the AI interprets the planetary influences; a handful of different types of copy is written with this information; Make then puts the copy back into a Notion database.",
-        "Publishing automation basics — Make has another scheduled trigger for publishing the copy it wrote as blogs; the assets are pulled and then sent to the Webflow CMS on the Astrofluenced website; Make does the same with images that need text to before it can be posted to social media; if any taglines or captions or even hashtags are needed, they can also be created on the fly; there is another workflow that created text and used images to create video shorts; when complete, social posts are scheduled and posted as desired."
+        {
+          "text": "Tools for the job",
+          "items": [
+            "For 1 hour every week I copied and pasted plant positions and aspects from AstroSeek",
+            "I save the daily astrology chart",
+            "these assets were placed in Notion databases",
+            "Make.com integrated with the databases, other tools, and publishing platforms"
+          ]
+        },
+        {
+          "text": "Writing the astrology basics",
+          "items": [
+            "Make scheduled automation would trigger",
+            "it pulls the planets and passes them into ChatGPT with a prompt",
+            "the AI interprets the planetary influences",
+            "a handful of different types of copy is written with this information",
+            "Make then puts the copy back into a Notion database"
+          ]
+        },
+        {
+          "text": "Publishing automation basics",
+          "items": [
+            "Make has another scheduled trigger for publishing the copy it wrote as blogs",
+            "the assets are pulled and then sent to the Webflow CMS on the Astrofluenced website",
+            "Make does the same with images that need text to before it can be posted to social media",
+            "if any taglines or captions or even hashtags are needed, they can also be created on the fly",
+            "there is another workflow that created text and used images to create video shorts",
+            "when complete, social posts are scheduled and posted as desired"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -129,7 +174,21 @@
     {
       "type": "list",
       "items": [
-        "Hand drawn digital art — Astrofluenced was built on Webflow for the flexibility it offered in the creative process; I created my own art to balance the heavy AI content on the site; all static and UI visuals were created on an iPad Pro with an Apple Pencil; at the time, our decades long minimalism era had ended and maximalism was everywhere; I was into drawing lots of art deco and jungle core; I looked through my work and chose pieces that fit the aesthetic; a few others needed to be polished up first; for the homepage, I drew a large, ornate, gold frame; other works featured flamingos, tigers, geometric palms, as well as other birds and shapes; this work provided every page of the website with a different background."
+        {
+          "text": "Hand drawn digital art",
+          "items": [
+            "Astrofluenced was built on Webflow for the flexibility it offered in the creative process",
+            "I created my own art to balance the heavy AI content on the site",
+            "all static and UI visuals were created on an iPad Pro with an Apple Pencil",
+            "at the time, our decades long minimalism era had ended and maximalism was everywhere",
+            "I was into drawing lots of art deco and jungle core",
+            "I looked through my work and chose pieces that fit the aesthetic",
+            "a few others needed to be polished up first",
+            "for the homepage, I drew a large, ornate, gold frame",
+            "other works featured flamingos, tigers, geometric palms, as well as other birds and shapes",
+            "this work provided every page of the website with a different background"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -140,7 +199,19 @@
     {
       "type": "list",
       "items": [
-        "Hand drawn animations — I needed animated UI that made it fun to scroll the website; I drew out some all white line art like ivy, leaves, rainbow arches, ornate crown-like headings; in Adobe After Effects, I animated the stroke so the animation looked like they're being drawn; exported as Lottie files, they were perfect for creating user triggered interactions on the site; scroll down, and a flowering vine grows across the screen; scroll up and watch it un-draw itself; the website analytics made it pretty clear that people spent a lot of time playing with these; finally, I created custom dropdown menu and other navigation."
+        {
+          "text": "Hand drawn animations",
+          "items": [
+            "I needed animated UI that made it fun to scroll the website",
+            "I drew out some all white line art like ivy, leaves, rainbow arches, ornate crown-like headings",
+            "in Adobe After Effects, I animated the stroke so the animation looked like they're being drawn",
+            "exported as Lottie files, they were perfect for creating user triggered interactions on the site",
+            "scroll down, and a flowering vine grows across the screen",
+            "scroll up and watch it un-draw itself",
+            "the website analytics made it pretty clear that people spent a lot of time playing with these",
+            "finally, I created custom dropdown menu and other navigation"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -156,7 +227,18 @@
     {
       "type": "list",
       "items": [
-        "Preparing written content — This was a massive blog website; it had a collection of 5 different types of horoscopes for all 12 zodiac signs; there was a weekly reading to identify catalysts for interpersonal change; this was paired with identifying catalysts for internal change; then a final third blog for this weekly series that was about integrating the two; daily charts has aspects and planet positions 'translated' for people learning; a weekly planner providing activity ideas based on the weekend and week energy."
+        {
+          "text": "Preparing written content",
+          "items": [
+            "This was a massive blog website",
+            "it had a collection of 5 different types of horoscopes for all 12 zodiac signs",
+            "there was a weekly reading to identify catalysts for interpersonal change",
+            "this was paired with identifying catalysts for internal change",
+            "then a final third blog for this weekly series that was about integrating the two",
+            "daily charts has aspects and planet positions 'translated' for people learning",
+            "a weekly planner providing activity ideas based on the weekend and week energy"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -171,7 +253,16 @@
     {
       "type": "list",
       "items": [
-        "Now we need a lot of artwork — Every single post included a freshly created brand artwork; these were generated using key words found in each reading; keywords were placed into Adobe Firefly; then we added some basic aesthetic guides that fit the mood of the keywords; a hundred or so images are generated for the week."
+        {
+          "text": "Now we need a lot of artwork",
+          "items": [
+            "Every single post included a freshly created brand artwork",
+            "these were generated using key words found in each reading",
+            "keywords were placed into Adobe Firefly",
+            "then we added some basic aesthetic guides that fit the mood of the keywords",
+            "a hundred or so images are generated for the week"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -186,7 +277,15 @@
     {
       "type": "list",
       "items": [
-        "Curation and publication — Out of a hundred or so images I would select the best 20 or so that fit the mood; Adobe Lightroom makes it super easy to do this very quickly; put the images in Dropbox and they can be picked up by the Make automations; they're placed in Notion and pulled for Video production or images for social or blogs."
+        {
+          "text": "Curation and publication",
+          "items": [
+            "Out of a hundred or so images I would select the best 20 or so that fit the mood",
+            "Adobe Lightroom makes it super easy to do this very quickly",
+            "put the images in Dropbox and they can be picked up by the Make automations",
+            "they're placed in Notion and pulled for Video production or images for social or blogs"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -213,7 +312,19 @@
     {
       "type": "list",
       "items": [
-        "Generating social assets — All of the content that was created for the blogs on the website had a third purpose beyond inspiring images; a large number of automations were created that used this copy to produce promotional assets; these automations could feed a horoscope to ChatGPT and have them write up a Tweet or Instagram post; visuals were viewed in the pipeline by ChatGPT so that copy could be written for automated video short production; automated Instagram stories were posted with copy and images; standard updates of the planets and their translated archetypal energies were published to Facebook; weekly horoscope updates were posted to Facebook; it only occurred to me when building the automations that it was not typical to post hundreds of updates on social every week."
+        {
+          "text": "Generating social assets",
+          "items": [
+            "All of the content that was created for the blogs on the website had a third purpose beyond inspiring images",
+            "a large number of automations were created that used this copy to produce promotional assets",
+            "these automations could feed a horoscope to ChatGPT and have them write up a Tweet or Instagram post",
+            "visuals were viewed in the pipeline by ChatGPT so that copy could be written for automated video short production",
+            "automated Instagram stories were posted with copy and images",
+            "standard updates of the planets and their translated archetypal energies were published to Facebook",
+            "weekly horoscope updates were posted to Facebook",
+            "it only occurred to me when building the automations that it was not typical to post hundreds of updates on social every week"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -228,7 +339,16 @@
     {
       "type": "list",
       "items": [
-        "The final product — The final and most popular product was the Astrofluenced Podcast; we created specific characters who hosted every week; they had carefully crafted personalities: Theodore was the optimist and Stella liked to give the hard truths in the reading; every episode got special cover art based on the mood of the reading; this pipeline was much more intricate than the others because it bounced drafts back and forth between different AI instances."
+        {
+          "text": "The final product",
+          "items": [
+            "The final and most popular product was the Astrofluenced Podcast",
+            "we created specific characters who hosted every week",
+            "they had carefully crafted personalities: Theodore was the optimist and Stella liked to give the hard truths in the reading",
+            "every episode got special cover art based on the mood of the reading",
+            "this pipeline was much more intricate than the others because it bounced drafts back and forth between different AI instances"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -243,7 +363,18 @@
     {
       "type": "list",
       "items": [
-        "Podcast episode generation flow — First the AI came up with the overall story for the podcast from the weekly astrology aspects and planet positions; another AI instance would review this for accuracy to minimize need for human-in-the-loop moments; this was passed to an AI instance that broke the reading into scripts for two characters; the profile for the personality of the characters was carefully crafted and highly detailed; these character profiles were fed into yet another AI along with their scripts to be edited; the edited scripts went into a Text-To-Voice AI tool; the final clips were then neatly placed in a Dropbox folder for each episode."
+        {
+          "text": "Podcast episode generation flow",
+          "items": [
+            "First the AI came up with the overall story for the podcast from the weekly astrology aspects and planet positions",
+            "another AI instance would review this for accuracy to minimize need for human-in-the-loop moments",
+            "this was passed to an AI instance that broke the reading into scripts for two characters",
+            "the profile for the personality of the characters was carefully crafted and highly detailed",
+            "these character profiles were fed into yet another AI along with their scripts to be edited",
+            "the edited scripts went into a Text-To-Voice AI tool",
+            "the final clips were then neatly placed in a Dropbox folder for each episode"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -266,7 +397,18 @@
     {
       "type": "list",
       "items": [
-        "This is when I had to do some work — This is when I stepped in to reap the benefits; I had an Adobe Audition template prepared along with a folder for perfect transition music selections; I dropped the clips into the template and exported the final audio; this audio then went into Adobe After Effects and along with the weekly cover art; the VFX tool created a waveform following the speaking of the characters and transition music; I output this and finalized it in Adobe Premiere Pro where subtitles were generated and then edited for accuracy; that final output was then uploaded and scheduled for publication to Spotify and YouTube."
+        {
+          "text": "This is when I had to do some work",
+          "items": [
+            "This is when I stepped in to reap the benefits",
+            "I had an Adobe Audition template prepared along with a folder for perfect transition music selections",
+            "I dropped the clips into the template and exported the final audio",
+            "this audio then went into Adobe After Effects and along with the weekly cover art",
+            "the VFX tool created a waveform following the speaking of the characters and transition music",
+            "I output this and finalized it in Adobe Premiere Pro where subtitles were generated and then edited for accuracy",
+            "that final output was then uploaded and scheduled for publication to Spotify and YouTube"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
@@ -278,7 +420,14 @@
     {
       "type": "list",
       "items": [
-        "Performance metrics — These Podcasts were before the magic that is Google's NotebookLM was released; this helped them get a bit of traction; over 800 listens, totaling 27 hours played, for 68 total episodes posted."
+        {
+          "text": "Performance metrics",
+          "items": [
+            "These Podcasts were before the magic that is Google's NotebookLM was released",
+            "this helped them get a bit of traction",
+            "over 800 listens, totaling 27 hours played, for 68 total episodes posted"
+          ]
+        }
       ],
       "style": "bluepoints"
     },
