@@ -28,19 +28,22 @@
 
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
+  <!-- NAV — hides on scroll-down, returns on scroll-up; .nav-pill hamburger
+       toggle appears when nav is hidden. Same pattern as entry.html. -->
+  <nav class="site-nav site-nav--entry" id="siteNav">
     <div class="container">
-      <a href="/" class="site-logo">Sean August Horvath</a>
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="mailto:horvathaugust@gmail.com">Contact</a>
-      </nav>
+      <a href="/" class="site-logo" aria-label="Home"><img src="/assets/favicon/favicon.svg" alt=""></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/section.html">All Projects</a></li>
+        <li><a href="mailto:horvathaugust@gmail.com">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
+  <button class="nav-pill" id="navPill" aria-label="Open navigation"><span></span><span></span><span></span></button>
 
   <!-- Main Content -->
-  <main class="container">
+  <main class="container section-main">
 
     <!-- Section toolbar: heading + filter stacked left -->
     <div class="section-toolbar">

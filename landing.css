@@ -960,23 +960,53 @@ a.cred-company:hover {
   color: #fff
 }
 
-/* Mobile: blur covers the full viewport (right half is too narrow for the
-   STUDIO-style HORVATH), HORVATH stays bottom-right but smaller, footer
-   block stretches near full width. */
+/* Mobile: rework the hero composition so the nav, names, and footer block
+   don't collide. Layout becomes:
+   - Top: single-row flex nav (logo | links | contact) — no grid stacking.
+   - Upper-third: AUGUST cutout, full available width.
+   - Just below AUGUST: HORVATH, right-aligned, smaller — stacked under
+     AUGUST instead of bottom-right (which collided with the ABOUT body).
+   - Bottom: ABOUT label + body + CTA + socials. */
 @media (max-width: 47.9375rem) {
   .hero-cyberpunk__blur {
     width: 100%
   }
+  /* Drop the 2-col grid — use flex so logo, links, and contact don't
+     overlap each other. */
   .hero-cyberpunk__nav {
-    padding: 16px 16px;
-    gap: 14px;
-    flex-wrap: wrap
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px
+  }
+  .hero-cyberpunk__nav > .hero-cyberpunk__logo {
+    grid-column: auto;
+    grid-row: auto;
+    flex: 0 0 auto;
+    justify-self: auto
+  }
+  .hero-cyberpunk__logo img {
+    height: 1.5rem
   }
   .hero-cyberpunk__nav-links {
-    gap: 12px
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: auto;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-left: 8px
+  }
+  .hero-cyberpunk__nav-links a,
+  .hero-cyberpunk__contact {
+    font-size: .75rem
   }
   .hero-cyberpunk__contact {
-    margin-left: auto
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: auto;
+    flex: 0 0 auto
   }
   .hero-cyberpunk__name--top {
     top: clamp(76px, 11vh, 120px);
@@ -985,24 +1015,37 @@ a.cred-company:hover {
     max-width: none
   }
   .hero-cyberpunk__name--top h1 {
-    font-size: clamp(3.5rem, 20vw, 8rem)
+    font-size: clamp(3rem, 17vw, 6.5rem)
   }
+  /* HORVATH: stack directly under AUGUST instead of bottom-right, where
+     it overlapped the ABOUT body. Right-aligned, smaller scale. */
   .hero-cyberpunk__name--bottom {
-    bottom: 200px;
-    right: 16px
+    top: calc(clamp(76px, 11vh, 120px) + clamp(2.6rem, 15vw, 5.8rem));
+    bottom: auto;
+    right: 16px;
+    text-align: right
   }
   .hero-cyberpunk__name--bottom span {
-    font-size: clamp(2rem, 10vw, 4rem)
+    font-size: clamp(1.5rem, 7vw, 3rem)
   }
   .hero-cyberpunk__footer {
     left: 16px;
+    right: 16px;
     bottom: 24px;
-    max-width: calc(100% - 32px)
+    max-width: none
+  }
+  .hero-cyberpunk__about-block {
+    margin-bottom: 18px
+  }
+  .hero-cyberpunk__about {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 500
   }
   .hero-cyberpunk__cta-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px
+    gap: 14px
   }
 }
 

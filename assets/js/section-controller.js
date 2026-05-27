@@ -213,6 +213,33 @@
     }
 
     /**
+     * Hide the top nav on scroll-down (past 200px), restore on scroll-up.
+     * Mirrors entry-controller.initNavCollapse — the .nav-pill hamburger
+     * appears while the nav is hidden and brings it back when clicked.
+     */
+    function initNavCollapse() {
+        const nav = document.getElementById('siteNav');
+        const pill = document.getElementById('navPill');
+        if (!nav || !pill) return;
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const cur = window.scrollY;
+            if (cur > 200 && cur > lastScroll) {
+                nav.classList.add('hide');
+                pill.classList.add('vis');
+            } else if (cur < lastScroll - 5) {
+                nav.classList.remove('hide');
+                pill.classList.remove('vis');
+            }
+            lastScroll = cur;
+        }, { passive: true });
+        pill.addEventListener('click', () => {
+            nav.classList.remove('hide');
+            pill.classList.remove('vis');
+        });
+    }
+
+    /**
      * Initialize
      */
     async function init() {
@@ -223,6 +250,7 @@
         await loadProjects();
         setupFilters();
         renderView();
+        initNavCollapse();
     }
 
     init().catch(error => {

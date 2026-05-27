@@ -330,8 +330,10 @@ li a:hover {
   color: var(--color-accent-blue);
 }
 
-/* Spacer so page content isn't hidden under the fixed nav. */
-body > main.entry-container {
+/* Spacer so page content isn't hidden under the fixed nav. Applies to both
+   entry pages (.entry-container) and section pages (.section-main). */
+body > main.entry-container,
+body > main.section-main {
   padding-top: 4rem;
 }
 
@@ -2221,14 +2223,34 @@ body > main.entry-container {
   align-items: flex-start;
 }
 
+/* Desktop multi-image rows: each child shares equal width (flex: 1), but
+   the image's intrinsic aspect-ratio is preserved by height: auto. */
 .flow-img__row > * {
   flex: 1;
   min-width: 0;
 }
 
+.flow-img__row > img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile (<720px): stack vertically and DROP flex sizing on children so
+   the image keeps its intrinsic aspect ratio at 100% column width.
+   With `flex: 1` in column mode, basis 0 + grow 1 collapsed image height. */
 @media (max-width: 44.9375rem) {
   .flow-img__row {
     flex-direction: column;
+  }
+  .flow-img__row > * {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .flow-img__row > img {
+    width: 100%;
+    height: auto;
   }
 }
 
