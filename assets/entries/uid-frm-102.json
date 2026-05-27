@@ -1,0 +1,375 @@
+{
+  "_metadata": {
+    "schema_version": "6.1",
+    "template_type": "project_entry"
+  },
+  "id": "uid-frm-102",
+  "slug": "freelance-marketing-web",
+  "title": "Self-Employed Web Design & Digital Consultancy Highlights",
+  "subtitle": "Ten years of end-to-end freelance work — brand voice, websites, ads, courses, and crisis-response platforms",
+  "seo_title": "Freelance Web Design & Brand — 10-Year Client Roster",
+  "seo_description": "Self-employed brand voice, web design, and digital consultancy work — including a hand-drawn Webflow build for a decade-long client and a COVID-19 PPE platform.",
+  "role": [
+    "Web Developer",
+    "Brand Designer",
+    "Creative Director",
+    "Content Strategist",
+    "Growth Strategist",
+    "Graphic Designer"
+  ],
+  "skill": [
+    "Webflow",
+    "HTML/CSS/JS",
+    "Illustration",
+    "Art Direction",
+    "Analytics",
+    "Copywriting",
+    "Campaign Management",
+    "Social Media Marketing",
+    "Landing Page Design",
+    "Responsive Design",
+    "Lottie",
+    "Animation"
+  ],
+  "product": [
+    "Website",
+    "Brand Identity",
+    "Landing Page",
+    "Marketing Campaign"
+  ],
+  "company": "Freelance",
+  "placement": [
+    "Featured",
+    "Phase A"
+  ],
+  "feature_tile": [
+    "https://cdn.august.style/media/freelance-marketing-web/feature-tile-freelance-marketing-web-1.mp4"
+  ],
+  "tile_alt": "Hand-drawn Webflow UI for a decade-long client and freelance digital consultancy highlights",
+  "layout": "flow",
+  "thumb": [
+    "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-1.webp",
+    "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-2.webp",
+    "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-3.webp",
+    "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-4.webp",
+    "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-5.webp",
+    "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-6.webp",
+    "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-7.webp"
+  ],
+  "thumb_alt": "Freelance digital consultancy work — hand-drawn Webflow UI, COVID PPE platform, influencer growth strategy deck, and brand systems",
+  "img": [],
+  "img_alt": "",
+  "main_media": [],
+  "grids": [],
+  "bleed": [],
+  "bleed_slides": null,
+  "flow": [
+    {
+      "type": "h3",
+      "text": "Digital Business Consultant"
+    },
+    {
+      "type": "p",
+      "text": "At PETA, I owned the data, set the process, reviewed the cuts; I owned the process end to end until I shifted towards scaling, optimizing, and future-proofing the visual and social first focus we established across the, now well-oiled, massive global machine. I valued the autonomy and agency I had worked hard for very much, and it wasn't until my mentor, whom I built everything with, left to start her own consultancy. Soon after she left I was talking with Chelsea Williams, a long time friend with whom I always ended up talking shop with. We shared strategies, advice, and pushed each other to grow. So when she told me she was doing the same as Helena, it started to seem like a viable option."
+    },
+    {
+      "type": "h4",
+      "text": "Selling Outcomes Not Hours"
+    },
+    {
+      "type": "p",
+      "text": "Having run every part of the digital-marketing spectrum, it seems logical to take on a similar challenge again, but for a SMO who need a consultant who could own every process end to end, building out her entire digital business."
+    },
+    {
+      "type": "h5",
+      "text": "Hawaii Physicians Urgent Need for COVID-19 PPE"
+    },
+    {
+      "type": "p",
+      "text": "Before digging into things with my first client, I was hit with some urgent work coming up with a solution to help coordinate the very limited supply of PPE in Hawaii for Physicians during the COVID-19 pandemic."
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-01.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-02.webp"
+      ],
+      "alt": "Hawaii Physicians PPE coordination platform — hero and request flow built rapidly in Squarespace"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Frantic phone call as a brief — I was contacted looking for rush solutions to PPE shortage issues; I suggested I build a platform to connect providers around the state as a first step; a means of facilitating better sharing of what little PPE they did have; I assuring them I'd be available for as long as they needed, any day, any time; that was it; I got a credit card number, assistant's phone number, and got to work.",
+        "Over-communication process — Contacted the assistant to get on the same page; established additional lines of contact; I offered that I'd detail every step and decision with rationale; proposed Squarespace because of my experience there for rapid work; she agreed and was off to gather the copy details I'd need on the site.",
+        "Build process — Squarespace was my best bet for speed and ease of maintenance thanks to experience; set up fresh email account for all account creation on the project; added Mailchimp as I figured they could send health network updates in real time; I built the framework with some placeholders for media and text; receiving materials that were a bit jumbled, I quickly organized and created clarity; structured what seemed like would be a logical hierarchy of information; upon finalizing things I gave the assistant a heads up that I was just about complete; I made things a bit briefer everywhere and the action steps more prominent; ensured non-technical staff could publish real-time with no developer needed; she was very happy with the final product; it was shared widely, ahead of any government efforts in the state."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-03.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-04.webp"
+      ],
+      "alt": "PPE platform detail screens — Mailchimp-integrated supply updates and physician request handoff"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Why it worked — I provided a fast solution that they hadn't yet fully considered; the platform effectively encouraged stronger community during a time of crisis; the one-page site demonstrated clarity and removed all complexity; the Mailchimp account was unexpected, but ended up being heavily utilized; emails went out as the state slowly received PPE supplies in following weeks; no revisions were needed after handoff, which took just a few hours; the site was picked up by local news outlets and promoted for weeks; it provided exactly what an urgent situation where every minute costs lives needed."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "h4",
+      "text": "Crafted Human-Centric Strategy Instead Of Bots"
+    },
+    {
+      "type": "h5",
+      "text": "Pitching New Influencer Business"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-05.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-06.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-07.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-08.webp"
+      ],
+      "alt": "Pitch deck opening — aesthetic moodboard pulled from the influencer's own Instagram, calibrated to her actual taste"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Building foundation — Had been following astrology influencer on Instagram for a while; found them unique, highly intelligent, bookish, and grounded in their craft; took an intensive few hour class training from her; learned to read Astrology charts and translate energy by the end; her teaching method was incredible, pattern based, and engaging; learned different plant roles by looking at the chart as a ship; also learned to read the chart by thinking about it as a map of consciousness; I in turn shared my knowledge, teaching friends; I still exercised the muscle by writing the energy reading for myself most days of the week; continued to follow her and engage smartly on Instagram over the year that followed.",
+        "Creating opportunity — In time I messaged her to see how things were going; she mentioned the brand a few times so I asked if she wanted to meet; that we would chat about where she was at with her brand growth; she happened to be coming out to Santa Monica the next week so we set something casual up.",
+        "Listening and learning — When we met I kept it casual, not coming in with any offers; instead I wanted to learn about her process and goals; she broke down her strengths and struggles; it ended up being a great conversation; about a day passed and then the potential strategy for her came to me; it played into what she felt most comfortable with and avoided what she didn't."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-09.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-10.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-11.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-12.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-13.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-14.webp"
+      ],
+      "alt": "Pitch deck spreads — example grids and content templates calibrated to the influencer's aesthetic"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Her personality in the deck — I put together a deck defining the strategy; I pulled from her actual aesthetic and perceived personal taste; images came from her social profile; I constructed example grids that fit her style and more.",
+        "Testing my strategy idea — Once complete, I reached out to a long time friend and industry peer; Ms. Naftelberg had experience signing and working with influencers agency-side; she had been VP of a major social-first advertising agency in Los Angeles; she went freelance right before I did; impressively Toyota client left with her; she was someone I both admired and trusted implicitly, and frequently bounced ideas off; I sent her the deck for her thoughts; when she liked it, I asked if she might help me close the new business for a signing bonus; she agreed so we set up a call with the potential client that coming week."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "chunk_break",
+      "button_text": "Continue reading"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-15.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-16.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-17.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-18.webp"
+      ],
+      "alt": "Pitch deck strategy pages — audience demographics, engagement patterns, and growth-milestone timelines built on real data instead of bots"
+    },
+    {
+      "type": "list",
+      "items": [
+        "About the strategy — I leaned into the analytics discipline I had built over the years; pulled from experience creating campaigns with award-winning engagement rates; in the deck I made sure all of the numbers pointed at the opportunity; a growth strategy built on real audience data instead of bots and vanity metrics; audience demographics, engagement patterns, and content performance turned into specific moves; content formats to prioritize, audience segments, and growth milestones with timelines; this was during an era when many wannabe influencers were buying likes and follows; we made sure to show her how evident it was when influencers did this; it is clear that someone bought fake followers when their posts have no engagement; this was crafted as a real-person solution; it should serve as a stepping stone towards the next steps in building her audience; the next step was discussed as well, though it wasn't in the deck; the secondary step involved identifying the core 12-20 most engaging followers; influencers then essentially become best friends with those followers; they real relationships built on the content's subject matter."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-19.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-20.webp",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-21.webp"
+      ],
+      "alt": "Closing pages of the influencer pitch deck — next-step plan and milestone roadmap"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A learning experience — This specific client didn't end up booking; the strategy itself was pitched to other potential clients in coming months; it was successful and for a time became a go-to offering for those seeking audience growth."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "h3",
+      "text": "Brand Designer & Web Developer"
+    },
+    {
+      "type": "p",
+      "text": "At PETA, the work I was proudest of was building the organization's brand voice and visual identity and carrying it cleanly across every medium it touched. Consulting was the chance to do that whole job again, start to finish, for one client at a time."
+    },
+    {
+      "type": "h4",
+      "text": "Carrying One Brand Across Every Medium"
+    },
+    {
+      "type": "p",
+      "text": "CK Heals is the clearest example: she's a client I've been working with since 2019. I built her brand's voice, drew its aesthetics, and set up all the different digital mediums she needed. There were times when she needed copywriting, running ads, or help learning how to use new social media platforms. She would send me pictures or direct me to her Instagram so that everything I made for her truly spoke with her personality."
+    },
+    {
+      "type": "chunk_break",
+      "button_text": "Continue reading"
+    },
+    {
+      "type": "h5",
+      "text": "10 Years of Client Growth & Change"
+    },
+    {
+      "type": "p",
+      "text": "When I met this client, she was pioneering as one of the first personal trainers that were moving their business onto video chat. She has only continued to keep growing, learning new modalities, and evolving her practice, and I've been there to adapt her online brand and properties every step of the way."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Original request — Build out entire online presence for the first time; website for 'Skype Personal Training'; setting up social media platforms; writing and running social media advertisements; updating the website with testimonials monthly.",
+        "Developing as her company grew — A few years later it was time to update her website; we needed to expand into more than just personal training; we needed to add information about energy healing; Kajabi was chosen because we had space to build online courses as well."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-26.gif",
+        "https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-27.gif"
+      ],
+      "alt": "Animated previews of CK Heals' Kajabi era — courses, training pages, and brand voice across the site"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Website analytics surprises — Analyzing her web traffic I noticed something powerful; I immediately reached out to share the details; the session time and time on page metrics were normal for most pages; but on the testimonials page, the average session duration was 14 MINUTES; that was profound, wild information and incredibly powerful; it really informed what the website design should be better focused on.",
+        "Redesign uncovered additional benefits — After chatting I recognized her course flow made her online platform redundant; her online platform was still Kajabi; I explained how robust Kajabi was and why it was so expensive; my point was that it seemed unnecessary for her to pay for that platform; the client was obviously very excited."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "h5",
+      "text": "Custom Illustrating Website's UI"
+    },
+    {
+      "type": "p",
+      "text": "I was very excited about putting together this new website. We've worked together for so long now that I decided I would be able to draw all of the website's artwork myself to fit what I learned as her aesthetic over the years."
+    },
+    {
+      "type": "embed_html",
+      "html": "<div class='portfolio-grid'><div class='portfolio-video'><video src='https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-28.mp4' autoplay loop muted playsinline></video></div></div>",
+      "alt": "CK Heals hero animation — hand-drawn iPad illustration animating into the live Webflow site"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Chat takeaway — Clear that we need a site that features testimonials more prominently; no need for online courses; just selling energy healing and personal training; ongoing digital business consulting and social media strategy; occasional Facebook Ads and copywriting; update website with new testimonials roughly once a month.",
+        "The concept — I suggested I'll create all graphic design for backgrounds and other interface; place testimonials on the front page; include client photos and hand drawn digital brand art; build on Webflow for design freedom and fun custom animations."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "chunk_break",
+      "button_text": "Continue reading"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Artwork I prepared — All drawn on iPad Pro with Apple Pencil; new design system; refreshed logo; a different illustration for each page; decorative ornate UI details."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "embed_html",
+      "html": "<div class='portfolio-grid'><div class='portfolio-video'><video src='https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-29.mp4' autoplay loop muted playsinline></video></div><div class='portfolio-video'><video src='https://cdn.august.style/media/freelance-marketing-web/flow-freelance-marketing-web-30.mp4' autoplay loop muted playsinline></video></div></div>",
+      "alt": "Two CK Heals Webflow page captures — hand-drawn illustrations animating across hero, page backgrounds, and decorative UI"
+    },
+    {
+      "type": "p",
+      "text": "The hand-drawn identity is what made the brand feel like her. It is sites like these where the human touch is basically the deliverable. I don't think I've ever used stock images for a client before."
+    },
+    {
+      "type": "h4",
+      "text": "Currently In Development"
+    },
+    {
+      "type": "p",
+      "text": "Right now I'm in the process with this client on the next redesign to their website."
+    },
+    {
+      "type": "h5",
+      "text": "Her Business Is Shifting"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Forest Bathing — New meditative in person focus; help people get out in nature more; encourage socialization.",
+        "Body Activation — Help people learn to connect with their body; use nature to heal."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "h5",
+      "text": "Build Planning Has Begun"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Requirements — Sell the two offerings; provide online version courses; include online booking; Stripe payment integration; testimonials section.",
+        "AI pipeline — Built to help her manage calendar availability; onboard clients; send follow up emails; help her prepare social posts; help her prepare email newsletters; schedule social and email posts.",
+        "Architecture thoughts — Vanilla HTML/CSS/JS; Vercel deploy with prod/dev env setup; custom domain for production.",
+        "Design thoughts — Engaging forest path animation for hero section; make with Nano Banana 3 image; animating it with Kling Video 3.0 and Seedance 2.0; construct with Claude Design first; finish up with Claude Code services."
+      ],
+      "style": "bluepoints"
+    }
+  ],
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
+  "origin_url": "",
+  "origin_url_text": "",
+  "repository": "",
+  "tiles": [],
+  "challenge": "",
+  "approach": "",
+  "result": "",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievements": [
+    {
+      "headline": "10-year client relationship with CK Heals",
+      "details": "Continuous brand voice, websites, ads, courses, and testimonial systems built and rebuilt for one client since 2019 — from her first 'Skype Personal Training' site through a hand-drawn Webflow brand to an in-progress AI-assisted redesign for her next chapter."
+    },
+    {
+      "headline": "Hawaii Physicians PPE platform live in hours",
+      "details": "A frantic phone call became a Squarespace + Mailchimp coordination platform connecting providers across the state with the limited PPE supply, picked up by local news and kept in use for weeks ahead of any government effort."
+    },
+    {
+      "headline": "Original audience-data-first influencer growth offering",
+      "details": "Pitched a growth strategy built on real audience demographics, engagement patterns, and milestone roadmaps — validated by industry peer Ms. Naftelberg — that became a go-to offering for clients seeking real-person audience growth instead of bots."
+    },
+    {
+      "headline": "Hand-drawn iPad UI as the deliverable",
+      "details": "Drew an entire bespoke brand identity on iPad Pro with Apple Pencil — refreshed logo, per-page illustrations, ornate UI details, and animated transitions — carrying one client's voice cleanly across every medium without ever using stock imagery."
+    },
+    {
+      "headline": "Testimonials page averaged 14 minutes of session time",
+      "details": "Web analytics surprised both of us — visitors spent an average of 14 minutes on the testimonials page alone, which directly reshaped the next redesign around proof-of-results and ultimately let the client retire an expensive course platform."
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,339 @@
+{
+  "_metadata": {
+    "schema_version": "6.1",
+    "template_type": "project_entry"
+  },
+  "id": "uid-gbw-103",
+  "slug": "generative-blog-workflow",
+  "title": "Database Powered Generative Content Engine",
+  "subtitle": "A Notion + Make.com + ChatGPT pipeline producing 100+ weekly blogs, social posts, and AI-voiced podcast episodes",
+  "seo_title": "Automated Generative Content Engine — Astrofluenced",
+  "seo_description": "Built before NotebookLM existed — a Notion-driven generative pipeline producing 100+ weekly horoscopes, social assets, and AI-voiced podcast episodes for Astrofluenced.",
+  "role": [
+    "AI & Automation Strategist",
+    "Content Strategist",
+    "Creative Director",
+    "Web Developer",
+    "Brand Designer"
+  ],
+  "skill": [
+    "Make.com",
+    "Notion",
+    "Generative AI",
+    "Automation",
+    "CMS Management",
+    "Webflow",
+    "Adobe Firefly",
+    "After Effects",
+    "Lottie",
+    "Illustration",
+    "Animation",
+    "Publishing",
+    "Copywriting"
+  ],
+  "product": [
+    "CMS Site",
+    "Website",
+    "Animation",
+    "Brand Identity"
+  ],
+  "company": "Freelance",
+  "placement": [
+    "Featured",
+    "Phase B"
+  ],
+  "feature_tile": [
+    "https://cdn.august.style/media/generative-blog-workflow/feature-tile-generative-blog-workflow-1.mp4"
+  ],
+  "tile_alt": "Astrofluenced generative content pipeline — hand-drawn animations on an AI-generated blog and podcast",
+  "layout": "flow",
+  "thumb": [
+    "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-1.webp",
+    "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-2.webp",
+    "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-3.webp",
+    "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-4.webp",
+    "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-5.webp",
+    "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-6.webp",
+    "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-7.webp"
+  ],
+  "thumb_alt": "Astrofluenced — Notion database, Make.com pipelines, AI-generated horoscope artwork, and podcast cover art",
+  "img": [],
+  "img_alt": "",
+  "main_media": [],
+  "grids": [],
+  "bleed": [],
+  "bleed_slides": null,
+  "flow": [
+    {
+      "type": "h3",
+      "text": "Content Systems Architect"
+    },
+    {
+      "type": "p",
+      "text": "The arrival of artificial intelligence was fast, but it brought only clarity. A singular understanding. I've learned what happened in the last all encompassing industrial revolution. Through all of the questions about safety and future uncertainty, none of that mattered; only embracing the change mattered. I needed to learn how to use it and apply it to every skill I possessed and every industry I touched. Discovering this was an opportunity to merge my eye for design and technical fluency was nothing but exciting. For a time, I didn't do much else but learn. To be honest I'm still learning at a faster pace than I ever have before, though I am no longer letting it take complete priority over everything else in my life. In a way, it does feel like I somehow caught up with it and no longer have anything to chase."
+    },
+    {
+      "type": "h4",
+      "text": "Fully Automated Daily Astrological Readings"
+    },
+    {
+      "type": "p",
+      "text": "I quickly recognized that even the earliest GPT release had extensive understanding of astrological archetypes, and it kept telling me it was created to understand human behavior. Putting the two together seemed like a logical next step given I had studied astrology extensively years earlier. I also had just learned the magic that was creating automations in Make.com, and just discovered the power of Notion. After some brainstorming I came up with: 'Astrofluenced', a blog and social media and podcast network that used astrology to create self-help and personal development content."
+    },
+    {
+      "type": "h5",
+      "text": "I Love Creating Process"
+    },
+    {
+      "type": "p",
+      "text": "Long before I had ever heard the terms 'system design' or 'solutions architect' I was at PETA, coming up with new strategy and building the system needed to scale it up for a global organization. There's something magical about finding the simplest form of a logical system, and the idea of creating one that was fully automated sort of blew my mind."
+    },
+    {
+      "type": "list",
+      "items": [
+        "The building blocks — Somewhere to gather the initial data; a setup to structure that data; another structure to fit the desired end result of the data; a pipeline that pulled the data in and returned the output it produced with it; a way to integrate this amazing new tool 'ChatGPT' into this pipeline.",
+        "Showcasing the work — Content coming from the building blocks needed somewhere to be displayed; it needed to integrate with the same pipeline; it should be a tool I had used and could quickly iterate upon; this needed a cohesive brand; the core content would need visuals."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-01.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-02.webp"
+      ],
+      "alt": "Notion databases structuring raw planet positions and aspect data pulled from AstroSeek before the pipeline runs"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Tools for the job — For 1 hour every week I copied and pasted plant positions and aspects from AstroSeek; I save the daily astrology chart; these assets were placed in Notion databases; Make.com integrated with the databases, other tools, and publishing platforms.",
+        "Writing the astrology basics — Make scheduled automation would trigger; it pulls the planets and passes them into ChatGPT with a prompt; the AI interprets the planetary influences; a handful of different types of copy is written with this information; Make then puts the copy back into a Notion database.",
+        "Publishing automation basics — Make has another scheduled trigger for publishing the copy it wrote as blogs; the assets are pulled and then sent to the Webflow CMS on the Astrofluenced website; Make does the same with images that need text to before it can be posted to social media; if any taglines or captions or even hashtags are needed, they can also be created on the fly; there is another workflow that created text and used images to create video shorts; when complete, social posts are scheduled and posted as desired."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-03.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-04.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-05.webp"
+      ],
+      "alt": "Make.com automations and Notion CMS pipeline pushing generated copy out to Webflow and social platforms"
+    },
+    {
+      "type": "h5",
+      "text": "Human Art Covering An AI Blog"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Hand drawn digital art — Astrofluenced was built on Webflow for the flexibility it offered in the creative process; I created my own art to balance the heavy AI content on the site; all static and UI visuals were created on an iPad Pro with an Apple Pencil; at the time, our decades long minimalism era had ended and maximalism was everywhere; I was into drawing lots of art deco and jungle core; I looked through my work and chose pieces that fit the aesthetic; a few others needed to be polished up first; for the homepage, I drew a large, ornate, gold frame; other works featured flamingos, tigers, geometric palms, as well as other birds and shapes; this work provided every page of the website with a different background."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "chunk_break",
+      "button_text": "Continue reading"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Hand drawn animations — I needed animated UI that made it fun to scroll the website; I drew out some all white line art like ivy, leaves, rainbow arches, ornate crown-like headings; in Adobe After Effects, I animated the stroke so the animation looked like they're being drawn; exported as Lottie files, they were perfect for creating user triggered interactions on the site; scroll down, and a flowering vine grows across the screen; scroll up and watch it un-draw itself; the website analytics made it pretty clear that people spent a lot of time playing with these; finally, I created custom dropdown menu and other navigation."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "embed_html",
+      "html": "<div class='portfolio-grid'><div class='portfolio-video'><video src='https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-06.mp4' autoplay loop muted playsinline></video></div></div>",
+      "alt": "Hand-drawn Lottie UI animations on Astrofluenced — flowering vine grows on scroll, un-draws on scroll back up"
+    },
+    {
+      "type": "h5",
+      "text": "Automating 100+ Weekly Blog Posts"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Preparing written content — This was a massive blog website; it had a collection of 5 different types of horoscopes for all 12 zodiac signs; there was a weekly reading to identify catalysts for interpersonal change; this was paired with identifying catalysts for internal change; then a final third blog for this weekly series that was about integrating the two; daily charts has aspects and planet positions 'translated' for people learning; a weekly planner providing activity ideas based on the weekend and week energy."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-07.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-08.webp"
+      ],
+      "alt": "Notion content database showing the weekly horoscope schedule across 5 reading types and 12 zodiac signs"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Now we need a lot of artwork — Every single post included a freshly created brand artwork; these were generated using key words found in each reading; keywords were placed into Adobe Firefly; then we added some basic aesthetic guides that fit the mood of the keywords; a hundred or so images are generated for the week."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-09.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-10.webp"
+      ],
+      "alt": "Adobe Firefly batch — keyword-driven brand artwork generated for the week's horoscopes"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Curation and publication — Out of a hundred or so images I would select the best 20 or so that fit the mood; Adobe Lightroom makes it super easy to do this very quickly; put the images in Dropbox and they can be picked up by the Make automations; they're placed in Notion and pulled for Video production or images for social or blogs."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-11.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-12.webp"
+      ],
+      "alt": "Lightroom curation pulling the strongest 20 of ~100 generated images for the week into the publishing pipeline"
+    },
+    {
+      "type": "h5",
+      "text": "Social Media And Podcast Pipelines"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-13.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-14.webp"
+      ],
+      "alt": "Generated social assets — Tweets, Instagram posts, and Facebook horoscope updates produced from the same Notion source"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Generating social assets — All of the content that was created for the blogs on the website had a third purpose beyond inspiring images; a large number of automations were created that used this copy to produce promotional assets; these automations could feed a horoscope to ChatGPT and have them write up a Tweet or Instagram post; visuals were viewed in the pipeline by ChatGPT so that copy could be written for automated video short production; automated Instagram stories were posted with copy and images; standard updates of the planets and their translated archetypal energies were published to Facebook; weekly horoscope updates were posted to Facebook; it only occurred to me when building the automations that it was not typical to post hundreds of updates on social every week."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-15.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-16.webp"
+      ],
+      "alt": "Astrofluenced podcast cover art generated per episode based on the mood of each week's reading"
+    },
+    {
+      "type": "list",
+      "items": [
+        "The final product — The final and most popular product was the Astrofluenced Podcast; we created specific characters who hosted every week; they had carefully crafted personalities: Theodore was the optimist and Stella liked to give the hard truths in the reading; every episode got special cover art based on the mood of the reading; this pipeline was much more intricate than the others because it bounced drafts back and forth between different AI instances."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-17.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-18.webp"
+      ],
+      "alt": "Theodore and Stella character profiles — carefully crafted personalities driving the podcast script generation"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Podcast episode generation flow — First the AI came up with the overall story for the podcast from the weekly astrology aspects and planet positions; another AI instance would review this for accuracy to minimize need for human-in-the-loop moments; this was passed to an AI instance that broke the reading into scripts for two characters; the profile for the personality of the characters was carefully crafted and highly detailed; these character profiles were fed into yet another AI along with their scripts to be edited; the edited scripts went into a Text-To-Voice AI tool; the final clips were then neatly placed in a Dropbox folder for each episode."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-19.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-20.webp"
+      ],
+      "alt": "Multi-AI script bouncing — story draft, accuracy review, character scripts, and editing all passed across separate AI instances"
+    },
+    {
+      "type": "chunk_break",
+      "button_text": "Continue reading"
+    },
+    {
+      "type": "h5",
+      "text": "Humanity Has A Place"
+    },
+    {
+      "type": "list",
+      "items": [
+        "This is when I had to do some work — This is when I stepped in to reap the benefits; I had an Adobe Audition template prepared along with a folder for perfect transition music selections; I dropped the clips into the template and exported the final audio; this audio then went into Adobe After Effects and along with the weekly cover art; the VFX tool created a waveform following the speaking of the characters and transition music; I output this and finalized it in Adobe Premiere Pro where subtitles were generated and then edited for accuracy; that final output was then uploaded and scheduled for publication to Spotify and YouTube."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "embed_html",
+      "html": "<div class='portfolio-grid'><div class='portfolio-video'><video src='https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-21.mp4' controls playsinline preload='metadata'></video></div><div class='portfolio-video'><video src='https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-22.mp4' controls playsinline preload='metadata'></video></div></div>",
+      "alt": "Two Astrofluenced podcast episodes — waveform-driven cover art animations published to Spotify and YouTube"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Performance metrics — These Podcasts were before the magic that is Google's NotebookLM was released; this helped them get a bit of traction; over 800 listens, totaling 27 hours played, for 68 total episodes posted."
+      ],
+      "style": "bluepoints"
+    },
+    {
+      "type": "img",
+      "images": [
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-23.webp",
+        "https://cdn.august.style/media/generative-blog-workflow/flow-generative-blog-workflow-24.webp"
+      ],
+      "alt": "Spotify and YouTube analytics for the Astrofluenced podcast across all 68 episodes"
+    },
+    {
+      "type": "embed_html",
+      "html": "<iframe width='560' height='315' src='https://www.youtube.com/embed/videoseries?si=md3dpfueA1iJoe4-&amp;list=PLmiHTLtKjrdyt4XBw2NlE_qvJRnHrkDTy&amp;controls=0' title='Astrofluenced podcast playlist — Theodore and Stella' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+      "alt": "Astrofluenced podcast playlist on YouTube — Theodore and Stella read the weekly astrology"
+    }
+  ],
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
+  "origin_url": "",
+  "origin_url_text": "",
+  "repository": "",
+  "tiles": [],
+  "challenge": "",
+  "approach": "",
+  "result": "",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievements": [
+    {
+      "headline": "100+ weekly blog posts auto-generated end-to-end",
+      "details": "Notion → Make.com → ChatGPT → Webflow CMS pipeline produced 5 horoscope types across all 12 zodiac signs every week, plus daily charts and a weekly planner — all triggered from a single weekly data drop."
+    },
+    {
+      "headline": "68 AI-voiced podcast episodes — 800+ listens, 27 hours played",
+      "details": "Astrofluenced episodes auto-scripted from astrology aspects, voiced as two characters (Theodore + Stella), auto-cover-arted, and scheduled to Spotify and YouTube — published before Google's NotebookLM existed."
+    },
+    {
+      "headline": "Multi-AI script orchestration before NotebookLM",
+      "details": "Drafts bounced across separate AI instances — story generation, accuracy review, character script split, personality-driven editing, then TTS — to minimize human-in-the-loop moments while keeping the voice consistent across all 68 episodes."
+    },
+    {
+      "headline": "Hand-drawn Lottie animations across an AI-content site",
+      "details": "Drew all UI flourishes — flowering vines, leaves, rainbow arches, ornate headings — on iPad Pro with Apple Pencil, animated their strokes in After Effects, exported as Lottie, and wired them to scroll triggers so a vine grows and un-draws as visitors move."
+    },
+    {
+      "headline": "Original brand artwork on every page, no stock imagery",
+      "details": "All static and UI visuals on Astrofluenced were original Apple Pencil illustrations — gold-framed homepage, flamingos, tigers, geometric palms — providing a different background per page to balance the AI-generated content."
+    }
+  ],
+  "notes": []
+}

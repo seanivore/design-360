@@ -5,6 +5,8 @@
     "constructivist-profiles": "assets/entries/uid-evn-680.json",
     "pie-claesz-modern-vibes": "assets/entries/uid-fan-459.json",
     "gradient-bauhaus": "assets/entries/uid-fen-036.json",
+    "freelance-marketing-web": "assets/entries/uid-frm-102.json",
+    "generative-blog-workflow": "assets/entries/uid-gbw-103.json",
     "minimalism-bauhaus": "assets/entries/uid-hdp-267.json",
     "personalized-fashion-magazine": "assets/entries/uid-hwi-844.json",
     "surreal-constructivism": "assets/entries/uid-iir-099.json",
@@ -15,6 +17,7 @@
     "flat-bauhaus": "assets/entries/uid-mnu-667.json",
     "notes-app-thot": "assets/entries/uid-nst-245.json",
     "humanistic-exploration": "assets/entries/uid-nvw-152.json",
+    "awards-viral-social": "assets/entries/uid-pva-101.json",
     "css-animated-micro-interactions": "assets/entries/uid-qor-090.json",
     "surreal-heads": "assets/entries/uid-rda-284.json",
     "saas-product-sale-features": "assets/entries/uid-rfr-187.json",
@@ -36,7 +39,7 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 30,
+    "entry_count": 33,
     "collection_count": 0,
     "item_count": 0
   }
