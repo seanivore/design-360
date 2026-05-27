@@ -1,65 +1,54 @@
 {
   "_metadata": {
-    "version": "1.0",
-    "description": "Controls which entries appear in each homepage section. Change tags to reshape the entire homepage for a specific job target."
+    "version": "4.2.3",
+    "description": "Homepage configuration + copy strings. v4.2.3 shape: hero + narrative_spine + featured_tiles + process + credentials + achievements + cta_section."
   },
   "hero": {
-    "filter": {
-      "any": [
-        "Web Developer"
+    "filter": { "any": [] },
+    "about_pool": [
+      "I build the custom AI pipelines companies need to actually adapt to AI. Fifteen years of designing systems for scale, now applied to removing friction between people and the tools they use every day.",
+      "Three phases, one through-line: find the friction, design the system, ship the thing. The tools changed from Photoshop to Make.com to custom agentic pipelines. The instinct didn't.",
+      "I learn fast and think in systems rather than outputs. That's how a marketing strategist becomes a content systems architect becomes the person who builds the AI pipeline your team will actually use."
+    ],
+    "cta_secondary": { "text": "All Projects", "href": "/section.html" }
+  },
+  "narrative_spine": {
+    "phase_a": {
+      "label": "Phase A",
+      "heading": "Foundation",
+      "body": "Before AI, I learned the part of the job that doesn't change. On a two-person social team at PETA, my mentor Helena and I pioneered the rapid, visual-first publishing playbook that the rest of the industry adopted years later — 3.2 billion impressions a year, a #1 engagement rate across nonprofits, viral campaigns that landed in YahooNews, Refinery 29, and a Kanye lyric. Then I went independent and ran every part of that work — strategy, brand, design, build — for clients of my own. This is the foundation the rest of the portfolio is built on: systems thinking, gut-check storytelling, and shipping under real deadlines.",
+      "feature_cards": [
+        { "slug": "awards-viral-social", "subtitle": "Our First Viral Moments, Hijacking #AskSeaWorld, and a foul-mouthed vegan grandma with a billion video views." },
+        { "slug": "freelance-marketing-web", "subtitle": "Carrying one brand across every medium, ten years with a single client, and a hand-drawn website where the human touch was the deliverable." }
       ]
     },
-    "cta_primary_text": "See Web Projects",
-    "cta_secondary": {
-      "text": "All Projects",
-      "filter": {
-        "any": []
-      }
+    "phase_b": {
+      "label": "Phase B",
+      "heading": "Generative Automations",
+      "body": "When the first GPT release shipped, I stopped doing almost anything else and learned. The question that mattered wasn't whether AI was safe or inevitable: it was how to apply it to every skill I already had. The answer turned out to be pipelines: Notion as the structured data layer, Make.com as the connective tissue, ChatGPT as the writer, Adobe Firefly for the art, Webflow for the surface. Then I built one: Astrofluenced, an astrology-based self-help network publishing 100+ blogs a week, a podcast voiced by two AI characters with distinct personalities, and matching social assets. Mostly hands-off, all of it on-brand.",
+      "feature_cards": [
+        { "slug": "generative-blog-workflow", "subtitle": "Fully Automated Daily Astrological Readings, 100+ weekly blogs, hand-drawn artwork covering an AI blog, and a podcast with 68 episodes hosted by characters named Theodore and Stella." }
+      ]
+    },
+    "phase_c": {
+      "label": "Phase C",
+      "heading": "Custom AI Solutions",
+      "body": "Most companies are trying to roll out AI the way they roll out any new software: pick a few people from each department, send them to a seminar, expect them to come back as the \"AI person\" on their team. It doesn't work, because AI isn't that kind of tool. The value isn't in adding it on top of how you already work — it's in rebuilding the work itself.\n\nThat's what Phase C is. Custom digital products built agentically against ironed-out dev protocols, then taken one step further: the friction that's *still* left after launch — updating a website, onboarding clients, scheduling content, pushing a new product to a storefront — gets absorbed into a custom AI pipeline the client already uses every day. They open the same ChatGPT they were already using. It asks what changed. It edits the images, writes the copy, updates the database, and pushes the site. No new tool to learn, no Zapier rats-nest to maintain, no new vendor. This portfolio is one example. The Everlastings webstore is another. The DataEdger investment plan and the Thot App are next."
     }
   },
-  "showcase": {
-    "heading": "Web Development",
-    "tabs": [
-      {
-        "id": "webflow",
-        "label": "Webflow",
-        "filter": {
-          "all": [
-            "Web Developer",
-            "Webflow"
-          ]
-        }
-      },
-      {
-        "id": "framer",
-        "label": "Framer",
-        "filter": {
-          "all": [
-            "Web Developer",
-            "Framer"
-          ]
-        }
-      },
-      {
-        "id": "react",
-        "label": "React",
-        "filter": {
-          "all": [
-            "Web Developer",
-            "React"
-          ]
-        }
-      },
-      {
-        "id": "htmlcssjs",
-        "label": "HTML/CSS/JS",
-        "filter": {
-          "all": [
-            "Web Developer",
-            "HTML/CSS/JS"
-          ]
-        }
-      }
+  "featured_tiles": {
+    "tiles": [
+      { "phase": "Phase A", "filter": { "all": ["Featured", "Phase A"] } },
+      { "phase": "Phase B", "filter": { "all": ["Featured", "Phase B"] } },
+      { "phase": "Phase C", "filter": { "all": ["Featured", "Phase C"] } }
+    ]
+  },
+  "process": {
+    "heading": "Building Custom AI Pipelines",
+    "steps": [
+      { "word": "FOUNDATION", "body": "A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics.", "href": "/section.html?tags=Phase+A" },
+      { "word": "AUTOMATE", "body": "Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social.", "href": "/section.html?tags=Phase+B" },
+      { "word": "EMBED", "body": "Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead.", "href": "/section.html?tags=Phase+C" }
     ]
   },
   "credentials": {
@@ -71,42 +60,10 @@
         "title": "Creative Consultant & Digital Contractor",
         "dates": "2024–Present",
         "tags": [
-          {
-            "label": "Webflow",
-            "filter": {
-              "all": [
-                "Webflow",
-                "Freelance"
-              ]
-            }
-          },
-          {
-            "label": "E-Commerce",
-            "filter": {
-              "all": [
-                "E-Commerce",
-                "Freelance"
-              ]
-            }
-          },
-          {
-            "label": "AI + Automation",
-            "filter": {
-              "all": [
-                "Automation",
-                "Freelance"
-              ]
-            }
-          },
-          {
-            "label": "Generative AI",
-            "filter": {
-              "all": [
-                "Generative AI",
-                "Freelance"
-              ]
-            }
-          }
+          { "label": "Webflow", "filter": { "all": ["Webflow", "Freelance"] } },
+          { "label": "E-Commerce", "filter": { "all": ["E-Commerce", "Freelance"] } },
+          { "label": "AI + Automation", "filter": { "all": ["Automation", "Freelance"] } },
+          { "label": "Generative AI", "filter": { "all": ["Generative AI", "Freelance"] } }
         ]
       },
       {
@@ -115,42 +72,10 @@
         "title": "Art Director",
         "dates": "2020–2023",
         "tags": [
-          {
-            "label": "Brand Identity",
-            "filter": {
-              "all": [
-                "Brand Identity",
-                "Silent Labs"
-              ]
-            }
-          },
-          {
-            "label": "Motion Graphics",
-            "filter": {
-              "all": [
-                "Motion Graphics",
-                "Silent Labs"
-              ]
-            }
-          },
-          {
-            "label": "Illustration",
-            "filter": {
-              "all": [
-                "Illustration",
-                "Silent Labs"
-              ]
-            }
-          },
-          {
-            "label": "Art Direction",
-            "filter": {
-              "all": [
-                "Art Direction",
-                "Silent Labs"
-              ]
-            }
-          }
+          { "label": "Brand Identity", "filter": { "all": ["Brand Identity", "Silent Labs"] } },
+          { "label": "Motion Graphics", "filter": { "all": ["Motion Graphics", "Silent Labs"] } },
+          { "label": "Illustration", "filter": { "all": ["Illustration", "Silent Labs"] } },
+          { "label": "Art Direction", "filter": { "all": ["Art Direction", "Silent Labs"] } }
         ]
       },
       {
@@ -159,42 +84,10 @@
         "title": "SBO Digital Consultant",
         "dates": "2019–2020",
         "tags": [
-          {
-            "label": "Copywriting",
-            "filter": {
-              "all": [
-                "Copywriting",
-                "SEANIVORE GROUP LLC"
-              ]
-            }
-          },
-          {
-            "label": "Content Strategy",
-            "filter": {
-              "all": [
-                "Content Production",
-                "SEANIVORE GROUP LLC"
-              ]
-            }
-          },
-          {
-            "label": "Growth Strategy",
-            "filter": {
-              "all": [
-                "Scaling Systems",
-                "SEANIVORE GROUP LLC"
-              ]
-            }
-          },
-          {
-            "label": "Landing Pages",
-            "filter": {
-              "all": [
-                "Landing Page Design",
-                "SEANIVORE GROUP LLC"
-              ]
-            }
-          }
+          { "label": "Copywriting", "filter": { "all": ["Copywriting", "SEANIVORE GROUP LLC"] } },
+          { "label": "Content Strategy", "filter": { "all": ["Content Production", "SEANIVORE GROUP LLC"] } },
+          { "label": "Growth Strategy", "filter": { "all": ["Scaling Systems", "SEANIVORE GROUP LLC"] } },
+          { "label": "Landing Pages", "filter": { "all": ["Landing Page Design", "SEANIVORE GROUP LLC"] } }
         ]
       },
       {
@@ -203,115 +96,23 @@
         "title": "Marketing Innovations → Senior Strategist",
         "dates": "2011–2018",
         "tags": [
-          {
-            "label": "Content Production",
-            "filter": {
-              "all": [
-                "Content Production",
-                "PETA, Inc."
-              ]
-            }
-          },
-          {
-            "label": "Video Production",
-            "filter": {
-              "all": [
-                "Video Production",
-                "PETA, Inc."
-              ]
-            }
-          },
-          {
-            "label": "Analytics",
-            "filter": {
-              "all": [
-                "Analytics",
-                "PETA, Inc."
-              ]
-            }
-          },
-          {
-            "label": "Art Direction",
-            "filter": {
-              "all": [
-                "Art Direction",
-                "PETA, Inc."
-              ]
-            }
-          }
+          { "label": "Content Production", "filter": { "all": ["Content Production", "PETA, Inc."] } },
+          { "label": "Video Production", "filter": { "all": ["Video Production", "PETA, Inc."] } },
+          { "label": "Analytics", "filter": { "all": ["Analytics", "PETA, Inc."] } },
+          { "label": "Art Direction", "filter": { "all": ["Art Direction", "PETA, Inc."] } }
         ]
       }
     ]
-  },
-  "process": {
-    "heading": "AI & Automation Process",
-    "filter": {
-      "any": [
-        "Automation"
-      ]
-    }
-  },
-  "creative": {
-    "heading": "Creative Production",
-    "cards": [
-      {
-        "label": "Digital Art",
-        "title": "15+ Collections",
-        "filter": {
-          "any": [
-            "Digital Art Collection"
-          ]
-        }
-      },
-      {
-        "label": "Motion & Video",
-        "title": "Social & Brand",
-        "filter": {
-          "any": [
-            "Video"
-          ]
-        }
-      },
-      {
-        "label": "Brand Assets",
-        "title": "Identity & Print",
-        "filter": {
-          "any": [
-            "Brand Identity"
-          ]
-        }
-      }
-    ]
-  },
-  "impact": {
-    "heading": "Advertising Impact",
-    "filter": {
-      "any": [
-        "Advertising"
-      ]
-    }
   },
   "achievements": {
     "heading": "Achievements",
-    "filter": {
-      "any": []
-    }
+    "source": "entries",
+    "limit": null
   },
   "cta_section": {
-    "heading": "Interested in web development?",
-    "primary": {
-      "text": "See All Web Projects",
-      "filter": {
-        "any": [
-          "Web Developer"
-        ]
-      }
-    },
-    "secondary": {
-      "text": "Explore Full Portfolio",
-      "filter": {
-        "any": []
-      }
-    }
+    "heading": "Rebuilding around AI is a ground-up job.",
+    "body": "If your company is trying to do real work with AI — not seminars, not pilots, not another tool slotted on top of the old process — that's the kind of thing I build.",
+    "primary": { "text": "Start a custom pipeline", "href": "mailto:sean@august.style?subject=Custom%20AI%20Pipeline" },
+    "secondary": { "text": "See how Phase C works", "href": "/section.html?tags=Phase+C" }
   }
 }

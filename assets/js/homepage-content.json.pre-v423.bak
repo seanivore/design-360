@@ -1,0 +1,317 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "description": "Controls which entries appear in each homepage section. Change tags to reshape the entire homepage for a specific job target."
+  },
+  "hero": {
+    "filter": {
+      "any": [
+        "Web Developer"
+      ]
+    },
+    "cta_primary_text": "See Web Projects",
+    "cta_secondary": {
+      "text": "All Projects",
+      "filter": {
+        "any": []
+      }
+    }
+  },
+  "showcase": {
+    "heading": "Web Development",
+    "tabs": [
+      {
+        "id": "webflow",
+        "label": "Webflow",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "Webflow"
+          ]
+        }
+      },
+      {
+        "id": "framer",
+        "label": "Framer",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "Framer"
+          ]
+        }
+      },
+      {
+        "id": "react",
+        "label": "React",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "React"
+          ]
+        }
+      },
+      {
+        "id": "htmlcssjs",
+        "label": "HTML/CSS/JS",
+        "filter": {
+          "all": [
+            "Web Developer",
+            "HTML/CSS/JS"
+          ]
+        }
+      }
+    ]
+  },
+  "credentials": {
+    "heading": "Experience",
+    "items": [
+      {
+        "display_name": "FREELANCE",
+        "company": "Freelance",
+        "title": "Creative Consultant & Digital Contractor",
+        "dates": "2024–Present",
+        "tags": [
+          {
+            "label": "Webflow",
+            "filter": {
+              "all": [
+                "Webflow",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "E-Commerce",
+            "filter": {
+              "all": [
+                "E-Commerce",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "AI + Automation",
+            "filter": {
+              "all": [
+                "Automation",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "Generative AI",
+            "filter": {
+              "all": [
+                "Generative AI",
+                "Freelance"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "display_name": "SILENT LABS",
+        "company": "Silent Labs",
+        "title": "Art Director",
+        "dates": "2020–2023",
+        "tags": [
+          {
+            "label": "Brand Identity",
+            "filter": {
+              "all": [
+                "Brand Identity",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Motion Graphics",
+            "filter": {
+              "all": [
+                "Motion Graphics",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Illustration",
+            "filter": {
+              "all": [
+                "Illustration",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Art Direction",
+            "filter": {
+              "all": [
+                "Art Direction",
+                "Silent Labs"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "display_name": "SEANIVORE GROUP",
+        "company": "SEANIVORE GROUP LLC",
+        "title": "SBO Digital Consultant",
+        "dates": "2019–2020",
+        "tags": [
+          {
+            "label": "Copywriting",
+            "filter": {
+              "all": [
+                "Copywriting",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Content Strategy",
+            "filter": {
+              "all": [
+                "Content Production",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Growth Strategy",
+            "filter": {
+              "all": [
+                "Scaling Systems",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Landing Pages",
+            "filter": {
+              "all": [
+                "Landing Page Design",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "display_name": "PETA",
+        "company": "PETA, Inc.",
+        "title": "Marketing Innovations → Senior Strategist",
+        "dates": "2011–2018",
+        "tags": [
+          {
+            "label": "Content Production",
+            "filter": {
+              "all": [
+                "Content Production",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Video Production",
+            "filter": {
+              "all": [
+                "Video Production",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Analytics",
+            "filter": {
+              "all": [
+                "Analytics",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Art Direction",
+            "filter": {
+              "all": [
+                "Art Direction",
+                "PETA, Inc."
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "process": {
+    "heading": "AI & Automation Process",
+    "filter": {
+      "any": [
+        "Automation"
+      ]
+    }
+  },
+  "creative": {
+    "heading": "Creative Production",
+    "cards": [
+      {
+        "label": "Digital Art",
+        "title": "15+ Collections",
+        "filter": {
+          "any": [
+            "Digital Art Collection"
+          ]
+        }
+      },
+      {
+        "label": "Motion & Video",
+        "title": "Social & Brand",
+        "filter": {
+          "any": [
+            "Video"
+          ]
+        }
+      },
+      {
+        "label": "Brand Assets",
+        "title": "Identity & Print",
+        "filter": {
+          "any": [
+            "Brand Identity"
+          ]
+        }
+      }
+    ]
+  },
+  "impact": {
+    "heading": "Advertising Impact",
+    "filter": {
+      "any": [
+        "Advertising"
+      ]
+    }
+  },
+  "achievements": {
+    "heading": "Achievements",
+    "filter": {
+      "any": []
+    }
+  },
+  "cta_section": {
+    "heading": "Interested in web development?",
+    "primary": {
+      "text": "See All Web Projects",
+      "filter": {
+        "any": [
+          "Web Developer"
+        ]
+      }
+    },
+    "secondary": {
+      "text": "Explore Full Portfolio",
+      "filter": {
+        "any": []
+      }
+    }
+  }
+}
