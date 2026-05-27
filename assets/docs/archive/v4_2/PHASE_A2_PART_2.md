@@ -54,6 +54,15 @@ These are additional sections for the `assets/docs/archive/v4_0/PHASE_A2.md` tha
 
 ---
 
+`https://www.august.style/social-advertising-strategy/`
+`https://developer-technologist.august.style/social-advertising-strategy`
+`assets/.media/social-advertising-strategy`
+
+`https://developer-technologist.august.style/scalable-augmented-generative-podcasts`
+`assets/.media/scalable-augmented-generative-podcasts`
+
+---
+
 ## Front-End Specialization
 
 ### Designing Full Learning Experiences

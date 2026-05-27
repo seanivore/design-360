@@ -1,0 +1,16 @@
+**PHASE C**
+
+The significance of this career phase regarding the projects I work on isn't the fact that I'm creating custom, made-to-order digital products like apps, websites, payment platform with contract flow, etc., completely agentically, though that is of course important given how effective our ironed out development protocols `.agent/DEV_RULES.md` are; they've led to extremely smooth and successful development thus far.
+
+The real significance is that I'm identifying any friction that is left with the client/company to use or maintain their digital product, and we're creating AI solutions that are built into whatever model they already use every day, nothing else required. 
+
+1. **This portfolio** website build.
+   - Architecture: `assets/docs/JSON_ARCHITECTURE.md`
+   - Agentic pipeline for creating posts that handles finalizing the copy, taking the images or capturing them as directed from a source, cropping and downsizing the images before updating their filenames with proper naming structure, then putting them in the CDN before adding all of those details, and a few more, to the JSON for the entry: `assets/docs/ENTRY_SOP.md`
+   - Prepared a guide for making this project truly "packaged" and generic to be able to sell it: `assets/docs/PRODUCT_PACKAGE_PLAN.md`
+2. The **Everlastings** client website build.
+   - Initially a similar architecture but with more robust, best-in-class tools, while keeping operating costs almost assuredly still free; we shift from JSON to Supabase and needed to add Stripe custom UI: `assets/docs/EVERLASTINGS_STORE.md`
+   - Though this document is huge, it created an almost completely obstacle free build process, and was strategically designed so that front and back end could be built in parallel, and then the final track was set up so that design review rounds of feedback could happen in parallel with wiring everything up, so the 40k token document is worth the read: `assets/docs/archive/v1_4/v1_4_3_IMPLEMENT_PRESPLIT.md`
+   - We improved upon the AI pipeline that was created to add entries to my portfolio, removing literally all friction for the client when it comes to updating the website; they just go to the same ChatGPT they use every day, and it will ask for details and images, perfect everything, ask for a review, then publish the site update: `assets/docs/PRODUCT_PROTOCOL.md`
+
+It is also important to acknowledge how powerful our protocol preparing business documents with deep market research is `.agent/RESEARCH_PROTOCOL.md` — this is done best when planning the project into that first full picture feature and requirements overview. I think the best example we have for this in action is for the **DataEdger** product — `~/Development/data-edger/docs/DATA_EDGER.md` — you can see really deep analysis of all the competition their flaws, gap validation, robust market research, pricing strategy, and so much more that all results in a very strong, ready for investment pitching business plan complete with executive copies and versions for different audiences. This is something we're almost ready to do for our, technically higher priority, **Thot App** when we finish ironing out all the specifics of the entire build, shown here `~/Development/thot/docs/archive/v5_0/v5_0_0_IMPLEMENT.md` which is an update to the current `~/Development/thot/docs/THOT_APP.md` document. 

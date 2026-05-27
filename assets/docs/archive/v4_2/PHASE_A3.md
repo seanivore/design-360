@@ -59,19 +59,28 @@ III. MOTION & 3D DESIGNER
 
 ---
 
-## Art Director
+`https://developer-technologist.august.style/product-marketing-branding`
+`assets/.media/branding-director-web3/archive/product-marketing-branding`
 
-PETA experience backed up by consulting for clients validated my know how when it comes to taking a brand from nothing to live. Silent Labs had been around for a bit, buy thus far they had only been focused on building their privacy application layer. I was their first non technical-focused hire, but it was my technical aptitude that enabled me to take a product that felt abstract to people in the same industry, and a turn it into something digestible, even for people outside of the industry. 
+`https://developer-technologist.august.style/web3-strategy-branding`
+`assets/.media/branding-director-web3/archive/web3-strategy-branding`
 
-Silent Labs was another opportunity to work from a place of passion and advocacy; we were creating products that would make everyday people's lives safer. 
+`https://www.august.style/visual-artist-process-portfolio/`
+`assets/.media/branding-director-web3/archive/visual-artist-process-portfolio`
+
+`https://www.august.style/technical-defi-content-simplification/`
+`https://developer-technologist.august.style/technical-defi-content-simplification`
+`assets/.media/branding-director-web3/archive/technical-defi-content-simplification`
 
 ---
 
-The consultancy work proved I could own a brand from nothing to live. Silent Labs was where that became a title — Art Director for a Web3 privacy protocol — and a single, hard problem: make something abstract feel human.
+## Art Director
 
-Privacy technology is real, important, and impossible to feel. Cryptography, decentralized identity, data sovereignty — none of it shows up in a picture on its own. And it had to land for two audiences at once: developers who would build on the protocol and check every claim for accuracy, and ordinary people who would benefit from it but had no patience for a whitepaper. This was also the chapter I had been heading toward since PETA — full-time, hands-on, an artist again, this time at the technical frontier.
+Working for clients officially validated that I could effectively take the skills learned from PETA building  and then growing a brand into almost any other industry. I broke down the formula to build out CK Heals LLC's work, and now I'll use the same generic formula to build out Silent Labs' work.
 
 ### Building The Brand System
+
+First and foremost we wanted to start building an archive of digital assets for the brand. I'd learn all the specifics at the same time so that would then have a means for creating the story telling necessary to convey what I'd learned. This didn't just include the technical complexity and the simplest form of the problem they are solving, it also reaching into personal rights core to institutions we love, like Democracy itself. 
 
 Everything started with the identity — the visual language the rest of the work would extend.
 
@@ -93,6 +102,16 @@ Everything started with the identity — the visual language the rest of the wor
     - A full identity system — the same brand-voice-and-aesthetic-across-every-medium work I had done before, now for a protocol
     - Visual metaphors for privacy and security that avoided every lock-and-key cliché
     - Art direction carried across digital, social, and investor-facing collateral, each adapted to its audience while staying coherent
+
+PETA experience backed up by consulting for clients validated my know how when it comes to taking a brand from nothing to live. Silent Labs had been around for a bit, buy thus far they had only been focused on building their privacy application layer. I was their first non technical-focused hire, but it was my technical aptitude that enabled me to take a product that felt abstract to people in the same industry, and a turn it into something digestible, even for people outside of the industry. 
+
+Silent Labs was another opportunity to work from a place of passion and advocacy; we were creating products that would make everyday people's lives safer. 
+
+---
+
+The consultancy work proved I could own a brand from nothing to live. Silent Labs was where that became a title — Art Director for a Web3 privacy protocol — and a single, hard problem: make something abstract feel human.
+
+Privacy technology is real, important, and impossible to feel. Cryptography, decentralized identity, data sovereignty — none of it shows up in a picture on its own. And it had to land for two audiences at once: developers who would build on the protocol and check every claim for accuracy, and ordinary people who would benefit from it but had no patience for a whitepaper. This was also the chapter I had been heading toward since PETA — full-time, hands-on, an artist again, this time at the technical frontier.
 
 ### Making The Technology Legible
 

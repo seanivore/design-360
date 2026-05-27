@@ -54,6 +54,17 @@
 
 ---
 
+`https://design.august.style/projects/autumn-lookbook-part-1`
+`https://www.august.style/personalized-fashion-magazine/`
+`assets/.media/personalized-fashion-magazine`
+
+`assets/.media/blog-lookbook-print-gallery`
+`https://www.august.style/blog-lookbook-print-gallery/`
+`https://ai-generated-content.august.style/`
+
+
+---
+
 ## AI Creative Director
 
 The [content engine in B1](https://www.august.style/animated-cms-weekly-blogs/) proved a single database could run a brand. The next question was whether AI could do the actual *designing* — not assemble a feed of posts, but make creative decisions worth standing behind.

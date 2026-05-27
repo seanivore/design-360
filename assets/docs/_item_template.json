@@ -1,0 +1,24 @@
+{
+  "_metadata": {
+    "schema_version": "1.0",
+    "template_type": "collection_item"
+  },
+  "media": {
+    "id": "uid-xxx-###",
+    "slug": "media-name",
+    "title": "Display Title",
+    "subtitle": "One-line tagline",
+    "seo_title": "SEO Title (50-60 chars)",
+    "seo_description": "SEO description (150-160 chars)",
+    "thumb": [
+      "https://cdn.august.style/media/item/{slug}-thumb.webp"
+    ],
+    "thumb_alt": "Alt text for thumbnail",
+    "tags": [
+      "bauhaus",
+      "art_history",
+      "fashion"
+    ],
+    "notes": []
+  }
+}
