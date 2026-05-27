@@ -33,16 +33,19 @@
 
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
+  <!-- NAV — hides on scroll-down, returns on scroll-up; .nav-pill hamburger
+       toggle appears when nav is hidden. Same pattern as the homepage. -->
+  <nav class="site-nav site-nav--entry" id="siteNav">
     <div class="container">
-      <a href="/" class="site-logo">Sean August Horvath</a>
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="mailto:horvathaugust@gmail.com">Contact</a>
-      </nav>
+      <a href="/" class="site-logo" aria-label="Home"><img src="/assets/favicon/favicon.svg" alt=""></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/section.html">All Projects</a></li>
+        <li><a href="mailto:horvathaugust@gmail.com">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
+  <button class="nav-pill" id="navPill" aria-label="Open navigation"><span></span><span></span><span></span></button>
 
   <!-- Main Content -->
   <main class="container entry-container">
@@ -65,15 +68,12 @@
       <h3 id="entry-role"><!-- Populated by JS --></h3>
     </section>
 
-    <!-- Hero: Thumbnail slideshow (sourced from entry.thumb[]) -->
+    <!-- Hero: full-bleed peeking-row of thumbnails (sourced from entry.thumb[]).
+         Mirrors the .tile-gallery pattern from section.html / related posts, but
+         always bleeds full viewport-width on both desktop and mobile. -->
     <section id="entry-hero" class="entry-hero" style="display: none;">
-      <div class="entry-hero-slideshow">
-        <div class="entry-hero-slideshow__slot">
-          <!-- Populated by entry-controller.js: thumbnail slide(s) -->
-        </div>
-        <div class="entry-hero-slideshow__pagination" hidden>
-          <!-- Populated by entry-controller.js; hidden when only one thumb -->
-        </div>
+      <div class="entry-hero-gallery">
+        <!-- Populated by entry-controller.js: one <img class="entry-hero-tile"> per thumb -->
       </div>
     </section>
 
