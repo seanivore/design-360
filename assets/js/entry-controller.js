@@ -647,23 +647,49 @@ const EntryController = (() => {
     }
 
     /**
-     * Wire the chunk-break button: on click, unhide every sibling that
-     * comes after the chunk-break wrapper in the same parent.
+     * Wire the chunk-break button. Two trigger paths converge on the same
+     * reveal logic per Sean's "best of both worlds" direction:
+     *   1. Manual: explicit click on the button.
+     *   2. Auto-scroll: IntersectionObserver fires the reveal when the
+     *      button comes into view, so a scrolling reader never needs to
+     *      stop and click. The button stays as a visible affordance until
+     *      either trigger fires.
      */
     function wireChunkBreak(chunkEl, parent) {
         const btn = chunkEl.querySelector('.flow-chunk-break__btn');
         if (!btn) return;
 
-        btn.addEventListener('click', () => {
-            // Reveal every sibling after chunkEl that's marked hidden.
+        let revealed = false;
+        const reveal = () => {
+            if (revealed) return;
+            revealed = true;
             const hidden = parent.querySelectorAll('.flow-chunk-hidden');
             hidden.forEach(el => {
                 el.classList.remove('flow-chunk-hidden');
                 el.classList.add('flow-chunk-revealed');
             });
-            // Remove the button itself.
             btn.remove();
-        });
+        };
+
+        btn.addEventListener('click', reveal);
+
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        reveal();
+                        obs.disconnect();
+                    }
+                });
+            }, {
+                // Fire when the button is just barely visible (~25% into view).
+                // rootMargin pulls the trigger slightly earlier so the reveal
+                // happens before the user fully reaches the button.
+                threshold: 0.1,
+                rootMargin: '0px 0px -10% 0px'
+            });
+            obs.observe(btn);
+        }
     }
 
     /**
