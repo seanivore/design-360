@@ -290,13 +290,14 @@ const DataLoader = (() => {
   }
 
   /**
-   * Get all tags from a project (role + skill + product + company combined)
+   * Get all tags from a project (role + skill + product + placement + company combined)
    */
   function getProjectTags(project) {
     return [
       ...(project.role || []),
       ...(project.skill || []),
       ...(project.product || []),
+      ...(project.placement || []),
       ...(project.company ? [project.company] : [])
     ];
   }

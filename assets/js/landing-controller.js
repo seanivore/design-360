@@ -60,11 +60,16 @@ const LandingController = (() => {
   }
 
   /**
-   * Convert a phase label ("Phase A") to a URL token ("Phase+A").
+   * Convert a phase label ("Phase A") to a URL token ("Phase%20A").
+   *
+   * NOTE: section.html's tag URL parser splits on `+` as the multi-tag
+   * delimiter (e.g. `?tags=Web+Developer+Framer` = AND of two tags). So a
+   * space in a single tag value MUST encode as `%20`, never `+`, or the
+   * tag splits in two ("Phase" AND "A" instead of one tag "Phase A").
    */
   function phaseToURLToken(label) {
     if (!label) return '';
-    return label.replace(/\s+/g, '+');
+    return label.replace(/\s+/g, '%20');
   }
 
   /**

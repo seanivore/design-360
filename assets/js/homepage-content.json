@@ -46,9 +46,9 @@
   "process": {
     "heading": "Building Custom AI Pipelines",
     "steps": [
-      { "word": "FOUNDATION", "body": "A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics.", "href": "/section.html?tags=Phase+A" },
-      { "word": "AUTOMATE", "body": "Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social.", "href": "/section.html?tags=Phase+B" },
-      { "word": "EMBED", "body": "Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead.", "href": "/section.html?tags=Phase+C" }
+      { "word": "FOUNDATION", "body": "A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics.", "href": "/section.html?tags=Phase%20A" },
+      { "word": "AUTOMATE", "body": "Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social.", "href": "/section.html?tags=Phase%20B" },
+      { "word": "EMBED", "body": "Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead.", "href": "/section.html?tags=Phase%20C" }
     ]
   },
   "credentials": {
@@ -113,6 +113,6 @@
     "heading": "Rebuilding around AI is a ground-up job.",
     "body": "If your company is trying to do real work with AI — not seminars, not pilots, not another tool slotted on top of the old process — that's the kind of thing I build.",
     "primary": { "text": "Start a custom pipeline", "href": "mailto:sean@august.style?subject=Custom%20AI%20Pipeline" },
-    "secondary": { "text": "See how Phase C works", "href": "/section.html?tags=Phase+C" }
+    "secondary": { "text": "See how Phase C works", "href": "/section.html?tags=Phase%20C" }
   }
 }
