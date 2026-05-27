@@ -375,8 +375,13 @@ const LandingController = (() => {
   }
 
   /**
-   * CTA SECTION — populate heading, body line, and the two CTA buttons
-   * from content.cta_section.
+   * CTA SECTION — heading, body paragraph, and two CTA buttons (primary +
+   * secondary) stacked centered with the buttons in a row beneath the body.
+   *
+   * Markup intentionally wraps body and buttons in separate blocks so the
+   * .cta-body sits as its own centered paragraph and the .cta-actions row
+   * holds the two .btn anchors side by side (with row → column collapse
+   * on mobile via CSS).
    */
   function renderCTASection(content) {
     const section = document.getElementById('ctaSection');
@@ -401,8 +406,11 @@ const LandingController = (() => {
     const secondary = cta.secondary
       ? `<a class="btn btn-ghost" href="${cta.secondary.href || '#'}">${cta.secondary.text || ''}</a>`
       : '';
+    const actions = (primary || secondary)
+      ? `<div class="cta-actions">${primary}${secondary}</div>`
+      : '';
 
-    buttons.innerHTML = body + primary + secondary;
+    buttons.innerHTML = body + actions;
   }
 
   // ──────────────────────────────────────────────

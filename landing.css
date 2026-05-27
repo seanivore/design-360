@@ -449,27 +449,58 @@ a.cred-company:hover {
 
 /* §9 CTA */
 .cta-section {
-  padding: 48px 0;
+  padding: 64px 0;
   text-align: center
 }
 
 .cta-heading {
-  font-size: 1.375rem;
-  font-weight: 800;
-  margin-bottom: 8px
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 auto 16px;
+  max-width: 38rem
 }
 
 .cta-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   align-items: center;
-  margin-top: 24px
+  gap: 24px;
+  margin-top: 24px;
+  padding: 0 var(--g)
 }
 
-.cta-buttons .btn {
-  width: 100%;
-  max-width: 300px
+.cta-body {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text2)
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px
+}
+
+.cta-actions .btn {
+  min-width: 200px
+}
+
+@media (max-width: 31.9375rem) {
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto
+  }
+  .cta-actions .btn {
+    min-width: 0
+  }
 }
 
 /* CTA trio — animated entrance */
@@ -552,16 +583,9 @@ a.cred-company:hover {
   }
 }
 
-@media(min-width:768px) {
-  .cta-buttons {
-    flex-direction: row;
-    justify-content: center
-  }
-
-  .cta-buttons .btn {
-    width: auto
-  }
-}
+/* v4.2.3: the pre-rewrite `.cta-buttons {flex-direction: row}` desktop
+   override was removed — the new CTA shape stacks body above an actions
+   row (.cta-actions handles its own horizontal layout). */
 
 @media(min-width:1024px) {
   .section-heading {
