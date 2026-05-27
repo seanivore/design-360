@@ -436,6 +436,34 @@ a.cred-company:hover {
   line-height: 1.6
 }
 
+/* Inline source link at the end of an expanded achievement body — links
+   to the entry where the achievement happened. Italic-serif accent to
+   echo the homepage spine + entry h5 treatment. */
+.ach-source {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625em;
+  color: var(--terra);
+  text-decoration: none;
+  margin-left: .35em;
+  white-space: nowrap;
+  transition: color .2s ease
+}
+
+.ach-source:hover {
+  color: var(--mauve)
+}
+
+.ach-source span {
+  display: inline-block;
+  margin-left: 2px;
+  transition: transform .2s ease
+}
+
+.ach-source:hover span {
+  transform: translateX(2px)
+}
+
 /* §9 CTA */
 .cta-section {
   padding: 64px 0;

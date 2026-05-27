@@ -336,12 +336,21 @@ const LandingController = (() => {
     const list = document.getElementById('achievementsList');
     if (!list) return;
 
-    // Flatten all achievements across all projects.
+    // Flatten all achievements across all projects, keeping the parent
+    // entry's slug + title alongside each so the expanded body can link
+    // back to where the achievement actually happened.
     const all = [];
     projects.forEach(project => {
       const arr = Array.isArray(project.achievements) ? project.achievements : [];
       arr.forEach(a => {
-        if (a && a.headline) all.push(a);
+        if (a && a.headline) {
+          all.push({
+            headline: a.headline,
+            details: a.details || '',
+            slug: project.slug || '',
+            title: project.title || ''
+          });
+        }
       });
     });
 
@@ -354,21 +363,26 @@ const LandingController = (() => {
     const items = all.slice(0, limit);
 
     list.innerHTML = items
-      .map(a => (
-        `<div class="ach-item">` +
-          `<button class="ach-header" type="button">` +
-            `<div class="ach-accent trio-sm"><span></span><span></span><span></span></div>` +
-            `<span class="ach-title">${a.headline || ''}</span>` +
-            `<svg class="ach-icon" viewBox="0 0 24 24" aria-hidden="true">` +
-              `<line x1="12" y1="5" x2="12" y2="19"/>` +
-              `<line x1="5" y1="12" x2="19" y2="12"/>` +
-            `</svg>` +
-          `</button>` +
-          `<div class="ach-body">` +
-            `<div class="ach-body-inner">${a.details || ''}</div>` +
-          `</div>` +
-        `</div>`
-      ))
+      .map(a => {
+        const source = a.slug
+          ? ` <a class="ach-source" href="/${a.slug}/">see where this happened <span aria-hidden="true">→</span></a>`
+          : '';
+        return (
+          `<div class="ach-item">` +
+            `<button class="ach-header" type="button">` +
+              `<div class="ach-accent trio-sm"><span></span><span></span><span></span></div>` +
+              `<span class="ach-title">${a.headline}</span>` +
+              `<svg class="ach-icon" viewBox="0 0 24 24" aria-hidden="true">` +
+                `<line x1="12" y1="5" x2="12" y2="19"/>` +
+                `<line x1="5" y1="12" x2="19" y2="12"/>` +
+              `</svg>` +
+            `</button>` +
+            `<div class="ach-body">` +
+              `<div class="ach-body-inner">${a.details}${source}</div>` +
+            `</div>` +
+          `</div>`
+        );
+      })
       .join('');
   }
 
