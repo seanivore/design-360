@@ -458,17 +458,33 @@ const LandingController = (() => {
    */
   function initNavCollapse() {
     const nav = document.getElementById('siteNav');
+    if (!nav) return;
+
+    // Pill is optional on the homepage — the hero-integrated nav doesn't
+    // benefit from a "bring me back" hamburger since the nav lives inside
+    // the hero and reappears on scroll-up anyway. Entry pages still ship
+    // the pill (see entry-controller.initNavCollapse).
     const pill = document.getElementById('navPill');
-    if (!nav || !pill) return;
 
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
       const cur = window.scrollY;
-      if (cur > 200 && cur > lastScroll) { nav.classList.add('hide'); pill.classList.add('vis'); }
-      else if (cur < lastScroll - 5) { nav.classList.remove('hide'); pill.classList.remove('vis'); }
+      if (cur > 200 && cur > lastScroll) {
+        nav.classList.add('hide');
+        if (pill) pill.classList.add('vis');
+      } else if (cur < lastScroll - 5) {
+        nav.classList.remove('hide');
+        if (pill) pill.classList.remove('vis');
+      }
       lastScroll = cur;
     }, { passive: true });
-    pill.addEventListener('click', () => { nav.classList.remove('hide'); pill.classList.remove('vis'); });
+
+    if (pill) {
+      pill.addEventListener('click', () => {
+        nav.classList.remove('hide');
+        pill.classList.remove('vis');
+      });
+    }
   }
 
   return { init };
