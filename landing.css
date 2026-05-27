@@ -299,9 +299,21 @@ a {
 }
 
 .cred-item {
+  display: block;
   background: var(--bg2);
   border-radius: var(--r);
-  padding: 14px 48px
+  padding: 14px 48px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .2s ease, transform .2s ease
+}
+
+.cred-item:hover {
+  background: rgba(255, 255, 255, .06)
+}
+
+.cred-item:hover .cred-company {
+  color: var(--mauve)
 }
 
 .cred-top {
@@ -339,19 +351,24 @@ a.cred-company:hover {
 
 .cred-tags {
   display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch
-}
-
-.cred-tags::-webkit-scrollbar {
-  display: none
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px
 }
 
 .cred-tags .tag {
   white-space: nowrap;
-  flex-shrink: 0
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 999px;
+  pointer-events: none;        /* visually present, not individually clickable */
+  user-select: none
 }
 
 /* v4.2.3: old .process-scroll / .process-card / .process-num / .process-indicator

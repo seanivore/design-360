@@ -296,22 +296,25 @@ const LandingController = (() => {
     list.innerHTML = items
       .map((item, i) => {
         const delay = i < 4 ? ` sr-d${i + 1}` : '';
+        // Tags render as visual <span> pills (not individually clickable);
+        // the whole card is the clickthrough to the company filter so
+        // tag-level routing can be designed properly later. Sean: "let's
+        // just have clicking ANYWHERE on the block of experience go to
+        // the filtered results".
         const tags = (item.tags || []).map(t => {
-          if (typeof t === 'object' && t.filter) {
-            return `<a href="${buildSectionURL(t.filter, 'all')}" class="tag">${t.label}</a>`;
-          }
-          return `<a href="/section.html?tags=${DataLoader.normalizeForURL(t)}" class="tag">${t}</a>`;
+          const label = (typeof t === 'object') ? t.label : t;
+          return `<span class="tag">${label}</span>`;
         }).join('');
         const companyHref = buildSectionURL({ any: [item.company] });
         return (
-          `<div class="cred-item sr${delay}">` +
+          `<a class="cred-item sr${delay}" href="${companyHref}">` +
             `<div class="cred-top">` +
-              `<a href="${companyHref}" class="cred-company">${item.display_name}</a>` +
+              `<span class="cred-company">${item.display_name}</span>` +
               `<span class="cred-dates">${item.dates}</span>` +
             `</div>` +
             `<div class="cred-role">${item.title}</div>` +
             `<div class="cred-tags">${tags}</div>` +
-          `</div>`
+          `</a>`
         );
       })
       .join('');
