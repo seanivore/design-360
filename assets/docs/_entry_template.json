@@ -19,6 +19,11 @@
     "Website"
   ],
   "company": "Freelance",
+  "feature": [
+    "Phase A"
+  ],
+  "feature_video": "https://cdn.august.style/media/{slug}/feature-video-{slug}.mp4",
+  "feature_video_alt": "Short description of the feature video content",
   "layout": "columns",
   "thumb": [
     "https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp"
@@ -92,6 +97,8 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
+  "achievements": [
+    { "headline": "Award name or notable accomplishment", "details": "Description paragraph with context, metric, or press reference." }
+  ],
   "notes": []
 }

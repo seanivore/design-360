@@ -165,6 +165,8 @@ Helena and I knew the nature of social media was its pace, that was part of what
     - Possible opportunity found, Helena starts drafting Tweet-length messages
     - Watching her thinking, I gathered the strongest images that gut-checked me
 
+**chunk_break**
+
   + Opportunity arises
     - Helena spotted Joe Namath, in a giant, white fur coat, waltzing onto the field
     - I explored fur farm images for the most emotional gut check I could find 
@@ -281,6 +283,8 @@ It didn't take long to come up with a strategy to flex our newly established aud
     - Once a household name, now we were something more, something deeper and cultural and savage
     - And that is exactly what PETA wanted 
 
+**chunk_break**
+
 #### #1 Engagement Rate Across Industries
 
 The tactical use of our online audience didn't just craft American culture, next we started getting industry recognition. PRNews Pro might have found earlier reasons to write about our success over these years, but they chose their moment well. 
@@ -375,6 +379,8 @@ In my original social marketing department my role was a bit removed and elevate
     - *Tofucken* garnered over 100 million video views  
     - Today that number is over a billion 
     - This same year we had 1.1 billion Facebook Page impressions
+
+**chunk_break**
 
 #### Graphic Horror For Luxury Shoppers
 
@@ -492,6 +498,8 @@ Heavy copywriting experience and visual storytelling skills translated from soci
 | Visual/Row   | 1                                                                    |
 | Notes        | Just one image in the row                                            |
 | Asset        | `assets/.media/awards-viral-social/flow-awards-viral-social-24.webp` |
+
+**chunk_break**
 
 **BULLETED LIST WITH INDENTED SUB-LISTS**
   + Playstation-born

@@ -142,6 +142,8 @@ Long before I had ever heard the terms 'system design' or 'solutions architect' 
     - Other works featured flamingos, tigers, geometric palms, as well as other birds and shapes 
     - This work provided every page of the website with a different background
 
+**chunk_break**
+
   + Hand drawn animations
     - I needed animated UI that made it fun to scroll the website 
     - I drew out some all white line art like ivy, leaves, rainbow arches, ornate crown-like headings
@@ -280,6 +282,8 @@ Long before I had ever heard the terms 'system design' or 'solutions architect' 
 | Notes       | 2 images in one row, both 1080 px wide, first on left, last on right           |
 | Asset       | `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-19.webp` |
 | Asset       | `assets/.media/generative-blog-workflow/flow-generative-blog-workflow-20.webp` |
+
+**chunk_break**
 
 #### Humanity Has A Place
 

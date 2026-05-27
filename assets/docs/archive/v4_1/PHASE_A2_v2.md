@@ -262,6 +262,8 @@ At [PETA](https://august.style/awards-viral-social), the work I was proudest of 
 
 CK Heals is the clearest example: she's a client I've been working with since 2019. I built her brand's voice, drew its aesthetics, and set up all the different digital mediums she needed. There were times when she needed copywriting, running ads, or help learning how to use new social media platforms. She would send me pictures or direct me to her Instagram so that everything I made for her truly spoke with her personality. 
 
+**chunk_break**
+
 #### 10 Years of Client Growth & Change 
 
 When I met this client, she was pioneering as one of the first personal trainers that were moving their business onto video chat. She has only continued to keep growing, learning new modalities, and evolving her practice, and I've been there the adapt her online brain and properties every step of the way. 
@@ -343,6 +345,8 @@ I was very excited about putting together this new website. We've worked togethe
     - Place testimonials on the front page
     - Include client photos and hand drawn digital brand art
     - Build on Webflow for design freedom and fun custom animations
+
+**chunk_break**
 
   + Artwork I prepared
     - All drawn on iPad Pro with Apple Pencil
