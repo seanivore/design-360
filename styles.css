@@ -2110,6 +2110,83 @@ li a:hover {
   height: 100%;
 }
 
+/* ============================================
+   COLLECTION + MEDIA PAGE COMPONENTS (v4.2.3)
+   ============================================ */
+
+.collection-subtitle {
+  margin-top: var(--space-xs);
+  color: var(--color-text-secondary, #666);
+  font-size: 1.05rem;
+}
+
+.collection-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-block: var(--space-md);
+}
+
+.collection-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.collection-filter-chip:hover {
+  background: currentColor;
+  color: var(--color-bg, #fff);
+}
+
+.collection-filter-chip.is-active {
+  background: currentColor;
+  color: var(--color-bg, #fff);
+}
+
+.collection-filter-clear {
+  margin-left: var(--space-xs);
+  padding: 0.35rem 0.85rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.collection-empty {
+  padding: var(--space-lg) 0;
+  text-align: center;
+  color: var(--color-text-secondary, #666);
+}
+
+/* Related-items horizontal scroll strip (media.html) */
+#item-related-strip {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-xs);
+}
+
+.tile-item--related {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 720px) {
+  .tile-item--related {
+    flex: 0 0 150px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   *,
