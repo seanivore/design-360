@@ -81,15 +81,17 @@
   <!-- ACHIEVEMENTS -->
   <section class="achievements sr" id="achievements">
     <div class="container">
-      <h2 class="section-heading" id="achievementsHeading"><!-- JS --></h2>
-      <div id="achievementsList">
-        <!-- Populated by landing-controller.js as a flat list (no accordion) -->
+      <div class="achievements__inner">
+        <h2 class="section-heading" id="achievementsHeading"><!-- JS --></h2>
+        <div id="achievementsList">
+          <!-- Populated by landing-controller.js — expandable accordion items -->
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA TRIO -->
-  <div class="cta-trio sr"><span></span><span></span><span></span></div>
+  <!-- CTA TRIO — small/minimal spacer before the CTA -->
+  <div class="cta-trio cta-trio--minimal"><span></span><span></span><span></span></div>
 
   <!-- CTA -->
   <section class="cta-section sr" id="ctaSection">
@@ -100,6 +102,9 @@
       </div>
     </div>
   </section>
+
+  <!-- CTA TRIO — big animated finisher AFTER the CTA -->
+  <div class="cta-trio cta-trio--full sr"><span></span><span></span><span></span></div>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="footer">
