@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.1",
+    "schema_version": "6.0",
     "template_type": "project_entry"
   },
   "id": "uid-xxx-###",
@@ -13,13 +13,13 @@
     "Web Developer"
   ],
   "skill": [
-    "HTML/CSS/JS",
-    "React"
+    "HTML/CSS/JS"
   ],
   "product": [
     "Website"
   ],
   "company": "Freelance",
+  "layout": "columns",
   "thumb": [
     "https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp"
   ],
@@ -28,24 +28,48 @@
     "https://cdn.august.style/media/{slug}/img-sq-{slug}-1.webp"
   ],
   "img_alt": "Alt text for square images",
-  "mobile_img": [
-    "https://cdn.august.style/media/{slug}/img-mobile-{slug}-1.webp"
+  "main_media": [
+    {
+      "title": "",
+      "images": [
+        "https://cdn.august.style/media/{slug}/main-1-{slug}-1.webp",
+        "https://cdn.august.style/media/{slug}/main-1-{slug}-2.gif"
+      ],
+      "alt": ""
+    }
   ],
-  "mobile_img_alt": "",
-  "gif": [
-    "https://cdn.august.style/media/{slug}/gif-{slug}-1.gif",
-    "https://cdn.august.style/media/{slug}/gif-{slug}-2.gif"
+  "grids": [
+    {
+      "title": "",
+      "images": [
+        "https://cdn.august.style/media/{slug}/grid-1-{slug}-1.webp"
+      ],
+      "alt": ""
+    }
   ],
-  "gif_alt": "",
-  "grid": [
-    "https://cdn.august.style/media/{slug}/grid-{slug}-1.webp",
-    "https://cdn.august.style/media/{slug}/grid-{slug}-2.webp",
-    "https://cdn.august.style/media/{slug}/grid-{slug}-3.webp"
+  "bleed": [
+    {
+      "images": [
+        "https://cdn.august.style/media/{slug}/bleed-1-{slug}-1.webp",
+        "https://cdn.august.style/media/{slug}/bleed-1-{slug}-2.webp"
+      ],
+      "alt": ""
+    }
   ],
-  "grid_alt": "",
-  "slideshows": [
-    "https://cdn.august.style/media/{slug}/slide-{slug}-1.webp",
-    "https://cdn.august.style/media/{slug}/slide-{slug}-2.webp"
+  "bleed_slides": {
+    "images": [
+      "https://cdn.august.style/media/{slug}/bleed-slide-{slug}-1.webp"
+    ],
+    "alt": ""
+  },
+  "flow": [
+    { "type": "h3", "text": "Section heading" },
+    { "type": "p",  "text": "Paragraph copy." },
+    { "type": "img", "images": ["https://cdn.august.style/media/{slug}/flow-1-{slug}-1.webp"], "alt": "" },
+    { "type": "list", "items": ["First bullet", "Second bullet"], "style": "bluepoints" },
+    { "type": "chunk_break", "button_text": "Continue reading" },
+    { "type": "h3", "text": "Next chapter heading" },
+    { "type": "embed_html", "html": "<blockquote class='twitter-tweet'>...</blockquote>", "alt": "" }
   ],
   "media_url": "",
   "media_embed": "",
@@ -53,6 +77,7 @@
   "origin_url": "",
   "origin_url_text": "",
   "repository": "",
+  "collection_preview": "",
   "tiles": [
     "Tile text 1",
     "Tile text 2"

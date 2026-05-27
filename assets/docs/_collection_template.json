@@ -1,31 +1,25 @@
 {
   "_metadata": {
-    "schema_version": "1.0",
+    "schema_version": "6.0",
     "template_type": "media_collection"
   },
-  "collection": {
-    "id": "uid-xxx-###",
-    "slug": "collection-name",
-    "title": "Display Title",
-    "subtitle": "One-line tagline",
-    "seo_title": "SEO Title (50-60 chars)",
-    "seo_description": "SEO description (150-160 chars)",
-    "role": [
-      "Web Developer"
-    ],
-    "skill": [
-      "HTML/CSS/JS",
-      "React"
-    ],
-    "product": [
-      "Website"
-    ],
-    "company": "Freelance",
-    "thumb": [
-      "https://cdn.august.style/media/collection/{slug}/thumb-{slug}-1.webp"
-    ],
-    "thumb_alt": "Alt text for thumbnail",
-    "media": [],
-    "notes": []
-  }
+  "id": "uid-col-###",
+  "slug": "collection-name",
+  "title": "Display Title",
+  "subtitle": "One-line tagline",
+  "seo_title": "SEO Title (50-60 chars)",
+  "seo_description": "SEO description (150-160 chars)",
+  "role": [],
+  "skill": [],
+  "product": [],
+  "company": "Freelance",
+  "thumb": [
+    "https://cdn.august.style/media/collection/{slug}/thumb-{slug}-1.webp"
+  ],
+  "thumb_alt": "Alt text for collection thumbnail",
+  "media": [
+    "uid-itm-001",
+    "uid-itm-002"
+  ],
+  "notes": []
 }
