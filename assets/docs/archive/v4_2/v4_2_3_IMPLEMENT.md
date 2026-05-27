@@ -120,10 +120,17 @@ The existing lightbox supports `slideshows` and `thumb`. Extend to:
 
 Replace the existing hero block (currently a video-trio + dynamic text + CTA) with:
 
-- Background: a single looping cyberpunk video (mp4, muted, autoplay, playsinline, `object-fit: cover` filling the hero). Source: `https://cdn.august.style/media/home-anim/hero-cyberpunk-FINAL.mp4`. Pre-flight check: video uploaded to CDN before BUILD starts; if 404 at BUILD time, surface to Sean.
+- Background: a single looping cyberpunk video (mp4, muted, autoplay, playsinline, `object-fit: cover` filling the hero). Source must be uploaded to the CDN as described in the `ENTRY_SOP.md` from local hidden source: `/Users/seanivore/Development/360-design/assets/.media/home-anim/hero-cyberpunk-FINAL.mp4` to CDN as `https://cdn.august.style/media/home-anim/hero-cyberpunk-FINAL.mp4` or alternate forward thinking filename. 
 - Foreground: full-bleed blurred-half overlay (left half of viewport, backdrop-filter blur 20px + 50% black overlay).
-- Centerpiece: cutout-letter name "AUGUST" treatment. Letters use `mix-blend-mode: difference` against the blurred half so the video shows through the letterforms. Font is **Bebas Neue** — free Google Font, single weight, strong stencil-like letterforms suited to cutout treatment. The font is carried via CSS variable `--hero-cutout-font` (not in homepage-content.json) so swapping it later is a one-line CSS change.
-- ABOUT pool: a single short line of copy beneath the name, swapping at random on every page load from the array `homepage-content.json.hero.about_pool[]`. CSS for animated text crossfade if needed.
+  - Effect created should be conceptually similar to these still images taken of a hero with the same treatment over an animated video background: 
+    - `assets/.media/home-anim/bg-anim-stills/bg-anim-stills-1.jpg`
+    - `assets/.media/home-anim/bg-anim-stills/bg-anim-stills-2.jpg`
+    - `assets/.media/home-anim/bg-anim-stills/bg-anim-stills-3.jpg`
+    - `assets/.media/home-anim/bg-anim-stills/bg-anim-stills-4.jpg`
+    - `assets/.media/home-anim/bg-anim-stills/bg-anim-stills-5.jpg`
+    - `assets/.media/home-anim/bg-anim-stills/bg-anim-stills-6.jpg`
+- Centerpiece: cutout-letter name "AUGUST" treatment. Letters use `mix-blend-mode: difference` against the blurred half so the video shows through the letter-forms. Font is **Gimlet Display Condensed Black** — found locally in `assets/fonts` and needs to be added to CSS: `assets/fonts/GimletDisplayCond-Black.otf`. A strong stencil-like letter-forms suited to cutout treatment. The font is carried via CSS variable `--hero-cutout-font` (not in homepage-content.json) so swapping it later is a one-line CSS change.
+- ABOUT pool: a single short line of copy beneath the name, swapping at random on every page load from the array `homepage-content.json.hero.about_pool[]`. CSS for animated text cross-fade if needed.
 - Nav: persistent top nav (Work / About / Contact). Same as current site's nav placement — preserve current `nav` element wiring.
 
 ### 4.2. `homepage-content.json` extension
@@ -250,8 +257,6 @@ curl -I https://cdn.august.style/media/home-anim/hero-cyberpunk-FINAL.mp4
 If HTTP 200 with `content-type: video/mp4`: proceed.
 
 If HTTP 404: the source file at `assets/.media/home-anim/hero-cyberpunk-FINAL.mp4` needs uploading. Use the CDN-upload pattern from `ENTRY_SOP.md` (aws s3 sync against R2 with the project's profile). After upload, re-verify the URL returns 200.
-
-If anything else (403, 5xx, wrong content-type): pause and surface to Sean.
 
 ---
 
@@ -449,7 +454,7 @@ Before front-end work begins on any region that depends on CDN assets, verify th
 - `https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4` × 3 (one per new entry, § 6)
 - All `https://cdn.august.style/media/{slug}/...` referenced in each new entry's JSON (§ 6)
 
-If any return non-200, pause and surface to Sean before proceeding.
+If any return non-200, review the `ENTRY_SOP.md` to upload the local file to our CDN. Only CDN URLs should be included on JSON entries.
 
 ### 8.4. `assets/.media/` and `assets/images/`
 
