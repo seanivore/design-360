@@ -1,4 +1,15 @@
-/* v4.2.3: Gimlet Display Condensed for hero cutout treatment. */
+/* v4.2.3: Bernina Sans Compressed (Exbold) — blockier sans for the hero
+   cutout name treatment (AUGUST / HORVATH). Replaces the Gimlet serif,
+   which was kept around as a fallback in case the cutout font fails to
+   load. */
+@font-face {
+  font-family: 'Bernina Sans Compressed';
+  src: url('/assets/fonts/BerninaSans-CompressedExbold.otf') format('opentype');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Gimlet Display Condensed';
   src: url('/assets/fonts/GimletDisplayCond-Black.otf') format('opentype');
@@ -158,55 +169,11 @@ a {
   width: 20px
 }
 
-/* §1 NAV */
-.site-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--bg);
-  border-bottom: 1px solid rgba(255, 255, 255, .06);
-  transition: transform .4s ease
-}
-
-.site-nav .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-  font-size: .875rem;
-  font-weight: 500;
-  letter-spacing: .02em
-}
-
-.nav-links a {
-  color: var(--text2)
-}
-
-.btn-contact {
-  display: inline-flex;
-  align-items: center;
-  font-size: .8125rem;
-  font-weight: 600;
-  padding: 8px 20px;
-  background: transparent;
-  border: 1.5px solid var(--mauve);
-  color: var(--mauve);
-  border-radius: var(--r);
-  cursor: pointer;
-  font-family: var(--f)
-}
-
-.site-nav.hide {
-  transform: translateY(-100%)
-}
+/* §1 NAV — the standalone .site-nav top bar is no longer used on the homepage
+   in v4.2.3 (the nav is now integrated into the hero — see
+   .hero-cyberpunk__nav). The old rules are removed; only the .nav-pill
+   hamburger toggle survives because landing-controller.initNavCollapse
+   still uses it to bring the hero-nav back after scroll-down. */
 
 .nav-pill {
   position: fixed;
@@ -639,17 +606,20 @@ a.cred-company:hover {
 /* ---- Hero (cyberpunk) ----
    Full-viewport-height. Background video covers; left half is blur-overlaid;
    centerpiece "AUGUST" cutout uses mix-blend-mode against the blurred half. */
-/* HERO — cyberpunk video background with a left-half blur/darken overlay.
-   Composition mirrors the bg-anim-stills reference (EMBER layout):
-   - AUGUST sits TOP-LEFT, sized to ~half viewport width, mix-blend cutout
-   - ABOUT label + line sit BOTTOM-LEFT (over the blurred half)
-   - Right half is left clean for the cyberpunk video to read through
-   The hero is full viewport height; nothing is centered. */
+/* HERO — cyberpunk video background with a WHITE-frosted left half. The
+   composition follows the EMBER/bg-anim-stills reference:
+   - Top-left: favicon logo + lowercase +prefix nav links
+   - Top-right: +contact label
+   - AUGUST cutout top-left over the frosted half (mix-blend-mode)
+   - ABOUT + body line + explore-work CTA + socials in bottom-left
+   - HORVATH cutout bottom-right over the unfrosted half
+   Sean: "this should be the smartest design of the whole site". */
 .hero-cyberpunk {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden
+  overflow: hidden;
+  color: #fff
 }
 
 .hero-cyberpunk__bg-video {
@@ -662,33 +632,99 @@ a.cred-company:hover {
   z-index: 0
 }
 
+/* Frost overlay — light/white blur (was dark) so the left half reads as
+   "frosted glass" against the cyberpunk video, not as a black dim. */
 .hero-cyberpunk__blur {
   position: absolute;
   top: 0;
   left: 0;
   width: 50%;
   height: 100%;
-  /* Lighter blur than the original 20px — keeps more of the video readable
-     through the overlay while still giving the left half its dimmer, softer
-     feel for the cutout text to read against. */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, .32);
+  backdrop-filter: blur(14px) saturate(110%);
+  -webkit-backdrop-filter: blur(14px) saturate(110%);
+  background: rgba(255, 255, 255, .12);
+  border-right: 1px solid rgba(255, 255, 255, .06);
   z-index: 1
 }
 
-/* Shared name styling — both AUGUST (top-left) and HORVATH (bottom-right)
-   use the cutout font and mix-blend-mode to read against whatever's behind. */
+/* ---- Integrated nav overlay (top bar of the hero) ---- */
+.hero-cyberpunk__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 56px);
+  padding: clamp(16px, 2.5vh, 28px) clamp(20px, 3vw, 48px);
+  background: transparent;
+  border: none;
+  transition: transform .3s ease
+}
+
+.hero-cyberpunk__nav.hide {
+  transform: translateY(-100%);
+}
+
+.hero-cyberpunk__logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  opacity: .85;
+  transition: opacity .2s ease
+}
+
+.hero-cyberpunk__logo img {
+  height: 1.875rem;
+  width: auto;
+  display: block
+}
+
+.hero-cyberpunk__logo:hover {
+  opacity: 1
+}
+
+.hero-cyberpunk__nav-links {
+  list-style: none;
+  display: flex;
+  gap: clamp(12px, 2vw, 32px);
+  margin: 0;
+  padding: 0
+}
+
+.hero-cyberpunk__nav-links a,
+.hero-cyberpunk__contact {
+  font-size: .8125rem;
+  font-weight: 500;
+  letter-spacing: .03em;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, .8);
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease
+}
+
+.hero-cyberpunk__nav-links a:hover,
+.hero-cyberpunk__contact:hover {
+  color: #fff
+}
+
+.hero-cyberpunk__contact {
+  margin-left: auto
+}
+
+/* ---- Name cutouts ---- */
 .hero-cyberpunk__name {
   position: absolute;
   z-index: 2;
   pointer-events: none;
   color: #fff;
   mix-blend-mode: difference;
-  font-family: var(--hero-cutout-font);
+  font-family: 'Bernina Sans Compressed', 'Agency FB', var(--hero-cutout-font);
   font-weight: 900;
-  letter-spacing: .01em;
-  line-height: .88
+  letter-spacing: -.01em;
+  line-height: .85;
+  text-transform: uppercase
 }
 
 .hero-cyberpunk__name h1,
@@ -700,45 +736,81 @@ a.cred-company:hover {
   color: inherit
 }
 
-/* AUGUST — top-left, sized to roughly fill left half width.
-   Uses width:50% so the responsive font-size from clamp() and the implicit
-   inline-block nature of the h1 anchor the text within the left half.
-   It can visually overflow slightly into the right half (mirrors EMBER ref). */
+/* AUGUST — top-left of the frosted half. Sized to fill the left half;
+   slight overflow into the right half is intentional (EMBER reference). */
 .hero-cyberpunk__name--top {
-  top: clamp(72px, 12vh, 140px);
-  left: var(--g, 24px);
+  top: clamp(84px, 14vh, 160px);
+  left: clamp(20px, 3vw, 48px);
   width: 60%;
   max-width: 60vw
 }
 
 .hero-cyberpunk__name--top h1 {
-  font-size: clamp(4rem, 14vw, 13rem)
+  font-size: clamp(5rem, 17vw, 16rem)
 }
 
-/* ABOUT block — bottom-left, over the blurred half.
-   Small-caps label + body line beneath. Body cross-fades on swap (.is-fading). */
-.hero-cyberpunk__about-block {
+/* HORVATH — bottom-right of the unfrosted half. Smaller than AUGUST so
+   it reads as the family name to AUGUST's first-name accent. */
+.hero-cyberpunk__name--bottom {
+  bottom: clamp(28px, 4.5vh, 56px);
+  right: clamp(20px, 3vw, 48px);
+  text-align: right
+}
+
+.hero-cyberpunk__name--bottom span {
+  font-size: clamp(2.5rem, 8.5vw, 8rem)
+}
+
+/* Subtle vertical rule connecting the nav area to the footer-block ABOUT
+   label (EMBER reference annotation #3). Sits on the same left margin as
+   the AUGUST cutout and the ABOUT label, drawing the eye downward. */
+.hero-cyberpunk__rule {
   position: absolute;
   z-index: 2;
-  bottom: clamp(32px, 6vh, 64px);
-  left: var(--g, 24px);
-  max-width: 42%;
+  left: clamp(20px, 3vw, 48px);
+  top: 35%;
+  bottom: clamp(160px, 24vh, 220px);
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .35));
+  pointer-events: none
+}
+
+@media (max-width: 47.9375rem) {
+  .hero-cyberpunk__rule {
+    display: none
+  }
+}
+
+/* ---- Footer block (bottom-left): ABOUT + body + CTA + socials ---- */
+.hero-cyberpunk__footer {
+  position: absolute;
+  z-index: 2;
+  bottom: clamp(28px, 4.5vh, 56px);
+  left: clamp(20px, 3vw, 48px);
+  max-width: 38%;
   color: #fff
+}
+
+.hero-cyberpunk__about-block {
+  margin-bottom: clamp(20px, 3vh, 32px)
 }
 
 .hero-cyberpunk__about-label {
   font-size: .75rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  opacity: .8;
-  margin-bottom: var(--space-xs, 8px)
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: lowercase;
+  opacity: .75;
+  margin-bottom: 10px
 }
 
 .hero-cyberpunk__about {
   margin: 0;
-  font-size: clamp(.95rem, 1.4vw, 1.1rem);
-  line-height: 1.5;
-  opacity: 1;
+  font-size: clamp(.9375rem, 1.2vw, 1.0625rem);
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: .005em;
+  color: rgba(255, 255, 255, .92);
   transition: opacity .4s ease
 }
 
@@ -746,26 +818,128 @@ a.cred-company:hover {
   opacity: 0
 }
 
-/* Mobile: the right-half clear video is too narrow to host HORVATH; stack
-   the composition vertically. AUGUST stays at top, ABOUT block below it,
-   HORVATH at the very bottom. The blur covers the full viewport on mobile. */
+.hero-cyberpunk__cta-row {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(24px, 4vw, 56px);
+  flex-wrap: wrap
+}
+
+.hero-cyberpunk__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  color: #fff;
+  transition: opacity .2s ease
+}
+
+.hero-cyberpunk__cta-eyebrow {
+  font-size: .6875rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .55
+}
+
+.hero-cyberpunk__cta-label {
+  font-size: .9375rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px
+}
+
+.hero-cyberpunk__cta:hover {
+  opacity: .85
+}
+
+.hero-cyberpunk__cta:hover .hero-cyberpunk__cta-label > span {
+  transform: translateX(2px);
+  transition: transform .2s ease
+}
+
+.hero-cyberpunk__socials {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px
+}
+
+.hero-cyberpunk__socials li {
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+.hero-cyberpunk__socials li::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 0
+}
+
+.hero-cyberpunk__socials a {
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, .8);
+  text-decoration: none;
+  transition: color .2s ease
+}
+
+.hero-cyberpunk__socials a:hover {
+  color: #fff
+}
+
+/* Mobile: blur covers the full viewport (right half is too narrow for the
+   STUDIO-style HORVATH), HORVATH stays bottom-right but smaller, footer
+   block stretches near full width. */
 @media (max-width: 47.9375rem) {
   .hero-cyberpunk__blur {
     width: 100%
   }
+  .hero-cyberpunk__nav {
+    padding: 16px 16px;
+    gap: 14px;
+    flex-wrap: wrap
+  }
+  .hero-cyberpunk__nav-links {
+    gap: 12px
+  }
+  .hero-cyberpunk__contact {
+    margin-left: auto
+  }
   .hero-cyberpunk__name--top {
-    top: clamp(64px, 9vh, 96px);
-    left: var(--space-md, 16px);
-    width: calc(100% - var(--space-md, 16px) * 2);
+    top: clamp(76px, 11vh, 120px);
+    left: 16px;
+    width: calc(100% - 32px);
     max-width: none
   }
   .hero-cyberpunk__name--top h1 {
-    font-size: clamp(3rem, 18vw, 7rem)
+    font-size: clamp(3.5rem, 20vw, 8rem)
   }
-  .hero-cyberpunk__about-block {
-    bottom: clamp(24px, 4vh, 48px);
-    left: var(--space-md, 16px);
-    max-width: calc(100% - var(--space-md, 16px) * 2)
+  .hero-cyberpunk__name--bottom {
+    bottom: 200px;
+    right: 16px
+  }
+  .hero-cyberpunk__name--bottom span {
+    font-size: clamp(2rem, 10vw, 4rem)
+  }
+  .hero-cyberpunk__footer {
+    left: 16px;
+    bottom: 24px;
+    max-width: calc(100% - 32px)
+  }
+  .hero-cyberpunk__cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px
   }
 }
 

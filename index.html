@@ -22,32 +22,56 @@
   <link rel="stylesheet" href="/landing.css">
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="site-nav" id="siteNav">
-    <div class="container">
-      <ul class="nav-links">
-        <li><a href="#featured-tiles">Work</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#credentials">About</a></li>
-      </ul>
-      <a href="#footer" class="btn-contact">Contact</a>
-    </div>
-  </nav>
-  <button class="nav-pill" id="navPill" aria-label="Open navigation"><span></span><span></span><span></span></button>
-
-  <!-- HERO (cyberpunk) -->
+  <!-- HERO (cyberpunk) — nav integrated as overlay; footer-block bottom-left
+       with about copy + CTAs; "HORVATH" anchors bottom-right; the left
+       half is frosted (white blur) so the AUGUST cutout reads against it. -->
   <section id="hero" class="hero-cyberpunk">
     <video class="hero-cyberpunk__bg-video" autoplay muted loop playsinline src="https://cdn.august.style/media/home-anim/hero-cyberpunk-FINAL.mp4"></video>
     <div class="hero-cyberpunk__blur"></div>
 
-    <!-- AUGUST cutout — top-left over the blurred half (mix-blend-mode against the dim/blur).
-         Right half is intentionally left clean for the cyberpunk video to read through. -->
+    <!-- Integrated nav: logo + lowercase +prefix links (left), contact label (right). -->
+    <nav class="hero-cyberpunk__nav site-nav" id="siteNav" aria-label="Primary">
+      <a href="#hero" class="hero-cyberpunk__logo" aria-label="Home">
+        <img src="/assets/favicon/favicon.svg" alt="">
+      </a>
+      <ul class="hero-cyberpunk__nav-links">
+        <li><a href="#featured-tiles">+work</a></li>
+        <li><a href="#process">+process</a></li>
+        <li><a href="#credentials">+about</a></li>
+      </ul>
+      <a href="mailto:sean@august.style" class="hero-cyberpunk__contact">+contact</a>
+    </nav>
+    <button class="nav-pill" id="navPill" aria-label="Open navigation"><span></span><span></span><span></span></button>
+
+    <!-- AUGUST cutout — top-left over the frosted half. -->
     <div class="hero-cyberpunk__name hero-cyberpunk__name--top"><h1>AUGUST</h1></div>
 
-    <!-- ABOUT block: bottom-left, over the blurred half -->
-    <div class="hero-cyberpunk__about-block">
-      <div class="hero-cyberpunk__about-label">ABOUT</div>
-      <p class="hero-cyberpunk__about" id="heroAboutLine"></p>
+    <!-- HORVATH cutout — bottom-right, over the unfrosted half. -->
+    <div class="hero-cyberpunk__name hero-cyberpunk__name--bottom"><span aria-hidden="true">HORVATH</span></div>
+
+    <!-- Subtle vertical rule on the left edge connecting the nav area
+         down to the footer-block ABOUT label (annotation #3 in the
+         EMBER reference). -->
+    <div class="hero-cyberpunk__rule" aria-hidden="true"></div>
+
+    <!-- Footer block: small ABOUT label + body line + CTA row + social links.
+         Sits in the bottom-left of the frosted half. -->
+    <div class="hero-cyberpunk__footer">
+      <div class="hero-cyberpunk__about-block">
+        <div class="hero-cyberpunk__about-label">+about</div>
+        <p class="hero-cyberpunk__about" id="heroAboutLine"></p>
+      </div>
+      <div class="hero-cyberpunk__cta-row">
+        <a href="/section.html" class="hero-cyberpunk__cta">
+          <span class="hero-cyberpunk__cta-eyebrow">double-click and</span>
+          <span class="hero-cyberpunk__cta-label">explore the work <span aria-hidden="true">→</span></span>
+        </a>
+        <ul class="hero-cyberpunk__socials" aria-label="Social">
+          <li><a href="https://github.com/seanivore" target="_blank" rel="noopener">github</a></li>
+          <li><a href="https://www.linkedin.com/in/seanivore/" target="_blank" rel="noopener">linkedin</a></li>
+          <li><a href="https://www.behance.net/seanivore" target="_blank" rel="noopener">behance</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
