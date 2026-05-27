@@ -9,6 +9,9 @@ const DataLoader = (() => {
   const cache = {
     manifest: null,
     projects: new Map(),
+    collections: new Map(),
+    items: new Map(),
+    itemUidIndex: null,
     homepageContent: null
   };
 
@@ -97,6 +100,193 @@ const DataLoader = (() => {
     }
 
     return projects;
+  }
+
+  /**
+   * Load a single collection by its slug
+   * Resolves the JSON path via manifest.collections[slug]; caches the Promise on slug.
+   */
+  async function loadCollection(slug) {
+    if (cache.collections.has(slug)) {
+      return cache.collections.get(slug);
+    }
+
+    const promise = (async () => {
+      try {
+        const manifest = await loadManifest();
+        const jsonPath = manifest.collections && manifest.collections[slug];
+        if (!jsonPath) {
+          return null;
+        }
+        const response = await fetch('/' + jsonPath);
+        if (!response.ok) {
+          throw new Error(`Failed to load collection: ${response.status}`);
+        }
+        return await response.json();
+      } catch (error) {
+        console.error(`Error loading collection ${slug}:`, error);
+        return null;
+      }
+    })();
+
+    cache.collections.set(slug, promise);
+    return promise;
+  }
+
+  /**
+   * Load a single collection item by its slug
+   * Resolves the JSON path via manifest.items[slug]; caches the Promise on slug.
+   */
+  async function loadCollectionItem(slug) {
+    if (cache.items.has(slug)) {
+      return cache.items.get(slug);
+    }
+
+    const promise = (async () => {
+      try {
+        const manifest = await loadManifest();
+        const jsonPath = manifest.items && manifest.items[slug];
+        if (!jsonPath) {
+          return null;
+        }
+        const response = await fetch('/' + jsonPath);
+        if (!response.ok) {
+          throw new Error(`Failed to load item: ${response.status}`);
+        }
+        return await response.json();
+      } catch (error) {
+        console.error(`Error loading collection item ${slug}:`, error);
+        return null;
+      }
+    })();
+
+    cache.items.set(slug, promise);
+    return promise;
+  }
+
+  /**
+   * Build (once, lazily) a UID -> slug index for items.
+   * collection.media[] references UIDs (e.g. "uid-itm-001") but the manifest is
+   * keyed by slug. We walk every item JSON exactly one time, then cache the index.
+   */
+  async function getItemUidIndex() {
+    if (cache.itemUidIndex) {
+      return cache.itemUidIndex;
+    }
+
+    const index = new Map();
+    try {
+      const manifest = await loadManifest();
+      const itemsMap = manifest.items || {};
+      const slugs = Object.keys(itemsMap);
+
+      const loadPromises = slugs.map(slug => loadCollectionItem(slug));
+      const results = await Promise.all(loadPromises);
+
+      results.forEach((item, i) => {
+        if (item && item.id) {
+          index.set(item.id, slugs[i]);
+        }
+      });
+    } catch (error) {
+      console.error('Error building item UID index:', error);
+    }
+
+    cache.itemUidIndex = index;
+    return index;
+  }
+
+  /**
+   * Resolve all items referenced in collection.media[].
+   * collection.media[] is an array of item UIDs; this loads each item JSON
+   * (in parallel) and returns the resolved item objects in the same order.
+   * UIDs not present in the manifest are skipped silently.
+   */
+  async function resolveCollectionMedia(collection) {
+    if (!collection || !Array.isArray(collection.media)) {
+      return [];
+    }
+
+    try {
+      const uidIndex = await getItemUidIndex();
+      const loadPromises = collection.media.map(uid => {
+        const slug = uidIndex.get(uid);
+        if (!slug) return Promise.resolve(null);
+        return loadCollectionItem(slug);
+      });
+
+      const results = await Promise.all(loadPromises);
+      return results.filter(item => item);
+    } catch (error) {
+      console.error('Error resolving collection media:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Union of multiple collections' resolved items, deduped by item.id.
+   * Order: items from the earliest slug come first; later duplicates are dropped.
+   */
+  async function unionCollections(slugs) {
+    if (!Array.isArray(slugs) || slugs.length === 0) {
+      return [];
+    }
+
+    try {
+      const collections = await Promise.all(slugs.map(slug => loadCollection(slug)));
+      const mediaArrays = await Promise.all(
+        collections.map(coll => (coll ? resolveCollectionMedia(coll) : Promise.resolve([])))
+      );
+
+      const seen = new Set();
+      const union = [];
+      mediaArrays.forEach(items => {
+        items.forEach(item => {
+          if (item && item.id && !seen.has(item.id)) {
+            seen.add(item.id);
+            union.push(item);
+          }
+        });
+      });
+
+      return union;
+    } catch (error) {
+      console.error('Error computing union of collections:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Intersection of multiple collections' resolved items.
+   * Returns only items whose id appears in every collection's resolved media.
+   * Result order follows the first collection's media order.
+   */
+  async function intersectCollections(slugs) {
+    if (!Array.isArray(slugs) || slugs.length === 0) {
+      return [];
+    }
+
+    try {
+      const collections = await Promise.all(slugs.map(slug => loadCollection(slug)));
+      const mediaArrays = await Promise.all(
+        collections.map(coll => (coll ? resolveCollectionMedia(coll) : Promise.resolve([])))
+      );
+
+      if (mediaArrays.some(arr => arr.length === 0)) {
+        return [];
+      }
+
+      const idSets = mediaArrays.map(items => new Set(items.map(it => it.id)));
+      const [firstItems, ...restSets] = [mediaArrays[0], ...idSets.slice(1)];
+
+      return firstItems.filter(item => {
+        if (!item || !item.id) return false;
+        return restSets.every(set => set.has(item.id));
+      });
+    } catch (error) {
+      console.error('Error computing intersection of collections:', error);
+      return [];
+    }
   }
 
   /**
@@ -255,6 +445,11 @@ const DataLoader = (() => {
     loadManifest,
     loadProject,
     loadAllProjects,
+    loadCollection,
+    loadCollectionItem,
+    resolveCollectionMedia,
+    unionCollections,
+    intersectCollections,
     filterByAnyTag,
     filterByAllTags,
     getAllTags,
