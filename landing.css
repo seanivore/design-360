@@ -314,7 +314,12 @@ a {
 .cred-list {
   display: flex;
   flex-direction: column;
-  gap: 12px
+  gap: 12px;
+  /* Narrower than the .container's 1200px so the credential cards don't
+     read as full-width banners on desktop — same boxed feel as the
+     Achievements list below. */
+  max-width: 56rem;
+  margin: 0 auto
 }
 
 .cred-item {
