@@ -1,14 +1,26 @@
 /**
- * ENTRY CONTROLLER (v5.1)
- * Manages individual project entry pages
- * Media components: hero, thumb grid + lightbox, GIFs, image grid, multi-slideshow
+ * ENTRY CONTROLLER (v4.2.3)
+ * Manages individual project entry pages with layout-aware rendering.
+ *
+ * Layouts:
+ *   - "columns" (default) — two-column shape with sticky tag/embed column,
+ *     legacy challenge/approach/result body text, plus new main_media / bleed
+ *     / bleed_slides regions.
+ *   - "flow" — typed-block sequence walked from entry.flow[].
+ *
+ * Lightbox-pool contract:
+ *   Any <img> participating in the unified lightbox pool carries
+ *   `data-lightbox-index="<n>"` where <n> is its index in `lightboxPool`
+ *   (module-level array of {src, alt}). Click delegation on document
+ *   reads that index and opens the lightbox at that position.
  */
 
 const EntryController = (() => {
 
-    // Lightbox state
-    let lightboxImages = [];
+    // Unified lightbox state pool (one per page load).
+    let lightboxPool = [];
     let lightboxIndex = 0;
+    let lightboxPreloadLinks = [];
 
     /**
      * Get entry path from URL or sessionStorage
@@ -48,6 +60,16 @@ const EntryController = (() => {
     }
 
     /**
+     * Register an image into the unified lightbox pool.
+     * Returns the assigned index.
+     */
+    function registerLightboxImage(src, alt) {
+        const idx = lightboxPool.length;
+        lightboxPool.push({ src: imgSrc(src), alt: alt || '' });
+        return idx;
+    }
+
+    /**
      * Populate page metadata (SEO tags)
      */
     function populateMetadata(project) {
@@ -75,7 +97,7 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate tag pills grouped by type
+     * Populate tag pills grouped by type (rendered into every `.entry-tags-card`).
      */
     function populateTagsCards(project) {
         const roles = project.role || [];
@@ -117,58 +139,190 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate hero section: video embed (priority) or random thumbnail
+     * Populate the sticky tag column (right side of columns layout):
+     *   - same role/skill/product tag pills as `.entry-tags-card`
+     *   - optional `media_embed` iframe (YouTube/Behance) below the pills
      */
-    function populateHero(project) {
-        const container = document.getElementById('entry-hero');
+    function populateTagColumn(project) {
+        const container = document.getElementById('entry-tag-column');
         if (!container) return;
 
-        if (project.media_embed) {
-            container.innerHTML = `<div class="video-container">${project.media_embed}</div>`;
-            container.style.display = 'block';
-        } else if (project.thumb && project.thumb.length > 0) {
-            const randomThumb = project.thumb[Math.floor(Math.random() * project.thumb.length)];
-            container.innerHTML = `<img src="${imgSrc(randomThumb)}" alt="${project.thumb_alt || project.title}" class="entry-hero-image" loading="eager">`;
-            container.style.display = 'block';
+        const roles = project.role || [];
+        const skills = project.skill || [];
+        const products = project.product || [];
+
+        let html = '<div class="entry-tags-card">';
+
+        if (roles.length > 0) {
+            html += '<div class="tag-pill-group tag-pill-group-role">';
+            html += roles.map(tag => {
+                const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
+                return `<a href="${tagURL}" class="entry-tag entry-tag-role">${tag}</a>`;
+            }).join('');
+            html += '</div>';
         }
+
+        if (skills.length > 0) {
+            html += '<div class="tag-pill-group tag-pill-group-skill">';
+            html += skills.map(tag => {
+                const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
+                return `<a href="${tagURL}" class="entry-tag entry-tag-skill">${tag}</a>`;
+            }).join('');
+            html += '</div>';
+        }
+
+        if (products.length > 0) {
+            html += '<div class="tag-pill-group tag-pill-group-product">';
+            html += products.map(tag => {
+                const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
+                return `<a href="${tagURL}" class="entry-tag entry-tag-product">${tag}</a>`;
+            }).join('');
+            html += '</div>';
+        }
+
+        html += '</div>';
+
+        if (project.media_embed) {
+            html += `<div class="entry-tag-column__embed video-container" aria-label="${project.media_alt || ''}">${project.media_embed}</div>`;
+        }
+
+        container.innerHTML = html;
     }
 
     /**
-     * Populate compact 2-column thumbnail grid with lightbox triggers
+     * Populate the hero thumbnail slideshow into #entry-hero / .entry-hero-slideshow.
+     * Each thumb registers into the lightbox pool. Pagination chrome shows only
+     * when there are 2+ thumbs.
      */
-    function populateThumbGrid(project) {
-        const container = document.getElementById('entry-thumb-grid');
-        if (!container || !project.thumb || project.thumb.length === 0) return;
+    function populateThumbHero(project) {
+        const hero = document.getElementById('entry-hero');
+        if (!hero) return;
 
-        const shuffled = DataLoader.shuffleArray([...project.thumb]);
-        const altText = project.thumb_alt || 'Project image';
+        const thumbs = Array.isArray(project.thumb) ? project.thumb : [];
+        if (thumbs.length === 0) {
+            hero.style.display = 'none';
+            return;
+        }
 
-        // Store for lightbox
-        lightboxImages = shuffled.map(url => imgSrc(url));
+        const slot = hero.querySelector('.entry-hero-slideshow__slot');
+        const pagination = hero.querySelector('.entry-hero-slideshow__pagination');
+        if (!slot) return;
 
-        container.innerHTML = shuffled.map((img, i) => `
-            <img src="${imgSrc(img)}" alt="${altText}" class="entry-thumb" loading="lazy" data-lightbox-index="${i}">
-        `).join('');
+        const altText = project.thumb_alt || project.title || '';
 
-        // Lightbox click handlers
-        container.querySelectorAll('.entry-thumb').forEach(el => {
-            el.addEventListener('click', () => {
-                openLightbox(parseInt(el.dataset.lightboxIndex));
-            });
+        // Build each slide as an <img>. Each one gets a lightbox index.
+        slot.innerHTML = '';
+        const slideEls = thumbs.map((url, i) => {
+            const lightboxIdx = registerLightboxImage(url, altText);
+            const img = document.createElement('img');
+            img.src = imgSrc(url);
+            img.alt = altText;
+            img.className = 'entry-hero-slide';
+            img.loading = i === 0 ? 'eager' : 'lazy';
+            img.dataset.lightboxIndex = String(lightboxIdx);
+            img.style.display = i === 0 ? '' : 'none';
+            slot.appendChild(img);
+            return img;
         });
+
+        hero.style.display = 'block';
+
+        // Single-thumb: hide pagination chrome and bail.
+        if (thumbs.length < 2) {
+            if (pagination) pagination.hidden = true;
+            return;
+        }
+
+        // Multi-thumb: build pagination dots + prev/next arrows.
+        if (!pagination) return;
+        pagination.hidden = false;
+        pagination.innerHTML = '';
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'entry-hero-slideshow__arrow entry-hero-slideshow__prev';
+        prevBtn.setAttribute('aria-label', 'Previous slide');
+        prevBtn.innerHTML = '&lsaquo;';
+        pagination.appendChild(prevBtn);
+
+        const dotsWrap = document.createElement('div');
+        dotsWrap.className = 'entry-hero-slideshow__dots';
+        pagination.appendChild(dotsWrap);
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'entry-hero-slideshow__arrow entry-hero-slideshow__next';
+        nextBtn.setAttribute('aria-label', 'Next slide');
+        nextBtn.innerHTML = '&rsaquo;';
+        pagination.appendChild(nextBtn);
+
+        let current = 0;
+        const dots = thumbs.map((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'entry-hero-slideshow__dot' + (i === 0 ? ' is-active' : '');
+            dot.setAttribute('aria-label', `Slide ${i + 1}`);
+            dot.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(dot);
+            return dot;
+        });
+
+        function goTo(i) {
+            current = (i + thumbs.length) % thumbs.length;
+            slideEls.forEach((el, idx) => {
+                el.style.display = idx === current ? '' : 'none';
+            });
+            dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
+        }
+
+        prevBtn.addEventListener('click', () => goTo(current - 1));
+        nextBtn.addEventListener('click', () => goTo(current + 1));
     }
 
     /**
-     * Populate GIFs section
+     * Walk entry.main_media[] (groups of {title, images[], alt}).
+     * Replaces legacy populateGifs / populateMobileImg.
      */
-    function populateGifs(project) {
-        const container = document.getElementById('entry-gifs');
-        if (!container || !project.gif || project.gif.length === 0) return;
+    function populateMainMedia(project) {
+        const container = document.getElementById('main-media-region');
+        if (!container) return;
 
-        const altText = project.gif_alt || 'Project animation';
-        container.innerHTML = project.gif.map(url => `
-            <img src="${imgSrc(url)}" alt="${altText}" class="entry-gif" loading="lazy">
-        `).join('');
+        const groups = Array.isArray(project.main_media) ? project.main_media : [];
+        const validGroups = groups.filter(g => g && Array.isArray(g.images) && g.images.length > 0);
+
+        if (validGroups.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+
+        container.innerHTML = '';
+        validGroups.forEach(group => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'entry-main-media__group';
+
+            if (group.title) {
+                const heading = document.createElement('h4');
+                heading.className = 'entry-main-media__title';
+                heading.textContent = group.title;
+                wrapper.appendChild(heading);
+            }
+
+            const row = document.createElement('div');
+            row.className = 'entry-main-media__row';
+            const altText = group.alt || project.title || '';
+
+            group.images.forEach(url => {
+                const lightboxIdx = registerLightboxImage(url, altText);
+                const img = document.createElement('img');
+                img.src = imgSrc(url);
+                img.alt = altText;
+                img.className = 'entry-main-media__image';
+                img.loading = 'lazy';
+                img.dataset.lightboxIndex = String(lightboxIdx);
+                row.appendChild(img);
+            });
+
+            wrapper.appendChild(row);
+            container.appendChild(wrapper);
+        });
+
         container.style.display = 'block';
     }
 
@@ -198,9 +352,16 @@ const EntryController = (() => {
                 const grid = document.createElement('div');
                 grid.className = 'entry-image-grid';
                 const altText = group.alt || project.grid_alt || 'Project image';
-                grid.innerHTML = group.images.map(url => `
-                    <img src="${imgSrc(url)}" alt="${altText}" class="entry-grid-image" loading="lazy">
-                `).join('');
+                group.images.forEach(url => {
+                    const lightboxIdx = registerLightboxImage(url, altText);
+                    const img = document.createElement('img');
+                    img.src = imgSrc(url);
+                    img.alt = altText;
+                    img.className = 'entry-grid-image';
+                    img.loading = 'lazy';
+                    img.dataset.lightboxIndex = String(lightboxIdx);
+                    grid.appendChild(img);
+                });
                 wrapper.appendChild(grid);
 
                 groupedContainer.appendChild(wrapper);
@@ -213,14 +374,371 @@ const EntryController = (() => {
         // Legacy flat grid[] path
         if (!legacyContainer || !project.grid || project.grid.length === 0) return;
         const altText = project.grid_alt || 'Project image';
-        legacyContainer.innerHTML = project.grid.map(url => `
-            <img src="${imgSrc(url)}" alt="${altText}" class="entry-grid-image" loading="lazy">
-        `).join('');
+        legacyContainer.innerHTML = '';
+        project.grid.forEach(url => {
+            const lightboxIdx = registerLightboxImage(url, altText);
+            const img = document.createElement('img');
+            img.src = imgSrc(url);
+            img.alt = altText;
+            img.className = 'entry-grid-image';
+            img.loading = 'lazy';
+            img.dataset.lightboxIndex = String(lightboxIdx);
+            legacyContainer.appendChild(img);
+        });
         legacyContainer.style.display = 'grid';
     }
 
     /**
-     * Populate multiple slideshows from slideshows array
+     * Walk entry.bleed[] (groups of {images[], alt}); render full-bleed rows.
+     */
+    function populateBleed(project) {
+        const container = document.getElementById('bleed-region');
+        if (!container) return;
+
+        const groups = Array.isArray(project.bleed) ? project.bleed : [];
+        const validGroups = groups.filter(g => g && Array.isArray(g.images) && g.images.length > 0);
+
+        if (validGroups.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+
+        container.innerHTML = '';
+        validGroups.forEach(group => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'entry-bleed';
+
+            const row = document.createElement('div');
+            row.className = 'entry-bleed__row';
+            const altText = group.alt || project.title || '';
+
+            group.images.forEach(url => {
+                const lightboxIdx = registerLightboxImage(url, altText);
+                const img = document.createElement('img');
+                img.src = imgSrc(url);
+                img.alt = altText;
+                img.className = 'entry-bleed__image';
+                img.loading = 'lazy';
+                img.dataset.lightboxIndex = String(lightboxIdx);
+                row.appendChild(img);
+            });
+
+            wrapper.appendChild(row);
+            container.appendChild(wrapper);
+        });
+
+        container.style.display = 'block';
+    }
+
+    /**
+     * Render entry.bleed_slides ({images[], alt}) as a single full-bleed
+     * slideshow with pagination dots. NOTE: bleed_slides is an OBJECT, not
+     * an array (single slideshow per entry).
+     */
+    function populateBleedSlides(project) {
+        const container = document.getElementById('bleed-slides-region');
+        if (!container) return;
+
+        const data = project.bleed_slides;
+        const images = (data && Array.isArray(data.images)) ? data.images : [];
+
+        if (images.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+
+        const altText = (data && data.alt) || project.title || '';
+
+        container.innerHTML = '';
+        const wrapper = document.createElement('div');
+        wrapper.className = 'entry-bleed-slides';
+
+        const slot = document.createElement('div');
+        slot.className = 'entry-bleed-slides__slot';
+        wrapper.appendChild(slot);
+
+        const slideEls = images.map((url, i) => {
+            const lightboxIdx = registerLightboxImage(url, altText);
+            const img = document.createElement('img');
+            img.src = imgSrc(url);
+            img.alt = altText;
+            img.className = 'entry-bleed-slides__image';
+            img.loading = i === 0 ? 'eager' : 'lazy';
+            img.dataset.lightboxIndex = String(lightboxIdx);
+            img.style.display = i === 0 ? '' : 'none';
+            slot.appendChild(img);
+            return img;
+        });
+
+        if (images.length > 1) {
+            const dotsWrap = document.createElement('div');
+            dotsWrap.className = 'entry-bleed-slides__dots';
+            wrapper.appendChild(dotsWrap);
+
+            let current = 0;
+            const dots = images.map((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'entry-bleed-slides__dot' + (i === 0 ? ' is-active' : '');
+                dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                dot.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    current = i;
+                    slideEls.forEach((el, idx) => {
+                        el.style.display = idx === current ? '' : 'none';
+                    });
+                    dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
+                });
+                dotsWrap.appendChild(dot);
+                return dot;
+            });
+        }
+
+        container.appendChild(wrapper);
+        container.style.display = 'block';
+    }
+
+    /**
+     * Walk entry.flow[] and emit typed-block DOM. Mount into #flow-region.
+     * Each block gets `data-flow-index` for chunk-break sibling targeting.
+     */
+    async function populateFlowLayout(project) {
+        const container = document.getElementById('flow-region');
+        if (!container) return;
+
+        const blocks = Array.isArray(project.flow) ? project.flow : [];
+        if (blocks.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+
+        container.innerHTML = '';
+        let pastChunkBreak = false;
+
+        // Render synchronously first; collection_preview blocks resolve async after.
+        // (Async resolution still mounts in-place via placeholder.)
+        const asyncTasks = [];
+
+        blocks.forEach((block, i) => {
+            const el = buildFlowBlock(block, i, project);
+            if (!el) return;
+
+            el.dataset.flowIndex = String(i);
+
+            if (pastChunkBreak) {
+                el.classList.add('flow-chunk-hidden');
+            }
+
+            container.appendChild(el);
+
+            if (block.type === 'chunk_break') {
+                pastChunkBreak = true;
+                wireChunkBreak(el, container);
+            }
+
+            if (block.type === 'collection_preview') {
+                asyncTasks.push(resolveCollectionPreview(el, block, project));
+            }
+        });
+
+        container.style.display = 'block';
+
+        // Let collection previews resolve in background.
+        if (asyncTasks.length > 0) {
+            await Promise.allSettled(asyncTasks);
+        }
+    }
+
+    /**
+     * Build a single flow block element. Returns null for unknown types
+     * (and warns). collection_preview returns a placeholder that is filled
+     * asynchronously by resolveCollectionPreview.
+     */
+    function buildFlowBlock(block, index, project) {
+        if (!block || !block.type) return null;
+
+        switch (block.type) {
+            case 'h3':
+            case 'h4':
+            case 'h5': {
+                const el = document.createElement(block.type);
+                el.className = `flow-${block.type}`;
+                el.textContent = block.text || '';
+                return el;
+            }
+
+            case 'p': {
+                const el = document.createElement('p');
+                el.className = 'flow-p';
+                el.textContent = block.text || '';
+                return el;
+            }
+
+            case 'img': {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flow-img';
+
+                const row = document.createElement('div');
+                row.className = 'flow-img__row';
+
+                const images = Array.isArray(block.images) ? block.images : [];
+                const altText = block.alt || '';
+
+                images.forEach(url => {
+                    const lightboxIdx = registerLightboxImage(url, altText);
+                    const img = document.createElement('img');
+                    img.src = imgSrc(url);
+                    img.alt = altText;
+                    img.className = 'flow-img__image';
+                    img.loading = 'lazy';
+                    img.dataset.lightboxIndex = String(lightboxIdx);
+                    row.appendChild(img);
+                });
+
+                wrapper.appendChild(row);
+                return wrapper;
+            }
+
+            case 'list': {
+                const ul = document.createElement('ul');
+                const style = block.style || 'bluepoints';
+                ul.className = `flow-list style-${style}`;
+                const items = Array.isArray(block.items) ? block.items : [];
+                items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    ul.appendChild(li);
+                });
+                return ul;
+            }
+
+            case 'chunk_break': {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flow-chunk-break';
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'flow-chunk-break__btn';
+                btn.textContent = block.button_text || 'Continue reading';
+                wrapper.appendChild(btn);
+                return wrapper;
+            }
+
+            case 'embed_html': {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flow-embed-html';
+                if (block.alt) wrapper.setAttribute('aria-label', block.alt);
+                // Trusted HTML: we authored these strings in the entry JSONs.
+                wrapper.innerHTML = block.html || '';
+                return wrapper;
+            }
+
+            case 'collection_preview': {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flow-collection-preview';
+                wrapper.dataset.collectionSlug = block.collection || '';
+                // Placeholder; filled by resolveCollectionPreview asynchronously.
+                return wrapper;
+            }
+
+            default: {
+                console.warn('Unknown flow block type:', block.type);
+                return null;
+            }
+        }
+    }
+
+    /**
+     * Wire the chunk-break button: on click, unhide every sibling that
+     * comes after the chunk-break wrapper in the same parent.
+     */
+    function wireChunkBreak(chunkEl, parent) {
+        const btn = chunkEl.querySelector('.flow-chunk-break__btn');
+        if (!btn) return;
+
+        btn.addEventListener('click', () => {
+            // Reveal every sibling after chunkEl that's marked hidden.
+            const hidden = parent.querySelectorAll('.flow-chunk-hidden');
+            hidden.forEach(el => {
+                el.classList.remove('flow-chunk-hidden');
+                el.classList.add('flow-chunk-revealed');
+            });
+            // Remove the button itself.
+            btn.remove();
+        });
+    }
+
+    /**
+     * Resolve a collection_preview block: load collection, resolve its media,
+     * render a horizontal-scroll strip of the first 8 items. Failure logs a
+     * warning and leaves the placeholder empty.
+     */
+    async function resolveCollectionPreview(wrapper, block, project) {
+        const slug = block.collection;
+        if (!slug) {
+            console.warn('collection_preview block missing collection slug');
+            return;
+        }
+
+        try {
+            const collection = await DataLoader.loadCollection(slug);
+            if (!collection) {
+                console.warn('collection_preview: collection not found for slug', slug);
+                return;
+            }
+
+            const items = await DataLoader.resolveCollectionMedia(collection);
+            if (!items || items.length === 0) {
+                console.warn('collection_preview: no items resolved for', slug);
+                return;
+            }
+
+            const preview = items.slice(0, 8);
+
+            const header = document.createElement('div');
+            header.className = 'flow-collection-preview__header';
+            const title = document.createElement('h4');
+            title.className = 'flow-collection-preview__title';
+            title.textContent = collection.title || slug;
+            header.appendChild(title);
+            wrapper.appendChild(header);
+
+            const strip = document.createElement('div');
+            strip.className = 'flow-collection-preview__strip';
+
+            preview.forEach(item => {
+                const thumbUrl = (item.thumb && item.thumb[0]) || item.src;
+                if (!thumbUrl) return;
+                const altText = item.thumb_alt || item.title || '';
+                const lightboxIdx = registerLightboxImage(thumbUrl, altText);
+
+                const link = document.createElement('a');
+                link.className = 'flow-collection-preview__item';
+                link.href = `/media.html?path=${encodeURIComponent(item.slug)}`;
+
+                const img = document.createElement('img');
+                img.src = imgSrc(thumbUrl);
+                img.alt = altText;
+                img.className = 'flow-collection-preview__thumb';
+                img.loading = 'lazy';
+                img.dataset.lightboxIndex = String(lightboxIdx);
+
+                link.appendChild(img);
+                strip.appendChild(link);
+            });
+
+            wrapper.appendChild(strip);
+
+            const more = document.createElement('a');
+            more.className = 'flow-collection-preview__more';
+            more.href = `/collection.html?path=${encodeURIComponent(collection.slug || slug)}`;
+            more.textContent = 'View Full Collection';
+            wrapper.appendChild(more);
+        } catch (err) {
+            console.warn('collection_preview: failed to resolve', slug, err);
+        }
+    }
+
+    /**
+     * Populate multiple slideshows from slideshows array (legacy).
      */
     function populateSlideshows(project) {
         const container = document.getElementById('entry-slideshows');
@@ -249,7 +767,7 @@ const EntryController = (() => {
     }
 
     /**
-     * Build a single slideshow instance
+     * Build a single slideshow instance (legacy slideshows[] array).
      */
     function buildSlideshow(group, groupIndex) {
         const wrapper = document.createElement('div');
@@ -288,12 +806,11 @@ const EntryController = (() => {
         display.className = `slideshow-display ${isMobile ? 'slideshow-display-mobile' : ''}`;
         slideshow.appendChild(display);
 
-        // Render first slide
+        // Render first slide (registers into lightbox pool)
         renderSlide(display, slides[0], group.alt || '', isMobile);
 
         // Navigation (only if multiple slides)
         if (slides.length > 1) {
-            // Arrows
             const prevBtn = document.createElement('button');
             prevBtn.className = 'slideshow-arrow slideshow-prev';
             prevBtn.innerHTML = '&lsaquo;';
@@ -306,13 +823,11 @@ const EntryController = (() => {
             nextBtn.setAttribute('aria-label', 'Next slide');
             slideshow.appendChild(nextBtn);
 
-            // Counter
             const counter = document.createElement('span');
             counter.className = 'slideshow-counter';
             counter.textContent = `1 / ${slides.length}`;
             slideshow.appendChild(counter);
 
-            // Thumbnail strip
             const strip = document.createElement('div');
             strip.className = 'slideshow-strip';
             slides.forEach((slide, i) => {
@@ -326,7 +841,6 @@ const EntryController = (() => {
             });
             slideshow.appendChild(strip);
 
-            // State
             let currentSlide = 0;
 
             function goToSlide(index) {
@@ -336,7 +850,6 @@ const EntryController = (() => {
                 strip.querySelectorAll('.slideshow-strip-thumb').forEach((t, i) => {
                     t.classList.toggle('active', i === index);
                 });
-                // Scroll active thumb into view
                 const activeThumb = strip.querySelector('.active');
                 if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
@@ -362,60 +875,168 @@ const EntryController = (() => {
     }
 
     /**
-     * Render a single slide's content into the display area
+     * Render a single slide's content into the display area.
+     * Each rendered image registers into the unified lightbox pool.
      */
     function renderSlide(display, imageUrls, altText, isMobile) {
-        display.innerHTML = imageUrls.map(url => `
-            <img src="${imgSrc(url)}" alt="${altText}" class="slideshow-image ${isMobile ? 'slideshow-image-mobile' : ''}" loading="lazy">
-        `).join('');
-    }
-
-    /**
-     * Lightbox: open, close, navigate
-     */
-    function openLightbox(index) {
-        lightboxIndex = index;
-        const overlay = document.getElementById('lightbox-overlay');
-        const img = overlay.querySelector('.lightbox-img');
-        const counter = overlay.querySelector('.lightbox-counter');
-
-        img.src = lightboxImages[index];
-        counter.textContent = `${index + 1} / ${lightboxImages.length}`;
-        overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-        document.getElementById('lightbox-overlay').style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
-    function lightboxNav(dir) {
-        lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
-        const overlay = document.getElementById('lightbox-overlay');
-        overlay.querySelector('.lightbox-img').src = lightboxImages[lightboxIndex];
-        overlay.querySelector('.lightbox-counter').textContent = `${lightboxIndex + 1} / ${lightboxImages.length}`;
-    }
-
-    function initLightbox() {
-        const overlay = document.getElementById('lightbox-overlay');
-        if (!overlay) return;
-
-        overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-        overlay.querySelector('.lightbox-prev').addEventListener('click', () => lightboxNav(-1));
-        overlay.querySelector('.lightbox-next').addEventListener('click', () => lightboxNav(1));
-        overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
-
-        document.addEventListener('keydown', e => {
-            if (overlay.style.display === 'none') return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') lightboxNav(-1);
-            if (e.key === 'ArrowRight') lightboxNav(1);
+        display.innerHTML = '';
+        imageUrls.forEach(url => {
+            const lightboxIdx = registerLightboxImage(url, altText);
+            const img = document.createElement('img');
+            img.src = imgSrc(url);
+            img.alt = altText || '';
+            img.className = `slideshow-image ${isMobile ? 'slideshow-image-mobile' : ''}`;
+            img.loading = 'lazy';
+            img.dataset.lightboxIndex = String(lightboxIdx);
+            display.appendChild(img);
         });
     }
 
     /**
-     * Populate project URL
+     * Lightbox: open at index, close, navigate.
+     * Driven by the unified lightboxPool. Click delegation lives in initLightbox.
+     */
+    function openLightbox(index) {
+        if (!lightboxPool.length) return;
+        if (index < 0 || index >= lightboxPool.length) return;
+
+        lightboxIndex = index;
+        const overlay = document.getElementById('lightbox-overlay');
+        if (!overlay) return;
+
+        const img = overlay.querySelector('.lightbox-img');
+        const counter = overlay.querySelector('.lightbox-counter');
+
+        const entry = lightboxPool[index];
+        if (img) {
+            img.src = entry.src;
+            img.alt = entry.alt;
+        }
+        if (counter) counter.textContent = `${index + 1} / ${lightboxPool.length}`;
+
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        preloadNeighbors(index);
+    }
+
+    function closeLightbox() {
+        const overlay = document.getElementById('lightbox-overlay');
+        if (overlay) overlay.style.display = 'none';
+        document.body.style.overflow = '';
+        clearPreloadLinks();
+    }
+
+    function lightboxNav(dir) {
+        if (!lightboxPool.length) return;
+        lightboxIndex = (lightboxIndex + dir + lightboxPool.length) % lightboxPool.length;
+        const overlay = document.getElementById('lightbox-overlay');
+        if (!overlay) return;
+        const entry = lightboxPool[lightboxIndex];
+        const img = overlay.querySelector('.lightbox-img');
+        const counter = overlay.querySelector('.lightbox-counter');
+        if (img) {
+            img.src = entry.src;
+            img.alt = entry.alt;
+        }
+        if (counter) counter.textContent = `${lightboxIndex + 1} / ${lightboxPool.length}`;
+        preloadNeighbors(lightboxIndex);
+    }
+
+    function lightboxJump(target) {
+        if (!lightboxPool.length) return;
+        if (target < 0 || target >= lightboxPool.length) return;
+        lightboxIndex = target;
+        const overlay = document.getElementById('lightbox-overlay');
+        if (!overlay) return;
+        const entry = lightboxPool[lightboxIndex];
+        const img = overlay.querySelector('.lightbox-img');
+        const counter = overlay.querySelector('.lightbox-counter');
+        if (img) {
+            img.src = entry.src;
+            img.alt = entry.alt;
+        }
+        if (counter) counter.textContent = `${lightboxIndex + 1} / ${lightboxPool.length}`;
+        preloadNeighbors(lightboxIndex);
+    }
+
+    /**
+     * Inject <link rel="preload" as="image"> for neighbors of `index`.
+     * Cleans up old preload links first.
+     */
+    function preloadNeighbors(index) {
+        clearPreloadLinks();
+        const neighbors = [index - 1, index + 1];
+        neighbors.forEach(n => {
+            if (n < 0 || n >= lightboxPool.length) return;
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = lightboxPool[n].src;
+            document.head.appendChild(link);
+            lightboxPreloadLinks.push(link);
+        });
+    }
+
+    function clearPreloadLinks() {
+        lightboxPreloadLinks.forEach(link => link.remove());
+        lightboxPreloadLinks = [];
+    }
+
+    /**
+     * Initialize lightbox: overlay controls + global click delegation for
+     * any <img[data-lightbox-index]> on the page.
+     */
+    function initLightbox() {
+        const overlay = document.getElementById('lightbox-overlay');
+        if (!overlay) return;
+
+        const closeBtn = overlay.querySelector('.lightbox-close');
+        const prevBtn = overlay.querySelector('.lightbox-prev');
+        const nextBtn = overlay.querySelector('.lightbox-next');
+
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (prevBtn) prevBtn.addEventListener('click', () => lightboxNav(-1));
+        if (nextBtn) nextBtn.addEventListener('click', () => lightboxNav(1));
+        overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
+
+        // Keyboard navigation.
+        document.addEventListener('keydown', e => {
+            if (overlay.style.display === 'none' || overlay.style.display === '') return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') lightboxNav(-1);
+            else if (e.key === 'ArrowRight') lightboxNav(1);
+            else if (e.key === 'Home') lightboxJump(0);
+            else if (e.key === 'End') lightboxJump(lightboxPool.length - 1);
+        });
+
+        // Touch swipe on the overlay/img for unified pool nav.
+        let touchStartX = 0;
+        overlay.addEventListener('touchstart', e => {
+            if (e.touches && e.touches.length) touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        overlay.addEventListener('touchend', e => {
+            if (!e.changedTouches || !e.changedTouches.length) return;
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                lightboxNav(diff > 0 ? 1 : -1);
+            }
+        }, { passive: true });
+
+        // Global click delegation for any <img[data-lightbox-index]>.
+        document.addEventListener('click', e => {
+            const target = e.target;
+            if (!target || target.tagName !== 'IMG') return;
+            if (!target.dataset || target.dataset.lightboxIndex === undefined) return;
+            const idx = parseInt(target.dataset.lightboxIndex, 10);
+            if (Number.isNaN(idx)) return;
+            e.preventDefault();
+            openLightbox(idx);
+        });
+    }
+
+    /**
+     * Populate project URL link card.
      */
     function populateProjectURL(project) {
         const container = document.getElementById('entry-project-url');
@@ -431,7 +1052,7 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate GitHub repository
+     * Populate GitHub repository card.
      */
     function populateGitHubRepo(url) {
         const container = document.getElementById('entry-github-repo');
@@ -452,7 +1073,7 @@ const EntryController = (() => {
     }
 
     /**
-     * Generate related posts using 6-hour time-seeded random
+     * Generate related posts using 6-hour time-seeded random.
      */
     function generateRelatedPosts(currentProject, allProjects) {
         const otherProjects = allProjects.filter(p => p.id !== currentProject.id);
@@ -472,7 +1093,7 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate related posts section
+     * Populate related posts section.
      */
     async function populateRelatedPosts(currentProject) {
         const container = document.getElementById('related-posts-grid');
@@ -494,10 +1115,11 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate all content sections
+     * Populate top-of-page text content (title, subtitle, role, body copy).
+     * Shared by both layouts; columns layout uses the challenge/approach/result
+     * fields, flow layout typically renders body text via flow[] blocks.
      */
     function populateContent(project) {
-        // Title + subtitle
         const titleEl = document.getElementById('entry-title');
         if (titleEl) titleEl.textContent = project.title;
 
@@ -507,31 +1129,62 @@ const EntryController = (() => {
         const roleEl = document.getElementById('entry-role');
         if (roleEl) roleEl.textContent = (project.role && project.role[0]) || '';
 
-        // Body text
+        // Columns-layout body text.
         const challengeEl = document.getElementById('entry-challenge');
-        if (challengeEl) challengeEl.textContent = project.challenge;
+        if (challengeEl) challengeEl.textContent = project.challenge || '';
 
         const approachEl = document.getElementById('entry-approach');
-        if (approachEl) approachEl.textContent = project.approach;
+        if (approachEl) approachEl.textContent = project.approach || '';
 
         const resultEl = document.getElementById('entry-result');
-        if (resultEl) resultEl.textContent = project.result;
-
-        // Media components (in layout order)
-        populateHero(project);
-        populateThumbGrid(project);
-        if (project.origin_url) populateProjectURL(project);
-        if (project.repository) populateGitHubRepo(project.repository);
-        populateGifs(project);
-        populateImageGrid(project);
-        populateSlideshows(project);
+        if (resultEl) resultEl.textContent = project.result || '';
     }
 
     /**
-     * Initialize entry page
+     * Orchestrate the columns layout (default).
+     * Renders the two-column shape with sticky tag/embed column + main media,
+     * grids, slideshows, bleed, bleed_slides, project URL, GitHub repo.
+     */
+    function populateColumnsLayout(project) {
+        populateTagsCards(project);
+        populateContent(project);
+        populateThumbHero(project);
+        populateTagColumn(project);
+        populateMainMedia(project);
+        populateImageGrid(project);
+        populateSlideshows(project);
+        if (project.origin_url) populateProjectURL(project);
+        if (project.repository) populateGitHubRepo(project.repository);
+        populateBleed(project);
+        populateBleedSlides(project);
+    }
+
+    /**
+     * Orchestrate the flow layout.
+     * Tag pills + thumbnail hero are shared with columns; body is the typed
+     * sequence walked from entry.flow[]. Media regions outside flow[] are
+     * intentionally not rendered (the flow blocks own that real estate).
+     */
+    async function populateFlow(project) {
+        populateTagsCards(project);
+        populateContent(project);
+        populateThumbHero(project);
+        populateTagColumn(project);
+        if (project.origin_url) populateProjectURL(project);
+        if (project.repository) populateGitHubRepo(project.repository);
+        await populateFlowLayout(project);
+    }
+
+    /**
+     * Initialize entry page.
      */
     async function init() {
         try {
+            // Reset lightbox pool at the start of every page load.
+            lightboxPool = [];
+            lightboxIndex = 0;
+            clearPreloadLinks();
+
             const entryPath = getEntryPath();
             const project = await loadEntryData(entryPath);
 
@@ -542,8 +1195,18 @@ const EntryController = (() => {
             }
 
             populateMetadata(project);
-            populateTagsCards(project);
-            populateContent(project);
+
+            // Top-level layout dispatch.
+            const layout = project.layout;
+            if (layout === 'flow') {
+                await populateFlow(project);
+            } else {
+                if (layout && layout !== 'columns') {
+                    console.warn(`Unknown layout "${layout}" — defaulting to columns`);
+                }
+                populateColumnsLayout(project);
+            }
+
             initLightbox();
             await populateRelatedPosts(project);
         } catch (error) {
