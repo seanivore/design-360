@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-lrt-716",
@@ -41,8 +41,6 @@
     "https://cdn.august.style/media/constructi-haus/img-sq-constructi-haus-3.webp"
   ],
   "img_alt": "Bold constructivist geometric compositions with high-contrast forms, directional axis lines, and disciplined poster-ready grid systems",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/217385873?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "A constructivist inspired generative set with bold geometry, directional cues, and disciplined compositional grids.",
@@ -54,9 +52,9 @@
     "The poster as a piece of design thinking",
     "The pieces I kept for their energy"
   ],
-  "challenge": "Russian Constructivist posters are some of the most alive graphic design ever made \u2014 sharp, direct, full of purpose. I wanted to understand why they still feel modern a century later, and see what I could bring back from spending time with them.",
-  "approach": "I read into the movement, the designers, and the historical moment that produced the work, then drafted many variations trying to capture that directness \u2014 strong diagonals, decisive contrast, nothing wasted. I kept the six that felt like they'd absorbed something useful.",
-  "result": "A set of poster-style pieces I like a lot \u2014 confident, a little loud in the best way. They're available as prints for anyone who responds to that design-first energy.",
+  "challenge": "Russian Constructivist posters are some of the most alive graphic design ever made — sharp, direct, full of purpose. I wanted to understand why they still feel modern a century later, and see what I could bring back from spending time with them.",
+  "approach": "I read into the movement, the designers, and the historical moment that produced the work, then drafted many variations trying to capture that directness — strong diagonals, decisive contrast, nothing wasted. I kept the six that felt like they'd absorbed something useful.",
+  "result": "A set of poster-style pieces I like a lot — confident, a little loud in the best way. They're available as prints for anyone who responds to that design-first energy.",
   "role_headline": "Bold Constructivist Grids & Poster Art",
   "hero_btn_cta": "See Creative Work",
   "final_cta_text": "Interested in creative direction?",
@@ -64,11 +62,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

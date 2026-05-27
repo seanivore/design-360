@@ -1,12 +1,12 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-enm-522",
   "slug": "surreal-constructivism-perception",
   "title": "Currents of Perception",
-  "subtitle": "A second pass on Constructivism and Surrealism \u2014 this time thinking about perception itself.",
+  "subtitle": "A second pass on Constructivism and Surrealism — this time thinking about perception itself.",
   "seo_title": "Currents of Perception: Generative Geometric Constructivist Abstraction Landscapes",
   "seo_description": "An abstract generative series exploring perception through geometric currents, constructivist colored landscapes, and emergent figures that suggest a psychic motion.",
   "role": [
@@ -38,8 +38,6 @@
     "https://cdn.august.style/media/surreal-constructivism-perception/img-sq-surreal-constructivism-perception-currents-3.webp"
   ],
   "img_alt": "Geometric constructivist landscape abstractions with vivid color fields and emergent figures",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/223404499?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
@@ -51,7 +49,7 @@
     "Figures emerging inside geometric weather",
     "The pieces I kept"
   ],
-  "challenge": "After the first Constructivism/Surrealism set, I kept thinking about how both movements were really interested in perception \u2014 how we see and what our minds do with what we see. I wanted to make a set that was more directly about that.",
+  "challenge": "After the first Constructivism/Surrealism set, I kept thinking about how both movements were really interested in perception — how we see and what our minds do with what we see. I wanted to make a set that was more directly about that.",
   "approach": "I went back into the reading, this time paying more attention to the perceptual and psychological side of both movements, and drafted variations where figures quietly emerge from the geometry itself. I kept the ones that felt like they were doing something to the eye in a way I found interesting.",
   "result": "A smaller, stranger set that I'm pleased with. They're available as prints for anyone who likes an image that rewards a second look.",
   "role_headline": "Surreal Figures in Psychic Landscapes",
@@ -61,11 +59,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

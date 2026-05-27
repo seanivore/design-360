@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-sez-023",
@@ -38,8 +38,6 @@
     "https://cdn.august.style/media/social-advertising-strategy/img-sq-social-advertising-strategy-3.webp"
   ],
   "img_alt": "Campaign performance metrics showing cost efficiency and engagement analytics across Meta advertising platforms",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "",
   "media_alt": "",
@@ -53,8 +51,8 @@
     "Cross-platform targeting and optimization"
   ],
   "challenge": "Social advertising costs continue to rise as platforms mature, with average cost-per-engagement rates climbing year over year. Advocacy organizations operate on tight budgets and need every dollar to work harder than commercial advertisers. The challenge was achieving meaningful audience growth and engagement at rates dramatically below industry benchmarks.",
-  "approach": "Implemented a data-driven advertising strategy across Meta platforms, combining sophisticated audience targeting with creative A/B testing. Each campaign used iterative creative optimization \u2014 testing visual formats, copy variations, and audience segments to identify the highest-performing combinations. The lookbook-style creative assets were designed specifically for social consumption, with strong visual hooks that stopped scrolling and drove engagement.",
-  "result": "Achieved $0.003 cost per engagement and $0.31 cost per follower \u2014 rates approximately 10x below typical industry averages. Instagram shop campaigns generated 9,200+ views per cycle. The strategy proved that exceptional cost efficiency comes from relentless creative testing combined with precise audience targeting, not from increasing budget. These metrics set internal benchmarks that reshaped how the organization approached paid social going forward.",
+  "approach": "Implemented a data-driven advertising strategy across Meta platforms, combining sophisticated audience targeting with creative A/B testing. Each campaign used iterative creative optimization — testing visual formats, copy variations, and audience segments to identify the highest-performing combinations. The lookbook-style creative assets were designed specifically for social consumption, with strong visual hooks that stopped scrolling and drove engagement.",
+  "result": "Achieved $0.003 cost per engagement and $0.31 cost per follower — rates approximately 10x below typical industry averages. Instagram shop campaigns generated 9,200+ views per cycle. The strategy proved that exceptional cost efficiency comes from relentless creative testing combined with precise audience targeting, not from increasing budget. These metrics set internal benchmarks that reshaped how the organization approached paid social going forward.",
   "role_headline": "$0.003/Engagement Ad Campaigns",
   "hero_btn_cta": "See Growth Work",
   "final_cta_text": "Need growth strategy?",
@@ -66,11 +64,13 @@
     "kpi": "Cost Per Engagement",
     "context": "10x below industry average across Meta social advertising campaigns"
   },
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-wnw-867",
@@ -44,8 +44,6 @@
     "https://cdn.august.style/media/minimalist-web-store-product/img-sq-slides-minimalist-web-store-product-3.webp"
   ],
   "img_alt": "Minimalist e-commerce gallery with clean white space, restrained typography, and product photography taking center stage.",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "https://youtu.be/9qVi5_zoNaM",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/9qVi5_zoNaM?si=D-oRb-tYkO1dEq3m&amp;controls=0' title='Minimalist Web Store Product Gallery and Pages' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Minimalist art print e-commerce gallery showcasing 500+ product catalog with clean navigation, generous white space, and conversion-focused product pages emphasizing photography over interface",
@@ -68,11 +66,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

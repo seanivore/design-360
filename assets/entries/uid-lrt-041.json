@@ -1,12 +1,12 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-lrt-041",
   "slug": "pie-claesz",
   "title": "Pie Claesz Vibes",
-  "subtitle": "A study of Pieter Claesz \u2014 the quieter side of the Dutch Golden Age.",
+  "subtitle": "A study of Pieter Claesz — the quieter side of the Dutch Golden Age.",
   "seo_title": "Pie Claesz Vibes: Generative Still Life Study with Subtle Baroque Restraint",
   "seo_description": "A generative exploration of Pieter Claesz inspired still life: muted palette, careful balance, and gentle light shaping on familiar tabletop objects.",
   "role": [
@@ -40,8 +40,6 @@
     "https://cdn.august.style/media/pie-claesz/img-sq-pie-claesz-3.webp"
   ],
   "img_alt": "Pieter Claesz inspired still life compositions with muted tones, quiet balanced light, and carefully arranged tabletop objects",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/226117987?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Generative still life study channeling Pieter Claesz: restrained palette, tabletop composition, and quiet, balanced light.",
@@ -53,8 +51,8 @@
     "The restrained, observational still life",
     "Pieces I kept for their gentleness"
   ],
-  "challenge": "De Heem gets the grand Baroque stage, but Pieter Claesz works with almost the opposite instinct \u2014 a half-peeled lemon, a tipped glass, the quiet of a room after a meal. I wanted to understand why that restraint moves me more than the abundance sometimes does.",
-  "approach": "I read about Claesz and the Dutch Golden Age genre of still life as a whole, then drafted a lot of variations trying to land that particular hush \u2014 muted color, single soft light, nothing trying too hard. I kept the five that felt closest to what I'd learned about his eye.",
+  "challenge": "De Heem gets the grand Baroque stage, but Pieter Claesz works with almost the opposite instinct — a half-peeled lemon, a tipped glass, the quiet of a room after a meal. I wanted to understand why that restraint moves me more than the abundance sometimes does.",
+  "approach": "I read about Claesz and the Dutch Golden Age genre of still life as a whole, then drafted a lot of variations trying to land that particular hush — muted color, single soft light, nothing trying too hard. I kept the five that felt closest to what I'd learned about his eye.",
   "result": "A small, gentle set that I genuinely enjoy. They're available as prints in case anyone else finds the same quiet satisfaction in a tabletop study.",
   "role_headline": "Muted Tabletop Studies After Claesz",
   "hero_btn_cta": "See Creative Work",
@@ -63,11 +61,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

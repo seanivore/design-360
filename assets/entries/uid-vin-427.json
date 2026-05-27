@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-vin-427",
@@ -41,8 +41,6 @@
     "https://cdn.august.style/media/freelance-payments-platform/img-sq-slides-freelance-payments-platform-3.webp"
   ],
   "img_alt": "Payment portal interface with branded login screen and document management views",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "https://youtu.be/84RtKT3dfDk",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/84RtKT3dfDk?si=74w7Yz6IGe98gy52&amp;controls=0' title='Freelance Payments Platform Walkthrough' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Video walkthrough of the freelance payments platform showing the client login, contract signing, and Stripe checkout flow",
@@ -88,14 +86,18 @@
     "kpi": "Database Dependencies",
     "context": "Entire platform runs on JSON files as the single source of truth with no database required"
   },
-  "achievement": {
-    "headline": "End-to-End Freelance Automation",
-    "details": "Single portal handles contract signing, invoice delivery, split payments, and document downloads with zero manual steps after initial job setup."
-  },
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [
+    {
+      "headline": "End-to-End Freelance Automation",
+      "details": "Single portal handles contract signing, invoice delivery, split payments, and document downloads with zero manual steps after initial job setup."
+    }
+  ],
+  "main_media": [],
+  "grids": []
 }

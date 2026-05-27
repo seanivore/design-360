@@ -1,12 +1,12 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-fan-459",
   "slug": "pie-claesz-modern-vibes",
   "title": "Pie Claesz Modern Vibes",
-  "subtitle": "A second Claesz study \u2014 same painter, cleaner light, more contemporary eye.",
+  "subtitle": "A second Claesz study — same painter, cleaner light, more contemporary eye.",
   "seo_title": "Pie Claesz Modern Vibes: Generative Still Life with Contemporary Restraint",
   "seo_description": "A modern take on Pieter Claesz inspired still life: cleaner palette, crisp edges, and disciplined light, executed with a generative pipeline and minimal post polish.",
   "role": [
@@ -41,8 +41,6 @@
     "https://cdn.august.style/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-3.webp"
   ],
   "img_alt": "Contemporary still life compositions with modernized Pieter Claesz influence, simplified tones, crisp highlight control, and clean tabletop staging",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/226117973?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Generative still life study with modern Claesz vibes: cleaner palette, sharper edges, and contemporary staging cues.",
@@ -54,9 +52,9 @@
     "A contemporary take on the tabletop still life",
     "The pieces I kept for their freshness"
   ],
-  "challenge": "After spending time on a more historically faithful Claesz set, I wanted to see what happened if I held onto the painter's instincts \u2014 restraint, balance, a single soft light \u2014 but let the palette and staging feel current. Could it still be honest to Claesz, or would it stop being his?",
+  "challenge": "After spending time on a more historically faithful Claesz set, I wanted to see what happened if I held onto the painter's instincts — restraint, balance, a single soft light — but let the palette and staging feel current. Could it still be honest to Claesz, or would it stop being his?",
   "approach": "I kept reading about his approach, then drafted another round of variations with cleaner light, simpler color, and slightly more contemporary staging. I kept the ones that still felt rooted in his sensibility but that I'd be genuinely happy to live with today.",
-  "result": "A companion set to the first Claesz collection \u2014 same spirit, cleaner feel. They're available as prints if anyone else enjoys that same quiet with a little more air in it.",
+  "result": "A companion set to the first Claesz collection — same spirit, cleaner feel. They're available as prints if anyone else enjoys that same quiet with a little more air in it.",
   "role_headline": "Contemporary Still Life After Pieter Claesz",
   "hero_btn_cta": "See Creative Work",
   "final_cta_text": "Interested in creative direction?",
@@ -64,11 +62,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

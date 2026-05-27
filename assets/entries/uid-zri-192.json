@@ -1,12 +1,12 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-zri-192",
   "slug": "constructi-landscapes",
   "title": "Constructivism Landscapes",
-  "subtitle": "Landscapes made while I was reading about Constructivism \u2014 and learning to see structure in nature.",
+  "subtitle": "Landscapes made while I was reading about Constructivism — and learning to see structure in nature.",
   "seo_title": "Constructivism Landscapes: Generative Abstract Mountains and Color Fields",
   "seo_description": "A generative landscape study blending constructivist geometry with flowing forms and vibrant gradients across mountain and water compositions.",
   "role": [
@@ -40,8 +40,6 @@
     "https://cdn.august.style/media/constructi-landscapes/img-sq-constructi-landscapes-3.webp"
   ],
   "img_alt": "Constructivist abstract landscapes with geometric mountain forms, flowing water elements, and vibrant warm-to-cool gradient color fields",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/216060883?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Constructivist leaning abstract landscapes with geometric structure, flowing forms, and vibrant color fields suggesting mountains and water.",
@@ -53,7 +51,7 @@
     "Mountains and water read as geometry",
     "The pieces I wanted to keep"
   ],
-  "challenge": "Constructivism taught me to look for the underlying structure of a scene \u2014 the axes, the planes, the rhythm. I wanted to see if I could hold onto that way of looking while working with something as unruly as a landscape.",
+  "challenge": "Constructivism taught me to look for the underlying structure of a scene — the axes, the planes, the rhythm. I wanted to see if I could hold onto that way of looking while working with something as unruly as a landscape.",
   "approach": "I read into the movement, then drafted many versions of mountain and water scenes, watching for the ones where the geometry and the natural form stopped fighting each other. I kept the six that taught me something and that I personally enjoyed.",
   "result": "A small set of landscapes that feel calm and a little formal in a way I like. They're available as prints for anyone else who enjoys seeing nature through that kind of structured eye.",
   "role_headline": "Geometric Structure Meets Flowing Landscape",
@@ -63,11 +61,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

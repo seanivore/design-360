@@ -1,13 +1,13 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-rjy-542",
   "slug": "technical-defi-content-simplification",
   "title": "Technical to Accessible: Web3 Brand Strategy",
   "subtitle": "Translating complex DeFi protocols into clear visual communication",
-  "seo_title": "DeFi Content Strategy \u2014 Technical Communication Made Accessible",
+  "seo_title": "DeFi Content Strategy — Technical Communication Made Accessible",
   "seo_description": "Strategic brand communication making complex DeFi and blockchain protocols accessible through clear visual design and simplified technical content.",
   "role": [
     "Content Strategist",
@@ -38,8 +38,6 @@
     "https://cdn.august.style/media/technical-defi-content-simplification/img-sq-technical-defi-content-simplification-3.webp"
   ],
   "img_alt": "Technical DeFi content transformed into clear visual communication with simplified protocol explanations",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "",
   "media_alt": "",
@@ -52,8 +50,8 @@
     "Data visualization for blockchain concepts",
     "Content strategy bridging developer and user audiences"
   ],
-  "challenge": "DeFi protocols are built on layers of technical abstraction \u2014 smart contracts, liquidity pools, yield farming mechanics \u2014 that are impenetrable to mainstream audiences. The content challenge was making these concepts understandable without oversimplifying the technology or losing the trust of technically literate users who validate accuracy.",
-  "approach": "Developed a content simplification framework that broke complex DeFi concepts into visual hierarchies. Technical flows were redesigned as progressive disclosure systems \u2014 users could understand the basic concept at a glance, then drill deeper for technical detail. Data visualization techniques were applied to blockchain concepts, using familiar chart idioms to represent novel financial structures.",
+  "challenge": "DeFi protocols are built on layers of technical abstraction — smart contracts, liquidity pools, yield farming mechanics — that are impenetrable to mainstream audiences. The content challenge was making these concepts understandable without oversimplifying the technology or losing the trust of technically literate users who validate accuracy.",
+  "approach": "Developed a content simplification framework that broke complex DeFi concepts into visual hierarchies. Technical flows were redesigned as progressive disclosure systems — users could understand the basic concept at a glance, then drill deeper for technical detail. Data visualization techniques were applied to blockchain concepts, using familiar chart idioms to represent novel financial structures.",
   "result": "The simplified content strategy increased comprehension across both technical and non-technical audiences. The progressive disclosure approach satisfied developers who wanted depth while giving investors and end-users the clarity they needed to engage. The visual framework became a reusable template for communicating subsequent protocol features and updates.",
   "role_headline": "DeFi Content Simplification",
   "hero_btn_cta": "See Content Work",
@@ -62,11 +60,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

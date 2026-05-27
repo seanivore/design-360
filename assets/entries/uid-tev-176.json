@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-tev-176",
@@ -52,8 +52,6 @@
     "https://cdn.august.style/media/blog-lookbook-print-gallery/img-sq-slides-blog-lookbook-print-gallery-3.webp"
   ],
   "img_alt": "Framer CMS website with Bauhaus-inspired interactive design, AI-generated blog content, fashion lookbook spreads, and automated e-commerce print shop.",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "https://youtu.be/DvdaYVqqOY0",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/DvdaYVqqOY0?si=So5Q2i2Gf5l-w59S&amp;controls=0' title='Framer CMS Shop Gallery Lookbook AI Podcast Blog' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Screen capture navigating Framer CMS website showcasing AI-generated blogs for a multi-daily updated Podcast News Wrap series, fashion lookbook spreads that were carefully in-painted, an automated e-commerce print shop with single-edition Art History representative pieces, and a homepage with Bauhaus-inspired geometric, interactive design elements",
@@ -76,11 +74,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

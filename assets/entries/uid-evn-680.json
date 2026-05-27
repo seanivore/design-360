@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-evn-680",
@@ -40,8 +40,6 @@
     "https://cdn.august.style/media/constructivist-profiles/img-sq-constructivist-portraits-3.webp"
   ],
   "img_alt": "Geometric head and shoulder profile portraits rendered with constructivist sharp angles, cubist fragmentation, and vibrant color fields.",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/216060889?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Geometric profile portraits of head and shoulders with constructivist, cubist inspired sharp angles and vibrant color fields",
@@ -53,7 +51,7 @@
     "The face broken into planes",
     "The profiles I kept"
   ],
-  "challenge": "Constructivist and Cubist portraiture taught painters to stop copying a face and start building one \u2014 out of planes, color blocks, and decisions. I wanted to see if I could learn to think that way about a portrait myself.",
+  "challenge": "Constructivist and Cubist portraiture taught painters to stop copying a face and start building one — out of planes, color blocks, and decisions. I wanted to see if I could learn to think that way about a portrait myself.",
   "approach": "I read into both movements, then drafted profile after profile, watching for the ones where the face was clearly a construction but still felt like a person. I kept the ones that taught me something and that I personally liked.",
   "result": "Six angular, color-blocked profiles that I'm fond of. They're available as prints for anyone who enjoys that kind of geometric portraiture.",
   "role_headline": "Angular Constructivist Portraits",
@@ -63,11 +61,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

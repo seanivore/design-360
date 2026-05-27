@@ -1,12 +1,12 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-hdp-267",
   "slug": "minimalism-bauhaus",
   "title": "Minimal Maybes",
-  "subtitle": "A quieter take on Bauhaus \u2014 what stays when most of it is taken away.",
+  "subtitle": "A quieter take on Bauhaus — what stays when most of it is taken away.",
   "seo_title": "Minimal Maybes: Generative Restraint with Clean Geometry and Space",
   "seo_description": "A minimal abstract series balancing clean geometry, negative space, and simple color relationships, built with a generative pipeline and precise finishing.",
   "role": [
@@ -40,8 +40,6 @@
     "https://cdn.august.style/media/minimalism-bauhaus/img-sq-minimalism-bauhaus-3.webp"
   ],
   "img_alt": "Minimal Bauhaus-inspired geometric panels with restrained color, ample negative space, and crisp clean edges",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/217385779?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "A minimal generative set with restrained geometry, ample negative space, and clear color relationships.",
@@ -53,9 +51,9 @@
     "Where negative space does most of the work",
     "The pieces that stayed with me"
   ],
-  "challenge": "A lot of what I love about Bauhaus design is that it trusts the viewer \u2014 it leaves room. I wanted to push that further and see what I could learn about minimalism by trying to make pieces where almost nothing is there and everything still feels considered.",
+  "challenge": "A lot of what I love about Bauhaus design is that it trusts the viewer — it leaves room. I wanted to push that further and see what I could learn about minimalism by trying to make pieces where almost nothing is there and everything still feels considered.",
   "approach": "I read into the minimalist lineage and the Bauhaus ideas it borrows from, then drafted variations, cutting and cutting until each one felt like it couldn't lose anything else. I kept the ones that taught me something about restraint, and that I liked living with.",
-  "result": "This set is small, quiet, and calm \u2014 the pieces where the negative space felt like the point. I made them available as prints in case anyone else enjoys that same kind of quiet on a wall.",
+  "result": "This set is small, quiet, and calm — the pieces where the negative space felt like the point. I made them available as prints in case anyone else enjoys that same kind of quiet on a wall.",
   "role_headline": "Clean Geometry with Restrained Palette",
   "hero_btn_cta": "See Creative Work",
   "final_cta_text": "Interested in creative direction?",
@@ -63,11 +61,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

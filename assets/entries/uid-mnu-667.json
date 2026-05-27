@@ -1,12 +1,12 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-mnu-667",
   "slug": "flat-bauhaus",
   "title": "Retro Flat Bauhaus",
-  "subtitle": "A warmer, flatter take on the Bauhaus \u2014 what I learned from its poster and textile side.",
+  "subtitle": "A warmer, flatter take on the Bauhaus — what I learned from its poster and textile side.",
   "seo_title": "Retro Flat Bauhaus: Generative Geometry with Clean Color Blocks",
   "seo_description": "A Bauhaus inspired collection exploring flat geometry, modular grids, and clean color blocks with a generative pipeline and restrained finishing.",
   "role": [
@@ -40,8 +40,6 @@
     "https://cdn.august.style/media/flat-bauhaus/img-sq-flat-bauhaus-3.webp"
   ],
   "img_alt": "Retro Bauhaus-inspired flat geometric compositions with bold primary color blocks and modular grid structures",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/217385831?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "A retro flat Bauhaus inspired generative set with simple geometry, clean color blocks, and balanced grids.",
@@ -53,7 +51,7 @@
     "Primary color, simple shape, quiet confidence",
     "The pieces I kept"
   ],
-  "challenge": "A lot of what we think of as 'modern graphic design' traces back to flat Bauhaus work \u2014 posters, covers, textiles \u2014 and I wanted to actually sit with that lineage rather than just absorb it secondhand from everything built on top of it.",
+  "challenge": "A lot of what we think of as 'modern graphic design' traces back to flat Bauhaus work — posters, covers, textiles — and I wanted to actually sit with that lineage rather than just absorb it secondhand from everything built on top of it.",
   "approach": "I read into the flat-design side of the Bauhaus (the posters and applied arts more than the architecture), then drafted a lot of variations built on primary color and simple shape. I kept the ones that felt warm and considered rather than cold or nostalgic.",
   "result": "A friendly, bright set of pieces that I enjoy looking at. They're available as prints for anyone who likes that kind of cheerful, grown-up flatness on a wall.",
   "role_headline": "Flat Bauhaus Geometry in Color Blocks",
@@ -63,11 +61,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

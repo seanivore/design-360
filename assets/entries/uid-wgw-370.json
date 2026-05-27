@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-wgw-370",
@@ -44,8 +44,6 @@
     "https://cdn.august.style/media/ai-design-fashion-lookbook/img-sq-slides-3-ai-design-fashion-lookbook.webp"
   ],
   "img_alt": "Shoppable fashion lookbook screenshots showing editorial photography with Google Lens visual search integration and product matching",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "https://youtu.be/JFg2fXPmuhw",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/JFg2fXPmuhw?si=A-3vL7RMlVcafMa0&amp;controls=0' title='AI In-Painted Fashion Lookbook Website Development' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Fashion lookbook website integrating Google Lens API for visual search, enabling users to identify and purchase items directly from editorial photography through computer vision technology",
@@ -68,11 +66,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

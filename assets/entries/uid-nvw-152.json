@@ -1,12 +1,12 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-nvw-152",
   "slug": "humanistic-exploration",
   "title": "Humanistic Exploration",
-  "subtitle": "Constructivism applied to warmer, more human spaces \u2014 interiors and open landscapes.",
+  "subtitle": "Constructivism applied to warmer, more human spaces — interiors and open landscapes.",
   "seo_title": "Constructivism Forms: Humanistic Exploration of Interiors and Abstract Landscapes",
   "seo_description": "A generative collection exploring constructivist forms across interiors and stylized landscapes with flowing curves, geometric rhythm, and vibrant color fields.",
   "role": [
@@ -40,8 +40,6 @@
     "https://cdn.august.style/media/humanistic-exploration/img-sq-humanistic-exploration-3.webp"
   ],
   "img_alt": "Constructivist interiors and abstract landscapes with flowing curves, geometric structure, and vibrant warm and cool palettes",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/216060867?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Constructivist forms in vibrant abstract scenes: interiors, flowing landscapes, and geometric arrangements with warm and cool palettes.",
@@ -53,9 +51,9 @@
     "What its geometry does inside a lived space",
     "The pieces I kept"
   ],
-  "challenge": "Constructivism shows up most often in posters and graphic design, but I was curious what its way of thinking did inside quieter, more human subjects \u2014 an interior, a slow landscape. Could the same geometric eye make something that felt warm instead of stern?",
+  "challenge": "Constructivism shows up most often in posters and graphic design, but I was curious what its way of thinking did inside quieter, more human subjects — an interior, a slow landscape. Could the same geometric eye make something that felt warm instead of stern?",
   "approach": "I kept reading about the movement and spent time with its lesser-known applications (interiors, stage design, softer work), then drafted many variations across interior and landscape scenes. I kept the six that felt structurally clear but also lived-in.",
-  "result": "A set I enjoy \u2014 geometric, but warm enough to actually sit with. They're available as prints for anyone who likes that particular balance.",
+  "result": "A set I enjoy — geometric, but warm enough to actually sit with. They're available as prints for anyone who likes that particular balance.",
   "role_headline": "Flowing Curves Meet Geometric Rhythm",
   "hero_btn_cta": "See Creative Work",
   "final_cta_text": "Interested in creative direction?",
@@ -63,11 +61,13 @@
   "skill_summary": "",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

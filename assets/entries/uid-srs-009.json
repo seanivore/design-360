@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-srs-009",
@@ -41,8 +41,6 @@
     "https://cdn.august.style/media/data-visualization-dashboard/img-sq-slides-data-visualization-dashboard-3.webp"
   ],
   "img_alt": "Analytics dashboard screenshots showing AI performance metrics, memory utilization charts, and decision flow visualizations",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "https://youtu.be/HY7RDDFLeKI",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/HY7RDDFLeKI?si=OKY7WvnjYGIoOa6a&amp;controls=0' title='Animated Analytics Dashboard for Robust AI-Centric Apps' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "Enterprise analytics dashboard interface designed for AI application monitoring, featuring interactive animated charts visualizing model performance, memory utilization, and decision flows",
@@ -56,8 +54,8 @@
     "Complex system organization made accessible"
   ],
   "challenge": "AI-powered applications generate fundamentally different analytics than traditional software. Memory systems, multi-model interactions, real-world event integrations, and agentic decision-making all produce data streams that standard dashboards were not designed to handle. The challenge was creating an analytics interface that could visualize these AI-specific metrics while maintaining clarity and usability, using motion design to reveal relationships rather than relying on static charts.",
-  "approach": "Designed an enterprise-grade analytics dashboard specifically for AI application monitoring, featuring interactive animated charts that respond to user engagement and real-time data updates. Developed a sophisticated information hierarchy that organizes AI-specific metrics \u2014 model performance, memory utilization, decision trees, and event correlations \u2014 into digestible visual segments. Chart animations provide context through motion, showing relationships between data points rather than presenting static snapshots. The interface architecture handles large datasets while maintaining responsive performance through strategic data loading and visualization optimization.",
-  "result": "The dashboard interface handles the unique challenges of AI application analytics \u2014 multiple concurrent data streams, temporal relationships, and hierarchical decision flows \u2014 while maintaining clarity and usability. The animated visualizations demonstrate that motion design can enhance data comprehension when applied purposefully. The project showcases capability in both AI system architecture understanding and enterprise-level interface design.",
+  "approach": "Designed an enterprise-grade analytics dashboard specifically for AI application monitoring, featuring interactive animated charts that respond to user engagement and real-time data updates. Developed a sophisticated information hierarchy that organizes AI-specific metrics — model performance, memory utilization, decision trees, and event correlations — into digestible visual segments. Chart animations provide context through motion, showing relationships between data points rather than presenting static snapshots. The interface architecture handles large datasets while maintaining responsive performance through strategic data loading and visualization optimization.",
+  "result": "The dashboard interface handles the unique challenges of AI application analytics — multiple concurrent data streams, temporal relationships, and hierarchical decision flows — while maintaining clarity and usability. The animated visualizations demonstrate that motion design can enhance data comprehension when applied purposefully. The project showcases capability in both AI system architecture understanding and enterprise-level interface design.",
   "role_headline": "AI Analytics Dashboard Interface",
   "hero_btn_cta": "See Web Projects",
   "final_cta_text": "Interested in web development?",
@@ -65,11 +63,13 @@
   "skill_summary": "Data visualization, animated UI, enterprise dashboard design, and AI-centric analytics architecture.",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }

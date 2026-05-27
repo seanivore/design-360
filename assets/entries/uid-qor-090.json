@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "schema_version": "5.0",
+    "schema_version": "6.1",
     "template_type": "project_entry"
   },
   "id": "uid-qor-090",
@@ -49,8 +49,6 @@
     "https://cdn.august.style/media/css-animated-micro-interactions/img-sq-slides-css-animated-micro-interactions-3.webp"
   ],
   "img_alt": "Presentation platform screenshots showing glassmorphic homepage tiles, slide deck layouts, and markdown-based documentation",
-  "mobile_img": [],
-  "mobile_img_alt": "",
   "media_url": "https://youtu.be/hNdy_KW1w8U",
   "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/hNdy_KW1w8U?si=Q8tp5Mk-G3yx4h3L&amp;controls=0' title='Two Presentation Deck Sections and Markdown-Based Index' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
   "media_alt": "CSS-animated homepage featuring glassmorphic tiles, connected to two unique presentation deck formats, and markdown-based documentation for AI research case studies",
@@ -73,11 +71,13 @@
   "skill_summary": "CSS micro-interactions, glassmorphism, Jekyll static site generation, markdown automation, and multi-format content architecture.",
   "process": null,
   "metric": null,
-  "achievement": null,
   "notes": [],
-  "gif": [],
-  "gif_alt": "",
-  "grid": [],
-  "grid_alt": "",
-  "slideshows": []
+  "slideshows": [],
+  "placement": [],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "columns",
+  "achievements": [],
+  "main_media": [],
+  "grids": []
 }
