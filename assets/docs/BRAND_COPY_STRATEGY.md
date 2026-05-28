@@ -6,6 +6,52 @@
 
 ---
 
+## Copy Straight From Implementation Planning Documents 
+
+### Copywriting
+
+The projects will work hard to showcase the most specific, tangible aspects of my skill set, however there is a more nuanced, psychological aspect that can be leveraged as well. 
+
+#### Challenges Companies Are Encountering
+
+Many companies are finding it incredibly difficult to implement AI because they're trying to do it in the same way they've rolled out most any new technology. They have someone come in to run a seminar, for which they select individuals from each department across the organization to attend. These employees become the leaders of AI integration initiatives and are expected to bring back what they learned and be the go-to "AI guy" on the team who integrates the new tools into everyone's workflow. 
+
+The problem is that AI isn't like other tools, it doesn't work like that. Instead of an organization looking outward for answers, they'd be better off looking inward. Instead of looking to a single person to lead the charge, the organization should be looking to itself to create an AI-driven workflow, because AI is best used when you're using it in a personal context. This implies a more ground-up approach that completely updates old processes. Thankfully I have experience doing this. 
+
+#### My AI Focused "Sell"
+
+The tools are out there. The real value comes from knowing how, and where, to apply them. This requires learning quickly and thinking in systems rather than outputs.
+
+  - Building modern systems and processes by opening up systems to increase speed and productivity. 
+  - Answering: What does it mean to rebuild ourselves to use AI, everything from how our teams are structured to how our data works? 
+
+**EXAMPLE**: 
+
+Custom GPT that walks user through what is needed to update the website store with a new product. The AI then uses a pipeline I created to edit the images, add them to the content network, add all the text it helped you finished to the database, then pushing the site to update.
+
+##### Offering AI-Assisted Services in Automation, Prompting, Systems
+
+  - As companies implement AI in practical, outcome-driven ways. Not necessarily more tools but how to use them. 
+  - I work to close the gap between access and application, ensuring that teams use new tools effectively in real business contexts.
+  - This involves creating workflows that reduce manual effort and improve speed, for example, building automations, designing content systems.
+  - Sometimes that means connecting tools like Zapier and Notion, building custom solutions that replace Zapier and Notion, more often it mean providing custom solutions with lower or zero overhead maintenance cost, built to be future-proof. 
+
+##### Recommending How to Best Use AI
+
+  - It should become a tool that is used to facilitate constant learning 
+  - Don't ask for something outright, instead, stay in the driver's seat
+  - Focus on building metacognitive habits
+
+**Adjust what you're asking the AI for.**
+
+  - "What's another way of looking at this?"
+
+**Don't give away your role by asking it 'Create Marketing Plan'**
+
+  - Instead try: "I've created a marketing plan that needs refining. It needs to reach mid-career professionals between 28-45 years old. I could use help ensuring that I'm not missing anything stemming from unconscious bias around the topic. I'm not necessarily looking for specific suggestions, but rather, help thinking through various options for improving the plan."
+
+---
+
 ## 1. Hero ABOUT pool (rotating lines)
 
 The small-caps "ABOUT" label sits on the blurred half of the hero with a 1–2 sentence body. Pool rotates through entries. Cadence reference: *"We shape striking digital identities through bold contrasts and meaningful motion. Our design process transforms the primal into the powerful."*
