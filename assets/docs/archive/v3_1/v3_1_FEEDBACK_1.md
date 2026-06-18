@@ -1,5 +1,9 @@
 # v3.1.0 Feedback: Fixing, Improving, Altering Project Entries 
 
+**NO LONGER RELEVANT**
+
+---
+
 **CREATED**: 2026-04-05
 **UPDATED**: 2026-04-21 17:53
 **VERSION**: v3.1.0 
