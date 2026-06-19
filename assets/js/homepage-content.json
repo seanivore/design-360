@@ -75,8 +75,8 @@
     ]
   },
   "art_bleed": {
-    "heading": "Hand-Drawn",
-    "cap": 12,
+    "heading": "Original Art",
+    "rows": 3,
     "placement": "Art Gallery"
   },
   "process": {

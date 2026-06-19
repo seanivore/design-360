@@ -915,31 +915,31 @@ a.cred-company:hover {
   z-index: 0
 }
 
-/* Socials pinned left, "explore the work" at the bottom-right blur edge (v4.4.x;
-   socials come first in the DOM now). Reverts to full-width wrap on mobile. */
+/* Socials sit bottom-left in the hero footer; EXPLORE is pulled out (in the
+   markup) and positioned at the bottom-right corner of the blur rectangle. */
 .hero-cyberpunk__cta-row {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
   gap: clamp(24px, 4vw, 56px);
-  flex-wrap: nowrap;
-  width: 50%
-}
-
-@media (max-width: 47.9375rem) {
-  .hero-cyberpunk__cta-row {
-    width: 100%;
-    flex-wrap: wrap
-  }
+  flex-wrap: wrap
 }
 
 .hero-cyberpunk__cta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  position: absolute;
+  bottom: 40px;
+  right: calc(50% + 40px);
+  z-index: 4;
+  display: inline-flex;
+  white-space: nowrap;
   text-decoration: none;
   color: #fff;
   transition: opacity .2s ease
+}
+
+@media (max-width: 47.9375rem) {
+  .hero-cyberpunk__cta {
+    right: var(--g)
+  }
 }
 
 .hero-cyberpunk__cta-label {
@@ -949,7 +949,8 @@ a.cred-company:hover {
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
-  gap: 8px
+  gap: 8px;
+  white-space: nowrap
 }
 
 .hero-cyberpunk__cta:hover {
@@ -1481,10 +1482,12 @@ a.cred-company:hover {
   background: var(--mauve)
 }
 
-/* Homepage Bleed Images Component — hand-drawn art wall (v4.4.x). */
+/* Homepage Bleed Images Component — justified art wall (v4.4.x).
+   Mixed-aspect art tiled at one shared height per row (each item's flex-grow is
+   set to its aspect ratio in JS), bleeding 100vw, accent matting in the gaps,
+   random 3–5 images per row. The row height self-balances by image count. */
 .art-bleed {
-  width: 100%;
-  padding: 64px 0;
+  padding: 48px 0 0;
 }
 .art-bleed__heading {
   text-align: center;
@@ -1494,34 +1497,34 @@ a.cred-company:hover {
   margin: 0 0 24px;
   opacity: .85;
 }
-.art-bleed__rows {
+.art-bleed__col {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  background: var(--terra);
+  padding: 6px 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 .art-bleed__row {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 .art-bleed__item {
-  flex: 1;
+  flex-grow: 1;   /* overwritten per-image to its aspect ratio (JS) */
+  flex-basis: 0;
   min-width: 0;
-  display: block;
-  overflow: hidden;
-  border-radius: 2px;
+  line-height: 0;
 }
 .art-bleed__item img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
   display: block;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
   transition: transform .35s ease;
 }
 .art-bleed__item:hover img {
-  transform: scale(1.04);
-}
-@media (max-width: 47.9375rem) {
-  .art-bleed__item img { height: 120px; }
+  transform: translateY(-2px);
 }
 
 /* Toast for the mailto clipboard fallback (v4.4.x). */

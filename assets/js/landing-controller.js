@@ -49,38 +49,72 @@ const LandingController = (() => {
    * shuffles each reload, and lays them into full-bleed rows. Each image links
    * to its entry. NOT the gallery layout — this is the homepage bleed strip.
    */
-  function renderArtBleed(content, projects) {
+  async function renderArtBleed(content, projects) {
     const section = document.getElementById('art-bleed');
     if (!section) return;
 
     const cfg = (content && content.art_bleed) || {};
     const placement = cfg.placement || 'Art Gallery';
-    const cap = cfg.cap || 12;
+    const rowCount = cfg.rows || 3;
 
-    const gallery = (projects || []).filter(p => (p.placement || []).includes(placement));
-    let imgs = gallery.flatMap(p => (p.thumb || []).map(src => ({ src, slug: p.slug })));
-    if (!imgs.length) { section.style.display = 'none'; return; }
+    const galleryEntries = (projects || []).filter(p => (p.placement || []).includes(placement));
+    if (!galleryEntries.length) { section.style.display = 'none'; return; }
 
-    // Fisher-Yates shuffle — fresh each reload.
-    for (let i = imgs.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+    // Pull every image across each gallery entry's associated collections.
+    // Tags live on entries, so the entry's collections[] define the image pool
+    // (mixed aspect ratios — what makes the justified wall interesting).
+    const pool = [];
+    for (const entry of galleryEntries) {
+      const slugs = Array.isArray(entry.collections) ? entry.collections : [];
+      for (const slug of slugs) {
+        const key = slug.includes('/') ? slug : `${entry.slug}/${slug}`;
+        try {
+          const coll = await DataLoader.loadCollection(key);
+          const imgs = coll ? DataLoader.resolveCollectionImages(coll) : [];
+          imgs.forEach(src => pool.push({ src, slug: entry.slug }));
+        } catch (e) { /* skip a missing collection */ }
+      }
     }
-    imgs = imgs.slice(0, cap);
+    if (!pool.length) { section.style.display = 'none'; return; }
 
+    // Fisher-Yates shuffle — fresh pool every reload.
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+
+    // Build rowCount justified rows of a random 3–5 images each. Fewer images in
+    // a row => taller row (the justified flexbox handles height automatically),
+    // so the component shape changes every reload.
     const heading = cfg.heading ? `<h2 class="art-bleed__heading">${cfg.heading}</h2>` : '';
-    const mid = Math.ceil(imgs.length / 2);
-    const rows = [imgs.slice(0, mid), imgs.slice(mid)].filter(r => r.length);
-    const rowsHTML = rows.map(row =>
-      `<div class="art-bleed__row">` +
-        row.map(o =>
-          `<a class="art-bleed__item" href="/${o.slug}/" aria-label="View ${o.slug}">` +
-            `<img src="${o.src}" alt="" loading="lazy"></a>`
-        ).join('') +
-      `</div>`
-    ).join('');
+    let cursor = 0;
+    const rowsHTML = [];
+    for (let r = 0; r < rowCount; r++) {
+      const count = 3 + Math.floor(Math.random() * 3); // 3, 4, or 5
+      if (cursor + count > pool.length) cursor = 0;     // wrap if we run low
+      const slice = pool.slice(cursor, cursor + count);
+      cursor += count;
+      if (!slice.length) break;
+      const items = slice.map(o =>
+        `<a class="art-bleed__item" href="/${o.slug}/" aria-label="View gallery">` +
+          `<img src="${o.src}" alt="" loading="lazy"></a>`
+      ).join('');
+      rowsHTML.push(`<div class="art-bleed__row">${items}</div>`);
+    }
 
-    section.innerHTML = heading + `<div class="art-bleed__rows">${rowsHTML}</div>`;
+    section.innerHTML = heading + `<div class="art-bleed__col">${rowsHTML.join('')}</div>`;
+
+    // Justified rows: each item's flex-grow = its aspect ratio, so every image in
+    // a row shares one height while keeping its natural width.
+    section.querySelectorAll('.art-bleed__item img').forEach(img => {
+      const apply = () => {
+        const ar = (img.naturalWidth && img.naturalHeight)
+          ? (img.naturalWidth / img.naturalHeight) : 1.5;
+        img.parentElement.style.flexGrow = String(ar);
+      };
+      if (img.complete && img.naturalWidth) apply();
+      else img.addEventListener('load', apply, { once: true });
+    });
   }
 
   /**

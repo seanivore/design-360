@@ -1687,6 +1687,15 @@ body > main.section-main {
   border-color: var(--color-accent);
 }
 
+/* project_link buttons stack and align to the right edge of the content
+   column (consecutive ones stack vertically with a gap) — "classy". */
+.flow-project-link {
+  display: flex;
+  justify-content: flex-end;
+  max-width: var(--flow-text-measure, 56rem);
+  margin: 0.75rem auto 0;
+}
+
 /* Inline project_link flow-block button (v4.4.x) — entry pages load
    styles.css only, so these are authored here (the homepage .btn-primary
    lives in landing.css and is unavailable on entry pages). */

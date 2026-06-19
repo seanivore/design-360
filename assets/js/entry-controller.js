@@ -617,8 +617,11 @@ const EntryController = (() => {
             }
 
             case 'project_link': {
-                // Inline, placeable-anywhere button (replaces the forced-bottom
-                // #entry-project-url). Filled default; { "variant": "ghost" } for outline.
+                // Right-aligned, stacked button. Consecutive project_links stack
+                // and align to the right edge of the content column ("classy").
+                // Filled default; { "variant": "ghost" } for outline.
+                const wrap = document.createElement('div');
+                wrap.className = 'flow-project-link';
                 const a = document.createElement('a');
                 a.className = block.variant === 'ghost'
                     ? 'project-link-btn project-link-btn--ghost'
@@ -629,7 +632,8 @@ const EntryController = (() => {
                     a.target = '_blank';
                     a.rel = 'noopener';
                 }
-                return a;
+                wrap.appendChild(a);
+                return wrap;
             }
 
             case 'video': {
