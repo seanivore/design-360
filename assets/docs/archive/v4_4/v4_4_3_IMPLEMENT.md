@@ -1,7 +1,7 @@
-# v4.4.2 Implementation Plan — Galleries + portfolio feedback batch
+# v4.4.3 Implementation Plan — Galleries + portfolio feedback batch
 
 **Initiative**: Shift the portfolio toward "reviewable in a sitting" — visual, minimal copy, scroll-and-go. Two things ship together: (1) a new *gallery* content shape (URL-array collections + a `gallery` entry layout + a shared lightbox + nested collection URLs), first instance the recovered hand-drawn Art-Deco art; (2) a batch of human feedback hardening the homepage, footer, copy, and a new Phase C entry (the freelance-payments platform — **prioritized because every Phase C link currently loads empty**).
-**Revision driven by**: gap-review fold (A cold / B fidelity / C integration / D design-correctness) on top of the v4.4.1 feedback fold. (v4.4.0 = pre-feedback gallery draft, kept as history.)
+**Revision driven by**: breadth pass (owner-journey + integration/regression) on top of the v4.4.2 gap-review fold — cleaned a phantom `collection_images` field + renamed the homepage `renderArtBleed`/`art_bleed` per Sean's naming. Gate cleared (the only breadth findings were polish; the build-breakers were already resolved in v4.4.2). (v4.4.0 = pre-feedback gallery draft, kept as history.)
 **Required reading first**: `assets/docs/AUGUST_STYLE.md` · `assets/docs/ENTRY_SOP.md` · `.agent/EMOTION_DRIVEN_COPYWRITING.md` · this doc only.
 **Branch**: build on `dev` → preview review → ff `dev`→`design-360` + tag.
 **This is a delta on a shipped, live system.** The current repo + architecture doc are the proven substrate; review/execute the delta and its fit — do not re-litigate settled behavior.
@@ -61,11 +61,11 @@ Then `python3 generate_manifest.py` emits the new entry + nested collection page
 - **Blog cross-link** `assets/entries/uid-gbw-103.json`: insert a bold `project_link` flow block → `https://generative-horoscopes.august.style/` right after the `"Automating 100+ Weekly Blog Posts"` h5 (`flow[]`, ~`:225`).
 
 ### 1F. Homepage Bleed Images Component section (NOT "homepage gallery"; gallery = the entry layout)
-- New `<section id="art-gallery">` in `index.html` between `:79` `#featured-tiles` and `:82` `#process` (insert on the blank line `:80`), with extra top/bottom padding (topic shift — breathing room).
-- `renderArtGallery(projects, content)` in `assets/js/landing-controller.js`, called in `loadHomepage()` between `renderFeaturedTiles()` (`:37`) and `renderProcess()` (`:38`). Reuse the entry bleed visual (a row or two); pull images across entries that carry the gallery placement; **shuffle each reload**; image click → `/<slug>/` (entry).
-- Config block in `homepage-content.json`: `{ "art_gallery": { "heading": "<optional>", "cap": 12, "placement": "Art Gallery" } }`.
+- New `<section id="art-bleed">` in `index.html` between `:79` `#featured-tiles` and `:82` `#process` (insert on the blank line `:80`), with extra top/bottom padding (topic shift — breathing room). (Section name = "Bleed Images Component", NOT "gallery" — per Sean, "gallery" is reserved for the entry layout.)
+- `renderArtBleed(projects, content)` in `assets/js/landing-controller.js`, called in `loadHomepage()` between `renderFeaturedTiles()` (`:37`) and `renderProcess()` (`:38`). Reuse the entry bleed visual (a row or two); pull images across entries that carry the gallery placement; **shuffle each reload**; image click → `/<slug>/` (entry).
+- Config block in `homepage-content.json`: `{ "art_bleed": { "heading": "<optional>", "cap": 12, "placement": "Art Gallery" } }`.
 - **Tag combo:** the section pulls **only gallery-layout entries that have a bleed component.** `"Art Gallery"` placement already marks them; that is the selector (no new tag needed — confirm in build that every gallery entry carries `placement:["Art Gallery"]`).
-- **`renderArtGallery()` shape** (concrete; render-tune the row count/markup on dev): `const cfg = content.art_gallery || {}; const gal = projects.filter(p => (p.placement||[]).includes(cfg.placement || 'Art Gallery')); const imgs = gal.flatMap(p => (p.collection_images || p.thumb || []).map(src => ({src, slug: p.slug}))); shuffle(imgs); const picked = imgs.slice(0, cfg.cap || 12);` → build a `.entry-bleed`-style row(s); each image links to `/${slug}/`. (`shuffle` = Fisher-Yates; if pulling per-collection images isn't readily available on the project object, fall back to the entry `thumb[]`.)
+- **`renderArtBleed()` shape** (concrete; render-tune the row count/markup on dev): `const cfg = content.art_bleed || {}; const gal = projects.filter(p => (p.placement||[]).includes(cfg.placement || 'Art Gallery')); const imgs = gal.flatMap(p => (p.thumb || []).map(src => ({src, slug: p.slug}))); shuffle(imgs); const picked = imgs.slice(0, cfg.cap || 12);` → build a `.entry-bleed`-style row(s); each image links to `/${slug}/`. (`shuffle` = Fisher-Yates. Source = the gallery entries' `thumb[]` — no `collection_images` field exists; `thumb[]` is sufficient and avoids extra homepage fetches. Optionally enrich later by loading each entry's `collections[]` images.)
 
 ---
 

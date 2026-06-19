@@ -34,4 +34,9 @@ Four in-session angle reviewers (Sean-authorized stand-in for the fresh-instance
 - Render-tune values (scrim opacity, EXPLORE exact placement, video equal-height): concrete defaults given, tuned on dev per DEV_RULES (design = concrete default + render-tune).
 
 ## Disposition
-~6 real folds incl. 2 build-breakers → another A–D loop is warranted after the breadth pass per the severity×count rule. Proceed: breadth pass (2 subagents) → v4.4.3 → decide re-loop.
+~6 real folds incl. 2 build-breakers, all cleanly folded → v4.4.2.
+
+## Breadth pass (on v4.4.2) → v4.4.3
+Two breadth reviewers (owner-journey + integration/regression). Most "findings" were the classic in-session-subagent confusion (flagging the plan's own unbuilt work — "VALID_LAYOUTS missing gallery", "lightbox.js doesn't exist", "gallery dispatch missing" — as plan gaps; they're the build itself, already specified in 1A–1F/1D). Genuinely new: (1) my `renderArtGallery` stub referenced a phantom `collection_images` field → cleaned to source from `thumb[]`; (2) renamed `renderArtBleed`/`art_bleed`/`#art-bleed` per Sean's "not gallery" naming. Both polish; zero new build-breakers (the regression check on the v4.4.2 fold came back clean).
+
+**Decision (per Sean's severity×count rule):** the build-breakers were caught + fixed in the A–D pass, and the breadth/regression pass found only polish → "just a few and all polish, don't loop again." **Gate cleared at v4.4.3.** Residual gaps will surface on the dev preview (design render-tune is explicitly dev-tuned). Proceed to build.
