@@ -1083,6 +1083,11 @@ body > main.section-main {
   }
 }
 
+.social-links--footer {
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
 .social-links--footer .social-link {
   width: 2rem;
   height: 2rem;
@@ -1091,6 +1096,24 @@ body > main.section-main {
 .social-links--footer .social-link svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.footer-email {
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.footer-email a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-bottom: 0.0625rem solid transparent;
+  transition: color var(--duration-fast) var(--easing),
+    border-color var(--duration-fast) var(--easing);
+}
+
+.footer-email a:hover {
+  color: var(--color-text-primary);
+  border-bottom-color: currentColor;
 }
 
 /* ============================================
