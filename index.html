@@ -27,6 +27,10 @@
        half is frosted (white blur) so the AUGUST cutout reads against it. -->
   <section id="hero" class="hero-cyberpunk">
     <video class="hero-cyberpunk__bg-video" autoplay muted loop playsinline src="https://cdn.august.style/media/home-anim/hero-cyberpunk-FINAL.mp4"></video>
+    <!-- Subtle full-image scrim (sits above the video, below the left blur) so
+         the +contact link reads over the bright right half without muddying the
+         frosted left. -->
+    <div class="hero-cyberpunk__scrim" aria-hidden="true"></div>
     <div class="hero-cyberpunk__blur"></div>
 
     <!-- Integrated nav: logo + lowercase +prefix links (left), contact label (right). -->
@@ -35,7 +39,7 @@
         <img src="/assets/favicon/favicon.svg" alt="">
       </a>
       <ul class="hero-cyberpunk__nav-links">
-        <li><a href="#featured-tiles">+work</a></li>
+        <li><a href="/section.html">+work</a></li>
         <li><a href="#process">+process</a></li>
         <li><a href="#credentials">+about</a></li>
       </ul>
@@ -60,14 +64,14 @@
         <p class="hero-cyberpunk__about" id="heroAboutLine"></p>
       </div>
       <div class="hero-cyberpunk__cta-row">
-        <a href="/section.html" class="hero-cyberpunk__cta">
-          <span class="hero-cyberpunk__cta-label">explore the work <span aria-hidden="true">→</span></span>
-        </a>
         <ul class="hero-cyberpunk__socials" aria-label="Social">
           <li><a href="https://github.com/seanivore" target="_blank" rel="noopener">github</a></li>
           <li><a href="https://www.linkedin.com/in/seanivore/" target="_blank" rel="noopener">linkedin</a></li>
           <li><a href="https://www.behance.net/seanivore" target="_blank" rel="noopener">behance</a></li>
         </ul>
+        <a href="/section.html" class="hero-cyberpunk__cta">
+          <span class="hero-cyberpunk__cta-label">explore the work <span aria-hidden="true">→</span></span>
+        </a>
       </div>
     </div>
   </section>
@@ -77,6 +81,9 @@
 
   <!-- FEATURED TILES -->
   <section id="featured-tiles" class="feature-tiles"></section>
+
+  <!-- BLEED IMAGES COMPONENT — hand-drawn art wall (renderArtBleed) -->
+  <section id="art-bleed" class="art-bleed sr"></section>
 
   <!-- PROCESS -->
   <section class="process sr" id="process">

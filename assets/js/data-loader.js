@@ -224,6 +224,16 @@ const DataLoader = (() => {
   }
 
   /**
+   * Resolve a 6.1 gallery collection's ordered image URL array.
+   * Unlike resolveCollectionMedia() (which returns item OBJECTS for the legacy
+   * media[] entry collection_preview), this returns the raw URL strings from
+   * collection.images[] in array order. Returns [] when absent.
+   */
+  function resolveCollectionImages(collection) {
+    return (collection && Array.isArray(collection.images)) ? collection.images : [];
+  }
+
+  /**
    * Union of multiple collections' resolved items, deduped by item.id.
    * Order: items from the earliest slug come first; later duplicates are dropped.
    */
@@ -449,6 +459,7 @@ const DataLoader = (() => {
     loadCollection,
     loadCollectionItem,
     resolveCollectionMedia,
+    resolveCollectionImages,
     unionCollections,
     intersectCollections,
     filterByAnyTag,

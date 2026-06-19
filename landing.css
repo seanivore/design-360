@@ -888,11 +888,32 @@ a.cred-company:hover {
   opacity: 0
 }
 
+/* Full-image scrim: above the video, below the left blur — tints the bright
+   right half so +contact reads, without muddying the frosted left (v4.4.x). */
+.hero-cyberpunk__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .18);
+  pointer-events: none;
+  z-index: 0
+}
+
+/* Socials pinned left, "explore the work" at the bottom-right blur edge (v4.4.x;
+   socials come first in the DOM now). Reverts to full-width wrap on mobile. */
 .hero-cyberpunk__cta-row {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   gap: clamp(24px, 4vw, 56px);
-  flex-wrap: wrap
+  flex-wrap: nowrap;
+  width: 50%
+}
+
+@media (max-width: 47.9375rem) {
+  .hero-cyberpunk__cta-row {
+    width: 100%;
+    flex-wrap: wrap
+  }
 }
 
 .hero-cyberpunk__cta {
@@ -1441,4 +1462,68 @@ a.cred-company:hover {
   width: 75%;
   margin-left: 25%;
   background: var(--mauve)
+}
+
+/* Homepage Bleed Images Component — hand-drawn art wall (v4.4.x). */
+.art-bleed {
+  width: 100%;
+  padding: 64px 0;
+}
+.art-bleed__heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  margin: 0 0 24px;
+  opacity: .85;
+}
+.art-bleed__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.art-bleed__row {
+  display: flex;
+  gap: 8px;
+}
+.art-bleed__item {
+  flex: 1;
+  min-width: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.art-bleed__item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.art-bleed__item:hover img {
+  transform: scale(1.04);
+}
+@media (max-width: 47.9375rem) {
+  .art-bleed__item img { height: 120px; }
+}
+
+/* Toast for the mailto clipboard fallback (v4.4.x). */
+.site-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(20, 20, 20, .94);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: .875rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.site-toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }

@@ -6,9 +6,9 @@
   "id": "uid-vin-427",
   "slug": "freelance-payments-platform",
   "title": "Freelance Payments Platform",
-  "subtitle": "Full-stack payment portal with Stripe integration, automated contracts, and serverless backend",
+  "subtitle": "A client payment portal — contracts, invoices, and Stripe checkout — running on JSON files in Git instead of a database or server",
   "seo_title": "Freelance Payments Platform | React + Stripe + Vercel",
-  "seo_description": "A freelance payment collection micro-site built with React 18, TypeScript, and Vite. Features Stripe checkout, automated PDF contracts and invoices, and GitHub Actions workflows on Vercel serverless.",
+  "seo_description": "A freelance payment portal built with React, TypeScript, and Vite. Clients sign contracts, review invoices, and pay through Stripe — all on JSON files in Git, no database, no server.",
   "role": [
     "Web Developer"
   ],
@@ -27,77 +27,102 @@
     "Web Application"
   ],
   "company": "SEANIVORE GROUP LLC",
-  "thumb": [
-    "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-1.webp",
-    "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-2.webp",
-    "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-3.webp",
-    "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-4.webp",
-    "https://cdn.august.style/media/freelance-payments-platform/thumb-slides-freelance-payments-platform-5.webp"
+  "placement": [
+    "Phase C"
   ],
-  "thumb_alt": "Freelance payments platform showing login portal and invoice document views",
-  "img": [
-    "https://cdn.august.style/media/freelance-payments-platform/img-sq-slides-freelance-payments-platform-1.webp",
-    "https://cdn.august.style/media/freelance-payments-platform/img-sq-slides-freelance-payments-platform-2.webp",
-    "https://cdn.august.style/media/freelance-payments-platform/img-sq-slides-freelance-payments-platform-3.webp"
-  ],
-  "img_alt": "Payment portal interface with branded login screen and document management views",
-  "media_url": "https://youtu.be/84RtKT3dfDk",
-  "media_embed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/84RtKT3dfDk?si=74w7Yz6IGe98gy52&amp;controls=0' title='Freelance Payments Platform Walkthrough' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
-  "media_alt": "Video walkthrough of the freelance payments platform showing the client login, contract signing, and Stripe checkout flow",
-  "origin_url": "https://payments.august.style",
-  "origin_url_text": "Visit Live Site",
-  "repository": "",
-  "tiles": [
-    "React 18 + TypeScript + Vite with Stripe Elements checkout",
-    "State-driven gate system routes clients through contract, invoice, payment",
-    "GitHub Actions automate PDF generation and JSON state updates",
-    "Vercel serverless backend with zero-database JSON architecture"
-  ],
-  "challenge": "Freelance payment collection required juggling separate tools for contracts, invoices, and payment links. Each new client meant manually creating Stripe products, drafting PDFs, and tracking payment status across disconnected systems. The process needed a single, branded portal that handled the entire lifecycle from contract signing through final payment.",
-  "approach": "Built a React 18 + TypeScript single-page application deployed on Vercel with serverless API routes. Designed a state-driven FluxGate routing system that advances clients through contract signing, invoice review, and Stripe checkout based on JSON timestamps. GitHub Actions workflows automate PDF generation, Stripe product creation, and state synchronization without requiring a database.",
-  "result": "Delivered a fully automated payment portal at payments.august.style that handles end-to-end freelance transactions. Clients sign contracts, review invoices, and complete payments through Stripe in a single branded experience. The zero-database architecture keeps hosting free on Vercel while GitHub Actions handle all backend automation, eliminating manual invoicing and payment tracking entirely.",
-  "role_headline": "Full-Stack Payment Platform",
-  "hero_btn_cta": "See Web Projects",
-  "final_cta_text": "Interested in web development?",
-  "final_btn_cta": "See All Web Projects",
-  "skill_summary": "",
-  "process": [
-    {
-      "word": "Architect",
-      "summary": "Designed a stateless FluxGate routing system using JSON timestamps to drive client progression through contract, invoice, and payment gates without a database.",
-      "link_text": "",
-      "link_slug": ""
-    },
-    {
-      "word": "Build",
-      "summary": "Developed the React + TypeScript frontend with Stripe Elements integration and Vercel serverless API routes for secure checkout session creation.",
-      "link_text": "",
-      "link_slug": ""
-    },
-    {
-      "word": "Automate",
-      "summary": "Wired GitHub Actions to handle PDF generation, Stripe product setup, and JSON state updates triggered by client interactions and webhook events.",
-      "link_text": "",
-      "link_slug": ""
-    }
-  ],
-  "metric": {
-    "value": "0",
-    "kpi": "Database Dependencies",
-    "context": "Entire platform runs on JSON files as the single source of truth with no database required"
-  },
-  "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
-  "layout": "columns",
-  "achievements": [
+  "layout": "flow",
+  "thumb": [
+    "https://cdn.august.style/media/freelance-payments-platform/thumb-freelance-payments-platform-1.webp",
+    "https://cdn.august.style/media/freelance-payments-platform/thumb-freelance-payments-platform-2.webp",
+    "https://cdn.august.style/media/freelance-payments-platform/thumb-freelance-payments-platform-3.webp",
+    "https://cdn.august.style/media/freelance-payments-platform/thumb-freelance-payments-platform-4.webp",
+    "https://cdn.august.style/media/freelance-payments-platform/thumb-freelance-payments-platform-5.webp",
+    "https://cdn.august.style/media/freelance-payments-platform/thumb-freelance-payments-platform-6.webp"
+  ],
+  "thumb_alt": "Freelance payments platform — branded client login, contract signing, invoice review, and Stripe checkout",
+  "img": [],
+  "img_alt": "",
+  "main_media": [],
+  "grids": [],
+  "bleed": [],
+  "bleed_slides": null,
+  "flow": [
     {
-      "headline": "End-to-End Freelance Automation",
-      "details": "Single portal handles contract signing, invoice delivery, split payments, and document downloads with zero manual steps after initial job setup."
+      "type": "h4",
+      "text": "A payment portal that runs on no database at all."
+    },
+    {
+      "type": "p",
+      "text": "A freelancer sends a client one login link. From there the client signs a contract, reviews an invoice, and pays, while the whole thing runs on JSON files in Git instead of a database or server."
+    },
+    {
+      "type": "video",
+      "desktop": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-1-1.mp4",
+      "mobile": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-1-2.mp4",
+      "caption": "After finalizing contract specifics with the client, the AI automation assembles it in our contract template. When it's ready they're emailed a login keyword they pair with their name to make their first payment.",
+      "alt": "Client login screen — pairing a name with an emailed keyword to enter the payment portal"
+    },
+    {
+      "type": "video",
+      "desktop": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-2-1.mp4",
+      "mobile": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-2-2.mp4",
+      "caption": "They review the contract and securely sign it on the platform. A copy is emailed when it's complete, and they can download one for their records right away.",
+      "alt": "Contract review and signing screen with a downloadable copy of the signed agreement"
+    },
+    {
+      "type": "video",
+      "desktop": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-3-1.mp4",
+      "mobile": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-3-2.mp4",
+      "caption": "Their invoice loads for review before they continue to pay.",
+      "alt": "Invoice review screen showing line items before continuing to payment"
+    },
+    {
+      "type": "video",
+      "desktop": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-4-1.mp4",
+      "mobile": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-4-2.mp4",
+      "caption": "Payment completes through secure, well-known Stripe.",
+      "alt": "Stripe checkout completing the client payment securely"
+    },
+    {
+      "type": "p",
+      "text": "That's it. When the project is done they get one more email if there's a balance to settle."
+    },
+    {
+      "type": "p",
+      "text": "Under the hood: React, TypeScript, and Vite on the front; Stripe Checkout for payments; PDFs generated from templates; and Vercel serverless plus GitHub Actions doing the back-office work. Treating each job as a single JSON file in Git means version history, an audit trail, and zero database cost."
+    },
+    {
+      "type": "p",
+      "text": "Built through AI-assisted development: paired with AI the whole way, with every architectural decision made deliberately, not vibe-coded."
+    },
+    {
+      "type": "project_link",
+      "url": "https://github.com/seanivore/freelance-payments",
+      "text": "See the product on GitHub"
+    },
+    {
+      "type": "project_link",
+      "url": "https://payments.august.style/",
+      "text": "Open the live portal",
+      "variant": "ghost"
     }
   ],
-  "main_media": [],
-  "grids": []
+  "origin_url": "",
+  "origin_url_text": "",
+  "repository": "",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "notes": [],
+  "slideshows": [],
+  "achievements": [
+    {
+      "headline": "A client payment portal that runs on $0 of infrastructure.",
+      "details": "Contract signing, invoicing, split Stripe payments, and document downloads, all from JSON files in Git. No database, no server."
+    }
+  ]
 }

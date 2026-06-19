@@ -58,10 +58,16 @@ def _build_slug_map(
     pattern: str,
     label: str,
     rel_dir: str,
+    nested: bool = False,
 ) -> Tuple[Dict[str, str], List[str]]:
     """
     Scan a directory for JSON files matching the glob pattern and build a
     slug → relative-path map. Returns (slug_map, errors).
+
+    When nested=True (gallery collections), a doc carrying an `entry` field is
+    keyed by the nested path "<entry>/<slug>" (e.g. illustration-art-deco/animals)
+    so it matches the /<entry>/<coll> URL. Docs lacking an `entry` field fall
+    back to the flat `slug` key so legacy collections keep working.
     """
     slug_map: Dict[str, str] = {}
     errors: List[str] = []
@@ -86,15 +92,21 @@ def _build_slug_map(
         slug = data['slug']
         rel_path = f"{rel_dir}/{json_file.name}"
 
-        if slug in slug_map:
+        key = slug
+        if nested:
+            entry_slug = data.get('entry', '') or ''
+            if entry_slug:
+                key = f"{entry_slug}/{slug}"
+
+        if key in slug_map:
             errors.append(
-                f"Duplicate slug '{slug}' in {json_file.name} "
-                f"(also in {slug_map[slug]})"
+                f"Duplicate slug '{key}' in {json_file.name} "
+                f"(also in {slug_map[key]})"
             )
             continue
 
-        slug_map[slug] = rel_path
-        print(f"✅ {json_file.name} → /{slug}")
+        slug_map[key] = rel_path
+        print(f"✅ {json_file.name} → /{key}")
 
     return slug_map, errors
 
@@ -131,7 +143,8 @@ def build_manifest(
 
     print()
     collections, errs = _build_slug_map(
-        collections_dir, 'uid-col-*.json', 'collection', 'assets/collections'
+        collections_dir, 'uid-col-*.json', 'collection', 'assets/collections',
+        nested=True,
     )
     manifest['collections'] = collections
     all_errors.extend(errs)
@@ -317,15 +330,27 @@ def generate_collection_html(collections_dir: Path, project_root: Path) -> int:
         if og_image and not og_image.startswith('http'):
             og_image = f'/{og_image}'
         thumb_alt = html.escape(data.get('thumb_alt', '') or data.get('title', ''))
-        canonical = f'https://august.style/collection/{slug}'
+
+        # Nested gallery collections carry an `entry` field → write the page
+        # at _pages/<entry>/<coll>.html and serve it at /<entry>/<coll>.
+        # Legacy collections without an `entry` field fall back to the flat
+        # _pages/collection-<slug>.html path so they keep working.
+        entry_slug = data.get('entry', '') or ''
+        pages_dir = project_root / '_pages'
+        if entry_slug:
+            canonical = f'https://august.style/{entry_slug}/{slug}'
+            out_dir = pages_dir / entry_slug
+            out_dir.mkdir(parents=True, exist_ok=True)
+            out_file = out_dir / f'{slug}.html'
+        else:
+            canonical = f'https://august.style/collection/{slug}'
+            pages_dir.mkdir(parents=True, exist_ok=True)
+            out_file = pages_dir / f'collection-{slug}.html'
 
         page_html = _render_seo_page(
             template, seo_title, seo_desc, og_image, thumb_alt, canonical
         )
 
-        pages_dir = project_root / '_pages'
-        pages_dir.mkdir(parents=True, exist_ok=True)
-        out_file = pages_dir / f'collection-{slug}.html'
         out_file.write_text(page_html, encoding='utf-8')
         generated += 1
 

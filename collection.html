@@ -59,6 +59,15 @@
       <!-- Populated by collection-controller.js (item tiles) -->
     </div>
 
+    <!-- Lightbox Overlay (shared module: assets/js/lightbox.js) -->
+    <div id="lightbox-overlay" class="lightbox-overlay" style="display: none;">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+      <button class="lightbox-next" aria-label="Next">&rsaquo;</button>
+      <img class="lightbox-img" src="" alt="">
+      <span class="lightbox-counter"></span>
+    </div>
+
   </main>
 
   <!-- Footer -->
@@ -98,6 +107,7 @@
   <script src="/assets/js/data-loader.js"></script>
   <script src="/assets/js/tile-renderer.js"></script>
   <script src="/assets/js/filter-controller.js"></script>
+  <script src="/assets/js/lightbox.js"></script>
   <script src="/assets/js/collection-controller.js"></script>
 
 </body>

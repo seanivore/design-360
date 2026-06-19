@@ -33,7 +33,7 @@ LOCKED_COMPANIES: List[str] = [
     "PETA, Inc.",
 ]
 
-VALID_LAYOUTS: Set[str] = {"columns", "flow"}
+VALID_LAYOUTS: Set[str] = {"columns", "flow", "gallery"}
 
 VALID_FLOW_TYPES: Set[str] = {
     "h3",
@@ -45,6 +45,8 @@ VALID_FLOW_TYPES: Set[str] = {
     "chunk_break",
     "embed_html",
     "collection_preview",
+    "project_link",
+    "video",
 }
 
 VALID_MEDIA_TYPES: Set[str] = {"image", "video"}
@@ -66,7 +68,10 @@ ENTRY_REQUIRED_FIELDS: List[str] = [
     "layout",
 ]
 
-# Collection v6.0 — required fields
+# Collection — required fields shared by both schema versions.
+# The media-list field is conditional and added per schema_version inside
+# validate_collection():  6.0 requires "media" (UID array), 6.1 requires
+# "images" (CDN URL array).
 COLLECTION_REQUIRED_FIELDS: List[str] = [
     "id",
     "slug",
@@ -77,8 +82,14 @@ COLLECTION_REQUIRED_FIELDS: List[str] = [
     "company",
     "thumb",
     "thumb_alt",
-    "media",
 ]
+
+# Accepted collection schema versions and the media-list field each requires.
+VALID_COLLECTION_SCHEMA_VERSIONS: Set[str] = {"6.0", "6.1"}
+COLLECTION_MEDIA_FIELD_BY_VERSION: Dict[str, str] = {
+    "6.0": "media",
+    "6.1": "images",
+}
 
 # Item v6.0 — required fields
 ITEM_REQUIRED_FIELDS: List[str] = [
@@ -280,12 +291,19 @@ def validate_collection(
 
     metadata = data.get("_metadata", {})
     schema_version = metadata.get("schema_version")
-    if schema_version != "6.0":
+    if schema_version not in VALID_COLLECTION_SCHEMA_VERSIONS:
         errors.append(
-            f"Schema version is '{schema_version}', expected '6.0'"
+            f"Schema version is '{schema_version}', expected one of: "
+            f"{sorted(VALID_COLLECTION_SCHEMA_VERSIONS)}"
         )
 
-    errors.extend(_check_required(data, COLLECTION_REQUIRED_FIELDS))
+    # Shared required fields, plus the media-list field required for this
+    # schema version (6.0 -> 'media' UID array, 6.1 -> 'images' URL array).
+    required = list(COLLECTION_REQUIRED_FIELDS)
+    media_field = COLLECTION_MEDIA_FIELD_BY_VERSION.get(schema_version)
+    if media_field:
+        required.append(media_field)
+    errors.extend(_check_required(data, required))
 
     # Company (locked list)
     company = data.get("company", "")
@@ -304,7 +322,9 @@ def validate_collection(
                         f"Tag '{tag}' (type: {tag_type}) not in tags.json registry"
                     )
 
-    # media[] cross-reference
+    # media[] cross-reference — only for collections that carry a media[]
+    # UID array (schema 6.0). Schema 6.1 gallery collections use images[]
+    # (CDN URLs), which do not resolve to local item UIDs, so skip them.
     media = data.get("media")
     if media is not None:
         if not isinstance(media, list):

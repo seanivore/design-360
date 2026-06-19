@@ -29,16 +29,90 @@ const LandingController = (() => {
     initScrollReveal();
     initNavCollapse();
     initAccordion();
+    initMailtoFallback();
   }
 
   function loadHomepage(content, projects) {
     renderHero(content);
     renderNarrativeSpine(content, projects);
     renderFeaturedTiles(projects, content);
+    renderArtBleed(content, projects);
     renderProcess(content);
     renderCredentials(content);
     renderAchievements(projects, content);
     renderCTASection(content);
+  }
+
+  /**
+   * ART BLEED — homepage "Bleed Images Component" section (v4.4.x).
+   * Pulls thumbnails across gallery-layout entries (placement "Art Gallery"),
+   * shuffles each reload, and lays them into full-bleed rows. Each image links
+   * to its entry. NOT the gallery layout — this is the homepage bleed strip.
+   */
+  function renderArtBleed(content, projects) {
+    const section = document.getElementById('art-bleed');
+    if (!section) return;
+
+    const cfg = (content && content.art_bleed) || {};
+    const placement = cfg.placement || 'Art Gallery';
+    const cap = cfg.cap || 12;
+
+    const gallery = (projects || []).filter(p => (p.placement || []).includes(placement));
+    let imgs = gallery.flatMap(p => (p.thumb || []).map(src => ({ src, slug: p.slug })));
+    if (!imgs.length) { section.style.display = 'none'; return; }
+
+    // Fisher-Yates shuffle — fresh each reload.
+    for (let i = imgs.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+    }
+    imgs = imgs.slice(0, cap);
+
+    const heading = cfg.heading ? `<h2 class="art-bleed__heading">${cfg.heading}</h2>` : '';
+    const mid = Math.ceil(imgs.length / 2);
+    const rows = [imgs.slice(0, mid), imgs.slice(mid)].filter(r => r.length);
+    const rowsHTML = rows.map(row =>
+      `<div class="art-bleed__row">` +
+        row.map(o =>
+          `<a class="art-bleed__item" href="/${o.slug}/" aria-label="View ${o.slug}">` +
+            `<img src="${o.src}" alt="" loading="lazy"></a>`
+        ).join('') +
+      `</div>`
+    ).join('');
+
+    section.innerHTML = heading + `<div class="art-bleed__rows">${rowsHTML}</div>`;
+  }
+
+  /**
+   * MAILTO FALLBACK (v4.4.x) — desktop users with no mail handler get an empty
+   * tab; this copies the address to the clipboard + shows a toast so they never
+   * dead-end. The mailto: still fires for users who have a handler.
+   */
+  function initMailtoFallback() {
+    document.addEventListener('click', e => {
+      const a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+      if (!a) return;
+      const email = a.getAttribute('href').replace(/^mailto:/, '').split('?')[0];
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email)
+          .then(() => showToast('Email copied: ' + email))
+          .catch(() => {});
+      }
+    });
+  }
+
+  function showToast(message) {
+    let toast = document.getElementById('site-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'site-toast';
+      toast.className = 'site-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add('site-toast--visible');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toast.classList.remove('site-toast--visible'), 2200);
   }
 
   // ──────────────────────────────────────────────
@@ -143,15 +217,16 @@ const LandingController = (() => {
         const token = phaseToURLToken(phase.label);
         const href = `/section.html?tags=${token}`;
         const label = phase.label || '';
-        const heading = phase.heading || '';
+        const headingLead = phase.heading_lead || '';
+        const headingAccent = phase.heading_accent || '';
         return (
           `<a class="spine-section" href="${href}">` +
             `<div class="spine-section__inner">` +
               `<div class="spine-section__label">${label}</div>` +
               `<h2 class="spine-section__heading">` +
-                `<span class="spine-section__heading-prefix">${label} is</span>` +
+                `<span class="spine-section__heading-prefix">${headingLead}</span>` +
                 ` ` +
-                `<em class="spine-section__heading-accent">${heading}</em>` +
+                `<em class="spine-section__heading-accent">${headingAccent}</em>` +
                 `<span class="spine-section__heading-period">.</span>` +
               `</h2>` +
               `<div class="spine-section__body">${renderParagraphs(phase.body || '')}</div>` +

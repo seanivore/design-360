@@ -28,6 +28,8 @@
   ],
   "tile_alt": "Short description of the featured content that applies across the array",
   "layout": "columns",
+  "_layout_options": "columns | flow | gallery",
+  "collections": [],
   "thumb": [
     "https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp"
   ],
@@ -106,6 +108,19 @@
       "type": "embed_html",
       "html": "<blockquote class='twitter-tweet'>...</blockquote>",
       "alt": ""
+    },
+    {
+      "type": "project_link",
+      "url": "https://example.com/",
+      "text": "See the project",
+      "variant": "ghost"
+    },
+    {
+      "type": "video",
+      "desktop": "https://cdn.august.style/media/{slug}/vid-{slug}-1-1.mp4",
+      "mobile": "https://cdn.august.style/media/{slug}/vid-{slug}-1-2.mp4",
+      "caption": "Optional caption line.",
+      "alt": "Describe the looping clip."
     }
   ],
   "media_url": "",

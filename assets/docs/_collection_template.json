@@ -1,10 +1,11 @@
 {
   "_metadata": {
-    "schema_version": "6.0",
+    "schema_version": "6.1",
     "template_type": "media_collection"
   },
   "id": "uid-col-###",
   "slug": "collection-name",
+  "entry": "parent-entry-slug",
   "title": "Display Title",
   "subtitle": "One-line tagline",
   "seo_title": "SEO Title (50-60 chars)",
@@ -14,12 +15,12 @@
   "product": [],
   "company": "Freelance",
   "thumb": [
-    "https://cdn.august.style/media/collection/{slug}/thumb-{slug}-1.webp"
+    "https://cdn.august.style/media/{entry}/{slug}/thumb-{slug}-1.webp"
   ],
   "thumb_alt": "Alt text for collection thumbnail",
-  "media": [
-    "uid-itm-001",
-    "uid-itm-002"
+  "images": [
+    "https://cdn.august.style/media/{entry}/{slug}/{slug}-1.webp",
+    "https://cdn.august.style/media/{entry}/{slug}/{slug}-2.webp"
   ],
   "notes": []
 }

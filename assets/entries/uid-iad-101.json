@@ -1,0 +1,78 @@
+{
+  "_metadata": {
+    "schema_version": "6.1",
+    "template_type": "project_entry"
+  },
+  "id": "uid-iad-101",
+  "slug": "illustration-art-deco",
+  "title": "Hand-Drawn Art Deco Illustration",
+  "subtitle": "Original Apple Pencil art deco illustration — animals and geometric motifs drawn as a brand's living backdrop",
+  "seo_title": "Hand-Drawn Art Deco Illustration — Animals & Motifs",
+  "seo_description": "Original hand-drawn Art Deco illustration from the maximalist turn — fans, palms, tigers, and birds drawn on iPad with Apple Pencil, no stock and no AI.",
+  "role": [
+    "Brand Designer",
+    "Graphic Designer",
+    "Creative Director"
+  ],
+  "skill": [
+    "Illustration",
+    "Adobe Creative Cloud",
+    "Art Direction"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
+  "company": "Freelance",
+  "placement": [
+    "Art Gallery"
+  ],
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "gallery",
+  "thumb": [
+    "https://cdn.august.style/media/illustration-art-deco/thumb-illustration-art-deco-1.webp",
+    "https://cdn.august.style/media/illustration-art-deco/thumb-illustration-art-deco-2.webp",
+    "https://cdn.august.style/media/illustration-art-deco/thumb-illustration-art-deco-3.webp",
+    "https://cdn.august.style/media/illustration-art-deco/thumb-illustration-art-deco-4.webp",
+    "https://cdn.august.style/media/illustration-art-deco/thumb-illustration-art-deco-5.webp",
+    "https://cdn.august.style/media/illustration-art-deco/thumb-illustration-art-deco-6.webp"
+  ],
+  "thumb_alt": "Hand-drawn Art Deco illustration — tigers, birds, fans, and geometric palms drawn on iPad with Apple Pencil",
+  "img": [],
+  "img_alt": "",
+  "main_media": [],
+  "grids": [],
+  "bleed": [],
+  "bleed_slides": null,
+  "collections": [
+    "animals",
+    "motif"
+  ],
+  "flow": [
+    {
+      "type": "project_link",
+      "url": "/generative-blog-workflow",
+      "text": "See where this art lived"
+    }
+  ],
+  "media_url": "",
+  "media_embed": "",
+  "media_alt": "",
+  "origin_url": "/generative-blog-workflow",
+  "origin_url_text": "See where this art lived",
+  "repository": "",
+  "tiles": [],
+  "challenge": "Hand-drawn Art Deco illustration from the maximalist turn — the moment minimalism flipped and ornament came roaring back. Fans, palms, tigers, birds, all drawn on iPad and used as the living backdrop of a whole brand.",
+  "approach": "Original Apple Pencil work, no stock and no AI. Recovered from a retired site and re-collected here: animals on one wall, geometric motifs on the other. Page through them.",
+  "result": "",
+  "role_headline": null,
+  "hero_btn_cta": null,
+  "final_cta_text": null,
+  "final_btn_cta": null,
+  "skill_summary": "",
+  "process": null,
+  "metric": null,
+  "achievements": [],
+  "notes": []
+}

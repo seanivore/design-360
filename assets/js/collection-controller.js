@@ -13,29 +13,35 @@ window.CollectionController = (() => {
 
   // State
   let collection = null;
-  let items = [];
+  let items = [];          // legacy: resolved item objects
+  let images = [];         // gallery (6.1): ordered image URL strings
+  let imageMode = false;   // true when rendering a 6.1 images[] collection
   let activeTags = []; // normalized
 
   /**
-   * Resolve collection slug from URL/sessionStorage/pathname.
-   * Mirrors entry-controller's getEntryPath(), scoped to /collection/{slug}.
+   * Resolve the collection slug (manifest key) from URL/sessionStorage/pathname.
+   *
+   * Returns the FULL nested path `<entry>/<coll>` for nested gallery URLs
+   * (e.g. `/illustration-art-deco/animals` -> `"illustration-art-deco/animals"`)
+   * so it matches the manifest.collections key written by generate_manifest.py.
+   * Still handles the legacy single-segment slug and `?path=` / sessionStorage
+   * forms (a leading `collection/` prefix is stripped, but interior slashes of
+   * a nested path are preserved).
    */
   function getCollectionSlug() {
+    const strip = (s) => (s || '').replace(/^\/|\/$/g, '').replace(/^collection\//, '');
+
     const urlParams = new URLSearchParams(window.location.search);
     const pathParam = urlParams.get('path');
-    if (pathParam) return pathParam.replace(/^\/|\/$/g, '');
+    if (pathParam) return strip(pathParam);
 
     const storedPath = sessionStorage.getItem('collectionPath');
     if (storedPath) {
       sessionStorage.removeItem('collectionPath');
-      return storedPath.replace(/^\/|\/$/g, '').replace(/^collection\//, '');
+      return strip(storedPath);
     }
 
-    const pathname = window.location.pathname.replace(/^\/|\/$/g, '');
-    if (pathname.startsWith('collection/')) {
-      return pathname.slice('collection/'.length);
-    }
-    return pathname;
+    return strip(window.location.pathname);
   }
 
   /**
@@ -190,23 +196,58 @@ window.CollectionController = (() => {
   }
 
   /**
-   * Render item grid into #collection-grid.
+   * Render the grid into #collection-grid.
+   *
+   * In image mode (6.1 images[]) each entry is a URL string rendered as a
+   * lightbox-opening <img> tile. In legacy item mode each entry is an item
+   * object rendered as a linked tile.
    */
-  function renderGrid(itemList) {
+  function renderGrid(list) {
     if (!gridEl) return;
     gridEl.innerHTML = '';
 
-    if (!itemList || itemList.length === 0) {
+    if (!list || list.length === 0) {
       const empty = document.createElement('p');
       empty.className = 'collection-empty';
-      empty.textContent = 'No items match the current filters.';
+      empty.textContent = imageMode ? 'No images in this collection.' : 'No items match the current filters.';
       gridEl.appendChild(empty);
       return;
     }
 
-    itemList.forEach(item => {
+    if (imageMode) {
+      // Reuse the existing 3-across square-thumbnail grid (.entry-image-grid /
+      // .entry-grid-image) so no new CSS is needed; the lightbox shows the
+      // full uncropped image on click.
+      gridEl.classList.add('entry-image-grid');
+      list.forEach(url => {
+        gridEl.appendChild(buildImageTile(url));
+      });
+      return;
+    }
+
+    gridEl.classList.remove('entry-image-grid');
+    list.forEach(item => {
       gridEl.appendChild(buildItemTile(item));
     });
+  }
+
+  /**
+   * Build a single gallery image tile: a bare <img data-lightbox-index="N">
+   * registered into the shared lightbox pool. No media.html link, no title.
+   * Click opens the shared lightbox (global delegation in lightbox.js).
+   * Uses .entry-grid-image so it slots into the reused .entry-image-grid.
+   */
+  function buildImageTile(url) {
+    const alt = (collection && collection.thumb_alt) || (collection && collection.title) || 'Collection image';
+    const idx = window.Lightbox.register(imgSrc(url), alt);
+
+    const img = document.createElement('img');
+    img.className = 'entry-grid-image collection-image-tile fade-in-item';
+    img.src = imgSrc(url);
+    img.alt = alt;
+    img.loading = 'lazy';
+    img.dataset.lightboxIndex = String(idx);
+    return img;
   }
 
   /**
@@ -285,19 +326,38 @@ window.CollectionController = (() => {
         return;
       }
 
-      items = await DataLoader.resolveCollectionMedia(collection);
-      activeTags = parseTagHash();
+      // Reset the shared lightbox pool for this page load.
+      window.Lightbox.reset();
+
+      // 6.1 gallery collections carry an ordered images[] URL array; legacy
+      // collections carry media[] item UIDs. Branch on which is present.
+      images = DataLoader.resolveCollectionImages(collection);
+      imageMode = images.length > 0;
 
       renderHeader(collection);
-      renderFilters(items);
-      renderGrid(filterItems(items, activeTags));
 
-      // Respond to hashchange (e.g. back/forward, manual hash edit)
-      window.addEventListener('hashchange', () => {
+      if (imageMode) {
+        // Gallery: render images in array order, no tag filters, no per-image
+        // title; clicking opens the shared lightbox.
+        renderGrid(images);
+      } else {
+        // Legacy item path: resolve item objects + tag filters.
+        items = await DataLoader.resolveCollectionMedia(collection);
         activeTags = parseTagHash();
+
         renderFilters(items);
         renderGrid(filterItems(items, activeTags));
-      });
+
+        // Respond to hashchange (e.g. back/forward, manual hash edit)
+        window.addEventListener('hashchange', () => {
+          activeTags = parseTagHash();
+          renderFilters(items);
+          renderGrid(filterItems(items, activeTags));
+        });
+      }
+
+      // Wire the shared lightbox after the grid has rendered.
+      window.Lightbox.init();
     } catch (error) {
       console.error('CollectionController init failed:', error);
       renderError('Something went wrong loading this collection.');

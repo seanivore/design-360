@@ -1,0 +1,29 @@
+{
+  "_metadata": {
+    "schema_version": "6.1",
+    "template_type": "media_collection"
+  },
+  "id": "uid-col-003",
+  "slug": "motif",
+  "title": "Motif",
+  "subtitle": "Geometric Art Deco motifs — fans, palms, and ornament drawn by hand.",
+  "seo_title": "Motif — Hand-Drawn Art Deco Geometric Illustration",
+  "seo_description": "Geometric Art Deco motifs — fans, palms, and ornamental shapes drawn on iPad with Apple Pencil, recovered and re-collected from a retired brand.",
+  "entry": "illustration-art-deco",
+  "role": [],
+  "skill": [],
+  "product": [],
+  "company": "Freelance",
+  "thumb": "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-1.webp",
+  "thumb_alt": "Hand-drawn Art Deco geometric motif illustration",
+  "images": [
+    "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-1.webp",
+    "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-2.webp",
+    "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-3.webp",
+    "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-4.webp",
+    "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-5.webp",
+    "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-6.webp",
+    "https://cdn.august.style/media/illustration-art-deco/motif/illustration-art-deco-collection-motif-7.webp"
+  ],
+  "notes": []
+}

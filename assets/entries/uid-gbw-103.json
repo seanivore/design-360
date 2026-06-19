@@ -225,6 +225,11 @@
       "text": "Automating 100+ Weekly Blog Posts"
     },
     {
+      "type": "project_link",
+      "url": "https://generative-horoscopes.august.style/",
+      "text": "See the live horoscope engine"
+    },
+    {
       "type": "list",
       "items": [
         {
@@ -464,23 +469,15 @@
   "metric": null,
   "achievements": [
     {
-      "headline": "100+ weekly blog posts auto-generated end-to-end",
+      "headline": "200+ blog posts auto-generated every week, end to end.",
       "details": "Notion → Make.com → ChatGPT → Webflow CMS pipeline produced 5 horoscope types across all 12 zodiac signs every week, plus daily charts and a weekly planner — all triggered from a single weekly data drop."
     },
     {
-      "headline": "68 AI-voiced podcast episodes — 800+ listens, 27 hours played",
-      "details": "Astrofluenced episodes auto-scripted from astrology aspects, voiced as two characters (Theodore + Stella), auto-cover-arted, and scheduled to Spotify and YouTube — published before Google's NotebookLM existed."
+      "headline": "A 68-episode AI-voiced podcast, shipped before NotebookLM existed.",
+      "details": "Astrofluenced episodes auto-scripted from astrology aspects, voiced as two characters (Theodore + Stella), auto-cover-arted, and scheduled to Spotify and YouTube. Over 800 listens, totaling 27 hours played, across all 68 episodes."
     },
     {
-      "headline": "Multi-AI script orchestration before NotebookLM",
-      "details": "Drafts bounced across separate AI instances — story generation, accuracy review, character script split, personality-driven editing, then TTS — to minimize human-in-the-loop moments while keeping the voice consistent across all 68 episodes."
-    },
-    {
-      "headline": "Hand-drawn Lottie animations across an AI-content site",
-      "details": "Drew all UI flourishes — flowering vines, leaves, rainbow arches, ornate headings — on iPad Pro with Apple Pencil, animated their strokes in After Effects, exported as Lottie, and wired them to scroll triggers so a vine grows and un-draws as visitors move."
-    },
-    {
-      "headline": "Original brand artwork on every page, no stock imagery",
+      "headline": "Every single page hand-illustrated, zero stock imagery.",
       "details": "All static and UI visuals on Astrofluenced were original Apple Pencil illustrations — gold-framed homepage, flamingos, tigers, geometric palms — providing a different background per page to balance the AI-generated content."
     }
   ],

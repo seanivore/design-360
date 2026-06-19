@@ -10,17 +10,16 @@
  *
  * Lightbox-pool contract:
  *   Any <img> participating in the unified lightbox pool carries
- *   `data-lightbox-index="<n>"` where <n> is its index in `lightboxPool`
- *   (module-level array of {src, alt}). Click delegation on document
- *   reads that index and opens the lightbox at that position.
+ *   `data-lightbox-index="<n>"` where <n> is its index in the shared
+ *   window.Lightbox pool (array of {src, alt}). Click delegation on
+ *   document reads that index and opens the lightbox at that position.
  */
 
 const EntryController = (() => {
 
-    // Unified lightbox state pool (one per page load).
-    let lightboxPool = [];
-    let lightboxIndex = 0;
-    let lightboxPreloadLinks = [];
+    // Lightbox state is owned by the shared window.Lightbox module
+    // (assets/js/lightbox.js). This controller only registers images and
+    // delegates open/nav/close/reset/init to it.
 
     /**
      * Get entry path from URL or sessionStorage
@@ -60,13 +59,12 @@ const EntryController = (() => {
     }
 
     /**
-     * Register an image into the unified lightbox pool.
-     * Returns the assigned index.
+     * Register an image into the shared lightbox pool.
+     * Applies the imgSrc() CDN/relative transform, then defers to the shared
+     * module. Returns the assigned index.
      */
     function registerLightboxImage(src, alt) {
-        const idx = lightboxPool.length;
-        lightboxPool.push({ src: imgSrc(src), alt: alt || '' });
-        return idx;
+        return window.Lightbox.register(imgSrc(src), alt);
     }
 
     /**
@@ -618,6 +616,66 @@ const EntryController = (() => {
                 return wrapper;
             }
 
+            case 'project_link': {
+                // Inline, placeable-anywhere button (replaces the forced-bottom
+                // #entry-project-url). Filled default; { "variant": "ghost" } for outline.
+                const a = document.createElement('a');
+                a.className = block.variant === 'ghost'
+                    ? 'project-link-btn project-link-btn--ghost'
+                    : 'project-link-btn';
+                a.href = block.url || '#';
+                a.textContent = block.text || '';
+                if (/^https?:\/\//i.test(block.url || '')) {
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                }
+                return a;
+            }
+
+            case 'video': {
+                // Paired desktop (wide) + mobile (skinny) MP4s in one row, GIF-like
+                // (muted/looping/no-controls). Honors prefers-reduced-motion.
+                const wrapper = document.createElement('div');
+                wrapper.className = 'flow-video';
+
+                const row = document.createElement('div');
+                row.className = 'flow-video-row';
+
+                const reduceMotion = window.matchMedia
+                    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                [['desktop', block.desktop], ['mobile', block.mobile]].forEach(([role, url]) => {
+                    if (!url) return;
+                    const v = document.createElement('video');
+                    v.className = `flow-video-${role}`;
+                    v.src = url;
+                    v.muted = true;
+                    v.setAttribute('muted', '');
+                    v.loop = true;
+                    v.playsInline = true;
+                    v.setAttribute('playsinline', '');
+                    v.preload = 'metadata';
+                    if (block.alt) v.setAttribute('aria-label', block.alt);
+                    if (reduceMotion) {
+                        v.setAttribute('controls', ''); // no autoplay; let the user start it
+                    } else {
+                        v.autoplay = true;
+                        v.setAttribute('autoplay', '');
+                    }
+                    row.appendChild(v);
+                });
+
+                wrapper.appendChild(row);
+
+                if (block.caption) {
+                    const cap = document.createElement('p');
+                    cap.className = 'flow-video-caption';
+                    cap.textContent = block.caption;
+                    wrapper.appendChild(cap);
+                }
+                return wrapper;
+            }
+
             default: {
                 console.warn('Unknown flow block type:', block.type);
                 return null;
@@ -926,101 +984,6 @@ const EntryController = (() => {
     }
 
     /**
-     * Lightbox: open at index, close, navigate.
-     * Driven by the unified lightboxPool. Click delegation lives in initLightbox.
-     */
-    function openLightbox(index) {
-        if (!lightboxPool.length) return;
-        if (index < 0 || index >= lightboxPool.length) return;
-
-        lightboxIndex = index;
-        const overlay = document.getElementById('lightbox-overlay');
-        if (!overlay) return;
-
-        const img = overlay.querySelector('.lightbox-img');
-        const counter = overlay.querySelector('.lightbox-counter');
-
-        const entry = lightboxPool[index];
-        if (img) {
-            img.src = entry.src;
-            img.alt = entry.alt;
-        }
-        if (counter) counter.textContent = `${index + 1} / ${lightboxPool.length}`;
-
-        overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-
-        preloadNeighbors(index);
-    }
-
-    function closeLightbox() {
-        const overlay = document.getElementById('lightbox-overlay');
-        if (overlay) overlay.style.display = 'none';
-        document.body.style.overflow = '';
-        clearPreloadLinks();
-    }
-
-    function lightboxNav(dir) {
-        if (!lightboxPool.length) return;
-        lightboxIndex = (lightboxIndex + dir + lightboxPool.length) % lightboxPool.length;
-        const overlay = document.getElementById('lightbox-overlay');
-        if (!overlay) return;
-        const entry = lightboxPool[lightboxIndex];
-        const img = overlay.querySelector('.lightbox-img');
-        const counter = overlay.querySelector('.lightbox-counter');
-        if (img) {
-            img.src = entry.src;
-            img.alt = entry.alt;
-        }
-        if (counter) counter.textContent = `${lightboxIndex + 1} / ${lightboxPool.length}`;
-        preloadNeighbors(lightboxIndex);
-    }
-
-    function lightboxJump(target) {
-        if (!lightboxPool.length) return;
-        if (target < 0 || target >= lightboxPool.length) return;
-        lightboxIndex = target;
-        const overlay = document.getElementById('lightbox-overlay');
-        if (!overlay) return;
-        const entry = lightboxPool[lightboxIndex];
-        const img = overlay.querySelector('.lightbox-img');
-        const counter = overlay.querySelector('.lightbox-counter');
-        if (img) {
-            img.src = entry.src;
-            img.alt = entry.alt;
-        }
-        if (counter) counter.textContent = `${lightboxIndex + 1} / ${lightboxPool.length}`;
-        preloadNeighbors(lightboxIndex);
-    }
-
-    /**
-     * Inject <link rel="preload" as="image"> for neighbors of `index`.
-     * Cleans up old preload links first.
-     */
-    function preloadNeighbors(index) {
-        clearPreloadLinks();
-        const neighbors = [index - 1, index + 1];
-        neighbors.forEach(n => {
-            if (n < 0 || n >= lightboxPool.length) return;
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = lightboxPool[n].src;
-            document.head.appendChild(link);
-            lightboxPreloadLinks.push(link);
-        });
-    }
-
-    function clearPreloadLinks() {
-        lightboxPreloadLinks.forEach(link => link.remove());
-        lightboxPreloadLinks = [];
-    }
-
-    /**
-     * Initialize lightbox: overlay controls + global click delegation for
-     * any <img[data-lightbox-index]> on the page.
-     */
-    /**
      * Hide the entry-page top nav on scroll-down (past 200px), restore on
      * scroll-up. Same pattern as landing-controller.initNavCollapse — the
      * .nav-pill hamburger appears while the nav is hidden and brings it
@@ -1047,54 +1010,6 @@ const EntryController = (() => {
         pill.addEventListener('click', () => {
             nav.classList.remove('hide');
             pill.classList.remove('vis');
-        });
-    }
-
-    function initLightbox() {
-        const overlay = document.getElementById('lightbox-overlay');
-        if (!overlay) return;
-
-        const closeBtn = overlay.querySelector('.lightbox-close');
-        const prevBtn = overlay.querySelector('.lightbox-prev');
-        const nextBtn = overlay.querySelector('.lightbox-next');
-
-        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-        if (prevBtn) prevBtn.addEventListener('click', () => lightboxNav(-1));
-        if (nextBtn) nextBtn.addEventListener('click', () => lightboxNav(1));
-        overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
-
-        // Keyboard navigation.
-        document.addEventListener('keydown', e => {
-            if (overlay.style.display === 'none' || overlay.style.display === '') return;
-            if (e.key === 'Escape') closeLightbox();
-            else if (e.key === 'ArrowLeft') lightboxNav(-1);
-            else if (e.key === 'ArrowRight') lightboxNav(1);
-            else if (e.key === 'Home') lightboxJump(0);
-            else if (e.key === 'End') lightboxJump(lightboxPool.length - 1);
-        });
-
-        // Touch swipe on the overlay/img for unified pool nav.
-        let touchStartX = 0;
-        overlay.addEventListener('touchstart', e => {
-            if (e.touches && e.touches.length) touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-        overlay.addEventListener('touchend', e => {
-            if (!e.changedTouches || !e.changedTouches.length) return;
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) {
-                lightboxNav(diff > 0 ? 1 : -1);
-            }
-        }, { passive: true });
-
-        // Global click delegation for any <img[data-lightbox-index]>.
-        document.addEventListener('click', e => {
-            const target = e.target;
-            if (!target || target.tagName !== 'IMG') return;
-            if (!target.dataset || target.dataset.lightboxIndex === undefined) return;
-            const idx = parseInt(target.dataset.lightboxIndex, 10);
-            if (Number.isNaN(idx)) return;
-            e.preventDefault();
-            openLightbox(idx);
         });
     }
 
@@ -1224,6 +1139,152 @@ const EntryController = (() => {
     }
 
     /**
+     * Populate gallery-layout copy: same title/subtitle/role as columns, but
+     * the left text column is gated to TWO blurbs — `challenge` relabelled
+     * "About" + `approach` relabelled "Details"; the RESULT section is hidden.
+     */
+    function populateGalleryContent(project) {
+        const titleEl = document.getElementById('entry-title');
+        if (titleEl) titleEl.textContent = project.title;
+
+        const subtitleEl = document.getElementById('entry-subtitle');
+        if (subtitleEl) subtitleEl.textContent = project.subtitle;
+
+        const roleEl = document.getElementById('entry-role');
+        if (roleEl) roleEl.textContent = (project.role && project.role[0]) || '';
+
+        // "About" <- challenge
+        const challengeEl = document.getElementById('entry-challenge');
+        if (challengeEl) {
+            challengeEl.textContent = project.challenge || '';
+            relabelSection(challengeEl, 'About');
+        }
+
+        // "Details" <- approach
+        const approachEl = document.getElementById('entry-approach');
+        if (approachEl) {
+            approachEl.textContent = project.approach || '';
+            relabelSection(approachEl, 'Details');
+        }
+
+        // Omit result entirely — hide its section wrapper.
+        const resultEl = document.getElementById('entry-result');
+        if (resultEl) {
+            const section = resultEl.closest('.entry-section');
+            if (section) section.style.display = 'none';
+        }
+    }
+
+    /**
+     * Relabel the .section-label heading that sits in the same .entry-section
+     * as `bodyEl`. Used by the gallery layout to turn CHALLENGE/APPROACH into
+     * About/Details without touching the shared entry.html markup.
+     */
+    function relabelSection(bodyEl, label) {
+        const section = bodyEl.closest('.entry-section');
+        if (!section) return;
+        const heading = section.querySelector('.section-label');
+        if (heading) heading.textContent = label;
+    }
+
+    /**
+     * Orchestrate the gallery layout (third layout).
+     * Mirrors columns (hero thumbnail-slideshow + bleed/main_media/grids shell)
+     * but the left copy column shows only the two gallery blurbs (About +
+     * Details), and a capped bleed-style preview row is rendered per collection
+     * listed in project.collections[].
+     */
+    async function populateGalleryLayout(project) {
+        hideTagsCardsLegacy();
+        populateGalleryContent(project);
+        populateThumbHero(project);
+        populateTagColumn(project);
+        populateMainMedia(project);
+        populateImageGrid(project);
+        populateSlideshows(project);
+        if (project.origin_url) populateProjectURL(project);
+        if (project.repository) populateGitHubRepo(project.repository);
+        populateBleed(project);
+        populateBleedSlides(project);
+        await populateGalleryCollections(project);
+    }
+
+    /**
+     * Render one capped (~8) bleed-style preview row per collection listed in
+     * project.collections[]. Each collection is a 6.1 gallery collection
+     * (images[] URL array); the row links through to its nested collection
+     * page (`/<entry>/<coll>`). Mounted into #bleed-region (appended after any
+     * entry.bleed[] rows). Failures log a warning and skip the row.
+     */
+    async function populateGalleryCollections(project) {
+        const slugs = Array.isArray(project.collections) ? project.collections : [];
+        if (slugs.length === 0) return;
+
+        const container = document.getElementById('bleed-region');
+        if (!container) return;
+
+        const entrySlug = project.slug || '';
+
+        const tasks = slugs.map(async (slug) => {
+            try {
+                const collection = await DataLoader.loadCollection(slug);
+                if (!collection) {
+                    console.warn('gallery collection not found for slug', slug);
+                    return;
+                }
+
+                const images = DataLoader.resolveCollectionImages(collection);
+                if (!images.length) {
+                    console.warn('gallery collection has no images', slug);
+                    return;
+                }
+
+                const preview = images.slice(0, 8);
+                const altText = collection.thumb_alt || collection.title || project.title || '';
+                // Nested collection URL: /<entry>/<coll>.
+                const collSlug = collection.slug || slug;
+                const href = '/' + entrySlug + '/' + collSlug;
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'entry-bleed entry-bleed--collection';
+
+                if (collection.title) {
+                    const heading = document.createElement('h4');
+                    heading.className = 'entry-bleed__title';
+                    heading.textContent = collection.title;
+                    wrapper.appendChild(heading);
+                }
+
+                const row = document.createElement('div');
+                row.className = 'entry-bleed__row';
+
+                preview.forEach(url => {
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'entry-bleed__link';
+
+                    const img = document.createElement('img');
+                    img.src = imgSrc(url);
+                    img.alt = altText;
+                    img.className = 'entry-bleed__image';
+                    img.loading = 'lazy';
+
+                    link.appendChild(img);
+                    row.appendChild(link);
+                });
+
+                wrapper.appendChild(row);
+                container.appendChild(wrapper);
+                container.style.display = 'block';
+            } catch (err) {
+                console.warn('gallery collection failed to resolve', slug, err);
+            }
+        });
+
+        await Promise.allSettled(tasks);
+    }
+
+    /**
      * Orchestrate the flow layout.
      * Single-column long-form. Tags live in the top + bottom .entry-tags-card
      * (the sticky right column is hidden because there's no two-column anchor
@@ -1265,10 +1326,8 @@ const EntryController = (() => {
      */
     async function init() {
         try {
-            // Reset lightbox pool at the start of every page load.
-            lightboxPool = [];
-            lightboxIndex = 0;
-            clearPreloadLinks();
+            // Reset the shared lightbox pool at the start of every page load.
+            window.Lightbox.reset();
 
             const entryPath = getEntryPath();
             const project = await loadEntryData(entryPath);
@@ -1285,6 +1344,8 @@ const EntryController = (() => {
             const layout = project.layout;
             if (layout === 'flow') {
                 await populateFlow(project);
+            } else if (layout === 'gallery') {
+                await populateGalleryLayout(project);
             } else {
                 if (layout && layout !== 'columns') {
                     console.warn(`Unknown layout "${layout}" — defaulting to columns`);
@@ -1292,7 +1353,7 @@ const EntryController = (() => {
                 populateColumnsLayout(project);
             }
 
-            initLightbox();
+            window.Lightbox.init();
             initNavCollapse();
             await populateRelatedPosts(project);
         } catch (error) {

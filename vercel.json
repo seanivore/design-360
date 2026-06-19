@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/:slug", "destination": "/_pages/:slug" }
+    { "source": "/:slug", "destination": "/_pages/:slug" },
+    { "source": "/:entry/:coll", "destination": "/_pages/:entry/:coll" }
   ]
 }
