@@ -31,28 +31,15 @@
   "_layout_options": "columns | flow | gallery",
   "collections": [],
   "thumb": [
-    "https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp"
+    "https://cdn.august.style/media/{slug}/thumb-{slug}-{1-to-about-6}.webp"
   ],
   "thumb_alt": "Alt text for thumbnail slideshow",
-  "img": [
-    "https://cdn.august.style/media/{slug}/img-sq-{slug}-1.webp"
-  ],
-  "img_alt": "Alt text for square images",
   "main_media": [
     {
       "title": "",
       "images": [
         "https://cdn.august.style/media/{slug}/main-1-{slug}-1.webp",
         "https://cdn.august.style/media/{slug}/main-1-{slug}-2.gif"
-      ],
-      "alt": ""
-    }
-  ],
-  "grids": [
-    {
-      "title": "",
-      "images": [
-        "https://cdn.august.style/media/{slug}/grid-1-{slug}-1.webp"
       ],
       "alt": ""
     }
