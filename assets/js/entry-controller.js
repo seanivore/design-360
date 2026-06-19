@@ -1227,9 +1227,12 @@ const EntryController = (() => {
 
         const tasks = slugs.map(async (slug) => {
             try {
-                const collection = await DataLoader.loadCollection(slug);
+                // Manifest keys collections by the NESTED path <entry>/<coll>
+                // (generate_manifest.py); project.collections[] holds bare slugs.
+                const collectionKey = slug.includes('/') ? slug : `${entrySlug}/${slug}`;
+                const collection = await DataLoader.loadCollection(collectionKey);
                 if (!collection) {
-                    console.warn('gallery collection not found for slug', slug);
+                    console.warn('gallery collection not found for slug', collectionKey);
                     return;
                 }
 
