@@ -1733,6 +1733,7 @@ body > main.section-main {
   align-items: center;
   justify-content: center;
   gap: var(--space-xs);
+  min-width: 16rem;
   padding: var(--space-sm) var(--space-md);
   background: var(--color-accent-terracotta);
   color: var(--color-bg-primary);
