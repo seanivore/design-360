@@ -150,18 +150,18 @@ If the subject crops poorly, add `g_auto` to the transformation chain (`c_fill,g
 
 The numbering scheme used in `assets/.media/{slug}/` mirrors the CDN path. The pattern:
 
-| Purpose | Filename | Notes |
-| ------- | -------- | ----- |
-| Thumbnail | `thumb-{slug}-N.webp` | N starts at 1 |
-| Square image | `img-sq-{slug}-N.webp` | N starts at 1 |
-| Grid group K, image M | `grid-K-{slug}-M.webp` | both 1-indexed |
-| Bleed group K, image M | `bleed-K-{slug}-M.webp` | both 1-indexed |
-| Bleed slides image N | `bleed-slide-{slug}-N.webp` | single group |
-| Main media group K, image M | `main-K-{slug}-M.webp` | both 1-indexed |
-| Flow asset NN | `flow-{slug}-NN.webp` | two-digit zero-padded, matches phase-draft conventions |
-| Feature tile N | `feature-tile-{slug}-N.mp4` | mp4 only |
-| Collection thumb N | `media/collection/{slug}/thumb-{slug}-N.webp` | different prefix |
-| Item source | `media/item/{slug}.webp` (or `.mp4`) | different prefix |
+| Purpose                     | Filename                                      | Notes                                                  |
+| --------------------------- | --------------------------------------------- | ------------------------------------------------------ |
+| Thumbnail                   | `thumb-{slug}-N.webp`                         | N starts at 1                                          |
+| Square image                | `img-sq-{slug}-N.webp`                        | N starts at 1                                          |
+| Grid group K, image M       | `grid-K-{slug}-M.webp`                        | both 1-indexed                                         |
+| Bleed group K, image M      | `bleed-K-{slug}-M.webp`                       | both 1-indexed                                         |
+| Bleed slides image N        | `bleed-slide-{slug}-N.webp`                   | single group                                           |
+| Main media group K, image M | `main-K-{slug}-M.webp`                        | both 1-indexed                                         |
+| Flow asset NN               | `flow-{slug}-NN.webp`                         | two-digit zero-padded, matches phase-draft conventions |
+| Feature tile N              | `feature-tile-{slug}-N.mp4`                   | mp4 only                                               |
+| Collection thumb N          | `media/collection/{slug}/thumb-{slug}-N.webp` | different prefix                                       |
+| Item source                 | `media/item/{slug}.webp` (or `.mp4`)          | different prefix                                       |
 
 For videos (mp4): do not go through Cloudinary. Place at `assets/.media/{slug}/...mp4` directly and proceed to § 6 upload.
 
@@ -252,17 +252,17 @@ Use when the brief is long-form storytelling with mixed media types (the three n
 
 Convert markdown briefs to flow blocks:
 
-| Brief form | Flow block |
-| ---------- | ---------- |
-| `### Heading` | `{ "type": "h3", "text": "Heading" }` |
-| `#### Heading` | `{ "type": "h4", ... }` |
-| `##### Heading` | `{ "type": "h5", ... }` |
-| Paragraph | `{ "type": "p", "text": "..." }` |
-| Image (one or more) | `{ "type": "img", "images": [...], "alt": "..." }` |
-| Bulleted list | `{ "type": "list", "items": [...], "style": "bluepoints" }` |
+| Brief form                                    | Flow block                                                                                                                             |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `### Heading`                                 | `{ "type": "h3", "text": "Heading" }`                                                                                                  |
+| `#### Heading`                                | `{ "type": "h4", ... }`                                                                                                                |
+| `##### Heading`                               | `{ "type": "h5", ... }`                                                                                                                |
+| Paragraph                                     | `{ "type": "p", "text": "..." }`                                                                                                       |
+| Image (one or more)                           | `{ "type": "img", "images": [...], "alt": "..." }`                                                                                     |
+| Bulleted list                                 | `{ "type": "list", "items": [...], "style": "bluepoints" }`                                                                            |
 | HTML block (tweet / YouTube / Behance iframe) | `{ "type": "embed_html", "html": "...", "alt": "..." }` — copy HTML verbatim, escape double quotes for JSON, preserve `&amp;` entities |
-| `**chunk_break**` marker | `{ "type": "chunk_break", "button_text": "Continue reading" }` |
-| Collection preview | `{ "type": "collection_preview", "collection": "collection-slug" }` |
+| `**chunk_break**` marker                      | `{ "type": "chunk_break", "button_text": "Continue reading" }`                                                                         |
+| Collection preview                            | `{ "type": "collection_preview", "collection": "collection-slug" }`                                                                    |
 
 ### Collections — type-specific
 
