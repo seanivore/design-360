@@ -30,19 +30,22 @@
 
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
+  <!-- NAV — matches the entry-page nav. The old .site-header is globally
+       display:none (entry pages moved to .site-nav--entry), so collection pages
+       use the same working nav. -->
+  <nav class="site-nav site-nav--entry" id="siteNav">
     <div class="container">
-      <a href="/" class="site-logo">Sean August Horvath</a>
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="/index.html#footer">Contact</a>
-      </nav>
+      <a href="/" class="site-logo" aria-label="Home"><img src="/assets/favicon/favicon.svg" alt=""></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/section.html">All Projects</a></li>
+        <li><a href="/index.html#footer">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
   <!-- Main Content -->
-  <main class="container">
+  <main class="container collection-main">
 
     <!-- Collection Header: title + subtitle -->
     <header id="collection-header">

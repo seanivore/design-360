@@ -333,7 +333,8 @@ li a:hover {
 /* Spacer so page content isn't hidden under the fixed nav. Applies to both
    entry pages (.entry-container) and section pages (.section-main). */
 body > main.entry-container,
-body > main.section-main {
+body > main.section-main,
+body > main.collection-main {
   padding-top: 4rem;
 }
 

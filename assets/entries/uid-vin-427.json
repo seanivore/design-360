@@ -50,7 +50,7 @@
   "bleed_slides": null,
   "flow": [
     {
-      "type": "h4",
+      "type": "h3",
       "text": "A payment portal that runs on no database at all."
     },
     {
@@ -58,11 +58,19 @@
       "text": "A freelancer sends a client one login link. From there the client signs a contract, reviews an invoice, and pays, while the whole thing runs on JSON files in Git instead of a database or server."
     },
     {
+      "type": "h5",
+      "text": "Logging In"
+    },
+    {
       "type": "video",
       "desktop": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-1-1.mp4",
       "mobile": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-1-2.mp4",
       "caption": "After finalizing contract specifics with the client, the AI automation assembles it in our contract template. When it's ready they're emailed a login keyword they pair with their name to make their first payment.",
-      "alt": "Client login screen — pairing a name with an emailed keyword to enter the payment portal"
+      "alt": "Client login screen, pairing a name with an emailed keyword to enter the payment portal"
+    },
+    {
+      "type": "h5",
+      "text": "Review and Sign"
     },
     {
       "type": "video",
@@ -72,11 +80,19 @@
       "alt": "Contract review and signing screen with a downloadable copy of the signed agreement"
     },
     {
+      "type": "h5",
+      "text": "The Invoice"
+    },
+    {
       "type": "video",
       "desktop": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-3-1.mp4",
       "mobile": "https://cdn.august.style/media/freelance-payments-platform/vid-freelance-payment-platform-3-2.mp4",
       "caption": "Their invoice loads for review before they continue to pay.",
       "alt": "Invoice review screen showing line items before continuing to payment"
+    },
+    {
+      "type": "h5",
+      "text": "Stripe Checkout"
     },
     {
       "type": "video",
@@ -90,8 +106,19 @@
       "text": "That's it. When the project is done they get one more email if there's a balance to settle."
     },
     {
-      "type": "p",
-      "text": "Under the hood: React, TypeScript, and Vite on the front; Stripe Checkout for payments; PDFs generated from templates; and Vercel serverless plus GitHub Actions doing the back-office work. Treating each job as a single JSON file in Git means version history, an audit trail, and zero database cost."
+      "type": "h5",
+      "text": "Under the Hood"
+    },
+    {
+      "type": "list",
+      "style": "bluepoints",
+      "items": [
+        "React, TypeScript, and Vite on the front end",
+        "Stripe Checkout for payments",
+        "PDFs generated from templates",
+        "Vercel serverless plus GitHub Actions handling the back-office work",
+        "Each job is a single JSON file in Git, giving version history, an audit trail, and zero database cost"
+      ]
     },
     {
       "type": "p",

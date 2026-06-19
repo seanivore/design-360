@@ -1214,11 +1214,11 @@ const EntryController = (() => {
     }
 
     /**
-     * Render one capped (~8) bleed-style preview row per collection listed in
-     * project.collections[]. Each collection is a 6.1 gallery collection
-     * (images[] URL array); the row links through to its nested collection
-     * page (`/<entry>/<coll>`). Mounted into #bleed-region (appended after any
-     * entry.bleed[] rows). Failures log a warning and skip the row.
+     * Render the gallery entry's collection preview as a justified bleed wall —
+     * SAME shape as the homepage bleed: all images across the entry's
+     * collections, shuffled, laid into 3 rows of a random 3–5 images each. No
+     * per-collection titles (the rows just flow). Each image links to its own
+     * nested collection page (`/<entry>/<coll>`). Mounted into #bleed-region.
      */
     async function populateGalleryCollections(project) {
         const slugs = Array.isArray(project.collections) ? project.collections : [];
@@ -1229,76 +1229,75 @@ const EntryController = (() => {
 
         const entrySlug = project.slug || '';
 
-        const tasks = slugs.map(async (slug) => {
+        // Gather every image across the entry's collections (each tagged with its
+        // own collection so it links to the right nested page).
+        const pool = [];
+        for (const slug of slugs) {
             try {
-                // Manifest keys collections by the NESTED path <entry>/<coll>
-                // (generate_manifest.py); project.collections[] holds bare slugs.
                 const collectionKey = slug.includes('/') ? slug : `${entrySlug}/${slug}`;
                 const collection = await DataLoader.loadCollection(collectionKey);
                 if (!collection) {
                     console.warn('gallery collection not found for slug', collectionKey);
-                    return;
+                    continue;
                 }
-
                 const images = DataLoader.resolveCollectionImages(collection);
-                if (!images.length) {
-                    console.warn('gallery collection has no images', slug);
-                    return;
-                }
-
-                const preview = images.slice(0, 8);
-                const altText = collection.thumb_alt || collection.title || project.title || '';
-                // Nested collection URL: /<entry>/<coll>.
-                const collSlug = collection.slug || slug;
-                const href = '/' + entrySlug + '/' + collSlug;
-
-                const wrapper = document.createElement('div');
-                wrapper.className = 'entry-bleed entry-bleed--collection';
-
-                if (collection.title) {
-                    const heading = document.createElement('h4');
-                    heading.className = 'entry-bleed__title';
-                    heading.textContent = collection.title;
-                    wrapper.appendChild(heading);
-                }
-
-                const row = document.createElement('div');
-                row.className = 'entry-bleed__row';
-
-                preview.forEach(url => {
-                    const link = document.createElement('a');
-                    link.href = href;
-                    link.className = 'entry-bleed__link';
-
-                    const img = document.createElement('img');
-                    img.src = imgSrc(url);
-                    img.alt = altText;
-                    img.className = 'entry-bleed__image';
-                    img.loading = 'lazy';
-
-                    // Justified row: flex-grow = aspect ratio so every image in
-                    // the row shares one height while keeping its natural width.
-                    const applyAR = () => {
-                        const ar = (img.naturalWidth && img.naturalHeight)
-                            ? (img.naturalWidth / img.naturalHeight) : 1.5;
-                        link.style.flexGrow = String(ar);
-                    };
-                    if (img.complete && img.naturalWidth) applyAR();
-                    else img.addEventListener('load', applyAR, { once: true });
-
-                    link.appendChild(img);
-                    row.appendChild(link);
-                });
-
-                wrapper.appendChild(row);
-                container.appendChild(wrapper);
-                container.style.display = 'block';
+                const href = '/' + entrySlug + '/' + (collection.slug || slug);
+                const alt = collection.thumb_alt || collection.title || project.title || '';
+                images.forEach(src => pool.push({ src, href, alt }));
             } catch (err) {
                 console.warn('gallery collection failed to resolve', slug, err);
             }
-        });
+        }
+        if (!pool.length) return;
 
-        await Promise.allSettled(tasks);
+        // Fisher-Yates shuffle — fresh each reload.
+        for (let i = pool.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+
+        // 3 rows, each a random 3–5 images (matches the homepage bleed).
+        let cursor = 0;
+        for (let r = 0; r < 3 && cursor < pool.length; r++) {
+            const count = 3 + Math.floor(Math.random() * 3); // 3, 4, or 5
+            const slice = pool.slice(cursor, cursor + count);
+            cursor += count;
+            if (!slice.length) break;
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'entry-bleed entry-bleed--collection';
+            const row = document.createElement('div');
+            row.className = 'entry-bleed__row';
+
+            slice.forEach(o => {
+                const link = document.createElement('a');
+                link.href = o.href;
+                link.className = 'entry-bleed__link';
+
+                const img = document.createElement('img');
+                img.src = imgSrc(o.src);
+                img.alt = o.alt;
+                img.className = 'entry-bleed__image';
+                img.loading = 'lazy';
+
+                // Justified row: flex-grow = aspect ratio so every image in the
+                // row shares one height while keeping its natural width.
+                const applyAR = () => {
+                    const ar = (img.naturalWidth && img.naturalHeight)
+                        ? (img.naturalWidth / img.naturalHeight) : 1.5;
+                    link.style.flexGrow = String(ar);
+                };
+                if (img.complete && img.naturalWidth) applyAR();
+                else img.addEventListener('load', applyAR, { once: true });
+
+                link.appendChild(img);
+                row.appendChild(link);
+            });
+
+            wrapper.appendChild(row);
+            container.appendChild(wrapper);
+        }
+        container.style.display = 'block';
     }
 
     /**
