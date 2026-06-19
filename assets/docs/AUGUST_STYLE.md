@@ -1,7 +1,7 @@
 # august.style — Project Architecture & Schema Reference
 
-**Aligned with**: v4.2.3 shipped state (post-ship visual review folded in)
-**Last updated**: 2026-05-27
+**Aligned with**: v4.4.x shipped state (gallery layout + flow project_link/video blocks + URL-array collections + /api/upload + homepage art-bleed)
+**Last updated**: 2026-06-19
 
 Living master document for the august.style portfolio site (vanilla HTML/CSS/JS + Jekyll, zero JS dependencies, Cloudflare R2 CDN). Updated each planning session to reflect the current target state of schema, controllers, and architecture. Symbiotic with the highest-numbered `vX_Y_Z_IMPLEMENT.md` in `assets/docs/archive/vX_Y/`.
 
@@ -13,11 +13,13 @@ Living master document for the august.style portfolio site (vanilla HTML/CSS/JS 
 
 | Template | Version | Last bumped |
 | -------- | ------- | ----------- |
-| `_entry_template.json` | 6.1 | v4.2.3 (placement / feature_tile renames + flow layout + main_media + bleed + achievements array) |
-| `_collection_template.json` | 6.0 | v4.2.2 (initial flat schema) |
+| `_entry_template.json` | 6.1 | v4.4.x (gallery layout + `collections[]` + flow `project_link` / `video` blocks; built on the v4.2.3 placement / feature_tile renames + flow + main_media + bleed + achievements array) |
+| `_collection_template.json` | 6.1 | v4.4.x (URL-array `images[]` + `entry` field for nested gallery collections) |
 | `_item_template.json` | 6.0 | v4.2.2 (initial flat schema) |
 
 The orchestrator confirms each template's `_metadata.schema_version` matches this table before reading the corresponding section. A mismatch means a stale plan — pause and surface to Sean.
+
+**Collections carry two live schema versions.** The validator (`assets/scripts/validate.py`) accepts BOTH: legacy `6.0` collections key media by item UID in `media[]`, while `6.1` gallery collections list ordered CDN URLs in `images[]` and add an `entry` field. The `_collection_template.json` ships at 6.1; existing 6.0 collections are still valid. See § 3.
 
 ---
 
@@ -49,13 +51,15 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. F
 | `company` | `string` | Single value from `tags.json` company group |
 | `thumb` | `string[]` | Thumbnail CDN URLs |
 | `thumb_alt` | `string` | Alt text for thumbnail slideshow |
-| `layout` | `string` | `"columns"` or `"flow"` — selects entry-page rendering shape |
+| `layout` | `string` | `"columns"`, `"flow"`, or `"gallery"` — selects entry-page rendering shape (validated against `VALID_LAYOUTS` in `validate.py`) |
 
 ### Layout-aware fields
 
-`layout: "columns"` uses the existing two-column entry shape with sticky tag/embed column and main media column.
+`layout: "columns"` uses the two-column entry shape with sticky tag/embed column and main media column.
 
 `layout: "flow"` renders a typed-block sequence from the `flow[]` array — see § 2a below.
+
+`layout: "gallery"` reuses the columns shell (hero thumb-row + main_media/grids/bleed/bleed_slides) but gates the left copy column to TWO blurbs and renders one bleed-style preview row per collection in `collections[]` — see § 2f below.
 
 ### Homepage placement
 
@@ -77,6 +81,7 @@ Filename convention: `https://cdn.august.style/media/{slug}/feature-tile-{slug}-
 | `grids` | `array` | Grouped 3-across grid blocks — see § 2c |
 | `bleed` | `array` | Full-bleed image blocks — see § 2d |
 | `bleed_slides` | `object` | Bleed-style slideshow — see § 2e |
+| `collections` | `string[]` | Gallery-layout only — bare collection slugs; each renders a bleed-style preview row linking to `/<entry>/<coll>`. See § 2f |
 | `slideshows` | `array` | Grouped slideshows (legacy form retained for older entries) |
 | `flow` | `array` | Typed-block content sequence for flow layouts — see § 2a |
 | `media_url` | `string` | External video URL (e.g. YouTube link) |
@@ -134,9 +139,11 @@ A flow-layout entry replaces the columns shape with a typed-block sequence. Each
 - `{ "type": "list", "items": [...], "style": "bluepoints" }` — bulleted list. **Items can be either plain strings (leaf bullet) OR `{ "text": "Topic", "items": [...] }`** for nested topic-with-sub-bullets. Top-level depth-0 list = topic-tier (bolder, terracotta dot, narrower 44rem); depth-1 sub-list = leaf-tier (smaller font, bluepoint sub-bullets). The Wave 3 entries were initially authored with flat "Topic — sub1; sub2; sub3" strings; a one-shot migration converted them to the nested shape post-ship.
 - `{ "type": "chunk_break", "button_text": "Continue reading" }` — progressive-disclosure marker. Auto-reveals on scroll via IntersectionObserver (button doesn't have to be clicked), OR by manual click. When the first chunk-break fires, ALL `.flow-chunk-hidden` siblings reveal and every subsequent chunk-break wrapper is removed too (no laddering).
 - `{ "type": "embed_html", "html": "<blockquote>...</blockquote>", "alt": "..." }` — raw HTML embed. Centered (max-width 56rem). Twitter `<blockquote class='twitter-tweet'>` blocks auto-load `platform.twitter.com/widgets.js` via `ensureTwitterWidgets()` since `<script>` tags injected via `innerHTML` don't execute. Tweet blockquotes should use `data-theme='light'` so they read on the dark site.
-- `{ "type": "collection_preview", "collection": "slug-here" }` — renders a horizontal-scroll preview of the first 8 items in the named collection + a "View Full Collection" link. Each thumb registers into the lightbox pool.
+- `{ "type": "collection_preview", "collection": "slug-here" }` — renders a horizontal-scroll preview of the first 8 items in the named collection + a "View Full Collection" link. Each thumb registers into the lightbox pool. (Resolves a legacy 6.0 `media[]` collection via `resolveCollectionMedia`.)
+- `{ "type": "project_link", "url": "…", "text": "…", "variant": "ghost" }` — a right-aligned, stacked link button. `variant` is optional: omit it for the filled style, `"variant": "ghost"` for the outline style. Consecutive `project_link` blocks stack and align to the right edge of the content column. URLs starting with `http(s)://` open in a new tab (`target="_blank" rel="noopener"`); internal `/slug` paths open in place. Renders a `.flow-project-link` wrapper around an `<a class="project-link-btn">` (or `project-link-btn--ghost`).
+- `{ "type": "video", "desktop": "<cdn mp4>", "mobile": "<cdn mp4>", "caption": "…", "alt": "…" }` — a paired desktop-wide + mobile-skinny MP4 row in one `.flow-video-row`, rendered GIF-style: `muted`, `loop`, `playsinline`, `autoplay`, no controls, `preload="metadata"`. `caption` and `alt` are optional (caption renders as a `.flow-video-caption`; alt sets `aria-label`). Honors `prefers-reduced-motion: reduce` — when set, each `<video>` gets `controls` and does NOT autoplay (the reader starts it). Either `desktop` or `mobile` may be omitted; each present URL emits one `<video>`. NOTE: these are videos, not lightbox images — they do NOT register into the lightbox pool. (Worked example: `assets/entries/uid-vin-427.json` — the freelance-payments-platform flow entry chains four `video` blocks plus two `project_link` blocks.)
 
-The flow renderer walks the array, emits the right DOM for each block, and registers any media into the lightbox state pool used by the columns layout.
+The flow renderer walks the array, emits the right DOM for each block, and registers any image media into the lightbox state pool used by the columns layout. Unknown block types are skipped with a console warning.
 
 ### 2b. `main_media`
 
@@ -193,15 +200,60 @@ Full-bleed image row (edge-to-edge of viewport). Multiple images render side-by-
 
 Single object (not array). Full-bleed slideshow — pagination controls overlaid on the imagery.
 
+### 2f. Gallery layout (`layout: "gallery"` + `collections[]`)
+
+The gallery layout is a third entry shape, dispatched in `entry-controller.js init()` (`populateGalleryLayout`). It reuses the columns shell — hero thumbnail row, `main_media`, `grids`, `bleed`, `bleed_slides`, project/repo links — with two differences:
+
+1. **Two-blurb copy column.** `populateGalleryContent` shows only TWO body blurbs and relabels them: `challenge` is relabelled **"About"** and `approach` is relabelled **"Details"**. The `result` field is omitted entirely (its `.entry-section` is hidden). Authors put the gallery's intro in `challenge` and the medium/process note in `approach`; leave `result` empty.
+2. **Collection preview rows.** `collections: ["slug", …]` holds bare collection slugs. `populateGalleryCollections` renders one bleed-style preview row per collection (capped at the first 8 images), each row appended into `#bleed-region` after any `bleed[]` rows. Every image in a row links to the nested collection URL `/<entry>/<coll>` (the same place the row's title points). These rows are 6.1 collections resolved via `resolveCollectionImages` (the `images[]` URL array), so the images do NOT register into the lightbox pool — they are click-through links, not lightbox tiles.
+
+The manifest keys gallery collections by the nested path `<entry>/<coll>` (see § 3 + `generate_manifest.py`), so `collections[]` carries bare slugs and the controller prefixes the entry slug when loading. A gallery entry MAY still carry a `flow[]`, but the gallery layout does NOT render it — only `columns`/`flow` shapes consume `flow[]`. Use `origin_url` / `origin_url_text` for the gallery's "see where this lived" link.
+
 ### Lightbox state pool
 
 All on-page imagery — `img`, `main_media`, `grids`, `bleed`, `bleed_slides`, `flow` `img` blocks, `collection_preview` thumbnails — registers into one unified lightbox index pool, managed by `entry-controller.js`. Clicking any image opens lightbox at the right index; arrow keys / swipe navigates across the entire page's media, in document order.
 
 ---
 
-## 3. Collection Schema (v6.0)
+## 3. Collection Schema (v6.0 UID-array AND v6.1 URL-array)
 
-Each collection lives at `assets/collections/uid-col-###.json`. A collection is a curated set of media items that can be browsed standalone (at `august.style/collection/{slug}`) or previewed inside an entry via the `collection_preview` flow block.
+Each collection lives at `assets/collections/uid-col-###.json`. The validator accepts BOTH live schema versions; pick by use case.
+
+### 6.1 — gallery collection (URL-array, nested under an entry)
+
+The current template (`_collection_template.json`). A gallery collection is an ordered set of CDN image URLs that belongs to one parent entry and is browsed at the nested URL `august.style/{entry}/{slug}`. It is what a `gallery`-layout entry's `collections[]` rows resolve against.
+
+```json
+{
+  "_metadata": { "schema_version": "6.1", "template_type": "media_collection" },
+  "id": "uid-col-###",
+  "slug": "collection-name",
+  "entry": "parent-entry-slug",
+  "title": "Display Title",
+  "subtitle": "One-line tagline",
+  "seo_title": "...",
+  "seo_description": "...",
+  "role": [],
+  "skill": [],
+  "product": [],
+  "company": "Freelance",
+  "thumb": ["https://cdn.august.style/media/{entry}/{slug}/thumb-{slug}-1.webp"],
+  "thumb_alt": "...",
+  "images": [
+    "https://cdn.august.style/media/{entry}/{slug}/{slug}-1.webp",
+    "https://cdn.august.style/media/{entry}/{slug}/{slug}-2.webp"
+  ],
+  "notes": []
+}
+```
+
+- `entry` — the parent entry's slug. `generate_manifest.py` keys this collection in the manifest by the nested path `<entry>/<slug>` (e.g. `illustration-art-deco/animals`), and writes its page to `_pages/<entry>/<slug>.html` served at `/<entry>/<slug>`.
+- `images[]` — ordered CDN URLs (NOT item UIDs). Resolved by `DataLoader.resolveCollectionImages()`. There are no `item` JSON files behind a 6.1 collection.
+- The 6.1 validator requires `images[]` (not `media[]`).
+
+### 6.0 — legacy UID collection (still valid)
+
+The older flat schema. A standalone curated set of `item` UIDs, browsed at `august.style/collection/{slug}` (no `entry` field) and previewable inside an entry via the `collection_preview` flow block.
 
 ```json
 {
@@ -223,7 +275,7 @@ Each collection lives at `assets/collections/uid-col-###.json`. A collection is 
 }
 ```
 
-`media[]` references item UIDs. Items resolve via the manifest the same way entries do.
+`media[]` references item UIDs; each item file must exist under `assets/items/` (the validator cross-references). Resolved by `DataLoader.resolveCollectionMedia()`. A 6.0 collection has no `entry` field, so the manifest keys it by bare `slug` and it serves at `/collection/{slug}`.
 
 ---
 
@@ -315,6 +367,15 @@ The shipped featured-tiles section is a 4-card grid: **one video card** (left) +
 - Section heading above the grid: `featured_tiles.heading` (white) + `featured_tiles.subheading` (gray).
 - The `featured-tile-controller.js` state machine from IMPLEMENT § 4.5 (sequenced auto-play, single/double/triple-tap detection) is **dormant in the shipped homepage**. The file still exists for compatibility; it listens for `'featured-tiles:ready'` but there's only one video card now, so its state machine doesn't actually run.
 
+### Bleed Images component (homepage art wall) — v4.4.x
+
+`renderArtBleed` (`landing-controller.js`) draws a full-bleed justified art wall on the homepage, between the featured tiles and the process section. It is NOT the gallery entry layout — it is a homepage strip that pulls imagery *across* the gallery entries' collections.
+
+- **Source pool**: every entry whose `placement[]` includes `art_bleed.placement` (default `"Art Gallery"`). For each such entry, every collection in its `collections[]` is loaded and its `images[]` flattened into one pool.
+- **Layout**: the pool is Fisher-Yates shuffled on every reload, then sliced into `art_bleed.rows` rows (default 3) of a random 3–5 images each. Each row is a justified flexbox; per-image `flex-grow` is set to the image's natural aspect ratio (JS, on load) so every image in a row shares one height while keeping its natural width — the wall's shape changes each reload. Each image links to `/{entry-slug}/`.
+- **Config** (`homepage-content.json` → `art_bleed`): `{ "heading": "", "rows": 3, "placement": "Art Gallery" }`. Empty `heading` hides the heading. CSS lives in `landing.css` under `.art-bleed*` (full-viewport-width via the `width: 100vw; margin-left: calc(50% - 50vw)` bleed trick, terracotta gutter background).
+- Hides itself when no gallery entries or no images resolve.
+
 ### URL routing — Phase URLs
 
 Phase URLs use `%20` (URL-encoded space), not `+`: e.g. `?tags=Phase%20A`. The section-controller splits `tags` queries on `+` as the multi-tag AND delimiter; passing `Phase+A` would parse as two tags ("Phase", "A") and match zero entries.
@@ -331,7 +392,7 @@ Phase URLs use `%20` (URL-encoded space), not `+`: e.g. `?tags=Phase%20A`. The s
 | `skill` | `skill` | `string[]` | Pre-locked list |
 | `product` | `product` | `string[]` | Pre-locked list |
 | `company` | `company` | `string` | Pre-locked list, singular |
-| `placement` | `placement` | `string[]` | Pre-locked list (`Featured`, `Phase A`, `Phase B`, `Phase C`) — controls homepage feature-tile eligibility |
+| `placement` | `placement` | `string[]` | Pre-locked list (`Art Gallery`, `Featured`, `Phase A`, `Phase B`, `Phase C`) — controls homepage feature-tile eligibility; `Art Gallery` additionally feeds the homepage art-bleed wall (§ 5) |
 | `item` | (on `_item_template.json` `tags[]`) | `string[]` | Free-form — grows organically as items are tagged |
 
 ### Tag registry (`assets/docs/tags.json`)
@@ -387,13 +448,16 @@ section.html#tags=Copywriting                     (hash form, no reload)
 
 URL parser merges querystring + hash, treats **`+` as the multi-tag AND delimiter**, applies `normalizeForURL()` per tag. A space inside a single tag value MUST encode as `%20`, never `+`, or the section-controller will split it into two separate tags. This was a real post-ship bug on the homepage Phase URLs.
 
-### Collection pages (v4.2.3)
+### Collection pages
+
+Two URL shapes, by schema version:
 
 ```
-august.style/collection/{slug}
+august.style/{entry}/{slug}        (6.1 gallery collection — nested under its parent entry)
+august.style/collection/{slug}     (6.0 legacy UID collection — standalone)
 ```
 
-Pre-rendered HTML at `_pages/collection-{slug}.html` (also via `generate_manifest.py`). Controller: `collection-controller.js`. Filter UI similar to section page but scoped to one collection's `media[]` UIDs.
+`generate_manifest.py` routes by the presence of the `entry` field: a 6.1 collection writes to `_pages/{entry}/{slug}.html` (served at `/{entry}/{slug}`), a 6.0 collection writes to `_pages/collection-{slug}.html` (served at `/collection/{slug}`). Controller: `collection-controller.js`. Filter UI similar to the section page but scoped to one collection.
 
 ### Item pages (v4.2.3)
 
@@ -414,10 +478,15 @@ Maps every slug to JSON path. Auto-generated:
 ```json
 {
   "entries": { "saas-product-sale-features": "assets/entries/uid-rfr-187.json" },
-  "collections": { "logo-marks-2026": "assets/collections/uid-col-001.json" },
+  "collections": {
+    "illustration-art-deco/animals": "assets/collections/uid-col-002.json",
+    "logo-marks-2026": "assets/collections/uid-col-001.json"
+  },
   "items": { "logo-mark-acme": "assets/items/uid-itm-001.json" }
 }
 ```
+
+Collection keys are nested `<entry>/<slug>` for 6.1 gallery collections (carry an `entry` field) and bare `<slug>` for legacy 6.0 collections.
 
 Run `python3 generate_manifest.py` after adding/renaming/removing entries, collections, or items. This also regenerates all `_pages/*.html` files.
 
@@ -436,9 +505,12 @@ Run `python3 generate_manifest.py` after adding/renaming/removing entries, colle
 +-- landing.css                          Homepage styles
 +-- styles.css                           Entry + section + collection + item page styles
 +-- generate_manifest.py                 Manifest + per-page HTML generator
++-- api/
+|   +-- upload.ts                        Image-upload endpoint (Cloudinary→R2); see ENTRY_SOP § 6
 +-- _pages/
 |   +-- {slug}.html                      Entry pages with SEO meta tags
-|   +-- collection-{slug}.html           Collection pages
+|   +-- {entry}/{coll}.html              Nested 6.1 gallery-collection pages
+|   +-- collection-{slug}.html           Legacy 6.0 collection pages
 |   +-- media-{slug}.html                Item pages
 |
 +-- assets/
@@ -468,7 +540,7 @@ Run `python3 generate_manifest.py` after adding/renaming/removing entries, colle
     |
     +-- docs/
     |   +-- _entry_template.json         Blank entry template (v6.1)
-    |   +-- _collection_template.json    Blank collection template (v6.0)
+    |   +-- _collection_template.json    Blank collection template (v6.1, URL-array + entry)
     |   +-- _item_template.json          Blank item template (v6.0)
     |   +-- tags.json                    Tag registry (6 groups)
     |   +-- AUGUST_STYLE.md              This document
@@ -505,6 +577,9 @@ index.html
             featured_tiles (header + 4-card grid: video card from
                   featured_tiles.video_card.filter; 3 phase cards static from
                   featured_tiles.cards[])
+            art_bleed (full-bleed justified art wall — images pulled across
+                  every "Art Gallery"-placement entry's collections, shuffled
+                  per reload; see § 5 Bleed Images component)
             process (heading + 01/02/03 horizontal-scroll cards)
             credentials (cred-list of <a class="cred-item"> cards, each → company filter)
             achievements (flattens entries' achievements[] arrays; each item
@@ -544,6 +619,12 @@ entry.html (pre-rendered at _pages/{slug}.html)
               populateImageGrid(), populateSlideshows(),
               populateProjectURL(), populateGitHubRepo(),
               populateBleed(), populateBleedSlides()
+            "gallery" -> populateGalleryLayout()
+              same columns shell, but populateGalleryContent() shows only
+              two blurbs (About <- challenge, Details <- approach; result
+              hidden), then populateGalleryCollections() appends one
+              bleed-style preview row per collections[] slug, linking to
+              /<entry>/<coll>
             "flow"    -> populateFlow()
               populateTagsCards() (top + bottom),
               populateContent(),
@@ -590,8 +671,10 @@ Controllers and their responsibilities. File:line references are intentionally o
 - `populateTagColumn()` — sticky right-column tag pills + `media_embed` iframe. Called for columns layout only (flow hides the `.entry-content-media` wrapper entirely).
 - `populateThumbHero()` — renders the entry-hero as a **full-bleed peeking-row of thumbnails** (post-ship redesign). One `<img class="entry-hero-tile">` per `entry.thumb[]` URL, each 80vw wide with `aspect-ratio: 16/9` and a 2px white border. The row scrolls horizontally; on every viewport the row breaks out of the container padding via the `width: 100vw; margin-left: calc(50% - 50vw)` trick. Pagination/arrows from the IMPLEMENT spec were removed — the horizontal scroll IS the navigation.
 - `populateColumnsLayout()` — orchestrates the columns shape: tag column, content text, thumb hero, main_media, image_grids, slideshows, project_url, github_repo, bleed, bleed_slides.
+- `populateGalleryLayout()` — orchestrates the gallery shape (`layout: "gallery"`): same columns shell, but `populateGalleryContent()` (About←challenge, Details←approach, result hidden via `relabelSection`) then `populateGalleryCollections()`.
+- `populateGalleryCollections()` — for each slug in `entry.collections[]`, loads the nested `<entry>/<coll>` collection, resolves `images[]` via `resolveCollectionImages`, and appends a capped (8) bleed-style preview row into `#bleed-region`; every image links to `/<entry>/<coll>`. These are link tiles, not lightbox images.
 - `populateFlow()` — orchestrates flow: shared shell (tags / thumb hero / content / origin links) + `populateFlowLayout`.
-- `populateFlowLayout()` — walks `entry.flow[]`. Block types: h3/h4/h5/p/img/list/chunk_break/embed_html/collection_preview.
+- `populateFlowLayout()` / `buildFlowBlock()` — walks `entry.flow[]`. Block types: h3/h4/h5/p/img/list/chunk_break/embed_html/collection_preview/**project_link**/**video**. `project_link` emits a right-aligned `.flow-project-link` button (filled, or `--ghost` outline via `block.variant === "ghost"`; external URLs get `target="_blank"`). `video` emits a `.flow-video-row` with paired desktop/mobile `<video>` elements (muted/loop/playsinline/autoplay, no controls; `prefers-reduced-motion` swaps autoplay for `controls`). Unknown types warn and are skipped.
 - `buildListUL(items, style, depth)` — recursive list renderer (post-ship). Items can be plain strings (leaf bullets) OR `{text, items}` (topic + nested sub-bullets). Top-level depth-0 list is "topic-tier" (terracotta dot, bolder); depth-1 sub-list is "leaf-tier" (smaller font, smaller dot, in bluepoints style or default).
 - `populateMainMedia()` / `populateBleed()` / `populateBleedSlides()` — render their respective sections.
 - `populateRelatedPosts()` — 5 entries via 6-hour seeded random.
@@ -605,6 +688,8 @@ Controllers and their responsibilities. File:line references are intentionally o
 - `renderHero()` — picks one random line from `homepage-content.json.hero.about_pool[]` and writes `#heroAboutLine`. The video, blur, AUGUST cutout, HORVATH cutout are CSS-only.
 - `renderNarrativeSpine()` — emits three `.spine-section` blocks, one per phase. Each section is a clickable anchor to `/section.html?tags=Phase%20X`. Heading uses a mixed-style pattern: `<span>Phase A is</span> <em class="spine-section__heading-accent">Foundation</em>.` — italic-serif (Instrument Serif) accent on the heading word, normal sans on the prefix. Body paragraph below in a narrower (34rem) measure at 0.8rem.
 - `renderFeaturedTiles()` — 4-card grid. Video card uses `featured_tiles.video_card.filter` to pick from any qualifying entry's `feature_tile[]`; phase cards are static from `featured_tiles.cards[]`. Dispatches `'featured-tiles:ready'` for the featured-tile-controller (which is dormant in this layout).
+- `renderArtBleed()` — v4.4.x homepage "Bleed Images" art wall. Pools `images[]` across every `art_bleed.placement` (default `"Art Gallery"`) entry's `collections[]`, Fisher-Yates shuffles per reload, lays them into justified full-bleed rows (per-image `flex-grow` = aspect ratio). Each image links to its entry. Hides on empty pool. See § 5.
+- `initMailtoFallback()` — v4.4.x: intercepts `mailto:` clicks, copies the address to the clipboard, and shows a toast so desktop users with no mail handler don't dead-end.
 - `renderProcess()` — 01/02/03 horizontal-scroll cards (terra/blue/mauve nth-child color cycle), restored to pre-rewrite layout per "Final Keepers" direction. Each card clickable to `step.href`.
 - `renderCredentials()` — emits each item as a `<a class="cred-item">` linking to the company filter. Tag pills inside are `<span class="tag">` with `pointer-events: none` (post-ship dedup: whole card is the clickthrough, individual tag clicks parked).
 - `renderAchievements()` — flattens `achievements[]` across all projects, keeping each entry's `slug` + `title` alongside. Each item is an expandable accordion (`.ach-item` + `initAccordion`). Body ends with an italic-serif terracotta `see where this happened →` link to the source entry.
@@ -621,7 +706,8 @@ Sequenced auto-play state machine from IMPLEMENT § 4.5 — IntersectionObserver
 
 - `loadManifest()` / `loadProject()` / `loadAllProjects()` (existing).
 - `loadCollection()` / `loadCollectionItem()` — slug-keyed Promise cache; resolves via `manifest.collections[slug]` / `manifest.items[slug]`.
-- `resolveCollectionMedia(collection)` — lazy UID→slug index then `Promise.all` resolves `collection.media[]` UIDs to loaded item objects.
+- `resolveCollectionMedia(collection)` — lazy UID→slug index then `Promise.all` resolves a 6.0 collection's `media[]` UIDs to loaded item objects.
+- `resolveCollectionImages(collection)` — returns a 6.1 gallery collection's `images[]` URL array in order (raw strings, no item-object resolution). Used by `populateGalleryCollections` and `renderArtBleed`.
 - `unionCollections(slugs)` / `intersectCollections(slugs)` — set operations on multiple collections' resolved media.
 - `resolveFilter(projects, filter)` — applies `all` then `any`.
 - `filterByAllTags()` / `filterByAnyTag()` — section-page filtering.

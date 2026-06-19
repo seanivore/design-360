@@ -1,8 +1,8 @@
 # Entry SOP — Authoring Entries, Collections, and Items
 
-**Aligned with**: v4.2.3_IMPLEMENT.md
-**Last updated**: 2026-05-27
-**Schema versions** (verify before authoring): entry 6.1, collection 6.0, item 6.0 — see `AUGUST_STYLE.md` § *Schema Version Alignment Check*.
+**Aligned with**: v4.4.x shipped state
+**Last updated**: 2026-06-19
+**Schema versions** (verify before authoring): entry 6.1, collection 6.1 (legacy 6.0 still accepted), item 6.0 — see `AUGUST_STYLE.md` § *Schema Version Alignment Check*.
 
 This document is the single procedural reference for authoring the three JSON content types that drive the august.style portfolio: **entries** (project pages), **collections** (curated media sets), and **items** (single media pieces). The agent receives a brief (often a markdown file with prose + media references, sometimes just links and notes) and runs this pipeline end-to-end, including CDN handoff.
 
@@ -30,11 +30,19 @@ All three types share the same shape. Type-specific notes are called out per ste
 
 ### Type selection
 
-- **Entry** — a project case study with hero, copy, media. Belongs in `assets/entries/`. Has either `layout: "columns"` (traditional two-column case study) or `layout: "flow"` (typed-block long-form storytelling).
-- **Collection** — a curated set of media items (e.g., "Logo Marks 2026", "Generative Portraits"). Belongs in `assets/collections/`. References item UIDs in its `media[]` array.
-- **Item** — a single media piece (image or short video) that belongs to one or more collections. Belongs in `assets/items/`. Free-form tags from `tags.json` `item` group.
+- **Entry** — a project case study with hero, copy, media. Belongs in `assets/entries/`. One of three layouts: `layout: "columns"` (two-column case study), `layout: "flow"` (typed-block long-form storytelling), or `layout: "gallery"` (two-blurb intro + per-collection bleed preview rows). See § 7 "Authoring each layout" for the per-layout field beats.
+- **Collection** — a curated set of media. Belongs in `assets/collections/`. Two shapes: a **6.1 gallery collection** (ordered `images[]` CDN URLs + an `entry` field, browsed at the nested `/<entry>/<coll>` URL — this is what a gallery entry's `collections[]` resolves against) OR a **legacy 6.0 collection** (`media[]` item UIDs, browsed at `/collection/<slug>`). Both validate.
+- **Item** — a single media piece (image or short video) referenced by a 6.0 collection's `media[]`. Belongs in `assets/items/`. Free-form tags from `tags.json` `item` group. (6.1 gallery collections do NOT use item files — their imagery is plain CDN URLs.)
 
 If unclear, default to entry. Collections and items are for the Media Collections subsystem and are used when a brief describes a curated set of standalone media pieces rather than a project case study.
+
+### Entry writing guidelines
+
+Before authoring any copy, read these — they set the bar for every entry. Cross-reference `.agent/EMOTION_DRIVEN_COPYWRITING.md` for the deeper craft.
+
+> Don't get lost in the technicals. Speak to the non-technical reader who could be a potential client. Showcase the technical using household-name services as the best-practice proof. Don't fall into AI-hype bias; humbly describe impressive work that speaks for itself. Show numbers visually and show UI flow visually — the things people can't picture on their own. In the end they don't want to read, they want to understand by scrolling and scanning. Hold workflow and method until the end.
+>
+> Core aim: recreate entries so the whole portfolio is quickly digestible in one sitting. Visual, little text, scroll scroll scroll.
 
 ---
 
@@ -160,8 +168,11 @@ The numbering scheme used in `assets/.media/{slug}/` mirrors the CDN path. The p
 | Main media group K, image M | `main-K-{slug}-M.webp`                        | both 1-indexed                                         |
 | Flow asset NN               | `flow-{slug}-NN.webp`                         | two-digit zero-padded, matches phase-draft conventions |
 | Feature tile N              | `feature-tile-{slug}-N.mp4`                   | mp4 only                                               |
-| Collection thumb N          | `media/collection/{slug}/thumb-{slug}-N.webp` | different prefix                                       |
-| Item source                 | `media/item/{slug}.webp` (or `.mp4`)          | different prefix                                       |
+| Flow video N (desktop/mobile)| `vid-{slug}-N-1.mp4` / `vid-{slug}-N-2.mp4`  | `-1` desktop-wide, `-2` mobile-skinny; mp4 only        |
+| Gallery collection image N  | `media/{entry}/{coll}/{coll}-N.webp`          | 6.1 nested under parent entry                          |
+| Gallery collection thumb N  | `media/{entry}/{coll}/thumb-{coll}-N.webp`    | 6.1 nested under parent entry                          |
+| Legacy collection thumb N   | `media/collection/{slug}/thumb-{slug}-N.webp` | 6.0 standalone collection                              |
+| Item source                 | `media/item/{slug}.webp` (or `.mp4`)          | 6.0 item                                               |
 
 For videos (mp4): do not go through Cloudinary. Place at `assets/.media/{slug}/...mp4` directly and proceed to § 6 upload.
 
@@ -181,10 +192,47 @@ curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/destroy \
 
 All processed media must live on the CDN before the JSON references it. Local paths in JSON are never acceptable in committed entries.
 
+There are two upload paths. **Images** go through the `/api/upload` endpoint (which folds in the Cloudinary resize + R2 put + Cloudinary cleanup in one call). **Video** still uses the manual `aws s3 sync` method below — the endpoint accepts mp4 but does NOT transform it, and the manual sync is the established video path.
+
+### Images — `/api/upload` endpoint (preferred)
+
+The endpoint (`api/upload.ts`) takes a source image (by multipart file OR by public URL), shrinks it to fit a 2400×2400 box and converts to WebP via Cloudinary (`c_limit,w_2400,h_2400,f_webp,q_auto` — original aspect ratio preserved, only downsized when larger), PUTs it to R2 at the key you supply, deletes the Cloudinary copy (free-tier hygiene), and returns the public `https://cdn.august.style/<key>` URL.
+
+- **Auth**: `Authorization: Bearer ${UPLOAD_API_KEY}`.
+- **Key**: must be a safe relative path under `media/` (e.g. `media/{slug}/bleed-1-{slug}-1.webp`). The endpoint rejects keys outside `media/`, with `..`, `//`, or non-`[a-zA-Z0-9._/-]` characters. After a WebP transform the key's extension is rewritten to `.webp`.
+- **Size cap**: 25 MB.
+- **Preview deploys** (`isTest`): keys are re-rooted under `media/_preview/` so dev uploads never overwrite production CDN objects.
+- **`skip_transform`**: set `true` to bypass Cloudinary and upload the bytes byte-for-byte — use for pre-cropped images you do NOT want resized (e.g. already-sized thumbnails, or transparent PNGs you must keep exact). gif/svg/mp4 pass through byte-for-byte regardless.
+
+Multipart form (local file):
+
+```bash
+curl -X POST https://www.august.style/api/upload \
+  -H "Authorization: Bearer $UPLOAD_API_KEY" \
+  -F "file=@assets/.media/{slug}/bleed-1-{slug}-1.png" \
+  -F "key=media/{slug}/bleed-1-{slug}-1.webp"
+# -> { "ok": true, "url": "https://cdn.august.style/media/{slug}/bleed-1-{slug}-1.webp", "key": "..." }
+```
+
+JSON body (by public https URL — handy when the source is already hosted):
+
+```bash
+curl -X POST https://www.august.style/api/upload \
+  -H "Authorization: Bearer $UPLOAD_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"url":"https://example.com/source.png","key":"media/{slug}/img-sq-{slug}-1.webp"}'
+```
+
+Add `"skip_transform": true` (JSON) or `-F "skip_transform=true"` (multipart) to upload without the Cloudinary resize.
+
+For a 6.1 gallery collection, the key is nested under the parent entry: `media/{entry}/{coll}/{coll}-N.webp`.
+
+### Video — manual `aws s3 sync` (the endpoint can't transform video yet)
+
 **R2 endpoint**: `https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com`
 **AWS CLI profile**: `r2`
 
-### Sync the slug directory
+Place mp4 files at `assets/.media/{slug}/...` (skip Cloudinary entirely), then sync the slug directory:
 
 ```bash
 aws s3 sync assets/.media/{slug}/ s3://portfolio/media/{slug}/ \
@@ -192,7 +240,7 @@ aws s3 sync assets/.media/{slug}/ s3://portfolio/media/{slug}/ \
   --profile r2
 ```
 
-For collections, use `s3://portfolio/media/collection/{slug}/`. For items, use `s3://portfolio/media/item/`.
+`aws s3 sync` is also the fallback for any bulk image upload if the endpoint is unavailable. For legacy 6.0 collections, use `s3://portfolio/media/collection/{slug}/`; for items, `s3://portfolio/media/item/`; for 6.1 gallery collection imagery, `s3://portfolio/media/{entry}/{coll}/`.
 
 ### Pre-flight verify
 
@@ -229,7 +277,7 @@ Reference `AUGUST_STYLE.md` § 2 (entries), § 3 (collections), § 4 (items) for
 - `placement`: `[]` by default. For homepage-featured entries: `["Featured", "Phase A" or "Phase B" or "Phase C"]`.
 - `feature_tile`: `[]` by default. For featured entries: `["https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4"]`.
 - `tile_alt`: alt text for the feature-tile video.
-- `layout`: `"columns"` or `"flow"`.
+- `layout`: `"columns"`, `"flow"`, or `"gallery"`.
 - `achievements[]`: array of `{ headline, details }` objects. Optional; populates the homepage Achievements section if non-empty.
 
 ### Entries — columns layout
@@ -245,9 +293,9 @@ Use when the brief describes a single project with traditional case-study sectio
 
 ### Entries — flow layout
 
-Use when the brief is long-form storytelling with mixed media types (the three new v4.2.3 showcase entries are examples). Fields:
+Use when the brief is long-form storytelling with mixed media types. The freelance-payments-platform entry (`assets/entries/uid-vin-427.json`) is a good worked example — it chains four `video` blocks and two `project_link` blocks. Fields:
 
-- `flow[]`: typed-block array (see `AUGUST_STYLE.md` § 2a for the full block-type catalog: h3/h4/h5/p/img/list/chunk_break/embed_html/collection_preview).
+- `flow[]`: typed-block array (see `AUGUST_STYLE.md` § 2a for the full block-type catalog).
 - All optional case-study fields (challenge/approach/result/tiles) are skipped — the flow handles narrative pacing.
 
 Convert markdown briefs to flow blocks:
@@ -262,10 +310,29 @@ Convert markdown briefs to flow blocks:
 | Bulleted list                                 | `{ "type": "list", "items": [...], "style": "bluepoints" }`                                                                            |
 | HTML block (tweet / YouTube / Behance iframe) | `{ "type": "embed_html", "html": "...", "alt": "..." }` — copy HTML verbatim, escape double quotes for JSON, preserve `&amp;` entities |
 | `**chunk_break**` marker                      | `{ "type": "chunk_break", "button_text": "Continue reading" }`                                                                         |
-| Collection preview                            | `{ "type": "collection_preview", "collection": "collection-slug" }`                                                                    |
+| Collection preview                            | `{ "type": "collection_preview", "collection": "collection-slug" }` (resolves a legacy 6.0 collection)                                 |
+| CTA / link button                             | `{ "type": "project_link", "url": "...", "text": "...", "variant": "ghost" }` — right-aligned stacked button; omit `variant` for filled, `"ghost"` for outline; external URLs open in a new tab |
+| Paired desktop+mobile video                   | `{ "type": "video", "desktop": "<cdn mp4>", "mobile": "<cdn mp4>", "caption": "...", "alt": "..." }` — GIF-style muted/looping/autoplay row; either url may be omitted; `caption`/`alt` optional |
+
+### Entries — gallery layout
+
+Use for an image-forward art/collection showcase: a short intro plus walls of pictures grouped into collections. The illustration-art-deco entry (`assets/entries/uid-iad-101.json`) is the worked example. Fields:
+
+- `challenge`: the gallery's intro paragraph — rendered under an **"About"** label.
+- `approach`: the medium / process note — rendered under a **"Details"** label.
+- `result`: leave **empty** — the gallery layout hides it.
+- `collections[]`: bare collection slugs (e.g. `["animals", "motif"]`). Each renders one bleed-style preview row (first 8 images) linking to the nested `/<entry>/<coll>` URL. Each slug must have a matching 6.1 gallery collection file whose `entry` field equals this entry's slug.
+- `origin_url` / `origin_url_text`: optional "see where this lived" link.
+- A gallery entry may carry `main_media` / `grids` / `bleed` / `bleed_slides` (the columns shell renders them), but its `flow[]` is NOT rendered in gallery layout.
+- Set `placement: ["Art Gallery"]` to also feed this entry's imagery into the homepage art-bleed wall.
 
 ### Collections — type-specific
 
+**6.1 gallery collection** (nested under a parent entry — the common case for new galleries):
+- `entry`: the parent entry's slug. Drives the nested `/<entry>/<coll>` URL and the manifest key.
+- `images[]`: ordered CDN URLs (NOT item UIDs). No item files needed.
+
+**Legacy 6.0 collection** (standalone, UID-referenced):
 - `media[]`: array of item UIDs (strings like `"uid-itm-001"`). Items must exist in `assets/items/` first; the validator cross-references.
 
 ### Items — type-specific
@@ -273,6 +340,14 @@ Convert markdown briefs to flow blocks:
 - `media_type`: `"image"` or `"video"`.
 - `src`: full CDN URL to the single media piece.
 - `tags[]`: free-form values; add to `tags.json` `item` group as you go.
+
+### Authoring each layout — don't-miss beats
+
+A quick checklist so a layout never ships half-formed:
+
+- **columns** — fill `challenge` + `approach` + `result` (2–4 sentences each); add media via `main_media` / `grids` / `bleed` / `bleed_slides`; `tiles[]` for the section-tile lines; tags live in the sticky right column (top/bottom tag cards auto-hide).
+- **flow** — author the whole story as `flow[]` blocks; skip challenge/approach/result/tiles. Use `video` blocks (paired desktop/mobile mp4) to show UI in motion and `project_link` blocks for CTAs. Lead visual, land the workflow/method last. Tags render as top + bottom cards.
+- **gallery** — put the intro in `challenge` (shows as "About") and the medium note in `approach` (shows as "Details"); leave `result` empty; list collections in `collections[]`; create one 6.1 gallery collection file per slug with `entry` set to this entry's slug; add `placement: ["Art Gallery"]` to feed the homepage art wall.
 
 ### YouTube / Behance embeds (columns or flow)
 
@@ -320,12 +395,18 @@ python3 assets/scripts/validate.py
 ```
 
 The validator checks:
-- Required fields present.
-- Tag values exist in `tags.json` (except `item` tags, which are free-form).
+- Required fields present and non-empty (entries: includes `layout`; collections: `media[]` for 6.0 / `images[]` for 6.1).
+- `schema_version` correctness — entry must be `6.1`, collection `6.0` OR `6.1`, item `6.0`.
+- `layout` is one of `columns` / `flow` / `gallery`.
+- Tag values (role / skill / product / placement) exist in `tags.json` (except `item` tags, which are free-form).
 - Locked `company` value.
-- CDN URL format and `schema_version` correctness.
-- Cross-references for collections (every UID in `media[]` exists in `assets/items/`).
-- Cross-references for entries (every collection slug referenced in `collection_preview` flow blocks exists in `assets/collections/`).
+- Every `flow[]` block's `type` is a known block type (h3/h4/h5/p/img/list/chunk_break/embed_html/collection_preview/project_link/video).
+- Structural shape of `grids[]` / `achievements[]` / `metric` / `process[]` where present.
+- Cross-references for 6.0 collections (every UID in `media[]` exists in `assets/items/`).
+- Cross-references for entries (every collection slug referenced in a `collection_preview` flow block exists in `assets/collections/`).
+- No duplicate slugs across entries, collections, and items.
+
+(Note: it does NOT validate CDN URL format — pre-flight those manually per § 6.)
 
 Fix every reported error before proceeding. The validator's job is to ensure orchestrators downstream see only consistent data.
 
@@ -338,8 +419,8 @@ python3 generate_manifest.py
 ```
 
 This:
-- Updates `assets/js/manifest.json` with the new slug → JSON path mapping.
-- Generates the per-slug HTML at `_pages/{slug}.html` (entry), `_pages/collection-{slug}.html` (collection), or `_pages/media-{slug}.html` (item) — with SEO meta tags baked in from the JSON's `seo_title` / `seo_description` / `thumb[0]` (or `src` for items).
+- Updates `assets/js/manifest.json` with the new slug → JSON path mapping. 6.1 gallery collections (those with an `entry` field) are keyed by the nested path `<entry>/<coll>`; legacy 6.0 collections and everything else are keyed by bare slug.
+- Generates the per-slug HTML at `_pages/{slug}.html` (entry), `_pages/{entry}/{coll}.html` (6.1 gallery collection) or `_pages/collection-{slug}.html` (legacy 6.0 collection), or `_pages/media-{slug}.html` (item) — with SEO meta tags baked in from the JSON's `seo_title` / `seo_description` / `thumb[0]` (or `src` for items).
 
 Confirm the new slug appears in the manifest output.
 
@@ -357,16 +438,18 @@ Visit the new content:
 
 ```
 Entry:      http://localhost:5500/entry.html?path={slug}
-Collection: http://localhost:5500/collection.html?path={slug}
+Collection: http://localhost:5500/collection.html?path={slug}     (6.1 gallery: ?path={entry}/{coll})
 Item:       http://localhost:5500/media.html?path={slug}
 ```
 
 Verify:
 - Page renders without console errors.
-- All media loads (no broken images / videos).
+- All media loads (no broken images / videos — including flow `video` blocks autoplaying muted).
 - Tags link correctly to section pages.
 - Lightbox opens on click (entries).
-- Layout shape is correct (columns vs flow for entries).
+- Layout shape is correct (columns / flow / gallery for entries).
+- Gallery layout: copy column shows "About" + "Details" (no result); each `collections[]` row renders and links to `/{entry}/{coll}`.
+- Flow `project_link` buttons point to the right URLs (external ones open in a new tab).
 
 If anything fails, fix locally before opening a PR.
 
@@ -379,7 +462,7 @@ If anything fails, fix locally before opening a PR.
 3. Tag the document per `tags.json`.
 4. Stage source media at `assets/.media/{slug}/` (entries) or `assets/.media/collection/{slug}/` (collections) or `assets/.media/item/` (items).
 5. Process media via Cloudinary (resize, crop, webp) — § 5.
-6. Upload to R2: `aws s3 sync` against the project endpoint with profile `r2` — § 6.
+6. Upload to R2 — images via `POST /api/upload` (Cloudinary→R2 in one call), video via `aws s3 sync` with profile `r2` — § 6.
 7. Pre-flight every CDN URL the JSON will reference (HTTP 200 + correct content-type).
 8. Fill JSON — § 7.
 9. Move to destination directory; validate: `python3 assets/scripts/validate.py`.
