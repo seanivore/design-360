@@ -27,7 +27,7 @@
     },
     "phase_c": {
       "label": "Phase C",
-      "heading_lead": "Now we all about",
+      "heading_lead": "Now all in on",
       "heading_accent": "Custom AI Solutions",
       "body": "Most companies roll out AI as another tool slotted on top of how they already work. The real value is in rebuilding the work itself: custom pipelines wired into the AI your team is already using. No new tool, no Zapier rats-nest, no new vendor."
     }
@@ -75,7 +75,7 @@
     ]
   },
   "art_bleed": {
-    "heading": "Original Art",
+    "heading": "",
     "rows": 3,
     "placement": "Art Gallery"
   },

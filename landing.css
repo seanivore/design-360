@@ -1487,7 +1487,7 @@ a.cred-company:hover {
    set to its aspect ratio in JS), bleeding 100vw, accent matting in the gaps,
    random 3–5 images per row. The row height self-balances by image count. */
 .art-bleed {
-  padding: 48px 0 0;
+  padding: 140px 0;
 }
 .art-bleed__heading {
   text-align: center;

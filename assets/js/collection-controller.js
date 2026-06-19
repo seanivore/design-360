@@ -215,17 +215,17 @@ window.CollectionController = (() => {
     }
 
     if (imageMode) {
-      // Reuse the existing 3-across square-thumbnail grid (.entry-image-grid /
-      // .entry-grid-image) so no new CSS is needed; the lightbox shows the
-      // full uncropped image on click.
-      gridEl.classList.add('entry-image-grid');
+      // Natural-aspect masonry "gallery wall" — images keep their aspect ratio
+      // (framed-on-a-wall feel, not square-cropped); the lightbox shows the
+      // full image on click.
+      gridEl.classList.add('collection-masonry');
       list.forEach(url => {
         gridEl.appendChild(buildImageTile(url));
       });
       return;
     }
 
-    gridEl.classList.remove('entry-image-grid');
+    gridEl.classList.remove('collection-masonry');
     list.forEach(item => {
       gridEl.appendChild(buildItemTile(item));
     });
@@ -235,14 +235,14 @@ window.CollectionController = (() => {
    * Build a single gallery image tile: a bare <img data-lightbox-index="N">
    * registered into the shared lightbox pool. No media.html link, no title.
    * Click opens the shared lightbox (global delegation in lightbox.js).
-   * Uses .entry-grid-image so it slots into the reused .entry-image-grid.
+   * Natural-aspect tile for the masonry wall (.collection-masonry).
    */
   function buildImageTile(url) {
     const alt = (collection && collection.thumb_alt) || (collection && collection.title) || 'Collection image';
     const idx = window.Lightbox.register(imgSrc(url), alt);
 
     const img = document.createElement('img');
-    img.className = 'entry-grid-image collection-image-tile fade-in-item';
+    img.className = 'collection-image-tile fade-in-item';
     img.src = imgSrc(url);
     img.alt = alt;
     img.loading = 'lazy';

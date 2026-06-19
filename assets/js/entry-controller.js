@@ -1276,6 +1276,16 @@ const EntryController = (() => {
                     img.className = 'entry-bleed__image';
                     img.loading = 'lazy';
 
+                    // Justified row: flex-grow = aspect ratio so every image in
+                    // the row shares one height while keeping its natural width.
+                    const applyAR = () => {
+                        const ar = (img.naturalWidth && img.naturalHeight)
+                            ? (img.naturalWidth / img.naturalHeight) : 1.5;
+                        link.style.flexGrow = String(ar);
+                    };
+                    if (img.complete && img.naturalWidth) applyAR();
+                    else img.addEventListener('load', applyAR, { once: true });
+
                     link.appendChild(img);
                     row.appendChild(link);
                 });
