@@ -638,15 +638,12 @@ const EntryController = (() => {
 
             case 'video': {
                 // Paired desktop (wide) + mobile (skinny) MP4s in one row, GIF-like
-                // (muted/looping/no-controls). Honors prefers-reduced-motion.
+                // (muted/looping/no-controls). Plays when scrolled into view.
                 const wrapper = document.createElement('div');
                 wrapper.className = 'flow-video';
 
                 const row = document.createElement('div');
                 row.className = 'flow-video-row';
-
-                const reduceMotion = window.matchMedia
-                    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
                 [['desktop', block.desktop], ['mobile', block.mobile]].forEach(([role, url]) => {
                     if (!url) return;
@@ -658,15 +655,22 @@ const EntryController = (() => {
                     v.loop = true;
                     v.playsInline = true;
                     v.setAttribute('playsinline', '');
-                    v.preload = 'metadata';
+                    v.autoplay = true;
+                    v.setAttribute('autoplay', '');
+                    v.preload = 'auto';   // load the first frame so it isn't blank
                     if (block.alt) v.setAttribute('aria-label', block.alt);
-                    if (reduceMotion) {
-                        v.setAttribute('controls', ''); // no autoplay; let the user start it
-                    } else {
-                        v.autoplay = true;
-                        v.setAttribute('autoplay', '');
-                    }
                     row.appendChild(v);
+
+                    // Play on scroll-into-view — reliable iOS autoplay (the bare
+                    // autoplay attr is flaky there), and shows frames immediately.
+                    if ('IntersectionObserver' in window) {
+                        new IntersectionObserver((entries) => {
+                            entries.forEach(e => {
+                                if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+                                else v.pause();
+                            });
+                        }, { threshold: 0.2 }).observe(v);
+                    }
                 });
 
                 wrapper.appendChild(row);
@@ -1256,10 +1260,12 @@ const EntryController = (() => {
             [pool[i], pool[j]] = [pool[j], pool[i]];
         }
 
-        // 3 rows, each a random 3–5 images (matches the homepage bleed).
+        // Mobile: 4 rows, 2-4 per row. Desktop: 3 rows, 3-5 per row.
+        const isMobile = window.matchMedia('(max-width: 47.9375rem)').matches;
+        const rowCount = isMobile ? 4 : 3;
         let cursor = 0;
-        for (let r = 0; r < 3 && cursor < pool.length; r++) {
-            const count = 3 + Math.floor(Math.random() * 3); // 3, 4, or 5
+        for (let r = 0; r < rowCount && cursor < pool.length; r++) {
+            const count = isMobile ? (2 + Math.floor(Math.random() * 3)) : (3 + Math.floor(Math.random() * 3));
             const slice = pool.slice(cursor, cursor + count);
             cursor += count;
             if (!slice.length) break;

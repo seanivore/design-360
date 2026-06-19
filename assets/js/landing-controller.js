@@ -55,7 +55,8 @@ const LandingController = (() => {
 
     const cfg = (content && content.art_bleed) || {};
     const placement = cfg.placement || 'Art Gallery';
-    const rowCount = cfg.rows || 3;
+    const isMobile = window.matchMedia('(max-width: 47.9375rem)').matches;
+    const rowCount = isMobile ? 5 : (cfg.rows || 3);
 
     const galleryEntries = (projects || []).filter(p => (p.placement || []).includes(placement));
     if (!galleryEntries.length) { section.style.display = 'none'; return; }
@@ -90,7 +91,8 @@ const LandingController = (() => {
     let cursor = 0;
     const rowsHTML = [];
     for (let r = 0; r < rowCount; r++) {
-      const count = 3 + Math.floor(Math.random() * 3); // 3, 4, or 5
+      // Mobile: 2-4 per row (5 rows); desktop: 3-5 per row (3 rows).
+      const count = isMobile ? (2 + Math.floor(Math.random() * 3)) : (3 + Math.floor(Math.random() * 3));
       if (cursor + count > pool.length) cursor = 0;     // wrap if we run low
       const slice = pool.slice(cursor, cursor + count);
       cursor += count;
