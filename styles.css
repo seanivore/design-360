@@ -2317,6 +2317,28 @@ body > main.collection-main {
    COLLECTION + MEDIA PAGE COMPONENTS (v4.2.3)
    ============================================ */
 
+/* Breadcrumb back to the parent entry (its gallery) — top + bottom of the
+   collection page. */
+.collection-breadcrumb {
+  margin: var(--space-md) 0;
+}
+.collection-breadcrumb--bottom {
+  margin-top: var(--space-xl);
+}
+.collection-breadcrumb__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--easing);
+}
+.collection-breadcrumb__link:hover {
+  color: var(--color-accent-terracotta);
+}
+
 .collection-subtitle {
   margin-top: var(--space-xs);
   color: var(--color-text-secondary, #666);

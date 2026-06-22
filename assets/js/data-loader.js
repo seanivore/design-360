@@ -103,6 +103,43 @@ const DataLoader = (() => {
   }
 
   /**
+   * Load every gallery (6.1) collection from the manifest, shaped for the
+   * section grid: each carries `_type:'collection'` and `_url:'/<entry>/<coll>'`
+   * (its nested page) so a tile can link to it, alongside the collection's own
+   * role/skill/product tags, thumb[], and tiles[]. Returns shallow clones so the
+   * shared collection cache is never mutated.
+   */
+  async function loadAllCollections() {
+    const out = [];
+    try {
+      const manifest = await loadManifest();
+      const pairs = manifest.collections ? Object.entries(manifest.collections) : [];
+      const results = await Promise.all(pairs.map(async ([key]) => {
+        const coll = await loadCollection(key);
+        return coll ? { ...coll, _type: 'collection', _url: '/' + key } : null;
+      }));
+      results.forEach(c => { if (c) out.push(c); });
+    } catch (error) {
+      console.error('Error in loadAllCollections:', error);
+    }
+    return out;
+  }
+
+  /**
+   * Load the combined section-page pool: every entry (_type:'entry') plus every
+   * gallery collection (_type:'collection'). Entries keep their natural slug
+   * URL; collections carry an explicit _url to their nested page.
+   */
+  async function loadAllContent() {
+    const [entries, collections] = await Promise.all([
+      loadAllProjects(),
+      loadAllCollections(),
+    ]);
+    entries.forEach(e => { e._type = 'entry'; });
+    return [...entries, ...collections];
+  }
+
+  /**
    * Load a single collection by its slug
    * Resolves the JSON path via manifest.collections[slug]; caches the Promise on slug.
    */
@@ -300,14 +337,13 @@ const DataLoader = (() => {
   }
 
   /**
-   * Get all tags from a project (role + skill + product + placement + company combined)
+   * Get all tags from a project (role + skill + product + company combined)
    */
   function getProjectTags(project) {
     return [
       ...(project.role || []),
       ...(project.skill || []),
       ...(project.product || []),
-      ...(project.placement || []),
       ...(project.company ? [project.company] : [])
     ];
   }
@@ -456,6 +492,8 @@ const DataLoader = (() => {
     loadManifest,
     loadProject,
     loadAllProjects,
+    loadAllCollections,
+    loadAllContent,
     loadCollection,
     loadCollectionItem,
     resolveCollectionMedia,

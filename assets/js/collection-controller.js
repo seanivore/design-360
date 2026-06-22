@@ -310,6 +310,47 @@ window.CollectionController = (() => {
   }
 
   /**
+   * Render a breadcrumb back to the parent entry (its gallery) at the top and
+   * bottom of the page. Resolves the entry's title from the manifest; falls
+   * back to a prettified slug. Lets a visitor who arrived via a collection tile
+   * jump up to the larger project without going back to search.
+   */
+  async function renderBreadcrumb(coll) {
+    const entrySlug = coll && coll.entry;
+    if (!entrySlug) return;
+
+    let entryTitle = entrySlug.replace(/-/g, ' ');
+    try {
+      const manifest = await DataLoader.loadManifest();
+      const path = manifest.entries && manifest.entries[entrySlug];
+      if (path) {
+        const entry = await DataLoader.loadProject(path);
+        if (entry && entry.title) entryTitle = entry.title;
+      }
+    } catch (e) { /* fall back to the slug */ }
+
+    const href = '/' + entrySlug + '/';
+    const make = (position) => {
+      const nav = document.createElement('nav');
+      nav.className = 'collection-breadcrumb collection-breadcrumb--' + position;
+      nav.setAttribute('aria-label', 'Breadcrumb');
+      const a = document.createElement('a');
+      a.href = href;
+      a.className = 'collection-breadcrumb__link';
+      a.innerHTML = '<span aria-hidden="true">←</span> Back to ' + entryTitle;
+      nav.appendChild(a);
+      return nav;
+    };
+
+    if (headerEl && headerEl.parentNode) {
+      headerEl.parentNode.insertBefore(make('top'), headerEl);
+    }
+    if (gridEl && gridEl.parentNode) {
+      gridEl.parentNode.insertBefore(make('bottom'), gridEl.nextSibling);
+    }
+  }
+
+  /**
    * Initialize the controller.
    */
   async function init() {
@@ -335,6 +376,7 @@ window.CollectionController = (() => {
       imageMode = images.length > 0;
 
       renderHeader(collection);
+      await renderBreadcrumb(collection);
 
       if (imageMode) {
         // Gallery: render images in array order, no tag filters, no per-image

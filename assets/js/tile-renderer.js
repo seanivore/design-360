@@ -12,7 +12,9 @@ const TileRenderer = (() => {
      */
     function renderSectionTile(project, activeTags) {
         const slug = project.slug;
-        const entryURL = `/${slug}`;
+        // Entries link to their flat slug; collections carry an explicit _url
+        // to their nested /<entry>/<coll> page.
+        const entryURL = project._url || `/${slug}`;
 
         const thumbnails = project.thumb || [];
         const tileTexts = project.tiles || [];
