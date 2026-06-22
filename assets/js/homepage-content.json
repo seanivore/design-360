@@ -1,7 +1,7 @@
 {
   "_metadata": {
-    "version": "4.2.3",
-    "description": "Homepage configuration + copy strings. v4.2.3 shape: hero + narrative_spine + featured_tiles + process + credentials + achievements + cta_section."
+    "version": "4.5.0",
+    "description": "Homepage configuration + copy strings. Sections: hero + narrative_spine + featured_tiles + art_bleed + process + credentials + achievements + cta_section. The featured video tile is driven by the entry `featured` boolean; art_bleed and the phase links filter on descriptive product/skill tags (the placement tag group was retired in v4.5.0)."
   },
   "hero": {
     "filter": {
@@ -20,18 +20,21 @@
   "narrative_spine": {
     "phase_a": {
       "label": "Phase A",
+      "href": "/section.html?tags=foundation-building",
       "heading_lead": "Talk about a solid",
       "heading_accent": "Foundation",
       "body": "Before AI, I learned the part of the job that doesn't change. A two-person social team at PETA, pioneering the visual-first playbook the industry adopted years later. Then independent, running every part of the work for my own clients. The foundation everything else is built on."
     },
     "phase_b": {
       "label": "Phase B",
+      "href": "/section.html?tags=generative-automation",
       "heading_lead": "Fixated on creating",
       "heading_accent": "Generative Automations",
       "body": "When the first GPT shipped, I stopped doing almost anything else and learned. The answer turned out to be pipelines: structured data, connective tissue, a writer, an artist, a surface. Then I built one and let it run."
     },
     "phase_c": {
       "label": "Phase C",
+      "href": "/section.html?tags=custom-ai-solution",
       "heading_lead": "Now all in on",
       "heading_accent": "Custom AI Solutions",
       "body": "Most companies roll out AI as another tool slotted on top of how they already work. The real value is in rebuilding the work itself: custom pipelines wired into the AI your team is already using. No new tool, no Zapier rats-nest, no new vendor."
@@ -40,13 +43,7 @@
   "featured_tiles": {
     "heading": "Three phases. One through-line.",
     "subheading": "Find the friction. Design the system. Ship the thing.",
-    "video_card": {
-      "filter": {
-        "any": [
-          "Featured"
-        ]
-      }
-    },
+    "_video_card_note": "The video tile pulls a random feature_tile[] from any entry with featured:true.",
     "cards": [
       {
         "phase": "Phase A",
@@ -57,7 +54,7 @@
           "Viral hits in YahooNews, Refinery 29, even a Kanye lyric",
           "10-year freelance client roster"
         ],
-        "href": "/section.html?tags=Phase%20A"
+        "href": "/section.html?tags=foundation-building"
       },
       {
         "phase": "Phase B",
@@ -68,7 +65,7 @@
           "Notion + Make.com + ChatGPT + Webflow pipeline",
           "Hand-drawn Lottie animations over an AI blog"
         ],
-        "href": "/section.html?tags=Phase%20B"
+        "href": "/section.html?tags=generative-automation"
       },
       {
         "phase": "Phase C",
@@ -79,14 +76,18 @@
           "Custom agentic builds against dev protocols",
           "This portfolio. Everlastings. DataEdger. Thot."
         ],
-        "href": "/section.html?tags=Phase%20C"
+        "href": "/section.html?tags=custom-ai-solution"
       }
     ]
   },
   "art_bleed": {
     "heading": "",
-    "rows": 3,
-    "placement": "Art Gallery"
+    "rows": 4,
+    "filter": {
+      "any": [
+        "Art Collection"
+      ]
+    }
   },
   "process": {
     "heading": "Building Custom AI Pipelines",
@@ -94,17 +95,17 @@
       {
         "word": "FOUNDATION",
         "body": "A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics.",
-        "href": "/section.html?tags=Phase%20A"
+        "href": "/section.html?tags=foundation-building"
       },
       {
         "word": "AUTOMATE",
         "body": "Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social.",
-        "href": "/section.html?tags=Phase%20B"
+        "href": "/section.html?tags=generative-automation"
       },
       {
         "word": "EMBED",
         "body": "Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead.",
-        "href": "/section.html?tags=Phase%20C"
+        "href": "/section.html?tags=custom-ai-solution"
       }
     ]
   },

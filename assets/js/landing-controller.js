@@ -45,20 +45,21 @@ const LandingController = (() => {
 
   /**
    * ART BLEED — homepage "Bleed Images Component" section (v4.4.x).
-   * Pulls thumbnails across gallery-layout entries (placement "Art Gallery"),
-   * shuffles each reload, and lays them into full-bleed rows. Each image links
-   * to its entry. NOT the gallery layout — this is the homepage bleed strip.
+   * Pulls images across the collections of every entry that carries the
+   * "Art Collection" product tag (cfg.filter), shuffles each reload, and lays
+   * them into full-bleed justified rows linking back to each entry. 4 rows
+   * desktop / 5 rows mobile. NOT the gallery layout — this is the homepage
+   * bleed strip.
    */
   async function renderArtBleed(content, projects) {
     const section = document.getElementById('art-bleed');
     if (!section) return;
 
     const cfg = (content && content.art_bleed) || {};
-    const placement = cfg.placement || 'Art Gallery';
     const isMobile = window.matchMedia('(max-width: 47.9375rem)').matches;
-    const rowCount = isMobile ? 5 : (cfg.rows || 3);
+    const rowCount = isMobile ? 5 : (cfg.rows || 4);
 
-    const galleryEntries = (projects || []).filter(p => (p.placement || []).includes(placement));
+    const galleryEntries = DataLoader.resolveFilter(projects || [], cfg.filter || { any: ['Art Collection'] });
     if (!galleryEntries.length) { section.style.display = 'none'; return; }
 
     // Pull every image across each gallery entry's associated collections.
@@ -171,19 +172,6 @@ const LandingController = (() => {
   }
 
   /**
-   * Convert a phase label ("Phase A") to a URL token ("Phase%20A").
-   *
-   * NOTE: section.html's tag URL parser splits on `+` as the multi-tag
-   * delimiter (e.g. `?tags=Web+Developer+Framer` = AND of two tags). So a
-   * space in a single tag value MUST encode as `%20`, never `+`, or the
-   * tag splits in two ("Phase" AND "A" instead of one tag "Phase A").
-   */
-  function phaseToURLToken(label) {
-    if (!label) return '';
-    return label.replace(/\s+/g, '%20');
-  }
-
-  /**
    * Render multi-paragraph body text. Splits on \n\n and emits <p> per chunk.
    * Single \n inside a chunk becomes <br>.
    */
@@ -250,8 +238,7 @@ const LandingController = (() => {
 
     section.innerHTML = phases
       .map(phase => {
-        const token = phaseToURLToken(phase.label);
-        const href = `/section.html?tags=${token}`;
+        const href = phase.href || '/section.html';
         const label = phase.label || '';
         const headingLead = phase.heading_lead || '';
         const headingAccent = phase.heading_accent || '';
@@ -292,19 +279,23 @@ const LandingController = (() => {
       return;
     }
 
-    // --- Card 1: random video from any entry with a feature_tile.
-    const videoFilter = (cfg.video_card && cfg.video_card.filter) || { any: ['Featured'] };
-    const videoCandidates = DataLoader.resolveFilter(projects, videoFilter)
-      .filter(p => Array.isArray(p.feature_tile) && p.feature_tile.length > 0)
-      .flatMap(p => p.feature_tile);
+    // --- Card 1: a random feature_tile[] clip from any entry with
+    //     featured:true. Autoplays + loops natively on desktop AND mobile
+    //     (muted + playsinline is what mobile browsers honor) and links to its
+    //     entry. No JS sequencing — it just plays.
+    const featuredEntries = (projects || []).filter(
+      p => p.featured === true && Array.isArray(p.feature_tile) && p.feature_tile.length > 0
+    );
     let videoCardHTML = '';
-    if (videoCandidates.length) {
-      const videoURL = videoCandidates[Math.floor(Math.random() * videoCandidates.length)];
+    if (featuredEntries.length) {
+      const entry = featuredEntries[Math.floor(Math.random() * featuredEntries.length)];
+      const videoURL = entry.feature_tile[Math.floor(Math.random() * entry.feature_tile.length)];
       const resolved = videoURL.startsWith('http') ? videoURL : '/' + videoURL;
+      const label = (entry.title || 'Featured project').replace(/"/g, '&quot;');
       videoCardHTML =
-        `<div class="feature-tile feature-tile--video" aria-hidden="true">` +
-          `<video class="feature-tile__video" muted loop playsinline autoplay src="${resolved}"></video>` +
-        `</div>`;
+        `<a class="feature-tile feature-tile--video" href="/${entry.slug}/" aria-label="${label}">` +
+          `<video class="feature-tile__video" muted loop playsinline autoplay preload="auto" src="${resolved}"></video>` +
+        `</a>`;
     }
 
     // --- Cards 2-4: phase title + bullets + Learn more link.
@@ -332,13 +323,6 @@ const LandingController = (() => {
       `</header>`;
 
     section.innerHTML = headerHTML + `<div class="feature-tiles__grid">${videoCardHTML}${phaseCardsHTML}</div>`;
-
-    // The video card still lights up via featured-tile-controller for its
-    // sequenced auto-play behaviors if needed. For now we just autoplay.
-    const tiles = section.querySelectorAll('.feature-tile');
-    document.dispatchEvent(new CustomEvent('featured-tiles:ready', {
-      detail: { tiles }
-    }));
   }
 
   /**

@@ -1099,6 +1099,16 @@ body > main.collection-main {
   height: 1.5rem;
 }
 
+/* Mobile: lay the 8 footer social icons out as two tidy rows of four. */
+@media (max-width: 47.9375rem) {
+  .social-links--footer {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: var(--space-md);
+  }
+}
+
 .footer-email {
   margin-bottom: var(--space-xs);
   font-size: var(--font-size-sm);
@@ -1509,12 +1519,19 @@ body > main.collection-main {
 }
 
 /* project_link buttons stack and align to the right edge of the content
-   column (consecutive ones stack vertically with a gap) — "classy". */
+   column (consecutive ones stack vertically with a gap) — "classy". On mobile
+   the right edge reads as off-center, so center them there instead. */
 .flow-project-link {
   display: flex;
   justify-content: flex-end;
   max-width: var(--flow-text-measure, 56rem);
   margin: 0.75rem auto 0;
+}
+
+@media (max-width: 47.9375rem) {
+  .flow-project-link {
+    justify-content: center;
+  }
 }
 
 /* Inline project_link flow-block button (v4.4.x) — entry pages load
