@@ -4,13 +4,18 @@
     "description": "Homepage configuration + copy strings. v4.2.3 shape: hero + narrative_spine + featured_tiles + process + credentials + achievements + cta_section."
   },
   "hero": {
-    "filter": { "any": [] },
+    "filter": {
+      "any": []
+    },
     "about_pool": [
       "I build the custom AI pipelines companies need to actually adapt to AI. Fifteen years of designing systems for scale, now applied to removing friction between people and the tools they use every day.",
       "Three phases, one through-line: find the friction, design the system, ship the thing. The tools changed from Photoshop to Make.com to custom agentic pipelines. The instinct didn't.",
       "I learn fast and think in systems rather than outputs. That's how a marketing strategist becomes a content systems architect becomes the person who builds the AI pipeline your team will actually use."
     ],
-    "cta_secondary": { "text": "All Projects", "href": "/section.html" }
+    "cta_secondary": {
+      "text": "All Projects",
+      "href": "/section.html"
+    }
   },
   "narrative_spine": {
     "phase_a": {
@@ -36,7 +41,11 @@
     "heading": "Three phases. One through-line.",
     "subheading": "Find the friction. Design the system. Ship the thing.",
     "video_card": {
-      "filter": { "any": ["Featured"] }
+      "filter": {
+        "any": [
+          "Featured"
+        ]
+      }
     },
     "cards": [
       {
@@ -82,9 +91,21 @@
   "process": {
     "heading": "Building Custom AI Pipelines",
     "steps": [
-      { "word": "FOUNDATION", "body": "A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics.", "href": "/section.html?tags=Phase%20A" },
-      { "word": "AUTOMATE", "body": "Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social.", "href": "/section.html?tags=Phase%20B" },
-      { "word": "EMBED", "body": "Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead.", "href": "/section.html?tags=Phase%20C" }
+      {
+        "word": "FOUNDATION",
+        "body": "A decade of strategy, design, and storytelling built for scale — measured in billions of impressions, not vanity metrics.",
+        "href": "/section.html?tags=Phase%20A"
+      },
+      {
+        "word": "AUTOMATE",
+        "body": "Generative pipelines that turn one hour of input into a hundred blog posts, a podcast, and a week of social.",
+        "href": "/section.html?tags=Phase%20B"
+      },
+      {
+        "word": "EMBED",
+        "body": "Custom AI solutions wired into the model your team already uses — no new tool, no friction, no maintenance overhead.",
+        "href": "/section.html?tags=Phase%20C"
+      }
     ]
   },
   "credentials": {
@@ -96,10 +117,42 @@
         "title": "Creative Consultant & Digital Contractor",
         "dates": "2024–Present",
         "tags": [
-          { "label": "Webflow", "filter": { "all": ["Webflow", "Freelance"] } },
-          { "label": "E-Commerce", "filter": { "all": ["E-Commerce", "Freelance"] } },
-          { "label": "AI + Automation", "filter": { "all": ["Automation", "Freelance"] } },
-          { "label": "Generative AI", "filter": { "all": ["Generative AI", "Freelance"] } }
+          {
+            "label": "Webflow",
+            "filter": {
+              "all": [
+                "Webflow",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "E-Commerce",
+            "filter": {
+              "all": [
+                "E-Commerce",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "AI + Automation",
+            "filter": {
+              "all": [
+                "Automation",
+                "Freelance"
+              ]
+            }
+          },
+          {
+            "label": "Generative AI",
+            "filter": {
+              "all": [
+                "Generative AI",
+                "Freelance"
+              ]
+            }
+          }
         ]
       },
       {
@@ -108,10 +161,42 @@
         "title": "Art Director",
         "dates": "2020–2023",
         "tags": [
-          { "label": "Brand Identity", "filter": { "all": ["Brand Identity", "Silent Labs"] } },
-          { "label": "Motion Graphics", "filter": { "all": ["Motion Graphics", "Silent Labs"] } },
-          { "label": "Illustration", "filter": { "all": ["Illustration", "Silent Labs"] } },
-          { "label": "Art Direction", "filter": { "all": ["Art Direction", "Silent Labs"] } }
+          {
+            "label": "Brand Identity",
+            "filter": {
+              "all": [
+                "Brand Identity",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Motion Graphics",
+            "filter": {
+              "all": [
+                "Motion Graphics",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Illustration",
+            "filter": {
+              "all": [
+                "Illustration",
+                "Silent Labs"
+              ]
+            }
+          },
+          {
+            "label": "Art Direction",
+            "filter": {
+              "all": [
+                "Art Direction",
+                "Silent Labs"
+              ]
+            }
+          }
         ]
       },
       {
@@ -120,10 +205,42 @@
         "title": "SBO Digital Consultant",
         "dates": "2019–2020",
         "tags": [
-          { "label": "Copywriting", "filter": { "all": ["Copywriting", "SEANIVORE GROUP LLC"] } },
-          { "label": "Content Strategy", "filter": { "all": ["Content Production", "SEANIVORE GROUP LLC"] } },
-          { "label": "Growth Strategy", "filter": { "all": ["Scaling Systems", "SEANIVORE GROUP LLC"] } },
-          { "label": "Landing Pages", "filter": { "all": ["Landing Page Design", "SEANIVORE GROUP LLC"] } }
+          {
+            "label": "Copywriting",
+            "filter": {
+              "all": [
+                "Copywriting",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Content Strategy",
+            "filter": {
+              "all": [
+                "Content Production",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Growth Strategy",
+            "filter": {
+              "all": [
+                "Scaling Systems",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          },
+          {
+            "label": "Landing Pages",
+            "filter": {
+              "all": [
+                "Landing Page Design",
+                "SEANIVORE GROUP LLC"
+              ]
+            }
+          }
         ]
       },
       {
@@ -132,10 +249,42 @@
         "title": "Marketing Innovations → Senior Strategist",
         "dates": "2011–2018",
         "tags": [
-          { "label": "Content Production", "filter": { "all": ["Content Production", "PETA, Inc."] } },
-          { "label": "Video Production", "filter": { "all": ["Video Production", "PETA, Inc."] } },
-          { "label": "Analytics", "filter": { "all": ["Analytics", "PETA, Inc."] } },
-          { "label": "Art Direction", "filter": { "all": ["Art Direction", "PETA, Inc."] } }
+          {
+            "label": "Content Production",
+            "filter": {
+              "all": [
+                "Content Production",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Video Production",
+            "filter": {
+              "all": [
+                "Video Production",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Analytics",
+            "filter": {
+              "all": [
+                "Analytics",
+                "PETA, Inc."
+              ]
+            }
+          },
+          {
+            "label": "Art Direction",
+            "filter": {
+              "all": [
+                "Art Direction",
+                "PETA, Inc."
+              ]
+            }
+          }
         ]
       }
     ]
@@ -148,7 +297,13 @@
   "cta_section": {
     "heading": "AI is reshaping creative work. Let's make it work for you.",
     "body": "Brand and graphic design, web development, or a custom AI pipeline wired into how your team already works. I help people adapt to a fast-moving landscape and ship work that actually lands.",
-    "primary": { "text": "Let's talk", "href": "mailto:sean@august.style" },
-    "secondary": { "text": "See all the work", "href": "/section.html" }
+    "primary": {
+      "text": "Let's talk",
+      "href": "mailto:sean@august.style"
+    },
+    "secondary": {
+      "text": "See all the work",
+      "href": "/section.html"
+    }
   }
 }

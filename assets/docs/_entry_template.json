@@ -19,10 +19,8 @@
     "Website"
   ],
   "company": "Freelance",
-  "placement": [
-    "Featured",
-    "Phase A"
-  ],
+  "_company_options": "Freelance | Silent Labs | SEANIVORE GROUP LLC | PETA, Inc.",
+  "placement": [],
   "feature_tile": [
     "https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4"
   ],
@@ -36,7 +34,7 @@
   "thumb_alt": "Alt text for thumbnail slideshow",
   "main_media": [
     {
-      "title": "",
+      "title": "These Media Groups Are For COLUMN Layout Type Only",
       "images": [
         "https://cdn.august.style/media/{slug}/main-1-{slug}-1.webp",
         "https://cdn.august.style/media/{slug}/main-1-{slug}-2.gif"
@@ -47,18 +45,13 @@
   "bleed": [
     {
       "images": [
+        "One bleed element per collection, for GALLERY layout entries only",
         "https://cdn.august.style/media/{slug}/bleed-1-{slug}-1.webp",
         "https://cdn.august.style/media/{slug}/bleed-1-{slug}-2.webp"
       ],
       "alt": ""
     }
   ],
-  "bleed_slides": {
-    "images": [
-      "https://cdn.august.style/media/{slug}/bleed-slide-{slug}-1.webp"
-    ],
-    "alt": ""
-  },
   "flow": [
     {
       "type": "h3",
@@ -121,9 +114,11 @@
     "Tile text 1",
     "Tile text 2"
   ],
-  "challenge": "Problem statement (2-4 sentences)",
-  "approach": "Approach taken (2-4 sentences)",
-  "result": "Outcome achieved (2-4 sentences)",
+  "challenge": "Problem statement (2-4 sentences) for COLUMN layout only",
+  "approach": "Approach taken (2-4 sentences) for COLUMN layout only",
+  "result": "Outcome achieved (2-4 sentences) for COLUMN layout only",
+  "about": "About the art (1-2 sentences) for GALLERY layout only",
+  "details": "Details about how the art was created (1-2 sentences) for GALLERY layout only",
   "role_headline": null,
   "hero_btn_cta": null,
   "final_cta_text": null,

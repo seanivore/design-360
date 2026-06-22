@@ -1,5 +1,8 @@
 {
-  "_metadata": { "schema_version": "6.0", "template_type": "media_collection" },
+  "_metadata": {
+    "schema_version": "6.0",
+    "template_type": "media_collection"
+  },
   "id": "uid-col-001",
   "slug": "stub-collection",
   "title": "Stub Collection",
@@ -10,8 +13,14 @@
   "skill": [],
   "product": [],
   "company": "Freelance",
-  "thumb": ["https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"],
+  "thumb": [
+    "https://cdn.august.style/media/saas-product-sale-features/thumb-slides-saas-product-sale-features-1.webp"
+  ],
   "thumb_alt": "Stub collection thumbnail — reused SaaS landing slide.",
-  "media": ["uid-itm-001"],
-  "notes": ["v4.2.3 stub fixture per Sean Q2; delete or move to drafts/ after smoke test passes."]
+  "media": [
+    "uid-itm-001"
+  ],
+  "notes": [
+    "v4.2.3 stub fixture per Sean Q2; delete or move to drafts/ after smoke test passes."
+  ]
 }
