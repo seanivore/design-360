@@ -2339,6 +2339,33 @@ body > main.collection-main {
   color: var(--color-accent-terracotta);
 }
 
+/* Collection page — natural-aspect "gallery wall" (masonry columns), so art
+   shows at its real proportions like framed pieces, not square crops (v4.4.x). */
+.collection-masonry {
+  column-count: 3;
+  column-gap: 0.75rem;
+  max-width: 75rem;
+  margin: var(--space-xl) auto;
+  padding: 0 var(--space-md);
+}
+@media (max-width: 63.9375rem) {
+  .collection-masonry { column-count: 2; }
+}
+.collection-image-tile {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.75rem;
+  break-inside: avoid;
+  border-radius: 2px;
+  box-shadow: var(--tile-shadow);
+  cursor: pointer;
+  transition: transform .25s ease;
+}
+.collection-image-tile:hover {
+  transform: translateY(-2px);
+}
+
 .collection-subtitle {
   margin-top: var(--space-xs);
   color: var(--color-text-secondary, #666);
