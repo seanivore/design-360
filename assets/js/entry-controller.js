@@ -795,8 +795,9 @@ const EntryController = (() => {
 
     /**
      * Populate gallery-layout copy: same title/subtitle/role as columns, but
-     * the left text column is gated to TWO blurbs — `challenge` relabelled
-     * "About" + `approach` relabelled "Details"; the RESULT section is hidden.
+     * the left text column shows two blurbs driven by the data fields `about`
+     * and `details` (relabelling the shared CHALLENGE/APPROACH headings to
+     * "About"/"Details"); the RESULT section is hidden.
      */
     function populateGalleryContent(project) {
         const titleEl = document.getElementById('entry-title');

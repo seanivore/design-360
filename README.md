@@ -20,29 +20,29 @@ See `assets/docs/AUGUST_STYLE.md` for the full architecture reference (schemas, 
 
 ## Key Files
 
-| File | Purpose |
-| ---- | ------- |
-| `index.html` | Homepage (cyberpunk hero → narrative spine → featured tiles → process → credentials → achievements → CTA) |
-| `entry.html` | Entry-page template (`layout: "columns"`, `"flow"`, or `"gallery"`) |
-| `section.html` | Universal tag/filter page |
-| `collection.html` | Collection-page template (v4.2.3) |
-| `media.html` | Item-page template (v4.2.3) |
-| `generate_manifest.py` | Manifest builder + per-slug HTML page generator with SEO meta |
-| `api/upload.ts` | Image-upload endpoint — Cloudinary resize-to-2400 + WebP → R2 (Bearer-auth, single caller) |
-| `assets/js/homepage-content.json` | Homepage configuration + copy strings |
-| `assets/js/data-loader.js` | Fetching, caching, filtering, tag helpers, collection/item resolvers |
-| `assets/js/landing-controller.js` | Homepage rendering (incl. `renderArtBleed` art wall) |
-| `assets/js/entry-controller.js` | Entry-page rendering — columns / flow / gallery layouts, unified lightbox pool |
-| `assets/js/featured-tile-controller.js` | Tap-state machine for homepage feature tiles (dormant in the shipped 4-card grid) |
-| `assets/js/collection-controller.js` | Collection-page rendering |
-| `assets/js/media-controller.js` | Item-page rendering |
-| `assets/scripts/validate.py` | Schema validator (entries v6.1 + collections v6.0/v6.1 + items v6.0) |
-| `assets/scripts/new_project.py` | Skeleton generator (`--type {entry,collection,item}`) |
-| `assets/scripts/cdn_cleanup.py` | R2 orphan-detection report (no deletion) |
-| `assets/docs/AUGUST_STYLE.md` | Living architecture / schema reference |
-| `assets/docs/ENTRY_SOP.md` | Content-authoring SOP |
-| `assets/docs/BRAND_COPY_STRATEGY.md` | Brand copy iteration surface |
-| `assets/docs/tags.json` | Tag registry (six groups) |
+| File                                    | Purpose                                                                                                   |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `index.html`                            | Homepage (cyberpunk hero → narrative spine → featured tiles → process → credentials → achievements → CTA) |
+| `entry.html`                            | Entry-page template (`layout: "columns"`, `"flow"`, or `"gallery"`)                                       |
+| `section.html`                          | Universal tag/filter page                                                                                 |
+| `collection.html`                       | Collection-page template (v4.2.3)                                                                         |
+| `media.html`                            | Item-page template (v4.2.3)                                                                               |
+| `generate_manifest.py`                  | Manifest builder + per-slug HTML page generator with SEO meta                                             |
+| `api/upload.ts`                         | Image-upload endpoint — Cloudinary resize-to-2400 + WebP → R2 (Bearer-auth, single caller)                |
+| `assets/js/homepage-content.json`       | Homepage configuration + copy strings                                                                     |
+| `assets/js/data-loader.js`              | Fetching, caching, filtering, tag helpers, collection/item resolvers                                      |
+| `assets/js/landing-controller.js`       | Homepage rendering (incl. `renderArtBleed` art wall)                                                      |
+| `assets/js/entry-controller.js`         | Entry-page rendering — columns / flow / gallery layouts, unified lightbox pool                            |
+| `assets/js/featured-tile-controller.js` | Tap-state machine for homepage feature tiles (dormant in the shipped 4-card grid)                         |
+| `assets/js/collection-controller.js`    | Collection-page rendering                                                                                 |
+| `assets/js/media-controller.js`         | Item-page rendering                                                                                       |
+| `assets/scripts/validate.py`            | Schema validator (entries v6.1 + collections v6.0/v6.1 + items v6.0)                                      |
+| `assets/scripts/new_project.py`         | Skeleton generator (`--type {entry,collection,item}`)                                                     |
+| `assets/scripts/cdn_cleanup.py`         | R2 orphan-detection report (no deletion)                                                                  |
+| `assets/docs/AUGUST_STYLE.md`           | Living architecture / schema reference                                                                    |
+| `assets/docs/ENTRY_SOP.md`              | Content-authoring SOP                                                                                     |
+| `assets/docs/BRAND_COPY_STRATEGY.md`    | Brand copy iteration surface                                                                              |
+| `assets/docs/tags.json`                 | Tag registry (six groups)                                                                                 |
 
 ## Local Development
 
