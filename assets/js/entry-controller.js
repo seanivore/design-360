@@ -1,12 +1,15 @@
 /**
- * ENTRY CONTROLLER (v4.2.3)
+ * ENTRY CONTROLLER (v4.5.0)
  * Manages individual project entry pages with layout-aware rendering.
  *
- * Layouts:
- *   - "columns" (default) — two-column shape with sticky tag/embed column,
- *     legacy challenge/approach/result body text, plus new main_media / bleed
- *     / bleed_slides regions.
- *   - "flow" — typed-block sequence walked from entry.flow[].
+ * Every layout shares the same top zone (hero thumbnails + title/subtitle +
+ * role) and the same bottom all-tags block. Only the middle differs:
+ *   - "columns" (default) — two-column body: challenge/approach/result on the
+ *     left, sticky tag/embed column on the right, then main_media[] groups.
+ *   - "gallery" — two blurbs (about/details) + sticky tag column, then one
+ *     full-bleed art-wall per collection in collections[].
+ *   - "flow" — single reading column walked from entry.flow[]; tag pills float
+ *     as an inset the copy wraps around.
  *
  * Lightbox-pool contract:
  *   Any <img> participating in the unified lightbox pool carries
@@ -95,96 +98,69 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate tag pills grouped by type (rendered into every `.entry-tags-card`).
+     * Build the role/skill/product tag-pill groups as an HTML string. Shared by
+     * the sticky tag column, the flow floated inset, and the bottom all-tags
+     * block so the three placements never drift apart.
      */
-    function populateTagsCards(project) {
-        const roles = project.role || [];
-        const skills = project.skill || [];
-        const products = project.product || [];
-
-        document.querySelectorAll('.entry-tags-card').forEach(container => {
-            let html = '';
-
-            if (roles.length > 0) {
-                html += '<div class="tag-pill-group tag-pill-group-role">';
-                html += roles.map(tag => {
-                    const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
-                    return `<a href="${tagURL}" class="entry-tag entry-tag-role">${tag}</a>`;
-                }).join('');
-                html += '</div>';
-            }
-
-            if (skills.length > 0) {
-                html += '<div class="tag-pill-group tag-pill-group-skill">';
-                html += skills.map(tag => {
-                    const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
-                    return `<a href="${tagURL}" class="entry-tag entry-tag-skill">${tag}</a>`;
-                }).join('');
-                html += '</div>';
-            }
-
-            if (products.length > 0) {
-                html += '<div class="tag-pill-group tag-pill-group-product">';
-                html += products.map(tag => {
-                    const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
-                    return `<a href="${tagURL}" class="entry-tag entry-tag-product">${tag}</a>`;
-                }).join('');
-                html += '</div>';
-            }
-
-            container.innerHTML = html;
+    function buildTagPillsHTML(project) {
+        const groups = [
+            ['role', project.role],
+            ['skill', project.skill],
+            ['product', project.product],
+        ];
+        let html = '';
+        groups.forEach(([type, tags]) => {
+            if (!Array.isArray(tags) || tags.length === 0) return;
+            html += `<div class="tag-pill-group tag-pill-group-${type}">`;
+            html += tags.map(tag => {
+                const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
+                return `<a href="${tagURL}" class="entry-tag entry-tag-${type}">${tag}</a>`;
+            }).join('');
+            html += '</div>';
         });
+        return html;
     }
 
     /**
-     * Populate the sticky tag column (right side of columns layout):
-     *   - same role/skill/product tag pills as `.entry-tags-card`
-     *   - optional `media_embed` iframe (YouTube/Behance) below the pills
+     * Populate the full-width "all tags" card at the bottom of the page (above
+     * Related Posts). Rendered on every layout (columns / flow / gallery).
+     */
+    function populateBottomTags(project) {
+        const card = document.querySelector('.entry-bottom-tags .entry-tags-card');
+        if (!card) return;
+        card.innerHTML = buildTagPillsHTML(project);
+    }
+
+    /**
+     * Populate the sticky tag column (right side of the columns + gallery
+     * layouts): the shared tag pills, plus an optional media_embed iframe.
      */
     function populateTagColumn(project) {
         const container = document.getElementById('entry-tag-column');
         if (!container) return;
 
-        const roles = project.role || [];
-        const skills = project.skill || [];
-        const products = project.product || [];
-
-        let html = '<div class="entry-tags-card">';
-
-        if (roles.length > 0) {
-            html += '<div class="tag-pill-group tag-pill-group-role">';
-            html += roles.map(tag => {
-                const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
-                return `<a href="${tagURL}" class="entry-tag entry-tag-role">${tag}</a>`;
-            }).join('');
-            html += '</div>';
-        }
-
-        if (skills.length > 0) {
-            html += '<div class="tag-pill-group tag-pill-group-skill">';
-            html += skills.map(tag => {
-                const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
-                return `<a href="${tagURL}" class="entry-tag entry-tag-skill">${tag}</a>`;
-            }).join('');
-            html += '</div>';
-        }
-
-        if (products.length > 0) {
-            html += '<div class="tag-pill-group tag-pill-group-product">';
-            html += products.map(tag => {
-                const tagURL = `/section.html?tags=${DataLoader.normalizeForURL(tag)}`;
-                return `<a href="${tagURL}" class="entry-tag entry-tag-product">${tag}</a>`;
-            }).join('');
-            html += '</div>';
-        }
-
-        html += '</div>';
-
+        let html = `<div class="entry-tags-card">${buildTagPillsHTML(project)}</div>`;
         if (project.media_embed) {
             html += `<div class="entry-tag-column__embed video-container" aria-label="${project.media_alt || ''}">${project.media_embed}</div>`;
         }
-
         container.innerHTML = html;
+    }
+
+    /**
+     * Flow layout: drop the tag pills in as a floated inset at the top of the
+     * single reading column, so the copy wraps around them magazine-style.
+     * Not sticky (no second column to anchor to). Inserted as the first child
+     * of #flow-region, which populateFlowLayout has already filled.
+     */
+    function populateFlowTags(project) {
+        const region = document.getElementById('flow-region');
+        if (!region) return;
+        const pills = buildTagPillsHTML(project);
+        if (!pills) return;
+        const aside = document.createElement('aside');
+        aside.className = 'entry-flow-tags entry-tags-card';
+        aside.innerHTML = pills;
+        region.insertBefore(aside, region.firstChild);
     }
 
     /**
@@ -272,177 +248,6 @@ const EntryController = (() => {
             container.appendChild(wrapper);
         });
 
-        container.style.display = 'block';
-    }
-
-    /**
-     * Populate 3-across square image grid(s).
-     * Prefers grouped `grids[]` schema; falls back to legacy flat `grid[]`.
-     */
-    function populateImageGrid(project) {
-        const groupedContainer = document.getElementById('entry-image-grids');
-        const legacyContainer = document.getElementById('entry-image-grid');
-
-        const groups = Array.isArray(project.grids) ? project.grids.filter(g => g && Array.isArray(g.images) && g.images.length > 0) : [];
-
-        if (groups.length > 0 && groupedContainer) {
-            groupedContainer.innerHTML = '';
-            groups.forEach(group => {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'entry-image-grid-group';
-
-                if (group.title) {
-                    const heading = document.createElement('h4');
-                    heading.className = 'entry-image-grid-title';
-                    heading.textContent = group.title;
-                    wrapper.appendChild(heading);
-                }
-
-                const grid = document.createElement('div');
-                grid.className = 'entry-image-grid';
-                const altText = group.alt || project.grid_alt || 'Project image';
-                group.images.forEach(url => {
-                    const lightboxIdx = registerLightboxImage(url, altText);
-                    const img = document.createElement('img');
-                    img.src = imgSrc(url);
-                    img.alt = altText;
-                    img.className = 'entry-grid-image';
-                    img.loading = 'lazy';
-                    img.dataset.lightboxIndex = String(lightboxIdx);
-                    grid.appendChild(img);
-                });
-                wrapper.appendChild(grid);
-
-                groupedContainer.appendChild(wrapper);
-            });
-            groupedContainer.style.display = 'block';
-            if (legacyContainer) legacyContainer.style.display = 'none';
-            return;
-        }
-
-        // Legacy flat grid[] path
-        if (!legacyContainer || !project.grid || project.grid.length === 0) return;
-        const altText = project.grid_alt || 'Project image';
-        legacyContainer.innerHTML = '';
-        project.grid.forEach(url => {
-            const lightboxIdx = registerLightboxImage(url, altText);
-            const img = document.createElement('img');
-            img.src = imgSrc(url);
-            img.alt = altText;
-            img.className = 'entry-grid-image';
-            img.loading = 'lazy';
-            img.dataset.lightboxIndex = String(lightboxIdx);
-            legacyContainer.appendChild(img);
-        });
-        legacyContainer.style.display = 'grid';
-    }
-
-    /**
-     * Walk entry.bleed[] (groups of {images[], alt}); render full-bleed rows.
-     */
-    function populateBleed(project) {
-        const container = document.getElementById('bleed-region');
-        if (!container) return;
-
-        const groups = Array.isArray(project.bleed) ? project.bleed : [];
-        const validGroups = groups.filter(g => g && Array.isArray(g.images) && g.images.length > 0);
-
-        if (validGroups.length === 0) {
-            container.style.display = 'none';
-            return;
-        }
-
-        container.innerHTML = '';
-        validGroups.forEach(group => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'entry-bleed';
-
-            const row = document.createElement('div');
-            row.className = 'entry-bleed__row';
-            const altText = group.alt || project.title || '';
-
-            group.images.forEach(url => {
-                const lightboxIdx = registerLightboxImage(url, altText);
-                const img = document.createElement('img');
-                img.src = imgSrc(url);
-                img.alt = altText;
-                img.className = 'entry-bleed__image';
-                img.loading = 'lazy';
-                img.dataset.lightboxIndex = String(lightboxIdx);
-                row.appendChild(img);
-            });
-
-            wrapper.appendChild(row);
-            container.appendChild(wrapper);
-        });
-
-        container.style.display = 'block';
-    }
-
-    /**
-     * Render entry.bleed_slides ({images[], alt}) as a single full-bleed
-     * slideshow with pagination dots. NOTE: bleed_slides is an OBJECT, not
-     * an array (single slideshow per entry).
-     */
-    function populateBleedSlides(project) {
-        const container = document.getElementById('bleed-slides-region');
-        if (!container) return;
-
-        const data = project.bleed_slides;
-        const images = (data && Array.isArray(data.images)) ? data.images : [];
-
-        if (images.length === 0) {
-            container.style.display = 'none';
-            return;
-        }
-
-        const altText = (data && data.alt) || project.title || '';
-
-        container.innerHTML = '';
-        const wrapper = document.createElement('div');
-        wrapper.className = 'entry-bleed-slides';
-
-        const slot = document.createElement('div');
-        slot.className = 'entry-bleed-slides__slot';
-        wrapper.appendChild(slot);
-
-        const slideEls = images.map((url, i) => {
-            const lightboxIdx = registerLightboxImage(url, altText);
-            const img = document.createElement('img');
-            img.src = imgSrc(url);
-            img.alt = altText;
-            img.className = 'entry-bleed-slides__image';
-            img.loading = i === 0 ? 'eager' : 'lazy';
-            img.dataset.lightboxIndex = String(lightboxIdx);
-            img.style.display = i === 0 ? '' : 'none';
-            slot.appendChild(img);
-            return img;
-        });
-
-        if (images.length > 1) {
-            const dotsWrap = document.createElement('div');
-            dotsWrap.className = 'entry-bleed-slides__dots';
-            wrapper.appendChild(dotsWrap);
-
-            let current = 0;
-            const dots = images.map((_, i) => {
-                const dot = document.createElement('button');
-                dot.className = 'entry-bleed-slides__dot' + (i === 0 ? ' is-active' : '');
-                dot.setAttribute('aria-label', `Slide ${i + 1}`);
-                dot.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    current = i;
-                    slideEls.forEach((el, idx) => {
-                        el.style.display = idx === current ? '' : 'none';
-                    });
-                    dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
-                });
-                dotsWrap.appendChild(dot);
-                return dot;
-            });
-        }
-
-        container.appendChild(wrapper);
         container.style.display = 'block';
     }
 
@@ -837,161 +642,6 @@ const EntryController = (() => {
     }
 
     /**
-     * Populate multiple slideshows from slideshows array (legacy).
-     */
-    function populateSlideshows(project) {
-        const container = document.getElementById('entry-slideshows');
-        if (!container) return;
-
-        let groups = project.slideshows || [];
-
-        // Legacy fallback: if mobile_img exists but no slideshows
-        if (groups.length === 0 && project.mobile_img && project.mobile_img.length > 0) {
-            groups = [{
-                title: 'Mobile Screenshots',
-                type: 'mobile',
-                images: project.mobile_img,
-                alt: project.mobile_img_alt || 'Mobile screenshot'
-            }];
-        }
-
-        if (groups.length === 0) return;
-
-        container.innerHTML = '';
-        groups.forEach((group, groupIndex) => {
-            const slideshowEl = buildSlideshow(group, groupIndex);
-            container.appendChild(slideshowEl);
-        });
-        container.style.display = 'block';
-    }
-
-    /**
-     * Build a single slideshow instance (legacy slideshows[] array).
-     */
-    function buildSlideshow(group, groupIndex) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'slideshow-group';
-
-        // Title
-        if (group.title) {
-            const heading = document.createElement('h4');
-            heading.className = 'slideshow-title';
-            heading.textContent = group.title;
-            wrapper.appendChild(heading);
-        }
-
-        const isMobile = group.type === 'mobile';
-        const images = group.images || [];
-        if (images.length === 0) return wrapper;
-
-        // Build slides: mobile shows 2-3 per slide, standard shows 1
-        const slides = [];
-        if (isMobile) {
-            const perSlide = images.length <= 4 ? 2 : 3;
-            for (let i = 0; i < images.length; i += perSlide) {
-                slides.push(images.slice(i, i + perSlide));
-            }
-        } else {
-            images.forEach(img => slides.push([img]));
-        }
-
-        // Slideshow container
-        const slideshow = document.createElement('div');
-        slideshow.className = 'slideshow';
-        slideshow.dataset.groupIndex = groupIndex;
-
-        // Main display
-        const display = document.createElement('div');
-        display.className = `slideshow-display ${isMobile ? 'slideshow-display-mobile' : ''}`;
-        slideshow.appendChild(display);
-
-        // Render first slide (registers into lightbox pool)
-        renderSlide(display, slides[0], group.alt || '', isMobile);
-
-        // Navigation (only if multiple slides)
-        if (slides.length > 1) {
-            const prevBtn = document.createElement('button');
-            prevBtn.className = 'slideshow-arrow slideshow-prev';
-            prevBtn.innerHTML = '&lsaquo;';
-            prevBtn.setAttribute('aria-label', 'Previous slide');
-            slideshow.appendChild(prevBtn);
-
-            const nextBtn = document.createElement('button');
-            nextBtn.className = 'slideshow-arrow slideshow-next';
-            nextBtn.innerHTML = '&rsaquo;';
-            nextBtn.setAttribute('aria-label', 'Next slide');
-            slideshow.appendChild(nextBtn);
-
-            const counter = document.createElement('span');
-            counter.className = 'slideshow-counter';
-            counter.textContent = `1 / ${slides.length}`;
-            slideshow.appendChild(counter);
-
-            const strip = document.createElement('div');
-            strip.className = 'slideshow-strip';
-            slides.forEach((slide, i) => {
-                const thumb = document.createElement('img');
-                thumb.src = imgSrc(slide[0]);
-                thumb.alt = group.alt || '';
-                thumb.className = `slideshow-strip-thumb ${i === 0 ? 'active' : ''}`;
-                thumb.loading = 'lazy';
-                thumb.addEventListener('click', () => goToSlide(i));
-                strip.appendChild(thumb);
-            });
-            slideshow.appendChild(strip);
-
-            let currentSlide = 0;
-
-            function goToSlide(index) {
-                currentSlide = index;
-                renderSlide(display, slides[index], group.alt || '', isMobile);
-                counter.textContent = `${index + 1} / ${slides.length}`;
-                strip.querySelectorAll('.slideshow-strip-thumb').forEach((t, i) => {
-                    t.classList.toggle('active', i === index);
-                });
-                const activeThumb = strip.querySelector('.active');
-                if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
-
-            prevBtn.addEventListener('click', () => goToSlide((currentSlide - 1 + slides.length) % slides.length));
-            nextBtn.addEventListener('click', () => goToSlide((currentSlide + 1) % slides.length));
-
-            // Swipe support
-            let startX = 0;
-            display.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-            display.addEventListener('touchend', e => {
-                const diff = startX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) {
-                    goToSlide(diff > 0
-                        ? (currentSlide + 1) % slides.length
-                        : (currentSlide - 1 + slides.length) % slides.length);
-                }
-            }, { passive: true });
-        }
-
-        wrapper.appendChild(slideshow);
-        return wrapper;
-    }
-
-    /**
-     * Render a single slide's content into the display area.
-     * Each rendered image registers into the unified lightbox pool.
-     */
-    function renderSlide(display, imageUrls, altText, isMobile) {
-        display.innerHTML = '';
-        imageUrls.forEach(url => {
-            const lightboxIdx = registerLightboxImage(url, altText);
-            const img = document.createElement('img');
-            img.src = imgSrc(url);
-            img.alt = altText || '';
-            img.className = `slideshow-image ${isMobile ? 'slideshow-image-mobile' : ''}`;
-            img.loading = 'lazy';
-            img.dataset.lightboxIndex = String(lightboxIdx);
-            display.appendChild(img);
-        });
-    }
-
-    /**
      * Hide the entry-page top nav on scroll-down (past 200px), restore on
      * scroll-up. Same pattern as landing-controller.initNavCollapse — the
      * .nav-pill hamburger appears while the nav is hidden and brings it
@@ -1128,22 +778,19 @@ const EntryController = (() => {
 
     /**
      * Orchestrate the columns layout (default).
-     * Two-column structure: text on left, sticky tag/embed column on right
-     * (the v4.2.3 home for tags — top + bottom .entry-tags-card are hidden
-     * to avoid duplicate tag rendering).
+     * Top zone (hero + header) is shared with every layout. Body is the
+     * two-column structure: challenge/approach/result on the left, sticky
+     * tag/embed column on the right; main_media groups follow. The bottom
+     * all-tags block closes every layout.
      */
     function populateColumnsLayout(project) {
-        hideTagsCardsLegacy();
         populateContent(project);
         populateThumbHero(project);
         populateTagColumn(project);
         populateMainMedia(project);
-        populateImageGrid(project);
-        populateSlideshows(project);
         if (project.origin_url) populateProjectURL(project);
         if (project.repository) populateGitHubRepo(project.repository);
-        populateBleed(project);
-        populateBleedSlides(project);
+        populateBottomTags(project);
     }
 
     /**
@@ -1161,17 +808,17 @@ const EntryController = (() => {
         const roleEl = document.getElementById('entry-role');
         if (roleEl) roleEl.textContent = (project.role && project.role[0]) || '';
 
-        // "About" <- challenge
+        // "About" — driven by the data-level `about` field.
         const challengeEl = document.getElementById('entry-challenge');
         if (challengeEl) {
-            challengeEl.textContent = project.challenge || '';
+            challengeEl.textContent = project.about || '';
             relabelSection(challengeEl, 'About');
         }
 
-        // "Details" <- approach
+        // "Details" — driven by the data-level `details` field.
         const approachEl = document.getElementById('entry-approach');
         if (approachEl) {
-            approachEl.textContent = project.approach || '';
+            approachEl.textContent = project.details || '';
             relabelSection(approachEl, 'Details');
         }
 
@@ -1197,140 +844,139 @@ const EntryController = (() => {
 
     /**
      * Orchestrate the gallery layout (third layout).
-     * Mirrors columns (hero thumbnail-slideshow + bleed/main_media/grids shell)
-     * but the left copy column shows only the two gallery blurbs (About +
-     * Details), and a capped bleed-style preview row is rendered per collection
-     * listed in project.collections[].
+     * Shares the top zone with every layout; the left copy column shows only
+     * the two gallery blurbs (About + Details) with the sticky tag column on
+     * the right. One full-bleed art-wall is rendered per collection listed in
+     * project.collections[]. The bottom all-tags block closes the page.
      */
     async function populateGalleryLayout(project) {
-        hideTagsCardsLegacy();
         populateGalleryContent(project);
         populateThumbHero(project);
         populateTagColumn(project);
-        populateMainMedia(project);
-        populateImageGrid(project);
-        populateSlideshows(project);
         if (project.origin_url) populateProjectURL(project);
         if (project.repository) populateGitHubRepo(project.repository);
-        populateBleed(project);
-        populateBleedSlides(project);
         await populateGalleryCollections(project);
+        populateBottomTags(project);
     }
 
     /**
-     * Render the gallery entry's collection preview as a justified bleed wall —
-     * SAME shape as the homepage bleed: all images across the entry's
-     * collections, shuffled, laid into 3 rows of a random 3–5 images each. No
-     * per-collection titles (the rows just flow). Each image links to its own
-     * nested collection page (`/<entry>/<coll>`). Mounted into #bleed-region.
+     * Render ONE full-bleed art-wall per collection in project.collections[]
+     * (so 2 collections → 2 stacked walls). Each wall mirrors the homepage
+     * bleed component: a single continuous accent-matted container holding
+     * rows of images justified by aspect ratio (one shared height per row,
+     * natural widths). Every image links to its own collection's nested page
+     * (`/<entry>/<coll>`). 3 rows desktop / 4 rows mobile per wall; 3–5
+     * (desktop) or 2–4 (mobile) images per row. Mounted into #bleed-region.
      */
     async function populateGalleryCollections(project) {
         const slugs = Array.isArray(project.collections) ? project.collections : [];
-        if (slugs.length === 0) return;
-
         const container = document.getElementById('bleed-region');
         if (!container) return;
+        if (slugs.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
 
         const entrySlug = project.slug || '';
-
-        // Gather every image across the entry's collections (each tagged with its
-        // own collection so it links to the right nested page).
-        const pool = [];
-        for (const slug of slugs) {
-            try {
-                const collectionKey = slug.includes('/') ? slug : `${entrySlug}/${slug}`;
-                const collection = await DataLoader.loadCollection(collectionKey);
-                if (!collection) {
-                    console.warn('gallery collection not found for slug', collectionKey);
-                    continue;
-                }
-                const images = DataLoader.resolveCollectionImages(collection);
-                const href = '/' + entrySlug + '/' + (collection.slug || slug);
-                const alt = collection.thumb_alt || collection.title || project.title || '';
-                images.forEach(src => pool.push({ src, href, alt }));
-            } catch (err) {
-                console.warn('gallery collection failed to resolve', slug, err);
-            }
-        }
-        if (!pool.length) return;
-
-        // Fisher-Yates shuffle — fresh each reload.
-        for (let i = pool.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [pool[i], pool[j]] = [pool[j], pool[i]];
-        }
-
-        // Mobile: 4 rows, 2-4 per row. Desktop: 3 rows, 3-5 per row.
         const isMobile = window.matchMedia('(max-width: 47.9375rem)').matches;
         const rowCount = isMobile ? 4 : 3;
-        let cursor = 0;
-        for (let r = 0; r < rowCount && cursor < pool.length; r++) {
-            const count = isMobile ? (2 + Math.floor(Math.random() * 3)) : (3 + Math.floor(Math.random() * 3));
-            const slice = pool.slice(cursor, cursor + count);
-            cursor += count;
-            if (!slice.length) break;
 
-            const wrapper = document.createElement('div');
-            wrapper.className = 'entry-bleed entry-bleed--collection';
-            const row = document.createElement('div');
-            row.className = 'entry-bleed__row';
+        container.innerHTML = '';
+        let rendered = 0;
 
-            slice.forEach(o => {
-                const link = document.createElement('a');
-                link.href = o.href;
-                link.className = 'entry-bleed__link';
+        for (const slug of slugs) {
+            let collection;
+            try {
+                const collectionKey = slug.includes('/') ? slug : `${entrySlug}/${slug}`;
+                collection = await DataLoader.loadCollection(collectionKey);
+            } catch (err) {
+                console.warn('gallery collection failed to resolve', slug, err);
+                continue;
+            }
+            if (!collection) {
+                console.warn('gallery collection not found for slug', slug);
+                continue;
+            }
 
-                const img = document.createElement('img');
-                img.src = imgSrc(o.src);
-                img.alt = o.alt;
-                img.className = 'entry-bleed__image';
-                img.loading = 'lazy';
+            const images = DataLoader.resolveCollectionImages(collection);
+            if (!images.length) continue;
 
-                // Justified row: flex-grow = aspect ratio so every image in the
-                // row shares one height while keeping its natural width.
-                const applyAR = () => {
-                    const ar = (img.naturalWidth && img.naturalHeight)
-                        ? (img.naturalWidth / img.naturalHeight) : 1.5;
-                    link.style.flexGrow = String(ar);
-                };
-                if (img.complete && img.naturalWidth) applyAR();
-                else img.addEventListener('load', applyAR, { once: true });
+            const href = '/' + entrySlug + '/' + (collection.slug || slug);
+            const alt = collection.thumb_alt || collection.title || project.title || '';
 
-                link.appendChild(img);
-                row.appendChild(link);
-            });
+            // Shuffle this collection's own images — fresh each reload.
+            const pool = images.slice();
+            for (let i = pool.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [pool[i], pool[j]] = [pool[j], pool[i]];
+            }
 
-            wrapper.appendChild(row);
-            container.appendChild(wrapper);
+            // One continuous bleed wall for this collection.
+            const wall = document.createElement('div');
+            wall.className = 'entry-bleed';
+
+            let cursor = 0;
+            for (let r = 0; r < rowCount && cursor < pool.length; r++) {
+                const count = isMobile ? (2 + Math.floor(Math.random() * 3)) : (3 + Math.floor(Math.random() * 3));
+                const slice = pool.slice(cursor, cursor + count);
+                cursor += count;
+                if (!slice.length) break;
+
+                const row = document.createElement('div');
+                row.className = 'entry-bleed__row';
+
+                slice.forEach(src => {
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'entry-bleed__link';
+
+                    const img = document.createElement('img');
+                    img.src = imgSrc(src);
+                    img.alt = alt;
+                    img.className = 'entry-bleed__image';
+                    img.loading = 'lazy';
+
+                    // Justified row: flex-grow = aspect ratio so every image in
+                    // the row shares one height while keeping its natural width.
+                    const applyAR = () => {
+                        const ar = (img.naturalWidth && img.naturalHeight)
+                            ? (img.naturalWidth / img.naturalHeight) : 1.5;
+                        link.style.flexGrow = String(ar);
+                    };
+                    if (img.complete && img.naturalWidth) applyAR();
+                    else img.addEventListener('load', applyAR, { once: true });
+
+                    link.appendChild(img);
+                    row.appendChild(link);
+                });
+
+                wall.appendChild(row);
+            }
+
+            container.appendChild(wall);
+            rendered++;
         }
-        container.style.display = 'block';
+
+        container.style.display = rendered ? 'block' : 'none';
     }
 
     /**
      * Orchestrate the flow layout.
-     * Single-column long-form. Tags live in the top + bottom .entry-tags-card
-     * (the sticky right column is hidden because there's no two-column anchor
-     * in flow). Body is the typed sequence walked from entry.flow[]. Media
-     * regions outside flow[] are intentionally not rendered.
+     * Single-column long-form. Shares the top zone with every layout, then
+     * hides the two-column body wrapper (flow has no left/right split) and
+     * walks the typed entry.flow[] sequence into #flow-region. The tag pills
+     * float at the top of that column (copy wraps around them, magazine-style);
+     * the bottom all-tags block closes the page.
      */
     async function populateFlow(project) {
-        populateTagsCards(project);
         populateContent(project);
         populateThumbHero(project);
         hideTagColumnAndContentMedia();
         if (project.origin_url) populateProjectURL(project);
         if (project.repository) populateGitHubRepo(project.repository);
         await populateFlowLayout(project);
-    }
-
-    /**
-     * Hide the top + bottom .entry-tags-card containers — used by columns
-     * layout where tags live in the sticky right column instead.
-     */
-    function hideTagsCardsLegacy() {
-        document.querySelectorAll('.entry-tags-layout').forEach(el => {
-            el.style.display = 'none';
-        });
+        populateFlowTags(project);
+        populateBottomTags(project);
     }
 
     /**

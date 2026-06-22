@@ -47,13 +47,6 @@
   <!-- Main Content -->
   <main class="container entry-container">
 
-    <!-- Tag Pills (role and skill groups) -->
-    <div class="entry-tags-layout">
-      <div class="entry-tags-card">
-        <!-- Populated by entry-controller.js (role + skill pills) -->
-      </div>
-    </div>
-
     <!-- Page Title & Subtitle -->
     <header class="entry-header">
       <h1 id="entry-title"><!-- Populated by JS --></h1>
@@ -95,38 +88,15 @@
       </aside>
     </div>
 
-    <!-- New v4.2.3 layout regions (additive; legacy regions below remain for columns layout) -->
+    <!-- Layout media regions: columns → main-media, gallery → bleed, flow → flow -->
     <section id="main-media-region"></section>
     <section id="bleed-region"></section>
-    <section id="bleed-slides-region"></section>
     <section id="flow-region"></section>
 
-    <!-- Optional: Project URL -->
+    <!-- Optional: Project URL + GitHub repo (the right-aligned button duo) -->
     <section id="entry-project-url" class="entry-optional-section" style="display: none;">
     </section>
-
-    <!-- Optional: GitHub Repository -->
     <section id="entry-github-repo" class="entry-optional-section" style="display: none;">
-    </section>
-
-    <!-- Optional: GIFs -->
-    <section id="entry-gifs" class="entry-gifs" style="display: none;">
-      <!-- Populated by entry-controller.js if gif array has items -->
-    </section>
-
-    <!-- Optional: Image Grid (3-across square images) - legacy flat grid[] -->
-    <section id="entry-image-grid" class="entry-image-grid" style="display: none;">
-      <!-- Populated by entry-controller.js if grid array has items -->
-    </section>
-
-    <!-- Optional: Grouped Image Grids (multiple 3-across blocks with titles) -->
-    <section id="entry-image-grids" class="entry-image-grids" style="display: none;">
-      <!-- Populated by entry-controller.js if grids array has items -->
-    </section>
-
-    <!-- Optional: Slideshows (multiple groups) -->
-    <section id="entry-slideshows" class="entry-slideshows" style="display: none;">
-      <!-- Populated by entry-controller.js if slideshows array has items -->
     </section>
 
     <!-- Lightbox Overlay -->
