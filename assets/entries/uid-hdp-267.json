@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/minimalism-bauhaus/thumb-minimalism-bauhaus-6.webp"
   ],
   "thumb_alt": "Minimal geometric panels with clean edges, negative space, and simple color steps.",
-  "img": [
-    "https://cdn.august.style/media/minimalism-bauhaus/img-sq-minimalism-bauhaus-1.webp",
-    "https://cdn.august.style/media/minimalism-bauhaus/img-sq-minimalism-bauhaus-2.webp",
-    "https://cdn.august.style/media/minimalism-bauhaus/img-sq-minimalism-bauhaus-3.webp"
-  ],
-  "img_alt": "Minimal Bauhaus-inspired geometric panels with restrained color, ample negative space, and crisp clean edges",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/217385779?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "A minimal generative set with restrained geometry, ample negative space, and clear color relationships.",
   "origin_url": "https://www.behance.net/gallery/217385779/Minimal-Maybes",
@@ -54,20 +47,11 @@
   "challenge": "A lot of what I love about Bauhaus design is that it trusts the viewer — it leaves room. I wanted to push that further and see what I could learn about minimalism by trying to make pieces where almost nothing is there and everything still feels considered.",
   "approach": "I read into the minimalist lineage and the Bauhaus ideas it borrows from, then drafted variations, cutting and cutting until each one felt like it couldn't lose anything else. I kept the ones that taught me something about restraint, and that I liked living with.",
   "result": "This set is small, quiet, and calm — the pieces where the negative space felt like the point. I made them available as prints in case anyone else enjoys that same kind of quiet on a wall.",
-  "role_headline": "Clean Geometry with Restrained Palette",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

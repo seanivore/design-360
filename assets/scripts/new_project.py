@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-Generate new project JSON files (entry, collection, or item) for the portfolio.
+Generate new project JSON files (entry or collection) for the portfolio.
 
 Creates a JSON skeleton with a unique ID, derived from the appropriate
 template, ready for the user to fill in.
 
 Usage:
-    python assets/scripts/new_project.py [--type entry|collection|item]
+    python assets/scripts/new_project.py [--type entry|collection]
 
 Default --type is `entry`. The output is written to assets/docs/{uid}.json
 (matching the existing convention); the user moves the file into the correct
-directory (assets/entries, assets/collections, or assets/items) at the end of
-the authoring pipeline.
+directory (assets/entries or assets/collections) at the end of the authoring
+pipeline. (The item subsystem was retired in v4.5.0 — collections now carry
+CDN image URLs directly, not item references.)
 """
 
 import argparse
@@ -22,19 +23,17 @@ from pathlib import Path
 from typing import Dict
 
 
-VALID_TYPES = ("entry", "collection", "item")
+VALID_TYPES = ("entry", "collection")
 
 TEMPLATES: Dict[str, str] = {
     "entry": "_entry_template.json",
     "collection": "_collection_template.json",
-    "item": "_item_template.json",
 }
 
 # Type-specific UID middle-segment overrides. Entries keep whatever
 # segment the `uid` command produces (organic three-letter code).
 UID_MIDDLE_OVERRIDES: Dict[str, str] = {
     "collection": "col",
-    "item": "itm",
 }
 
 
@@ -58,7 +57,6 @@ def _apply_uid_middle(uid: str, project_type: str) -> str:
     Swap the three-letter middle segment of a UID for type-specific schemes:
         entry      -> keep as-is (e.g. uid-rfr-187)
         collection -> uid-col-###
-        item       -> uid-itm-###
     """
     middle = UID_MIDDLE_OVERRIDES.get(project_type)
     if not middle:
@@ -84,7 +82,7 @@ def _apply_uid_and_metadata(data: dict, uid: str) -> dict:
     """
     Stamp the UID onto the document. The template already carries its own
     `_metadata.schema_version`; we preserve it verbatim (entry: 6.1,
-    collection: 6.0, item: 6.0).
+    collection: 6.1).
     """
     data["id"] = uid
     return data

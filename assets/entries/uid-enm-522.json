@@ -32,13 +32,6 @@
     "https://cdn.august.style/media/surreal-constructivism-perception/thumb-surreal-constructivism-perception-currents-4.webp"
   ],
   "thumb_alt": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
-  "img": [
-    "https://cdn.august.style/media/surreal-constructivism-perception/img-sq-surreal-constructivism-perception-currents-1.webp",
-    "https://cdn.august.style/media/surreal-constructivism-perception/img-sq-surreal-constructivism-perception-currents-2.webp",
-    "https://cdn.august.style/media/surreal-constructivism-perception/img-sq-surreal-constructivism-perception-currents-3.webp"
-  ],
-  "img_alt": "Geometric constructivist landscape abstractions with vivid color fields and emergent figures",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/223404499?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "A generative journey through perceptual dimensions with geometric abstractions creating a surreal constructivism-vibed landscape",
   "origin_url": "https://www.behance.net/gallery/223404499/Currents-of-Perception",
@@ -52,20 +45,11 @@
   "challenge": "After the first Constructivism/Surrealism set, I kept thinking about how both movements were really interested in perception — how we see and what our minds do with what we see. I wanted to make a set that was more directly about that.",
   "approach": "I went back into the reading, this time paying more attention to the perceptual and psychological side of both movements, and drafted variations where figures quietly emerge from the geometry itself. I kept the ones that felt like they were doing something to the eye in a way I found interesting.",
   "result": "A smaller, stranger set that I'm pleased with. They're available as prints for anyone who likes an image that rewards a second look.",
-  "role_headline": "Surreal Figures in Psychic Landscapes",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

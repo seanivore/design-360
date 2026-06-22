@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/humanistic-exploration/thumb-humanistic-exploration-6.webp"
   ],
   "thumb_alt": "Abstract forms and landscapes with geometric rhythm, interior vistas, and bold color fields.",
-  "img": [
-    "https://cdn.august.style/media/humanistic-exploration/img-sq-humanistic-exploration-1.webp",
-    "https://cdn.august.style/media/humanistic-exploration/img-sq-humanistic-exploration-2.webp",
-    "https://cdn.august.style/media/humanistic-exploration/img-sq-humanistic-exploration-3.webp"
-  ],
-  "img_alt": "Constructivist interiors and abstract landscapes with flowing curves, geometric structure, and vibrant warm and cool palettes",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/216060867?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Constructivist forms in vibrant abstract scenes: interiors, flowing landscapes, and geometric arrangements with warm and cool palettes.",
   "origin_url": "https://www.behance.net/gallery/216060867/Humanistic-Exploration",
@@ -54,20 +47,11 @@
   "challenge": "Constructivism shows up most often in posters and graphic design, but I was curious what its way of thinking did inside quieter, more human subjects — an interior, a slow landscape. Could the same geometric eye make something that felt warm instead of stern?",
   "approach": "I kept reading about the movement and spent time with its lesser-known applications (interiors, stage design, softer work), then drafted many variations across interior and landscape scenes. I kept the six that felt structurally clear but also lived-in.",
   "result": "A set I enjoy — geometric, but warm enough to actually sit with. They're available as prints for anyone who likes that particular balance.",
-  "role_headline": "Flowing Curves Meet Geometric Rhythm",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

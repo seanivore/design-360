@@ -5,17 +5,36 @@
   },
   "id": "uid-col-002",
   "slug": "animals",
+  "entry": "illustration-art-deco",
   "title": "Animals",
   "subtitle": "Hand-drawn Art Deco animals — tigers, birds, and beasts, all on iPad.",
   "seo_title": "Animals — Hand-Drawn Art Deco Illustration",
   "seo_description": "A wall of hand-drawn Art Deco animals — tigers, flamingos, and birds drawn on iPad with Apple Pencil, recovered and re-collected from a retired brand.",
-  "entry": "illustration-art-deco",
   "role": [],
-  "skill": [],
-  "product": [],
+  "skill": [
+    "Art Deco",
+    "Illustration",
+    "Maximalism",
+    "Character Design"
+  ],
+  "product": [
+    "Digital Art Collection",
+    "Art Print"
+  ],
   "company": "Freelance",
-  "thumb": "https://cdn.august.style/media/illustration-art-deco/animals/illustration-art-deco-collection-animals-1.webp",
-  "thumb_alt": "Hand-drawn Art Deco animal illustration",
+  "featured": false,
+  "thumb": [
+    "https://cdn.august.style/media/illustration-art-deco/animals/illustration-art-deco-collection-animals-1.webp",
+    "https://cdn.august.style/media/illustration-art-deco/animals/illustration-art-deco-collection-animals-6.webp",
+    "https://cdn.august.style/media/illustration-art-deco/animals/illustration-art-deco-collection-animals-12.webp",
+    "https://cdn.august.style/media/illustration-art-deco/animals/illustration-art-deco-collection-animals-18.webp"
+  ],
+  "thumb_alt": "Hand-drawn Art Deco animal illustrations — a stained-glass leopard, zebras, and a flamingo",
+  "tiles": [
+    "Hand-drawn Art Deco animals",
+    "Tigers, zebras, flamingos — on iPad",
+    "From the maximalist turn"
+  ],
   "images": [
     "https://cdn.august.style/media/illustration-art-deco/animals/illustration-art-deco-collection-animals-1.webp",
     "https://cdn.august.style/media/illustration-art-deco/animals/illustration-art-deco-collection-animals-2.webp",

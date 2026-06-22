@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/pie-claesz/thumb-pie-claesz-5.webp"
   ],
   "thumb_alt": "A series of still life images with muted tones, balanced arrangement, and understated highlights in the manner of Pieter Claesz.",
-  "img": [
-    "https://cdn.august.style/media/pie-claesz/img-sq-pie-claesz-1.webp",
-    "https://cdn.august.style/media/pie-claesz/img-sq-pie-claesz-2.webp",
-    "https://cdn.august.style/media/pie-claesz/img-sq-pie-claesz-3.webp"
-  ],
-  "img_alt": "Pieter Claesz inspired still life compositions with muted tones, quiet balanced light, and carefully arranged tabletop objects",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/226117987?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Generative still life study channeling Pieter Claesz: restrained palette, tabletop composition, and quiet, balanced light.",
   "origin_url": "https://www.behance.net/gallery/226117987/Pie-Claesz-Vibes",
@@ -54,20 +47,11 @@
   "challenge": "De Heem gets the grand Baroque stage, but Pieter Claesz works with almost the opposite instinct — a half-peeled lemon, a tipped glass, the quiet of a room after a meal. I wanted to understand why that restraint moves me more than the abundance sometimes does.",
   "approach": "I read about Claesz and the Dutch Golden Age genre of still life as a whole, then drafted a lot of variations trying to land that particular hush — muted color, single soft light, nothing trying too hard. I kept the five that felt closest to what I'd learned about his eye.",
   "result": "A small, gentle set that I genuinely enjoy. They're available as prints in case anyone else finds the same quiet satisfaction in a tabletop study.",
-  "role_headline": "Muted Tabletop Studies After Claesz",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

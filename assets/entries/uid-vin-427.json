@@ -28,9 +28,6 @@
     "Custom AI Solution"
   ],
   "company": "SEANIVORE GROUP LLC",
-  "placement": [
-    "Phase C"
-  ],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "flow",
@@ -43,12 +40,7 @@
     "https://cdn.august.style/media/freelance-payments-platform/thumb-freelance-payments-platform-6.webp"
   ],
   "thumb_alt": "Freelance payments platform — branded client login, contract signing, invoice review, and Stripe checkout",
-  "img": [],
-  "img_alt": "",
   "main_media": [],
-  "grids": [],
-  "bleed": [],
-  "bleed_slides": null,
   "flow": [
     {
       "type": "h3",
@@ -140,17 +132,12 @@
   "origin_url": "",
   "origin_url_text": "",
   "repository": "",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
-  "skill_summary": "",
   "notes": [],
-  "slideshows": [],
   "achievements": [
     {
       "headline": "A client payment portal that runs on $0 of infrastructure.",
       "details": "Contract signing, invoicing, split Stripe payments, and document downloads, all from JSON files in Git. No database, no server."
     }
-  ]
+  ],
+  "featured": false
 }

@@ -6,18 +6,27 @@
   "id": "uid-col-###",
   "slug": "collection-name",
   "entry": "parent-entry-slug",
+  "_entry_note": "Every collection belongs to exactly one entry (its gallery). An entry may have many collections.",
   "title": "Display Title",
   "subtitle": "One-line tagline",
   "seo_title": "SEO Title (50-60 chars)",
   "seo_description": "SEO description (150-160 chars)",
   "role": [],
   "skill": [],
+  "_skill_note": "Differentiated per-collection aesthetic tags — art movements (Art Deco, Bauhaus) plus cross-movement descriptors (Geometric Abstraction, Maximalism). Distinct from the parent entry's broader tags. See the SOP collection-tagging note.",
   "product": [],
   "company": "Freelance",
+  "featured": false,
   "thumb": [
-    "https://cdn.august.style/media/{entry}/{slug}/thumb-{slug}-1.webp"
+    "https://cdn.august.style/media/{entry}/{slug}/{slug}-1.webp",
+    "https://cdn.august.style/media/{entry}/{slug}/{slug}-2.webp"
   ],
-  "thumb_alt": "Alt text for collection thumbnail",
+  "_thumb_note": "4-7 representative images — drives the rotating slideshow on the section-page tile.",
+  "thumb_alt": "Alt text for the collection's section-tile thumbnails",
+  "tiles": [
+    "Rotating one-liner 1",
+    "Rotating one-liner 2"
+  ],
   "images": [
     "https://cdn.august.style/media/{entry}/{slug}/{slug}-1.webp",
     "https://cdn.august.style/media/{entry}/{slug}/{slug}-2.webp"

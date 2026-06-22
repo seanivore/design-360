@@ -35,13 +35,6 @@
     "https://cdn.august.style/media/pie-claesz-modern-vibes/thumb-pie-claesz-modern-vibes-6.webp"
   ],
   "thumb_alt": "Rotating still life images with modernized Claesz cues: simplified palette, crisp highlights, and balanced tabletop composition.",
-  "img": [
-    "https://cdn.august.style/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-1.webp",
-    "https://cdn.august.style/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-2.webp",
-    "https://cdn.august.style/media/pie-claesz-modern-vibes/img-sq-pie-claesz-modern-vibes-3.webp"
-  ],
-  "img_alt": "Contemporary still life compositions with modernized Pieter Claesz influence, simplified tones, crisp highlight control, and clean tabletop staging",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/226117973?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Generative still life study with modern Claesz vibes: cleaner palette, sharper edges, and contemporary staging cues.",
   "origin_url": "https://www.behance.net/gallery/226117973/Pie-Claesz-Modern-Vibes",
@@ -55,20 +48,11 @@
   "challenge": "After spending time on a more historically faithful Claesz set, I wanted to see what happened if I held onto the painter's instincts — restraint, balance, a single soft light — but let the palette and staging feel current. Could it still be honest to Claesz, or would it stop being his?",
   "approach": "I kept reading about his approach, then drafted another round of variations with cleaner light, simpler color, and slightly more contemporary staging. I kept the ones that still felt rooted in his sensibility but that I'd be genuinely happy to live with today.",
   "result": "A companion set to the first Claesz collection — same spirit, cleaner feel. They're available as prints if anyone else enjoys that same quiet with a little more air in it.",
-  "role_headline": "Contemporary Still Life After Pieter Claesz",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

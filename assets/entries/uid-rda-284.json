@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/surreal-heads/thumb-surreal-heads-6.webp"
   ],
   "thumb_alt": "Towering head forms across whimsical terrains, floating spheres, and soft pastel skies.",
-  "img": [
-    "https://cdn.august.style/media/surreal-heads/img-sq-surreal-heads-1.webp",
-    "https://cdn.august.style/media/surreal-heads/img-sq-surreal-heads-2.webp",
-    "https://cdn.august.style/media/surreal-heads/img-sq-surreal-heads-3.webp"
-  ],
-  "img_alt": "Surreal landscape compositions featuring monumental human head forms integrated into terrain with foliage crowns, floating orbs, and pastel atmospheric light.",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/216060793?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Surreal landscapes with giant human heads integrated into terrain: foliage crowned forms, floating orbs, and pastel atmospheres.",
   "origin_url": "https://www.behance.net/gallery/216060793/Great-Figure-Heads",
@@ -54,20 +47,11 @@
   "challenge": "Surrealism has always interested me because the best of it isn't weird for its own sake — it uses strangeness to say something about being a person. I wanted to spend some time with that idea and see if I could get closer to understanding it.",
   "approach": "I read into the movement and the artists who built it, then drafted many variations around the idea of a head that's also a place — a landscape, a world with weather. I kept the ones that felt quiet and curious rather than loud, and that I personally found moving.",
   "result": "Six pieces came out of it that I genuinely love — calm, strange, a little dreamy. They're available as prints in case anyone else finds the same quiet wonder in them that I did.",
-  "role_headline": "Monumental Heads Embedded in Terrain",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

@@ -39,10 +39,6 @@
     "Marketing Campaign"
   ],
   "company": "Freelance",
-  "placement": [
-    "Featured",
-    "Phase A"
-  ],
   "feature_tile": [
     "https://cdn.august.style/media/freelance-marketing-web/feature-tile-freelance-marketing-web-1.mp4"
   ],
@@ -58,12 +54,7 @@
     "https://cdn.august.style/media/freelance-marketing-web/thumb-freelance-marketing-web-7.webp"
   ],
   "thumb_alt": "Freelance digital consultancy work — hand-drawn Webflow UI, COVID PPE platform, influencer growth strategy deck, and brand systems",
-  "img": [],
-  "img_alt": "",
   "main_media": [],
-  "grids": [],
-  "bleed": [],
-  "bleed_slides": null,
   "flow": [
     {
       "type": "h3",
@@ -569,7 +560,6 @@
       "style": "bluepoints"
     }
   ],
-  "media_url": "",
   "media_embed": "",
   "media_alt": "",
   "origin_url": "",
@@ -579,13 +569,6 @@
   "challenge": "",
   "approach": "",
   "result": "",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "achievements": [
     {
       "headline": "10-year client relationship with CK Heals",
@@ -600,5 +583,6 @@
       "details": "Web analytics surprised both of us — visitors spent an average of 14 minutes on the testimonials page alone, which directly reshaped the next redesign around proof-of-results and ultimately let the client retire an expensive course platform."
     }
   ],
-  "notes": []
+  "notes": [],
+  "featured": true
 }

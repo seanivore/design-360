@@ -20,7 +20,8 @@
   ],
   "company": "Freelance",
   "_company_options": "Freelance | Silent Labs | SEANIVORE GROUP LLC | PETA, Inc.",
-  "placement": [],
+  "featured": false,
+  "_featured_note": "true only for entries with a feature_tile[] you want eligible for the homepage featured video tile",
   "feature_tile": [
     "https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4"
   ],
@@ -28,26 +29,21 @@
   "layout": "columns",
   "_layout_options": "columns | flow | gallery",
   "collections": [],
+  "_collections_note": "GALLERY layout only — slugs of this entry's collections; each renders one bleed art-wall",
   "thumb": [
     "https://cdn.august.style/media/{slug}/thumb-{slug}-{1-to-about-6}.webp"
   ],
   "thumb_alt": "Alt text for thumbnail slideshow",
+  "tiles": [
+    "Tile text 1",
+    "Tile text 2"
+  ],
   "main_media": [
     {
-      "title": "These Media Groups Are For COLUMN Layout Type Only",
+      "title": "COLUMNS layout only — any number of media groups, each with an optional title",
       "images": [
         "https://cdn.august.style/media/{slug}/main-1-{slug}-1.webp",
         "https://cdn.august.style/media/{slug}/main-1-{slug}-2.gif"
-      ],
-      "alt": ""
-    }
-  ],
-  "bleed": [
-    {
-      "images": [
-        "One bleed element per collection, for GALLERY layout entries only",
-        "https://cdn.august.style/media/{slug}/bleed-1-{slug}-1.webp",
-        "https://cdn.august.style/media/{slug}/bleed-1-{slug}-2.webp"
       ],
       "alt": ""
     }
@@ -103,29 +99,16 @@
       "alt": "Describe the looping clip."
     }
   ],
-  "media_url": "",
+  "challenge": "Problem statement (2-4 sentences) — COLUMNS layout only",
+  "approach": "Approach taken (2-4 sentences) — COLUMNS layout only",
+  "result": "Outcome achieved (2-4 sentences) — COLUMNS layout only",
+  "about": "About the art (1-2 sentences) — GALLERY layout only",
+  "details": "How the art was made (1-2 sentences) — GALLERY layout only",
   "media_embed": "",
   "media_alt": "",
   "origin_url": "",
   "origin_url_text": "",
   "repository": "",
-  "collection_preview": "",
-  "tiles": [
-    "Tile text 1",
-    "Tile text 2"
-  ],
-  "challenge": "Problem statement (2-4 sentences) for COLUMN layout only",
-  "approach": "Approach taken (2-4 sentences) for COLUMN layout only",
-  "result": "Outcome achieved (2-4 sentences) for COLUMN layout only",
-  "about": "About the art (1-2 sentences) for GALLERY layout only",
-  "details": "Details about how the art was created (1-2 sentences) for GALLERY layout only",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "achievements": [
     {
       "headline": "Award name or notable accomplishment",

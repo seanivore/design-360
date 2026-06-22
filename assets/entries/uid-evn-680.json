@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/constructivist-profiles/thumb-constructivist-portraits-6.webp"
   ],
   "thumb_alt": "Angular geometric portraits with bold color blocks and sharp constructivist forms",
-  "img": [
-    "https://cdn.august.style/media/constructivist-profiles/img-sq-constructivist-portraits-1.webp",
-    "https://cdn.august.style/media/constructivist-profiles/img-sq-constructivist-portraits-2.webp",
-    "https://cdn.august.style/media/constructivist-profiles/img-sq-constructivist-portraits-3.webp"
-  ],
-  "img_alt": "Geometric head and shoulder profile portraits rendered with constructivist sharp angles, cubist fragmentation, and vibrant color fields.",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/216060889?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Geometric profile portraits of head and shoulders with constructivist, cubist inspired sharp angles and vibrant color fields",
   "origin_url": "https://www.behance.net/gallery/216060889/Profile-People",
@@ -54,20 +47,11 @@
   "challenge": "Constructivist and Cubist portraiture taught painters to stop copying a face and start building one — out of planes, color blocks, and decisions. I wanted to see if I could learn to think that way about a portrait myself.",
   "approach": "I read into both movements, then drafted profile after profile, watching for the ones where the face was clearly a construction but still felt like a person. I kept the ones that taught me something and that I personally liked.",
   "result": "Six angular, color-blocked profiles that I'm fond of. They're available as prints for anyone who enjoys that kind of geometric portraiture.",
-  "role_headline": "Angular Constructivist Portraits",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

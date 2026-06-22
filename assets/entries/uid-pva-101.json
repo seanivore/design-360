@@ -34,10 +34,6 @@
     "Mobile App"
   ],
   "company": "PETA, Inc.",
-  "placement": [
-    "Featured",
-    "Phase A"
-  ],
   "feature_tile": [
     "https://cdn.august.style/media/awards-viral-social/feature-tile-awards-viral-social-1.mp4"
   ],
@@ -51,12 +47,7 @@
     "https://cdn.august.style/media/awards-viral-social/thumb-awards-viral-social-5.webp"
   ],
   "thumb_alt": "PETA viral social campaigns, award-winning video stills, press features, and mobile app screens",
-  "img": [],
-  "img_alt": "",
   "main_media": [],
-  "grids": [],
-  "bleed": [],
-  "bleed_slides": null,
   "flow": [
     {
       "type": "h3",
@@ -775,7 +766,6 @@
       "style": "bluepoints"
     }
   ],
-  "media_url": "",
   "media_embed": "",
   "media_alt": "",
   "origin_url": "",
@@ -785,13 +775,6 @@
   "challenge": "",
   "approach": "",
   "result": "",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "achievements": [
     {
       "headline": "Took PETA to #1 for engagement among all nonprofits on Facebook (Q3).",
@@ -814,5 +797,6 @@
       "details": "PETA's response buried SeaWorld's own hashtag, picked up coverage from Refinery 29 and AdWeek, and helped seed PETA references in lyrics from Kanye, Doja Cat, and Nicki Minaj."
     }
   ],
-  "notes": []
+  "notes": [],
+  "featured": true
 }

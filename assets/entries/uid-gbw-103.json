@@ -39,10 +39,6 @@
     "Generative Automation"
   ],
   "company": "Freelance",
-  "placement": [
-    "Featured",
-    "Phase B"
-  ],
   "feature_tile": [
     "https://cdn.august.style/media/generative-blog-workflow/feature-tile-generative-blog-workflow-1.mp4"
   ],
@@ -58,12 +54,7 @@
     "https://cdn.august.style/media/generative-blog-workflow/thumb-generative-blog-workflow-7.webp"
   ],
   "thumb_alt": "Astrofluenced — Notion database, Make.com pipelines, AI-generated horoscope artwork, and podcast cover art",
-  "img": [],
-  "img_alt": "",
   "main_media": [],
-  "grids": [],
-  "bleed": [],
-  "bleed_slides": null,
   "flow": [
     {
       "type": "h3",
@@ -451,7 +442,6 @@
       "alt": "Astrofluenced podcast playlist on YouTube — Theodore and Stella read the weekly astrology"
     }
   ],
-  "media_url": "",
   "media_embed": "",
   "media_alt": "",
   "origin_url": "",
@@ -461,13 +451,6 @@
   "challenge": "",
   "approach": "",
   "result": "",
-  "role_headline": null,
-  "hero_btn_cta": null,
-  "final_cta_text": null,
-  "final_btn_cta": null,
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "achievements": [
     {
       "headline": "200+ blog posts auto-generated every week, end to end.",
@@ -482,5 +465,6 @@
       "details": "All static and UI visuals on Astrofluenced were original Apple Pencil illustrations — gold-framed homepage, flamingos, tigers, geometric palms — providing a different background per page to balance the AI-generated content."
     }
   ],
-  "notes": []
+  "notes": [],
+  "featured": true
 }

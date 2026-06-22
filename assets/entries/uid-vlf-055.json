@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/psychedelic-impressi/thumb-psychedelic-impressi-6.webp"
   ],
   "thumb_alt": "Vivid, euphoric portrait studies with radiant color fields, closed-eye serenity, and bold stylistic blends.",
-  "img": [
-    "https://cdn.august.style/media/psychedelic-impressi/img-sq-psychedelic-impressi-1.webp",
-    "https://cdn.august.style/media/psychedelic-impressi/img-sq-psychedelic-impressi-2.webp",
-    "https://cdn.august.style/media/psychedelic-impressi/img-sq-psychedelic-impressi-3.webp"
-  ],
-  "img_alt": "Psychedelic portrait studies featuring closed-eye serenity, radiant color auras, and surreal atmospheres blending synthetism, fauvism, and impressionist maximalism.",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/191719407?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Psychedelic portraits with eyes closed, radiant color auras, and surreal atmospheres referencing synthetism, fauvism, and impressionist maximalism.",
   "origin_url": "https://www.behance.net/gallery/191719407/One-astral-projection-too-far",
@@ -54,20 +47,11 @@
   "challenge": "I kept noticing the same thread running through Fauvism, Synthetism, Impressionism, and later psychedelic art — color used for feeling rather than for description. I wanted to follow that thread and see where my own taste landed within it.",
   "approach": "I read across all four movements, then drafted a lot of variations around a single idea — a face with its eyes closed, listening inward, surrounded by color doing the emotional work. I kept the ones that felt most honest about that quiet, internal brightness.",
   "result": "The pieces here are the ones I kept returning to — warm, radiant, a little euphoric. They're available as prints in case anyone else enjoys sitting with that kind of color.",
-  "role_headline": "Closed-Eye Portraits in Euphoric Color",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

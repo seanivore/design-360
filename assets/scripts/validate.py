@@ -68,6 +68,22 @@ ENTRY_REQUIRED_FIELDS: List[str] = [
     "layout",
 ]
 
+# Fields retired in v4.5.0 — entries must no longer carry these. `placement`
+# is replaced by the `featured` boolean + descriptive skill/product tags;
+# gallery bleed derives from collections[]; the rest were dead media/editorial
+# fields. Flagged so cleanup never silently regresses.
+RETIRED_ENTRY_FIELDS: List[str] = [
+    "placement",
+    "img", "img_alt",
+    "mobile_img", "mobile_img_alt",
+    "slideshows",
+    "grid", "grid_alt", "grids",
+    "bleed", "bleed_slides",
+    "media_url",
+    "role_headline", "hero_btn_cta", "final_cta_text", "final_btn_cta",
+    "skill_summary", "process", "metric",
+]
+
 # Collection — required fields shared by both schema versions.
 # The media-list field is conditional and added per schema_version inside
 # validate_collection():  6.0 requires "media" (UID array), 6.1 requires
@@ -185,9 +201,9 @@ def validate_entry(
             f"Invalid company '{company}'. Must be one of: {LOCKED_COMPANIES}"
         )
 
-    # Tag membership: role / skill / product / placement
+    # Tag membership: role / skill / product
     if tags_registry:
-        for tag_type in ("role", "skill", "product", "placement"):
+        for tag_type in ("role", "skill", "product"):
             allowed = set(tags_registry.get(tag_type, []))
             for tag in data.get(tag_type, []) or []:
                 if tag not in allowed:
@@ -195,11 +211,15 @@ def validate_entry(
                         f"Tag '{tag}' (type: {tag_type}) not in tags.json registry"
                     )
 
-    # placement[] specifically must come from tags.json.placement (covered above)
-    # but additionally ensure it's a list
-    placement = data.get("placement")
-    if placement is not None and not isinstance(placement, list):
-        errors.append("'placement' must be an array")
+    # Retired fields (v4.5.0) — must be fully removed.
+    for retired in RETIRED_ENTRY_FIELDS:
+        if retired in data:
+            errors.append(f"'{retired}' is retired (v4.5.0) — remove it")
+
+    # featured must be a boolean when present.
+    featured = data.get("featured")
+    if featured is not None and not isinstance(featured, bool):
+        errors.append("'featured' must be a boolean (true/false)")
 
     # flow[] block validation
     flow = data.get("flow")
@@ -218,24 +238,6 @@ def validate_entry(
                         f"Must be one of: {sorted(VALID_FLOW_TYPES)}"
                     )
 
-    # process[] structure (legacy field; validate shape if present)
-    process = data.get("process")
-    if process is not None and isinstance(process, list):
-        for i, step in enumerate(process):
-            if not isinstance(step, dict):
-                errors.append(f"process[{i}] must be an object")
-                continue
-            for key in ("word", "summary", "link_text", "link_slug"):
-                if key not in step:
-                    errors.append(f"process[{i}] missing key: {key}")
-
-    # metric structure
-    metric = data.get("metric")
-    if metric is not None and isinstance(metric, dict):
-        for key in ("value", "kpi", "context"):
-            if key not in metric:
-                errors.append(f"'metric' missing key: {key}")
-
     # achievements[] structure
     achievements = data.get("achievements")
     if achievements is not None:
@@ -249,22 +251,6 @@ def validate_entry(
                 for key in ("headline", "details"):
                     if key not in ach:
                         errors.append(f"achievements[{i}] missing key: {key}")
-
-    # grids[] structure
-    grids = data.get("grids")
-    if grids is not None:
-        if not isinstance(grids, list):
-            errors.append("'grids' must be an array")
-        else:
-            for i, group in enumerate(grids):
-                if not isinstance(group, dict):
-                    errors.append(f"grids[{i}] must be an object")
-                    continue
-                images = group.get("images")
-                if not isinstance(images, list) or len(images) == 0:
-                    errors.append(
-                        f"grids[{i}] must have non-empty 'images' array"
-                    )
 
     return errors, data
 

@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/neo-expresi-cyber/thumb-neo-expresi-cyber-6.webp"
   ],
   "thumb_alt": "Angular portraits with glitch artifacts, industrial palettes, and charged expressionist marks.",
-  "img": [
-    "https://cdn.august.style/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-1.webp",
-    "https://cdn.august.style/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-2.webp",
-    "https://cdn.august.style/media/neo-expresi-cyber/img-sq-neo-expresi-cyber-3.webp"
-  ],
-  "img_alt": "Neo-expressionist portrait studies with cyberpunk industrial textures, glowing eyes, glitch artifacts, and high-contrast color fields conveying raw emotional tension.",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/191706757?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Neo-expressionist portraits with surreal overtones and cyberpunk industrial cues: glowing eyes, glitch textures, and high contrast color fields.",
   "origin_url": "https://www.behance.net/gallery/191706757/False-promises-leaving-foreboding-feelings",
@@ -54,20 +47,11 @@
   "challenge": "Neo-Expressionism is a movement I keep coming back to — it's messy, it's emotional, it wears everything on the surface. I wanted to understand why it still feels current, and why pairing it with the visual language of our own moment made a certain kind of sense to me.",
   "approach": "I read into the movement and the painters who defined it, then drafted variations that let the gesture and feeling come first. The contemporary cues — the glow, the small electric details — came in because they felt true to how the mood of that kind of work lands now.",
   "result": "The pieces I kept are the ones that felt honest and a little unsettling in a way I liked. They're available as prints in case anyone else finds the same charged stillness in them.",
-  "role_headline": "Expressionist Marks Meet Cyberpunk Glow",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

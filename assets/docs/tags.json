@@ -19,11 +19,13 @@
     "After Effects",
     "Analytics",
     "Animation",
+    "Art Deco",
     "Art Direction",
     "Automation",
     "CMS Management",
     "Campaign Management",
     "CapCut",
+    "Character Design",
     "CodeMirror 6",
     "Community Management",
     "Content Production",
@@ -35,6 +37,7 @@
     "Editorial Design",
     "Framer",
     "Generative AI",
+    "Geometric Abstraction",
     "Git",
     "GitHub Pages",
     "HTML/CSS/JS",
@@ -45,10 +48,12 @@
     "Lookbook Design",
     "Lottie",
     "Make.com",
+    "Maximalism",
     "Motion Graphics",
     "NFT Production",
     "No-Code",
     "Notion",
+    "Pattern Design",
     "Photography",
     "Photoshop",
     "Print Design",
@@ -71,6 +76,7 @@
   ],
   "product": [
     "Animation",
+    "Art Collection",
     "Art Print",
     "Brand Identity",
     "CMS Site",
@@ -97,13 +103,5 @@
     "PETA, Inc.",
     "SEANIVORE GROUP LLC",
     "Silent Labs"
-  ],
-  "placement": [
-    "Art Gallery",
-    "Featured",
-    "Phase A",
-    "Phase B",
-    "Phase C"
-  ],
-  "item": []
+  ]
 }

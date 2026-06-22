@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/surreal-constructivism/thumb-surreal-constructivism-6.webp"
   ],
   "thumb_alt": "Swirling clouds, rolling mountains, reflective lakes, and crashing waves in vivid color.",
-  "img": [
-    "https://cdn.august.style/media/surreal-constructivism/img-sq-surreal-constructivism-1.webp",
-    "https://cdn.august.style/media/surreal-constructivism/img-sq-surreal-constructivism-2.webp",
-    "https://cdn.august.style/media/surreal-constructivism/img-sq-surreal-constructivism-3.webp"
-  ],
-  "img_alt": "Surreal constructivist landscapes where mountains curl into waves beneath technicolor skies with radiant light and bold geometric forms",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/216060815?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "Surreal constructivist landscapes where mountains curl into waves and technicolor clouds swirl under radiant skies.",
   "origin_url": "https://www.behance.net/gallery/216060815/Sublime-Convergence",
@@ -54,20 +47,11 @@
   "challenge": "Constructivism and Surrealism feel like opposites at first — one wants structure and purpose, the other wants dreams. But the more I read, the more they seemed like two honest answers to the same question about what art should do in a modern world. I wanted to see what happened when I tried to hold both in one image.",
   "approach": "I researched each movement separately, then drafted many variations where the composition had a Constructivist spine but the content behaved like a dream — mountains that curl into waves, skies that feel too vivid to be real. I kept the ones that felt like they'd learned from both.",
   "result": "Six pieces I'm genuinely proud of, and that taught me something about both movements. They're available as prints for anyone who responds to that particular mix of structure and strangeness.",
-  "role_headline": "Mountains Curling into Waves",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }

@@ -34,13 +34,6 @@
     "https://cdn.august.style/media/gradient-bauhaus/thumb-gradient-bauhaus-6.webp"
   ],
   "thumb_alt": "Gradient abstractions with layered color, soft falloff, and disciplined value pacing.",
-  "img": [
-    "https://cdn.august.style/media/gradient-bauhaus/img-sq-gradient-bauhaus-1.webp",
-    "https://cdn.august.style/media/gradient-bauhaus/img-sq-gradient-bauhaus-2.webp",
-    "https://cdn.august.style/media/gradient-bauhaus/img-sq-gradient-bauhaus-3.webp"
-  ],
-  "img_alt": "Bauhaus-influenced gradient abstractions with smooth layered color transitions, geometric forms emerging from soft depth, and controlled value pacing",
-  "media_url": "",
   "media_embed": "<iframe src='https://www.behance.net/embed/project/217385795?ilo0=1' width='560' height='438' frameborder='0' allow='clipboard-write; fullscreen' allowfullscreen></iframe>",
   "media_alt": "A generative gradient study exploring depth through layered color transitions, soft edges, and controlled value steps.",
   "origin_url": "https://www.behance.net/gallery/217385795/Gradient-Depths",
@@ -54,20 +47,11 @@
   "challenge": "Bauhaus tends to live in hard edges and primary color, but the more I read, the more I wanted to see what happened if I took its discipline and pointed it at something soft — pure gradient, no hard forms at all. Could the same thinking still produce something that felt considered?",
   "approach": "I read into Bauhaus color theory and the minimalist tradition that grew out of it, then drafted many variations where the whole composition was carried by transitions in value and hue. I kept the ones where the gradient alone felt like enough.",
   "result": "A small set of very quiet pieces that I like living with — calm, deep, a little meditative. They're available as prints in case anyone else enjoys the same kind of quiet.",
-  "role_headline": "Layered Gradients with Spatial Depth",
-  "hero_btn_cta": "See Creative Work",
-  "final_cta_text": "Interested in creative direction?",
-  "final_btn_cta": "View Creative Portfolio",
-  "skill_summary": "",
-  "process": null,
-  "metric": null,
   "notes": [],
-  "slideshows": [],
-  "placement": [],
   "feature_tile": [],
   "tile_alt": "",
   "layout": "columns",
   "achievements": [],
   "main_media": [],
-  "grids": []
+  "featured": false
 }
