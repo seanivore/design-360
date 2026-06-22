@@ -41,10 +41,17 @@
   "main_media": [
     {
       "title": "COLUMNS layout only — any number of media groups, each with an optional title",
+      "_media_note": "An .mp4 URL in images[] renders as a <video>. The optional `video` object below applies to MP4s in this group (same fields as the flow video block); omit it for an ambient muted loop — a lighter GIF.",
       "images": [
         "https://cdn.august.style/media/{slug}/main-1-{slug}-1.webp",
-        "https://cdn.august.style/media/{slug}/main-1-{slug}-2.gif"
+        "https://cdn.august.style/media/{slug}/main-1-{slug}-2.mp4"
       ],
+      "video": {
+        "muted": true,
+        "loop": true,
+        "autoplay": true,
+        "controls": false
+      },
       "alt": ""
     }
   ],
@@ -93,10 +100,15 @@
     },
     {
       "type": "video",
-      "desktop": "https://cdn.august.style/media/{slug}/vid-{slug}-1-1.mp4",
-      "mobile": "https://cdn.august.style/media/{slug}/vid-{slug}-1-2.mp4",
+      "_video_note": "Single clip → use `src`. Art-directed pair shown side by side → use `desktop` + `mobile` instead. The settings below are all OPTIONAL; omit them for an ambient muted loop (a lighter GIF). For a player with sound, set muted:false — autoplay turns off and native controls turn on automatically.",
+      "src": "https://cdn.august.style/media/{slug}/vid-{slug}-1.mp4",
+      "loop": true,
+      "muted": true,
+      "autoplay": true,
+      "controls": false,
+      "playsinline": true,
       "caption": "Optional caption line.",
-      "alt": "Describe the looping clip."
+      "alt": "Describe the clip."
     }
   ],
   "challenge": "Problem statement (2-4 sentences) — COLUMNS layout only",

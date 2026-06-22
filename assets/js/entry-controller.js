@@ -71,6 +71,61 @@ const EntryController = (() => {
     }
 
     /**
+     * Resolve a clip's playback settings from optional JSON booleans → flags.
+     * The renderer reads these; nothing is hardcoded per-entry. Default is an
+     * ambient, GIF-style loop (muted + looping + autoplaying + no controls).
+     * To make a clip a player with sound, set `muted: false` — autoplay only
+     * works muted (browser policy), so a clip that won't autoplay gets native
+     * controls automatically unless `controls` is set explicitly.
+     *   loop / muted / autoplay / playsinline  → default true
+     *   controls                               → default false (auto-true when
+     *                                             the clip won't autoplay)
+     */
+    function resolveVideoSettings(block) {
+        block = block || {};
+        const loop = block.loop !== false;
+        const muted = block.muted !== false;
+        const playsinline = block.playsinline !== false;
+        const wantsAutoplay = block.autoplay !== false;
+        const autoplay = wantsAutoplay && muted;            // sound-autoplay is blocked
+        const controls = (block.controls !== undefined) ? !!block.controls : !autoplay;
+        return { loop, muted, playsinline, autoplay, controls };
+    }
+
+    /**
+     * Build a <video> element for a CDN URL + resolved settings. Ambient clips
+     * (autoplay + muted + no controls) get a play-on-scroll observer so they
+     * behave like GIFs and autoplay reliably on iOS.
+     */
+    function buildVideoEl(url, settings, alt, className) {
+        const v = document.createElement('video');
+        if (className) v.className = className;
+        v.src = imgSrc(url);
+        v.loop = settings.loop;
+        if (settings.muted) { v.muted = true; v.setAttribute('muted', ''); }
+        if (settings.playsinline) { v.playsInline = true; v.setAttribute('playsinline', ''); }
+        if (settings.controls) v.setAttribute('controls', '');
+        if (settings.autoplay) { v.autoplay = true; v.setAttribute('autoplay', ''); }
+        v.preload = settings.autoplay ? 'auto' : 'metadata';
+        if (alt) v.setAttribute('aria-label', alt);
+
+        if (settings.autoplay && !settings.controls && 'IntersectionObserver' in window) {
+            new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+                    else v.pause();
+                });
+            }, { threshold: 0.2 }).observe(v);
+        }
+        return v;
+    }
+
+    /** True for CDN URLs that should render as a <video> rather than an <img>. */
+    function isVideoURL(url) {
+        return /\.mp4(\?|$)/i.test(url || '');
+    }
+
+    /**
      * Populate page metadata (SEO tags)
      */
     function populateMetadata(project) {
@@ -232,8 +287,16 @@ const EntryController = (() => {
             const row = document.createElement('div');
             row.className = 'entry-main-media__row';
             const altText = group.alt || project.title || '';
+            // MP4s in this group render as <video>; the optional `group.video`
+            // settings object (muted/controls/etc.) applies to them. Default is
+            // an ambient loop — a lighter GIF.
+            const groupVideoSettings = resolveVideoSettings(group.video || {});
 
             group.images.forEach(url => {
+                if (isVideoURL(url)) {
+                    row.appendChild(buildVideoEl(url, groupVideoSettings, altText, 'entry-main-media__image'));
+                    return;
+                }
                 const lightboxIdx = registerLightboxImage(url, altText);
                 const img = document.createElement('img');
                 img.src = imgSrc(url);
@@ -442,40 +505,23 @@ const EntryController = (() => {
             }
 
             case 'video': {
-                // Paired desktop (wide) + mobile (skinny) MP4s in one row, GIF-like
-                // (muted/looping/no-controls). Plays when scrolled into view.
+                // One clip (`src`) or an art-directed desktop+mobile pair shown
+                // side by side. Playback is JSON-driven via resolveVideoSettings:
+                // ambient loop by default; set muted:false for a player with
+                // controls + sound.
                 const wrapper = document.createElement('div');
                 wrapper.className = 'flow-video';
 
                 const row = document.createElement('div');
                 row.className = 'flow-video-row';
 
-                [['desktop', block.desktop], ['mobile', block.mobile]].forEach(([role, url]) => {
+                const settings = resolveVideoSettings(block);
+                const clips = block.src
+                    ? [['single', block.src]]
+                    : [['desktop', block.desktop], ['mobile', block.mobile]];
+                clips.forEach(([role, url]) => {
                     if (!url) return;
-                    const v = document.createElement('video');
-                    v.className = `flow-video-${role}`;
-                    v.src = url;
-                    v.muted = true;
-                    v.setAttribute('muted', '');
-                    v.loop = true;
-                    v.playsInline = true;
-                    v.setAttribute('playsinline', '');
-                    v.autoplay = true;
-                    v.setAttribute('autoplay', '');
-                    v.preload = 'auto';   // load the first frame so it isn't blank
-                    if (block.alt) v.setAttribute('aria-label', block.alt);
-                    row.appendChild(v);
-
-                    // Play on scroll-into-view — reliable iOS autoplay (the bare
-                    // autoplay attr is flaky there), and shows frames immediately.
-                    if ('IntersectionObserver' in window) {
-                        new IntersectionObserver((entries) => {
-                            entries.forEach(e => {
-                                if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
-                                else v.pause();
-                            });
-                        }, { threshold: 0.2 }).observe(v);
-                    }
+                    row.appendChild(buildVideoEl(url, settings, block.alt, `flow-video-${role}`));
                 });
 
                 wrapper.appendChild(row);

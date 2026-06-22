@@ -1876,7 +1876,8 @@ body > main.collection-main {
   min-width: 0;
 }
 
-.entry-main-media img {
+.entry-main-media img,
+.entry-main-media video {
   max-width: 100%;
   height: auto;
   display: block;
