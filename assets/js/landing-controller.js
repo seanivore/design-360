@@ -30,6 +30,37 @@ const LandingController = (() => {
     initNavCollapse();
     initAccordion();
     initMailtoFallback();
+    handleInitialHashScroll();
+  }
+
+  /**
+   * Land on a hash target (e.g. `#footer` from the Contact nav) reliably.
+   * The homepage builds sections asynchronously (the art wall awaits collection
+   * loads; its images are lazy), so the page keeps growing after the browser's
+   * initial hash jump and the target slides out from under the visitor. We
+   * re-assert the scroll each frame while the layout settles (~1.5s), and bail
+   * the moment the visitor takes over scrolling.
+   */
+  function handleInitialHashScroll() {
+    const hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    let target;
+    try { target = document.querySelector(hash); } catch (e) { return; }
+    if (!target) return;
+
+    let cancelled = false;
+    const cancel = () => { cancelled = true; };
+    window.addEventListener('wheel', cancel, { passive: true, once: true });
+    window.addEventListener('touchmove', cancel, { passive: true, once: true });
+    window.addEventListener('keydown', cancel, { once: true });
+
+    const start = performance.now();
+    const snap = () => {
+      if (cancelled) return;
+      target.scrollIntoView({ block: 'start' });
+      if (performance.now() - start < 1500) requestAnimationFrame(snap);
+    };
+    requestAnimationFrame(snap);
   }
 
   function loadHomepage(content, projects) {
