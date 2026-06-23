@@ -20,13 +20,13 @@ In `assets/js/entry-controller.js` there are now three small helpers — the sin
 
 **The MP4 variable set (all optional, JSON-driven):**
 
-| field         | default                                   | effect                                                        |
-| ------------- | ----------------------------------------- | ------------------------------------------------------------- |
-| `loop`        | `true`                                    | `<video loop>`                                                |
-| `muted`       | `true`                                    | `<video muted>` — required for autoplay                       |
-| `autoplay`    | `true`                                    | autoplays (only effective when muted; sound-autoplay is blocked) |
-| `controls`    | `false` (auto-`true` if the clip won't autoplay) | native player chrome (play button, scrubber, volume)    |
-| `playsinline` | `true`                                    | inline playback on iOS (no fullscreen takeover)               |
+| field         | default                                          | effect                                                           |
+| ------------- | ------------------------------------------------ | ---------------------------------------------------------------- |
+| `loop`        | `true`                                           | `<video loop>`                                                   |
+| `muted`       | `true`                                           | `<video muted>` — required for autoplay                          |
+| `autoplay`    | `true`                                           | autoplays (only effective when muted; sound-autoplay is blocked) |
+| `controls`    | `false` (auto-`true` if the clip won't autoplay) | native player chrome (play button, scrubber, volume)             |
+| `playsinline` | `true`                                           | inline playback on iOS (no fullscreen takeover)                  |
 
 - **Omit everything → ambient muted loop** (a lighter GIF; play-on-scroll). This is the common case.
 - **`muted: false` → a player**: autoplay turns off and `controls` turns on automatically, so the visitor presses play and hears sound. (Set `loop: false` too for a one-shot clip.)
@@ -83,12 +83,12 @@ Bearer auth (`UPLOAD_API_KEY`); JSON by-URL or multipart; **caller supplies the 
 
 **Role system (the core idea).** `role` is validated against a fixed pattern, lands in the R2 key, and selects the transform. Everlastings' roles: `hero`, `thumbnail`, `gallery-01…15`, `detail-01…05`, `video-01…05`, `gif-01…05` (retiring), `checkout_image`, `seo_thumbnail`.
 
-| role | aspect | width | format | notes |
-| --- | --- | --- | --- | --- |
-| `thumbnail` | 4:5 | 600 | webp | small portrait |
-| `hero` / `gallery-*` / `detail-*` (default) | 4:5 | 1200 | webp | portrait |
-| `seo_thumbnail` | 1.91:1 | 1200 | webp | OG/Twitter card |
-| `checkout_image` | 1:1 | 600 | webp | square (Stripe) |
+| role                                        | aspect | width | format | notes           |
+| ------------------------------------------- | ------ | ----- | ------ | --------------- |
+| `thumbnail`                                 | 4:5    | 600   | webp   | small portrait  |
+| `hero` / `gallery-*` / `detail-*` (default) | 4:5    | 1200  | webp   | portrait        |
+| `seo_thumbnail`                             | 1.91:1 | 1200  | webp   | OG/Twitter card |
+| `checkout_image`                            | 1:1    | 600   | webp   | square (Stripe) |
 
 Cloudinary transform string: `c_fill,ar_{ar},w_{w},f_webp,q_auto,g_auto` (`g_auto` = smart-crop focal point). Images route: signed Cloudinary upload → fetch the transform URL → download the WebP → put to R2 → destroy from Cloudinary (free-tier cleanup, non-fatal).
 
