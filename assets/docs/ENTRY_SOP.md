@@ -112,6 +112,8 @@ Surface to Sean. The orchestrator does NOT compose media from imagination.
 
 Cloudinary handles resizing, cropping, and format conversion to WebP.
 
+> **Upload mechanics moved to `.agent/CDN_MEDIA_UPLOAD.md`** (cross-project, synced via `filemgmt`): the `/api/upload` endpoint, the direct `aws s3` video path, key rules, and the bot-protection verify. This section keeps only the entry/collection-specific processing — the per-purpose Cloudinary transform sizes and the filename conventions below.
+
 **Cloud name**: `dzrtucxh7`
 **Authentication**: API key + secret are in `.env` as `CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@dzrtucxh7`. All API calls use `-u "API_KEY:API_SECRET"` for HTTP basic auth.
 **Full API reference**: `assets/docs/entries-prep/CLOUDINARY_IMAGE_API.md`.
@@ -183,71 +185,21 @@ curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/destroy \
 
 ## 6. Upload to R2 CDN
 
-All processed media must live on the CDN before the JSON references it. Local paths in JSON are never acceptable in committed entries.
+All processed media must live on the CDN before the JSON references it — local paths in JSON are never acceptable in committed entries.
 
-There are two upload paths. **Images** go through the `/api/upload` endpoint (which folds in the Cloudinary resize + R2 put + Cloudinary cleanup in one call). **Video** still uses the manual `aws s3 sync` method below — the endpoint accepts mp4 but does NOT transform it, and the manual sync is the established video path.
+**The upload mechanics live in `.agent/CDN_MEDIA_UPLOAD.md`** (cross-project, synced via `filemgmt`): images via `POST /api/upload` (Cloudinary→R2 in one call, output WebP, key extension rewritten to `.webp`), video via `aws s3 cp`/`sync` with profile `r2`, the 25 MB cap, key rules, `skip_transform`, preview re-rooting, and the browser-User-Agent pre-flight verify. Read that doc for the exact commands. Only the entry/collection-specific bits stay here:
 
-### Images — `/api/upload` endpoint (preferred)
+### Entry/collection key paths
 
-The endpoint (`api/upload.ts`) takes a source image (by multipart file OR by public URL), shrinks it to fit a 2400×2400 box and converts to WebP via Cloudinary (`c_limit,w_2400,h_2400,f_webp,q_auto` — original aspect ratio preserved, only downsized when larger), PUTs it to R2 at the key you supply, deletes the Cloudinary copy (free-tier hygiene), and returns the public `https://cdn.august.style/<key>` URL.
-
-- **Auth**: `Authorization: Bearer ${UPLOAD_API_KEY}`.
-- **Key**: must be a safe relative path under `media/` (e.g. `media/{slug}/main-1-{slug}-1.webp`, or `media/{entry}/{coll}/{coll}-1.webp` for a gallery collection). The endpoint rejects keys outside `media/`, with `..`, `//`, or non-`[a-zA-Z0-9._/-]` characters. After a WebP transform the key's extension is rewritten to `.webp`.
-- **Size cap**: 25 MB.
-- **Preview deploys** (`isTest`): keys are re-rooted under `media/_preview/` so dev uploads never overwrite production CDN objects.
-- **`skip_transform`**: set `true` to bypass Cloudinary and upload the bytes byte-for-byte — use for pre-cropped images you do NOT want resized (e.g. already-sized thumbnails, or transparent PNGs you must keep exact). gif/svg/mp4 pass through byte-for-byte regardless.
-
-Multipart form (local file):
-
-```bash
-curl -X POST https://www.august.style/api/upload \
-  -H "Authorization: Bearer $UPLOAD_API_KEY" \
-  -F "file=@assets/.media/{slug}/main-1-{slug}-1.png" \
-  -F "key=media/{slug}/main-1-{slug}-1.webp"
-# -> { "ok": true, "url": "https://cdn.august.style/media/{slug}/main-1-{slug}-1.webp", "key": "..." }
-```
-
-JSON body (by public https URL — handy when the source is already hosted):
-
-```bash
-curl -X POST https://www.august.style/api/upload \
-  -H "Authorization: Bearer $UPLOAD_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"url":"https://example.com/source.png","key":"media/{slug}/main-1-{slug}-1.webp"}'
-```
-
-Add `"skip_transform": true` (JSON) or `-F "skip_transform=true"` (multipart) to upload without the Cloudinary resize.
-
-For a 6.1 gallery collection, the key is nested under the parent entry: `media/{entry}/{coll}/{coll}-N.webp`.
-
-### Video — manual `aws s3 sync` (the endpoint can't transform video yet)
-
-**R2 endpoint**: `https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com`
-**AWS CLI profile**: `r2`
-
-Place mp4 files at `assets/.media/{slug}/...` (skip Cloudinary entirely), then sync the slug directory:
-
-```bash
-aws s3 sync assets/.media/{slug}/ s3://portfolio/media/{slug}/ \
-  --endpoint-url https://17f4ab52f79f8d24931df7044fcc7aa2.r2.cloudflarestorage.com \
-  --profile r2
-```
-
-`aws s3 sync` is also the fallback for any bulk image upload if the endpoint is unavailable (handy for the many images in a gallery collection). For 6.1 gallery collection imagery, sync to `s3://portfolio/media/{entry}/{coll}/`.
+- **Entry media**: `media/{slug}/{name}.webp` — e.g. `media/{slug}/main-1-{slug}-1.webp`, `media/{slug}/thumb-{slug}-1.webp`.
+- **Feature-tile / flow video** (mp4, no transform): `media/{slug}/feature-tile-{slug}-1.mp4`, `media/{slug}/vid-{slug}-N-1.mp4`.
+- **6.1 gallery collection** (nested under the parent entry): `media/{entry}/{coll}/{coll}-N.webp` and `media/{entry}/{coll}/thumb-{coll}-N.webp`. `aws s3 sync` of the finished collection folder is the handy bulk path here.
 
 ### Pre-flight verify
 
-For every CDN URL the JSON will reference, confirm the URL returns HTTP 200 with the right content-type:
+For every CDN URL the JSON will reference, confirm HTTP 200 + correct content-type — using a **browser User-Agent** (a header-less `curl -I` returns 403 even for valid objects on `cdn.august.style`; see the `.agent/` doc for the exact command). If a URL 404s after upload the put failed: re-upload that key; if it still 404s, surface to Sean.
 
-```bash
-curl -I https://cdn.august.style/media/{slug}/thumb-{slug}-1.webp
-# Expect: HTTP/2 200, content-type: image/webp
-
-curl -I https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4
-# Expect: HTTP/2 200, content-type: video/mp4
-```
-
-If any URL 404s after upload: the sync failed for that file. Re-run the sync. If still 404, surface to Sean.
+> **Future:** the `/api/upload` endpoint will likely be upgraded — often from this repo — to handle all media types and transform variables (including video), as a client project on the same architecture already does. When that lands, `.agent/CDN_MEDIA_UPLOAD.md` is the source of truth — update this pointer.
 
 ---
 
