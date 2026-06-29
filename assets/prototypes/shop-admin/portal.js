@@ -193,11 +193,31 @@
   };
 
   /* ---- shared shell: rail + mobile tabbar + env + collapse — call once per surface page ---- */
+  // demo: live count of unfulfilled orders (groups with a paid-but-unshipped line), from the session store
+  P.unfulfilledCount = function () {
+    const data = window.PORTAL_DATA || {};
+    const orders = (P.store && P.store.use) ? P.store.use("orders", data.orders || []) : (data.orders || []);
+    const byPi = {};
+    orders.forEach((o) => { const k = o.stripe_payment_intent || o.id; (byPi[k] = byPi[k] || []).push(o); });
+    return Object.values(byPi).filter((ls) => ls.some((l) => l.status === "completed" && !l.shipped_at)).length;
+  };
+  // recompute + repaint the Orders badge/blink on rail + tab bar (call after shipping/refunding)
+  P.refreshOrdersBadge = function () {
+    const n = P.unfulfilledCount();
+    ["rail__item", "tabbar__item"].forEach((cls) => {
+      const a = document.querySelector("." + cls + '[href="orders.html"]'); if (!a) return;
+      if (n) a.setAttribute("data-alert", ""); else a.removeAttribute("data-alert");
+      let b = a.querySelector(".badge");
+      if (n) { if (!b) { b = document.createElement("span"); b.className = "badge"; a.appendChild(b); } b.textContent = n; }
+      else if (b) { b.remove(); }
+    });
+  };
+
   P.mountShell = function (active, opts) {
     opts = opts || {};
     // demo: enforce login-first — any non-login surface bounces to the login if not signed in
     if (P.DEMO && active !== "account" && !P.store.use("signedIn", false)) { window.location.replace("account.html"); return; }
-    const badge = opts.ordersBadge || 0;
+    const badge = P.unfulfilledCount(); // live count, not a hardcoded number
     const I = {
       products: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
       orders: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="m12 11v10"/></svg>',

@@ -11,6 +11,7 @@
   if (P.DEMO && !P.store.use("signedIn", false)) { window.location.replace("account.html"); return; }
   let products = P.store.use("products", D.products);
   let tab = "live", query = "", openId = null;
+  let sortKey = null, sortDir = 0; // sortDir: 0 = natural order, 1 = asc, -1 = desc
   const unseenOrders = 2; // drives the Sold-tab + Orders-nav blink (no data source yet — see INTEGRATION.md)
 
   /* ---------- state model (Sean v1: Available OFF on a live piece → Draft) ---------- */
@@ -21,19 +22,18 @@
     if (p.quantity === 0) return "sold";          // BLUE (out of stock from a sale) — tab
     return "live";                                // GREEN
   }
-  const STATE_WORD = { live: "Live in the shop", edits: "Edits waiting to publish", draft: "Draft — hidden from the shop", sold: "Sold — out of stock", archived: "Archived" };
+  const STATE_WORD = { live: "Live in the shop", edits: "Edits waiting to publish", draft: "Draft — hidden from the shop", sold: "Sold out — out of stock", archived: "Archived" };
 
   const TABS = [
     { id: "live", label: "Live", dot: "live" },
     { id: "drafts", label: "Drafts", dot: "draft" },
-    { id: "sold", label: "Sold", dot: "sold" },
     { id: "archived", label: "Archived", dot: "archived" },
     { id: "all", label: "All", dot: "all" },
   ];
   function inTab(p, t) {
     const s = computeState(p);
     if (t === "all") return true;
-    if (t === "live") return s === "live" || s === "edits";
+    if (t === "live") return s === "live" || s === "edits" || s === "sold"; // sold-out stays in Live, shown as "Sold out" (buy disabled)
     return s === t.replace("drafts", "draft");
   }
   function counts() { const c = {}; TABS.forEach((t) => (c[t.id] = products.filter((p) => inTab(p, t.id)).length)); return c; }
@@ -96,7 +96,7 @@
   function renderTabs() {
     const c = counts(), seg = document.getElementById("tabs");
     seg.innerHTML = '<span class="seg__puck" aria-hidden="true"></span>' + TABS.map((t) =>
-      `<button class="seg__chip" role="tab" data-tab="${t.id}" aria-selected="${t.id === tab}" ${t.id === "sold" && unseenOrders ? "data-alert" : ""}>
+      `<button class="seg__chip" role="tab" data-tab="${t.id}" aria-selected="${t.id === tab}">
         <span class="dot dot--${t.dot}"></span>${t.label} <span class="count">${c[t.id]}</span></button>`).join("");
     seg.querySelectorAll(".seg__chip").forEach((chip) => chip.addEventListener("click", () => { tab = chip.dataset.tab; openId = null; render(); }));
     positionPuck();
@@ -107,9 +107,40 @@
   }
 
   /* ---------- list ---------- */
+  function sortVal(p, k) {
+    if (k === "title") return (p.title || "").toLowerCase();
+    if (k === "price") return p.price || 0;
+    if (k === "quantity") return p.quantity || 0;
+    if (k === "available") return p.available ? 1 : 0;
+    if (k === "featured") return p.featured ? 1 : 0;
+    return 0;
+  }
   function visible() {
     const q = query.trim().toLowerCase();
-    return products.filter((p) => inTab(p, tab)).filter((p) => !q || (p.title || "").toLowerCase().includes(q) || (p.slug || "").toLowerCase().includes(q));
+    let arr = products.filter((p) => inTab(p, tab)).filter((p) => !q || (p.title || "").toLowerCase().includes(q) || (p.slug || "").toLowerCase().includes(q));
+    if (sortKey && sortDir) {
+      arr = arr.slice().sort((a, b) => {
+        const x = sortVal(a, sortKey), y = sortVal(b, sortKey);
+        return (typeof x === "string" ? x.localeCompare(y) : (x < y ? -1 : x > y ? 1 : 0)) * sortDir;
+      });
+    }
+    return arr;
+  }
+  function paintSortHeaders() {
+    document.querySelectorAll(".listhead .sorth").forEach((h) => {
+      const on = h.dataset.sort === sortKey && !!sortDir;
+      h.classList.toggle("is-sorted", on);
+      const i = h.querySelector("i"); if (i) i.textContent = on ? (sortDir === 1 ? " \u2191" : " \u2193") : "";
+    });
+  }
+  function wireSortHeaders() {
+    // spreadsheet-style 3-state: click a column → asc → desc → back to natural order
+    document.querySelectorAll(".listhead .sorth").forEach((h) => h.addEventListener("click", () => {
+      const k = h.dataset.sort;
+      if (sortKey !== k) { sortKey = k; sortDir = 1; }
+      else { sortDir = sortDir === 1 ? -1 : sortDir === -1 ? 0 : 1; if (!sortDir) sortKey = null; }
+      render();
+    }));
   }
   function thumbHTML(p) {
     if (p.thumbnail) return `<img src="${p.thumbnail}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="ph" style="display:none">${IC.img}</span>`;
@@ -137,7 +168,7 @@
       <span class="prow__thumb">${thumbHTML(p)}</span>
       <button class="prow__id" data-open="${p.id}" aria-expanded="${openId === p.id}">
         <span class="prow__title">${esc(p.title) || "Untitled product"}</span>
-        <span class="prow__meta">${slug}</span>
+        <span class="prow__meta">${slug}${s === "sold" ? '<span class="soldpill">Sold out</span>' : ""}</span>
       </button>
       <span class="prow__price">${money(p.price)}<span class="qtysub${p.quantity === 0 ? " zero" : ""}">Qty ${p.quantity}</span></span>
 
@@ -166,6 +197,7 @@
   }
   function render() {
     renderTabs();
+    paintSortHeaders();
     const list = document.getElementById("list"), rows = visible();
     if (!rows.length) { list.innerHTML = emptyHTML(); return; }
     list.innerHTML = rows.map(rowHTML).join("");
@@ -175,10 +207,10 @@
   function emptyHTML() {
     if (query.trim()) return `<div class="empty">${IC.img}<h3>Nothing matches “${esc(query)}”</h3><p>Try a different name or slug, or clear the search.</p></div>`;
     if (tab !== "all" && !products.filter((p) => inTab(p, tab)).length) {
-      const n = { drafts: "drafts", sold: "sold products", archived: "archived products", live: "live products" };
-      return `<div class="empty">${IC.box}<h3>Nothing in ${n[tab] || tab}</h3><p>Products show up here once they reach this state.</p></div>`;
+      const n = { drafts: "Drafts", archived: "Archived", live: "Live" };
+      return `<div class="empty">${IC.box}<h3>Nothing in ${n[tab] || tab}</h3></div>`;
     }
-    return `<div class="empty">${IC.box}<h3>No products yet</h3><p>Your first piece will live here. Start one with “New”.</p></div>`;
+    return `<div class="empty">${IC.box}<h3>No products yet</h3><p>Start your first one with “New”.</p></div>`;
   }
 
   /* ---------- row interactions ---------- */
@@ -249,7 +281,24 @@
     render();
     P.toast(was ? "Resurfaced — back in your shop" : "Archived — anything can be revived", { undo: () => { p.archived_at = was ? new Date().toISOString() : null; render(); } });
   }
-  function openPreview(id) { const p = find(id); P.toast("Opening preview — " + (p.title || "this product") + " (capability URL, no login)"); }
+  function openPreview(id) {
+    const url = "preview.html?id=" + encodeURIComponent(id);
+    const ov = document.createElement("div");
+    ov.className = "preview-ov";
+    ov.innerHTML = `<div class="preview-ov__card">
+      <div class="preview-ov__bar">
+        <span>Storefront preview</span>
+        <a href="${url}" target="_blank" rel="noopener" title="Open in a new tab">${IC.ext}</a>
+        <button class="iconbtn" data-pvclose aria-label="Close preview">${IC.x}</button>
+      </div>
+      <iframe src="${url}" title="Product preview"></iframe>
+    </div>`;
+    document.body.appendChild(ov);
+    const close = () => ov.remove();
+    ov.querySelector("[data-pvclose]").addEventListener("click", close);
+    ov.addEventListener("click", (e) => { if (e.target === ov) close(); });
+    document.addEventListener("keydown", function esc(e) { if (e.key === "Escape") { close(); document.removeEventListener("keydown", esc); } });
+  }
 
   /* stock prompt */
   function promptStock(p, anchor) {
@@ -352,7 +401,7 @@
         <!-- INSTANT-COMMERCE: price + quantity only; context appears on focus -->
         <div class="commerce">
           ${f({ label: "Price", req: true, tip: "Changes the shop price the moment you save it — no publish needed.", value: (p.price / 100).toFixed(2), type: "price", ring: "green", field: "price", ctx: "Applies to the shop the moment you save.", ctxLive: true })}
-          ${f({ label: "Quantity", req: true, tip: "0 = sold out. Applies to the shop instantly.", value: String(p.quantity), ring: p.quantity === 0 ? "yellow" : "green", field: "quantity", inputmode: "numeric", ctx: "Applies to the shop the moment you save.", ctxLive: true })}
+          ${f({ label: "Quantity", req: true, tip: "0 = sold out — it shows as “Sold out” (buy disabled) until you restock.", value: String(p.quantity), ring: p.quantity === 0 ? "yellow" : "green", field: "quantity", inputmode: "numeric", ctx: "Applies to the shop the moment you save.", ctxLive: true })}
         </div>
 
         <div class="section-h">The product <span class="line"></span></div>
@@ -806,5 +855,6 @@
     });
   })();
 
+  wireSortHeaders();
   render();
 })();

@@ -31,7 +31,7 @@
     orders.forEach((o) => { if (!m.has(o.stripe_payment_intent)) m.set(o.stripe_payment_intent, []); m.get(o.stripe_payment_intent).push(o); });
     return [...m.values()].map((lines) => ({
       pi: lines[0].stripe_payment_intent,
-      ref: lines[0].id.slice(0, 8),
+      ref: lines[0].stripe_payment_intent.replace("pi_demo_", "").replace(/[^A-Za-z0-9]/g, "").slice(0, 6).toUpperCase(),
       customer: lines[0].customers || { name: lines[0].customer_email, email: lines[0].customer_email },
       address: lines[0].shipping_address,
       created_at: lines[0].created_at,
@@ -120,6 +120,7 @@
 
   function render() {
     renderTabs();
+    if (P.refreshOrdersBadge) P.refreshOrdersBadge();
     const list = document.getElementById("list"), rows = visible();
     if (!rows.length) {
       list.innerHTML = query.trim()

@@ -49,12 +49,15 @@
 .prow__id{min-width:0; cursor:pointer; display:flex; flex-direction:column; gap:1px; text-align:left; background:none; border:0; padding:0; font-family:inherit;}
 .prow__title{font-size:var(--t-sm); font-weight:600; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 .prow__meta{font-size:var(--t-xs); color:var(--ink-faint); display:flex; gap:7px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.prow__meta .slug{font-family:var(--font-data);}
+.prow__meta .slug{font-family:var(--font-data); min-width:0; overflow:hidden; text-overflow:ellipsis;}
 
 /* mobile compact price (qty stacked under, like slug under title) + control strip */
 .prow__price{display:flex; flex-direction:column; align-items:flex-end; gap:1px; font-family:var(--font-data); font-variant-numeric:tabular-nums; font-size:var(--t-sm); font-weight:600; color:var(--ink); justify-self:end; white-space:nowrap;}
 .prow__price .qtysub{font-size:var(--t-xs); font-weight:500; color:var(--ink-faint);}
 .prow__price .qtysub.zero{color:var(--sold); font-weight:600;}
+.prow__meta .soldpill{flex:none; font-size:10px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; background:var(--sold); padding:1px 7px; border-radius:999px; line-height:1.6;}
+@keyframes ledpulse{0%,100%{box-shadow:0 0 2px 0 color-mix(in oklch,var(--sold),transparent 45%);}50%{box-shadow:0 0 9px 2px color-mix(in oklch,var(--sold),transparent 15%); filter:brightness(1.3);}}
+.led--sold{animation:ledpulse 1.6s ease-in-out infinite;}
 .prow__ctrls{grid-column:1 / -1; display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:10px; margin-top:3px; border-top:1px solid var(--hairline);}
 .prow__ctrls .switch__label{font-size:var(--t-xs); font-weight:600;}
 .prow__ctrls .spacer{flex:1;}
@@ -66,6 +69,11 @@
     gap:12px; align-items:center; padding:4px 14px 2px; color:var(--ink-faint);
     font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase;}
   .listhead .r{text-align:right;} .listhead .c{text-align:center;}
+  .listhead .sorth{appearance:none; background:none; border:0; padding:0; margin:0; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; cursor:pointer; width:100%; display:inline-flex; align-items:center; gap:2px;}
+  .listhead .sorth.r{justify-content:flex-end;} .listhead .sorth.c{justify-content:center;}
+  .listhead .sorth:hover{color:var(--ink);}
+  .listhead .sorth.is-sorted{color:var(--accent-strong);}
+  .listhead .sorth i{font-style:normal; font-size:9px;}
   .prow{grid-template-columns:13px 42px minmax(150px,1.6fr) 104px 48px 60px 60px 70px; gap:12px; padding:9px 14px;}
   .prow__price, .prow__ctrls{display:none;}
   .prow__cols{display:contents;}
@@ -84,7 +92,7 @@
     transition:border-color var(--dur-base) var(--ease-weight), box-shadow var(--dur-base) var(--ease-weight), background-color var(--dur-base) var(--ease-weight);}
   .cell-qty .qin:hover{border-color:var(--ink-faint);}
   .cell-qty .qin:focus{outline:none; background:var(--surface); border-color:var(--live); box-shadow:0 0 0 3px color-mix(in oklch,var(--live),transparent 74%);}
-  .cell-qty .qin.zero{color:var(--sold); font-weight:700;}
+  .cell-qty .qin.zero{color:var(--sold); font-weight:700; background:color-mix(in oklch,var(--sold),white 86%); border-color:color-mix(in oklch,var(--sold),white 45%);}
   .cell-toggle{display:flex; justify-content:center;}
   .cell-actions{display:flex; justify-content:flex-end; gap:1px;}
 }
@@ -99,6 +107,15 @@
     animation:expand var(--dur-settle) var(--ease-weight);}
 }
 @keyframes expand{from{opacity:0; transform:translateY(-6px);}to{opacity:1; transform:none;}}
+
+/* storefront preview overlay (iframe, works in-sandbox + deployed) */
+.preview-ov{position:fixed; inset:0; z-index:120; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(22,24,30,.5); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);}
+.preview-ov__card{width:min(1100px,96vw); height:92vh; background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--sh-2); overflow:hidden; display:flex; flex-direction:column;}
+.preview-ov__bar{display:flex; align-items:center; gap:12px; padding:10px 14px; border-bottom:1px solid var(--hairline); font-size:var(--t-sm); font-weight:600;}
+.preview-ov__bar a{margin-left:auto; color:var(--ink-muted); display:inline-flex;}
+.preview-ov__bar a svg{width:16px; height:16px;}
+.preview-ov__bar a:hover{color:var(--ink);}
+.preview-ov iframe{flex:1; width:100%; border:0; background:var(--bg);}
 
 /* mobile full-screen sheet */
 .sheet{position:fixed; inset:0; z-index:55; background:var(--bg); display:flex; flex-direction:column;
@@ -357,8 +374,14 @@
       </div>
     </div>
 
-    <div class="listhead" aria-hidden="true">
-      <span></span><span></span><span>Product</span><span class="r">Price · live</span><span class="r">Qty</span><span class="c">Avail</span><span class="c">Feat</span><span class="r"></span>
+    <div class="listhead">
+      <span></span><span></span>
+      <button class="sorth" data-sort="title">Product<i></i></button>
+      <button class="sorth r" data-sort="price">Price<i></i></button>
+      <button class="sorth r" data-sort="quantity">Qty<i></i></button>
+      <button class="sorth c" data-sort="available">Avail<i></i></button>
+      <button class="sorth c" data-sort="featured">Feat<i></i></button>
+      <span class="r"></span>
     </div>
     <div class="list" id="list"></div>
   </main>

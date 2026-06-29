@@ -72,7 +72,7 @@
       story_card: "An arch, a rising sun, and a few taut lines holding the whole thing in tension — Art Deco distilled to its calmest possible breath. Warm sand, oxblood, deep teal.",
       description: "Archival giclée on matte cotton stock in a slim black metal frame. Pigment inks, cream mat, ready to hang the moment it lands.",
       features: ["Archival giclée, pigment inks", "Slim black metal frame", "Arrives ready to hang"],
-      price: 14500, quantity: 0, available: false, featured: false,
+      price: 14500, quantity: 0, available: true, featured: false,
       product_type: "print", series: "Art Movements",
       materials: ["Archival matte cotton paper", "Pigment ink", "Black metal frame", "Acid-free mat"],
       care_instructions: ["Wipe glass with a dry microfiber cloth", "Keep out of direct sunlight", "Dust the frame gently"],
