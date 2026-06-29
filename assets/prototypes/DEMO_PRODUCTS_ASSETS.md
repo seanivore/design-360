@@ -1,4 +1,4 @@
-# Demo Products — Asset Ideas & Shot List
+# Demo Products 
 
 **Purpose:** what images to make for each demo product (concepts + shot list), and the exact
 **CDN keys** to upload them under so they line up with the URLs I bake into `data.js`.
@@ -74,7 +74,7 @@ image + a short video. Two products are intentionally **left short / draft** to 
 
 ## Apparel — `product_type: "apparel"`
 
-### 5. Graphic tee — slug `mid-modern-tee-01`
+### 5. Graphic tee — slug `mid-modern-tee`
 - **Concept:** Mid-century modern art prints applied to every inch of these cotton t-shirts, featuring two styles of fits with two different art prints
 - **Shots:** local file for CDN; note, video cannot go through upload API yet.
   - `assets/.media/shop-admin/mid-modern-tee/checkout-mid-modern-tee.jpg`
