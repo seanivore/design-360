@@ -1,1 +1,0 @@
-Location for the Creator Portal from Everlastings web shop administration, from Claude Design. 
