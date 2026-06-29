@@ -4,6 +4,17 @@ A self-contained static demo of the Creator Portal admin, for the portfolio. Goa
 live at **`shop-admin.august.style`**, linked from a portfolio tile. No build step,
 no server, no env vars.
 
+## ✅ DEPLOYED — 2026-06-29
+Live at **https://shop-admin.august.style** (waiting only on Cloudflare DNS propagation for the new record — Vercel side fully verified).
+
+- **Vercel project:** `shop-admin` (`prj_m7AxxGKn9qx789SYhtHF4J4xRIkp`), team `seanivore`. Separate project from the main site.
+- **Kept as a subdirectory** of `seanivore/design-360` (no fresh repo). Git-connected, **Root Directory** = `assets/prototypes/shop-admin`, framework **Other** (pure static, no build). Uses Vercel's documented Root-Directory mechanism; there is no nested-git/submodule issue here.
+- **Production branch = `dev`** (Sean's default local branch). Push to `dev` → auto-deploys to the live domain. The main site project (`design-360`) is untouched (still prod-branch `design-360`).
+- Created via the Vercel REST API (Root Directory isn't a plain CLI flag): `POST /v11/projects` (gitRepository + rootDirectory) → `PATCH /v9/projects/{id}/branch {"branch":"dev"}`. First production deploy READY + aliased to the domain.
+- **DNS:** `august.style` is on Cloudflare nameservers and Vercel does NOT write through, so a CNAME `shop-admin → cname.vercel-dns.com` (proxy = DNS-only) was added directly in Cloudflare (zone `0d373063745d7f1265798c64b830f4fe`). New records on this zone are slow to propagate (Cloudflare-side, known for a few months); the record is correct and will go live shortly.
+- **Verified Vercel-side via `curl --resolve` (bypassing DNS):** `/`, `/account`, `/products`, `/orders`, `/sales` → 200; `/index.html` → 308 (clean URLs working); bogus path → 404. `data.js` carries 11 products (matches "All 11"). Full visual/interactive pass (tab counts, Orders badge, CDN media, sign-in → reset) runs on the live domain once DNS resolves.
+- Deployment protection = "all_except_custom_domains": the public custom domain is open; `*.vercel.app` previews are SSO-gated.
+
 ## What this is
 - Plain static files: `*.html`, `*.js`, `portal.css`, `data.js`, `vercel.json`.
 - Entry: `index.html` → `account.html` (sign-in). Any email/password signs in;
