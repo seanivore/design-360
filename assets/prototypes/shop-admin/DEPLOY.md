@@ -66,7 +66,7 @@ and its Custom-GPT management flow.)
 
 **SEAN ADDITION**
 
-  This all just means that it is up to us from what directory the prototype demo is deployed from. I'd be curious if we can leave it as a sub-directory, but am wondering if Git treating it as a submodule or nested repository will influence this decision. If not we can always just create a fresh directory and repository. Some additional information below. 
+  This all just means that it is up to us from what directory the prototype demo is deployed from. I'd be curious if we can leave it as a sub-directory, but am wondering if Git treating it as a submodule or nested repository will influence this decision. If not we can always just create a fresh directory and repository -- if everything really is self-contained then I'm thinking that just moving this `prototypes` directory or even just the `shop-admin` directory, might actually be the simplest option, particularly since we can do any testing we want through Claude Design instead of having separate branches for this one. Curious what you think. Anyway, some additional information below. 
 
   1. Vercel CLI is logged and and updated. Please web search for the most up to date usage information and then use it as much as you can to set things up. Note that the MCP is typically not functional. 
 
