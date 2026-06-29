@@ -25,6 +25,28 @@ no server, no env vars.
 **B — standalone Vercel project:** point a new project at this folder as its root,
 add the `shop-admin.august.style` domain. Nothing else to configure.
 
+**SEAN INTERJECTION** 
+
+  A necessary correction on both A and B options. Both of the subfolders that were deployed were standalone Vercel projects, however, that method does not work for our use case. 
+
+  ### Subdirectory HTML Vercel Deployments 
+
+  These projects do not indicate to me whether or not Subdirectory Vercel Deployments are a viable option for our prototype demo build. In fact, it might be that they weren't actually deployed from a subdirectory at all. Both projects seem to have been setup and deployed directly on Vercel by uploading code files but never connecting Git or a Github repository. Our prototype demo requires Git or Github repository deployment because of frequent debugging of functionality build iterations created in part to support the Everlastings website.
+
+  **Job Specific Portfolio**
+  The one-page site design is okay, but the content was superb for a job application by directly connecting each requirement to experience, one at a time, in a digestible way. 
+  `https://vercel.com/seanivore/portfolio`
+  `~/Development/get-paid/hunt/jesse_michels/portfolio/index.html`
+  *Git is treating the directory as a submodule or a nested Git repository, rather than a normal folder.*
+
+  **Merch Store Optimization Data & Assets**
+  This one-page site design is beautiful and the content was just a creative, data-backed insight gift. 
+  `https://vercel.com/seanivore/for-jesse`
+  `~/Development/get-paid/hunt/jesse_michels/for-jesse/index.html`
+  *For whatever reason, this one was not set up to be treated differently by Git.*
+
+**END SEAN INTERJECTION** 
+
 ## Portfolio tile
 Add an entry that links straight to `https://shop-admin.august.style`. Copy angle:
 an interactive, playable admin-panel redesign — visitors can create, edit, sell,
@@ -41,3 +63,13 @@ and its Custom-GPT management flow.)
 - Wire a real backend, auth, or Stripe — this is a demo fork, deliberately faked.
   The real integration path is the `design-handoff/` package + its gap-review loop,
   which is entirely separate from this folder.
+
+**SEAN ADDITION**
+
+  This all just means that it is up to us from what directory the prototype demo is deployed from. I'd be curious if we can leave it as a sub-directory, but am wondering if Git treating it as a submodule or nested repository will influence this decision. 
+
+  1. Vercel CLI is logged and and updated. Please web search for the most up to date usage information and then use it as much as you can to set things up. Note that the MCP is typically not functional. 
+
+  2. Vercel has access to the `august.style` domain. Subdomains are easily added as Vercel updates the DNS records on Cloudflare. 
+
+  3. After deploying we will need to discuss how to add the URL to the main portfolio `/360-design/`; I'm imagining we need to add a value that creates an entry JSON sub-type where a click through of a content tile just redirects to `shop-admin.august.style` while allowing us to associate the URL with essentials for content tile display in /section, related project, and adding tagging allowing for homepage component placement.
