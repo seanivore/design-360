@@ -1,0 +1,47 @@
+{
+  "_metadata": {
+    "schema_version": "6.1",
+    "template_type": "project_entry"
+  },
+  "id": "uid-cpd-101",
+  "slug": "creator-portal-demo",
+  "title": "Try Store Admin Portal Demo Live",
+  "subtitle": "An admin panel you can actually play with",
+  "seo_title": "Try the Store Admin Portal — Live Demo",
+  "seo_description": "Play with a real online-shop admin: add products and coupons, run sales, send refunds — everything resets, nothing breaks.",
+  "role": [
+    "AI & Automation Strategist",
+    "Product Designer",
+    "Web Developer"
+  ],
+  "skill": [
+    "Generative AI",
+    "Automation",
+    "HTML/CSS/JS",
+    "Responsive Design",
+    "Vercel"
+  ],
+  "product": [
+    "Custom AI Solution",
+    "Dashboard",
+    "Web Application"
+  ],
+  "company": "Freelance",
+  "featured": false,
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "url",
+  "external_url": "https://shop-admin.august.style",
+  "thumb": [
+    "https://cdn.august.style/media/creator-portal-demo/thumb-creator-portal-demo-1.webp",
+    "https://cdn.august.style/media/creator-portal-demo/thumb-creator-portal-demo-2.webp",
+    "https://cdn.august.style/media/creator-portal-demo/thumb-creator-portal-demo-3.webp"
+  ],
+  "thumb_alt": "Store admin portal interactive demo",
+  "tiles": [
+    "Run the shop — add products and coupons",
+    "Create online store products with images",
+    "Try To Break Our Store Admin Demo",
+    "Send refunds, add products — all in the store demo"
+  ]
+}
