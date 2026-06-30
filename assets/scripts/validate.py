@@ -33,7 +33,7 @@ LOCKED_COMPANIES: List[str] = [
     "PETA, Inc.",
 ]
 
-VALID_LAYOUTS: Set[str] = {"columns", "flow", "gallery"}
+VALID_LAYOUTS: Set[str] = {"columns", "flow", "gallery", "url"}
 
 VALID_FLOW_TYPES: Set[str] = {
     "h3",
@@ -193,6 +193,10 @@ def validate_entry(
         errors.append(
             f"Invalid layout '{layout}'. Must be one of: {sorted(VALID_LAYOUTS)}"
         )
+    # 'url' layout is a redirect tile — the tile/image links go straight to external_url
+    # (no internal entry page is rendered), so that field is required for this layout.
+    if layout == "url" and not (data.get("external_url") or "").strip():
+        errors.append("layout 'url' requires a non-empty 'external_url'")
 
     # Company (locked list)
     company = data.get("company", "")

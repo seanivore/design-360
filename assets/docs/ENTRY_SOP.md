@@ -32,7 +32,7 @@ Both types share the same shape. Type-specific notes are called out per step.
 
 ### Type selection
 
-- **Entry** — a project case study with hero, copy, media. Belongs in `assets/entries/`. One of three layouts: `layout: "columns"` (case study), `layout: "flow"` (typed-block long-form storytelling), or `layout: "gallery"` (about/details intro + one full-bleed art-wall per collection). All three share one top zone + one tag model — see § 7 "Authoring each layout" for the per-layout field beats.
+- **Entry** — a project case study with hero, copy, media. Belongs in `assets/entries/`. One of four layouts: `layout: "columns"` (case study), `layout: "flow"` (typed-block long-form storytelling), `layout: "gallery"` (about/details intro + one full-bleed art-wall per collection), or `layout: "url"` (a redirect tile — renders as a normal tag-driven tile but the click goes straight to `external_url` in a new tab; **no internal entry page** is rendered). The three case-study layouts share one top zone + one tag model — see § 7 "Authoring each layout" for the per-layout field beats.
 - **Collection** — an ordered set of images that belongs to exactly ONE entry (its gallery). An entry can have MANY collections. Belongs in `assets/collections/`. A **6.1 gallery collection** has ordered `images[]` CDN URLs + an `entry` field, is browsed at the nested `/<entry>/<coll>` URL, and — new in v4.5.0 — is also a first-class tile on `/section.html`. See § "Collections" below. (Legacy `media[]`-UID 6.0 collections still resolve at runtime, but are not authored anymore.)
 
 If unclear, default to entry. Author a collection when a gallery entry needs one or more walls of images grouped under it.
@@ -222,7 +222,8 @@ Reference `AUGUST_STYLE.md` § 2 (entries) and § 3 (collections) for the full f
 - `featured`: boolean. `true` ONLY if the entry has a `feature_tile[]` you want eligible for the homepage video tile; otherwise `false`.
 - `feature_tile`: `[]` by default. For featured entries: `["https://cdn.august.style/media/{slug}/feature-tile-{slug}-1.mp4"]`.
 - `tile_alt`: alt text for the feature-tile video.
-- `layout`: `"columns"`, `"flow"`, or `"gallery"`.
+- `layout`: `"columns"`, `"flow"`, `"gallery"`, or `"url"`.
+- `external_url`: required for `layout: "url"` only — the absolute URL the tile/image links open (new tab). Ignored by the other layouts.
 - `achievements[]`: array of `{ headline, details }` objects. Optional; populates the homepage Achievements section if non-empty.
 
 ### Entries — columns layout

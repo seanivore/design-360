@@ -1,6 +1,6 @@
 # august.style — Project Architecture & Schema Reference
 
-**Aligned with**: v4.5.0 shipped state (unified three-layout entry top zone + single tag model + per-collection art-walls + collections as first-class section content + per-group section filters + boolean `featured` video tile + shared accent-matted bleed component; `placement` and the item subsystem retired for authoring)
+**Aligned with**: v4.5.0 shipped state (unified three-layout entry top zone + single tag model + per-collection art-walls + collections as first-class section content + per-group section filters + boolean `featured` video tile + shared accent-matted bleed component; `placement` and the item subsystem retired for authoring; **v4.6.0** adds the `url` redirect-tile layout for external-link entries)
 **Last updated**: 2026-06-22
 
 Living master document for the august.style portfolio site (vanilla HTML/CSS/JS + Jekyll, zero JS dependencies, Cloudflare R2 CDN). Updated each planning session to reflect the current target state of schema, controllers, and architecture. Symbiotic with the highest-numbered `vX_Y_Z_IMPLEMENT.md` in `assets/docs/archive/vX_Y/`.
@@ -53,7 +53,8 @@ Each project lives in a single JSON file at `assets/entries/uid-xxx-###.json`. F
 | `company` | `string` | Single value from `tags.json` company group |
 | `thumb` | `string[]` | Thumbnail CDN URLs |
 | `thumb_alt` | `string` | Alt text for thumbnail slideshow |
-| `layout` | `string` | `"columns"`, `"flow"`, or `"gallery"` — selects entry-page rendering shape (validated against `VALID_LAYOUTS` in `validate.py`) |
+| `layout` | `string` | `"columns"`, `"flow"`, `"gallery"`, or `"url"` — selects rendering shape; `url` = external-redirect tile with no entry page (validated against `VALID_LAYOUTS` in `validate.py`) |
+| `external_url` | `string` | `url` layout only — absolute URL the tile/image links open in a new tab; `generate_manifest.py` emits a meta-refresh redirect page for it |
 
 ### Shared top zone (all three layouts)
 
@@ -66,6 +67,8 @@ As of v4.5.0 all three layouts render an **identical top zone**: the hero thumbn
 `layout: "flow"` content zone = the typed-block `flow[]` sequence in `#flow-region`; the role/skill/product pills float as a magazine-style inset at the TOP of the single reading column (copy wraps around them — NOT sticky). See § 2a.
 
 `layout: "gallery"` content zone = the `about` + `details` blurbs (left) + a sticky tag column (same as columns); then ONE full-bleed accent-matted art-wall PER collection in `collections[]`. See § 2d.
+
+`layout: "url"` (added v4.6.0) renders **no entry page** — it's a redirect tile. The entry still shows as a normal tag-driven tile (thumb/tiles/tags) on `/section` (and any tag-driven homepage surface), but every tile/image link points to `external_url` (new tab, `rel="noopener noreferrer"`). Wiring: `data-loader.js` `loadAllContent()` injects `_url=external_url` + `_external`; `tile-renderer.js` adds `target`/`rel`; `landing-controller.js` featured tile honors it; `generate_manifest.py` writes a meta-refresh redirect page to `_pages/<slug>.html` so direct hits/shares bounce out. First use: `uid-cpd-101` (slug `creator-portal-demo` → shop-admin.august.style).
 
 ### Homepage featured-video field
 
