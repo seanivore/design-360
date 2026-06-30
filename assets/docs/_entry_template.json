@@ -27,7 +27,9 @@
   ],
   "tile_alt": "Short description of the featured content that applies across the array",
   "layout": "columns",
-  "_layout_options": "columns | flow | gallery",
+  "_layout_options": "columns | flow | gallery | url",
+  "external_url": "",
+  "_external_url_note": "url layout only — the tile/image links straight here (new tab) instead of opening an internal entry page; the entry still renders as a normal tile and places by its tags",
   "collections": [],
   "_collections_note": "GALLERY layout only — slugs of this entry's collections; each renders one bleed art-wall",
   "thumb": [

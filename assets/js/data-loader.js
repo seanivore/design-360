@@ -135,7 +135,12 @@ const DataLoader = (() => {
       loadAllProjects(),
       loadAllCollections(),
     ]);
-    entries.forEach(e => { e._type = 'entry'; });
+    entries.forEach(e => {
+      e._type = 'entry';
+      // layout:"url" entries are pure redirect tiles — point the tile link at the
+      // external URL (opened in a new tab) instead of the internal /<slug> page.
+      if (e.layout === 'url' && e.external_url) { e._url = e.external_url; e._external = true; }
+    });
     return [...entries, ...collections];
   }
 

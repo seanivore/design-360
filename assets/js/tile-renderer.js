@@ -33,6 +33,7 @@ const TileRenderer = (() => {
         thumbnails.forEach(img => {
             const imageLink = document.createElement('a');
             imageLink.href = entryURL;
+            if (project._external) { imageLink.target = '_blank'; imageLink.rel = 'noopener noreferrer'; }
             imageLink.style.display = 'block';
             imageLink.style.flexShrink = '0';
 
@@ -49,6 +50,7 @@ const TileRenderer = (() => {
         // Text area
         const textArea = document.createElement('a');
         textArea.href = entryURL;
+        if (project._external) { textArea.target = '_blank'; textArea.rel = 'noopener noreferrer'; }
         textArea.className = 'tile-text-area';
 
         const text = document.createElement('p');

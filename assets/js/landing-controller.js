@@ -323,8 +323,11 @@ const LandingController = (() => {
       const videoURL = entry.feature_tile[Math.floor(Math.random() * entry.feature_tile.length)];
       const resolved = videoURL.startsWith('http') ? videoURL : '/' + videoURL;
       const label = (entry.title || 'Featured project').replace(/"/g, '&quot;');
+      // layout:"url" entries redirect externally even from the homepage featured tile.
+      const fHref = (entry.layout === 'url' && entry.external_url) ? entry.external_url : `/${entry.slug}/`;
+      const fRel = (entry.layout === 'url' && entry.external_url) ? ' target="_blank" rel="noopener noreferrer"' : '';
       videoCardHTML =
-        `<a class="feature-tile feature-tile--video" href="/${entry.slug}/" aria-label="${label}">` +
+        `<a class="feature-tile feature-tile--video" href="${fHref}"${fRel} aria-label="${label}">` +
           `<video class="feature-tile__video" muted loop playsinline autoplay preload="auto" src="${resolved}"></video>` +
         `</a>`;
     }
