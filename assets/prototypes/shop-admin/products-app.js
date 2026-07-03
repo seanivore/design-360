@@ -241,6 +241,28 @@
   }
   function closeEditor() { if (openId != null) { autosave(openId); openId = null; render(); } }
 
+  function newProduct() {
+    const id = (self.crypto && crypto.randomUUID) ? crypto.randomUUID() : "new-" + Date.now();
+    const p = {
+      id, sku: "", slug: "", title: "", headline: "", story_card: "", description: "",
+      features: [], price: 0, quantity: 0, available: false, featured: false,
+      product_type: "print", series: "\u2014 No collection \u2014",
+      materials: [], care_instructions: [], shipping_details: [],
+      dimensions: "", weight: "", power_supply: null, artist_note: "",
+      images: [], thumbnail: "", thumbnail_alt: "", media: [],
+      seo_title: "", seo_description: "", seo_thumbnail: "",
+      checkout_name: "", checkout_description: "", checkout_image: "",
+      is_published: false, published_at: null, draft: null, preview_token: null, archived_at: null,
+    };
+    products.unshift(p);
+    if (P.store && P.store.set) P.store.set("products", products);
+    tab = "drafts"; query = "";
+    const s = document.getElementById("search"); if (s) s.value = "";
+    if (window.matchMedia("(max-width:859px)").matches) { render(); openSheet(id); }
+    else { openId = id; render(); const row = document.querySelector(".prow.is-open"); if (row) row.scrollIntoView({ block: "nearest" }); }
+    P.toast("New draft started \u2014 fill it in, then Publish", { kind: "live" });
+  }
+
   /* optimistic-safe commerce edits */
   function commitPrice(id, val, inp) {
     const p = find(id), cents = Math.round(parseFloat(String(val).replace(/[^0-9.]/g, "")) * 100);
@@ -282,6 +304,8 @@
     P.toast(was ? "Resurfaced — back in your shop" : "Archived — anything can be revived", { undo: () => { p.archived_at = was ? new Date().toISOString() : null; render(); } });
   }
   function openPreview(id) {
+    // seeing the storefront view is the gate: previewing unlocks Publish (in the editor and in the preview itself)
+    const pp = find(id); if (pp) { pp._previewed = true; if (openId === id) { const host = document.querySelector(`[data-host="${id}"]`); if (host) refreshGate(host, id); const sh = document.getElementById("sheet"); if (sh && sh.classList.contains("is-on")) refreshGate(sh, id); } }
     const url = "preview.html?id=" + encodeURIComponent(id);
     const ov = document.createElement("div");
     ov.className = "preview-ov";
@@ -298,7 +322,18 @@
     ov.querySelector("[data-pvclose]").addEventListener("click", close);
     ov.addEventListener("click", (e) => { if (e.target === ov) close(); });
     document.addEventListener("keydown", function esc(e) { if (e.key === "Escape") { close(); document.removeEventListener("keydown", esc); } });
+    ov._closer = close;
   }
+
+  // publish-from-preview: the embedded preview posts back when its Publish button is used
+  window.addEventListener("message", (e) => {
+    const d = e.data || {};
+    if (d.type !== "portal-publish" || !d.id) return;
+    const p = find(d.id); if (!p) return;
+    const ov = document.querySelector(".preview-ov"); if (ov && ov._closer) ov._closer();
+    if (openId !== d.id) { openId = d.id; }
+    doPublish(d.id);
+  });
 
   /* stock prompt */
   function promptStock(p, anchor) {
@@ -455,7 +490,7 @@
         <div class="section-h">Lifecycle <span class="line"></span></div>
         <div class="row-actions" style="flex-wrap:wrap;gap:8px">
           ${p.draft ? `<button class="btn btn--ghost btn--sm" data-discard>Discard staged edits</button>` : ""}
-          ${p.quantity === 0 || !p.available ? `<button class="btn btn--ghost btn--sm" data-relist>Relist this piece</button>` : ""}
+          ${p.is_published && (p.quantity === 0 || !p.available) ? `<button class="btn btn--ghost btn--sm" data-relist>Relist this piece</button>` : ""}
           <button class="btn btn--ghost btn--sm" data-schedule>${p.scheduled_publish_at ? "Reschedule…" : "Schedule publish…"}</button>
           ${p.scheduled_publish_at ? `<span class="sched-chip">Scheduled · ${fmtSched(p.scheduled_publish_at)}<button data-unschedule aria-label="Cancel schedule">×</button></span>` : ""}
         </div>
@@ -470,13 +505,16 @@
         <button class="btn btn--ghost" data-save>${IC.save} Save</button>
         <button class="iconbtn" data-ed-preview title="Preview" aria-label="Preview" style="border:1px solid var(--hairline)">${IC.eye}</button>
         ${publishBtn(p, r)}
-        ${!r.ok ? `<span class="btn-why ed-actions__why">To publish, add ${listMissing(r.missing)}.</span>` : ""}
+        ${!r.ok ? `<span class="btn-why ed-actions__why">To publish, add ${listMissing(r.missing)}.</span>`
+          : (!p._previewed ? `<span class="btn-why ed-actions__why">Preview this product before publishing — you can publish right from the preview.</span>` : "")}
       </div>
     </div>`;
   }
 
   function publishBtn(p, r) {
     if (!r.ok) return `<button class="btn" disabled aria-disabled="true">${IC.check} Publish</button>`;
+    // must preview at least once before publishing (they can publish from the preview itself)
+    if (!p._previewed) return `<button class="btn" disabled aria-disabled="true">${IC.check} Publish</button>`;
     if (p.draft) return `<button class="btn btn--publish-edits" data-publish>${IC.check} Publish changes</button>`;
     if (!p.is_published) return `<button class="btn btn--publish-new" data-publish>${IC.check} Publish · go live</button>`;
     return `<button class="btn" disabled aria-disabled="true">${IC.check} Published</button>`;
@@ -603,6 +641,7 @@
     if (pubCur) { pubCur.replaceWith(newBtn); const nb = newBtn.matches("[data-publish]") ? newBtn : null; if (nb) nb.addEventListener("click", () => doPublish(id)); }
     let why = bar.querySelector(".ed-actions__why"); if (why) why.remove();
     if (!r.ok) { const s = document.createElement("span"); s.className = "btn-why ed-actions__why"; s.textContent = "To publish, add " + listMissing(r.missing) + "."; bar.appendChild(s); }
+    else if (!p._previewed) { const s = document.createElement("span"); s.className = "btn-why ed-actions__why"; s.textContent = "Preview this product before publishing — you can publish right from the preview."; bar.appendChild(s); }
   }
   function autosave(id) { /* prototype: model already mutated live; real app PUTs here. */ }
   function rerenderEditor(id) { render(); }
@@ -827,7 +866,7 @@
 
   /* ---------- top controls ---------- */
   document.getElementById("search").addEventListener("input", (e) => { query = e.target.value; render(); });
-  document.getElementById("newBtn").addEventListener("click", (e) => { e.preventDefault(); P.toast("Start a new product — opens a blank draft editor"); });
+  document.getElementById("newBtn").addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); newProduct(); });
   document.getElementById("fileInput").addEventListener("change", (e) => { handleFiles(e.target.files); e.target.value = ""; });
   document.getElementById("mediaClose").onclick = closeMedia;
   document.getElementById("mediaScrim").onclick = closeMedia;

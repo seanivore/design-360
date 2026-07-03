@@ -22,6 +22,113 @@
   const eff = (k) => (p.draft && p.draft[k] != null ? p.draft[k] : p[k]);
   const list = (k) => (Array.isArray(eff(k)) ? eff(k) : []).filter((x) => String(x).trim());
 
+  /* ---- admin review bar — PORTED VERBATIM from the live site (assets/js/product.js
+     mountPreviewBanner). Same markup, colors, copy, fields, image crops. Only the publish
+     action differs: live site POSTs /api/products/publish; here it posts a message to the
+     admin (embedded) or updates the demo session store (standalone tab). ---- */
+  function mountPreviewBanner(product) {
+    const state = product.archived_at ? "archived" : (!product.is_published ? "draft" : (product.draft ? "edits" : ((!product.available || product.quantity === 0) ? "sold" : "live")));
+    const canPublish = state === "draft" || state === "edits";
+    const bar = document.createElement("div");
+    bar.setAttribute("role", "status");
+    bar.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:9999;font-family:var(--font-body,sans-serif);box-shadow:0 2px 10px rgba(0,0,0,0.25);";
+
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:10px 16px;background:var(--accent-primary,#4A1942);color:var(--text-inverse,#FFF8E7);font-size:14px;";
+    const label = document.createElement("span");
+    label.textContent = canPublish
+      ? "Draft preview — not yet live. This is how shoppers will see it."
+      : (state === "sold" ? "Sold out — this is how shoppers see it." : "Live — this is how shoppers see it.");
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = state === "edits" ? "Publish changes" : "Publish";
+    btn.style.cssText = "padding:6px 18px;border:0;border-radius:6px;background:var(--accent-gold,#D4AF7A);color:var(--color-ink,#1A1A1A);font:inherit;font-weight:600;cursor:pointer;";
+    if (!canPublish) btn.style.display = "none";
+    btn.addEventListener("click", () => {
+      btn.disabled = true; btn.textContent = "Publishing…";
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: "portal-publish", id: product.id }, "*");
+      } else {
+        product.is_published = true; product.draft = null;
+        if (window.PORTAL && window.PORTAL.store) window.PORTAL.store.commit && window.PORTAL.store.commit();
+        label.textContent = "Published — live now."; btn.style.display = "none";
+      }
+    });
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.textContent = "Hide draft details";
+    toggle.style.cssText = "padding:6px 12px;border:1px solid rgba(255,255,255,0.4);border-radius:6px;background:transparent;color:inherit;font:inherit;font-size:13px;cursor:pointer;";
+    row.append(label, btn, toggle);
+
+    const panel = document.createElement("div");
+    panel.style.cssText = "display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;padding:12px 18px;background:#FFF8E7;color:var(--color-ink,#1A1A1A);border-top:1px solid rgba(0,0,0,0.12);font-size:13px;";
+    const syncPad = () => { document.body.style.paddingTop = bar.offsetHeight + "px"; };
+
+    function textCell(labelTxt, value) {
+      const cell = document.createElement("div");
+      cell.style.cssText = "flex:1 1 240px;min-width:200px;max-width:380px;";
+      const head = document.createElement("div");
+      head.style.cssText = "display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:3px;";
+      const lab = document.createElement("span");
+      lab.textContent = labelTxt;
+      lab.style.cssText = "font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#8a7a55;";
+      head.appendChild(lab);
+      if (value) {
+        const copy = document.createElement("button");
+        copy.type = "button"; copy.textContent = "Copy";
+        copy.style.cssText = "font-size:10px;border:1px solid #cbb990;border-radius:4px;background:#fff;color:#4A1942;padding:1px 7px;cursor:pointer;";
+        copy.addEventListener("click", () => { navigator.clipboard && navigator.clipboard.writeText(value); copy.textContent = "Copied"; setTimeout(() => (copy.textContent = "Copy"), 1200); });
+        head.appendChild(copy);
+      }
+      const val = document.createElement("div");
+      val.textContent = value || "(not set — falls back to the page copy)";
+      val.style.cssText = "line-height:1.4;user-select:text;" + (value ? "" : "color:#a08;opacity:.6;font-style:italic;");
+      cell.append(head, val);
+      return cell;
+    }
+    function imgCell(labelTxt, src, ratio) {
+      const cell = document.createElement("div");
+      cell.style.cssText = "flex:0 0 auto;";
+      const lab = document.createElement("div");
+      lab.textContent = labelTxt;
+      lab.style.cssText = "font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#8a7a55;margin-bottom:3px;";
+      cell.appendChild(lab);
+      if (src) {
+        const img = document.createElement("img");
+        img.src = src; img.alt = labelTxt; img.loading = "lazy";
+        img.style.cssText = "height:74px;aspect-ratio:" + ratio + ";object-fit:cover;border:1px solid rgba(0,0,0,0.18);border-radius:4px;background:#fff;display:block;";
+        img.onerror = () => img.remove();
+        cell.appendChild(img);
+      } else {
+        const none = document.createElement("div");
+        none.textContent = "(not set)";
+        none.style.cssText = "color:#a08;opacity:.6;font-style:italic;font-size:11px;";
+        cell.appendChild(none);
+      }
+      return cell;
+    }
+    const heroUrl = (product.images && product.images[0]) ? product.images[0].url : "";
+    panel.append(
+      textCell("SEO title", product.seo_title),
+      textCell("SEO description", product.seo_description),
+      textCell("Checkout name", product.checkout_name),
+      textCell("Checkout line", product.checkout_description),
+      imgCell("Thumbnail (4:5)", product.thumbnail || heroUrl, "4 / 5"),
+      imgCell("OG image (1.91:1)", product.seo_thumbnail || heroUrl, "1.91 / 1"),
+      imgCell("Checkout image (1:1)", product.checkout_image || heroUrl, "1 / 1"),
+    );
+
+    let open = true;
+    toggle.addEventListener("click", () => { open = !open; panel.style.display = open ? "flex" : "none"; toggle.textContent = open ? "Hide draft details" : "Show draft details"; syncPad(); });
+
+    bar.append(row, panel);
+    document.body.appendChild(bar);
+    syncPad();
+    window.addEventListener("resize", syncPad);
+  }
+  mountPreviewBanner(p);
+
+
   /* ---- media: hero + gallery images, then any videos / youtube ---- */
   const media = [];
   (p.images || []).forEach((im, i) => media.push({ kind: "image", url: im.url, alt: im.alt || p.thumbnail_alt || "", label: i === 0 ? "Hero" : "Photo" }));
