@@ -154,20 +154,41 @@ curl -sI "https://$SUB.$APEX" | head -1     # → HTTP/2 200
 
 ## Traps
 
-  Every one of these has actually happened. Read the symptom column first — that is how you will meet them.
+  Every one of these has actually happened. They are indexed by **symptom**, because the symptom is how you will meet them — the cause is never obvious from the outside.
 
-| Symptom | Cause | Fix |
-|---|---|---|
-| Deployment green, domain 404s | Production branch is still the repo default | Step 3 |
-| `PATCH /v9/…` says *unknown property* | Wrong endpoint | Step 3 — use `/v1/projects/{id}/branch` |
-| Links 404 in production, fine locally | `cleanUrls` + a rewrite destination ending `.html` | Drop the `.html` — see below |
-| Certificate never issues | Cloudflare orange cloud | `"proxied": false` |
-| Project name rejected | Names are unique across the whole account | Suffix it; the subdomain is unaffected |
-| The whole repo deploys | `rootDirectory` was not set at create | Recreate the project — cheaper than patching |
-| Video stalls on a black box | MP4 index (`moov`) written after the data | Faststart remux — see Media |
-| Captions silently never appear | Cross-origin `<track>` needs CORS that R2 does not send | Ship the `.vtt` inside the site folder |
+  + **Deployment is green, the domain 404s**
+    - Production branch is still the repo's default.
+    - Go to Step 3.
 
-  Two of those deserve more than a table row.
+  + **`PATCH /v9/…` answers "unknown property"**
+    - Wrong endpoint — that one rejects both `productionBranch` and `link`.
+    - Use `PATCH /v1/projects/{id}/branch`.
+
+  + **Links 404 in production but work locally**
+    - `cleanUrls` is on and a rewrite destination ends in `.html`.
+    - Drop the `.html`. Expanded below — this one is nastier than it looks.
+
+  + **The certificate never issues**
+    - Cloudflare's orange cloud is proxying in front of Vercel.
+    - Set `"proxied": false`.
+
+  + **The project name is rejected**
+    - Names are unique across the whole account, not per repo.
+    - Suffix it. The subdomain is unaffected.
+
+  + **The whole repo deploys instead of the folder**
+    - `rootDirectory` was not set at create time.
+    - Recreate the project. Cheaper than patching it.
+
+  + **Video stalls on a black box**
+    - The MP4 index (`moov`) was written after the video data.
+    - Faststart remux — see Media.
+
+  + **Captions silently never appear**
+    - A cross-origin `<track>` needs CORS headers R2 does not send.
+    - Ship the `.vtt` inside the site folder.
+
+  Two of those deserve more than a line.
 
 ### The `cleanUrls` Rewrite Trap
 
@@ -220,10 +241,13 @@ curl -s -X DELETE "https://api.vercel.com/v9/projects/$PRJ" -H "Authorization: B
 
   Both live in `seanivore/design-360`, both ship from `dev`, both were built exactly this way.
 
-| Folder | Domain | What It Is |
-|---|---|---|
-| `assets/standalone/everlastings-walkthrough/` | everlastings.august.style | Twelve-part video walkthrough handing a client their store |
-| `assets/prototypes/shop-admin/` | shop-admin.august.style | Interactive Creator Portal demo a portfolio visitor plays with |
+  + **everlastings.august.style**
+    - `assets/standalone/everlastings-walkthrough/`
+    - Twelve-part video walkthrough handing a client their finished store.
+
+  + **shop-admin.august.style**
+    - `assets/prototypes/shop-admin/`
+    - Interactive Creator Portal demo that a portfolio visitor plays with.
 
 ### Standalone or Prototype
 
