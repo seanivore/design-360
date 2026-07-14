@@ -55,7 +55,7 @@
   Four things have to be true. Check them first; two of them are not yours to fix.
 
   + **A Vercel API token.** Either source works — the script below takes whichever you have.
-    - **Zero-setup:** the CLI already stored one when you logged in. Nothing to create.
+    - **Zero-setup:** the CLI already stored one when you logged in. Nothing to create — the script reads it live each run, so it never goes stale. But **"stored" is not "unchanging":** that token is tied to your CLI login and a `vercel logout` / re-login rotates it, so **don't copy its value into `~/.zshrc`** as a fixed var. Live-read good; snapshot bad. If you want a fixed shell var, that's what the minted token below is for.
     - **Env var (for shell symmetry with Cloudflare):** mint a dedicated **access token** at `vercel.com/account/settings/tokens`, set it to *No Expiration*, and export it as `VERCEL_TOKEN` in `~/.zshrc`. A raw `curl` and the CLI both read `VERCEL_TOKEN` natively.
     - **Not `VERCEL_OIDC_TOKEN`.** That is a *different, short-lived* token Vercel drops into `.env.local` so deployed functions can reach cloud backends. It expires in hours and does **not** authenticate the REST API — grabbing it because it's the Vercel-looking thing in `.env.local` is a natural mistake that silently 401s every call below.
   + **The apex domain is already on the Vercel account.** If it is, attaching a subdomain verifies instantly. If it is **not**, stop and ask — adding an apex is a different, human-facing job.
