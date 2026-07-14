@@ -22,9 +22,9 @@
 
 ## When Not To Use It
 
-  A standalone is **static**. No server, no build step, no database.
+  A subdirectory site is **static**. No server, no build step, no database.
 
-  If it needs an API route, it is not a standalone — it is a project, and it gets its own repo. Do not bend this one; the whole pattern below depends on there being nothing to build.
+  If it needs an API route, it is not one of these — it is a project, and it gets its own repo. Do not bend this one; the whole pattern below depends on there being nothing to build.
 
 ## The Mental Model
 
@@ -37,15 +37,15 @@
   + **A production branch** that the parent site deploys from, and that you touch rarely.
   + **An integration branch** (`dev`) that you actually work on, and push all day.
 
-  Vercel points a **new project's production branch at the repo's default branch** — the production one. Leave it there and you will push your work all day while the standalone never changes. The deployment goes green. The domain serves nothing. There is no error anywhere.
+  Vercel points a **new project's production branch at the repo's default branch** — the production one. Leave it there and you will push your work all day while the site never changes. The deployment goes green. The domain serves nothing. There is no error anywhere.
 
-  Point the standalone's production branch at the branch you *push*, and one `git push origin dev` gives the **parent site a preview deploy and every standalone a production deploy, at the same time**. You never have to merge just to update a walkthrough page.
+  Point the subdirectory site's production branch at the branch you *push*, and one `git push origin dev` gives the **parent site a preview deploy and every subdirectory site a production deploy, at the same time**. You never have to merge just to update a walkthrough page.
 
   What follows from that
 
   + **Shipping an update is: change files, commit, push.** Forever. No Vercel or DNS work after the first setup.
   + **The folder holds a `vercel.json` and nothing else deploy-related.** No `package.json`, no `.vercel/`, no lockfile. Project, root directory, branch, and domain all live account-side, not in the repo.
-  + **Each standalone is independent.** One of them breaking is not the others breaking.
+  + **Each site is independent.** One of them breaking is not the others breaking.
   + **If the repo has no dev/prod split** — you push its default branch — then skip Step 3 entirely. Everything else is the same.
 
 ## Before You Start
@@ -76,7 +76,7 @@ ROOT="assets/standalone/$NAME"       # path from repo root to the site folder
 BRANCH="dev"                         # the branch you actually push
 ```
 
-  **Name collisions are normal, and harmless.** If a client project already owns the obvious name — the store is `everlastings` — then suffix the standalone: `everlastings-walkthrough`. The subdomain is unaffected and can still be `everlastings.august.style`.
+  **Name collisions are normal, and harmless.** If a client project already owns the obvious name — the store is `everlastings` — then suffix the project name: `everlastings-walkthrough`. The subdomain is unaffected and can still be `everlastings.august.style`.
 
 ## Step 1 — Create the Files
 
@@ -141,14 +141,14 @@ ZONE=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE/dns_records" \
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" \
   -d "{\"type\":\"CNAME\",\"name\":\"$SUB\",\"content\":\"cname.vercel-dns.com\",
-       \"proxied\":false,\"ttl\":1,\"comment\":\"$NAME standalone (Vercel)\"}" \
+       \"proxied\":false,\"ttl\":1,\"comment\":\"$NAME — subdirectory site (Vercel)\"}" \
   | jq '.success, .result.name'
 ```
 
 ## Step 6 — Ship It
 
 ```sh
-git add "$ROOT" && git commit -m "feat($NAME): standalone site" && git push origin "$BRANCH"
+git add "$ROOT" && git commit -m "feat($NAME): new subdirectory site" && git push origin "$BRANCH"
 ```
 
 ## Step 7 — Verify It
@@ -214,7 +214,7 @@ curl -sI "https://$SUB.$APEX" | head -1     # → HTTP/2 200
 
   You push. GitHub takes it. Vercel builds it. The deployment goes green. And the domain serves the old thing, or nothing, because production is still pointed at a branch you never touch.
 
-  If a standalone ever looks like it "didn't deploy" — check the production branch before you check anything else.
+  If one of these ever looks like it "didn't deploy" — check the production branch before you check anything else.
 
 ## Media
 
