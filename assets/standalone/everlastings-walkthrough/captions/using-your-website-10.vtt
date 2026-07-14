@@ -1,0 +1,61 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.280
+your sales and then the store-wide one is up here you can make it a dollar amount off let's give
+
+2
+00:00:05.280 --> 00:00:13.040
+that let's say a hundred dollars and this will be happy birthday doug and then you can apply it to
+
+3
+00:00:13.040 --> 00:00:18.880
+the whole store or maybe just three products however many minimum of two hundred dollars
+
+4
+00:00:18.880 --> 00:00:26.560
+they have to spend usage cap um this is important you only want them to use it once you'd be code
+
+5
+00:00:26.560 --> 00:00:30.560
+happy birthday doug code those should always be kept private the only one that's not is the
+
+6
+00:00:31.120 --> 00:00:34.880
+store-wide sale and that's because on a store-wide sale just like if it's christmas sale
+
+7
+00:00:34.880 --> 00:00:39.760
+you could go and purchase things at that discount as many times as you wanted these other ones they
+
+8
+00:00:39.760 --> 00:00:45.120
+go by a usage cap so if this was not added and he could use happy birthday doug as many times
+
+9
+00:00:45.120 --> 00:00:49.680
+as he wanted there's it doesn't like limit you in that sense it doesn't limit it by person and
+
+10
+00:00:49.680 --> 00:00:56.320
+by usage it's very specific stripe is those and then we'll just set it for ending next year
+
+11
+00:00:56.960 --> 00:01:03.840
+create the sale there you go it'll give you a share link which is just the url with the coupon
+
+12
+00:01:03.840 --> 00:01:07.520
+code appended to the end of it but however you hand that off you just want to make sure that they
+
+13
+00:01:08.160 --> 00:01:11.680
+keep it for themselves when someone signs up for the newsletter it is set up so that it
+
+14
+00:01:11.680 --> 00:01:18.640
+automatically creates a custom one-time use code and sends it to that person who just signed up
+
+15
+00:01:18.640 --> 00:01:22.080
+so that every person gets their own code when they sign up and it can only be used once

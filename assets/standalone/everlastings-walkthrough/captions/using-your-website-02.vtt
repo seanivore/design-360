@@ -1,0 +1,49 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.440
+I've built websites, I mean online stores before that had so many products and even with automations
+
+2
+00:00:05.440 --> 00:00:13.040
+it would take hours. This I mean you'll see when we get to, well we'll add a product through ChatGPT
+
+3
+00:00:13.040 --> 00:00:17.360
+and I mean you could hand this off to someone with literally no technical knowledge.
+
+4
+00:00:18.160 --> 00:00:24.800
+ChatGPT walks you through everything. You tell it what image goes to the hero, what image goes to
+
+5
+00:00:24.800 --> 00:00:29.760
+the thumbnail, and it routes it through automatically cropping it, putting it on the
+
+6
+00:00:29.760 --> 00:00:37.920
+content network server, and then putting the whole page together providing it to you so that you can
+
+7
+00:00:37.920 --> 00:00:48.480
+preview it and then you publish. And then of course there's coupons and shipping and basically the
+
+8
+00:00:48.480 --> 00:00:53.840
+rule of thumb when we were building this was that ChatGPT needed to be able to do everything that
+
+9
+00:00:54.640 --> 00:00:54.800
+you needed to do.
+
+10
+00:00:54.800 --> 00:01:01.680
+You need to do to manage the website and then we mirrored those same actions in creating the
+
+11
+00:01:03.440 --> 00:01:08.320
+administrative backend kind of dashboard where you can also go to do things you know if
+
+12
+00:01:08.320 --> 00:01:24.640
+for whatever reason ChatGPT was down. Cool so with that let's get started.

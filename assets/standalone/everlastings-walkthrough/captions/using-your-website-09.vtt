@@ -1,0 +1,53 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.320
+okay switch back so there's the new one featured very cool okay so you can bookmark this later but
+
+2
+00:00:06.320 --> 00:00:11.840
+you just add the word admin to the end of the url it'll be your url this is the test site so and
+
+3
+00:00:11.840 --> 00:00:16.320
+then i can set up a specific login for you so yeah we're just going to look at all of this stuff
+
+4
+00:00:16.320 --> 00:00:21.680
+really quickly the main page is products of course we have live drafts sold archived and all the
+
+5
+00:00:21.680 --> 00:00:27.360
+little eyeball is to preview it and then archives to archive it so once we'll archive that ducky one
+
+6
+00:00:27.360 --> 00:00:33.120
+and speedo when you have orders that haven't been looked at yet it will be flashing and then it'll
+
+7
+00:00:33.120 --> 00:00:37.520
+always show how many unfulfilled orders there are so there's one right now show you how to do a
+
+8
+00:00:37.520 --> 00:00:43.040
+refund the way that stripe works is it allows you to refund any amount that you want so basically
+
+9
+00:00:43.040 --> 00:00:48.880
+we set it up so that you can add the amounts so you wanted to add both of those and you don't
+
+10
+00:00:48.880 --> 00:00:54.320
+have to relist both of them we'll relist both of them and then let's say we're keeping 100 bucks
+
+11
+00:00:54.320 --> 00:00:57.280
+for a restocking fee uh so i dropped it down
+
+12
+00:00:57.360 --> 00:01:02.960
+to 300 and then that way you can refund it and it will go through stripe and refund them
+
+13
+00:01:03.840 --> 00:01:09.200
+all of their purchase minus the hundred dollars that you kept

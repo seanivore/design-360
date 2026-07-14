@@ -1,0 +1,117 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.160
+right to publish out of hero image and thumbnail image so switch this so that you can see again
+
+2
+00:00:04.960 --> 00:00:10.400
+and right away it loaded all of them and it shows you the shape events since these are kind of small
+
+3
+00:00:10.400 --> 00:00:15.600
+just so that it is easier for you to um recognize which is which when you apply these little buttons
+
+4
+00:00:15.600 --> 00:00:20.640
+which are the roles um and then i also just updated it so that it shows a preview of the
+
+5
+00:00:20.640 --> 00:00:26.320
+original file name um because as you can see i had already planned out which one was gonna be
+
+6
+00:00:26.320 --> 00:00:30.720
+the thumbnail so i can see thumbnail right there and hero so i can push hero right there
+
+7
+00:00:32.480 --> 00:00:39.280
+just in the matter just because of time so gallery calorie calorie
+
+8
+00:00:46.720 --> 00:00:49.200
+one of these there we go checkout now so mine were already cropped from something else it still will
+
+9
+00:00:49.200 --> 00:00:56.240
+compress them and turn them into web web web webp it's the super compressed type of uh image form
+
+10
+00:00:56.240 --> 00:00:56.320
+it's super compressed type of uh image form
+
+11
+00:00:56.320 --> 00:01:01.000
+but if they weren't cropped so a checkout would make it square there's a square image
+
+12
+00:01:01.000 --> 00:01:07.880
+all of the uh gallery images and the hero are all four by five and then the thumbnail is like a
+
+13
+00:01:07.880 --> 00:01:16.160
+standard um um so that would be 16 by nine so it's standard uh i mean if they're larger it will
+
+14
+00:01:16.160 --> 00:01:20.080
+take a little longer because it's going through the whole process with each one it's uh you know
+
+15
+00:01:20.080 --> 00:01:25.240
+cropping it and then downsizing it and then uploading it to this cdn the content delivery
+
+16
+00:01:25.240 --> 00:01:30.160
+network so that it just gets a url link so that the website loads quickly and then it puts that
+
+17
+00:01:30.160 --> 00:01:35.660
+in the database and then does the next one so it is doing a bunch of things there we go so yeah
+
+18
+00:01:35.660 --> 00:01:40.840
+and then this you can click and drag to reorder them say i wanted him to go first if you go in
+
+19
+00:01:40.840 --> 00:01:45.060
+here that's where you could delete images and then upload different ones but it doesn't let
+
+20
+00:01:45.060 --> 00:01:48.400
+you publish the first time because it's going to make you preview before you publish anything
+
+21
+00:01:48.400 --> 00:01:54.640
+so we'll just preview that and you can see all of the automatically populated text up here
+
+22
+00:01:55.240 --> 00:01:59.560
+and then i also just fixed these so that it shows the accurate image right there you can hide those
+
+23
+00:01:59.560 --> 00:02:09.260
+details and then go through all of the pictures cool so that's it i mean like i said i'm going
+
+24
+00:02:09.260 --> 00:02:15.080
+to send you the test urls so you can play around and um yeah there won't really be much
+
+25
+00:02:15.080 --> 00:02:19.700
+there'll be like two urls and the real one you already know um and then just a note that once
+
+26
+00:02:19.700 --> 00:02:25.220
+you're ready like after i would i would give chat gbt one or two little tries just make sure that
+
+27
+00:02:25.240 --> 00:02:30.040
+you are comfortable with it and then once you let me know all i have to do is swap out one little
+
+28
+00:02:30.040 --> 00:02:35.960
+url um yeah so that's it please look it over give me all types of feedback i hope you like
+
+29
+00:02:35.960 --> 00:02:39.960
+it but yes anything you want to change we can totally change i'm happy to do that

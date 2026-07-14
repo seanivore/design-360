@@ -1,0 +1,49 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:12.900
+Your form pulls up Google Maps to make sure that the address for the shipping is accurate,
+
+2
+00:00:12.900 --> 00:00:15.880
+so it doesn't ask the person a bunch of times to confirm.
+
+3
+00:00:15.880 --> 00:00:20.680
+And then since there's a site-wide sale going on for 15% off, it automatically shows up
+
+4
+00:00:20.680 --> 00:00:21.680
+in here.
+
+5
+00:00:21.680 --> 00:00:25.620
+And then it's just already populated, but with this little X button so that if the customer
+
+6
+00:00:25.620 --> 00:00:28.520
+happened to have a coupon code for their birthday or something else, they could clear
+
+7
+00:00:28.520 --> 00:00:32.120
+that out and then use a different code instead.
+
+8
+00:00:32.120 --> 00:00:35.520
+But we're going to just purchase it as is.
+
+9
+00:00:35.520 --> 00:00:48.540
+As soon as this pops up, it sends the first point of contact to the new owner of your
+
+10
+00:00:48.540 --> 00:00:49.540
+art.
+
+11
+00:00:49.540 --> 00:00:56.340
+It's a receipt that comes straight from Stripe, but it's nicely designed with the color palette
+
+12
+00:00:56.340 --> 00:00:57.680
+from your brand and a logo.

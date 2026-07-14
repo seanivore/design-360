@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using your website — Everlastings by Emaline</title>
+<meta name="description" content="A twelve-part walkthrough of the Everlastings by Emaline store — how to run it from ChatGPT, and how to run it by hand.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>🕯️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="walkthrough.css">
+</head>
+<body>
+
+<a class="skip" href="#episodes">Skip to the list of films</a>
+
+<header class="masthead">
+  <p class="eyebrow">Everlastings by Emaline</p>
+  <h1 class="masthead__title">Using your&nbsp;website</h1>
+  <p class="masthead__sub">
+    Twelve short films, <span class="mono" data-total-runtime>17 minutes</span> altogether.
+    Watch them in order, or jump to whatever you need.
+  </p>
+</header>
+
+<!-- The theater: the only dark band on the page. -->
+<section class="theater" aria-label="Video player">
+  <div class="theater__inner">
+    <div class="stage">
+      <!-- No crossorigin attribute: the video is served from the CDN, which sends no CORS
+           headers, and setting it would block the media load outright. The captions are
+           same-origin, so the <track> loads without it. -->
+      <video
+        id="player"
+        class="stage__video"
+        controls
+        playsinline
+        preload="metadata"></video>
+      <div class="stage__idle" data-idle hidden>
+        <p class="stage__idle-n mono">01</p>
+        <p class="stage__idle-t">Welcome — and why this is unusual</p>
+      </div>
+    </div>
+    <p class="stage__caption-meta">
+      <span class="mono" data-now-n>01</span>
+      <span data-now-title>Welcome — and why this is unusual</span>
+    </p>
+  </div>
+</section>
+
+<!-- The signature: what she is saying, right now, at pull-quote scale. -->
+<section class="spoken" aria-label="Spoken line">
+  <p class="spoken__line" data-caption aria-live="polite">
+    <span class="spoken__rest">Press play — her words appear here as she speaks.</span>
+  </p>
+
+  <button class="transcript__toggle" type="button" data-transcript-toggle aria-expanded="false" aria-controls="transcript">
+    <span data-transcript-label>Full transcript</span>
+    <svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <div class="transcript" id="transcript" data-transcript hidden>
+    <ol class="transcript__list" data-transcript-list></ol>
+  </div>
+</section>
+
+<!-- The index. The content really is a sequence, in four arcs. -->
+<main class="episodes" id="episodes">
+  <div class="episodes__inner" data-episodes></div>
+</main>
+
+<footer class="colophon">
+  <p>Built for Emaline Townsend by <a href="https://august.style">August</a>.</p>
+  <p class="colophon__note">Everything you see here — the store, the dashboard, the assistant — is one system.</p>
+</footer>
+
+<script src="videos.js"></script>
+<script src="walkthrough.js"></script>
+</body>
+</html>
