@@ -21,6 +21,7 @@
   let current = null;       // the loaded video object
   let cues = [];            // parsed cues for the loaded video
   let cueIdx = -1;          // index of the cue currently on screen
+  let lastSave = 0;         // last position written to storage, for THIS film only
 
   // ── persistence ───────────────────────────────────────────────────────
 
@@ -201,6 +202,7 @@
     cues = [];
     cueIdx = -2;
     capEl.textContent = '';
+    lastSave = 0;             // per-film: never carry the previous film's save cursor over
 
     video.pause();
     video.poster = v.poster;
@@ -253,17 +255,21 @@
 
   // ── player events ─────────────────────────────────────────────────────
 
-  let lastSave = 0;
   video.addEventListener('timeupdate', () => {
     if (!current) return;
     paintCaption(cueAt(video.currentTime));
+
+    // Below the resume floor there is nothing worth remembering, and writing here would
+    // be actively harmful: a fresh film sits at t=0 for a beat before the resume seek
+    // lands, so saving now would overwrite the very position we are about to restore.
+    if (video.currentTime < RESUME_FLOOR) return;
 
     const row = rowFor(current.id);
     if (row) {
       row.querySelector('.row__progress').style.width =
         `${Math.min(100, (video.currentTime / current.duration) * 100)}%`;
     }
-    if (video.currentTime - lastSave > 4 || lastSave > video.currentTime) {
+    if (Math.abs(video.currentTime - lastSave) > 4) {
       lastSave = video.currentTime;
       writeProgress(current.id, video.currentTime);
     }
