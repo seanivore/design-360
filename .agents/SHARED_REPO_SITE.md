@@ -54,15 +54,18 @@
 
   Four things have to be true. Check them first; two of them are not yours to fix.
 
-  + **A Vercel token exists.** The CLI already stores one. Do not mint another.
+  + **A Vercel API token.** Either source works — the script below takes whichever you have.
+    - **Zero-setup:** the CLI already stored one when you logged in. Nothing to create.
+    - **Env var (for shell symmetry with Cloudflare):** mint a dedicated **access token** at `vercel.com/account/settings/tokens`, set it to *No Expiration*, and export it as `VERCEL_TOKEN` in `~/.zshrc`. A raw `curl` and the CLI both read `VERCEL_TOKEN` natively.
+    - **Not `VERCEL_OIDC_TOKEN`.** That is a *different, short-lived* token Vercel drops into `.env.local` so deployed functions can reach cloud backends. It expires in hours and does **not** authenticate the REST API — grabbing it because it's the Vercel-looking thing in `.env.local` is a natural mistake that silently 401s every call below.
   + **The apex domain is already on the Vercel account.** If it is, attaching a subdomain verifies instantly. If it is **not**, stop and ask — adding an apex is a different, human-facing job.
   + **A DNS API token is in the shell.** `$CLOUDFLARE_API_TOKEN`, exported from `~/.zshrc`.
   + **The repo is connected to the Vercel account.** It is, if any project from this repo already deploys.
 
-  Pull the token
+  Get the token into `$TOKEN` — uses `$VERCEL_TOKEN` if you exported one, otherwise reads the CLI's stored token
 
 ```sh
-TOKEN=$(jq -r '.token' "$HOME/Library/Application Support/com.vercel.cli/auth.json")
+TOKEN="${VERCEL_TOKEN:-$(jq -r '.token' "$HOME/Library/Application Support/com.vercel.cli/auth.json")}"
 ```
 
 ## The Variables
