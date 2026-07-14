@@ -8,6 +8,8 @@
 
   So the difficulty is never the site. It is always the **host repo**: where the project is rooted, and which branch it deploys from. Those two settings are the entire guide, and both of them fail **silently** when wrong.
 
+  **Scope, honestly.** The only host repo this has been done in is the **portfolio** (`design-360`) — a big site that needed small add-ons hanging off it. The commands below are parameterized and should carry to any repo shaped like that, but they have not been proven anywhere else yet. **When a second host repo uses this, revisit the framing and the file name** — a second example is what tells you which parts are the pattern and which parts were just the portfolio.
+
 ## What This Is
 
   A **subdirectory site** is a small static site that lives inside a bigger repo, deploys as its own Vercel project, and answers on its own subdomain. You send someone a link and it does its job.
