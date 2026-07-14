@@ -156,13 +156,23 @@ a { color: var(--plum); text-decoration-thickness: 1px; text-underline-offset: 3
   font-size: .82em;
 }
 
+/* Captions off (default on a phone) — the line collapses entirely so the film list comes up. */
+.spoken[data-captions="off"] .spoken__line { display: none; }
+.spoken[data-captions="off"] .spoken__controls { margin-top: 0; }
+
 /* ── Transcript ─────────────────────────────────────────────────────── */
+
+.spoken__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
 
 .transcript__toggle {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 26px;
   padding: 9px 16px 9px 14px;
   background: transparent;
   border: 1px solid rgba(74, 25, 66, .28);

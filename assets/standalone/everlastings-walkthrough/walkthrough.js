@@ -13,8 +13,12 @@
   const trList = document.querySelector('[data-transcript-list]');
   const trToggle = document.querySelector('[data-transcript-toggle]');
   const trLabel = document.querySelector('[data-transcript-label]');
+  const spoken = document.querySelector('.spoken');
+  const capToggle = document.querySelector('[data-caption-toggle]');
+  const capLabel = document.querySelector('[data-caption-label]');
 
   const STORE = 'everlastings.walkthrough.progress';
+  const CAP_STORE = 'everlastings.walkthrough.captions';
   const RESUME_FLOOR = 5;   // don't bother resuming the first few seconds
   const RESUME_TAIL = 10;   // finished-ish: start it over rather than resume the credits
 
@@ -303,6 +307,28 @@
       const row = trList.children[cueIdx]?.firstElementChild;
       if (row) trEl.scrollTop = row.offsetTop - trEl.clientHeight / 2 + row.offsetHeight / 2;
     }
+  });
+
+  // ── captions on/off ───────────────────────────────────────────────────
+  // Default OFF on a phone — the spoken line is the tallest element on the page and it shoves the
+  // film list below the fold. On a wide screen there's room for it, so it stays on. Once you choose,
+  // your choice sticks.
+
+  const setCaptions = (on) => {
+    spoken.dataset.captions = on ? 'on' : 'off';
+    capToggle.setAttribute('aria-pressed', String(on));
+    capLabel.textContent = on ? 'Hide captions' : 'Show captions';
+  };
+
+  let capPref;
+  try { capPref = localStorage.getItem(CAP_STORE); } catch { capPref = null; }
+  const narrow = window.matchMedia('(max-width: 640px)').matches;
+  setCaptions(capPref === null ? !narrow : capPref === 'on');
+
+  capToggle.addEventListener('click', () => {
+    const on = spoken.dataset.captions !== 'on';
+    setCaptions(on);
+    try { localStorage.setItem(CAP_STORE, on ? 'on' : 'off'); } catch { /* private mode */ }
   });
 
   // ── boot ──────────────────────────────────────────────────────────────

@@ -52,10 +52,18 @@
     <span class="spoken__rest">Press play — her words appear here as she speaks.</span>
   </p>
 
-  <button class="transcript__toggle" type="button" data-transcript-toggle aria-expanded="false" aria-controls="transcript">
-    <span data-transcript-label>Full transcript</span>
-    <svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
+  <div class="spoken__controls">
+    <!-- Captions default OFF on a phone: the spoken line is the tallest thing on the page and it
+         pushes the film list below the fold. On desktop there's room, so it stays on. -->
+    <button class="transcript__toggle" type="button" data-caption-toggle aria-pressed="true">
+      <span data-caption-label>Hide captions</span>
+    </button>
+
+    <button class="transcript__toggle" type="button" data-transcript-toggle aria-expanded="false" aria-controls="transcript">
+      <span data-transcript-label>Full transcript</span>
+      <svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
 
   <div class="transcript" id="transcript" data-transcript hidden>
     <ol class="transcript__list" data-transcript-list></ol>
@@ -68,7 +76,7 @@
 </main>
 
 <footer class="colophon">
-  <p>Built for Emaline Townsend by <a href="https://august.style">August</a>.</p>
+  <p>Built for Emy’s <a href="https://www.everlastingsbyemaline.com">Everlastings by Emaline</a> by <a href="https://www.august.style">Sean August Horvath</a></p>
   <p class="colophon__note">Everything you see here — the store, the dashboard, the assistant — is one system.</p>
 </footer>
 
