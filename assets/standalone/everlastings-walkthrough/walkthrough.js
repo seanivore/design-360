@@ -56,23 +56,26 @@
       const [a, b] = lines[tl].split('-->');
       const body = lines.slice(tl + 1).join(' ').trim();
       if (!body) continue;
-      out.push({ start: stamp(a), end: stamp(b.split(/\s+/)[0]), text: body });
+      // b keeps the space after the arrow, so trim BEFORE splitting — otherwise the first
+      // field is the empty string and every end time parses as NaN.
+      out.push({ start: stamp(a), end: stamp(b.trim().split(/\s+/)[0]), text: body });
     }
     return out.sort((x, y) => x.start - y.start);
   };
 
-  // Which cue covers time t? Cues are sorted and non-overlapping, so bisect.
-  // Returns -1 in the gaps between cues (a pause in the narration).
+  // The line on screen is the last one she has started saying. Deliberately NOT
+  // "the cue whose span contains t" — these are auto-transcribed, so consecutive cues
+  // have sub-second gaps, and honouring them would blink the line away between breaths.
+  // Holding the last line until the next one begins is what reading along actually wants.
   const cueAt = (t) => {
-    let lo = 0, hi = cues.length - 1;
+    if (!cues.length || t < cues[0].start) return -1;
+    let lo = 0, hi = cues.length - 1, found = -1;
     while (lo <= hi) {
       const mid = (lo + hi) >> 1;
-      const c = cues[mid];
-      if (t < c.start) hi = mid - 1;
-      else if (t >= c.end) lo = mid + 1;
-      else return mid;
+      if (cues[mid].start <= t) { found = mid; lo = mid + 1; }
+      else hi = mid - 1;
     }
-    return -1;
+    return found;
   };
 
   // ── caption line ──────────────────────────────────────────────────────
@@ -203,14 +206,15 @@
     video.poster = v.poster;
     video.src = v.src;
 
-    // native captions, same-origin, so the browser's own CC button works too
+    // The track exists so the browser's own CC button is there for anyone who wants
+    // captions burned on the video — but it is NOT default-on, because the whole point
+    // of this page is that her words are read UNDER the film, not over it.
     video.querySelectorAll('track').forEach((t) => t.remove());
     const track = document.createElement('track');
     track.kind = 'captions';
     track.label = 'English';
     track.srclang = 'en';
     track.src = v.captions;
-    track.default = true;
     video.appendChild(track);
 
     nowN.textContent = v.id;
