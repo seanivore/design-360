@@ -6,7 +6,6 @@
 
   const video = document.getElementById('player');
   const capEl = document.querySelector('[data-caption]');
-  const idleEl = document.querySelector('[data-idle]');
   const nowN = document.querySelector('[data-now-n]');
   const nowTitle = document.querySelector('[data-now-title]');
   const listEl = document.querySelector('[data-episodes]');
@@ -214,7 +213,6 @@
     track.default = true;
     video.appendChild(track);
 
-    if (idleEl) idleEl.hidden = true;
     nowN.textContent = v.id;
     nowTitle.textContent = v.title;
 
@@ -303,7 +301,7 @@
 
   const total = VIDEOS.reduce((n, v) => n + v.duration, 0);
   const totalEl = document.querySelector('[data-total-runtime]');
-  if (totalEl) totalEl.textContent = `${Math.round(total / 60)} minutes`;
+  if (totalEl) totalEl.textContent = String(Math.round(total / 60));
 
   const fromHash = () => {
     const n = parseInt(location.hash.replace('#', ''), 10);
