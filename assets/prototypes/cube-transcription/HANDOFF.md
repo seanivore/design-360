@@ -1,10 +1,38 @@
 # HANDOFF — The Cube (transcription UI → real engine)
 
-For Claude Code. This folder is the complete working front end, running on a
-**simulated engine**. Your job: swap in real Whisper-WASM behind the seam,
-close the gaps below, and deploy per the standalone/prototype pattern
-(own Vercel project rooted at this folder, `dev` = production branch,
-domain cube.august.style, static only — `vercel.json` is already here).
+> **STATUS: engine is WIRED and verified.** The simulated stub is gone —
+> `engine.js` now runs real in-browser Whisper (transformers.js v3, WebGPU with
+> a CPU/WASM fallback) via `worker.js`, decoding audio on the main thread (Web
+> Audio, with an ffmpeg.wasm fallback for exotic containers like `.caf`).
+> `window.CubeEngine.demo === false`. Verified end-to-end: native-decode + the
+> ffmpeg path both transcribe, byte-parity `.md`/`.srt`/`.txt`/`.json` output,
+> WebGPU inference, real timestamps. Deploy per the standalone/prototype pattern
+> (own Vercel project rooted at this folder, `dev` = production branch, domain
+> cube.august.style — it stays a **static/buildless** deploy: everything loads
+> as ESM from a CDN, no bundler).
+
+## ⚠ Ownership — what survives a design repackage
+
+The design project only regenerates the **UI**. These are now **code-owned** and
+must NOT be overwritten when you repackage:
+
+- **`engine.js`** — the real engine (was the CD stub; now owns the seam).
+- **`worker.js`** — the transformers.js Whisper worker (new; not a CD file).
+- **`vendor/ffmpeg/`** — the tiny same-origin ffmpeg ESM glue (the ~30 MB wasm
+  core stays on the CDN; only this ~15 KB glue is vendored so its worker is
+  same-origin — a Worker can't be built from a cross-origin URL).
+- **`formats.js`** — the byte-parity port of `app/formats.py`; keep the two in sync.
+
+Only **`index.html`** + **`support.js`** get refreshed from the Claude project.
+
+## ⚠ index.html post-copy patch (re-apply after every repackage)
+
+The engine needs the real `File`, which the generated `index.html` drops. Two
+one-line edits (grep `POST-COPY PATCH`) restore it:
+- in `_take(f)`: add `this._rawFile = f;`
+- in `start()`: `file: null` → `file: this._rawFile`
+Cleanest long-term: fold these into the Claude Design source so repackages keep
+them. Until then, re-apply after any regeneration.
 
 Read `README.md` first for what the UI does and the file map.
 
@@ -31,6 +59,16 @@ Read `README.md` first for what the UI does and the file map.
   `.srt` output in the UI). `'translate'` = whisper translate task.
 
 ## Known gaps / decisions for you
+
+> Status: **#3, #4, #5, #8, #9, #10 handled** by the engine wiring. **#1** is
+> partly handled (status line announces the first-run model download + size);
+> the Cache API caching is automatic via transformers.js. **Still open (polish,
+> optional): #2 (self-host the IBM Plex Mono fonts) and #7 (wire the `<head>`
+> title / favicon / OG meta)** — both live in the generated `index.html`, so do
+> them as post-copy patches or fold them into the Claude Design source.
+> One accepted difference (item C): the browser `.json` omits the per-segment
+> `avg_logprob` / `compression_ratio` / `no_speech_prob` stats the Python tool
+> emits (transformers.js doesn't surface them); `.md`/`.srt`/`.txt` are identical.
 
 1. **Model download UX.** First visit pulls tens of MB per model. The UI
    already surfaces `onLoadProgress` + `onStatus`; cache via the Cache API

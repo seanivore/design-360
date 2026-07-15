@@ -16,6 +16,14 @@ Space for self-contained prototypes that demonstrate to portfolio visitors the a
   - LLM chat control of online store management 
   - Future home for retired or resurrected websites 
 
+  2. The Cube — private, in-browser transcription
+  -> `assets/prototypes/cube-transcription/`
+
+  - Free browser-native speech-to-text; Whisper runs in-browser (WASM), nothing uploaded
+  - Interactive 3×3×3 cube UI — layers are the controls, the reassembly animation is the progress meter
+  - Browser sibling of the self-hosted Docker transcription tool (shared output formats)
+  - Bound for cube.august.style
+
 ---
 
 ## 1. Creator Portal
@@ -34,6 +42,19 @@ Created initially for a client website, `everlastingsbyemaline.com`, where major
 Preparing the portal as a demo prototype took just a few additional hours in Claude Design, then deployed by Claude Code, before being added as a tile in the portfolio at `august.style`. 
 
 Live at **[shop-admin.august.style](https://shop-admin.august.style)**; its own deploy record is in [`shop-admin/DEPLOY.md`](shop-admin/DEPLOY.md).
+
+---
+
+## 2. The Cube — private, in-browser transcription
+
+The `assets/prototypes/cube-transcription/` directory houses a free, fully-private speech-to-text tool. You drop an audio or video file onto a wireframe 3×3×3 cube; its horizontal layers *are* the controls (accuracy · task · language) and the disassemble-and-reassemble animation *is* the progress meter — no progress bar exists. Whisper runs entirely in the visitor's browser via WebAssembly, so nothing is ever uploaded: no server, no account, no cost.
+
+  - Aesthetic surfaced through the same multi-winner design "funnel" — parallel sub-agents research and debate directions, finalists rendered for live selection
+  - Built in Claude Design against a single clean engine seam; the real in-browser Whisper engine (transformers.js) is wired in by Claude Code
+
+It is the browser-native sibling of a self-hosted Docker transcription tool, and shares that tool's output formatting byte-for-byte — a `.md`/`.srt`/`.txt`/`.json` from the cube matches the desktop version exactly.
+
+Its public home is **[cube.august.style](https://cube.august.style)**, live once the engine wiring lands. Deploy follows the shared pattern below.
 
 ---
 

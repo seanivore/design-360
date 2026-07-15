@@ -6,9 +6,12 @@ A single-page transcription tool built as a portfolio object for
 progress meter; the transcript lifts off at the end. Whisper runs in the
 visitor's browser (WASM) — nothing is ever uploaded.
 
-**Status: UI complete, running on a simulated engine.** The real
-transformers.js/whisper.cpp engine is Claude Code's job — see `HANDOFF.md`
-for the one-function seam and every known touchpoint.
+**Status: LIVE ENGINE — wired and verified.** `engine.js` runs real in-browser
+Whisper (transformers.js v3, WebGPU with a CPU/WASM fallback) via `worker.js`;
+audio is decoded on-device (Web Audio, with an ffmpeg.wasm fallback for exotic
+containers). Nothing is uploaded. See `HANDOFF.md` for the seam, the
+code-vs-design ownership rules, and the remaining polish (self-hosting the
+fonts + wiring the `<head>` meta).
 
 ---
 
@@ -55,7 +58,9 @@ interactive block, a shuffle-and-reseat transition between phases,
 |---|---|
 | `index.html` | The whole UI (a self-contained Design Component page). |
 | `support.js` | Component runtime — required by `index.html`, do not edit. |
-| `engine.js` | **THE SEAM.** Simulated transcription engine. Contract in its header; swap internals for real Whisper-WASM. |
+| `engine.js` | **THE SEAM (real).** Decodes audio on-device + drives the Whisper worker; returns whisper-shaped output. Code-owned — don't overwrite on repackage. |
+| `worker.js` | Whisper in a Web Worker (transformers.js v3, WebGPU → WASM fallback). Code-owned. |
+| `vendor/ffmpeg/` | Tiny same-origin ffmpeg ESM glue for exotic-container decode (`.caf`, `.amr`…). The ~30 MB wasm core loads from CDN, not here. |
 | `formats.js` | JS port of the Python `formats.py` — byte-parity `.md`/`.srt`/`.txt`/`.json` builders + filename stamp. |
 | `favicon.svg` / `og.png` | Brand assets in the cube’s language — wire the head tags at integration. |
 | `vercel.json` | `cleanUrls`/`trailingSlash` per the standalone/prototype deploy pattern. Static only, no build step. |

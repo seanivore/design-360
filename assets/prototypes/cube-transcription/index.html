@@ -3,15 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- POST-COPY PATCH: head meta (see HANDOFF.md) -->
+<title>The Cube — free private transcription, in your browser</title>
+<meta name="description" content="Drop an audio or video file onto a cube and get a transcript — free, private, entirely in your browser. Nothing is ever uploaded.">
+<link rel="canonical" href="https://cube.august.style/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cube.august.style/">
+<meta property="og:title" content="The Cube — free private transcription">
+<meta property="og:description" content="Drop a file on a cube, get a transcript. Free, private, in-browser — nothing is uploaded.">
+<meta property="og:image" content="https://cube.august.style/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Cube — free private transcription">
+<meta name="twitter:description" content="Drop a file on a cube, get a transcript. Free, private, in-browser.">
+<meta name="twitter:image" content="https://cube.august.style/og.png">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    /* POST-COPY PATCH: self-hosted IBM Plex Mono (was Google Fonts CDN) — see HANDOFF.md */
+    @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2'); }
+    @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/ibm-plex-mono-500.woff2') format('woff2'); }
     html, body { margin: 0; padding: 0; background: #29292C; }
     * { box-sizing: border-box; }
     a { color: #2A7B9B; text-decoration: none; }
@@ -392,6 +406,7 @@ class Component extends DCLogic {
       return;
     }
     const url = URL.createObjectURL(f);
+    this._rawFile = f;   // POST-COPY PATCH: hand the real File to the engine (see HANDOFF.md)
     const file = { name: f.name, sizeMB: (f.size / 1048576).toFixed(1), duration: null, url };
     this.setState(s => ({ file, phase: 'options', baseY: s.baseY - 90, err: '', infoOpen: null }));
     this._shuffleBurst();
@@ -430,7 +445,7 @@ class Component extends DCLogic {
     }, 300);
     const s0 = this.state;
     this._job = window.CubeEngine.transcribe({
-      file: null,
+      file: this._rawFile,   // POST-COPY PATCH: real File (was null in the stub) — see HANDOFF.md
       model: this.MODELS[s0.mi].id,
       language: this.LANGS[s0.li].id,
       task: this.TASKS[s0.ti].id,
