@@ -1,0 +1,50 @@
+{
+  "_metadata": {
+    "schema_version": "6.1",
+    "template_type": "project_entry"
+  },
+  "id": "uid-dtc-101",
+  "slug": "docker-transcription-cube",
+  "title": "Transcribe Audio Without Uploading It",
+  "subtitle": "Whisper, running on your own device — in a browser tab",
+  "seo_title": "In-Browser Whisper Transcription — Nothing Ever Uploads",
+  "seo_description": "Whisper runs inside the page, on your device. Your file is never uploaded — no accounts, no logs, no queue. Anything ffmpeg can read, audio or video.",
+  "role": [
+    "AI & Automation Strategist",
+    "Web Developer",
+    "Product Designer"
+  ],
+  "skill": [
+    "Generative AI",
+    "Voice Interface",
+    "HTML/CSS/JS",
+    "Responsive Design",
+    "Vercel"
+  ],
+  "product": [
+    "Custom AI Solution",
+    "Web Application",
+    "Progressive Web App"
+  ],
+  "company": "Freelance",
+  "featured": false,
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "url",
+  "external_url": "https://cube.august.style/",
+  "thumb": [
+    "https://cdn.august.style/media/docker-transcription-cube/thumb-docker-transcription-cube-1.webp",
+    "https://cdn.august.style/media/docker-transcription-cube/thumb-docker-transcription-cube-2.webp",
+    "https://cdn.august.style/media/docker-transcription-cube/thumb-docker-transcription-cube-3.webp",
+    "https://cdn.august.style/media/docker-transcription-cube/thumb-docker-transcription-cube-4.webp",
+    "https://cdn.august.style/media/docker-transcription-cube/thumb-docker-transcription-cube-5.webp",
+    "https://cdn.august.style/media/docker-transcription-cube/thumb-docker-transcription-cube-6.webp"
+  ],
+  "thumb_alt": "In-browser Whisper transcription tool",
+  "tiles": [
+    "Whisper runs on your device — nothing uploads",
+    "Drop in audio or video, anything ffmpeg reads",
+    "No accounts, no logs, no queue",
+    "Transcribe a file right in the browser tab"
+  ]
+}
