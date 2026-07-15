@@ -1,0 +1,52 @@
+{
+  "_metadata": {
+    "schema_version": "6.1",
+    "template_type": "project_entry"
+  },
+  "id": "uid-cos-101",
+  "slug": "chat-online-store",
+  "title": "Tour An AI-Managed Online Store",
+  "subtitle": "A shop you run by chatting with it",
+  "seo_title": "An AI-Managed Online Store — Full Walkthrough",
+  "seo_description": "Your AI-managed shop, start to finish. Seventeen minutes of walkthroughs — watch in order or jump around — on running an online store you manage by chat.",
+  "role": [
+    "AI & Automation Strategist",
+    "Product Designer",
+    "Web Developer"
+  ],
+  "skill": [
+    "Generative AI",
+    "Automation",
+    "E-Commerce",
+    "HTML/CSS/JS",
+    "Responsive Design",
+    "Vercel"
+  ],
+  "product": [
+    "Custom AI Solution",
+    "E-Commerce Store",
+    "Web Application"
+  ],
+  "company": "Freelance",
+  "featured": false,
+  "feature_tile": [],
+  "tile_alt": "",
+  "layout": "url",
+  "external_url": "https://everlastings.august.style/",
+  "thumb": [
+    "https://cdn.august.style/media/chat-online-store/thumb-chat-online-store-1.webp",
+    "https://cdn.august.style/media/chat-online-store/thumb-chat-online-store-2.webp",
+    "https://cdn.august.style/media/chat-online-store/thumb-chat-online-store-3.webp",
+    "https://cdn.august.style/media/chat-online-store/thumb-chat-online-store-4.webp",
+    "https://cdn.august.style/media/chat-online-store/thumb-chat-online-store-5.webp",
+    "https://cdn.august.style/media/chat-online-store/thumb-chat-online-store-6.webp",
+    "https://cdn.august.style/media/chat-online-store/thumb-chat-online-store-7.webp"
+  ],
+  "thumb_alt": "AI-managed online store walkthrough",
+  "tiles": [
+    "Your AI-managed shop — see how it runs",
+    "17 minutes to learn your whole website",
+    "Watch in order or jump around",
+    "An online store you manage by chat"
+  ]
+}
