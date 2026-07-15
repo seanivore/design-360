@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #29292C; }
+    * { box-sizing: border-box; }
+    a { color: #2A7B9B; text-decoration: none; }
+    a:hover { color: #00BAAD; text-decoration: underline; }
+    ::selection { background: rgba(42,123,155,0.4); }
+    @keyframes cube-sway { 0% { transform: rotateX(-22deg) rotateY(-6deg); } 100% { transform: rotateX(-22deg) rotateY(5deg); } }
+    @keyframes soft-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+  </style>
+  <script src="formats.js"></script>
+  <script src="engine.js"></script>
+</helmet>
+<div onDragOver="{{ onDragOver }}" onDragLeave="{{ onDragLeave }}" onDrop="{{ onDrop }}" style="min-height:100vh;position:relative;display:flex;flex-direction:column;background:#29292C;color:#F6F6F6;font-family:system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;overflow-x:hidden;">
+
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(246,246,246,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(246,246,246,0.09) 1px, transparent 1px);background-size:46px 46px;opacity:0.7;-webkit-mask-image:radial-gradient(120% 90% at 50% 32%, #000 50%, transparent 100%);mask-image:radial-gradient(120% 90% at 50% 32%, #000 50%, transparent 100%);"></div>
+
+  <input type="file" accept="audio/*,video/*" ref="{{ fileRef }}" onChange="{{ onFile }}" style="display:none;">
+
+  <div style="position:relative;z-index:1;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:20px 28px 0 28px;">
+    <div style="display:flex;align-items:baseline;gap:11px;">
+      <div style="width:7px;height:7px;background:#2A7B9B;transform:rotate(45deg) translateY(-1px);flex:none;"></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.3em;color:rgba(246,246,246,0.88);">THE CUBE</div>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;color:rgba(246,246,246,0.3);">v0.1.0 &#183; runs on-device</div>
+  </div>
+
+  <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 20px 36px 20px;">
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 44px;">
+
+      <div style="{{ stageBoxStyle }}" data-screen-label="Cube stage">
+        <div style="{{ optLeadersStyle }}">
+          <sc-for list="{{ dials }}" as="dd" hint-placeholder-count="3">
+            <div style="{{ dd.chipStyle }}">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:{{ dd.hue }};white-space:nowrap;">{{ dd.label2 }}</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <button onClick="{{ dd.prev }}" style="width:34px;height:34px;flex:none;background:rgba(33,33,35,0.9);border:1px solid rgba(246,246,246,0.16);border-radius:2px;color:rgba(246,246,246,0.72);font-size:17px;line-height:1;cursor:pointer;font-family:inherit;" style-hover="border-color:{{ dd.hue }};color:{{ dd.hue }};">&#8249;</button>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:16px;font-weight:500;line-height:1.15;white-space:nowrap;">{{ dd.name }}</div>
+                  <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.06em;color:rgba(246,246,246,0.38);margin-top:2px;white-space:nowrap;">{{ dd.sub }}</div>
+                </div>
+                <button onClick="{{ dd.next }}" style="width:34px;height:34px;flex:none;background:rgba(33,33,35,0.9);border:1px solid rgba(246,246,246,0.16);border-radius:2px;color:rgba(246,246,246,0.72);font-size:17px;line-height:1;cursor:pointer;font-family:inherit;" style-hover="border-color:{{ dd.hue }};color:{{ dd.hue }};">&#8250;</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="width:100%;height:100%;perspective:1600px;">
+          <div style="{{ tiltStyle }}">
+            <div style="{{ cubeStyle }}">
+              <div style="position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px 0 0 -180px;pointer-events:none;border:1px dashed {{ ghostLine }};transform:translateZ(180px);transition:border-color 0.8s ease;"></div>
+              <div style="position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px 0 0 -180px;pointer-events:none;border:1px dashed {{ ghostLine }};transform:rotateY(180deg) translateZ(180px);transition:border-color 0.8s ease;"></div>
+              <div style="position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px 0 0 -180px;pointer-events:none;border:1px dashed {{ ghostLine }};transform:rotateY(90deg) translateZ(180px);transition:border-color 0.8s ease;"></div>
+              <div style="position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px 0 0 -180px;pointer-events:none;border:1px dashed {{ ghostLine }};transform:rotateY(-90deg) translateZ(180px);transition:border-color 0.8s ease;"></div>
+              <div style="position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px 0 0 -180px;pointer-events:none;border:1px dashed {{ ghostLine }};transform:rotateX(90deg) translateZ(180px);transition:border-color 0.8s ease;"></div>
+              <div style="position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px 0 0 -180px;pointer-events:none;border:1px dashed {{ ghostLine }};transform:rotateX(-90deg) translateZ(180px);transition:border-color 0.8s ease;"></div>
+              <sc-for list="{{ layers }}" as="L" hint-placeholder-count="3">
+                <div style="{{ L.style }}">
+                  <sc-for list="{{ L.cubelets }}" as="c" hint-placeholder-count="9">
+                    <div onClick="{{ c.click }}" style="{{ c.style }}">
+                      <div style="position:absolute;inset:0;border:1px solid {{ c.line }};background:{{ c.fill }};transform:translateZ(56px);transition:border-color 0.5s ease, background 0.5s ease;"></div>
+                      <div style="position:absolute;inset:0;border:1px solid {{ c.line }};background:{{ c.fill }};transform:rotateY(180deg) translateZ(56px);transition:border-color 0.5s ease, background 0.5s ease;"></div>
+                      <div style="position:absolute;inset:0;border:1px solid {{ c.line }};background:{{ c.fill }};transform:rotateY(90deg) translateZ(56px);transition:border-color 0.5s ease, background 0.5s ease;"></div>
+                      <div style="position:absolute;inset:0;border:1px solid {{ c.line }};background:{{ c.fill }};transform:rotateY(-90deg) translateZ(56px);transition:border-color 0.5s ease, background 0.5s ease;"></div>
+                      <div style="position:absolute;inset:0;border:1px solid {{ c.line }};background:{{ c.fill }};transform:rotateX(90deg) translateZ(56px);transition:border-color 0.5s ease, background 0.5s ease;"></div>
+                      <div style="position:absolute;inset:0;border:1px solid {{ c.line }};background:{{ c.fill }};transform:rotateX(-90deg) translateZ(56px);transition:border-color 0.5s ease, background 0.5s ease;"></div>
+                      <sc-if value="{{ c.hasGlyph }}" hint-placeholder-val="{{ false }}">
+                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:26px;color:{{ c.glyphColor }};transform:{{ c.glyphTransform }};pointer-events:none;">{{ c.glyph }}</div>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="{{ leadersStyle }}">
+          <div style="position:absolute;left:250px;width:120px;top:6px;text-align:center;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#2A7B9B;white-space:nowrap;">&#8593; &#183; UPLOAD</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;color:rgba(246,246,246,0.38);margin-top:3px;white-space:nowrap;">tap &#183; or drop a file</div>
+          </div>
+          <div style="position:absolute;left:-124px;top:74px;width:150px;text-align:left;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#FF5733;white-space:nowrap;">i &#183; ABOUT</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;color:rgba(246,246,246,0.38);margin-top:3px;white-space:nowrap;">private &#183; on-device</div>
+          </div>
+          <div style="position:absolute;left:-124px;top:374px;width:150px;text-align:left;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#ADD45D;white-space:nowrap;">? &#183; FORMATS</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;color:rgba(246,246,246,0.38);margin-top:3px;white-space:nowrap;">what it hears</div>
+          </div>
+        </div>
+      </div>
+
+      <sc-if value="{{ optionsPanel }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:22px;min-width:300px;max-width:360px;padding:12px 0;" data-screen-label="Options">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="flex:1;font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(246,246,246,0.72);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ fileLabel }}</div>
+            <button onClick="{{ removeFile }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid rgba(246,246,246,0.14);border-radius:2px;color:rgba(246,246,246,0.5);font-size:14px;line-height:1;cursor:pointer;font-family:inherit;" style-hover="border-color:#C70039;color:#C70039;">&#215;</button>
+          </div>
+          <sc-for list="{{ dials }}" as="d" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:{{ d.color }};">{{ d.label }}</div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <button onClick="{{ d.prev }}" style="width:44px;height:44px;flex:none;background:transparent;border:1px solid rgba(246,246,246,0.16);border-radius:2px;color:rgba(246,246,246,0.72);font-size:20px;line-height:1;cursor:pointer;font-family:inherit;" style-hover="border-color:{{ d.hue }};color:{{ d.hue }};">&#8249;</button>
+                <div style="flex:1;display:flex;flex-direction:column;gap:2px;min-height:44px;justify-content:center;">
+                  <div style="font-size:20px;font-weight:500;line-height:1.1;">{{ d.name }}</div>
+                  <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(246,246,246,0.4);">{{ d.sub }}</div>
+                </div>
+                <button onClick="{{ d.next }}" style="width:44px;height:44px;flex:none;background:transparent;border:1px solid rgba(246,246,246,0.16);border-radius:2px;color:rgba(246,246,246,0.72);font-size:20px;line-height:1;cursor:pointer;font-family:inherit;" style-hover="border-color:{{ d.hue }};color:{{ d.hue }};">&#8250;</button>
+              </div>
+            </div>
+          </sc-for>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:rgba(246,246,246,0.38);">KEEP</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <sc-for list="{{ outputs }}" as="o" hint-placeholder-count="4">
+                <button onClick="{{ o.toggle }}" style="{{ o.style }}">{{ o.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <button onClick="{{ start }}" style="{{ actionStyle }}" style-hover="filter:brightness(1.12);">{{ actionLabel }}</button>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(246,246,246,0.28);">tap a layer of the cube to turn it</div>
+        </div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ optionsLeaders }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;max-width:860px;" data-screen-label="Options bar">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(246,246,246,0.72);max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ fileLabel }}</div>
+          <button onClick="{{ removeFile }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid rgba(246,246,246,0.14);border-radius:2px;color:rgba(246,246,246,0.5);font-size:14px;line-height:1;cursor:pointer;font-family:inherit;" style-hover="border-color:#C70039;color:#C70039;">&#215;</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;color:rgba(246,246,246,0.38);">KEEP</div>
+          <sc-for list="{{ outputs }}" as="ob" hint-placeholder-count="4">
+            <button onClick="{{ ob.toggle }}" style="{{ ob.style }}">{{ ob.label }}</button>
+          </sc-for>
+        </div>
+        <button onClick="{{ start }}" style="{{ actionStyle }}" style-hover="filter:brightness(1.12);">{{ actionLabel }}</button>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(246,246,246,0.28);">tap a layer of the cube to turn it &#183; &#8249; &#8250; to dial</div>
+    </sc-if>
+
+    <sc-if value="{{ infoFormats }}" hint-placeholder-val="{{ false }}">
+      <div style="width:min(560px,92vw);border:1px solid rgba(173,212,93,0.4);border-radius:3px;background:rgba(0,0,0,0.18);padding:18px 22px;display:flex;flex-direction:column;gap:10px;" data-screen-label="Formats info">
+        <div style="display:flex;align-items:baseline;gap:12px;">
+          <div style="flex:1;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;color:#ADD45D;">? &#183; WHAT IT HEARS</div>
+          <button onClick="{{ closeInfo }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid rgba(246,246,246,0.14);border-radius:2px;color:rgba(246,246,246,0.5);font-size:14px;line-height:1;cursor:pointer;font-family:inherit;">&#215;</button>
+        </div>
+        <div style="font-size:14px;line-height:1.5;color:rgba(246,246,246,0.72);">Anything ffmpeg can read &#8212; audio or video:</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.9;color:rgba(246,246,246,0.48);">{{ extList }}</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ infoAbout }}" hint-placeholder-val="{{ false }}">
+      <div style="width:min(560px,92vw);border:1px solid rgba(255,87,51,0.4);border-radius:3px;background:rgba(0,0,0,0.18);padding:18px 22px;display:flex;flex-direction:column;gap:10px;" data-screen-label="About info">
+        <div style="display:flex;align-items:baseline;gap:12px;">
+          <div style="flex:1;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;color:#FF5733;">i &#183; ABOUT</div>
+          <button onClick="{{ closeInfo }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid rgba(246,246,246,0.14);border-radius:2px;color:rgba(246,246,246,0.5);font-size:14px;line-height:1;cursor:pointer;font-family:inherit;">&#215;</button>
+        </div>
+        <div style="font-size:14px;line-height:1.55;color:rgba(246,246,246,0.72);text-wrap:pretty;">Whisper &#8212; the speech model &#8212; runs inside this page, on your device. Your file is never uploaded; there is nothing to upload it to. No accounts, no logs, no queue.</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(246,246,246,0.35);">free &#183; private &#183; local &#8212; an <a href="https://august.style" target="_blank" rel="noopener">august.style</a> object</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isIdlePlain }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;max-width:560px;" data-screen-label="Idle — drop a file">
+        <div style="font-size:clamp(19px, 2.8vw, 25px);font-weight:500;line-height:1.25;text-wrap:pretty;color:rgba(246,246,246,0.94);">{{ idleHeadline }}</div>
+        <sc-if value="{{ idleSubShow }}" hint-placeholder-val="{{ false }}">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:rgba(246,246,246,0.34);">tap the &#8593; block to browse</div>
+        </sc-if>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:8px;">
+          <div style="width:1px;height:10px;background:#2A7B9B;opacity:0.7;"></div>
+          <div style="width:82px;height:1px;background:#2A7B9B;opacity:0.7;"></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.18em;color:#2A7B9B;white-space:nowrap;">&#216; 27 PARTS &#183; NO SERVER</div>
+          <div style="width:82px;height:1px;background:#2A7B9B;opacity:0.7;"></div>
+          <div style="width:1px;height:10px;background:#2A7B9B;opacity:0.7;"></div>
+        </div>
+        <sc-if value="{{ hasErr }}" hint-placeholder-val="{{ false }}">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#C70039;">{{ err }}</div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isProcessing }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;width:min(760px, 94vw);" data-screen-label="Processing">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:22px;height:1px;background:#C70039;flex:none;"></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.26em;color:#2A7B9B;animation:soft-pulse 2.4s ease-in-out infinite;">{{ statusTop }}</div>
+          <div style="width:22px;height:1px;background:#C70039;flex:none;"></div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(246,246,246,0.38);">{{ statusSub }}</div>
+        <div style="display:flex;flex-direction:column;gap:9px;width:100%;min-height:96px;">
+          <sc-for list="{{ recentLines }}" as="ln" hint-placeholder-count="2">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.5;color:rgba(246,246,246,0.3);text-align:center;text-wrap:pretty;">{{ ln.text }}</div>
+          </sc-for>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;line-height:1.55;color:rgba(246,246,246,0.88);text-align:center;min-height:23px;text-wrap:pretty;">{{ liveLine }}</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isDone }}" hint-placeholder-val="{{ false }}">
+      <div style="width:min(780px, 94vw);display:flex;flex-direction:column;gap:16px;" data-screen-label="Result">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;color:rgba(246,246,246,0.42);text-align:center;">{{ metaLine }}</div>
+        <div style="border:1px solid rgba(246,246,246,0.13);border-radius:3px;background:rgba(0,0,0,0.16);padding:22px 24px;max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:13px;">
+          <sc-for list="{{ resultSegments }}" as="sg" hint-placeholder-count="4">
+            <div style="display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#2A7B9B;flex:none;width:148px;">{{ sg.time }}</div>
+              <div style="flex:1;min-width:220px;font-size:14.5px;line-height:1.55;color:rgba(246,246,246,0.88);">{{ sg.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+          <button onClick="{{ copy }}" style="{{ chipSolidStyle }}">{{ copyLabel }}</button>
+          <sc-for list="{{ dlChips }}" as="ch" hint-placeholder-count="2">
+            <button onClick="{{ ch.click }}" style="{{ chipSolidStyle }}">{{ ch.label }}</button>
+          </sc-for>
+          <div style="flex:1;"></div>
+          <button onClick="{{ reset }}" style="{{ chipGhostStyle }}">new file</button>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(246,246,246,0.25);text-align:center;">or tap the cube to start again</div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;ambientMotion&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Look&quot; },
+  &quot;demoSeconds&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 22, &quot;min&quot;: 8, &quot;max&quot;: 60, &quot;step&quot;: 1, &quot;unit&quot;: &quot;s&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Demo engine&quot; }
+}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.MODELS = [
+      { id: 'tiny', name: 'Tiny', sub: 'fastest, roughest sketch' },
+      { id: 'base', name: 'Base', sub: 'quick and light' },
+      { id: 'small', name: 'Small', sub: 'the in-browser sweet spot' },
+      { id: 'medium', name: 'Medium', sub: 'careful \u2014 heavy in a browser' },
+      { id: 'large-v3', name: 'Large v3', sub: 'most careful, heaviest' }
+    ];
+    this.TASKS = [
+      { id: 'transcribe', name: 'Transcribe', verb: 'Transcribe', sub: 'timestamped words, as spoken' },
+      { id: 'subtitles', name: 'Subtitles', verb: 'Make subtitles', sub: 'the same words, cut for captions' },
+      { id: 'translate', name: 'Translate', verb: 'Translate to English', sub: 'any language in, English out' }
+    ];
+    this.LANGS = [
+      { id: 'auto', name: 'Auto-detect', sub: 'let the model listen first' },
+      { id: 'en', name: 'English', sub: 'force english decoding' },
+      { id: 'es', name: 'Espa\u00f1ol', sub: 'force spanish decoding' },
+      { id: 'fr', name: 'Fran\u00e7ais', sub: 'force french decoding' },
+      { id: 'de', name: 'Deutsch', sub: 'force german decoding' },
+      { id: 'pt', name: 'Portugu\u00eas', sub: 'force portuguese decoding' },
+      { id: 'ja', name: '\u65e5\u672c\u8a9e', sub: 'force japanese decoding' },
+      { id: 'zh', name: '\u4e2d\u6587', sub: 'force chinese decoding' }
+    ];
+    this.OUTS = [
+      { k: 'md', label: '.md transcript' },
+      { k: 'srt', label: '.srt subtitles' },
+      { k: 'txt', label: '.txt plain' },
+      { k: 'json', label: '.json raw' }
+    ];
+    this.EXTS = ['mp3','wav','m4a','m4b','mp4','m4v','mov','mkv','avi','wmv','mpeg','mpga','mp2','webm','ogg','oga','opus','spx','flac','aac','caf','aiff','aif','amr','wma','3gp','ts','flv'];
+    this.GLYPHS = '\u25c7\u25c6\u25b3\u25bd\u25c1\u25b7\u25cb\u25d0\u25d1\u2299\u2298\u2295\u2234\u2235\u2261\u2260\u2207\u22c8\u2316\u2317';
+    this.LAYER_HUES = { '-1': '#00BAAD', '0': '#FFC300', '1': '#56C785' };
+    this.INFO = {
+      2: { kind: 'about', glyph: 'i', color: '#FF5733' },
+      8: { kind: 'upload', glyph: '\u2191', color: '#2A7B9B' },
+      20: { kind: 'formats', glyph: '?', color: '#ADD45D' },
+      6: { kind: 'dialTop', glyph: '\u21bb', color: '#00BAAD' },
+      15: { kind: 'dialMid', glyph: '\u21bb', color: '#FFC300' },
+      24: { kind: 'dialBot', glyph: '\u21bb', color: '#56C785' }
+    };
+    const pos = [];
+    let id = 0;
+    for (const y of [-1, 0, 1]) for (const x of [-1, 0, 1]) for (const z of [-1, 0, 1]) pos.push({ id: id++, x, y, z });
+    this._pos = pos;
+    this._lockOrder = pos.map(p => ({ p, k: p.y + Math.random() * 0.9 })).sort((a, b) => b.k - a.k).map(o => o.p);
+    this._fileRef = React.createRef();
+    this.state = {
+      phase: 'idle', dragging: false, err: '', infoOpen: null, pressedId: null,
+      file: null, baseY: -34,
+      mi: 2, ti: 0, li: 0, angles: [0, 0, 0],
+      outs: { md: true, srt: true, txt: false, json: false },
+      progress: 0, locked: 0, scatter: null, flashIds: [],
+      lines: [], live: null, reveal: 0,
+      status: '', loadP: 0, elapsed: 0,
+      result: null, copied: false,
+      vw: 1280, reduced: false
+    };
+  }
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+    try {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (mq.matches) this.setState({ reduced: true });
+    } catch (e) {}
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    if (this._job) this._job.cancel();
+    clearInterval(this._tick);
+    clearInterval(this._decode);
+    clearTimeout(this._doneT);
+    clearTimeout(this._pressT);
+    clearTimeout(this._shuffleT);
+  }
+
+  _press(id) {
+    clearTimeout(this._pressT);
+    this.setState({ pressedId: id });
+    this._pressT = setTimeout(() => this.setState({ pressedId: null }), 260);
+  }
+
+  _cubeletClick(p) {
+    const S = this.state;
+    if (S.phase === 'processing') return;
+    const info = this.INFO[p.id];
+    if (S.phase === 'idle') {
+      if (!info) return;
+      this._press(p.id);
+      if (info.kind === 'upload') {
+        if (this._fileRef.current) this._fileRef.current.click();
+      } else if (info.kind === 'about' || info.kind === 'formats') {
+        this.setState(s => ({ infoOpen: s.infoOpen === info.kind ? null : info.kind }));
+      }
+      return;
+    }
+    if (S.phase === 'options') {
+      this._press(p.id);
+      this.cycle(p.y + 1, 1);
+      return;
+    }
+    if (S.phase === 'done') { this._press(p.id); this.reset(); }
+  }
+
+  _shuffleBurst() {
+    const r = Math.random;
+    const m = {};
+    this._pos.forEach(p => {
+      m[p.id] = {
+        dx: Math.round((r() - 0.5) * 74),
+        dy: Math.round((r() - 0.5) * 74),
+        dz: Math.round((r() - 0.5) * 74),
+        ry: Math.round((r() - 0.5) * 44)
+      };
+    });
+    clearTimeout(this._shuffleT);
+    this.setState({ shuffle: m });
+    this._shuffleT = setTimeout(() => this.setState({ shuffle: null }), 460);
+  }
+
+  cycle(which, dir) {
+    this.setState(s => {
+      const st = { angles: s.angles.slice() };
+      st.angles[which] = s.angles[which] + 90 * dir;
+      if (which === 0) st.mi = (s.mi + dir + this.MODELS.length) % this.MODELS.length;
+      if (which === 1) {
+        st.ti = (s.ti + dir + this.TASKS.length) % this.TASKS.length;
+        if (this.TASKS[st.ti].id === 'subtitles') st.outs = Object.assign({}, s.outs, { srt: true });
+      }
+      if (which === 2) st.li = (s.li + dir + this.LANGS.length) % this.LANGS.length;
+      return st;
+    });
+  }
+
+  toggleOut(k) {
+    this.setState(s => ({ outs: Object.assign({}, s.outs, { [k]: !s.outs[k] }) }));
+  }
+
+  _take(f) {
+    if (!f) return;
+    const ext = (f.name.split('.').pop() || '').toLowerCase();
+    if (this.EXTS.indexOf(ext) < 0) {
+      this.setState({ err: '.' + ext + " isn't something the model can hear \u2014 try audio or video" });
+      return;
+    }
+    const url = URL.createObjectURL(f);
+    const file = { name: f.name, sizeMB: (f.size / 1048576).toFixed(1), duration: null, url };
+    this.setState(s => ({ file, phase: 'options', baseY: s.baseY - 90, err: '', infoOpen: null }));
+    this._shuffleBurst();
+    const v = document.createElement('video');
+    v.preload = 'metadata';
+    v.src = url;
+    v.onloadedmetadata = () => {
+      const d = v.duration;
+      this.setState(s => (s.file && s.file.url === url) ? { file: Object.assign({}, s.file, { duration: d }) } : null);
+    };
+  }
+
+  start() {
+    if (!window.CubeEngine) { this.setState({ err: 'engine.js failed to load' }); return; }
+    if (!Object.values(this.state.outs).some(Boolean)) return;
+    const scatter = {};
+    const r = Math.random;
+    this._pos.forEach(p => {
+      const mag = 0.9 + r() * 0.8;
+      scatter[p.id] = {
+        dx: Math.round((p.x + (r() - 0.5) * 1.3) * (66 + r() * 88) * mag),
+        dy: Math.round((p.y + (r() - 0.5) * 1.3) * (66 + r() * 88) * mag - 18),
+        dz: Math.round((p.z + (r() - 0.5) * 1.3) * (66 + r() * 88) * mag),
+        rx: Math.round((r() - 0.5) * 64),
+        ry: Math.round((r() - 0.5) * 64)
+      };
+    });
+    this.setState(s => ({
+      phase: 'processing', baseY: s.baseY - 90, scatter, infoOpen: null,
+      progress: 0, locked: 0, flashIds: [], lines: [], live: null, reveal: 0,
+      status: 'waking the ' + this.MODELS[s.mi].name.toLowerCase() + ' model', loadP: 0, elapsed: 0, copied: false, err: ''
+    }));
+    this._t0 = Date.now();
+    this._tick = setInterval(() => {
+      if (this.state.phase === 'processing') this.setState({ elapsed: (Date.now() - this._t0) / 1000 });
+    }, 300);
+    const s0 = this.state;
+    this._job = window.CubeEngine.transcribe({
+      file: null,
+      model: this.MODELS[s0.mi].id,
+      language: this.LANGS[s0.li].id,
+      task: this.TASKS[s0.ti].id,
+      fileDuration: s0.file && s0.file.duration,
+      demoSeconds: this.props.demoSeconds ?? 22
+    }, {
+      onStatus: t => this.setState({ status: t }),
+      onLoadProgress: p => this.setState({ loadP: p }),
+      onSegment: seg => this._segIn(seg),
+      onProgress: p => this._prog(p)
+    });
+    this._job.promise.then(result => {
+      clearInterval(this._tick);
+      this.setState({ progress: 1, locked: 27, status: 'sealed' });
+      this._doneT = setTimeout(() => this.setState(s => ({ phase: 'done', baseY: s.baseY - 90, result })), 1250);
+    }).catch(e => {
+      if (String(e && e.message) !== 'cancelled') this.setState({ err: String((e && e.message) || e), phase: 'options' });
+    });
+  }
+
+  _prog(p) {
+    const n = Math.min(27, Math.round(27 * p));
+    if (n > this.state.locked) {
+      const newly = this._lockOrder.slice(this.state.locked, n).map(q => q.id);
+      this.setState(s => ({ progress: p, locked: n, flashIds: s.flashIds.concat(newly) }));
+      setTimeout(() => this.setState(s => ({ flashIds: s.flashIds.filter(x => newly.indexOf(x) < 0) })), 950);
+    } else {
+      this.setState({ progress: p });
+    }
+  }
+
+  _segIn(seg) {
+    this.setState(s => ({
+      lines: s.live ? s.lines.concat([s.live]) : s.lines,
+      live: seg.text.trim(),
+      reveal: 0
+    }));
+    clearInterval(this._decode);
+    this._decode = setInterval(() => {
+      this.setState(s => {
+        if (!s.live || s.reveal >= s.live.length) { clearInterval(this._decode); return null; }
+        return { reveal: s.reveal + 2 };
+      });
+    }, 34);
+  }
+
+  copy() {
+    const r = this.state.result;
+    if (!r || !navigator.clipboard) return;
+    navigator.clipboard.writeText(r.text).then(() => {
+      this.setState({ copied: true });
+      setTimeout(() => this.setState({ copied: false }), 1600);
+    }).catch(() => {});
+  }
+
+  _dl(k) {
+    const r = this.state.result;
+    const F = window.CubeFormats;
+    if (!r || !F) return;
+    const stem = this.state.file ? this.state.file.name.replace(/\.[^.]+$/, '') : 'transcript';
+    let content, name, mime = 'text/plain';
+    if (k === 'md') { content = F.toMarkdown(r, stem); name = stem + '.md'; mime = 'text/markdown'; }
+    if (k === 'srt') { content = F.toSRT(r); name = stem + '_' + F.stamp() + '.srt'; }
+    if (k === 'txt') { content = F.toText(r); name = stem + '_' + F.stamp() + '.txt'; }
+    if (k === 'json') { content = F.toJSON(r); name = stem + '_' + F.stamp() + '.json'; mime = 'application/json'; }
+    const url = URL.createObjectURL(new Blob([content], { type: mime }));
+    const a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+
+  reset() {
+    if (this._job) this._job.cancel();
+    clearInterval(this._tick); clearInterval(this._decode); clearTimeout(this._doneT);
+    if (this.state.file && this.state.file.url) URL.revokeObjectURL(this.state.file.url);
+    this.setState(s => ({
+      phase: 'idle', file: null, result: null, progress: 0, locked: 0, flashIds: [],
+      scatter: null, lines: [], live: null, reveal: 0, status: '', loadP: 0,
+      elapsed: 0, copied: false, err: '', dragging: false, infoOpen: null, baseY: s.baseY - 90,
+      angles: s.angles.map(a => Math.round(a / 360) * 360)
+    }));
+    this._shuffleBurst();
+  }
+
+  removeFile() {
+    if (this.state.file && this.state.file.url) URL.revokeObjectURL(this.state.file.url);
+    this.setState(s => ({ phase: 'idle', file: null, err: '', baseY: s.baseY + 90, angles: s.angles.map(a => Math.round(a / 360) * 360) }));
+    this._shuffleBurst();
+  }
+
+  _fmtClock(sec) {
+    const t = Math.floor(sec || 0);
+    return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0');
+  }
+
+  _fmtDur(d) {
+    if (!d || !isFinite(d)) return '\u2014';
+    const F = window.CubeFormats;
+    const s = F ? F.hms(d) : String(Math.round(d)) + 's';
+    return s.indexOf('00:') === 0 ? s.slice(3) : s;
+  }
+
+  renderVals() {
+    const S = this.state;
+    const F = window.CubeFormats;
+    const hexA = (hex, a) => {
+      const h = hex.replace('#', '');
+      return 'rgba(' + parseInt(h.substr(0, 2), 16) + ',' + parseInt(h.substr(2, 2), 16) + ',' + parseInt(h.substr(4, 2), 16) + ',' + a + ')';
+    };
+    const BLUE = '#2A7B9B';
+    const processing = S.phase === 'processing';
+    const done = S.phase === 'done';
+    const clickable = !processing;
+    const lockedSet = new Set(this._lockOrder.slice(0, S.locked).map(q => q.id));
+    const flashSet = new Set(S.flashIds);
+
+    const layers = [0, 1, 2].map(idx => {
+      const y = idx - 1;
+      const hue = this.LAYER_HUES[String(y)];
+      return {
+        key: 'L' + idx,
+        style: {
+          position: 'absolute', left: 0, top: 0, transformStyle: 'preserve-3d',
+          transform: 'rotateY(' + S.angles[idx] + 'deg)',
+          transition: 'transform 0.8s cubic-bezier(0.34,0.9,0.32,1.06)'
+        },
+        cubelets: this._pos.filter(p => p.y === y).map(p => {
+          const info = this.INFO[p.id];
+          let t = 'translate3d(' + (p.x * 120) + 'px,' + (p.y * 120) + 'px,' + (p.z * 120) + 'px)';
+          const near = (0.56 * p.x + 0.83 * p.z + 1.39) / 2.78;
+          let line = 'rgba(246,246,246,' + (S.dragging ? (0.24 + 0.42 * near) : (0.08 + 0.24 * near)).toFixed(3) + ')';
+          let fill = 'rgba(246,246,246,' + (0.006 + 0.014 * near).toFixed(3) + ')';
+          let op = 1;
+          let cursor = 'default';
+          if (S.phase === 'idle' && info) {
+            const strong = info.kind === 'upload';
+            line = strong ? '#0F4A6B' : hexA(info.color, 0.75);
+            fill = hexA(info.color, strong ? 0.2 : 0.09);
+            cursor = 'pointer';
+          }
+          if (S.phase === 'options') {
+            line = hexA(hue, 0.35 + 0.5 * near); fill = hexA(hue, 0.035 + 0.04 * near); cursor = 'pointer';
+          }
+          if (processing) {
+            if (!lockedSet.has(p.id)) {
+              const d = S.scatter && S.scatter[p.id];
+              if (d && !S.reduced) t += ' translate3d(' + d.dx + 'px,' + d.dy + 'px,' + d.dz + 'px) rotateX(' + d.rx + 'deg) rotateY(' + d.ry + 'deg)';
+              line = 'rgba(246,246,246,0.13)'; fill = 'transparent'; op = 0.65;
+            } else if (flashSet.has(p.id)) {
+              line = hue; fill = hexA(hue, 0.13);
+            } else {
+              line = 'rgba(246,246,246,0.55)';
+            }
+          }
+          if (done) { line = 'rgba(246,246,246,' + (0.22 + 0.38 * near).toFixed(3) + ')'; cursor = 'pointer'; }
+          if (!processing && S.shuffle && S.shuffle[p.id]) {
+            const sh = S.shuffle[p.id];
+            t += ' translate3d(' + sh.dx + 'px,' + sh.dy + 'px,' + sh.dz + 'px) rotateY(' + sh.ry + 'deg)';
+          }
+          if (S.pressedId === p.id) {
+            t += ' translate3d(' + (-p.x * 16) + 'px,' + (-p.y * 16) + 'px,' + (-p.z * 16) + 'px) scale(0.93)';
+          }
+          return {
+            key: 'c' + p.id, line, fill,
+            hasGlyph: !!info && (S.phase === 'idle' || (S.phase === 'options' && info.kind.indexOf('dial') === 0)),
+            glyph: info ? info.glyph : '', glyphColor: info ? hexA(info.color, 0.95) : '',
+            glyphTransform: (info && info.kind.indexOf('dial') === 0) ? 'rotateY(90deg) translateZ(58px)' : 'translateZ(58px)',
+            click: () => this._cubeletClick(p),
+            style: {
+              position: 'absolute', left: '50%', top: '50%', margin: '-56px 0 0 -56px',
+              width: '112px', height: '112px', transformStyle: 'preserve-3d',
+              transform: t, opacity: op, cursor: cursor,
+              transition: processing
+                ? 'transform 1.25s cubic-bezier(0.25,0.7,0.25,1.04), opacity 0.8s ease'
+                : (S.shuffle ? 'transform 0.5s cubic-bezier(0.3,0.7,0.3,1.2), opacity 0.7s ease' : 'transform 0.26s cubic-bezier(0.3,0.7,0.3,1.4), opacity 0.7s ease')
+            }
+          };
+        })
+      };
+    });
+
+    const tiltStyle = { width: '100%', height: '100%', transformStyle: 'preserve-3d' };
+    if (S.reduced || this.props.ambientMotion === false) tiltStyle.transform = 'rotateX(-22deg) rotateY(-2deg)';
+    else tiltStyle.animation = 'cube-sway ' + (processing ? '18s' : '13s') + ' ease-in-out infinite alternate';
+
+    const cubeStyle = {
+      position: 'absolute', left: '50%', top: '50%', width: '0px', height: '0px',
+      transformStyle: 'preserve-3d',
+      transform: 'rotateY(' + S.baseY + 'deg)',
+      transition: 'transform 1.15s cubic-bezier(0.5,0.05,0.2,1)'
+    };
+
+    const ghostLine = processing
+      ? (S.loadP < 1 ? hexA(BLUE, 0.25 + 0.45 * S.loadP) : hexA(BLUE, 0.45))
+      : 'rgba(246,246,246,0.09)';
+
+    const idle = S.phase === 'idle';
+    const scale = Math.min(1, (S.vw - 36) / 560) * (done ? 0.5 : (processing ? 1.04 : (idle ? 0.92 : 1)));
+    const stageBoxStyle = {
+      width: '540px', height: done ? '265px' : (idle ? '545px' : '500px'), flex: 'none', position: 'relative',
+      transform: 'scale(' + scale + ')', transformOrigin: '50% 44%',
+      transition: 'transform 0.9s cubic-bezier(0.3,0.8,0.3,1), height 0.9s cubic-bezier(0.3,0.8,0.3,1)'
+    };
+
+    const leadersStyle = {
+      position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2,
+      opacity: (S.phase === 'idle' && !S.infoOpen && !S.dragging && S.vw >= 800) ? 1 : 0,
+      transition: 'opacity 0.6s ease'
+    };
+    const wideOptions = S.phase === 'options' && S.vw >= 880;
+    const optLeadersStyle = {
+      position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 3,
+      opacity: wideOptions ? 1 : 0,
+      visibility: wideOptions ? 'visible' : 'hidden',
+      transition: 'opacity 0.6s ease'
+    };
+
+    const dials = [
+      { key: 'model', label: 'ACCURACY \u00b7 TOP LAYER', v: this.MODELS[S.mi], w: 0, hue: this.LAYER_HUES['-1'] },
+      { key: 'task', label: 'TASK \u00b7 MIDDLE LAYER', v: this.TASKS[S.ti], w: 1, hue: this.LAYER_HUES['0'] },
+      { key: 'lang', label: 'LANGUAGE \u00b7 BOTTOM LAYER', v: this.LANGS[S.li], w: 2, hue: this.LAYER_HUES['1'] }
+    ].map((d, i) => ({
+      key: d.key, label: d.label, label2: ['\u21bb \u00b7 ACCURACY', '\u21bb \u00b7 TASK', '\u21bb \u00b7 LANGUAGE'][i],
+      name: d.v.name, sub: d.v.sub, hue: d.hue, color: hexA(d.hue, 0.8),
+      chipStyle: {
+        position: 'absolute', left: '452px', top: [108, 228, 348][i] + 'px', width: '224px',
+        pointerEvents: 'auto', display: 'flex', flexDirection: 'column', gap: '5px'
+      },
+      prev: () => this.cycle(d.w, -1), next: () => this.cycle(d.w, 1)
+    }));
+
+    const anyOut = Object.values(S.outs).some(Boolean);
+    const outputs = this.OUTS.map(o => {
+      const on = S.outs[o.k];
+      return {
+        key: o.k, label: o.label, toggle: () => this.toggleOut(o.k),
+        style: {
+          minHeight: '44px', padding: '0 16px', fontFamily: "'IBM Plex Mono', monospace",
+          fontSize: '12px', borderRadius: '2px', cursor: 'pointer',
+          background: on ? hexA(BLUE, 0.12) : 'transparent',
+          border: '1px solid ' + (on ? BLUE : 'rgba(246,246,246,0.16)'),
+          color: on ? '#7FC4DC' : 'rgba(246,246,246,0.5)',
+          transition: 'all 0.25s ease'
+        }
+      };
+    });
+
+    const actionStyle = {
+      minHeight: '48px', padding: '0 26px',
+      background: anyOut ? hexA(BLUE, 0.16) : 'transparent',
+      border: '1px solid ' + (anyOut ? BLUE : 'rgba(246,246,246,0.1)'),
+      color: anyOut ? '#7FC4DC' : 'rgba(246,246,246,0.35)',
+      fontFamily: "'IBM Plex Mono', monospace", fontSize: '13px', letterSpacing: '0.1em',
+      borderRadius: '2px', cursor: anyOut ? 'pointer' : 'default', transition: 'all 0.25s ease'
+    };
+
+    const chipBase = {
+      minHeight: '44px', padding: '0 18px', fontFamily: "'IBM Plex Mono', monospace",
+      fontSize: '12px', borderRadius: '2px', cursor: 'pointer', transition: 'all 0.25s ease'
+    };
+    const chipSolidStyle = Object.assign({}, chipBase, {
+      background: hexA(BLUE, 0.12), border: '1px solid ' + BLUE, color: '#7FC4DC'
+    });
+    const chipGhostStyle = Object.assign({}, chipBase, {
+      background: 'transparent', border: '1px solid rgba(246,246,246,0.16)', color: 'rgba(246,246,246,0.55)'
+    });
+
+    let liveLine = '';
+    if (S.live) {
+      const shown = S.live.slice(0, S.reveal);
+      let rest = '';
+      for (let i = S.reveal; i < S.live.length; i++) {
+        rest += S.live[i] === ' ' ? ' ' : this.GLYPHS[Math.floor(Math.random() * this.GLYPHS.length)];
+      }
+      liveLine = shown + rest;
+    }
+
+    const r = S.result;
+    const metaLine = r && F
+      ? 'LANGUAGE ' + String(r.language).toUpperCase() + ' \u00b7 DURATION ' + F.hms(r.duration) +
+        ' \u00b7 MODEL ' + this.MODELS[S.mi].name.toUpperCase() + ' \u00b7 SEGMENTS ' + r.segments.length +
+        (window.CubeEngine && window.CubeEngine.demo ? ' \u00b7 DEMO ENGINE' : '')
+      : '';
+
+    return {
+      onDragOver: e => { e.preventDefault(); if (!this.state.dragging) this.setState({ dragging: true }); },
+      onDragLeave: e => {
+        if (e.relatedTarget && e.currentTarget.contains(e.relatedTarget)) return;
+        this.setState({ dragging: false });
+      },
+      onDrop: e => {
+        e.preventDefault();
+        this.setState({ dragging: false });
+        this._take(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]);
+      },
+      fileRef: this._fileRef,
+      onFile: e => { this._take(e.target.files && e.target.files[0]); e.target.value = ''; },
+      isIdlePlain: S.phase === 'idle' && !S.infoOpen,
+      isOptions: S.phase === 'options',
+      optionsPanel: S.phase === 'options' && S.vw < 880,
+      optionsLeaders: wideOptions,
+      optLeadersStyle,
+      isProcessing: processing,
+      isDone: done,
+      infoFormats: S.infoOpen === 'formats' && !processing,
+      infoAbout: S.infoOpen === 'about' && !processing,
+      closeInfo: () => this.setState({ infoOpen: null }),
+      extList: this.EXTS.join(' \u00b7 '),
+      hasErr: !!S.err,
+      err: S.err,
+      idleHeadline: S.dragging ? 'Release.' : 'Drop audio or video files.',
+      idleSubShow: S.vw < 800,
+      stageBoxStyle, tiltStyle, cubeStyle, ghostLine, layers, leadersStyle,
+      fileLabel: S.file ? S.file.name + ' \u00b7 ' + this._fmtDur(S.file.duration) + ' \u00b7 ' + S.file.sizeMB + ' MB' : '',
+      removeFile: () => this.removeFile(),
+      dials, outputs,
+      actionLabel: this.TASKS[S.ti].verb + ' \u25b8',
+      start: () => this.start(),
+      statusTop: (S.status || '').toUpperCase(),
+      statusSub: Math.round(S.progress * 100) + '% \u00b7 ' + this._fmtClock(S.elapsed) + ' \u00b7 ' + this.MODELS[S.mi].name.toLowerCase() + ' model',
+      recentLines: S.lines.slice(-2).map((t, i) => ({ key: 'ln' + i, text: t })),
+      liveLine,
+      metaLine,
+      resultSegments: (r && F ? r.segments : []).map(sg => ({
+        key: 'sg' + sg.id,
+        time: '[' + F.hms(sg.start) + ' \u2013 ' + F.hms(sg.end) + ']',
+        text: sg.text.trim()
+      })),
+      copyLabel: S.copied ? 'copied \u2713' : 'copy text',
+      copy: () => this.copy(),
+      dlChips: this.OUTS.filter(o => S.outs[o.k]).map(o => ({
+        key: o.k, label: '\u2193 .' + o.k, click: () => this._dl(o.k)
+      })),
+      chipSolidStyle, chipGhostStyle,
+      reset: () => this.reset()
+    };
+  }
+}
+</script>
+</body>
+</html>

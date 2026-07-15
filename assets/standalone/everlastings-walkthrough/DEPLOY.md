@@ -7,15 +7,15 @@ A twelve-part video walkthrough handing the Everlastings by Emaline store to its
 
 Fully set up. To ship an update: **change the files, commit, push to `dev`** — it auto-redeploys. No Vercel or DNS reconfiguration is ever needed again.
 
-| | |
-|---|---|
-| Vercel project | `everlastings-walkthrough` — `prj_cAw9pB8Ek17KVR0wp3xudIYLDkHM` |
-| Git | `seanivore/design-360` |
-| Root Directory | `assets/standalone/everlastings-walkthrough` |
-| Framework | Other — pure static, no build step, no `package.json` |
-| **Production branch** | **`dev`** (moved off the `design-360` default) |
-| Domain | `everlastings.august.style` |
-| DNS | Cloudflare `CNAME everlastings → cname.vercel-dns.com`, **DNS-only / grey cloud** |
+|                       |                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------- |
+| Vercel project        | `everlastings-walkthrough` — `prj_cAw9pB8Ek17KVR0wp3xudIYLDkHM`                   |
+| Git                   | `seanivore/design-360`                                                            |
+| Root Directory        | `assets/standalone/everlastings-walkthrough`                                      |
+| Framework             | Other — pure static, no build step, no `package.json`                             |
+| **Production branch** | **`dev`** (moved off the `design-360` default)                                    |
+| Domain                | `everlastings.august.style`                                                       |
+| DNS                   | Cloudflare `CNAME everlastings → cname.vercel-dns.com`, **DNS-only / grey cloud** |
 
 The project name is `everlastings-walkthrough` rather than `everlastings` because the client's store already owns that name on the account. The subdomain is still plain `everlastings`.
 
@@ -72,14 +72,14 @@ Vercel serves them as `text/vtt`, which `<track>` requires.
 
 ## The files
 
-| File | What it does |
-|---|---|
-| `index.html` | Masthead → dark plum theater band → the spoken line → twelve episode rows in four arcs |
+| File              | What it does                                                                           |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| `index.html`      | Masthead → dark plum theater band → the spoken line → twelve episode rows in four arcs |
 | `walkthrough.css` | Everlastings palette + Cormorant Garamond. The theater is the page's only dark surface |
-| `walkthrough.js` | VTT parsing, cue lookup, click-to-seek transcript, `#n` deep links, per-film resume |
-| `videos.js` | The manifest — titles, blurbs, CDN URLs, ffprobe-exact durations |
-| `captions/` | Twelve `.vtt` tracks, same-origin on purpose |
-| `vercel.json` | `cleanUrls`, `trailingSlash` — the only deploy-relevant file in the folder |
+| `walkthrough.js`  | VTT parsing, cue lookup, click-to-seek transcript, `#n` deep links, per-film resume    |
+| `videos.js`       | The manifest — titles, blurbs, CDN URLs, ffprobe-exact durations                       |
+| `captions/`       | Twelve `.vtt` tracks, same-origin on purpose                                           |
+| `vercel.json`     | `cleanUrls`, `trailingSlash` — the only deploy-relevant file in the folder             |
 
 ### Two things that were subtly wrong and are worth not re-introducing
 

@@ -37,30 +37,41 @@ Live at **[shop-admin.august.style](https://shop-admin.august.style)**; its own 
 
 ---
 
-## How these get deployed
+## Setting up a new one — the exact sequence
 
-**Its own Vercel project, rooted at this subdirectory of the portfolio repo, with `dev` as its production branch.**
+The full low-down can be read in `.agents/SHARED_REPO_SITE.md`
 
-That last part is the trick, and it is easy to miss. Pushing to `dev` gives the *main site* a preview deploy and each *prototype* a production deploy, at the same time. The one-off ships from the integration branch on purpose — so you never have to merge to `design-360` just to update a demo.
-
-- **To ship an update: change the files, commit, `git push origin dev`.** Nothing else, ever.
-- The folder holds a `vercel.json` (`cleanUrls`, `trailingSlash`) and **nothing else deploy-related** — no `package.json`, no `.vercel/`, no lockfile. Project, root directory, branch and domain all live account-side, not in the repo.
-
-**The full step-by-step for setting up a new one — the actual API calls — lives in [`../standalone/README.md`](../standalone/README.md).** It applies verbatim here; just use `assets/prototypes/<name>` as the root directory instead of `assets/standalone/<name>`. It had to be reconstructed once, because shop-admin was created over the Vercel REST API and the commands were never written down. Don't repeat that.
-
-The one step that is genuinely non-obvious: **moving the production branch to `dev`.** `PATCH /v9/projects/{id}` rejects both `productionBranch` and `link` as unknown properties. The endpoint that works is:
-
-```sh
-curl -s -X PATCH "https://api.vercel.com/v1/projects/<prj_id>/branch" \
-  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{"branch":"dev"}'
-```
-
-And in Cloudflare the CNAME must be **DNS-only (grey cloud)** — proxying in front of Vercel breaks certificate issuance.
+---
 
 ## Media
 
-Heavy assets go on the CDN at `https://cdn.august.style/media/<name>/…`, never in the repo. Images through `POST https://www.august.style/api/upload`; video straight to R2 with the `aws` CLI. See `.agents/CDN_GUIDE.md`, the worked example in [`shop-admin/CDN_UPLOAD.md`](shop-admin/CDN_UPLOAD.md), and the gotchas collected in the standalone README (the checksum env var, `Cache-Control`, immutable keys, and MP4 faststart).
+Anything heavy (video, posters, large images) goes on the CDN, not in the repo — see `.agents/CDN_GUIDE.md`.
+
+- **Base:** `https://cdn.august.style/media/<name>/…`
+- **Images** → `POST https://www.august.style/api/upload` (it optimizes and converts to webp).
+- **Video** → straight to R2 with the `aws` CLI; the upload API does not touch video.
+
+Two things that will bite you:
+
+- **`AWS_REQUEST_CHECKSUM_CALCULATION=when_required` is load-bearing.** Newer AWS CLI versions add a CRC32 trailer that R2 rejects.
+- **Nothing sets `Cache-Control` for you on the `aws` path** — pass `--cache-control "public, max-age=31536000, immutable"` yourself. And because those objects are then immutable-cached, **an update needs a new versioned key** (`-v2`), never an in-place overwrite.
+
+`<video>` also wants **faststart**: recorders write the MP4 index (`moov`) *after* the video data, which forces a browser to download the whole file before the first frame appears. Fix it losslessly before uploading — this copies the streams and re-encodes nothing:
+
+```sh
+ffmpeg -i in.mp4 -c copy -movflags +faststart out.mp4
+```
+
+Captions (`.vtt`) are the exception to "media goes on the CDN": ship them **inside the site folder**. A cross-origin `<track>` needs CORS headers R2 does not send, and same-origin sidesteps the problem entirely.
 
 ---
-*Prototype demos available since 2026-06-29 · standalone siblings since 2026-07-14*
+
+## Portfolio tile
+
+A standalone can be surfaced on august.style as a regular tile — add an entry with `"layout": "url"` and an `"external_url"`, then regenerate:
+
+```sh
+python3 generate_manifest.py
+```
+
+See `assets/entries/uid-cpd-101.json` (the shop-admin tile) for the shape. Skip this for anything unlisted — the Everlastings walkthrough is `noindex` and has no tile.
