@@ -1,7 +1,9 @@
 {
   "entries": {
     "illustrated-poetry-book": "assets/entries/uid-cop-802.json",
+    "chat-online-store": "assets/entries/uid-cos-101.json",
     "creator-portal-demo": "assets/entries/uid-cpd-101.json",
+    "docker-transcription-cube": "assets/entries/uid-dtc-101.json",
     "surreal-constructivism-perception": "assets/entries/uid-enm-522.json",
     "constructivist-profiles": "assets/entries/uid-evn-680.json",
     "pie-claesz-modern-vibes": "assets/entries/uid-fan-459.json",
@@ -43,7 +45,7 @@
   "_metadata": {
     "generated": "auto",
     "description": "Maps slugs to JSON file paths for dynamic loading",
-    "entry_count": 34,
+    "entry_count": 36,
     "collection_count": 2,
     "item_count": 0
   }
