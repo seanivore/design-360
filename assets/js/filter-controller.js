@@ -55,6 +55,8 @@ const FilterController = (() => {
 .filter-trigger::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #9a9590; margin-left: 2px; }
 .filter-trigger-count { font-size: .6875rem; color: #C9A68A; }
 .filter-panel { position: absolute; top: 100%; left: 0; width: 280px; max-height: 380px; overflow-y: auto; background: #272727; border: 1px solid rgba(255,255,255,.1); border-radius: 8px; margin-top: 6px; z-index: 50; padding: 12px; box-shadow: 0 8px 32px rgba(0,0,0,.4); }
+/* Product is the rightmost dropdown — anchor its panel to the button's right edge so it never runs off-screen on narrow viewports. */
+.filter-dropdown[data-group="product"] .filter-panel { left: auto; right: 0; }
 .filter-search { width: 100%; padding: 9px 12px; font-size: .8125rem; background: #1f1f1f; color: #EBEBEB; border: 1px solid rgba(255,255,255,.08); border-radius: 6px; margin-bottom: 10px; font-family: inherit; outline: none; box-sizing: border-box; transition: border-color .15s; }
 .filter-search:focus { border-color: rgba(201,166,138,.4); }
 .filter-item { display: flex; align-items: center; gap: 8px; padding: 7px 8px; border-radius: 4px; cursor: pointer; font-size: .8125rem; color: #D7CDCC; transition: background .1s; }
