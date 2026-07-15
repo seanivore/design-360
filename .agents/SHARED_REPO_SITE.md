@@ -1,6 +1,6 @@
 # Subdirectory Sites — Shipping Extra Sites Out of a Repo That Already Has One
 
-> How to ship a static **subdirectory** of an existing repo as its own Vercel project, on its own subdomain, updated by an ordinary `git push` to dev if the primary repo has dev and prod branches. Fleet-level reference — a project keeps its own specifics next to the site itself.
+> How to ship a **subdirectory** of an existing repo as its own Vercel project — static, or with its own build step — on its own subdomain, updated by an ordinary `git push` to dev if the primary repo has dev and prod branches. Fleet-level reference — a project keeps its own specifics next to the site itself.
 
 ## Why This Guide Exists
 
@@ -15,7 +15,7 @@
 
 ## What This Is
 
-  A **subdirectory site** is a small static site that lives inside a bigger repo, deploys as its own Vercel project, and answers on its own subdomain. You send someone a link and it does its job.
+  A **subdirectory site** is a small, self-contained site that lives inside a bigger repo, deploys as its own Vercel project, and answers on its own subdomain. It can be plain static files or run its own build — either way you send someone a link and it does its job.
 
   Reach for it when you need
 
@@ -27,9 +27,9 @@
 
 ## When Not To Use It
 
-  A subdirectory site is **static**. No server, no build step, no database.
+  A subdirectory site is **front-end only, but not necessarily static**. It can be plain static files, or it can run its own build step (npm + a bundler) — Vercel compiles it from the Root Directory like any project — and it can do heavy client-side work: a whole Whisper model running in the browser via WebAssembly is fair game.
 
-  If it needs an API route, it is not one of these, at least, as of now, that makes it its own project that gets its own repo. The pattern below might change if this is the case.
+  The real line is the **backend**. The moment it needs its own server-side API routes, a database, or secrets read at runtime, it stops being one of these and earns its own repo. Anything that ships to the browser — however it is built — is welcome here.
 
 ## The Mental Model
 
@@ -49,22 +49,24 @@
   What follows from that
 
   + **Shipping an update is: change files, commit, push.** Forever. No Vercel or DNS work after the first setup.
-  + **The folder holds a `vercel.json` and nothing else deploy-related.** No `package.json`, no `.vercel/`, no lockfile. Project, root directory, branch, and domain all live account-side, not in the repo.
+  + **Deploy wiring lives account-side, not in the repo** — project, root directory, branch, and domain. A static folder holds just a `vercel.json`; a built one also carries its own `package.json` + lockfile, scoped to the folder. Never a `.vercel/`.
   + **Each site is independent.** One of them breaking is not the others breaking.
+  + **A built site wants an Ignored Build Step** so a push that only touched other folders doesn't rebuild it — put `git diff --quiet HEAD^ HEAD -- <ROOT>` in the project's *Ignored Build Step* field. Static folders skip this; there is nothing to build.
   + **If the repo has no dev/prod split** — you push its default branch — then skip Step 3 entirely. Everything else is the same.
 
 ## Before You Start
 
   Four things have to be true. Check them first; two of them are not yours to fix.
 
-  + **A Vercel token exists.** The CLI already stores one. Do not mint another.
+  + **A Vercel token exists** — but it **expires.** The CLI stores a short-lived OAuth token (`auth.json` has `expiresAt` + `refreshToken`); do not mint another, **refresh** it. Run `vercel whoami` first — it silently refreshes the stored token. Skip that and a stale token answers `invalidToken` / `Not authorized` on every call, even though `vercel whoami` itself works. This is the single most common "why is it wonky for this agent" trap.
   + **The apex domain is already on the Vercel account.** If it is, attaching a subdomain verifies instantly. If it is **not**, stop and ask — adding an apex is a different, human-facing job.
   + **A DNS API token is in the shell.** `$CLOUDFLARE_API_TOKEN`, exported from `~/.zshrc`.
   + **The repo is connected to the Vercel account.** It is, if any project from this repo already deploys.
 
-  Pull the token
+  Pull the token — **refresh it first**, or it may be expired:
 
 ```sh
+vercel whoami >/dev/null   # silently refreshes the stored OAuth token
 TOKEN=$(jq -r '.token' "$HOME/Library/Application Support/com.vercel.cli/auth.json")
 ```
 
@@ -89,12 +91,14 @@ BRANCH="dev"                         # the branch you actually push
 <ROOT>/
   index.html
   vercel.json     →  { "cleanUrls": true, "trailingSlash": false }
-  … everything else, static
+  … the rest of the site — static files, or a package.json + src that the build compiles
 ```
 
 ## Step 2 — Create the Vercel Project
 
   **`rootDirectory` and the git link must both go in at create time.** Patching them on afterwards is a fight. Creating with them is one call.
+
+  `framework:null` below is for a **static** folder. For a **built** site, set `framework` (Vercel auto-detects Vite, Next, and the rest) or pass `buildCommand` + `outputDirectory` — confirm the current field names against Vercel's docs before you rely on them.
 
 ```sh
 curl -s -X POST "https://api.vercel.com/v11/projects" \
