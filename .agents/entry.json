@@ -1,0 +1,24 @@
+{
+  "_comment": "Config for the global `entry` command (~/Development/scripts/entry). Replaces assets/scripts/new_project.py.",
+
+  "template_dir": "assets/docs",
+  "output_dir": "assets/docs",
+
+  "id_format": "legacy",
+  "indent": 4,
+  "default_type": "entry",
+
+  "types": {
+    "entry": {
+      "template": "_entry_template.json"
+    },
+    "collection": {
+      "template": "_collection_template.json",
+      "middle": "col"
+    }
+  },
+
+  "stamp": {
+    "id": "{id}"
+  }
+}
