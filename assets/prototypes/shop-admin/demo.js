@@ -88,9 +88,12 @@
         + 'Visit the storefront</a>';
       return;
     }
-    el.textContent = "Demo";
+    // …and the desktop topbar chip becomes the same door ("DEMO" said little; the storefront
+    // is the WOW the back end controls).
+    el.innerHTML = '<a href="store.html" title="See the site this portal controls" style="display:inline-flex;align-items:center;gap:6px;color:inherit;text-decoration:none;font:inherit;">'
+      + 'Visit the storefront'
+      + '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>';
     el.classList.remove("test-chip--live");
-    el.title = "An interactive demo \u2014 nothing here is real and nothing can break.";
   };
   /* View Site → the spoofed August & Co. storefront (this same deploy). */
   P.siteUrl = function () { return "store.html"; };
@@ -105,6 +108,13 @@
   P.boot = async function (opts) {
     opts = opts || {};
     P.config = D.config || {};
+    // Arriving from the storefront (?enter=1) skips the login — those visitors already started
+    // the demo; bouncing them to a sign-in they've conceptually passed is pure friction.
+    if (!P.store.use("signedIn", false) && /[?&]enter=1/.test(location.search)) {
+      P.store.set("signedIn", true);
+      P.store.set("account", { email: "you@august.style" });
+      P.store.commit();
+    }
     const signed = P.store.use("signedIn", false);
     P.session = signed ? { access_token: "demo", user: { email: P.demoAccount().email } } : null;
     if (typeof opts.onAuth === "function") { try { opts.onAuth(P.session); } catch (e) {} }

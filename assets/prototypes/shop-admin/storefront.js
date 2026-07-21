@@ -134,7 +134,7 @@
         <nav class="nav">${navLinks}</nav>
         <span class="hdr__sp"></span>
         <div class="hdr__actions">
-          <a class="admin-pill" href="products.html" title="Back to the admin demo">\u2190 <span class="admin-pill__l">Manage store</span><span class="admin-pill__s">Admin</span></a>
+          <a class="admin-pill" href="products.html?enter=1" title="Back to the admin demo">\u2190 <span class="admin-pill__l">Manage store</span><span class="admin-pill__s">Admin</span></a>
           <a class="iconbtn" href="cart.html" aria-label="Cart">${ICON.cart}<span class="cartcount" ${cartN ? "" : "hidden"}>${cartN}</span></a>
           <button class="iconbtn navtoggle" id="navToggle" aria-label="Menu">${ICON.menu}</button>
         </div>
@@ -142,7 +142,7 @@
       <div class="msheet" id="msheet">
         <div class="msheet__top"><a class="brand" href="store.html">August<span class="brand__amp">&amp;</span>Co.</a><button class="iconbtn" id="msheetClose" aria-label="Close">${ICON.close}</button></div>
         ${NAV.map(([h, l]) => `<a href="${h}">${l}</a>`).join("")}
-        <a href="products.html" style="color:var(--ink-soft);font-size:1.2rem;margin-top:20px;">\u2190 Manage store (admin demo)</a>
+        <a href="products.html?enter=1" style="color:var(--ink-soft);font-size:1.2rem;margin-top:20px;">\u2190 Manage store (admin demo)</a>
       </div>`;
 
     const host = document.getElementById("chrome");
@@ -174,7 +174,7 @@
           <p style="margin-top:12px;max-width:34ch;">Prints, apparel, and objects for people who notice the details. A portfolio demo store \u2014 every piece is fictional, nothing ships.</p>
         </div>
         <div><h4>Shop</h4><ul><li><a href="shop.html">All pieces</a></li><li><a href="shop.html?type=print">Prints</a></li><li><a href="shop.html?type=apparel">Apparel</a></li><li><a href="shop.html?type=merch">Goods</a></li></ul></div>
-        <div><h4>Studio</h4><ul><li><a href="https://august.style" target="_blank" rel="noopener">august.style</a></li><li><a href="https://everlastings.august.style/" target="_blank" rel="noopener">How it works (video)</a></li><li><a href="products.html">Manage store (admin)</a></li></ul></div>
+        <div><h4>Studio</h4><ul><li><a href="https://august.style" target="_blank" rel="noopener">august.style</a></li><li><a href="https://everlastings.august.style/" target="_blank" rel="noopener">How it works (video)</a></li><li><a href="products.html?enter=1">Manage store (admin)</a></li></ul></div>
         <div><h4>Note</h4><ul><li style="color:#b6ada1;font-size:.86rem;line-height:1.5;">This storefront is a live demo of a store-management system. Run a sale in the admin and watch it apply here.</li></ul></div>
       </div>
       <div class="foot__bar"><span>\u00A9 <span id="yr"></span> August &amp; Co. \u2014 a demo by <a href="https://august.style" target="_blank" rel="noopener">Sean August Horvath</a></span><span class="mono">Demo \u00b7 no real checkout</span></div>

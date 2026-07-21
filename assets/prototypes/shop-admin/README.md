@@ -1,5 +1,17 @@
 # August & Co. — Creator Portal + storefront (portfolio demo)
 
+**Version: v1.3 — 2026-07-21.** Bump this (and the line below it) whenever a packaged copy
+leaves this repo, so a deployed folder can always be matched to its source.
+
+- **v1.3** (2026-07-21) — hero ghost-button hover unified with the primary (solid gold, no ring).
+- **v1.2** (2026-07-21) — share cards: OG/Twitter meta + CDN thumbnail on all 11 pages;
+  verbatim admin pages retitled from Everlastings to August & Co.
+- **v1.1** (2026-07-21) — storefront→admin links skip the login (`?enter=1`); admin "DEMO"
+  chip/strip became "Visit the storefront" doors; eyeball preview opens same-tab; welcome
+  modal retired; brand wordmark tightened; mobile polish (product rows, shop grid, PDP, hero).
+- **v1.0** (2026-07-21) — first deploy: admin re-forked to live v4.2.0 + August & Co.
+  storefront, mid-century palette, 20% studio sale.
+
 A public, playable demo. Visitors land on the portal **sign-in**, tap **Enter** (no
 credentials — nothing here is real), and manage a fictional shop across **Products, Orders,
 Sales, Account** — then hit **View Site** to see the **August & Co.** storefront update with
