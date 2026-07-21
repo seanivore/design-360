@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Cart — August &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storefront.css">
+</head>
+<body>
+<div id="chrome"></div>
+
+<main>
+  <div class="wrap pagehead"><span class="eyebrow">Your bag</span><h1>Cart</h1></div>
+  <div class="wrap" id="cartRoot"></div>
+</main>
+
+<div id="foot"></div>
+
+<script src="data.js"></script>
+<script src="storefront.js"></script>
+<script src="cart-view.js"></script>
+<script>
+  AC.mountChrome("cart");
+  AC.mountFooter();
+  ACView.renderCart(document.getElementById("cartRoot"));
+  document.addEventListener("ac:cart", () => ACView.renderCart(document.getElementById("cartRoot")));
+</script>
+</body>
+</html>

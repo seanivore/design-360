@@ -314,7 +314,7 @@ a{color:inherit;}
 /* STATE RINGS on the field border itself — no text tag */
 .field[data-ring="green"]  .input,.field[data-ring="green"]  .select,.field[data-ring="green"]  .textarea{border-color:var(--live-bd);}
 .field[data-ring="green"]  .input:focus,.field[data-ring="green"]  .textarea:focus,.field[data-ring="green"]  .select:focus{border-color:var(--live); box-shadow:0 0 0 3px color-mix(in oklch,var(--live),transparent 72%);}
-.field[data-ring="yellow"] .input,.field[data-ring="yellow"] .select,.field[data-ring="yellow"] .textarea{border-color:var(--waiting); box-shadow:0 0 0 2px color-mix(in oklch,var(--waiting),transparent 64%);}
+.field[data-ring="yellow"] .input,.field[data-ring="yellow"] .select,.field[data-ring="yellow"] .textarea{border-color:var(--waiting); box-shadow:0 0 0 2px color-mix(in oklch,var(--waiting),transparent 45%), 0 0 9px color-mix(in oklch,var(--waiting),transparent 62%);}
 .field[data-ring="yellow"] .input:focus,.field[data-ring="yellow"] .textarea:focus,.field[data-ring="yellow"] .select:focus{border-color:var(--waiting); box-shadow:0 0 0 3px color-mix(in oklch,var(--waiting),transparent 50%);}
 .field[data-ring="red"]    .input,.field[data-ring="red"]    .select,.field[data-ring="red"]    .textarea{border-color:var(--danger-bd); background:color-mix(in oklch,var(--danger-bg),var(--surface-sunk) 40%);}
 .field[data-ring="red"]    .input:focus,.field[data-ring="red"]    .textarea:focus,.field[data-ring="red"]    .select:focus{border-color:var(--danger); box-shadow:0 0 0 3px color-mix(in oklch,var(--danger),transparent 72%);}
@@ -450,6 +450,12 @@ a{color:inherit;}
 .toast--live{background:color-mix(in oklch,var(--live),black 28%);}
 .toast--danger{background:color-mix(in oklch,var(--danger),black 22%);}
 .toast .toast__undo{margin-left:4px; color:color-mix(in oklch,var(--surface),var(--live) 30%); font-weight:700; cursor:pointer; background:none; border:0; font-size:var(--t-sm);}
+/* v4.1.2 — errors say something worth reading, so they sit still, wrap, and carry a visible dismiss */
+.toast--danger{align-items:flex-start; max-width:min(94vw,520px); line-height:1.45;}
+.toast--danger > span{padding-top:1px;}
+.toast .toast__x{margin-left:6px; flex:none; align-self:flex-start; color:color-mix(in oklch,var(--surface),transparent 35%);
+  font-weight:700; cursor:pointer; background:none; border:0; font-size:var(--t-sm); line-height:1.4; padding:0 2px;}
+.toast .toast__x:hover{color:var(--surface);}
 
 /* modal / sheet scrim */
 .scrim{position:fixed; inset:0; z-index:0; background:oklch(24% 0.03 262 / .42); opacity:0; pointer-events:none; transition:opacity var(--dur-settle) var(--ease-weight);}

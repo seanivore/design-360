@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Shop — August &amp; Co.</title>
+<meta name="description" content="The full August & Co. catalog: prints, apparel, and goods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storefront.css">
+</head>
+<body>
+<div id="chrome"></div>
+
+<main>
+  <div class="wrap pagehead"><span class="eyebrow">The catalog</span><h1>Shop everything</h1></div>
+  <section class="section" style="padding-top:clamp(28px,4vw,44px);">
+    <div class="wrap">
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+      <div id="empty"></div>
+    </div>
+  </section>
+</main>
+
+<div id="foot"></div>
+
+<script src="data.js"></script>
+<script src="storefront.js"></script>
+<script>
+  AC.mountChrome("shop");
+  AC.mountFooter();
+
+  const TYPES = [["all", "All"], ["print", "Prints"], ["apparel", "Apparel"], ["merch", "Goods"]];
+  const params = new URLSearchParams(location.search);
+  let active = params.get("type") || "all";
+  if (!TYPES.some(t => t[0] === active)) active = "all";
+
+  function render() {
+    const all = AC.shopProducts();
+    document.getElementById("filters").innerHTML = TYPES.map(([id, label]) => {
+      const n = id === "all" ? all.length : all.filter(p => p.product_type === id).length;
+      return `<button class="chip ${id === active ? "is-on" : ""}" data-type="${id}">${label} <span style="opacity:.6">${n}</span></button>`;
+    }).join("");
+    document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+      active = c.dataset.type;
+      const u = new URL(location.href); u.searchParams.set("type", active); history.replaceState(null, "", u);
+      render();
+    }));
+    const rows = active === "all" ? all : all.filter(p => p.product_type === active);
+    document.getElementById("grid").innerHTML = rows.map(AC.tileHTML).join("");
+    document.getElementById("empty").innerHTML = rows.length ? "" : `<div class="empty"><h2>Nothing here yet</h2><p>No pieces in this category.</p></div>`;
+  }
+  render();
+</script>
+</body>
+</html>

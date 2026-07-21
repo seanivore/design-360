@@ -1,26 +1,42 @@
-# Creator Portal — interactive demo (portfolio)
+# August & Co. — Creator Portal + storefront (portfolio demo)
 
-A public, playable demo fork of the Creator Portal admin design. Visitors land on the
-sign-in screen, sign in with **any** email/password, get a "you can't break this" welcome,
-then create / edit / delete across Products, Orders, Sales, and Account.
+A public, playable demo. Visitors land on the portal **sign-in**, tap **Enter** (no
+credentials — nothing here is real), and manage a fictional shop across **Products, Orders,
+Sales, Account** — then hit **View Site** to see the **August & Co.** storefront update with
+what they did. A pretend checkout writes orders back into the portal's Orders queue.
 
-- **Entry:** `index.html` → `account.html` (the sign-in). Sign in → lands on Products.
-- **Persistence:** all changes are kept in `sessionStorage` for the visit and **reset** on
-  sign-out or a new session (see `PORTAL.store` in `portal.js`).
-- **Pure static** — no server, no build step. `vercel.json` enables clean URLs.
-- **Store-home / View Site** links point at the real site (`everlastingsbyemaline.com`);
-  a back-link returns to `august.style`.
-- **Demo, not the handoff.** This is a separate fork from `design-handoff/out/` (the
-  unwired design package). It deliberately fakes auth, hardcodes URLs, and ships demo data.
+- **Entry:** `index.html` → `account.html` (Enter) → `products.html`.
+- **Two halves, one deploy:** the **admin portal** (`products/orders/sales/account.html`) and
+  the spoofed **storefront** (`store/shop/product/cart/checkout/complete.html`).
+- **Persistence:** everything lives in `sessionStorage` and **resets** on sign-out / new
+  session. No server, no build step, no auth, no Stripe — deliberately faked.
+- **Store-wide sale:** ships with a **20% off** sale running, so the struck-price behaviour is
+  visible everywhere out of the box.
+
+## How it's built (important)
+This is a **fork of the live Everlastings `/admin`** (v4.2.0). The admin JS/HTML/CSS are copied
+**verbatim**; all demo behaviour is confined to **`demo.js`** (a client-side mock of `/api/*`
+over `sessionStorage`) plus a login fork. **See `DEMO_FORK_CHANGES.md`** for the full change
+list and the re-fork runbook. Don't hand-edit the copied admin files except the documented
+patches.
 
 ## Files
-- `index.html` — redirect to the sign-in.
-- `account.html` / `account-app.js` — sign-in + account (activity log, reset).
-- `products.html`, `orders.html`, `sales.html` (+ `-app.js`) — the three other surfaces.
-- `portal.css` — design system. `portal.js` — shared shell, helpers, session store.
-- `data.js` — the seed demo dataset (products, orders, coupons, activity log).
-- `vercel.json` — `cleanUrls` static config.
+**Admin (verbatim from live + the seam):**
+- `products/orders/sales.html` + `-app.js`, `portal.js`, `portal.css` — copied verbatim.
+- `account.html` / `account-app.js` — login **forked** (Enter button, demo copy, corner links).
+- `demo.js` — the mock backend + `PORTAL.boot/env/siteUrl/authHeader` overrides + session store.
+- `data.js` — the seed demo dataset (products, orders, coupons, 20% store-wide sale, activity).
+
+**Storefront (spoof, self-contained):**
+- `store.html` (home + hero video), `shop.html`, `product.html`, `cart.html`, `checkout.html`,
+  `complete.html`.
+- `storefront.css`, `storefront.js`, `cart-view.js`.
+
+**Shell:** `index.html` (→ sign-in), `vercel.json` (clean URLs).
 
 ## Assets
-Product images load from `cdn.august.style/media/shop-admin/<slug>/…`. Until those are
-uploaded, broken images fall back gracefully (no layout break).
+- Product media loads from `cdn.august.style/media/shop-admin/<slug>/…` (see `CDN_UPLOAD.md`);
+  broken images fall back gracefully.
+- Storefront hero: `cdn.august.style/media/shop-admin/prototype-home-hero-admin.mp4` (+ `.webp`
+  poster).
+- Two archived Everlastings dioramas load from the legacy Everlastings CDN — no upload needed.

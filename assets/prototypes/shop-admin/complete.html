@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Order confirmed — August &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storefront.css">
+</head>
+<body>
+<div id="chrome"></div>
+
+<main class="wrap">
+  <div id="doneRoot"></div>
+</main>
+
+<div id="foot"></div>
+
+<script src="data.js"></script>
+<script src="storefront.js"></script>
+<script>
+  AC.mountChrome();
+  AC.mountFooter();
+  const money = AC.money;
+  let o = null;
+  try { o = JSON.parse(sessionStorage.getItem("augCoLastOrder.v1") || "null"); } catch (e) {}
+  const root = document.getElementById("doneRoot");
+
+  if (!o) {
+    root.innerHTML = `<div class="empty"><h2>No recent order</h2><p>Your confirmation isn't available. <a href="shop.html">Back to the shop →</a></p></div>`;
+  } else {
+    root.innerHTML = `<div class="done">
+      <div class="done__mark">${AC.ICON.check}</div>
+      <span class="eyebrow">Order #${o.ref}</span>
+      <h1>Thank you.</h1>
+      <p style="color:var(--ink-soft);font-size:1.1rem;max-width:44ch;margin:0 auto;">A confirmation is on its way to <b>${o.email}</b>. You can watch this order move through the admin's Orders queue.</p>
+
+      <div class="done__receipt">
+        ${o.items.map((it) => `<div class="sumrow" style="color:var(--ink);"><span>${it.title} <span style="color:var(--ink-faint)">×${it.qty}</span></span><span class="mono">${money(it.unit * it.qty)}</span></div>`).join("")}
+        <div style="border-top:1px solid var(--line);margin-top:10px;padding-top:10px;">
+          <div class="sumrow"><span>Subtotal</span><span class="mono">${money(o.subtotal)}</span></div>
+          ${o.discount > 0 ? `<div class="sumrow sumrow--sale"><span>${o.label}</span><span class="mono">−${money(o.discount)}</span></div>` : ""}
+          <div class="sumrow"><span>Shipping</span><span class="mono">${o.shipping === 0 ? "Free" : money(o.shipping)}</span></div>
+          <div class="sumrow"><span>Tax</span><span class="mono">${money(o.tax)}</span></div>
+          <div class="sumrow sumrow--total"><span>Total paid</span><span class="mono">${money(o.total)}</span></div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn" href="shop.html">Keep shopping</a>
+        <a class="btn btn--ghost" href="orders.html">See it in the admin →</a>
+      </div>
+      <div class="demo-note" style="margin-top:20px;">Demo order — nothing ships, no card was charged.</div>
+    </div>`;
+  }
+</script>
+</body>
+</html>

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
 <title>Creator Portal | Everlastings by Emaline</title>
 <link rel="stylesheet" href="portal.css">
 <style>
@@ -48,8 +49,9 @@
 .tpill--shipped .pdot{background:var(--live);}
 .tpill--refunded{color:color-mix(in oklch,var(--sold),black 16%); background:var(--sold-bg); border-color:var(--sold-bd);}
 .tpill--refunded .pdot{background:var(--sold);}
-.tpill--delivered{color:var(--ink-muted); background:var(--surface-sunk); border-color:var(--hairline);}
-.tpill--delivered .pdot{background:var(--ink-faint);}
+/* Canceled: a calm slate pill, distinct from shipped-green / refunded-blue / needs-orange */
+.tpill--canceled{color:var(--accent-strong); background:var(--accent-soft); border-color:color-mix(in oklch,var(--accent),white 68%);}
+.tpill--canceled .pdot{background:var(--accent);}
 
 /* email sent/unsent micro-pill */
 .empill{font-size:10px; font-weight:600; color:var(--ink-faint); display:inline-flex; align-items:center; gap:4px;}
@@ -85,10 +87,16 @@
 .rpiece__info{flex:1; min-width:0;}
 .rpiece__title{font-size:var(--t-sm); font-weight:600;}
 .rpiece__sub{font-size:var(--t-xs); color:var(--ink-faint);}
-.rpiece__ctrls{display:flex; flex-direction:column; gap:6px; align-items:flex-end; flex:none;}
+.rpiece__ctrls{display:flex; flex-direction:column; gap:8px; align-items:flex-end; flex:none;}
 .rpiece__ctrls .switch__label{font-size:var(--t-xs); font-weight:600;}
+.rpiece__add{align-self:flex-end;}
 [data-radd].is-added{background:var(--live-bg); border-color:var(--live-bd); color:color-mix(in oklch,var(--live),black 18%);}
 .refund-amt{margin-top:14px;}
+/* the refund guide — Amount + Relist */
+.refund-guide{margin:12px 0 0; font-size:var(--t-xs); color:var(--ink-muted);}
+.refund-guide p{margin:0 0 5px;}
+.refund-guide ul{margin:0; padding-left:16px; display:flex; flex-direction:column; gap:3px;}
+.refund-guide b{color:var(--ink);}
 .relist-row{display:flex; align-items:center; gap:10px; padding:9px 0 0; flex-wrap:wrap;}
 .relist-row .switch__label{font-size:var(--t-xs); font-weight:600;}
 .refund-sum{display:flex; align-items:center; justify-content:space-between; margin:14px 0 4px; font-size:var(--t-base); font-weight:700;}
@@ -144,6 +152,7 @@
 
 <script src="data.js"></script>
 <script src="portal.js"></script>
+<script src="demo.js"></script>
 <script src="orders-app.js"></script>
 </body>
 </html>

@@ -1,48 +1,43 @@
 # shop-admin — deploy handoff
 
-A self-contained static demo of the Creator Portal admin, for the portfolio.
-**Live at https://shop-admin.august.style.**
-
-## ✅ Already deployed & wired (set up 2026-06-29)
-This is fully set up. To ship an update you just **replace this folder's contents, commit, and
-push to `dev`** — it auto-redeploys. No Vercel or DNS reconfiguration is ever needed again.
-
-- **Own Vercel project** `shop-admin` (`prj_m7AxxGKn9qx789SYhtHF4J4xRIkp`, team `seanivore`) —
-  separate from the main august.style site.
-- **Git-connected** to `seanivore/design-360`, **Root Directory** = `assets/prototypes/shop-admin`,
-  framework **Other** (pure static, no build step). Lives as a subdirectory of the portfolio repo.
-- **Production branch = `dev`** → pushing to `dev` auto-deploys to the live domain. The main
-  site project (`design-360`) is untouched.
-- **Domain** `shop-admin.august.style` attached + TLS auto-provisioned. DNS is a Cloudflare
-  CNAME `shop-admin → cname.vercel-dns.com` (proxy = DNS-only). New records on this Cloudflare
-  zone can take a few minutes to propagate — that's normal, not a misconfig.
-- **The one deploy-critical file is `vercel.json`** (`cleanUrls: true`, `trailingSlash: false`).
-  Keep it in every export — it's what makes `/products`, `/orders`, `/sales`, `/account` resolve
-  and `/` → sign-in. **No other config files are required** (the project, root directory, branch,
-  domain, and cert are all account-side settings, already done).
+A self-contained static demo: the **August & Co. Creator Portal** (a fork of the live
+Everlastings `/admin`) **plus a spoofed August & Co. storefront**. Goal: live at
+**`shop-admin.august.style`**, linked from a portfolio tile. No build step, no server, no env
+vars, no Supabase, no Stripe.
 
 ## What this is
-- Plain static files: `*.html`, `*.js`, `portal.css`, `data.js`, `vercel.json`.
-- Entry: `index.html` → `account.html` (sign-in). Any email/password signs in; state lives in
-  `sessionStorage` and resets each session (see `PORTAL.store` in `portal.js`). Nothing real,
-  nothing can break — that's intended.
-- Product media loads from `cdn.august.style/media/shop-admin/…`. Two archived dioramas load
-  from the Everlastings dev CDN.
-- Surfaces: Products, Orders, Sales, Account, and Preview (`preview.html`).
+- Plain static files: `*.html`, `*.js`, `*.css`, `data.js`, `vercel.json`.
+- Entry: `index.html` → `account.html` (sign-in). **Enter** (no credentials) → `products.html`.
+  State lives in `sessionStorage` and resets each session. Nothing real, nothing can break.
+- Admin = a **verbatim** copy of the live portal; all demo wiring is in `demo.js`
+  (a `sessionStorage`-backed mock of `/api/*`). See `README.md` and `DEMO_FORK_CHANGES.md`.
+- Storefront (`store/shop/product/cart/checkout/complete.html`) reads the same session store
+  the admin writes; the checkout is a pretend flow that writes orders back into the admin.
+- Product media is on `cdn.august.style` (see `CDN_UPLOAD.md`); the hero video/poster too.
 
-## Portfolio tile (still TODO — on the main site, not this folder)
-Add an entry on august.style that links straight to `https://shop-admin.august.style` — an
-interactive, playable admin-panel redesign (create, edit, refund, run sales; everything resets).
-This lands in the main site (deploys from `design-360`), so it's tracked separately from here.
+## Deploy (matches how we've shipped little HTML things before)
+1. Place this folder at `assets/prototypes/shop-admin/` in the design-360 repo.
+2. `shop-admin.august.style` serves that folder (a Vercel rewrite/route in the portfolio
+   project, or a small dedicated Vercel project rooted here).
+3. `vercel.json` sets `cleanUrls`/`trailingSlash:false`, so `/products`, `/store`, `/cart`, …
+   resolve and `/` → sign-in.
+4. Push to `dev` to publish, same as the current prototype.
+
+## Portfolio tile
+Link straight to `https://shop-admin.august.style`. Angle: an interactive, playable
+store-management portal redesign — create products, run sales, refund orders, then jump to the
+storefront and watch it change. Everything resets.
 
 ## Verify after deploy
-- `/` shows the ribbon sign-in; any credentials → "you can't break this" modal → Products.
-- Product thumbnails + videos load (live CDN).
-- Tabs read **Live 8 · Drafts 1 · Archived 2 · All 11** — there is **no "Sold" tab**; sold-out
-  items appear under **Live** with a "Sold out" pill (buy disabled). **Orders badge = 2**.
+- `/` shows the ribbon sign-in with the **Enter** button; Enter → Products.
+- Products tabs read **Live · Drafts · Archived · All** (no "Sold" tab); the sold-out Art Deco
+  Poster sits under Live.
+- Sales shows a **20% off** store-wide sale running + two coupon codes.
+- **View Site** (rail) → the August & Co. storefront; hero video plays; prices show struck 20%.
+- Add to cart → checkout → **Pay** → confirmation; the order then appears in admin **Orders**.
 - Sign out → returns to sign-in and resets.
 
 ## Do NOT
-- Wire a real backend, auth, or Stripe — this is a demo fork, deliberately faked. The real
-  integration path is a separate design-handoff package + its gap-review loop, entirely
-  separate from this folder.
+- Wire a real backend, auth, or Stripe — deliberately faked. The real integration path is the
+  separate `design-handoff/` package + its gap-review loop.
+- Hand-edit the verbatim admin files beyond the patches documented in `DEMO_FORK_CHANGES.md`.

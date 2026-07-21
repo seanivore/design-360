@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<title>Creator Portal | Everlastings by Emaline</title>
+<meta name="robots" content="noindex, nofollow">
+<title>August &amp; Co. · Creator Portal (demo)</title>
 <link rel="stylesheet" href="portal.css">
 <style>
 /* ===================== Account surface ===================== */
@@ -29,6 +30,18 @@
 .env-dot.test{background:var(--waiting); box-shadow:0 0 6px color-mix(in oklch,var(--waiting),transparent 40%);}
 .env-dot.live{background:var(--live); box-shadow:0 0 6px color-mix(in oklch,var(--live),transparent 40%);}
 .kv{font-size:var(--t-xs); color:var(--ink-muted); font-family:var(--font-data); margin-top:3px; word-break:break-all;}
+
+/* v4.1.5 — media specs + what this build can't do. The version rides in the cap's hint slot, so the
+   owner can always answer "which build am I on, and does it do X?" without asking anyone. */
+.speccard .spec{padding-top:13px; margin-top:13px; border-top:1px solid color-mix(in oklch,var(--hairline),var(--surface) 45%);}
+.speccard .spec:first-of-type{padding-top:0; margin-top:0; border-top:none;}
+.speccard h4{margin:0 0 7px; font-size:var(--t-sm); font-weight:600; color:var(--ink);}
+.speccard ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+.speccard li{position:relative; padding-left:15px; font-size:var(--t-sm); line-height:1.5; color:var(--ink-muted);}
+.speccard li::before{content:""; position:absolute; left:0; top:.62em; width:5px; height:5px; border-radius:50%; background:var(--hairline);}
+.speccard li b{color:var(--ink); font-weight:600;}
+.spec--limits li::before{background:color-mix(in oklch,var(--waiting),var(--surface) 25%);}
+.spec--limits h4{color:var(--ink-muted);}
 
 /* activity log */
 .logcard__cap{display:flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:12px;}
@@ -62,12 +75,26 @@ body.signed-out #view{margin:0;}
 .signin-fx .signin .input:focus{background:color-mix(in oklch,var(--surface),transparent 8%); backdrop-filter:blur(16px) saturate(1.4); -webkit-backdrop-filter:blur(16px) saturate(1.4);}
 .signin-fx .signin .btn--block{background:color-mix(in oklch,var(--accent),transparent 12%); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);}
 /* floating home button — in front of the animation, accent-tinted, label revealed on hover/tap */
-.fx-home{position:absolute; z-index:2; left:20px; bottom:20px; display:inline-flex; align-items:center; gap:0; padding:10px; border-radius:var(--r-pill); color:#fff; background:color-mix(in oklch,var(--accent),transparent 22%); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); text-decoration:none; box-shadow:var(--sh-1); transition:background .15s;}
+.fx-home{position:absolute; z-index:2; left:20px; bottom:20px; display:inline-flex; align-items:center; gap:8px; padding:10px; border-radius:var(--r-pill); color:#fff; background:color-mix(in oklch,var(--accent),transparent 22%); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); text-decoration:none; box-shadow:var(--sh-1); transition:background .15s;}
 .fx-home svg{width:20px; height:20px; flex:none;}
 .fx-home__lbl{max-width:0; overflow:hidden; white-space:nowrap; font-size:var(--t-sm); font-weight:600; opacity:0; transition:max-width .22s var(--ease-weight), opacity .18s, padding-right .22s;}
 .fx-home:hover,.fx-home:focus-visible{background:color-mix(in oklch,var(--accent),transparent 6%);}
-.fx-home:hover .fx-home__lbl,.fx-home:focus-visible .fx-home__lbl,.fx-home:active .fx-home__lbl{max-width:120px; opacity:1; padding-left:8px; padding-right:4px;}
+.fx-home:hover .fx-home__lbl,.fx-home:focus-visible .fx-home__lbl,.fx-home:active .fx-home__lbl{max-width:120px; opacity:1; padding-right:4px;}
 @media (max-width:560px){.fx-home{left:14px; bottom:14px;}}
+
+/* ===== DEMO login: two corner links + ENTER button ===== */
+.fx-corner{position:absolute; z-index:2; display:inline-flex; align-items:center; gap:8px; padding:10px; border-radius:var(--r-pill); color:#fff; background:color-mix(in oklch,var(--accent),transparent 22%); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); text-decoration:none; box-shadow:var(--sh-1); transition:background .15s;}
+.fx-corner svg{width:20px; height:20px; flex:none;}
+.fx-corner__lbl{max-width:0; overflow:hidden; white-space:nowrap; font-size:var(--t-sm); font-weight:600; opacity:0; transition:max-width .22s var(--ease-weight), opacity .18s, padding-right .22s;}
+.fx-corner:hover,.fx-corner:focus-visible{background:color-mix(in oklch,var(--accent),transparent 6%);}
+.fx-corner:hover .fx-corner__lbl,.fx-corner:focus-visible .fx-corner__lbl,.fx-corner:active .fx-corner__lbl{max-width:160px; opacity:1; padding-right:4px;}
+.fx-portfolio{top:20px; left:20px;}
+.fx-corner.fx-home{left:20px; bottom:20px; top:auto;}
+@media (max-width:560px){.fx-portfolio{top:14px; left:14px;} .fx-corner.fx-home{left:14px; bottom:14px;}}
+.signin__brand{font-size:var(--t-xs); font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint);}
+.signin h2{line-height:1.2;}
+.demo-badge{display:inline-block; font-size:.72em; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--accent-strong); background:color-mix(in oklch,var(--accent),transparent 84%); border:1px solid color-mix(in oklch,var(--accent),transparent 60%); padding:1px 7px; border-radius:var(--r-pill); vertical-align:middle; transform:translateY(-2px);}
+.btn--enter{font-size:var(--t-base); padding:13px 18px; margin-top:2px;}
 </style>
 </head>
 <body>
@@ -79,6 +106,7 @@ body.signed-out #view{margin:0;}
 </div>
 <script src="data.js"></script>
 <script src="portal.js"></script>
+<script src="demo.js"></script>
 <script src="account-app.js"></script>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>August &amp; Co. — design worth living with</title>
+<meta name="description" content="Archival prints, all-over apparel, and hand-finished goods from a small studio. A portfolio demo storefront.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storefront.css">
+</head>
+<body>
+<div id="chrome"></div>
+
+<main>
+  <section class="hero">
+    <div class="hero__media">
+      <video autoplay muted loop playsinline
+        poster="https://cdn.august.style/media/shop-admin/mid-century-modern-hero-anim-poster.webp"
+        src="https://cdn.august.style/media/shop-admin/mid-century-modern-hero-anim-slow.mp4"></video>
+    </div>
+    <div class="hero__scrim"></div>
+    <div class="hero__in"><div class="wrap">
+      <span class="eyebrow">The studio catalog</span>
+      <h1>Design worth living&nbsp;with.</h1>
+      <p class="hero__lede">Archival prints, all-over apparel, and hand-finished goods — a small, opinionated catalog made to be used, worn, and kept.</p>
+      <div class="hero__cta">
+        <a class="btn btn--lg" href="shop.html">Shop the collection</a>
+        <a class="btn btn--ghost btn--lg" href="products.html">Run the store</a>
+      </div>
+      <span class="hero__rule" aria-hidden="true"></span>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Featured</span><h2>Currently on the wall</h2><p>A handful of pieces we can't stop looking at.</p></div>
+        <a class="sec-head__link" href="shop.html">All pieces →</a>
+      </div>
+      <div class="grid" id="featured"></div>
+    </div>
+  </section>
+
+  <section class="section section--sunk">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">Browse</span><h2>By what it is</h2></div></div>
+      <div class="cats" id="cats"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" style="max-width:760px;text-align:center;">
+      <span class="eyebrow">How it's run</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3.2rem);margin:14px 0 18px;">A store you run by talking to&nbsp;it.</h2>
+      <p style="color:var(--ink-soft);font-size:1.1rem;">Behind this storefront is a real management system with two equal surfaces: an <b style="color:var(--slate-deep);">AI assistant the owner simply chats with</b> — “add this product, here are the photos… run 20% off through Sunday” — and the mobile-first portal you can play with right now. Same powers, full parity: draft → preview → publish, automatic store-wide sales, refunds with restock.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px;">
+        <a class="btn" href="products.html">Open the admin demo</a>
+        <a class="btn btn--ghost" href="https://everlastings.august.style/" target="_blank" rel="noopener">See how the real one works →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="foot"></div>
+
+<script src="data.js"></script>
+<script src="storefront.js"></script>
+<script>
+  AC.mountChrome("home");
+  AC.mountFooter();
+  (function () {
+    const feat = AC.shopProducts().filter((p) => p.featured);
+    const list = (feat.length ? feat : AC.shopProducts()).slice(0, 6);
+    document.getElementById("featured").innerHTML = list.map(AC.tileHTML).join("");
+    // imagery-driven category cards
+    const CATS = [["print", "Prints"], ["apparel", "Apparel"], ["merch", "Goods"]];
+    document.getElementById("cats").innerHTML = CATS.map(([t, label]) => {
+      const rows = AC.shopProducts().filter((p) => p.product_type === t);
+      const pick = rows.find((p) => p.featured) || rows[0];
+      const img = pick ? ((pick.images && pick.images[1] && pick.images[1].url) || pick.thumbnail || "") : "";
+      return `<a class="cat" href="shop.html?type=${t}">${img ? `<img src="${img}" alt="" loading="lazy" onerror="this.remove()">` : ""}<div class="cat__body"><span class="cat__name">${label}</span><span class="cat__n">${rows.length} piece${rows.length === 1 ? "" : "s"} →</span></div></a>`;
+    }).join("");
+  })();
+</script>
+</body>
+</html>

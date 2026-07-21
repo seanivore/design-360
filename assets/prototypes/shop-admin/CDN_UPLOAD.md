@@ -4,6 +4,16 @@ Everything the demo's `data.js` references, mapped to its final URL. Hand this t
 Claude Code (or follow it directly). Two products kept from the real Everlastings
 shop (the archived dioramas) use the existing Everlastings CDN and need **no upload**.
 
+## Storefront hero (already uploaded by Sean)
+
+The August & Co. storefront home (`store.html`) uses a 5:4 (900×720) hero video + still poster:
+```
+https://cdn.august.style/media/shop-admin/mid-century-modern-hero-anim-slow.mp4
+https://cdn.august.style/media/shop-admin/mid-century-modern-hero-anim-poster.webp
+```
+Video goes straight to the CDN (no API); the `.webp` is the `<video poster>` fallback. If the
+`.mp4` 404s the poster still shows; if both 404 the hero area is a calm cream block.
+
 ## The rule
 
 - **Base:** `https://cdn.august.style/media/shop-admin/<slug>/`

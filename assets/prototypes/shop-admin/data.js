@@ -376,18 +376,18 @@
       code: "ANDES25", promotion_code_id: "promo_demoANDES", percent_off: null, amount_off: 2500,
       amount_display: "$25.00", min_amount: 20000, min_display: "$200.00",
       times_redeemed: 2, max_redemptions: 25, expires_at: 1782604800, expires_display: "Jun 30",
-      store_wide: false, product_ids: ["prod_andesbag"],
+      store_wide: false, product_ids: ["prod_peruvian-leather-bag"],
     },
   ];
 
   /* automatic no-code store-wide sale. null = none running. */
   const storeWideSale = {
-    active: true, type: "percent", value: 15,
-    amount_display: "15% off", started_at: "2026-06-20T00:00:00Z", expires_display: null,
+    active: true, type: "percent", value: 20,
+    amount_display: "20% off", started_at: "2026-06-20T00:00:00Z", expires_display: null,
   };
 
   /* ------------------------------------------------------------------ CONFIG */
-  const config = { publishableKey: "pk_test_demo", isTest: true, siteUrl: "https://everlastingsbyemaline.com" };
+  const config = { publishableKey: "pk_test_demo", isTest: true, siteUrl: "https://shop-admin.august.style" };
 
   /* ----------------------------------------------------------- ACTIVITY LOG */
   const activityLog = [
@@ -395,7 +395,7 @@
     { at: "2026-06-29T08:50:00Z", actor: "admin@design.shop", action: "order.ship", summary: "Marked “Peruvian Leather Bag” shipped" },
     { at: "2026-06-28T20:02:00Z", actor: "admin@design.shop", action: "order.refund", summary: "Refunded $145.00 on the Art Deco Poster" },
     { at: "2026-06-28T16:33:00Z", actor: "admin@design.shop", action: "product.update", summary: "Staged a charcoal colorway on “Barely Bauhaus Linen Shirt”" },
-    { at: "2026-06-27T14:20:00Z", actor: "admin@design.shop", action: "sale.create", summary: "Started a 15% store-wide sale" },
+    { at: "2026-06-27T14:20:00Z", actor: "admin@design.shop", action: "sale.create", summary: "Started a 20% store-wide sale" },
     { at: "2026-06-27T11:05:00Z", actor: "admin@design.shop", action: "product.publish", summary: "Published “Bauhaus Jumpsuit”" },
     { at: "2026-06-26T19:40:00Z", actor: "admin@design.shop", action: "order.ship", summary: "Marked “Barely Bauhaus Linen Shirt” shipped" },
     { at: "2026-06-23T17:42:00Z", actor: "admin@design.shop", action: "product.publish", summary: "Published “Mid-Century Modern Tee”" },

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
 <title>Creator Portal | Everlastings by Emaline</title>
 <link rel="stylesheet" href="portal.css">
 <style>
@@ -18,14 +19,43 @@
   .tools__line .btn-new{margin-left:auto;}
 }
 
-/* segmented tabs — Sold blinks faint orange when unseen orders wait (cross-surface signal) */
-.seg__chip[data-alert]{position:relative;}
-.seg__chip[data-alert]::after{content:""; position:absolute; inset:3px 6px; border-radius:var(--r-pill); z-index:-1;
-  background:var(--waiting); opacity:0; animation:tab-alert 2.4s var(--ease-weight) infinite;}
-
 /* +New button — clean, no underline */
 .btn-new{text-decoration:none;}
 .btn-new:hover{text-decoration:none;}
+
+/* ---------- list sorting & pagination (GAP #7) ---------- */
+/* sortable column headers — desktop only; click cycles asc → desc → natural */
+.listhead .colsort{display:flex; align-items:center; gap:5px; background:none; border:0; margin:0; padding:0;
+  font:inherit; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--ink-faint); cursor:pointer; user-select:none;}
+.listhead .colsort.r{justify-content:flex-end;} .listhead .colsort.c{justify-content:center;}
+.listhead .colsort:hover{color:var(--ink-muted);}
+.listhead .colsort.is-active{color:var(--accent);}
+.listhead .colsort__ind{font-size:9px; line-height:1; width:8px;}
+
+/* mobile sort control — shown only <860px, where there are no header columns */
+.tools__sort{display:none;}
+@media (max-width:859px){
+  .tools__sort{display:flex;}
+  .sortsel{display:flex; align-items:center; gap:8px; flex:1; position:relative;
+    background:var(--surface); border:1px solid var(--hairline); border-radius:var(--r-md);
+    padding:0 12px; min-height:42px; box-shadow:var(--sh-1); color:var(--ink-faint);}
+  .sortsel > svg{width:16px; height:16px; flex:none;}
+  .sortsel select{flex:1; appearance:none; -webkit-appearance:none; background:none; border:0; outline:none;
+    font:inherit; font-size:16px; font-weight:600; color:var(--ink); padding:9px 18px 9px 0; cursor:pointer;}
+  .sortsel .chev{position:absolute; right:12px; top:50%; transform:translateY(-50%); width:16px; height:16px; pointer-events:none; color:var(--ink-faint);}
+}
+
+/* pagination — appears only once the catalog exceeds one page */
+.pager{display:none; align-items:center; gap:12px; flex-wrap:wrap; margin-top:16px; padding:2px 4px;
+  font-size:var(--t-sm); color:var(--ink-muted);}
+.pager__count{font-family:var(--font-data); font-variant-numeric:tabular-nums;}
+.pager__spacer{flex:1;}
+.pager__nav{display:flex; align-items:center; gap:10px;}
+.pager__pages{font-family:var(--font-data); font-variant-numeric:tabular-nums; color:var(--ink);}
+.pager__per{display:flex; align-items:center; gap:8px; font-size:var(--t-xs); text-transform:uppercase; letter-spacing:.05em; font-weight:700; color:var(--ink-faint);}
+.pager__per .select-wrap{position:relative;}
+@media (max-width:560px){.pager{gap:8px;} .pager__spacer{flex-basis:100%; height:0;}}
 
 /* ---------- the spreadsheet (softer / more blended, per controls.html) ---------- */
 .list{display:flex; flex-direction:column; gap:9px;}
@@ -49,32 +79,32 @@
 .prow__id{min-width:0; cursor:pointer; display:flex; flex-direction:column; gap:1px; text-align:left; background:none; border:0; padding:0; font-family:inherit;}
 .prow__title{font-size:var(--t-sm); font-weight:600; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 .prow__meta{font-size:var(--t-xs); color:var(--ink-faint); display:flex; gap:7px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.prow__meta .slug{font-family:var(--font-data); min-width:0; overflow:hidden; text-overflow:ellipsis;}
+.prow__meta .slug{font-family:var(--font-data);}
 
 /* mobile compact price (qty stacked under, like slug under title) + control strip */
 .prow__price{display:flex; flex-direction:column; align-items:flex-end; gap:1px; font-family:var(--font-data); font-variant-numeric:tabular-nums; font-size:var(--t-sm); font-weight:600; color:var(--ink); justify-self:end; white-space:nowrap;}
 .prow__price .qtysub{font-size:var(--t-xs); font-weight:500; color:var(--ink-faint);}
 .prow__price .qtysub.zero{color:var(--sold); font-weight:600;}
-.prow__meta .soldpill{flex:none; font-size:10px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; background:var(--sold); padding:1px 7px; border-radius:999px; line-height:1.6;}
-@keyframes ledpulse{0%,100%{box-shadow:0 0 2px 0 color-mix(in oklch,var(--sold),transparent 45%);}50%{box-shadow:0 0 9px 2px color-mix(in oklch,var(--sold),transparent 15%); filter:brightness(1.3);}}
-.led--sold{animation:ledpulse 1.6s ease-in-out infinite;}
 .prow__ctrls{grid-column:1 / -1; display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:10px; margin-top:3px; border-top:1px solid var(--hairline);}
 .prow__ctrls .switch__label{font-size:var(--t-xs); font-weight:600;}
 .prow__ctrls .spacer{flex:1;}
+/* DEMO FORK (mobile polish): keep toggles + actions on ONE compact line so each row stays thin. */
+@media (max-width:600px){
+  .prow__ctrls{gap:8px; flex-wrap:nowrap; padding-top:8px;}
+  .prow__ctrls .switch__label{font-size:.6rem; letter-spacing:0;}
+  .prow__ctrls .spacer{flex:1;}
+  .prow__ctrls .iconbtn{width:32px; height:32px; min-width:32px;}
+  .prow__ctrls .iconbtn svg{width:17px; height:17px;}
+}
 .prow__cols{display:none;}
 .listhead{display:none;}
 
 @media (min-width:860px){
-  .listhead{display:grid; grid-template-columns:13px 42px minmax(150px,1.6fr) 104px 48px 60px 60px 70px;
+  .listhead{display:grid; grid-template-columns:13px 42px minmax(150px,1.6fr) 104px 48px 60px 60px 116px;
     gap:12px; align-items:center; padding:4px 14px 2px; color:var(--ink-faint);
     font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase;}
   .listhead .r{text-align:right;} .listhead .c{text-align:center;}
-  .listhead .sorth{appearance:none; background:none; border:0; padding:0; margin:0; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; cursor:pointer; width:100%; display:inline-flex; align-items:center; gap:2px;}
-  .listhead .sorth.r{justify-content:flex-end;} .listhead .sorth.c{justify-content:center;}
-  .listhead .sorth:hover{color:var(--ink);}
-  .listhead .sorth.is-sorted{color:var(--accent-strong);}
-  .listhead .sorth i{font-style:normal; font-size:9px;}
-  .prow{grid-template-columns:13px 42px minmax(150px,1.6fr) 104px 48px 60px 60px 70px; gap:12px; padding:9px 14px;}
+  .prow{grid-template-columns:13px 42px minmax(150px,1.6fr) 104px 48px 60px 60px 116px; gap:12px; padding:9px 14px;}
   .prow__price, .prow__ctrls{display:none;}
   .prow__cols{display:contents;}
   .cell-price{position:relative;}
@@ -92,7 +122,7 @@
     transition:border-color var(--dur-base) var(--ease-weight), box-shadow var(--dur-base) var(--ease-weight), background-color var(--dur-base) var(--ease-weight);}
   .cell-qty .qin:hover{border-color:var(--ink-faint);}
   .cell-qty .qin:focus{outline:none; background:var(--surface); border-color:var(--live); box-shadow:0 0 0 3px color-mix(in oklch,var(--live),transparent 74%);}
-  .cell-qty .qin.zero{color:var(--sold); font-weight:700; background:color-mix(in oklch,var(--sold),white 86%); border-color:color-mix(in oklch,var(--sold),white 45%);}
+  .cell-qty .qin.zero{color:var(--sold); font-weight:700;}
   .cell-toggle{display:flex; justify-content:center;}
   .cell-actions{display:flex; justify-content:flex-end; gap:1px;}
 }
@@ -107,15 +137,6 @@
     animation:expand var(--dur-settle) var(--ease-weight);}
 }
 @keyframes expand{from{opacity:0; transform:translateY(-6px);}to{opacity:1; transform:none;}}
-
-/* storefront preview overlay (iframe, works in-sandbox + deployed) */
-.preview-ov{position:fixed; inset:0; z-index:120; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(22,24,30,.5); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);}
-.preview-ov__card{width:min(1100px,96vw); height:92vh; background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--sh-2); overflow:hidden; display:flex; flex-direction:column;}
-.preview-ov__bar{display:flex; align-items:center; gap:12px; padding:10px 14px; border-bottom:1px solid var(--hairline); font-size:var(--t-sm); font-weight:600;}
-.preview-ov__bar a{margin-left:auto; color:var(--ink-muted); display:inline-flex;}
-.preview-ov__bar a svg{width:16px; height:16px;}
-.preview-ov__bar a:hover{color:var(--ink);}
-.preview-ov iframe{flex:1; width:100%; border:0; background:var(--bg);}
 
 /* mobile full-screen sheet */
 .sheet{position:fixed; inset:0; z-index:55; background:var(--bg); display:flex; flex-direction:column;
@@ -174,9 +195,9 @@
 .dimcell .input:not(:placeholder-shown) + .dimunit{opacity:1;}
 
 /* ===== media center ===== */
-.media-center{display:flex; flex-direction:column; gap:12px;}
-.media-cover{display:grid; grid-template-columns:132px 1fr; gap:12px;}
-@media (max-width:560px){.media-cover{grid-template-columns:1fr;}}
+.media-center{display:flex; flex-direction:column; gap:12px; min-width:0;}
+.media-cover{display:grid; grid-template-columns:132px minmax(0,1fr); gap:12px;} /* V-1 — minmax(0,…) stops the gallery strip forcing the grid wider than the viewport on mobile */
+@media (max-width:560px){.media-cover{grid-template-columns:minmax(0,1fr);}}
 .mtile{position:relative; border-radius:var(--r-md); overflow:hidden; background:var(--surface-sunk); border:1.5px solid var(--hairline);
   display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:var(--ink-faint); cursor:pointer; min-height:96px; text-align:center;
   transition:border-color var(--dur-base) var(--ease-weight), color var(--dur-base) var(--ease-weight);}
@@ -196,7 +217,7 @@
 .mtile__open{position:absolute; top:5px; right:5px; z-index:2; width:22px; height:22px; border-radius:6px;
   background:color-mix(in oklch,var(--ink),transparent 22%); color:#fff; display:flex; align-items:center; justify-content:center;}
 .mtile__open svg{width:12px; height:12px;}
-.mgallery{border-radius:var(--r-md); border:1.5px solid var(--hairline); background:var(--surface-sunk); padding:10px; cursor:pointer; display:flex; flex-direction:column; gap:8px;}
+.mgallery{border-radius:var(--r-md); border:1.5px solid var(--hairline); background:var(--surface-sunk); padding:10px; cursor:pointer; display:flex; flex-direction:column; gap:8px; min-width:0;}
 .mgallery:hover{border-color:var(--accent);}
 .mgallery.filled{border-color:var(--live-bd);}
 .mgallery__head{display:flex; align-items:center; justify-content:space-between; font-size:10px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-muted);}
@@ -211,9 +232,7 @@
 .mgallery__strip img{width:56px; height:56px; flex:none; border-radius:var(--r-sm); object-fit:cover; border:1px solid var(--hairline);}
 .mgallery__empty{display:flex; align-items:center; gap:7px; color:var(--ink-faint); font-size:var(--t-sm); min-height:56px;}
 .mgallery__empty svg{width:18px; height:18px;}
-.media-secondary{display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px;}
-@media (max-width:560px){.media-secondary{grid-template-columns:1fr 1fr;}}
-.media-secondary .mtile{min-height:76px;}
+/* V-1 — .media-secondary removed: the JS no longer emits that class (secondary media render as .media-sq). */
 .media-add{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:0 18px; min-height:76px;
   border:1.5px solid var(--accent); color:var(--accent); border-radius:var(--r-md); cursor:pointer; font-weight:600; font-size:var(--t-sm); background:var(--accent-soft); white-space:nowrap;}
 .media-add:hover{background:color-mix(in oklch,var(--accent-soft),var(--accent) 12%);}
@@ -259,10 +278,13 @@
 .dropzone.drag{border-color:var(--accent); background:var(--accent-soft);}
 .dropzone svg{width:30px; height:30px; color:var(--ink-faint);}
 .dropzone p{margin:0; font-size:var(--t-sm); color:var(--ink-muted);}
+/* v4.1.2 — say the upload limits BEFORE someone discovers them by failing */
+.dz-limits{font-size:var(--t-xs) !important; color:var(--ink-faint) !important; line-height:1.5; margin-top:2px !important;}
 .urlrow{display:flex; gap:8px; margin-top:12px;}
 .urlrow .input{flex:1;}
 .mitems{display:flex; flex-direction:column; gap:10px; margin-top:16px;}
 .mitem{display:flex; gap:11px; padding:11px; border:1px solid var(--hairline); border-radius:var(--r-md); background:var(--surface);}
+.mitem--errored{border-color:var(--danger); box-shadow:0 0 0 2px var(--danger-bd);}
 .mitem__thumb{width:72px; height:72px; flex:none; border-radius:var(--r-sm); overflow:hidden; background:var(--surface-sunk); position:relative; display:flex; align-items:center; justify-content:center;}
 .mitem__thumb img,.mitem__thumb video{width:100%; height:100%; object-fit:cover;}
 .mitem__thumb .yt{color:var(--danger);} .mitem__thumb svg{width:22px; height:22px; color:var(--ink-faint);}
@@ -280,6 +302,28 @@
 /* new-upload highlight: pale-yellow double pulse */
 @keyframes mflash{0%,50%{background:oklch(94% 0.08 96);}25%,100%{background:transparent;}}
 .mitem.is-new{animation:mflash 2.4s var(--ease-weight) 1; border-radius:var(--r-md);}
+
+/* "Start here" (bug #2): a brand-new product rings Price + Title orange-red with a pulsing halo, plus a
+   message up top — each clears the moment its field is filled (refreshStartHint toggles [data-startreq]). */
+.field[data-startreq],.pin[data-startreq]{--startred:color-mix(in oklch, var(--danger), var(--waiting) 42%);}
+/* Ring the visible control: Title / mobile-Price inputs live in the editor (.field .input); on desktop the
+   editor's .commerce price is display:none, so the visible price is the product row's inline .pin input.
+   The halo is a box-shadow (follows each control's own radius; nothing clips it) — never the hidden inner box. */
+.field[data-startreq] .input,
+.pin[data-startreq]{border-color:var(--startred); animation:startflash 1.4s var(--ease-weight) infinite;}
+.field[data-startreq] .input:focus,
+.pin[data-startreq]:focus{animation:none; box-shadow:0 0 0 3px color-mix(in oklch,var(--startred),transparent 50%);}
+@keyframes startflash{
+  0%,100%{box-shadow:0 0 0 2px color-mix(in oklch,var(--startred),transparent 40%);}
+  50%{box-shadow:0 0 0 3px color-mix(in oklch,var(--startred),transparent 8%), 0 0 10px 2px color-mix(in oklch,var(--startred),transparent 45%);}
+}
+.start-hint{--startred:color-mix(in oklch, var(--danger), var(--waiting) 42%);
+  display:flex; align-items:center; gap:9px; padding:10px 13px; margin-bottom:16px; border-radius:var(--r-md);
+  font-size:var(--t-sm); font-weight:600; color:color-mix(in oklch,var(--danger),black 6%);
+  background:color-mix(in oklch,var(--startred),white 88%); border:1px solid color-mix(in oklch,var(--startred),white 52%);}
+.start-hint[hidden]{display:none;}
+.start-hint__dot{width:9px; height:9px; border-radius:50%; flex:none; background:var(--startred); animation:starthintdot 1.5s var(--ease-weight) infinite;}
+@keyframes starthintdot{0%,100%{opacity:.55; transform:scale(.82);}50%{opacity:1; transform:scale(1);}}
 /* square secondary tiles in the editor media display */
 .media-sq{display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:10px; margin-top:10px;}
 .msq{position:relative; aspect-ratio:1/1; border-radius:var(--r-md); overflow:hidden; border:1px solid var(--hairline); background:var(--surface-sunk); cursor:pointer;}
@@ -302,12 +346,49 @@
 .schedpop{position:fixed; z-index:70; background:var(--surface); border:1px solid var(--hairline); border-radius:var(--r-md); box-shadow:var(--sh-2); padding:14px; width:min(300px,92vw); display:flex; flex-direction:column; gap:10px;}
 .schedpop h4{margin:0; font-size:var(--t-sm); font-weight:700;}
 .schedpop .row{display:flex; gap:8px;} .schedpop .input{flex:1;}
-.sched-chip{display:inline-flex; align-items:center; gap:7px; padding:5px 11px; border-radius:var(--r-pill); background:color-mix(in oklch,var(--staged),white 80%); color:color-mix(in oklch,var(--staged),black 16%); border:1px solid color-mix(in oklch,var(--staged),white 52%); font-size:var(--t-xs); font-weight:600;}
+.sched-chip{display:inline-flex; align-items:center; gap:7px; padding:5px 11px; border-radius:var(--r-pill); background:color-mix(in oklch,var(--waiting),white 80%); color:color-mix(in oklch,var(--waiting),black 16%); border:1px solid color-mix(in oklch,var(--waiting),white 52%); font-size:var(--t-xs); font-weight:600;}
 .sched-chip button{background:none; border:none; cursor:pointer; color:inherit; opacity:.7; font-weight:700; padding:0 2px;}
 @media (max-width:859px){.mitem .input,#urlInput{font-size:16px;}}
 .mprog{height:4px; border-radius:2px; background:var(--surface-sunk); overflow:hidden;}
 .mprog i{display:block; height:100%; width:30%; background:var(--accent); animation:load 1.1s var(--ease-weight) infinite;}
 @keyframes load{0%{width:8%;}50%{width:78%;}100%{width:97%;}}
+/* M-3 — media preview keeps its true aspect (JS sets the width; height stays 72) instead of forced-square */
+.mitem__thumb{align-self:flex-start;}
+/* M-4 — the role rides faintly beside the filename in the type line */
+.mitem__role{color:var(--ink-faint); font-weight:400;}
+.modal__card{position:relative;}
+.spin{width:26px; height:26px; border-radius:50%; border:2.5px solid var(--hairline); border-top-color:var(--accent); animation:spin .7s linear infinite;}
+.btn.is-busy{opacity:.85;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* v4.1.2 — upload progress lives in the STICKY head, not in the scrolling body.
+   The old .modal__busy was position:absolute inside .modal__card, and .modal__card is itself the
+   scroll container — so the overlay pinned to the top of the SCROLLED CONTENT and slid out of view.
+   You are at the bottom of the modal when you finish assigning roles, which is exactly where the
+   count was invisible. .modal__head is position:sticky, so anything in here cannot scroll away. */
+.modal__prog{display:none; flex-direction:column; gap:6px; width:100%;}
+.modal__prog.is-on{display:flex;}
+.modal__prog-top{display:flex; align-items:center; gap:8px;}
+.modal__prog-msg{font-size:var(--t-sm); font-weight:600; color:var(--ink-muted); flex:1;}
+.modal__prog-spin{width:14px; height:14px; border-radius:50%; border:2px solid var(--hairline); border-top-color:var(--accent); animation:spin .7s linear infinite; flex:none;}
+.modal__prog-bar{height:3px; border-radius:2px; background:var(--hairline); overflow:hidden;}
+.modal__prog-fill{height:100%; width:0; border-radius:2px; background:var(--accent); transition:width var(--dur-base) var(--ease-weight);}
+/* while a batch runs, the head is ONLY the progress — the title and X would just be noise */
+.modal__head.is-busy h3, .modal__head.is-busy .btn-icon{display:none;}
+
+/* v4.1.2 — if you close the modal mid-upload the job keeps going, so the progress has to follow you
+   out. Sits with the toasts. */
+.mediapill{position:fixed; z-index:61; right:18px; bottom:18px; display:flex; flex-direction:column; gap:6px;
+  min-width:210px; padding:11px 13px; border-radius:var(--r-md); background:var(--surface); box-shadow:var(--sh-2);
+  border:1px solid var(--hairline); opacity:0; transform:translateY(6px); pointer-events:none;
+  transition:opacity var(--dur-base) var(--ease-weight), transform var(--dur-base) var(--ease-weight);}
+.mediapill.is-on{opacity:1; transform:none;}
+.mediapill__top{display:flex; align-items:center; gap:8px;}
+.mediapill__msg{font-size:var(--t-sm); font-weight:600; color:var(--ink); flex:1;}
+.mediapill__spin{width:13px; height:13px; border-radius:50%; border:2px solid var(--hairline); border-top-color:var(--accent); animation:spin .7s linear infinite; flex:none;}
+.mediapill__bar{height:3px; border-radius:2px; background:var(--hairline); overflow:hidden;}
+.mediapill__fill{height:100%; width:0; border-radius:2px; background:var(--accent); transition:width var(--dur-base) var(--ease-weight);}
+@media (prefers-reduced-motion:reduce){.modal__prog-spin,.mediapill__spin{animation:none;}}
 .modal__foot{position:sticky; bottom:0; display:flex; align-items:center; gap:10px; padding:13px 16px; background:var(--surface); border-top:1px solid var(--hairline);}
 .modal__foot .grow{flex:1;}
 .fallback-note{font-size:var(--t-xs); color:var(--ink-muted); display:flex; align-items:center; gap:6px;}
@@ -335,9 +416,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
       <span class="lbl">Products</span>
     </a>
-    <a class="rail__item" href="orders.html" data-alert data-label="Orders">
+    <a class="rail__item" href="orders.html" data-label="Orders">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="m12 11v10"/></svg>
-      <span class="lbl">Orders</span><span class="badge">2</span>
+      <span class="lbl">Orders</span>
     </a>
     <a class="rail__item" href="sales.html" data-label="Sales">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2a2 2 0 0 1-.6-1.4V4a1 1 0 0 1 1-1h8a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.4Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>
@@ -372,18 +453,36 @@
           New
         </button>
       </div>
+      <!-- mobile sort control (desktop uses the sortable column headers) -->
+      <div class="tools__sort">
+        <label class="sortsel" title="Sort products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11M3 12h8M3 18h5"/><path d="m17 8 3-3 3 3"/><path d="M20 5v14"/></svg>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="created:desc">Newest first</option>
+            <option value="created:asc">Oldest first</option>
+            <option value="title:asc">Name · A–Z</option>
+            <option value="title:desc">Name · Z–A</option>
+            <option value="price:asc">Price · low to high</option>
+            <option value="price:desc">Price · high to low</option>
+            <option value="quantity:desc">Quantity · most first</option>
+            <option value="quantity:asc">Quantity · fewest first</option>
+          </select>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </label>
+      </div>
     </div>
 
     <div class="listhead">
       <span></span><span></span>
-      <button class="sorth" data-sort="title">Product<i></i></button>
-      <button class="sorth r" data-sort="price">Price<i></i></button>
-      <button class="sorth r" data-sort="quantity">Qty<i></i></button>
-      <button class="sorth c" data-sort="available">Avail<i></i></button>
-      <button class="sorth c" data-sort="featured">Feat<i></i></button>
+      <button class="colsort" data-sort="title">Product <span class="colsort__ind"></span></button>
+      <button class="colsort r" data-sort="price">Price <span class="colsort__ind"></span></button>
+      <button class="colsort r" data-sort="quantity">Qty <span class="colsort__ind"></span></button>
+      <button class="colsort c" data-sort="available">Avail <span class="colsort__ind"></span></button>
+      <button class="colsort c" data-sort="featured">Feat <span class="colsort__ind"></span></button>
       <span class="r"></span>
     </div>
     <div class="list" id="list"></div>
+    <div class="pager" id="pager"></div>
   </main>
 </div>
 
@@ -392,8 +491,8 @@
   <a class="tabbar__item" href="products.html" aria-current="page">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Products
   </a>
-  <a class="tabbar__item" href="orders.html" data-alert>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/></svg>Orders<span class="badge">2</span>
+  <a class="tabbar__item" href="orders.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/></svg>Orders
   </a>
   <a class="tabbar__item" href="sales.html">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2a2 2 0 0 1-.6-1.4V4a1 1 0 0 1 1-1h8a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.4Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg>Sales
@@ -417,10 +516,11 @@
   </div>
 </div>
 
-<input type="file" id="fileInput" accept="image/*,video/mp4" multiple hidden>
+<input type="file" id="fileInput" accept="image/*,video/mp4,video/webm" multiple hidden>
 
 <script src="data.js"></script>
 <script src="portal.js"></script>
+<script src="demo.js"></script>
 <script src="products-app.js"></script>
 </body>
 </html>

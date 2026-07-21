@@ -7,64 +7,32 @@
   "use strict";
   const P = (window.PORTAL = window.PORTAL || {});
 
-  /* ============================ DEMO BUILD ===================================
-     This is the public portfolio demo fork. It persists every change for the
-     visitor's SESSION (sessionStorage) so create/edit/delete stick and carry
-     across surfaces, and resets to the seed on sign-out / new session. ======= */
-  P.DEMO = true;
-
-  P.store = (function () {
-    const KEY = "shopAdminDemo.v1";
-    let cache = null;
-    const live = {}; // key -> the live reference handed to a surface
-    function load() {
-      if (cache) return cache;
-      try { const raw = sessionStorage.getItem(KEY); cache = raw ? JSON.parse(raw) : {}; } catch (e) { cache = {}; }
-      return cache;
-    }
-    return {
-      // return the session value for key, or a deep clone of the default (and seed it)
-      use(key, def) {
-        const s = load();
-        const val = (s[key] !== undefined) ? s[key] : JSON.parse(JSON.stringify(def == null ? null : def));
-        s[key] = val; live[key] = val; return val;
-      },
-      get(key) { return live[key]; },
-      set(key, val) { const s = load(); s[key] = val; live[key] = val; return val; },
-      commit() { try { const s = load(); for (const k in live) s[k] = live[k]; sessionStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {} },
-      reset() { try { sessionStorage.removeItem(KEY); } catch (e) {} cache = null; for (const k in live) delete live[k]; },
-    };
-  })();
-  // flush in-page changes before leaving so they survive navigation between surfaces / reload
-  ["pagehide", "beforeunload"].forEach((ev) => window.addEventListener(ev, () => P.store.commit()));
-  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") P.store.commit(); });
-
-  // append an entry to the live activity log (demo: every mutating action records one)
-  P.logActivity = function (action, summary) {
-    const data = window.PORTAL_DATA || {};
-    const log = P.store.use("activityLog", data.activityLog || []);
-    const acct = P.store.get("account");
-    log.unshift({ at: new Date().toISOString(), actor: (acct && acct.email) || "admin@design.shop", action, summary });
-    P.store.commit();
-  };
-
-  // one-time-per-session welcome: “you can’t break this”
-  P.maybeWelcome = function () {
-    if (!P.DEMO) return;
-    if (!P.store.use("signedIn", false)) return;
-    if (P.store.use("welcomed", false)) return;
-    P.store.set("welcomed", true); P.store.commit();
-    const ov = document.createElement("div");
-    ov.style.cssText = "position:fixed; inset:0; z-index:120; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(22,24,30,.5); -webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px); opacity:0; transition:opacity .2s;";
-    ov.innerHTML = '<div role="dialog" aria-modal="true" style="max-width:440px; width:100%; background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--sh-2); padding:28px;">'
-      + '<h2 style="margin:0 0 8px; font-size:var(--t-xl); font-weight:600; letter-spacing:-.01em;">You can’t break this.</h2>'
-      + '<p style="margin:0 0 20px; color:var(--ink-muted); font-size:var(--t-base); line-height:1.55;">This is a fully interactive demo. Create products, edit anything, run sales, process refunds — go wild. Nothing here is real, and nothing you do can break it. Everything resets when you sign out or come back later.</p>'
-      + '<button type="button" class="btn btn--block" id="welcomeGo">Start exploring</button></div>';
-    document.body.appendChild(ov);
-    requestAnimationFrame(() => { ov.style.opacity = "1"; });
-    const close = () => { ov.style.opacity = "0"; setTimeout(() => ov.remove(), 200); };
-    ov.querySelector("#welcomeGo").addEventListener("click", close);
-    ov.addEventListener("click", (e) => { if (e.target === ov) close(); });
+  /* ---- the build ----------------------------------------------------------
+     One source of truth for what this portal IS, and — just as importantly — what it
+     ISN'T. Surfaced on the Account page so the owner can say "we need X, and this build
+     only does Y" without anyone having to read the code. Bump `version` on release. */
+  P.BUILD = {
+    version: "v4.2.0",
+    released: "2026-07-14",
+    // Every hard number a person could run into. Sourced from the real limits, not from hope:
+    // the 4.3 MB drop ceiling is Vercel's 4.5 MB request-body cap at the edge (minus multipart
+    // overhead) — it is NOT ours and cannot be raised. The link limits are ours.
+    media: {
+      photoDropMB: 4.3,
+      photoLinkMB: 10,
+      videoDropMB: 4.3,
+      videoLinkMB: 200,
+      photoTypes: "JPEG, PNG, WebP, GIF",
+      videoTypes: "MP4, WebM",
+    },
+    // Known shortcomings. Keep these HONEST — the point of listing them is that nobody
+    // discovers them the hard way, mid-upload, on a deadline.
+    limits: [
+      "iPhone HEIC photos aren't supported yet. Turn HEIC off (Settings → Camera → Formats → Most Compatible), or export as JPEG.",
+      "Video isn't converted for you. iPhone records .MOV, which many browsers won't play — export as .mp4, or use YouTube.",
+      "Video isn't compressed for you. A rendered 3-minute clip is usually under 20 MB; a raw phone clip can be 10× that.",
+      "A video's thumbnail — the still it shows before you press play — isn't taken from the clip for you. Upload an image and give it the \"Video poster\" role in the media window.",
+    ],
   };
 
   /* ---- environment chip: derived from the hostname, never hardcoded --------
@@ -79,14 +47,45 @@
   P.applyEnvChip = function (el) {
     if (!el) return;
     const e = P.env();
-    el.textContent = P.DEMO ? "Demo" : e.label;
+    el.textContent = e.label;
     el.classList.toggle("test-chip--live", !e.isTest);
-    el.title = P.DEMO ? "This is an interactive demo — nothing here is real and nothing can break." : (e.isTest ? "You're viewing test data (preview environment)" : "You're on the live shop");
+    el.title = e.isTest ? "You're viewing test data (preview environment)" : "You're on the live shop";
   };
-  /* demo: “store home” always points at the real site that was built (the whole point of the showcase) */
-  P.siteUrl = function () { return "https://everlastingsbyemaline.com"; };
-  /* demo: link back to the portfolio apex */
-  P.portfolioUrl = function () { return "https://august.style"; };
+  /* the storefront URL for the CURRENT environment (test → this deployment's root; live → prod) */
+  P.siteUrl = function () { return P.env().isTest ? location.origin : "https://everlastingsbyemaline.com"; };
+
+  /* ---- config + Supabase auth bootstrap (preserved from the retired admin.js:90-221) ----
+     Each surface calls PORTAL.boot() before its render. It loads /api/config (Stripe
+     publishable key + Supabase URL/publishable key + isTest), creates the shared Supabase
+     client, and resolves the current session. Pages that require a session redirect to
+     /admin/account (which hosts sign-in) when signed out. No new serverless function:
+     /api/config + the CDN @supabase/supabase-js are the existing surfaces. */
+  P.config = null; P.supabase = null; P.session = null;
+  P.loadConfig = async function () {
+    const res = await fetch("/api/config");
+    if (!res.ok) throw new Error("Failed to load /api/config");
+    const cfg = await res.json();
+    if (!cfg.supabaseUrl || !cfg.supabasePublishableKey) throw new Error("Supabase config missing from /api/config response");
+    return cfg;
+  };
+  P.boot = async function (opts) {
+    opts = opts || {};
+    P.config = await P.loadConfig();
+    P.supabase = window.supabase.createClient(P.config.supabaseUrl, P.config.supabasePublishableKey, {
+      auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false },
+    });
+    const { data } = await P.supabase.auth.getSession();
+    P.session = (data && data.session) || null;
+    if (typeof opts.onAuth === "function") {
+      P.supabase.auth.onAuthStateChange(function (_e, session) { P.session = session || null; opts.onAuth(P.session); });
+    }
+    if (opts.requireSession && !P.session) { location.replace("/admin/account"); return false; }
+    return true;
+  };
+  P.authHeader = function () {
+    const t = P.session && P.session.access_token;
+    return t ? { Authorization: "Bearer " + t } : {};
+  };
 
   /* ---- icons reused across helpers ---- */
   const SVG = {
@@ -108,10 +107,29 @@
       b.addEventListener("click", (e) => { e.stopPropagation(); opts.undo(); dismiss(); });
       el.appendChild(b);
     }
+
+    // v4.1.2 — an ERROR is the one toast that has something to teach you: which file, how big, what
+    // the limit is, what to do instead. 2.6s was not enough time to READ it, let alone act on it.
+    // Errors now stay up long enough to be read (and screenshotted), carry a visible ✕, and stop
+    // counting down while the pointer is over them.
+    const isError = opts.kind === "danger";
+    const life = opts.duration != null ? opts.duration : (isError ? 14000 : opts.undo ? 5000 : 2600);
+    if (isError) {
+      const x = document.createElement("button");
+      x.className = "toast__x"; x.type = "button"; x.setAttribute("aria-label", "Dismiss"); x.textContent = "✕";
+      x.addEventListener("click", (e) => { e.stopPropagation(); dismiss(); });
+      el.appendChild(x);
+    }
+
     wrap.appendChild(el);
     requestAnimationFrame(() => el.classList.add("is-on"));
-    let hideT = setTimeout(dismiss, opts.undo ? 5000 : 2600);
+    let hideT = setTimeout(dismiss, life);
     function dismiss() { clearTimeout(hideT); el.classList.remove("is-on"); setTimeout(() => el.remove(), 240); }
+    // hovering an error means you're still reading it — don't yank it away mid-sentence
+    if (isError) {
+      el.addEventListener("mouseenter", () => clearTimeout(hideT));
+      el.addEventListener("mouseleave", () => { hideT = setTimeout(dismiss, 4000); });
+    }
     // tap to dismiss
     el.addEventListener("click", dismiss);
     // swipe to dismiss (up, or horizontal)
@@ -193,31 +211,28 @@
   };
 
   /* ---- shared shell: rail + mobile tabbar + env + collapse — call once per surface page ---- */
-  // demo: live count of unfulfilled orders (groups with a paid-but-unshipped line), from the session store
-  P.unfulfilledCount = function () {
-    const data = window.PORTAL_DATA || {};
-    const orders = (P.store && P.store.use) ? P.store.use("orders", data.orders || []) : (data.orders || []);
-    const byPi = {};
-    orders.forEach((o) => { const k = o.stripe_payment_intent || o.id; (byPi[k] = byPi[k] || []).push(o); });
-    return Object.values(byPi).filter((ls) => ls.some((l) => l.status === "completed" && !l.shipped_at)).length;
-  };
-  // recompute + repaint the Orders badge/blink on rail + tab bar (call after shipping/refunding)
-  P.refreshOrdersBadge = function () {
-    const n = P.unfulfilledCount();
-    ["rail__item", "tabbar__item"].forEach((cls) => {
-      const a = document.querySelector("." + cls + '[href="orders.html"]'); if (!a) return;
-      if (n) a.setAttribute("data-alert", ""); else a.removeAttribute("data-alert");
-      let b = a.querySelector(".badge");
-      if (n) { if (!b) { b = document.createElement("span"); b.className = "badge"; a.appendChild(b); } b.textContent = n; }
-      else if (b) { b.remove(); }
+  /* ---- Orders badge: paint the live unfulfilled-orders count onto the Orders
+     nav item (rail + mobile tab bar). Pass a number, or omit to read the shared
+     PORTAL_DATA.unfulfilledCount(). At 0 the badge AND the attention blink are
+     removed entirely. Any surface can call this after a ship/refund to refresh. */
+  P.setOrdersBadge = function (n) {
+    if (n == null) n = (window.PORTAL_DATA && PORTAL_DATA.unfulfilledCount) ? PORTAL_DATA.unfulfilledCount() : 0;
+    document.querySelectorAll('.rail__item[href="orders.html"], .tabbar__item[href="orders.html"]').forEach((item) => {
+      if (n > 0) item.setAttribute("data-alert", ""); else item.removeAttribute("data-alert");
+      let badge = item.querySelector(".badge");
+      if (n > 0) {
+        if (!badge) { badge = document.createElement("span"); badge.className = "badge"; item.appendChild(badge); }
+        badge.textContent = n;
+      } else if (badge) { badge.remove(); }
     });
+    return n;
   };
 
   P.mountShell = function (active, opts) {
     opts = opts || {};
-    // demo: enforce login-first — any non-login surface bounces to the login if not signed in
-    if (P.DEMO && active !== "account" && !P.store.use("signedIn", false)) { window.location.replace("account.html"); return; }
-    const badge = P.unfulfilledCount(); // live count, not a hardcoded number
+    // default to the shared live count; an explicit opts.ordersBadge still wins
+    const badge = opts.ordersBadge != null ? opts.ordersBadge
+      : ((window.PORTAL_DATA && PORTAL_DATA.unfulfilledCount) ? PORTAL_DATA.unfulfilledCount() : 0);
     const I = {
       products: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
       orders: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="m12 11v10"/></svg>',
@@ -244,6 +259,30 @@
     if (localStorage.getItem("portalRailCollapsed") === "1") app.classList.add("rail-collapsed");
     const rt = document.getElementById("railToggle");
     rt.addEventListener("click", () => { const c = app.classList.toggle("rail-collapsed"); localStorage.setItem("portalRailCollapsed", c ? "1" : "0"); rt.setAttribute("aria-label", c ? "Expand menu" : "Collapse menu"); rt.title = c ? "Expand menu" : "Collapse menu"; });
-    P.maybeWelcome();
+    P.refreshOrdersSignal();
+  };
+
+  /* ---- central new-order signal: light the Orders blink from the REAL unseen count and show the REAL
+     needs-shipping badge (not the caller's mock ordersBadge). Called by mountShell AND the Products
+     static-rail init. Runs after PORTAL.boot() so authHeader() is set. Best-effort; blink (data-alert)
+     ← unseen_count (decoupled), badge ← needs-shipping count. ---- */
+  P.refreshOrdersSignal = async function () {
+    try {
+      // v3.5 — ?status=needs_shipping keeps the payload small (this runs on EVERY page just to read two
+      // numbers). unseen_count is returned REGARDLESS of the list filter (orders.ts §8.2a — a separate
+      // count query, filter-independent), so the blink is unaffected. The needs count stays a defensive
+      // client filter over the (already-narrowed) list, so it's correct even if the server predicate drifts.
+      const res = await fetch("/api/orders?status=needs_shipping", { headers: { ...P.authHeader() } });
+      if (!res.ok) return;
+      const body = await res.json().catch(() => ({}));
+      const unseen = Number(body.unseen_count) || 0;
+      const needs = Array.isArray(body.orders) ? body.orders.filter((o) => !o.shipped_at && o.status === "completed").length : 0;
+      document.querySelectorAll('.rail__item[href="orders.html"], .tabbar__item[href="orders.html"]').forEach((el) => {
+        el.toggleAttribute("data-alert", unseen > 0);
+        let b = el.querySelector(".badge");
+        if (needs > 0) { if (!b) { b = document.createElement("span"); b.className = "badge"; el.appendChild(b); } b.textContent = String(needs); }
+        else if (b) { b.remove(); }
+      });
+    } catch { /* best-effort — nav stays as rendered */ }
   };
 })();

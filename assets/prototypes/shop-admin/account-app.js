@@ -8,8 +8,8 @@
   const esc = P.esc;
   const cfg = D.config || {};
   const env = P.env();
-  let signedIn = P.store.use("signedIn", false);
-  const account = P.store.use("account", { email: "admin@design.shop" });
+  let signedIn = false;                 // DEMO: set from PORTAL.store (see demo.js boot override)
+  const account = { email: "you@august.style" };
 
   const IC = {
     ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M21 3 10 14"/><path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg>',
@@ -18,6 +18,7 @@
     in: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>',
     home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9.5 21v-6h5v6"/></svg>',
     log: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.2"/><circle cx="3.5" cy="12" r="1.2"/><circle cx="3.5" cy="18" r="1.2"/></svg>',
+    spec: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 9 3 3-3 3"/><path d="M14 15h3"/></svg>',
   };
 
   /* deterministic 5×5 mirrored identicon from the email — unique per account, no name needed */
@@ -50,7 +51,7 @@
     const view = document.getElementById("view");
     document.body.classList.toggle("signed-out", !signedIn);
     if (signedIn) {
-      const log = P.store.use("activityLog", D.activityLog) || [];
+      const log = D.activityLog || [];
       view.innerHTML = `<div class="acct">
         <div class="acard">
           <div class="acard__h">
@@ -58,24 +59,26 @@
             <span class="who"><span class="lbl">Signed in</span><span class="em">${esc(account.email)}</span></span>
           </div>
           <div class="acard__actions">
-            <button class="btn btn--ghost" id="signout">${IC.out} Sign out &amp; reset demo</button>
+            <button class="btn btn--ghost" id="signout">${IC.out} Sign out</button>
           </div>
         </div>
 
-        <a class="acard linkrow" href="${P.siteUrl()}" target="_blank" rel="noopener">
+        <a class="acard linkrow" href="${P.siteUrl()}">
           <span class="linkrow__icon">${IC.ext}</span>
-          <span class="linkrow__txt"><b>View Site</b><span>Open the live storefront in a new tab</span></span>
+          <span class="linkrow__txt"><b>View Site</b><span>Open the August &amp; Co. storefront</span></span>
           <span class="linkrow__chev">${IC.chev}</span>
         </a>
 
         <div class="acard">
           <div class="envcard">
-            <span class="env-dot test"></span>
-            <span><b style="font-weight:600">Interactive demo</b>
-              <div class="kv">Everything you do is yours for this session and resets when you sign out. Nothing here is real — and nothing can break.</div></span>
+            <span class="env-dot ${env.isTest ? "test" : "live"}"></span>
+            <span><b style="font-weight:600">${env.isTest ? "Test environment" : "Live — production"}</b>
+              <div class="kv">${env.isTest ? "A safe preview — changes here don't touch your live shop." : "Your real storefront — changes go live."}</div></span>
           </div>
-          <div class="kv" style="margin-top:10px">Stripe key · ${esc(maskKey(cfg.publishableKey))}</div>
+          <div class="kv" style="margin-top:10px">Stripe key · ${esc(maskKey((P.config || cfg).publishableKey))}</div>
         </div>
+
+        ${specCard()}
 
         <div class="acard logcard">
           <div class="logcard__cap">${IC.log}<span>Activity log</span><span class="logcard__hint">Newest first</span></div>
@@ -86,34 +89,95 @@
             : `<div class="logempty">No activity yet — changes you make will be recorded here.</div>`}
         </div>
       </div>`;
-      view.querySelector("#signout").onclick = () => { P.store.reset(); window.location.href = "account.html"; };
+      // DEMO: sign-out wipes the whole session store (products, orders, sales all reset to seed).
+      view.querySelector("#signout").onclick = () => { P.store.reset(); signedIn = false; if (window.__fxStop) window.__fxStop(); render(); P.toast("Signed out — demo reset"); };
     } else {
+      // DEMO login: no credentials. One button drops you into the portal. The two corner links —
+      // august.style (top-left) and the storefront (bottom-left) — sit in front of the ribbon FX.
       view.innerHTML = `<div class="signin-fx"><canvas id="fx"></canvas>
-        <form class="signin" id="signinForm" autocomplete="on">
-          <div><h2>Welcome back</h2><p>Sign in to explore the demo — any email and password work.</p></div>
-          <label class="field"><div class="field__top"><span class="field__label">Email</span></div>
-            <input class="input" type="email" id="si-email" value="${esc(account.email)}" autocomplete="username"></label>
-          <label class="field"><div class="field__top"><span class="field__label">Password</span></div>
-            <input class="input" type="password" id="si-pass" value="demodemo" autocomplete="current-password"></label>
-          <button class="btn btn--block" type="submit">${IC.in} Sign in</button>
+        <form class="signin" id="enterForm">
+          <div class="signin__brand">August &amp; Co. · Creator Portal</div>
+          <div><h2>Enter to manage the <span class="demo-badge">demo</span> store</h2>
+            <p>Create products, discounts, and sale shipments — then jump to the front end to see what you’ve made. This is 100% a demo that you can’t break, so <b>go to town.</b></p></div>
+          <button class="btn btn--block btn--enter" type="submit">${IC.in} Enter the demo</button>
         </form>
-        <a class="fx-back" href="${P.portfolioUrl()}" style="position:absolute; z-index:2; left:20px; top:18px; display:inline-flex; align-items:center; gap:6px; padding:8px 13px; border-radius:999px; color:#fff; background:color-mix(in oklch,var(--accent),transparent 24%); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); text-decoration:none; font-size:var(--t-sm); font-weight:600; box-shadow:var(--sh-1);">↩ august.style</a>
-        <a class="fx-home" href="${P.siteUrl()}" target="_blank" rel="noopener" aria-label="Site home">${IC.home}<span class="fx-home__lbl">Site home</span></a>
+        <a class="fx-corner fx-portfolio" href="https://august.style" aria-label="august.style"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span class="fx-corner__lbl">august.style</span></a>
+        <a class="fx-corner fx-home" href="${P.siteUrl()}" aria-label="Visit the store">${IC.home}<span class="fx-corner__lbl">Visit the store</span></a>
       </div>`;
       initLoginFx();
-      view.querySelector("#signinForm").addEventListener("submit", (e) => {
+      view.querySelector("#enterForm").addEventListener("submit", (e) => {
         e.preventDefault();
-        account.email = view.querySelector("#si-email").value || account.email;
-        P.store.set("account", account); P.store.set("signedIn", true); P.store.commit();
+        const btn = view.querySelector('button[type="submit"]');
+        btn.disabled = true; btn.textContent = "Entering…";
+        P.store.set("signedIn", true);
+        P.store.set("account", { email: account.email || "you@august.style" });
+        P.logActivity("auth.signin", "Signed in to the demo");
+        P.store.commit();
         if (window.__fxStop) window.__fxStop();
-        window.location.href = "products.html";
+        setTimeout(() => { window.location.href = "products.html"; }, 300);
       });
     }
   }
   function maskKey(k) { if (!k) return "—"; return k.length > 12 ? k.slice(0, 8) + "…" + k.slice(-4) : k; }
 
+  /* ---- what this build can and can't do -------------------------------------------------------
+     One honest page. The media numbers are the ones a person actually hits — the 4.3 MB drop
+     ceiling is Vercel's request-body cap at the edge, not a choice — and the shortcomings are
+     listed on purpose, so nobody discovers them mid-upload on a deadline. Fed from PORTAL.BUILD. */
+  function specCard() {
+    const B = P.BUILD, M = B.media;
+    const li = (s) => `<li>${s}</li>`;
+    return `
+      <div class="acard speccard">
+        <div class="logcard__cap">${IC.spec}<span>Media &amp; what this build does</span><span class="logcard__hint">${esc(B.version)}</span></div>
+
+        <div class="spec">
+          <h4>Photos</h4>
+          <ul>
+            ${li(`<b>Drag in or upload:</b> any size — anything over ${M.photoDropMB} MB is resized to fit automatically. It won't change how it looks, because every image the site shows is at most 1200px wide.`)}
+            ${li(`<b>Paste a link:</b> up to ${M.photoLinkMB} MB (Google Drive, Dropbox, or a direct image URL).`)}
+            ${li(`<b>${esc(M.photoTypes)}.</b>`)}
+          </ul>
+        </div>
+
+        <div class="spec">
+          <h4>Video</h4>
+          <ul>
+            ${li(`<b>Paste a link:</b> up to ${M.videoLinkMB} MB (Google Drive, Dropbox, or a direct .mp4). <b>This is the way to add video</b> — dragging one in only works up to ${M.videoDropMB} MB, which no real clip is.`)}
+            ${li(`<b>YouTube:</b> paste any YouTube link — no size limit at all. Best for anything long or large.`)}
+            ${li(`<b>${esc(M.videoTypes)}.</b> A rendered 3-minute clip is usually under 20 MB. If a file is hundreds of MB, it's raw footage — render it down, or put it on YouTube.`)}
+          </ul>
+        </div>
+
+        <div class="spec spec--limits">
+          <h4>What ${esc(B.version)} doesn't do</h4>
+          <ul>${B.limits.map((s) => li(esc(s))).join("")}</ul>
+        </div>
+      </div>`;
+  }
+
+  /* ---- activity-card data layer: real GET /api/products?_action=activity → { activityLog:[newest 25] }
+     (rows shape { at, actor, action, summary }; actor is stored but NOT rendered — single-admin). The
+     dot color + summary + relative time render is already in render(); this only feeds it real data.
+     Carries the WS1 Supabase auth header; best-effort — on success it overwrites PORTAL_DATA.activityLog
+     and re-renders, on any failure the last-rendered log stays. ---- */
+  async function loadActivity() {
+    if (!signedIn) return;
+    try {
+      const res = await fetch("/api/products?_action=activity", { headers: { ...P.authHeader() } });
+      if (!res.ok) return;
+      const body = await res.json().catch(() => ({}));
+      D.activityLog = Array.isArray(body.activityLog) ? body.activityLog.slice(0, 25) : [];
+      render();
+    } catch { /* best-effort — keep the last-rendered log */ }
+  }
+
   /* full-viewport ribbons that snake down behind the sign-in card and shy away from the pointer */
   function initLoginFx() {
+    // No reduced-motion guard here (deliberate — do not "restore" it). This ambient sign-in
+    // background is admin-only (Em + the admins; never customer-facing), and Sean opted to always
+    // show it so a Reduce-Motion phone still gets the animated ribbons instead of a blank page.
+    // Customer-facing motion guards (hero, etc.) are untouched.
     if (window.__fxStop) window.__fxStop();
     const c = document.getElementById("fx"); if (!c) return;
     const ctx = c.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -186,6 +250,17 @@
     window.__fxStop = () => { cancelAnimationFrame(raf); window.removeEventListener("resize", size); window.__fxStop = null; };
   }
 
-  P.mountShell("account", { ordersBadge: 2 });
-  render();
+  P.boot({ onAuth: function (session) {
+      signedIn = !!session;
+      if (session) account.email = (session.user && session.user.email) || account.email;
+      render();
+    } })
+    .then(function () {
+      signedIn = !!P.session;
+      if (P.session) account.email = (P.session.user && P.session.user.email) || account.email;
+      P.mountShell("account"); // Orders badge = shared live PORTAL_DATA.unfulfilledCount()
+      render();
+      loadActivity();
+    })
+    .catch(function (err) { P.mountShell("account"); P.toast(err.message, { kind: "danger" }); render(); });
 })();

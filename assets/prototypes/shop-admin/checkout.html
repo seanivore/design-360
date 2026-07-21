@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Checkout — August &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storefront.css">
+</head>
+<body>
+<div id="chrome"></div>
+
+<main>
+  <div class="wrap pagehead"><span class="eyebrow">Almost yours</span><h1>Checkout</h1></div>
+  <div class="wrap" id="coRoot"></div>
+</main>
+
+<div id="foot"></div>
+
+<script src="data.js"></script>
+<script src="storefront.js"></script>
+<script src="cart-view.js"></script>
+<script>
+  AC.mountChrome();
+  AC.mountFooter();
+  const money = AC.money;
+  const root = document.getElementById("coRoot");
+
+  function render() {
+    const comp = AC.compute();
+    if (!comp.lines.length) {
+      root.innerHTML = `<div class="empty"><h2>Nothing to check out</h2><p><a class="btn" href="shop.html">Browse the shop</a></p></div>`;
+      return;
+    }
+    root.innerHTML = `<div class="split">
+      <div>
+        <h3 style="font-size:1.5rem;margin-bottom:16px;">Contact &amp; shipping</h3>
+        <div class="field"><label>Email</label><input id="f-email" value="you@example.com"></div>
+        <div class="field"><label>Full name</label><input id="f-name" value="Demo Shopper"></div>
+        <div class="field"><label>Address</label><input id="f-addr" value="120 Studio Lane"></div>
+        <div class="field-row">
+          <div class="field"><label>City</label><input id="f-city" value="Portland"></div>
+          <div class="field"><label>State</label><input id="f-state" value="OR"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>ZIP</label><input id="f-zip" value="97214"></div>
+          <div class="field"><label>Country</label><input id="f-country" value="United States"></div>
+        </div>
+
+        <h3 style="font-size:1.5rem;margin:30px 0 16px;">Payment</h3>
+        <div class="field"><label>Card number</label><input id="f-card" value="4242 4242 4242 4242" inputmode="numeric"></div>
+        <div class="field-row">
+          <div class="field"><label>Expiry</label><input value="12 / 30"></div>
+          <div class="field"><label>CVC</label><input value="123"></div>
+        </div>
+        <div class="hint">🔒 This is a demo. No card is charged and nothing is stored — the pre-filled details are fake.</div>
+      </div>
+
+      <aside class="summary">
+        <h3>Order summary</h3>
+        <div style="margin-bottom:14px;">${comp.lines.map((l) => `<div class="sumrow" style="color:var(--ink);"><span>${l.product.title} <span style="color:var(--ink-faint)">×${l.qty}</span></span><span class="mono">${money((AC.salePct() ? AC.discountedCents(l.unit) : l.unit) * l.qty)}</span></div>`).join("")}</div>
+        <div style="border-top:1px solid var(--line);padding-top:8px;">${ACView.summaryHTML(comp, { editable: true })}</div>
+        <button class="btn btn--clay btn--block" id="pay" style="margin-top:18px;">Pay ${money(comp.total)}</button>
+        <a class="btn btn--ghost btn--block" href="cart.html" style="margin-top:10px;">Back to cart</a>
+        <div class="demo-note">Placing this order adds it to the admin's Orders queue.</div>
+      </aside>
+    </div>`;
+    ACView.wireSummary(root);
+
+    document.getElementById("pay").addEventListener("click", () => {
+      const btn = document.getElementById("pay"); btn.disabled = true; btn.textContent = "Processing…";
+      placeOrder(AC.compute());
+      setTimeout(() => { window.location.href = "complete.html"; }, 650);
+    });
+  }
+
+  // Write per-piece order rows into the admin's session store (money integrity: real per-item
+  // amounts after discount), so the order shows up — and the badge bumps — in the admin Orders.
+  function placeOrder(comp) {
+    const name = (document.getElementById("f-name").value || "Demo Shopper").trim();
+    const email = (document.getElementById("f-email").value || "you@example.com").trim();
+    const addr = {
+      line1: document.getElementById("f-addr").value, line2: null,
+      city: document.getElementById("f-city").value, state: document.getElementById("f-state").value,
+      postal_code: document.getElementById("f-zip").value, country: "US",
+    };
+    const pi = "pi_demo_" + Math.random().toString(36).slice(2, 10);
+    const now = new Date().toISOString();
+    // distribute the discount proportionally across lines for honest per-item amounts
+    const rows = comp.lines.map((l, i) => {
+      const share = comp.subtotal ? Math.round(comp.discount * l.lineBase / comp.subtotal) : 0;
+      return {
+        id: "o-" + Math.random().toString(36).slice(2, 10), stripe_payment_intent: pi,
+        amount: Math.max(0, l.lineBase - share), status: "completed",
+        customer_email: email, customers: { name, email, phone: null },
+        shipping_address: addr,
+        products: { title: l.product.title, slug: l.product.slug, thumbnail: l.product.thumbnail },
+        tracking_number: null, tracking_carrier: null, shipped_at: null, tracking_email_sent_at: null,
+        created_at: now,
+      };
+    });
+    // persist into the admin store
+    try {
+      const s = JSON.parse(sessionStorage.getItem("augCoDemo.v1") || "{}");
+      s.orders = (s.orders || (window.PORTAL_DATA && PORTAL_DATA.orders) || []).slice();
+      rows.forEach((r) => s.orders.unshift(r));
+      s.ordersSeenAt = null; // make the new order "unseen" → the admin Orders nav blinks
+      // decrement stock on the purchased pieces (restockable goods)
+      s.products = (s.products || (window.PORTAL_DATA && PORTAL_DATA.products) || []).map((p) => {
+        const line = comp.lines.find((l) => l.slug === p.slug);
+        if (line && typeof p.quantity === "number") { const q = Math.max(0, p.quantity - line.qty); return Object.assign({}, p, { quantity: q, available: q > 0 ? p.available : false }); }
+        return p;
+      });
+      sessionStorage.setItem("augCoDemo.v1", JSON.stringify(s));
+    } catch (e) {}
+    // snapshot for the confirmation page
+    try {
+      sessionStorage.setItem("augCoLastOrder.v1", JSON.stringify({
+        ref: rows[0].id.slice(2, 8).toUpperCase(), email, name,
+        items: comp.lines.map((l) => ({ title: l.product.title, qty: l.qty, unit: AC.salePct() ? AC.discountedCents(l.unit) : l.unit })),
+        subtotal: comp.subtotal, discount: comp.discount, label: comp.label, shipping: comp.shipping, tax: comp.tax, total: comp.total,
+      }));
+    } catch (e) {}
+    AC.clearCart();
+  }
+
+  render();
+  document.addEventListener("ac:cart", render);
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>August &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storefront.css">
+</head>
+<body>
+<div id="chrome"></div>
+<div id="previewbar"></div>
+
+<main class="wrap">
+  <div id="pdp"></div>
+</main>
+
+<section class="section" id="relatedSec" hidden>
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Keep looking</span><h2>You might also like</h2></div></div>
+    <div class="grid" id="related"></div>
+  </div>
+</section>
+
+<div id="foot"></div>
+
+<script src="data.js"></script>
+<script src="storefront.js"></script>
+<script>
+  AC.mountChrome();
+  AC.mountFooter();
+  const money = AC.money;
+  const params = new URLSearchParams(location.search);
+  const slug = params.get("slug");
+  const previewToken = params.get("preview");
+  const p = AC.bySlug(slug);
+  const root = document.getElementById("pdp");
+
+  if (!p) {
+    root.innerHTML = `<div class="empty"><h2>Piece not found</h2><p>It may have sold or been taken down. <a href="shop.html">Back to the shop →</a></p></div>`;
+  } else {
+    render(p);
+  }
+
+  function render(p) {
+    const isPreview = !!previewToken || !p.is_published;
+    if (isPreview) {
+      document.getElementById("previewbar").innerHTML =
+        `<div style="background:var(--clay);color:#fff;padding:12px 16px;text-align:center;font-size:.86rem;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;">
+          <span class="mono" style="letter-spacing:.1em;text-transform:uppercase;">Preview — not live yet</span>
+          <span>This is how the piece will look once published.</span>
+          ${previewToken ? `<button class="btn btn--sm" id="pubNow" style="background:#fff;color:var(--clay);border-color:#fff;">Publish it →</button>` : ""}
+        </div>`;
+      const pb = document.getElementById("pubNow");
+      if (pb) pb.addEventListener("click", async () => {
+        pb.disabled = true; pb.textContent = "Publishing…";
+        try { await fetch("/api/products?_action=publish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ token: previewToken }) }); } catch (e) {}
+        window.location.href = "products.html";
+      });
+    }
+
+    const slides = [];
+    (p.images || []).forEach((im) => slides.push({ type: "image", url: im.url, alt: im.alt }));
+    (p.media || []).forEach((m) => { if (m.type === "video") slides.push({ type: "video", url: m.url, poster: m.poster }); });
+    if (!slides.length) slides.push({ type: "ph" });
+
+    const out = AC.inStock(p);
+    const pct = AC.salePct();
+    const priceHTML = (pct && out)
+      ? `<span class="was">${money(p.price)}</span><span class="now is-sale">${money(AC.discountedCents(p.price))}</span> <span class="eyebrow" style="align-self:center;">${pct}% off</span>`
+      : `<span class="now">${money(p.price)}</span>`;
+
+    const acc = (title, inner) => inner ? `<div class="acc__item"><button class="acc__head">${title}${AC.ICON.plus}</button><div class="acc__body">${inner}</div></div>` : "";
+    const list = (arr) => (arr && arr.length) ? `<ul>${arr.map((x) => `<li>${x}</li>`).join("")}</ul>` : "";
+    const specRows = [["Dimensions", p.dimensions], ["Weight", p.weight], ["Materials", (p.materials || []).join(", ")]].filter((r) => r[1]).map((r) => `<div style="display:flex;justify-content:space-between;gap:12px;padding:4px 0;"><span class="mono" style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);">${r[0]}</span><span>${r[1]}</span></div>`).join("");
+
+    root.innerHTML = `<div class="pdp">
+      <div class="gallery">
+        <div class="gallery__main" id="gmain"></div>
+        ${slides.length > 1 ? `<div class="gallery__thumbs" id="gthumbs"></div>` : ""}
+      </div>
+      <div class="buy">
+        ${p.series ? `<span class="eyebrow buy__series">${p.series}</span>` : ""}
+        <h1>${p.title}</h1>
+        ${p.headline ? `<div class="buy__headline">${p.headline}</div>` : ""}
+        <div class="buy__price">${priceHTML}</div>
+        ${p.story_card ? `<p class="buy__story">${p.story_card}</p>` : ""}
+        ${out ? `<div class="buy__row">
+            <div class="qty"><button data-q="-1" aria-label="Less">–</button><input id="qty" value="1" inputmode="numeric" readonly><button data-q="1" aria-label="More">+</button></div>
+            <button class="btn btn--clay btn--lg" id="add" style="flex:1;">Add to cart</button>
+          </div>
+          <div class="hint">Free shipping over $150 · ${p.shipping_details && p.shipping_details[0] ? p.shipping_details[0] : "Ships in a few days"}</div>`
+        : `<div class="soldout-note">Sold out — check back soon</div><button class="btn btn--block" disabled>Sold out</button>`}
+        <div class="acc">
+          ${acc("Description", (p.description || "") + specRows)}
+          ${acc("Features", list(p.features))}
+          ${acc("Materials &amp; care", list([].concat(p.materials || [], p.care_instructions || [])))}
+          ${acc("Shipping", list(p.shipping_details))}
+          ${p.artist_note ? acc("Studio note", `<em>${p.artist_note}</em>`) : ""}
+        </div>
+      </div>
+    </div>`;
+
+    // gallery
+    let sel = 0;
+    const main = document.getElementById("gmain");
+    function paintMain() {
+      const s = slides[sel];
+      main.innerHTML = s.type === "video"
+        ? `<video src="${s.url}" poster="${s.poster || ""}" autoplay muted loop playsinline></video>`
+        : s.type === "image" ? `<img src="${s.url}" alt="${(s.alt || p.title || "").replace(/"/g, "&quot;")}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'tile__ph',style:'position:absolute;inset:0;',textContent:'${(p.title || "").replace(/'/g, "")}'}))">`
+        : `<div class="tile__ph" style="position:absolute;inset:0;">${p.title || "Piece"}</div>`;
+    }
+    paintMain();
+    const thumbsEl = document.getElementById("gthumbs");
+    if (thumbsEl) {
+      thumbsEl.innerHTML = slides.map((s, i) => `<button class="gallery__thumb ${i === 0 ? "is-on" : ""}" data-i="${i}">${s.type === "image" ? `<img src="${s.url}" alt="" onerror="this.style.opacity=.2">` : s.type === "video" ? `<img src="${s.poster || ""}" alt="" onerror="this.style.opacity=.2">` : ""}</button>`).join("");
+      thumbsEl.querySelectorAll(".gallery__thumb").forEach((b) => b.addEventListener("click", () => {
+        sel = +b.dataset.i; paintMain();
+        thumbsEl.querySelectorAll(".gallery__thumb").forEach((x) => x.classList.toggle("is-on", x === b));
+      }));
+    }
+
+    // qty + add
+    if (out) {
+      const qEl = document.getElementById("qty");
+      root.querySelectorAll("[data-q]").forEach((b) => b.addEventListener("click", () => {
+        qEl.value = Math.max(1, (+qEl.value || 1) + (+b.dataset.q));
+      }));
+      const addBtn = document.getElementById("add");
+      addBtn.addEventListener("click", () => {
+        AC.addToCart(p.slug, +qEl.value || 1);
+        addBtn.classList.remove("btn--clay");
+        addBtn.innerHTML = `${AC.ICON.check} Added — <a href="cart.html" style="color:inherit;text-decoration:underline;">View cart</a>`;
+        setTimeout(() => { addBtn.classList.add("btn--clay"); addBtn.innerHTML = "Add to cart"; }, 2600);
+      });
+    }
+
+    // accordions
+    root.querySelectorAll(".acc__head").forEach((h) => h.addEventListener("click", () => h.parentElement.classList.toggle("is-open")));
+
+    // related
+    const rel = AC.shopProducts().filter((x) => x.slug !== p.slug && (x.product_type === p.product_type || x.series === p.series)).slice(0, 4);
+    if (rel.length) {
+      document.getElementById("relatedSec").hidden = false;
+      document.getElementById("related").innerHTML = rel.map(AC.tileHTML).join("");
+    }
+    document.title = p.title + " — August & Co.";
+  }
+</script>
+</body>
+</html>
