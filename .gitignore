@@ -64,3 +64,7 @@ rusty-tags.vi
 .agent/apple-ui-design/**.jpeg
 .agent/apple-ui-design/**.jpg
 .vercel
+
+# Personal, per-machine Claude Code permissions. Accumulates absolute local
+# paths, client filenames, and search patterns from real work — never commit it.
+.claude/settings.local.json
