@@ -12,6 +12,12 @@ Pasting current state of path above today, 2026-10-27, below.
 
 **Verified 2026-08-25.** DNS pulled live from the Cloudflare API; every URL re-checked with a real HTTP status. Nothing below is assumed.
 
+**Progress check 2026-10-27.** Re-verified against the repo, the Cloudflare API, and live URLs. Done items are struck through and marked ✅. Everything not struck through is still open.
+
+  - **Done:** § 3 item 2 (social-advertising-strategy) and the 360-design line in § 6.
+  - **DNS:** no changes applied yet. The zone now holds **59** records. All 16 `www.*` records and both orphans still exist.
+  - **Still broken:** `payments.august.style` has no apex record, and `thots.august.style` still returns 404.
+
 **Scope rule:** this brief covers portfolio content, README corrections, and DNS *recommendations*. **Do not change DNS.** Produce the change list; Sean applies it.
 
 ---
@@ -78,7 +84,7 @@ These are cited as live somewhere in the archive or in a case study and **have n
 ## 3. Portfolio entries to update
 
 1. **`august.style/amorphous-gradient-css-animation`** — this entry is about the *site's design*, but its body copy describes old projects, much of which has now been harvested into `COMPLETE_EXPERIENCE_v3.md`. Either give it a real UI-content update, or edit the copy down to prototype-worthy placeholder. Do not leave stale project claims in a design showcase.
-2. **`august.style/social-advertising-strategy`** — needs a serious update to reflect the actual case study at `developer-technologist.august.style/social-advertising-strategy`. The real numbers: $119.97 total spend, $0.003 cost per engagement across 29,822 Reels impressions, $0.31 per follower, $3.58 CPM.
+2. ✅ ~~**`august.style/social-advertising-strategy`** — needs a serious update to reflect the actual case study at `developer-technologist.august.style/social-advertising-strategy`. The real numbers: $119.97 total spend, $0.003 cost per engagement across 29,822 Reels impressions, $0.31 per follower, $3.58 CPM.~~ *Done 2026-10-27. The entry already carries these numbers and links to the case study. Sean reviewed all of it, and the PETA copy fix shipped as v4.6.4.*
 3. **`august.style/css-animated-micro-interactions`** — reframe as a Phase C AI-researcher-pipeline entry. The live research site currently at `presenting.august.style` should move to an apex slug.
 4. **`august.style/freelance-payments-platform`** — update the link (`payments.august.style` is dead) and note the supersession: the project is being rebuilt vanilla as `contract-payments`, live at `contract.august.style`.
 5. **`august.style/ai-design-fashion-lookbook`** + **`august.style/personalized-fashion-magazine`** — merge into one substantially larger generative-AI fashion entry. **Note:** the current `ai-design-fashion-lookbook` entry claims a Google Lens integration that does not exist. Remove that claim.
@@ -107,7 +113,7 @@ These are cited as live somewhere in the archive or in a case study and **have n
 
 Rule from Sean, applies everywhere: **rewrite any hardcoded count so no number is stated.** Counts drift; the claim then becomes false without anyone touching it.
 
-- **`360-design/README.md`** — says 34 project entries; there are 36. Rewrite without a number.
+- ✅ ~~**`360-design/README.md`** — says 34 project entries; there are 36. Rewrite without a number.~~ *Done in v4.6.5 (2026-10-27).*
 - **`portfolio/README.md`** — claims a weighted scoring algorithm with category multipliers for related projects. The shipped `related-projects.js` implements a shuffle plus a first-match tag lookup. The claim is stronger than the code; correct it. This site is being kept primarily for the build design of the site itself.
 - **`webflow-store/README.md`** — update per §4 item 2. It also references `ai-print-store.august.style`, which never existed.
 - **Sweep every other project README** for the same pattern: a stated count, or a described capability the code does not implement.
