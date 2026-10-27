@@ -21,7 +21,7 @@ If you build sites for clients, it's a clean base to fork: a small content model
 
 ## Architecture
 
-- **34 project entries** (`assets/entries/uid-*.json`, schema v6.1) in four layouts — `columns` (two-column case study), `flow` (typed-block long-form), `gallery` (image-forward art showcase), and `url` (a redirect tile that renders normally but links straight to an external site/demo, with no entry page). The three case-study layouts share one top zone (hero thumbnail row + title/subtitle + role) and one tag model; they differ only in the content zone below.
+- **Project entries** (`assets/entries/uid-*.json`, schema v6.1) in four layouts — `columns` (two-column case study), `flow` (typed-block long-form), `gallery` (image-forward art showcase), and `url` (a redirect tile that renders normally but links straight to an external site/demo, with no entry page). The three case-study layouts share one top zone (hero thumbnail row + title/subtitle + role) and one tag model; they differ only in the content zone below.
 - **Art collections** (`assets/collections/uid-col-*.json`, schema v6.1) — ordered `images[]` of CDN URLs, each belonging to exactly one parent entry (an entry can have many). On a gallery entry they render as one full-bleed, accent-matted "art-wall" per collection; on the filter page they appear as first-class tiles; each collection page links back to its parent with a breadcrumb.
 - **Tag-based filtering** across four groups — role, skill, product, company — plus a `featured` boolean. The filter page gives each group its own dropdown (with an any/all toggle and searchable checkboxes) and a Projects / Collections content-type selector.
 - **Configurable homepage** via `assets/js/homepage-content.json` — a three-phase narrative spine, a four-card featured-tiles grid (one auto-playing video tile driven by the `featured` boolean + three phase cards), a full-bleed art wall pulled across the collections of entries tagged `Art Collection`, process steps, and achievements rolled up from entries.
@@ -49,7 +49,7 @@ See `assets/docs/AUGUST_STYLE.md` for the full architecture reference (schemas, 
 | `assets/js/section-controller.js`       | Section-page pool loading + structured filtering (entries + collections as tiles)                         |
 | `assets/js/collection-controller.js`    | Collection-page rendering + breadcrumb                                                                    |
 | `assets/scripts/validate.py`            | Schema validator (entries v6.1 + collections v6.1; flags retired fields)                                  |
-| `assets/scripts/new_project.py`         | Skeleton generator (`--type {entry,collection}`)                                                          |
+| `.agents/entry.json`                    | Config for the global `entry` skeleton command (`entry`, `entry --type collection`)                       |
 | `assets/scripts/cdn_cleanup.py`         | R2 orphan-detection report (no deletion)                                                                  |
 | `assets/docs/AUGUST_STYLE.md`           | Living architecture / schema reference                                                                    |
 | `assets/docs/ENTRY_SOP.md`              | Content-authoring SOP (entries + collections)                                                             |
@@ -74,11 +74,21 @@ http://localhost:5500/entry.html?path=illustration-art-deco               # Entr
 http://localhost:5500/collection.html?path=illustration-art-deco/animals  # Collection (nested)
 ```
 
+## Releases
+
+`design-360` is the production branch (there is no `main`). `dev` deploys the preview; a fast-forward of `design-360` to `dev` plus a push deploys august.style. The exact commands, including the annotated version tag and the return to `dev`, are in `assets/docs/ENTRY_SOP.md` § 11.
+
+Every push to `design-360` gets the next version tag:
+
+- **Patch** (v4.6.3 → v4.6.4): content releases (new or edited entries and collections, tag changes) and small fixes.
+- **Minor** (v4.6 → v4.7): a new site feature, a new layout, or a schema change.
+- **Major** (v4 → v5): a redesign or an architecture change.
+
 ## Adding new content
 
 See `assets/docs/ENTRY_SOP.md` for the full procedure. Quick reference:
 
-1. `python3 assets/scripts/new_project.py --type {entry|collection}` — generate a skeleton.
+1. `entry` or `entry --type collection` — generate a skeleton.
 2. Upload media — images via `POST /api/upload` (Cloudinary resize → R2), video via `aws s3 sync` against R2 with the `r2` profile.
 3. Fill out the JSON fields using CDN URLs.
 4. Move the file to its directory and validate: `python3 assets/scripts/validate.py`.
