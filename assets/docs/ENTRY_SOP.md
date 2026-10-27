@@ -3,7 +3,7 @@
 > **Proposed rename**: this doc now covers BOTH entries and collections — consider renaming it `CONTENT_SOP.md` (pending the owner's confirmation; file not renamed yet).
 
 **Aligned with**: v4.5.0 shipped state
-**Last updated**: 2026-06-22
+**Last updated**: 2026-10-27
 **Schema versions** (verify before authoring): entry 6.1, collection 6.1 (legacy 6.0 still resolves at runtime). The item subsystem is RETIRED for authoring — see `AUGUST_STYLE.md` § *Schema Version Alignment Check* and § 4.
 
 This document is the single procedural reference for authoring the two JSON content types that drive the august.style portfolio: **entries** (project pages) and **collections** (per-gallery image sets). The agent receives a brief (often a markdown file with prose + media references, sometimes just links and notes) and runs this pipeline end-to-end, including CDN handoff.
@@ -26,6 +26,7 @@ Brief (markdown, links, or both)
   -> Validate
   -> Regenerate manifest
   -> Local smoke test
+  -> Ship to production (dev preview -> design-360 -> tag)
 ```
 
 Both types share the same shape. Type-specific notes are called out per step.
@@ -37,11 +38,11 @@ Both types share the same shape. Type-specific notes are called out per step.
 
 If unclear, default to entry. Author a collection when a gallery entry needs one or more walls of images grouped under it.
 
-> **Items are retired.** Do not create items. `_item_template.json` is deleted and `new_project.py` has no `item` type. 6.1 collections reference imagery directly as CDN URLs in `images[]` — there are no item UID references. (A dormant legacy 6.0 item runtime path still resolves old data.)
+> **Items are retired.** Do not create items. `_item_template.json` is deleted and the `entry` command has no `item` type. 6.1 collections reference imagery directly as CDN URLs in `images[]` — there are no item UID references. (A dormant legacy 6.0 item runtime path still resolves old data.)
 
 ### Entry writing guidelines
 
-Before authoring any copy, read these — they set the bar for every entry. Cross-reference `.agent/EMOTION_DRIVEN_COPYWRITING.md` for the deeper craft.
+Before authoring any copy, read these — they set the bar for every entry. Cross-reference `~/.agents/references/EMOTION_DRIVEN_COPYWRITING.md` for the deeper craft.
 
 > Don't get lost in the technicals. Speak to the non-technical reader who could be a potential client. Showcase the technical using household-name services as the best-practice proof. Don't fall into AI-hype bias; humbly describe impressive work that speaks for itself. Show numbers visually and show UI flow visually — the things people can't picture on their own. In the end they don't want to read, they want to understand by scrolling and scanning. Hold workflow and method until the end.
 >
@@ -51,16 +52,14 @@ Before authoring any copy, read these — they set the bar for every entry. Cros
 
 ## 2. Generate JSON Skeleton
 
-Run the generator from the project root:
+Run the global `entry` command from the project root (configured for this repo by `.agents/entry.json`):
 
 ```bash
-python3 assets/scripts/new_project.py --type entry
-python3 assets/scripts/new_project.py --type collection
+entry
+entry --type collection
 ```
 
-The script generates a UID (`uid-xxx-###`), stamps the appropriate `_metadata` block, and writes a skeleton to `assets/docs/uid-xxx-###.json`. Move to the correct directory at the end of the pipeline.
-
-The legacy `project` shell command alias is equivalent to `--type entry` for backward compatibility.
+The command generates a UID (`uid-xxx-###`), stamps the appropriate `_metadata` block, and writes a skeleton to `assets/docs/uid-xxx-###.json`. Move to the correct directory at the end of the pipeline.
 
 Choose a slug (URL-safe, lowercase, hyphenated) and set `"slug"` in the JSON before anything else — the slug is used for the media directory name and CDN paths throughout the pipeline.
 
@@ -112,7 +111,7 @@ Surface to Sean. The orchestrator does NOT compose media from imagination.
 
 Cloudinary handles resizing, cropping, and format conversion to WebP.
 
-> **Upload mechanics moved to `.agent/CDN_MEDIA_UPLOAD.md`** (cross-project, synced via `filemgmt`): the `/api/upload` endpoint, the direct `aws s3` video path, key rules, and the bot-protection verify. This section keeps only the entry/collection-specific processing — the per-purpose Cloudinary transform sizes and the filename conventions below.
+> **Upload mechanics live in `~/.agents/references/CDN_GUIDE.md`** (the one global copy): the `/api/upload` endpoint, the direct `aws s3` video path, key rules, and the bot-protection verify. This section keeps only the entry/collection-specific processing — the per-purpose Cloudinary transform sizes and the filename conventions below.
 
 **Cloud name**: `dzrtucxh7`
 **Authentication**: API key + secret are in `.env` as `CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@dzrtucxh7`. All API calls use `-u "API_KEY:API_SECRET"` for HTTP basic auth.
@@ -187,7 +186,7 @@ curl -X POST https://api.cloudinary.com/v1_1/dzrtucxh7/image/destroy \
 
 All processed media must live on the CDN before the JSON references it — local paths in JSON are never acceptable in committed entries.
 
-**The upload mechanics live in `.agent/CDN_MEDIA_UPLOAD.md`** (cross-project, synced via `filemgmt`): images via `POST /api/upload` (Cloudinary→R2 in one call, output WebP, key extension rewritten to `.webp`), video via `aws s3 cp`/`sync` with profile `r2`, the 25 MB cap, key rules, `skip_transform`, preview re-rooting, and the browser-User-Agent pre-flight verify. Read that doc for the exact commands. Only the entry/collection-specific bits stay here:
+**The upload mechanics live in `~/.agents/references/CDN_GUIDE.md`** (the one global copy): images via `POST /api/upload` (Cloudinary→R2 in one call, output WebP, key extension rewritten to `.webp`), video via `aws s3 cp`/`sync` with profile `r2`, the 25 MB cap, key rules, `skip_transform`, preview re-rooting, and the browser-User-Agent pre-flight verify. Read that doc for the exact commands. Only the entry/collection-specific bits stay here:
 
 ### Entry/collection key paths
 
@@ -197,9 +196,9 @@ All processed media must live on the CDN before the JSON references it — local
 
 ### Pre-flight verify
 
-For every CDN URL the JSON will reference, confirm HTTP 200 + correct content-type — using a **browser User-Agent** (a header-less `curl -I` returns 403 even for valid objects on `cdn.august.style`; see the `.agent/` doc for the exact command). If a URL 404s after upload the put failed: re-upload that key; if it still 404s, surface to Sean.
+For every CDN URL the JSON will reference, confirm HTTP 200 + correct content-type — using a **browser User-Agent** (a header-less `curl -I` returns 403 even for valid objects on `cdn.august.style`; see `CDN_GUIDE.md` for the exact command). If a URL 404s after upload the put failed: re-upload that key; if it still 404s, surface to Sean.
 
-> **Future:** the `/api/upload` endpoint will likely be upgraded — often from this repo — to handle all media types and transform variables (including video), as a client project on the same architecture already does. When that lands, `.agent/CDN_MEDIA_UPLOAD.md` is the source of truth — update this pointer.
+> **Future:** the `/api/upload` endpoint will likely be upgraded — often from this repo — to handle all media types and transform variables (including video), as a client project on the same architecture already does. When that lands, `~/.agents/references/CDN_GUIDE.md` is the source of truth — update this pointer.
 
 ---
 
@@ -447,13 +446,52 @@ Verify:
 - Section page: the collection appears as a tile (with its rotating thumbs), and the Projects/Collections content-type selector filters the pool.
 - Flow `project_link` buttons point to the right URLs (external ones open in a new tab).
 
-If anything fails, fix locally before opening a PR.
+If anything fails, fix it before pushing. The local server is a rough check; the real review surface is the Vercel dev deploy (§ 11, step 2).
+
+---
+
+## 11. Ship to Production
+
+This repo's production branch is `design-360`, not `main`. Nothing is live on august.style until it is fast-forwarded onto `design-360` and pushed. That includes a copy-only JSON edit.
+
+```bash
+# 1. On dev, everything committed, checks pass
+git checkout dev && git status          # expect "working tree clean"
+python3 assets/scripts/validate.py
+python3 generate_manifest.py            # no-op if nothing changed; commit anything it writes
+# 2. Push dev, then review on the preview
+git push origin dev                     # https://design-360-git-dev-seanivore.vercel.app/<slug>
+# 3. Fast-forward production and push (Vercel deploys august.style)
+git checkout design-360 && git merge --ff-only dev && git push origin design-360
+# 4. Tag the release, with its description
+git describe --tags --abbrev=0          # last tag, e.g. v4.6.4 -> next patch is v4.6.5
+git tag -a vX.Y.Z -m "vX.Y.Z — one-line summary" -m "- what changed" -m "- what changed"
+git push origin vX.Y.Z
+# 5. Back to dev, so the next edit doesn't land on production
+git checkout dev
+```
+
+Each `-m` becomes its own paragraph of the description GitHub shows next to the tag. Tags are numbers only: `v4.6.5`, never `v4.6.5-copy-fix`.
+
+If step 3 says *Not possible to fast-forward*, `design-360` has a commit that `dev` lacks (this happened at v4.5.0). Stop. Run `git checkout dev && git merge design-360 && git push origin dev`, then redo step 3. Never force-push production.
+
+Then open `https://august.style/<slug>` and confirm the change is live.
+
+### When to tag
+
+Every push to `design-360` gets the next version tag. There is no case-by-case judgment.
+
+  - **Patch** (v4.6.3 → v4.6.4): content releases (new or edited entries and collections, tag changes) and small fixes.
+  - **Minor** (v4.6 → v4.7): a new site feature, a new layout, or a schema change.
+  - **Major** (v4 → v5): a redesign or an architecture change.
+
+A push to production changes what visitors see. A tag per push records exactly what was live and when, and gives every release a rollback point. Several small edits can ship together under one tag, because the rule counts pushes, not edits.
 
 ---
 
 ## Quick reference checklist
 
-1. Generate skeleton: `python3 assets/scripts/new_project.py --type {entry|collection}`.
+1. Generate skeleton: `entry` or `entry --type collection`.
 2. Choose slug; set in JSON.
 3. Tag the document per `tags.json` (role/skill/product/company + `featured` boolean; collections carry differentiated per-collection Skill tags — § 7a).
 4. Stage source media at `assets/.media/{slug}/` (entries) or `assets/.media/{entry}/{coll}/` (gallery collections).
@@ -464,6 +502,8 @@ If anything fails, fix locally before opening a PR.
 9. Move to destination directory; validate: `python3 assets/scripts/validate.py`.
 10. Regenerate manifest: `python3 generate_manifest.py`.
 11. Local smoke test at `localhost:5500`.
-12. Commit.
+12. Commit on `dev`.
+13. Push `dev` and review on the preview.
+14. Ship to production: § 11 (ff `design-360`, push, annotated tag, back to `dev`).
 
 **Backlog**: `assets/docs/entries-prep/ENTRY_BACKLOG.md` (if present) tracks projects awaiting entry creation.
